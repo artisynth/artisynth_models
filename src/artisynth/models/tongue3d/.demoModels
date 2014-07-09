@@ -1,0 +1,10 @@
+Jaw artisynth.models.dynjaw.JawDemo
+Tongue artisynth.models.tongue3d.TongueDemo
+HexTongue artisynth.models.tongue3d.HexTongueDemo
+TongueCollide artisynth.models.tongue3d.TongueCollideDemo
+DonaldTongue artisynth.models.tongue3d.DonaldTongueDemo
+HighresTongue artisynth.models.tongue3d.UbcTongueDemo
+TongueMeshes  artisynth.models.tongue3d.TongueMeshes
+TongueJaw artisynth.models.tongue3d.TongueJaw
+Muscle artisynth.core.femmodels.MuscleTissueDemo
+

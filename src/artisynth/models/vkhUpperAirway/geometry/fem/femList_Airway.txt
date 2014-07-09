@@ -1,0 +1,9 @@
+#name filename type scaling r g b
+Airway "Airway-final2.1" tetgen 1 250 250 250
+Tongue "Tongue" ansys 1 205 92 92
+Palatine_aponeurosis "Palatine_aponeurosis" ansys 1 244 164 96
+Pharynx "Pharynx" ansys 1 178 34 34
+Tensor_veli_palatini_L "Tensor_veli_palatini_L" ansys 1 255 192 203
+Tensor_veli_palatini_R "Tensor_veli_palatini_R" ansys 1 255 192 203
+Suprahyoid_muscles_L "Suprahyoid_muscles_L" ansys 1 125 25 25
+Suprahyoid_muscles_R "Suprahyoid_muscles_R" ansys 1 125 25 25

@@ -1,0 +1,82 @@
+[
+  NumericInputProbe 
+  [ name="LM_palatoglossus_L"
+    stopTime=1.000
+    attachedFile="PG_jts.txt"
+    displayRange=[ 0 1.2 ]
+    track=0
+    model=models/jawmodel/models/softPalate
+    props=
+    [ 
+      models/jawmodel/models/softPalate/bundles/LM_palatoglossus_L:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="LM_palatoglossus_R"
+    stopTime=1.000
+    attachedFile="PG_jts.txt"
+    displayRange=[ 0 1.2 ]
+    track=0
+    model=models/jawmodel/models/softPalate
+    props=
+    [ 
+	models/jawmodel/models/softPalate/bundles/LM_palatoglossus_R:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="STY_R"
+    stopTime=1.000
+    attachedFile="STY_jts.txt"
+    displayRange=[ 0 1.2 ]
+    track=0
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+	models/jawmodel/models/tongue/bundles/STY_R:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="STY_L"
+    stopTime=1.000
+    attachedFile="STY_jts.txt"
+    displayRange=[ 0 1.2 ]
+    track=0
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+	models/jawmodel/models/tongue/bundles/STY_L:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+]

@@ -1,0 +1,135 @@
+[
+  NumericInputProbe
+  [ startTime=0
+    stopTime=5000000000
+    updateInterval=-1
+    name="Muscle Activations"
+    scale=1.0
+    attachedFile="muscleActivation_surpa.txt"
+#	attachedFile="muscleActivation_surpa_without_Digastric_anterior.txt"
+    interpolationOrder=Cubic
+    displayRange=[ 0.0 1.2 ]
+    track=0
+    element=models/mech
+    props=
+    [ 
+      models/mech/exciters/Mylohyoid:excitation
+      models/mech/exciters/Geniohyoid:excitation
+      models/mech/exciters/Digastric_anterior_belly:excitation
+      models/mech/exciters/Digastric_posterior_belly:excitation
+      models/mech/exciters/Stylohyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+      "V1"
+      "V2"
+      "V3"
+      "V4"
+    ]
+    inputs=
+    [ 
+      V0 1
+      V1 1
+      V2 1
+      V3 1
+      V4 1
+    ]
+  ]
+  NumericInputProbe
+  [
+    startTime=0
+    stopTime=5000000000
+    updateInterval=10000000
+    name="target positions"
+#    scale=0.2
+    attachedFile="ref_targetPos_input.txt"
+    interpolationOrder=Cubic
+    displayRange=[ Inf -Inf ]
+    track=0
+    props=
+    [
+      models/mech/particles/Hyoid_anterior_target:targetPosition
+    ]
+    drivers=
+    [ 
+      "V0"
+#      "V1"
+    ]
+    inputs=
+    [ 
+      V0 3
+#      V1 3
+    ]
+  ]
+  NumericOutputProbe
+  [
+    startTime=0
+    stopTime=5000000000
+    updateInterval=10000000
+    name="hyoid positions"
+    attachedFile="hyoidMarkers_targetPos_output.txt"
+    interpolationOrder=Cubic
+    displayRange=[ Inf -Inf ]
+    track=0
+    props=
+    [
+      models/mech/frameMarkers/Hyoid_anterior:targetPosition
+    ]
+    variables=
+    [
+      P0
+    ]
+
+    drivers=
+    [
+      "P0"
+    ]
+  ]
+  NumericOutputProbe
+  [
+    startTime=0
+    stopTime=3000000000
+    updateInterval=10000000
+    name="Hyoid_force"
+    attachedFile="hyoid_force_output.txt"
+    interpolationOrder=Cubic
+    track=0
+    props=
+    [
+      models/mech/rigidBodies/hyoid:transForce
+    ]
+    variables=
+    [
+      P0
+    ]
+
+    drivers=
+    [
+      "P0"
+    ]
+  ]
+  NumericOutputProbe
+  [
+    startTime=0
+    stopTime=3000000000
+    updateInterval=10000000
+    name="Cricoid_force"
+    attachedFile="cricoid_force_output.txt"
+    interpolationOrder=Cubic
+    track=0
+    props=
+    [
+      models/mech/rigidBodies/cricoid:transForce
+    ]
+    variables=
+    [
+      P0
+    ]
+
+    drivers=
+    [
+      "P0"
+    ]
+  ]
+]

@@ -1,0 +1,13 @@
+my "Mylohyoid" am pm
+lp "Lateral Pterygoid" ip sp
+t "Temporalis" at mt pt
+m "Masseter" dm sm
+hopen "Hinge Open" ad my gh
+pro "Protrusion" lp
+open "Openers" hopen pro
+close "Closers" t m mp
+stiffenjaw "Jaw Cocontraction" open close
+protracthyoid "Hyoid Protractors" ad gh my
+retracthyoid "Hyoid Retractors" pd sh
+suprahyoid "Suprahyoids" ad gh my pd sh
+infrahyoid "Infrahyoids" th stet steh oh

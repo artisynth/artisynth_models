@@ -1,0 +1,7 @@
+skull "face/badinskull.obj" fix 1000 220 220 220
+
+airwayIan "palate/airwayIan.obj" fix 1 135 206 250
+
+hyoid "larynx/hyoid.obj" fix 1 220 220 220
+thyroid "larynx/thyroid.obj" fix 1 220 220 220
+cricoid "larynx/cricoid.obj" fix 1 220 220 220

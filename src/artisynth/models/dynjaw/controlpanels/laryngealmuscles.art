@@ -1,0 +1,69 @@
+artisynth.core.gui.ControlPanel
+[ name="Laryngeal Muscles"
+  size=[ 421 221 ]
+  location=[ 672 22 ]
+  options=""
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_act:excitation"
+    labelText="aCricoThyroid"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1.00000] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_pct:excitation"
+    labelText="pCricoThyroid"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1.00000] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_th:excitation"
+    labelText="ThyroHyoid"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1.00000] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_stet:excitation"
+    labelText="SternoThyroid"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1.00000] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_steh:excitation"
+    labelText="SternoHyoid"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,0.500000] ]
+  ]
+    maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_protracthyoid:excitation"
+    labelText="Protract"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,0.500000] ]
+  ]
+    maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_retracthyoid:excitation"
+    labelText="Retract"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,0.500000] ]
+  ]
+    maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_suprahyoid:excitation"
+    labelText="Raise"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,0.500000] ]
+  ]
+    maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_infrahyoid:excitation"
+    labelText="Lower"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,0.500000] ]
+  ]
+]

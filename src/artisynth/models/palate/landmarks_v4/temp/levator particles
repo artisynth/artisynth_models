@@ -1,0 +1,155 @@
+artisynth.core.mechmodels.PointList
+
+[ name="particles"
+  renderProps=maspack.render.PointRenderProps 
+  [ visible=true
+  ]
+  pointDamping:Inherited 
+  [ position=[ 109 21 117 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 109 -21 117 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 140 18 75 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 140 -18 75 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  5
+  [ position=[ 104 0 121 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  6
+  [ position=[ 104 -5 121.5 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  7
+  [ position=[ 105 -10 120 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  8
+  [ position=[ 106 -15 119 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  9
+  [ position=[ 107.5 -19 118 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  14
+  [ position=[ 115 0 117 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  13
+  [ position=[ 112 -5 118 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  12
+  [ position=[ 110 -10 118 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  11
+  [ position=[ 109 -15 117.5 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  10
+  [ position=[ 109 -18.5 117 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  4
+  [ position=[ 108 0 123 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 111 -6.2152952 123 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 114 -10.83544 123 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 118 -15.1 124 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 121 -17.6 126.2 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 125 -18.8 130.7 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 129 -20.4 135.4 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 132 -22 140.8 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 134.5 -23.3 146 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 137 -24.2 152 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 118 0 120 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 120 -6 121 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 122 -11 121.8 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 125 -15 122.8 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 127 -17.3 125 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 129 -19 129.5 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 132 -20.5 134.4 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 135 -22 140 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 137 -23.5 145 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 139 -25 151 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+]

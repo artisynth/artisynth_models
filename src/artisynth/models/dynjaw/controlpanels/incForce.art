@@ -1,0 +1,13 @@
+artisynth.core.gui.ControlPanel
+[ name="Incsior Force"
+  size=[ 387 76 ]
+  location=[ 808 288 ]
+  options=""
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/forceEffectors/incForce:magnitude"
+    labelText="magnitude"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,5.00000] ]
+  ]
+]

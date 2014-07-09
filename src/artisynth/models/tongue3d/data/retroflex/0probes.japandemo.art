@@ -1,0 +1,109 @@
+[
+  NumericInputProbe 
+  [ name="sla"
+    stopTime=1.000
+    attachedFile="probe_sla.txt"
+    displayRange=[ -0.017999999999999995 0.19799999999999993 ]
+    track=0
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/sla:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="slm"
+    stopTime=1.000
+    attachedFile="probe_slm.txt"
+    displayRange=[ -0.09 0.9899999999999999 ]
+    track=1
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/slm:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="slp"
+    stopTime=1.000
+    attachedFile="probe_slp.txt"
+    displayRange=[ -0.030000000000000006 0.33000000000000007 ]
+    track=2
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/slp:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="trans"
+    stopTime=1.000
+    attachedFile="probe_trans.txt"
+    displayRange=[ -0.014999999999999993 0.1649999999999999 ]
+    track=3
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/trans:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe 
+  [ name="WayPoints"
+    stopTime=Infinity
+    track=0
+    model=.
+    wayPoints=[ 0 ]
+  ]
+  NumericOutputProbe 
+  [ name="activations"
+    stopTime=1.000
+    attachedFile="activations.retroflex.txt"
+    updateInterval=0.10
+    displayRange=[ -0.0 1.0 ]
+    track=0
+    props=
+    [ 
+      models/Tongue/activations
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+]

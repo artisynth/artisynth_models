@@ -1,0 +1,32 @@
+This is the general distribution of ArtiSynth Models, a collection of
+publicly available anatomical models created in ArtiSynth.
+
+You need to have ArtiSynth (www.artisynth.org) installed to run the
+models in this package.
+
+Other files in this directory:
+
+VERSION
+    current version
+
+LICENSE
+    licensing and terms of use
+
+Makefile
+    Makefile for compiling and doing certain maintenance operations in
+    a shell environment.
+
+Makefile.base
+    Base definitions for Makefile and Makefile in subdirectories.
+
+doc
+    documentation directory, just for javadocs noew
+
+classes 
+    root directory for compiled classes
+
+src
+    model source code
+
+eclipseSettings.zip
+    zip file containing Eclipse project settings

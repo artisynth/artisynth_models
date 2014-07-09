@@ -1,0 +1,9 @@
+rigidBody "Vertebrae" fem "Pharynx"
+
+rigidBody "Hyoid" fem "Pharynx"
+rigidBody "Thyroid" fem "Pharynx"
+rigidBody "Cricoid" fem "Pharynx"
+
+fem "Tongue" fem "Pharynx"
+fem "Tongue" fem "Palatine_aponeurosis"
+fem "Pharynx" fem "Palatine_aponeurosis"

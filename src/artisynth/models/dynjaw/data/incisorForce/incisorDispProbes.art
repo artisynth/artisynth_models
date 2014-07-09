@@ -1,0 +1,22 @@
+[
+  NumericOutputProbe 
+  [ name="incisor Displacement"
+    stopTime=10.000
+    attachedFile="incDisp.raw"
+    updateInterval=0.01
+    displayRange=[ -50.0 50.0 ]
+    track=1
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:displacement
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+]

@@ -1,0 +1,456 @@
+!------------------------------------------------------
+! ANSYS batch
+!
+! Function: CreateComponents.mac
+!
+! Input: none
+!
+! 1st Version: 2002, J-M Gérard, ICP 
+! Last Version: 17/05/06, Stéphanie Buchaillard, ICP
+! 12/04/06: modif GGp
+! 17/05/06: new numbering for TYPE, MAT and REAL of 
+! non-tongue elements
+!------------------------------------------------------
+
+/NOPR
+
+nbElementsTongue = 740  
+nbNodesTongue = 946               
+
+!MUSCLE_LIST_BEG
+GGP = 1 	! Genioglossus (posterior)
+GGM = 2 	! Genioglossus (medium)
+GGA = 3 	! Genioglossus (anterior)
+STY = 4 	! Styloglossus	
+GH = 5  	! Geniohyoid	
+MH = 6  	! Mylohyoid	
+HG = 7	! Hyoglossus
+VERT = 8	! Verticalis
+TRANS = 9	! Transversus	
+IL = 10	! Inferior longitudinalis
+SL = 11	! Superior longitudinalis
+GLANDETC=12	! GlandeTC
+!MUSCLE_LIST_END
+
+!TONGUE_BEG
+TONGUE = 13
+!TONGUE_END
+
+!OTHER_COMP_LIST_BEG
+HARD_PALATE = 14 		! hard palate
+SOFT_PALATE = 15 		! soft palate
+MANDIBLE_CONTACT = 16	! mandible (contact)
+MANDIBLE = 17		! mandible
+TONGUE_CONT_SOFTPALATE = 18	! tongue (contact with soft palate)	
+TONGUE_CONT_HARDPALATE = 19	! tongue (contact with hard palate)	
+TONGUE_CONT_MANDIBLE = 20	! tongue (contact with mandible)		
+HYOID_BONE = 21			! hyoid bone
+SOFT_CLOSURE = 22		! Fermeture (mou)	
+HARD_CLOSURE = 23		! Fermeture (dur)	
+!OTHER_COMP_LIST_END
+
+! point d'ancrage du styloglosse et du stylohyoid sur le processus
+! styloide (indice de ce point pour la gauche et la droite)
+styloid_process_left=4071	! y > 0
+styloid_process_right=4066 	! y < 0
+!NSEL,S,NODE,,styloid_process_right
+!NSEL,A,NODE,,styloid_process_left
+CM,STYLOID_PROCESS,NODE 
+
+
+!-----------------------------------------------------------------!
+!				MUSCLES DE LA LANGUE				!
+!-----------------------------------------------------------------!
+
+CreateMuscles
+
+!_________________________________________
+! Selection des elements du Glandetc
+ESEL,S,ELEM,,1,nbElementsTongue                 
+CMSEL,U,GGP
+CMSEL,U,GGM
+CMSEL,U,GGA
+CMSEL,U,STY
+CMSEL,U,GH
+CMSEL,U,MH
+CMSEL,U,HG
+CMSEL,U,VERT
+CMSEL,U,TRANS
+CMSEL,U,IL
+CMSEL,U,SL
+CM,GLANDETC,ELEM
+
+!_________________________________________
+! Création de la composante langue
+ESEL,S,ELEM,,1,nbElementsTongue
+CM,TONGUE,ELEM
+
+! Création d'une composante noeuds pour la langue
+CMSEL,S,TONGUE
+NSLE
+CM,TONGUE_NODES,NODE
+
+
+!-----------------------------------------------------------------!
+!				COMPOSANTES EXTERNES				!
+!-----------------------------------------------------------------!
+
+!_________________________________________
+! Création du palais
+
+! Creation de la composante palais dur (zone de contact)
+ESEL,S,ELEM,,949,1396
+CM,HARD_PALATE,ELEM
+CMSEL,S,HARD_PALATE
+EMODIF,ALL,TYPE,921
+EMODIF,ALL,REAL,911
+EMODIF,ALL,MAT,921
+
+! Creation de la composante palais mou (hors zone de contact)
+ESEL,S,ELEM,,1397,1670
+CM,SOFT_PALATE,ELEM
+EMODIF,ALL,TYPE,931
+EMODIF,ALL,REAL,932
+EMODIF,ALL,MAT,932
+
+! Creation de la composante palais
+ESEL, NONE
+CMSEL,S,HARD_PALATE
+CMSEL,A,SOFT_PALATE
+CM,PALATE,ELEM
+
+!_________________________________________
+! Création de la machoire
+
+! Creation de la composante machoire
+ESEL,S,ELEM,,1671,3060
+CM,MANDIBLE,ELEM
+EMODIF,ALL,TYPE,931
+EMODIF,ALL,REAL,933
+EMODIF,ALL,MAT,933
+
+! Creation de la composante machoire contact
+ESEL,S,ELEM,,1671,1896
+ESEL,A,ELEM,,2366,2591
+CM,MANDIBLE_CONTACT,ELEM
+CMSEL,S,MANDIBLE_CONTACT
+EMODIF,ALL,TYPE,921
+EMODIF,ALL,REAL,913
+EMODIF,ALL,MAT,923
+
+
+!_________________________________________
+! Création des zones de contact de la langue
+
+CreateContactTongueN
+CMSEL,S,TONGUE_CONT_SOFTPALATE
+CMSEL,A,TONGUE_CONT_HARDPALATE
+CMSEL,A,TONGUE_CONT_MANDIBLE
+CM,TONGUE_CONTACT,ELEM
+
+
+!_________________________________________
+! Creation de la composante hyoide
+ESEL,S,ELEM,,3061,4404
+CM,HYOID_BONE,ELEM
+EMODIF,ALL,TYPE,951
+EMODIF,ALL,REAL,951
+EMODIF,ALL,MAT,951
+
+HYOID_NODE_REF=3574
+
+!_________________________________________
+! Creation des composantes fermeture
+! FERMETURE mou
+ESEL,S,ELEM,,4767,4798
+CM,SOFT_CLOSURE,ELEM
+EMODIF,ALL,TYPE,931
+EMODIF,ALL,REAL,934
+EMODIF,ALL,MAT,934
+
+! FERMETURE dur
+ESEL,S,ELEM,,4405,4766
+CM,HARD_CLOSURE,ELEM
+EMODIF,ALL,TYPE,931
+EMODIF,ALL,REAL,934
+EMODIF,ALL,MAT,934
+
+! Composante fermeture
+CMSEL,S,SOFT_CLOSURE
+CMSEL,A,HARD_CLOSURE
+CM,CLOSURE,ELEM
+
+
+!______________________________________________
+! Composante digastrique 
+ESEL,S,ELEM,,4799
+ESEL,A,ELEM,,4805
+CM,DIGASTRIC_ANTERIOR,ELEM
+
+ESEL,S,ELEM,,4800
+ESEL,A,ELEM,,4806
+CM,DIGASTRIC_POSTERIOR,ELEM
+
+CMSEL,S,DIGASTRIC_ANTERIOR
+CMSEL,A,DIGASTRIC_POSTERIOR
+CM,DIGASTRIC,ELEM
+
+ESEL,S,ELEM,,4801
+ESEL,A,ELEM,,4807
+CM,STERNOHYOID,ELEM 
+
+ESEL,S,ELEM,,4802
+ESEL,A,ELEM,,4808
+CM,OMOHYOID,ELEM 
+
+ESEL,S,ELEM,,4803
+ESEL,A,ELEM,,4809
+CM,THYROHYOID,ELEM 
+
+ESEL,S,ELEM,,4804
+ESEL,A,ELEM,,4810
+CM,THYROHYOID_MEMBRANE,ELEM 
+
+! Création de la composante ressorts
+CMSEL,S,DIGASTRIC
+CMSEL,A,STERNOHYOID 
+CMSEL,A,OMOHYOID 
+CMSEL,A,THYROHYOID
+CMSEL,A,THYROHYOID_MEMBRANE
+CM,SPRINGS,ELEM
+EMODIF,ALL,TYPE,941
+EMODIF,ALL,REAL,941
+EMODIF,ALL,MAT,941
+
+!______________________________________________
+! Modification des zones de contact
+
+! Partie de la machoire interne pour laquelle des elements de contact sont inutiles
+ESEL,S,ELEM,,1720,1723
+ESEL,A,ELEM,,1728,1733
+ESEL,A,ELEM,,1749,1750
+ESEL,A,ELEM,,1755,1759
+ESEL,A,ELEM,,1766,1768
+ESEL,A,ELEM,,1774,1777
+ESEL,A,ELEM,,1783,1784
+ESEL,A,ELEM,,1794,1795
+ESEL,A,ELEM,,1800
+ESEL,A,ELEM,,1843
+ESEL,A,ELEM,,1845
+ESEL,A,ELEM,,1851
+ESEL,A,ELEM,,1853
+ESEL,A,ELEM,,1854
+ESEL,A,ELEM,,1856,1857
+ESEL,A,ELEM,,1858
+ESEL,A,ELEM,,1862
+ESEL,A,ELEM,,1864
+ESEL,A,ELEM,,1867,1868
+ESEL,A,ELEM,,1873,1874
+ESEL,A,ELEM,,1879
+ESEL,A,ELEM,,1882,1888,2
+ESEL,A,ELEM,,2415,2418
+ESEL,A,ELEM,,2423,2428
+ESEL,A,ELEM,,2444,2445
+ESEL,A,ELEM,,2450,2454
+ESEL,A,ELEM,,2461,2463
+ESEL,A,ELEM,,2469,2472
+ESEL,A,ELEM,,2478,2479
+ESEL,A,ELEM,,2489,2490
+ESEL,A,ELEM,,2495
+ESEL,A,ELEM,,2538
+ESEL,A,ELEM,,2540
+ESEL,A,ELEM,,2546
+ESEL,A,ELEM,,2548,2549
+ESEL,A,ELEM,,2551,2553
+ESEL,A,ELEM,,2557
+ESEL,A,ELEM,,2559
+ESEL,A,ELEM,,2562,2563
+ESEL,A,ELEM,,2568,2569
+ESEL,A,ELEM,,2574
+ESEL,A,ELEM,,2577,2583,2
+EMODIF,ALL,TYPE,931
+EMODIF,ALL,REAL,933
+EMODIF,ALL,MAT,933
+
+! Partie du palais mou potentiellement en contact avec la langue
+ESEL,S,ELEM,,1397,1460
+ESEL,A,ELEM,,1534,1597
+EMODIF,ALL,TYPE,921
+EMODIF,ALL,REAL,912
+EMODIF,ALL,MAT,922
+
+! Partie du palais dur sans contact avec la langue
+ESEL,S,ELEM,,949,968
+ESEL,A,ELEM,,974
+ESEL,A,ELEM,,986
+ESEL,A,ELEM,,989
+ESEL,A,ELEM,,1002
+ESEL,A,ELEM,,1004
+ESEL,A,ELEM,,1008
+ESEL,A,ELEM,,1139,1140
+ESEL,A,ELEM,,1161
+ESEL,A,ELEM,,1173,1192
+ESEL,A,ELEM,,1198
+ESEL,A,ELEM,,1210
+ESEL,A,ELEM,,1213
+ESEL,A,ELEM,,1226
+ESEL,A,ELEM,,1228
+ESEL,A,ELEM,,1232
+ESEL,A,ELEM,,1363,1364
+ESEL,A,ELEM,,1385
+EMODIF,ALL,TYPE,931
+EMODIF,ALL,REAL,931
+EMODIF,ALL,MAT,931
+
+!-----------------------------------------------------------------!
+!				COMPOSANTES POINT FIXES				!
+!-----------------------------------------------------------------!
+
+!______________________________________________
+! Points fixes de la langue (racine)
+NSEL, S, NODE, ,363, 369
+NSEL, A, NODE, ,371, 372 
+NSEL, A, NODE, ,395, 396
+NSEL, A, NODE, ,398
+NSEL, A, NODE, ,400
+NSEL, A, NODE, ,402
+NSEL, A, NODE, ,404
+NSEL, A, NODE, ,406
+NSEL, A, NODE, ,776 ,782
+NSEL, A, NODE, ,784 ,785
+NSEL, A, NODE, ,808 ,809
+NSEL, A, NODE, ,811
+NSEL, A, NODE, ,813
+NSEL, A, NODE, ,815
+NSEL, A, NODE, ,817
+NSEL, A, NODE, ,819
+NSEL, A, NODE, ,931, 937 
+CM,ROOT_OF_TONGUE_FIXED_NODES,NODE 
+
+!______________________________________________
+! Points fixes de la langue (latéraux)
+NSEL, S, NODE, ,18
+NSEL, A, NODE, ,23
+NSEL, A, NODE, ,45, 46
+NSEL, A, NODE, ,54
+NSEL, A, NODE, ,58
+NSEL, A, NODE, ,88
+NSEL, A, NODE, ,91
+NSEL, A, NODE, ,281
+NSEL, A, NODE, ,284
+NSEL, A, NODE, ,370
+NSEL, A, NODE, ,373
+NSEL, A, NODE, ,385
+NSEL, A, NODE, ,388
+NSEL, A, NODE, ,431
+NSEL, A, NODE, ,436
+NSEL, A, NODE, ,458, 459
+NSEL, A, NODE, ,467
+NSEL, A, NODE, ,471
+NSEL, A, NODE, ,501
+NSEL, A, NODE, ,504
+NSEL, A, NODE, ,694
+NSEL, A, NODE, ,697
+NSEL, A, NODE, ,783
+NSEL, A, NODE, ,786
+NSEL, A, NODE, ,798
+NSEL, A, NODE, ,801
+CM,TONGUE_LATERAL_FIXED_NODES,NODE 
+
+!______________________________________________
+! Points fixes de la langue
+CMSEL,S,ROOT_OF_TONGUE_FIXED_NODES
+CMSEL,A,TONGUE_LATERAL_FIXED_NODES
+CM,TONGUE_FIXED_NODES,NODE 
+
+!______________________________________________
+! Points fixes pour les ressorts
+NSEL, S, NODE, ,4063,4072
+CM,SPRINGS_FIXED_NODES,NODE 
+
+
+!-----------------------------------------------------------------!
+!			 INSERTION LANGUE / OS HYOIDE				!
+!-----------------------------------------------------------------!
+!_________________________________________________________________
+
+! Noeuds du hyoglosse insérés sur l'os hyoide
+NSEL, S, NODE,,7
+NSEL, A, NODE,,15
+NSEL, A, NODE,,22
+NSEL, A, NODE,,30
+NSEL, A, NODE,,40
+NSEL, A, NODE,,44
+NSEL, A, NODE,,175
+NSEL, A, NODE,,181,183
+NSEL, A, NODE,,420
+NSEL, A, NODE,,428
+NSEL, A, NODE,,435
+NSEL, A, NODE,,443
+NSEL, A, NODE,,453
+NSEL, A, NODE,,457
+NSEL, A, NODE,,588
+NSEL, A, NODE,,594,596
+CM,INSERTIONS_HG_HYOID,NODE
+
+! Noeuds du mylohyoïde insérés sur l'os hyoide
+NSEL, S, NODE,,9
+NSEL, A, NODE,,11
+NSEL, A, NODE,,24
+NSEL, A, NODE,,26
+NSEL, A, NODE,,112
+NSEL, A, NODE,,114
+NSEL, A, NODE,,170,171
+NSEL, A, NODE,,422
+NSEL, A, NODE,,424
+NSEL, A, NODE,,437
+NSEL, A, NODE,,439
+NSEL, A, NODE,,525
+NSEL, A, NODE,,527
+NSEL, A, NODE,,583,584
+NSEL, A, NODE,,832,833
+CM,INSERTIONS_MH_HYOID,NODE
+
+! Noeuds du géniohyoïde insérés sur l'os hyoide
+NSEL, S, NODE,,22
+NSEL, A, NODE,,26
+NSEL, A, NODE,,111
+NSEL, A, NODE,,114
+NSEL, A, NODE,,435
+NSEL, A, NODE,,439
+NSEL, A, NODE,,524
+NSEL, A, NODE,,527
+NSEL, A, NODE,,831,832
+CM,INSERTIONS_GH_HYOID,NODE
+
+! Noeuds du génioglosse postérieur attachés sur l'os hyoide
+! "The superior border of the hyoid bone gives attachment to some aponeurotic 
+! fibers of the Genioglossus"
+NSEL, S, NODE,,206
+NSEL, A, NODE,,619
+NSEL, A, NODE,,877,878
+CM,BONDS_GGP_HYOID,NODE
+
+! Noeuds de la langue couplés avec l'os hyoide
+CMSEL,S,INSERTIONS_HG_HYOID
+CMSEL,A,INSERTIONS_MH_HYOID
+CMSEL,A,INSERTIONS_GH_HYOID
+CMSEL,A,BONDS_GGP_HYOID
+CM,INSERTIONS_TONGUE_HYOID,NODE 
+
+
+!-----------------------------------------------------------------!
+!			NOEUDS CONTRAINTS EN DEPLACEMENT			!
+!-----------------------------------------------------------------!
+
+! Noeuds contraints en déplacements dû à la présence de la membrane 
+! thyroïdienne et des ligaments hyo-épliglottiques
+NSEL, S, NODE,,120, 121
+NSEL, A, NODE,,206
+NSEL, A, NODE,,533,534
+NSEL, A, NODE,,619
+NSEL, A, NODE,,846
+NSEL, A, NODE,,848
+CM,ROOT_OF_TONGUE,NODE 
+
+/GO

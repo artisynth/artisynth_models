@@ -1,0 +1,85 @@
+Stylohyoid_L_at_hyoid hyoid 118.22363 142.15226 230.08701
+Stylohyoid_L_at_bone Skull 144.027879 110.5839 151.05237
+Stylohyoid_R_at_hyoid hyoid 81.77637 142.15226 230.08701
+Stylohyoid_R_at_bone Skull 55.972121 110.5839 151.05237
+
+
+Pharyngeal_constrictor_at_hyoid_L_01 hyoid 116 139.71859 225.91652
+Pharyngeal_constrictor_at_hyoid_L_02 hyoid 119 136.62926 226.54848
+Pharyngeal_constrictor_at_hyoid_L_03 hyoid 121 133.24941 226.15845
+Pharyngeal_constrictor_at_hyoid_L_04 hyoid 122.5 129.77057 225.50524
+Pharyngeal_constrictor_at_hyoid_L_05 hyoid 124 125.58032 224.93136
+Pharyngeal_constrictor_at_hyoid_L_06 hyoid 125 121.42909 223.66374
+Pharyngeal_constrictor_at_hyoid_L_07 hyoid 125 120.46608 225.99047
+
+Pharyngeal_constrictor_at_hyoid_R_01 hyoid 84 139.71859 225.91652
+Pharyngeal_constrictor_at_hyoid_R_02 hyoid 81 136.62926 226.54848
+Pharyngeal_constrictor_at_hyoid_R_03 hyoid 79 133.24941 226.15845
+Pharyngeal_constrictor_at_hyoid_R_04 hyoid 77.5 129.77057 225.50524
+Pharyngeal_constrictor_at_hyoid_R_05 hyoid 76 125.58032 224.93136
+Pharyngeal_constrictor_at_hyoid_R_06 hyoid 75 121.42909 223.66374
+Pharyngeal_constrictor_at_hyoid_R_07 hyoid 75 120.46608 225.99047
+
+Pharyngeal_constrictor_at_pharynx_01 Spine 100 120 175
+Pharyngeal_constrictor_at_pharynx_02 Spine 100 119.4 180.4
+Pharyngeal_constrictor_at_pharynx_03 Spine 100 118.8 185.8
+Pharyngeal_constrictor_at_pharynx_04 Spine 100 118.2 191.2
+Pharyngeal_constrictor_at_pharynx_05 Spine 100 117.6 196.6
+Pharyngeal_constrictor_at_pharynx_06 Spine 100 117 202
+Pharyngeal_constrictor_at_pharynx_07 Spine 100 116.4 207.4
+Pharyngeal_constrictor_at_pharynx_08 Spine 100 115.8 212.8
+Pharyngeal_constrictor_at_pharynx_09 Spine 100 115.2 218.2
+Pharyngeal_constrictor_at_pharynx_10 Spine 100 114.6 223.6
+Pharyngeal_constrictor_at_pharynx_11 Spine 100 114 229
+Pharyngeal_constrictor_at_pharynx_12 Spine 100 113.4 234.4
+Pharyngeal_constrictor_at_pharynx_13 Spine 100 112.8 239.8
+Pharyngeal_constrictor_at_pharynx_14 Spine 100 112 245
+
+Pharyngeal_constrictor_at_pharynx_15 Spine 100 111.64462 248.21924
+Pharyngeal_constrictor_at_pharynx_16 Spine 100 111.80717 251.48887
+Pharyngeal_constrictor_at_pharynx_17 Spine 100 111.43267 254.88553
+Pharyngeal_constrictor_at_pharynx_18 Spine 100 111.35444 258.19438
+Pharyngeal_constrictor_at_pharynx_19 Spine 100 111.5371 261.32681
+Pharyngeal_constrictor_at_pharynx_20 Spine 100 111.54352 264.62786
+Pharyngeal_constrictor_at_pharynx_21 Spine 100 111.56737 267.90239
+Pharyngeal_constrictor_at_pharynx_22 Spine 100 111.88254 271.02813
+Pharyngeal_constrictor_at_pharynx_23 Spine 100 111.90191 274.24671
+Pharyngeal_constrictor_at_pharynx_24 Spine 100 112.45953 277.16074
+Pharyngeal_constrictor_at_pharynx_25 Spine 100 113.01713 279.99759
+Pharyngeal_constrictor_at_pharynx_26 Spine 100 113.76561 282.73901
+Pharyngeal_constrictor_at_pharynx_27 Spine 100 114.32321 285.57587
+Pharyngeal_constrictor_at_pharynx_28 Spine 100 114.26396 288.54176
+
+Pharyngeal_constrictor_at_thyroid_L_01 thyroid 126 127.51721 243.91517
+Pharyngeal_constrictor_at_thyroid_L_02 thyroid 126.5 125.95107 248.32335
+Pharyngeal_constrictor_at_thyroid_L_03 thyroid 124 125.65187 252.78957
+Pharyngeal_constrictor_at_thyroid_L_04 thyroid 121 126.80712 256.31711
+Pharyngeal_constrictor_at_thyroid_L_05 thyroid 120 127.37772 260.83215
+Pharyngeal_constrictor_at_thyroid_L_06 thyroid 120 124.02569 263.55292
+Pharyngeal_constrictor_at_thyroid_L_07 thyroid 120.5 120.24226 266.60145
+Pharyngeal_constrictor_at_thyroid_L_08 thyroid 118.5 119.19212 270.97974
+
+Pharyngeal_constrictor_at_thyroid_R_01 thyroid 74 127.51721 243.91517
+Pharyngeal_constrictor_at_thyroid_R_02 thyroid 73.5 125.95107 248.32335
+Pharyngeal_constrictor_at_thyroid_R_03 thyroid 76 125.65187 252.78957
+Pharyngeal_constrictor_at_thyroid_R_04 thyroid 79 126.80712 256.31711
+Pharyngeal_constrictor_at_thyroid_R_05 thyroid 80 127.37772 260.83215
+Pharyngeal_constrictor_at_thyroid_R_06 thyroid 80 124.02569 263.55292
+Pharyngeal_constrictor_at_thyroid_R_07 thyroid 79.5 120.24226 266.60145
+Pharyngeal_constrictor_at_thyroid_R_08 thyroid 81.5 119.19212 270.97974
+
+Pharyngeal_constrictor_at_cricoid_L_01 cricoid 115 123.43579 272.81874
+Pharyngeal_constrictor_at_cricoid_L_02 cricoid 114.5 125.38624 276.28303
+Pharyngeal_constrictor_at_cricoid_L_03 cricoid 113 126.65706 279.25323
+
+Pharyngeal_constrictor_at_cricoid_R_01 cricoid 85 123.43579 272.81874
+Pharyngeal_constrictor_at_cricoid_R_02 cricoid 85.5 125.38624 276.28303
+Pharyngeal_constrictor_at_cricoid_R_03 cricoid 87 126.65706 279.25323
+
+
+Hyoid_anterior hyoid 100 150 233
+Hyoid_posterior hyoid 100 145 223
+SubglotticAirColumn_superior_posterior cricoid 100 118 276
+Cricoid_superior_anterior cricoid 100 140 277
+Hyoid_posterior_L hyoid 125 120 224.5
+Hyoid_posterior_R hyoid 75 120 224.5

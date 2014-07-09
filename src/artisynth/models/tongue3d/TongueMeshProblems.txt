@@ -1,0 +1,12 @@
+It appears that there is one element on each side of the tongue mesh
+that was inverted and simply deleted. The resulting voids correspond
+to wedge elements with the nodes:
+
+411 288 412 291 287 293
+824 701 825 710 700 706
+
+There is no obvious way of fixing this.  We could divide that space into a bunch
+of tets, but they would still be very poorly conditioned.  The other option
+is to add new nodes in there to make a bunch of smaller tets. Although, the
+surrounding elements also look like they're near inverted, so we may want to
+modify those too.

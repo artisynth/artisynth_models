@@ -1,0 +1,164 @@
+[
+  NumericInputProbe 
+  [ name="ad"
+    stopTime=1.000
+    attachedFile="probe_ad.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=0
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_ad:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="pd"
+    stopTime=1.000
+    attachedFile="probe_pd.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=1
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_pd:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="th"
+    stopTime=1.000
+    attachedFile="probe_th.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=2
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_th:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="stet"
+    stopTime=1.000
+    attachedFile="probe_stet.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=3
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_stet:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="steh"
+    stopTime=1.000
+    attachedFile="probe_steh.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=4
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_steh:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="pct"
+    stopTime=1.000
+    attachedFile="probe_pct.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=5
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_pct:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="act"
+    stopTime=1.000
+    attachedFile="probe_act.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=6
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_act:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Hyoid Displacement"
+    stopTime=1.000
+    attachedFile="hyoidDisp.raw"
+    updateInterval=0.001
+    format="%8.2f"
+    displayRange=[ -25.0 8.5 ]
+    showHeader=false
+    track=0
+    props=
+    [ 
+      models/jawmodel/frameMarkers/hyoidRef:displacement
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+]

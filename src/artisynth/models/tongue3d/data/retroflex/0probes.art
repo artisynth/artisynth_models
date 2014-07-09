@@ -1,0 +1,82 @@
+[
+  NumericInputProbe 
+  [ name="sla"
+    stopTime=1.000
+    attachedFile="probe_sla.txt"
+    displayRange=[ -0.017999999999999995 0.19799999999999993 ]
+    track=6
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/sl_a:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="slm"
+    stopTime=1.000
+    attachedFile="probe_slm.txt"
+    displayRange=[ -0.09 0.9899999999999999 ]
+    track=7
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/sl_m:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="slp"
+    stopTime=1.000
+    attachedFile="probe_slp.txt"
+    displayRange=[ -0.030000000000000006 0.33000000000000007 ]
+    track=8
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/sl_p:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="trans"
+    stopTime=1.000
+    attachedFile="probe_trans.txt"
+    displayRange=[ -0.014999999999999993 0.1649999999999999 ]
+    track=9
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/trans:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+]

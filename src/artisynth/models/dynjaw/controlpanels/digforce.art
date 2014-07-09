@@ -1,0 +1,12 @@
+artisynth.core.gui.ControlPanel
+[ name="DigastricForce"
+  size=[ 446 168 ]
+  location=[ 808 288 ]
+  options="LiveUpdate"
+  maspack.widgets.VectorField
+  [ property="models/jawmodel/axialSprings/lad:force"
+    labelText="force"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+]

@@ -1,0 +1,25 @@
+artisynth.core.mechmodels.MuscleExciter
+[ targets=[
+    b/2/e/1
+    b/2/e/10
+    b/0/e/22
+    b/0/e/23
+    b/0/e/25
+    b/0/e/24
+    b/0/e/42
+    b/0/e/43
+    b/0/e/44
+    b/0/e/45
+    b/3/e/1
+    b/3/e/10
+    b/1/e/22
+    b/1/e/23
+    b/1/e/25
+    b/1/e/24
+    b/1/e/42
+    b/1/e/43
+    b/1/e/44
+    b/1/e/45
+  ]
+  name="GGMp"
+]

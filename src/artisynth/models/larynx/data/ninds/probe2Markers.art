@@ -1,0 +1,75 @@
+[
+  NumericInputProbe
+  [ startTime=0.1
+    stopTime=3.1
+    updateInterval=-1
+    name="target positions"
+#    scale=0.2
+    attachedFile="ref_targetPos_input.txt"
+    interpolationOrder=Cubic
+    displayRange=[ 0.0 1.0 ]
+    track=0
+    model=models/mech
+    props=
+    [ 
+      models/mech/particles/Hyoid_anterior_ref:targetPosition
+#      models/mech/particles/SubglotticAirColumn_superior_posterior_ref:targetPosition
+    ]
+    drivers=
+    [ 
+      "V0"
+#      "V1"
+    ]
+    inputs=
+    [ 
+      V0 3
+#      V1 3
+    ]
+  ]
+  NumericOutputProbe
+  [
+    startTime=0.1
+    stopTime=3.1
+    updateInterval=0.01
+    name="Hyoid_force"
+    attachedFile="hyoid_force_output.txt"
+    interpolationOrder=Cubic
+    track=0
+    props=
+    [
+      models/mech/rigidBodies/hyoid:transForce
+    ]
+    variables=
+    [
+      P0
+    ]
+
+    drivers=
+    [
+      "P0"
+    ]
+  ]
+  NumericOutputProbe
+  [
+    startTime=0.1
+    stopTime=3.1
+    updateInterval=0.01
+    name="Cricoid_force"
+    attachedFile="cricoid_force_output.txt"
+    interpolationOrder=Cubic
+    track=0
+    props=
+    [
+      models/mech/rigidBodies/cricoid:transForce
+    ]
+    variables=
+    [
+      P0
+    ]
+
+    drivers=
+    [
+      "P0"
+    ]
+  ]
+]

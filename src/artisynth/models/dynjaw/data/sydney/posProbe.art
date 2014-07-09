@@ -1,0 +1,51 @@
+[
+  NumericInputProbe 
+  [ name="jaw position"
+    stopTime=15.000
+    attachedFile="jawPosition.txt"
+    displayRange=[ -2.8810000000000002 3.491 ]
+    track=0
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/rigidBodies/jaw:position
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 3
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="incisor Displacement"
+    stopTime=15.100
+    attachedFile="incDisp.raw"
+    updateInterval=0.01
+    displayRange=[ -50.0 50.0 ]
+    track=0
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:displacement
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe 
+  [ name="WayPoints"
+    stopTime=Infinity
+    track=-1
+    wayPoints=
+    [ 
+      0
+    ]
+  ]
+]

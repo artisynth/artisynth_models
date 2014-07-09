@@ -1,0 +1,11 @@
+skull "face/badinskull.obj" fix 1000 220 220 220
+cranium "face/ubccranium_symmetric.obj" fix 1000 220 220 220
+maxilla "face/ubcmaxilla_symmetric.obj" fix 1000 220 220 220
+jaw "face/ubcjaw_symmetric.obj" fix 1000 220 220 220
+
+airwayIan "palate/airwayIan.obj" fix 1 135 206 250
+tongueIan "palate/tongueIan.obj" fix 1 205 92 92
+
+hyoid "larynx/hyoid.obj" fix 1 220 220 220
+thyroid "larynx/thyroid.obj" fix 1 220 220 220
+cricoid "larynx/cricoid.obj" fix 1 220 220 220

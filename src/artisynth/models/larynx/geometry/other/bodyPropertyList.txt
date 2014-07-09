@@ -1,0 +1,3 @@
+hyoid -mass 0.00291
+thyroid -mass 0.00852
+cricoid -mass 0.00526

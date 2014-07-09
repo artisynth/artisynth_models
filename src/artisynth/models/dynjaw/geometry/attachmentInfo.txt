@@ -1,0 +1,47 @@
+at cranium jaw pair 
+mt cranium jaw pair 
+pt cranium jaw pair 
+sm maxilla jaw pair 
+dm maxilla jaw pair 
+mp maxilla jaw pair 
+sp maxilla jaw pair 
+ip maxilla jaw pair 
+pd maxilla hyoid pair 
+sh maxilla hyoid pair 
+ad jaw hyoid pair 
+am jaw hyoid pair 
+pm jaw hyoid pair 
+gh jaw hyoid pair 
+th hyoid thyroid pair 
+pct thyroid cricoid pair 
+act thyroid cricoid pair 
+stet thyroid sternum pair 
+steh hyoid sternum pair 
+oh hyoid sternum pair 
+pc ltarytenoid rtarytenoid pair 
+lc ltarytenoid rtarytenoid pair 
+ta ltarytenoid rtarytenoid single 
+ 
+"Anterior Temporal"
+"Middle Temporal"
+"Posterior Temporal"
+"Superficial Masseter"
+"Deep Masseter"
+"Medial Pterygoid"
+"Superior Lateral Pterygoid"
+"Inferior Lateral Pterygoid"
+"Anterior Digastric"
+"Posterior Digastric"
+"Anterior Mylohyoid"
+"Posterior Mylohyoid"
+"Geniohyoid"
+"Stylohyoid"
+"Thyrohyoid"
+"Posterior Cricoarytenoid"
+"Lateral Cricoarytenoid"
+"Posterior Cricothyroid"
+"Anterior Cricothyroid"
+"Sternothyroid"
+"Sternohyoid"
+"Omohyoid"
+"Transverse Arytenoid"

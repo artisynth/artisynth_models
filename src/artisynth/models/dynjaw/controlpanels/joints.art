@@ -1,0 +1,92 @@
+artisynth.core.gui.ControlPanel
+[ name="Joints"
+  size=[ 435 372 ]
+  location=[ 913 -1 ]
+  scrollable=true
+  options="LiveUpdate"
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/rigidBodyConnectors/LTMJ:unilateral"
+    labelText="LTMJ Disarticulated"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/rigidBodyConnectors/RTMJ:unilateral"
+    labelText="RTMJ Disarticulated"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:lMedWallAngle"
+    labelText="lMedWallAngle"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,90.0000] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:rMedWallAngle"
+    labelText="rMedWallAngle"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-90.0000,0] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:lLtrlWallAngle"
+    labelText="lLtrlWallAngle"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-90.0000,0] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:rLtrlWallAngle"
+    labelText="rLtrlWallAngle"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,90.0000] ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:lPostWallAngle"
+    labelText="lPostWallAngle"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-180.000,180.000] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:rPostWallAngle"
+    labelText="rPostWallAngle"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-180.000,180.000] ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:lBiteAngle"
+    labelText="lBiteAngle"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-180.000,180.000] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:rBiteAngle"
+    labelText="rBiteAngle"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-180.000,180.000] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:lBiteCant"
+    labelText="lBiteCant"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-180.000,180.000] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:rBiteCant"
+    labelText="rBiteCant"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-180.000,180.000] ]
+  ]
+]

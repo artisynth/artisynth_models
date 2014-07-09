@@ -1,0 +1,69 @@
+artisynth.core.modelbase.ComponentList
+
+[ name="exciters"
+  [ targets=[
+      b/0
+      b/1
+    ]
+    name="GGP"
+  ]
+  [ targets=[
+      b/2
+      b/3
+    ]
+    name="GGM"
+  ]
+  [ targets=[
+      b/4
+      b/5
+    ]
+    name="GGA"
+  ]
+  [ targets=[
+      b/6
+      b/7
+    ]
+    name="STY"
+  ]
+  [ targets=[
+      b/8
+      b/9
+    ]
+    name="GH"
+  ]
+  [ targets=[
+      b/10
+      b/11
+    ]
+    name="MH"
+  ]
+  [ targets=[
+      b/12
+      b/13
+    ]
+    name="HG"
+  ]
+  [ targets=[
+      b/14
+      b/15
+    ]
+    name="VERT"
+  ]
+  [ targets=[
+      b/16
+      b/17
+    ]
+    name="TRANS"
+  ]
+  [ targets=[
+      b/18
+      b/19
+    ]
+    name="IL"
+  ]
+  [ targets=[
+      b/20
+    ]
+    name="SL"
+  ]
+]

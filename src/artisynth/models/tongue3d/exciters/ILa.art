@@ -1,0 +1,15 @@
+artisynth.core.mechmodels.MuscleExciter
+[ targets=[
+    b/18/e/13
+    b/18/e/12
+    b/18/e/11
+    b/18/e/10
+    b/18/e/5
+    b/19/e/13
+    b/19/e/12
+    b/19/e/11
+    b/19/e/10
+    b/19/e/5
+  ]
+  name="ILa"
+]

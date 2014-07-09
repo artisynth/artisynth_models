@@ -1,0 +1,297 @@
+[
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_GGP"
+    attachedFile="ex_GGP.txt"
+    displayRange=[ -0.010000000000000002 0.11000000000000001 ]
+    track=0
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/GGP:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/GGP:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_GGM"
+    attachedFile="ex_GGM.txt"
+    active=false
+    displayRange=[ -0.05 0.55 ]
+    track=1
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/GGM:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/GGM:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_GGA"
+    attachedFile="ex_GGA.txt"
+    active=false
+    displayRange=[ -0.05 0.55 ]
+    track=2
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/GGA:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/GGA:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_STY"
+    attachedFile="ex_STY.txt"
+    active=false
+    displayRange=[ -0.05 0.55 ]
+    track=3
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/STY:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/STY:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_GH"
+    attachedFile="ex_GH.txt"
+    active=false
+    displayRange=[ -0.05 0.55 ]
+    track=4
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/GH:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/GH:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_MH"
+    attachedFile="ex_MH.txt"
+    displayRange=[ -0.05 0.55 ]
+    track=5
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/MH:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/MH:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_HG"
+    attachedFile="ex_HG.txt"
+    active=false
+    displayRange=[ -0.05 0.55 ]
+    track=6
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/HG:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/HG:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0020
+    stopTime=1.002
+    updateInterval=-1.0
+    name="ex_VERT"
+    attachedFile="ex_VERT.txt"
+    displayRange=[ -0.05 1.1 ]
+    track=7
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/VERT:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/VERT:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_TRANS"
+    attachedFile="ex_TRANS.txt"
+    active=false
+    displayRange=[ -0.05 0.55 ]
+    track=8
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/TRANS:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/TRANS:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_IL"
+    attachedFile="ex_IL.txt"
+    displayRange=[ -0.05 0.55 ]
+    track=9
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/exciters/IL:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/IL:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ex_SL"
+    attachedFile="ex_SL.txt"
+    displayRange=[ -0.05 0.55 ]
+    track=10
+    model=models/jawmodel/models/tongue
+    props=
+    [ 
+      models/jawmodel/models/tongue/bundles/SL:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/SL:excitation" visible=true color=Red ]
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe
+  [ startTime=0.0
+    stopTime=Infinity
+    updateInterval=-1.0
+    name="WayPoints"
+    track=-1
+    model=null
+    wayPoints=
+    [ 
+      0.0
+      1.0 breakpoint
+      1.2 breakpoint
+    ]
+  ]
+]

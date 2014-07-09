@@ -1,0 +1,82 @@
+[
+  NumericOutputProbe 
+  [ name="pos"
+    stopTime=30100000000
+    attachedFile="jawpos.txt"
+    updateInterval=10000000
+    displayRange=[ -50.0 50.0 ]
+    track=0
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="vel"
+    stopTime=30100000000
+    attachedFile="jawvel.txt"
+    updateInterval=10000000
+    displayRange=[ -50.0 50.0 ]
+    track=1
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:velocity
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="hyoidpos"
+    stopTime=30000000000
+    attachedFile="hyoidpos.txt"
+    updateInterval=10000000
+    displayRange=[ -50.0 50.0 ]
+    track=2
+    props=
+    [ 
+      models/jawmodel/frameMarkers/hyoidRef:position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="hyoidvel"
+    stopTime=30100000000
+    attachedFile="hyoidvel.txt"
+    updateInterval=10000000
+    displayRange=[ -50.0 50.0 ]
+    track=3
+    props=
+    [ 
+      models/jawmodel/frameMarkers/hyoidRef:velocity
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+]

@@ -1,0 +1,7 @@
+Cricoid "Cricoid.obj" fix 1 238 221 130
+Thyroid "Thyroid.obj" fix 1 238 221 130
+Hyoid "Hyoid.obj" fix 1 105 105 105
+Mandible "Mandible.obj" fix 1 105 105 105
+Maxilla "Maxilla.obj" fix 1 105 105 105
+Skull "Skull.obj" fix 1 105 105 105
+Vertebrae "Vertebrae.obj" fix 1 105 105 105

@@ -1,0 +1,718 @@
+[
+  NumericOutputProbe 
+  [ name="superiorPharyngealConstrictor_0"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/superiorPharyngealConstrictor_0_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/superiorPharyngealConstrictor_0:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="superiorPharyngealConstrictor_1"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/superiorPharyngealConstrictor_1_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/superiorPharyngealConstrictor_1:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="superiorPharyngealConstrictor_2"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/superiorPharyngealConstrictor_2_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/superiorPharyngealConstrictor_2:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="superiorPharyngealConstrictor_3"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/superiorPharyngealConstrictor_3_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/superiorPharyngealConstrictor_3:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="superiorPharyngealConstrictor_4"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/superiorPharyngealConstrictor_4_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/superiorPharyngealConstrictor_4:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="superiorPharyngealConstrictor_5"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/superiorPharyngealConstrictor_5_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/superiorPharyngealConstrictor_5:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="superiorPharyngealConstrictor_6"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/superiorPharyngealConstrictor_6_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/superiorPharyngealConstrictor_6:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="superiorPharyngealConstrictor_7"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/superiorPharyngealConstrictor_7_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/superiorPharyngealConstrictor_7:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="middlePharyngealConstrictor_0"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/middlePharyngealConstrictor_0_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/middlePharyngealConstrictor_0:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="middlePharyngealConstrictor_1"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/middlePharyngealConstrictor_1_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/middlePharyngealConstrictor_1:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="middlePharyngealConstrictor_2"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/middlePharyngealConstrictor_2_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/middlePharyngealConstrictor_2:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="middlePharyngealConstrictor_3"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/middlePharyngealConstrictor_3_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/middlePharyngealConstrictor_3:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="middlePharyngealConstrictor_4"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/middlePharyngealConstrictor_4_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/middlePharyngealConstrictor_4:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="middlePharyngealConstrictor_5"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/middlePharyngealConstrictor_5_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/middlePharyngealConstrictor_5:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="middlePharyngealConstrictor_6"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/middlePharyngealConstrictor_6_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/middlePharyngealConstrictor_6:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="middlePharyngealConstrictor_7"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/middlePharyngealConstrictor_7_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/middlePharyngealConstrictor_7:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Palatopharyngeus"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Palatopharyngeus_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Palatopharyngeus:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="LevatorVeliPalatini"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/LevatorVeliPalatini_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/LevatorVeliPalatini:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="MusculusUvulae"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/MusculusUvulae_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/MusculusUvulae:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+  NumericOutputProbe 
+  [ name="Palatoglossus"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Palatoglossus_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Palatoglossus:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_0"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_0_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_0:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_1"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_1_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_1:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_2"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_2_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_2:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_3"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_3_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_3:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_4"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_4_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_4:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_5"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_5_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_5:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_6"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_6_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_6:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_7"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_7_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_7:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_8"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_8_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_8:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_9"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_9_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_9:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_10"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_10_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_10:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Tongue_inner"
+    startTime=0.0
+    stopTime=5.0
+    attachedFile="trial5/Tongue_inner_input.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=true
+    model=models/mech
+    props=
+    [ 
+      models/mech/axialSprings/Tongue_inner:excitation
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    variables=
+    [ 
+      P0
+    ]
+  ]
+
+]

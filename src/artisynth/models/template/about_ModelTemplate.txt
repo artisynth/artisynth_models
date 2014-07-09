@@ -1,0 +1,90 @@
+Template Model
+**********************************************
+Extend this class to create a base model by modifing the following control variables:
+
+   boolean debug = true;
+   
+   boolean IncompressOption = true;
+   boolean SetCollision = false;
+   boolean muscleControlPanel = false;
+   boolean SingleMusclePanels = false;
+   boolean drawMuscleVector = false;
+   boolean muscleShaded = true;
+
+   protected String rigidBodyPath = ArtisynthPath.getSrcRelativePath (
+	      ModelTemplate.class, "geometry/rigidBodies/");
+
+   protected String femPath = ArtisynthPath.getSrcRelativePath (
+	      ModelTemplate.class, "geometry/fem/");
+   protected String otherPath = ArtisynthPath.getSrcRelativePath (
+	      ModelTemplate.class, "geometry/other/");
+   
+   protected String bodyListAllFilename = "bodyListAll.txt";
+   protected String bodyTransformListAllFilename = "bodyTransList.txt";
+   protected String femListAllFilename = "femListAll.txt";
+   protected String femTransformListAllFilename = "femTransList.txt";
+   protected String frameMarkerListFilename = "frameMarker.txt";
+   protected String workingDirname = "src/artisynth/models/template/data";
+   protected String probesFilename = "probes.art";
+   protected String collisionListFilename = "collision.txt";
+   protected String aboutFilename = "src/artisynth/models/template/about_ModelTemplate.txt";
+   
+   public static double GRAVITY = 0;
+   public static double MUSCLE_DENSITY = 10.0;
+   public static RigidTransform3d OverallTrans = new RigidTransform3d (0, 0, 1, 0, 0, 0, 0);
+   
+   
+   // Rendering settings
+   public static boolean drawNodes = false;
+   public static double pointRadius = 0.0006;
+
+
+**********************************************
+Formats of the files
+**********************************************
+Modify the following files to change the content of this model:
+	- femListAllFilename
+	- femTransformListAllFilename
+	- bodyListAllFilename
+	- bodyTransformListAllFilename
+
+---- femListAllFilename -----------------------------
+Include a list of fem that will be included in the model, format:
+
+<fem_name> <file_path> <file_format> <scaling_factor> <colour_r> <colour_g> <colour_b>
+
+<fem_name>: name of the mesh. Example "softPalate"
+<file_path>: where the mesh files locate in the <model_path>/geometry/fem/ folder, not including the file extension. Example "palate/softPalate"
+<file_format>: format of the mesh files, three different options are: "ansys" - .node and .elem, "tetgen" - .node and .ele, and "ucd" - .inp
+<scaling_fact>: define the scaling of the mesh. Example "1" for no scaling and "1000" for enlarging the mesh 1000 times.
+<colour_r>, <colour_g>, <colour_b>: face colour of the mesh in rgb index, Example "255 0 0" for red
+
+---- femTransformListAllFilename -----------------------------
+Include a list of transformations that will be applied on the fem, format:
+
+<fem_name>
+<Tx> <Ty> <Tz> <Rx> <Ry> <Rz> <angle>
+
+<Tx>, <Ty>, <Tz>: translational movement in x, y, z directions
+<Rx>, <Ry>, <Rz>: rotation axis
+<angle>: rotation angle in degree
+
+---- bodyListAllFilename -----------------------------
+Include a list of rigid bodies that will be included in the model, format:
+
+<body_name> <file_path> <scaling_factor> <colour_r> <colour_g> <colour_b>
+
+<body_name>: name of the mesh. Example "skull"
+<file_path>: where the .obj files locate in the <model_path>/geometry/rigidBody/ folder, including the file extension. Example "larynx/thyroid.obj"
+<scaling_fact>: define the scaling of the rigid body. Example "1" for no scaling and "1000" for enlarging the rigid body 1000 times.
+<colour_r>, <colour_g>, <colour_b>: face colour of the rigid body in rgb index, Example "220 220 220" for Gainsboro
+
+---- bodyTransformListAllFilename -----------------------------
+Include a list of transformations that will be applied on the fem, format (Same as femTransList.txt):
+
+<rigidBody_name>
+<Tx> <Ty> <Tz> <Rx> <Ry> <Rz> <angle>
+
+<Tx>, <Ty>, <Tz>: translational movement in x, y, z directions
+<Rx>, <Ry>, <Rz>: rotation axis
+<angle>: rotation angle in degree

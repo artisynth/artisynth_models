@@ -1,0 +1,24 @@
+artisynth.core.gui.ControlPanel
+[ name="Scar Stiffness"
+  size=[ 303 152 ]
+  location=[ 1025 521 ]
+  options=""
+  maspack.widgets.VectorField
+  [ property="models/jawmodel/frameSprings/ant_scar:stiffnessVector"
+    labelText="ant_scar"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.VectorField
+  [ property="models/jawmodel/frameSprings/med_scar:stiffnessVector"
+    labelText="med_scar"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.VectorField
+  [ property="models/jawmodel/frameSprings/post_scar:stiffnessVector"
+    labelText="post_scar"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+]

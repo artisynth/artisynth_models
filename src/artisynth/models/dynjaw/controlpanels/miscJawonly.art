@@ -1,0 +1,59 @@
+artisynth.core.gui.ControlPanel
+[ name="Misc Jaw"
+  size=[ 518 940 ]
+  location=[ 808 25 ]
+  scrollable=true
+  options="LiveUpdate"
+  maspack.widgets.EnumSelector
+  [ property="models/jawmodel:integrator"
+    labelText="Integration Method"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.DoubleField
+  [ property="models/jawmodel:maxStepSize"
+    labelText="Maximum Step Size"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel:renderFaces"
+    labelText="Skeleton  vis"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel:memShow"
+    labelText="Tissue  vis"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel:musShow"
+    labelText="Muscles  vis"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel:planesVisible"
+    labelText="Constraint vis"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/rigidBodies/jaw:dynamic"
+    labelText="JAW Dynamic"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:headRotation"
+    labelText="Head Angle"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-30.0000,30.0000] ]
+  ]
+]

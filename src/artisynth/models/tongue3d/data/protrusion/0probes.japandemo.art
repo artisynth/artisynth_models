@@ -1,0 +1,288 @@
+[
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="ggp"
+    attachedFile="probe_ggp.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=0
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/ggp:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/ggp:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="ggm"
+    attachedFile="probe_ggm.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=1
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/ggm:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/ggm:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="gga"
+    attachedFile="probe_gga.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=2
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/gga:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/gga:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="vp"
+    attachedFile="probe_vp.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=3
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/vp:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/vp:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="vm"
+    attachedFile="probe_vm.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=4
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/vm:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/vm:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="va"
+    attachedFile="probe_va.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=5
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/va:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/va:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="sla"
+    attachedFile="probe_sla.txt"
+    displayRange=[ -0.017999999999999995 0.19799999999999993 ]
+    track=6
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/sla:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/sla:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="slm"
+    attachedFile="probe_slm.txt"
+    displayRange=[ -0.09 0.9899999999999999 ]
+    track=7
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/slm:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/slm:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="slp"
+    attachedFile="probe_slp.txt"
+    displayRange=[ -0.030000000000000006 0.33000000000000007 ]
+    track=8
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/slp:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/slp:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="trans"
+    attachedFile="probe_trans.txt"
+    displayRange=[ -0.014999999999999993 0.1649999999999999 ]
+    track=9
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/trans:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/trans:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="sty"
+    attachedFile="probe_sty.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=10
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/sty:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/sty:excitation" visible=true color=Red ]
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe
+  [ startTime=0
+    stopTime=Infinity
+    updateInterval=-1
+    name="WayPoints"
+    track=0
+    wayPoints=
+    [ 
+      0
+    ]
+  ]
+]

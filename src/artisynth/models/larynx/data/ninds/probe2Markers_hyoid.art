@@ -1,0 +1,30 @@
+[
+  NumericInputProbe
+  [ startTime=0.1
+    stopTime=3.1
+    updateInterval=-1
+    name="target positions"
+#    scale=0.2
+#    attachedFile="ref_targetPos_input.txt"
+    attachedFile="hyoid_ref_targetPos_input.txt"
+    interpolationOrder=Cubic
+    displayRange=[ 0.0 1.0 ]
+    track=0
+    model=models/mech
+    props=
+    [ 
+      models/mech/particles/Hyoid_anterior_ref:targetPosition
+#      models/mech/particles/Hyoid_posterior_ref:targetPosition
+    ]
+    drivers=
+    [ 
+      "V0"
+#      "V1"
+    ]
+    inputs=
+    [ 
+      V0 3
+#      V1 3
+    ]
+  ]
+]

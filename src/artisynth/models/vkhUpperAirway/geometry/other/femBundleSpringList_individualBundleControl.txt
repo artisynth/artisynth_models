@@ -1,0 +1,17 @@
+Pharynx
+	superiorPharyngealConstrictor_R "superiorPharyngealConstrictor_R.landmarkAscii" -individualBundleControl
+	superiorPharyngealConstrictor_L "superiorPharyngealConstrictor_L.landmarkAscii" -individualBundleControl
+	middlePharyngealConstrictor_R "middlePharyngealConstrictor_R.landmarkAscii" -individualBundleControl
+	middlePharyngealConstrictor_L "middlePharyngealConstrictor_L.landmarkAscii" -individualBundleControl
+	inferiorPharyngealConstrictor_R "inferiorPharyngealConstrictor_R.landmarkAscii"
+	inferiorPharyngealConstrictor_L "inferiorPharyngealConstrictor_L.landmarkAscii"
+	Palatopharyngeus_L "Palatopharyngeus_L.landmarkAscii"
+	Palatopharyngeus_R "Palatopharyngeus_R.landmarkAscii"
+	LevatorVeliPalatini_R "LevatorVeliPalatini_R.landmarkAscii"
+	LevatorVeliPalatini_L "LevatorVeliPalatini_L.landmarkAscii"
+	MusculusUvulae "MusculusUvulae.landmarkAscii"
+end
+Tongue
+	Palatoglossus_L "Palatoglossus_L.landmarkAscii"
+	Palatoglossus_R "Palatoglossus_R.landmarkAscii"
+end

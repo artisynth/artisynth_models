@@ -1,0 +1,17 @@
+hyoid "../../../template/geometry/rigidBodies/larynx/hyoid.obj" dynamic 1 105 105 105
+thyroid "../../../template/geometry/rigidBodies/larynx/thyroid.obj" dynamic 1 238 221 130
+cricoid "../../../template/geometry/rigidBodies/larynx/cricoid.obj" dynamic 1 238 221 130
+
+Clavicle_L "Clavicle_L.obj" fix 1 105 105 105
+Clavicle_R "Clavicle_R.obj" fix 1 105 105 105
+Humerus_L "Humerus_L.obj" fix 1 105 105 105
+Humerus_R "Humerus_R.obj" fix 1 105 105 105
+Mandible "Mandible.obj" fix 1 105 105 105
+Maxilla "Maxilla.obj" fix 1 105 105 105
+Scapula_L "Scapula_L.obj" fix 1 105 105 105
+Scapula_R "Scapula_R.obj" fix 1 105 105 105
+Skull "Skull.obj" fix 1 105 105 105
+Spine "Spine.obj" fix 1 105 105 105
+Sternum "Sternum.obj" fix 1 105 105 105
+
+Skin "Skin_noBorder.obj" fix 1 255 235 205

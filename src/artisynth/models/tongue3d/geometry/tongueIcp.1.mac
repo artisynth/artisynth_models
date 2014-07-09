@@ -1,0 +1,765 @@
+! Stéphanie Buchaillard
+! Date de dernière modification : vendredi 04 novembre 2005
+
+nbElementsTongue = 740                 
+
+!MUSCLE_LIST_BEG
+GGP = 1 	! Genioglossus (posterior)
+GGM = 2 	! Genioglossus (medium)
+GGA = 3 	! Genioglossus (anterior)
+STY = 4 	! Styloglossus	
+GH = 5  	! Geniohyoid	
+MH = 6  	! Mylohyoid	
+HG = 7	! Hyoglossus
+VERT = 8	! Verticalis
+TRANS = 9	! Transversus	
+IL = 10	! Inferior longitudinalis
+SL = 11	! Superior longitudinalis
+GLANDETC=12	! GlandeTC
+!MUSCLE_LIST_END
+
+!TONGUE_BEG
+LANGUE = 13
+!TONGUE_END
+
+!OTHER_COMP_LIST_BEG
+PALAIS_DUR = 14 		! Palais dur
+PALAIS_MOU = 15 		! Palais mou
+MACH_CONT = 16		! Machoire (contact)
+MACHOIRE = 17		! Machoire	
+LANGUE_CONT_PALAIS = 18 ! Langue (contact palais)	
+LANGUE_CONT_MACH = 19 	! Langue (contact machoire)		
+HYOIDE = 20			! Os hyoïde
+FERMETURE_MOU = 21	! Fermeture (mou)	
+FERMETURE_DUR = 22	! Fermeture (dur)	
+!OTHER_COMP_LIST_END
+
+! point d'ancrage du styloglosse et du stylohyoid sur le processus styloide
+! (index de ce point pour la gauche et le droite)
+styloid_process_left=4515	! y > 0
+styloid_process_right=4510 	! y < 0
+!-----------------------------------------------------------------!
+!				MUSCLES DE LA LANGUE				!
+!-----------------------------------------------------------------!
+
+!_________________________________________
+! Description du génioglosse postérieur
+ESEL,S,ELEM,,18
+ESEL,A,ELEM,,20
+ESEL,A,ELEM,,22
+ESEL,A,ELEM,,28
+ESEL,A,ELEM,,30
+ESEL,A,ELEM,,32
+ESEL,A,ELEM,,57
+ESEL,A,ELEM,,59
+ESEL,A,ELEM,,63
+ESEL,A,ELEM,,78
+ESEL,A,ELEM,,80
+ESEL,A,ELEM,,82
+ESEL,A,ELEM,,107,108
+ESEL,A,ELEM,,110
+ESEL,A,ELEM,,113,114
+ESEL,A,ELEM,,116
+ESEL,A,ELEM,,119,120
+ESEL,A,ELEM,,122
+ESEL,A,ELEM,,125,126
+ESEL,A,ELEM,,128
+ESEL,A,ELEM,,149
+ESEL,A,ELEM,,156
+ESEL,A,ELEM,,181
+ESEL,A,ELEM,,186,189
+ESEL,A,ELEM,,200,203
+ESEL,A,ELEM,,214,217
+ESEL,A,ELEM,,228,231
+ESEL,A,ELEM,,242
+ESEL,A,ELEM,,244
+ESEL,A,ELEM,,246
+ESEL,A,ELEM,,248
+ESEL,A,ELEM,,347
+ESEL,A,ELEM,,350
+ESEL,A,ELEM,,353
+ESEL,A,ELEM,,356
+ESEL,A,ELEM,,388
+ESEL,A,ELEM,,390
+ESEL,A,ELEM,,392
+ESEL,A,ELEM,,398
+ESEL,A,ELEM,,400
+ESEL,A,ELEM,,402
+ESEL,A,ELEM,,427
+ESEL,A,ELEM,,429
+ESEL,A,ELEM,,433
+ESEL,A,ELEM,,448
+ESEL,A,ELEM,,450
+ESEL,A,ELEM,,452
+ESEL,A,ELEM,,477,478
+ESEL,A,ELEM,,480
+ESEL,A,ELEM,,483,484
+ESEL,A,ELEM,,486
+ESEL,A,ELEM,,489,490
+ESEL,A,ELEM,,492
+ESEL,A,ELEM,,495,496
+ESEL,A,ELEM,,498
+ESEL,A,ELEM,,519
+ESEL,A,ELEM,,526
+ESEL,A,ELEM,,551
+ESEL,A,ELEM,,556,559
+ESEL,A,ELEM,,570,573
+ESEL,A,ELEM,,584,587
+ESEL,A,ELEM,,598,601
+ESEL,A,ELEM,,612
+ESEL,A,ELEM,,614
+ESEL,A,ELEM,,616
+ESEL,A,ELEM,,618
+ESEL,A,ELEM,,717
+ESEL,A,ELEM,,720
+ESEL,A,ELEM,,723
+ESEL,A,ELEM,,726
+CM,GGP,ELEM 
+
+!_________________________________________
+! Description du génioglosse médium
+ESEL,S,ELEM,,114
+ESEL,A,ELEM,,116
+ESEL,A,ELEM,,120
+ESEL,A,ELEM,,122
+ESEL,A,ELEM,,126
+ESEL,A,ELEM,,149,150
+ESEL,A,ELEM,,156,157
+ESEL,a,ELEM,,172
+ESEL,A,ELEM,,180,181
+ESEL,A,ELEM,,242,249
+ESEL,a,ELEM,,270,273
+ESEL,a,ELEM,,341
+ESEL,a,ELEM,,344
+ESEL,a,ELEM,,347
+ESEL,A,ELEM,,350
+ESEL,A,ELEM,,353
+ESEL,A,ELEM,,484
+ESEL,A,ELEM,,486
+ESEL,A,ELEM,,490
+ESEL,A,ELEM,,492
+ESEL,A,ELEM,,496
+ESEL,A,ELEM,,519,520
+ESEL,A,ELEM,,526,527
+ESEL,a,ELEM,,542
+ESEL,A,ELEM,,550,551
+ESEL,A,ELEM,,612,619
+ESEL,a,ELEM,,640,643
+ESEL,a,ELEM,,711
+ESEL,a,ELEM,,714
+ESEL,a,ELEM,,717
+ESEL,A,ELEM,,720
+ESEL,A,ELEM,,723
+CM,GGM,ELEM
+
+!_________________________________________
+! Description du génioglosse antérieur
+ESEL,S,ELEM,,116
+ESEL,A,ELEM,,122
+ESEL,A,ELEM,,128
+ESEL,A,ELEM,,152
+ESEL,A,ELEM,,172
+ESEL,A,ELEM,,182
+ESEL,A,ELEM,,270,273
+ESEL,A,ELEM,,284
+ESEL,A,ELEM,,292,295
+ESEL,A,ELEM,,341
+ESEL,A,ELEM,,344
+ESEL,A,ELEM,,347
+ESEL,A,ELEM,,350
+ESEL,A,ELEM,,353
+ESEL,A,ELEM,,486
+ESEL,A,ELEM,,492
+ESEL,A,ELEM,,498
+ESEL,A,ELEM,,522
+ESEL,A,ELEM,,542
+ESEL,A,ELEM,,552
+ESEL,A,ELEM,,640,643
+ESEL,A,ELEM,,654
+ESEL,A,ELEM,,662,665
+ESEL,A,ELEM,,711
+ESEL,A,ELEM,,714
+ESEL,A,ELEM,,717
+ESEL,A,ELEM,,720
+ESEL,A,ELEM,,723
+CM,GGA,ELEM
+
+!_________________________________________
+! Description du génioglosse styloglosse
+ESEL,S,ELEM,,156
+ESEL,A,ELEM,,160
+ESEL,A,ELEM,,164
+ESEL,A,ELEM,,166
+ESEL,A,ELEM,,168
+ESEL,A,ELEM,,170
+ESEL,A,ELEM,,363,370
+ESEL,A,ELEM,,526
+ESEL,A,ELEM,,530
+ESEL,A,ELEM,,534
+ESEL,A,ELEM,,536
+ESEL,A,ELEM,,538
+ESEL,A,ELEM,,540
+ESEL,A,ELEM,,733,740
+CM,STY,ELEM
+
+!_________________________________________
+! Description du géniohyoide
+ESEL,S,ELEM,,25,26
+ESEL,A,ELEM,,52,53
+ESEL,A,ELEM,,99,104
+ESEL,A,ELEM,,357,358
+ESEL,A,ELEM,,395,396
+ESEL,A,ELEM,,422,423
+ESEL,A,ELEM,,469,474
+ESEL,A,ELEM,,727,728
+CM,GH,ELEM
+
+
+!_________________________________________
+! Description du génioglosse mylohyoid
+ESEL,S,ELEM,,1,4
+ESEL,A,ELEM,,23,24
+ESEL,A,ELEM,,45
+ESEL,A,ELEM,,49,51
+ESEL,A,ELEM,,54
+ESEL,A,ELEM,,61
+ESEL,A,ELEM,,93,98
+ESEL,A,ELEM,,129,131
+ESEL,A,ELEM,,138,140
+ESEL,A,ELEM,,359,362
+ESEL,A,ELEM,,371,374
+ESEL,A,ELEM,,393,394
+ESEL,A,ELEM,,415
+ESEL,A,ELEM,,419,421
+ESEL,A,ELEM,,424
+ESEL,A,ELEM,,431
+ESEL,A,ELEM,,463,468
+ESEL,A,ELEM,,499,501
+ESEL,A,ELEM,,508,510
+ESEL,A,ELEM,,729,732
+CM,MH,ELEM
+
+!_________________________________________
+! Description du hyoglosse
+ESEL,S,ELEM,,11,16
+ESEL,A,ELEM,,39,44
+ESEL,A,ELEM,,83,86
+ESEL,A,ELEM,,164
+ESEL,A,ELEM,,166
+ESEL,A,ELEM,,168
+ESEL,A,ELEM,,170
+ESEL,A,ELEM,,381,386
+ESEL,A,ELEM,,409,414
+ESEL,A,ELEM,,453,456
+ESEL,A,ELEM,,534
+ESEL,A,ELEM,,536
+ESEL,A,ELEM,,538
+ESEL,A,ELEM,,540
+CM,HG,ELEM 
+
+!_________________________________________
+! Description du verticalis
+ESEL,S,ELEM,,190,199
+ESEL,A,ELEM,,204,213
+ESEL,A,ELEM,,218,227
+ESEL,A,ELEM,,232,241
+ESEL,A,ELEM,,250,269
+ESEL,A,ELEM,,274,283
+ESEL,A,ELEM,,296,305
+ESEL,A,ELEM,,315,320
+ESEL,A,ELEM,,324,327
+ESEL,A,ELEM,,330
+ESEL,A,ELEM,,332
+ESEL,A,ELEM,,334,335
+ESEL,A,ELEM,,560,569
+ESEL,A,ELEM,,574,583
+ESEL,A,ELEM,,588,597
+ESEL,A,ELEM,,602,611
+ESEL,A,ELEM,,620,639
+ESEL,A,ELEM,,644,653
+ESEL,A,ELEM,,666,675
+ESEL,A,ELEM,,685,690
+ESEL,A,ELEM,,694,697
+ESEL,A,ELEM,,700
+ESEL,A,ELEM,,702
+ESEL,A,ELEM,,704,705
+CM,VERT,ELEM
+
+!_________________________________________
+! Description du transversalis
+ESEL,S,ELEM,,186,208
+ESEL,A,ELEM,,211,283
+ESEL,A,ELEM,,292,305
+ESEL,A,ELEM,,314,328
+ESEL,A,ELEM,,330
+ESEL,A,ELEM,,332
+ESEL,A,ELEM,,334,336
+ESEL,A,ELEM,,556,578
+ESEL,A,ELEM,,581,653
+ESEL,A,ELEM,,662,675
+ESEL,A,ELEM,,684,698
+ESEL,A,ELEM,,700
+ESEL,A,ELEM,,702
+ESEL,A,ELEM,,704,706
+CM,Trans,ELEM
+
+
+!_________________________________________
+! Description de l'inférior longitudinalis
+ESEL,S,ELEM,,17
+ESEL,A,ELEM,,19
+ESEL,A,ELEM,,77
+ESEL,A,ELEM,,156,157
+ESEL,A,ELEM,,160,161
+ESEL,A,ELEM,,172
+ESEL,A,ELEM,,174
+ESEL,A,ELEM,,204,207
+ESEL,A,ELEM,,218,221
+ESEL,A,ELEM,,284,285
+ESEL,A,ELEM,,306,307
+ESEL,A,ELEM,,338,339
+ESEL,A,ELEM,,387
+ESEL,A,ELEM,,389
+ESEL,A,ELEM,,447
+ESEL,A,ELEM,,526,527
+ESEL,A,ELEM,,530,531
+ESEL,A,ELEM,,542
+ESEL,A,ELEM,,544
+ESEL,A,ELEM,,574,577
+ESEL,A,ELEM,,588,591
+ESEL,A,ELEM,,654,655
+ESEL,A,ELEM,,676,677
+ESEL,A,ELEM,,708,709
+CM,IL,ELEM
+
+
+
+!_________________________________________
+! Description du supérior longitudinalis
+ESEL,S,ELEM,,33,38
+ESEL,A,ELEM,,75,76
+ESEL,A,ELEM,,158,159
+ESEL,A,ELEM,,162,163
+ESEL,A,ELEM,,165
+ESEL,A,ELEM,,167
+ESEL,A,ELEM,,169
+ESEL,A,ELEM,,171
+ESEL,A,ELEM,,173
+ESEL,A,ELEM,,175,179
+ESEL,A,ELEM,,286,291
+ESEL,A,ELEM,,308,313
+ESEL,A,ELEM,,329
+ESEL,A,ELEM,,331
+ESEL,A,ELEM,,333
+ESEL,A,ELEM,,337,339
+ESEL,A,ELEM,,403,408
+ESEL,A,ELEM,,445,446
+ESEL,A,ELEM,,528,529
+ESEL,A,ELEM,,532,533
+ESEL,A,ELEM,,535
+ESEL,A,ELEM,,537
+ESEL,A,ELEM,,539
+ESEL,A,ELEM,,541
+ESEL,A,ELEM,,543
+ESEL,A,ELEM,,545,549
+ESEL,A,ELEM,,656,661
+ESEL,A,ELEM,,678,683
+ESEL,A,ELEM,,699
+ESEL,A,ELEM,,701
+ESEL,A,ELEM,,703
+ESEL,A,ELEM,,707,709
+CM,SL,ELEM
+
+
+
+
+
+!_________________________________________
+! Selection des elements du Glandetc
+ESEL,S,ELEM,,1,nbElementsTongue                 
+CMSEL,U,GGP
+CMSEL,U,GGM
+CMSEL,U,GGA
+CMSEL,U,STY
+CMSEL,U,GH
+CMSEL,U,MH
+CMSEL,U,HG
+CMSEL,U,VERT
+CMSEL,U,TRANS
+CMSEL,U,IL
+CMSEL,U,SL
+CM,GLANDETC,ELEM
+
+!_________________________________________
+! Création de la composante langue
+ESEL,S,ELEM,,1,nbElementsTongue
+CM,LANGUE,ELEM
+
+! Création d'une composante noeuds pour la langue
+CMSEL,S,LANGUE
+NSLE
+CM,LANGUE_NODES,NODE
+
+
+!-----------------------------------------------------------------!
+!				COMPOSANTES EXTERNES				!
+!-----------------------------------------------------------------!
+
+!_________________________________________
+! Création du palais
+
+! Creation de la composante palais dur
+ESEL,S,ELEM,,741,1256
+CM,PALAIS_DUR,ELEM
+CMSEL,S,PALAIS_DUR
+EMODIF,ALL,TYPE,3
+EMODIF,ALL,REAL,3
+EMODIF,ALL,MAT,3
+
+! Creation de la composante palais mou
+ESEL,S,ELEM,,1257,1596
+CM,PALAIS_MOU,ELEM
+EMODIF,ALL,TYPE,5
+EMODIF,ALL,REAL,5
+EMODIF,ALL,MAT,5
+
+! Creation de la composante palais
+ESEL, NONE
+CMSEL,S,PALAIS_DUR
+CMSEL,A,PALAIS_MOU
+CM,PALAIS,ELEM
+
+!_________________________________________
+! Création de la machoire
+
+! Creation de la composante machoire contact
+ESEL,S,ELEM,,1597,1830
+ESEL,A,ELEM,,2425,2658
+CM,MACH_CONT,ELEM
+CMSEL,S,MACH_CONT
+EMODIF,ALL,TYPE,3
+EMODIF,ALL,REAL,4
+EMODIF,ALL,MAT,3
+
+! Creation de la composante machoire
+ESEL,S,ELEM,,1597,3252
+CM,MACHOIRE,ELEM
+
+!_________________________________________
+! Création des zones de contact de la langue
+
+! Creation de la composante langue contact_palais (dur)
+ESEL,S,ELEM,,4787,4830
+CM,LANGUE_CONT_PALAIS,ELEM
+CMSEL,S,LANGUE_CONT_PALAIS
+EMODIF,ALL,TYPE,4
+EMODIF,ALL,REAL,3
+EMODIF,ALL,MAT,4
+
+! Creation de la composante langue contact_machoire
+ESEL,S,ELEM,,4831,4930
+CM,LANGUE_CONT_MACH,ELEM
+CMSEL,S,LANGUE_CONT_MACH
+EMODIF,ALL,TYPE,4
+EMODIF,ALL,REAL,4
+EMODIF,ALL,MAT,4
+
+! Creation de la composante langue en contact avec le palais mou
+ESEL,S,ELEM,,5325,5364
+CM,LANGUE_CONT_PALAIS_MOU,ELEM
+CMSEL,S,LANGUE_CONT_PALAIS_MOU
+EMODIF,ALL,TYPE,4
+EMODIF,ALL,REAL,7
+EMODIF,ALL,MAT,4
+
+
+!_________________________________________
+! Creation de la composante hyoide
+ESEL,S,ELEM,,3253,4786
+CM,HYOIDE,ELEM
+EMODIF,ALL,TYPE,9
+EMODIF,ALL,REAL,9
+EMODIF,ALL,MAT,9
+
+
+!_________________________________________
+! Creation des composantes fermeture
+ESEL,S,ELEM,,5293,5324
+CM,FERMETURE_MOU,ELEM
+EMODIF,ALL,TYPE,6
+EMODIF,ALL,REAL,1
+EMODIF,ALL,MAT,1
+
+! FERMETURE dur
+ESEL,NONE
+!CMSEL,ALL
+!ESEL,INVE
+ESEL, S, ELEM,,4931, 5292
+CM,FERMETURE_DUR,ELEM
+EMODIF,ALL,TYPE,6
+EMODIF,ALL,REAL,1
+EMODIF,ALL,MAT,1
+
+! Composante fermeture
+CMSEL,S,FERMETURE_MOU
+CMSEL,A,FERMETURE_DUR
+CM,FERMETURE,ELEM
+EMODIF,ALL,TYPE,5
+EMODIF,ALL,REAL,1
+EMODIF,ALL,MAT,1
+
+
+!______________________________________________
+! Composante digastrique 
+ESEL, S, ELEM, ,5365
+ESEL, A, ELEM, ,5371
+CM,DIGASTRIC_ANTERIOR,ELEM
+
+ESEL, S, ELEM, ,5366
+ESEL, A, ELEM, ,5372
+CM,DIGASTRIC_POSTERIOR,ELEM
+
+CMSEL, S, DIGASTRIC_ANTERIOR
+CMSEL, A, DIGASTRIC_POSTERIOR
+CM,DIGASTRIC,ELEM
+
+ESEL,S, ELEM, ,5367
+ESEL,A, ELEM, ,5373
+CM,STERNOHYOID,ELEM 
+
+ESEL,S, ELEM, ,5368
+ESEL,A, ELEM, ,5374
+CM,OMOHYOID,ELEM 
+
+ESEL,S, ELEM, ,5369
+ESEL,A, ELEM, ,5375
+CM,THYROHYOID,ELEM 
+
+ESEL,S, ELEM, ,5370
+ESEL,A, ELEM, ,5376
+CM,THYROHYOID_MEMBRANE,ELEM 
+
+! Création de la composante ressorts
+CMSEL,S,DIGASTRIC
+CMSEL,A,STERNOHYOID 
+CMSEL,A,OMOHYOID 
+CMSEL,A,THYROHYOID
+CMSEL,A,THYROHYOID_MEMBRANE
+CM,RESSORTS,ELEM
+EMODIF,ALL,TYPE,8
+EMODIF,ALL,REAL,8
+EMODIF,ALL,MAT,8
+
+!______________________________________________
+! Modification des zones de contact
+
+! Partie du palais dur sans contact avec la langue
+ESEL, S, ELEM, , 746
+ESEL, A, ELEM, , 774, 779
+ESEL, A, ELEM, , 804, 807
+ESEL, A, ELEM, , 823
+ESEL, A, ELEM, , 844, 853
+ESEL, A, ELEM, , 855
+ESEL, A, ELEM, , 874, 883
+ESEL, A, ELEM, , 896, 902
+ESEL, A, ELEM, , 908, 920
+ESEL, A, ELEM, , 944, 945
+ESEL, A, ELEM, , 959, 971
+ESEL, A, ELEM, , 985, 995
+ESEL, A, ELEM, , 1004
+ESEL, A, ELEM, , 1032, 1037
+ESEL, A, ELEM, , 1062, 1065
+ESEL, A, ELEM, , 1081
+ESEL, A, ELEM, , 1102, 1111
+ESEL, A, ELEM, , 1113
+ESEL, A, ELEM, , 1132, 1141
+ESEL, A, ELEM, , 1154, 1160
+ESEL, A, ELEM, , 1166, 1178
+ESEL, A, ELEM, , 1202, 1203
+ESEL, A, ELEM, , 1217, 1229
+ESEL, A, ELEM, , 1243, 1253
+EMODIF,ALL,TYPE,5
+EMODIF,ALL,REAL,1
+EMODIF,ALL,MAT,1
+
+! Partie du palais mou potentiellement en contact avec la langue
+ESEL, NONE
+CMSEL, S, PALAIS_MOU
+ESEL, U, ELEM, , 1257, 1269
+ESEL, U, ELEM, , 1271, 1273
+ESEL, U, ELEM, , 1297, 1313
+ESEL, U, ELEM, , 1323, 1326
+ESEL, U, ELEM, , 1328, 1330
+ESEL, U, ELEM, , 1348, 1356
+ESEL, U, ELEM, , 1370, 1375
+ESEL, U, ELEM, , 1394, 1397
+ESEL, U, ELEM, , 1412, 1426
+ESEL, U, ELEM, , 1427, 1439
+ESEL, U, ELEM, , 1441, 1443
+ESEL, U, ELEM, , 1467, 1483
+ESEL, U, ELEM, , 1493, 1496
+ESEL, U, ELEM, , 1498, 1500
+ESEL, U, ELEM, , 1518, 1526
+ESEL, U, ELEM, , 1540, 1545
+ESEL, U, ELEM, , 1564, 1567
+ESEL, U, ELEM, , 1582, 1596
+EMODIF,ALL,TYPE,3
+EMODIF,ALL,REAL,7
+EMODIF,ALL,MAT,3
+
+
+!-----------------------------------------------------------------!
+!				COMPOSANTES POINT FIXES				!
+!-----------------------------------------------------------------!
+
+!______________________________________________
+! Points fixes de la langue (racine)
+NSEL, S, NODE, ,363, 369
+NSEL, A, NODE, ,371, 372 
+NSEL, A, NODE, ,395, 396
+NSEL, A, NODE, ,398
+NSEL, A, NODE, ,400
+NSEL, A, NODE, ,402
+NSEL, A, NODE, ,404
+NSEL, A, NODE, ,406
+NSEL, A, NODE, ,776 ,782
+NSEL, A, NODE, ,784 ,785
+NSEL, A, NODE, ,808 ,809
+NSEL, A, NODE, ,811
+NSEL, A, NODE, ,813
+NSEL, A, NODE, ,815
+NSEL, A, NODE, ,817
+NSEL, A, NODE, ,819
+NSEL, A, NODE, ,931, 937   
+CM,POINTS_FIXES_LANGUE_RACINE,NODE 
+
+!________________________________________
+! Points fixes de la langue (latéraux)
+NSEL, S, NODE, ,18
+NSEL, A, NODE, ,23
+NSEL, A, NODE, ,45, 46
+NSEL, A, NODE, ,54
+NSEL, A, NODE, ,58
+NSEL, A, NODE, ,88
+NSEL, A, NODE, ,91
+NSEL, A, NODE, ,281
+NSEL, A, NODE, ,284
+NSEL, A, NODE, ,370
+NSEL, A, NODE, ,373
+NSEL, A, NODE, ,385
+NSEL, A, NODE, ,388
+NSEL, A, NODE, ,431
+NSEL, A, NODE, ,436
+NSEL, A, NODE, ,458, 459
+NSEL, A, NODE, ,467
+NSEL, A, NODE, ,471
+NSEL, A, NODE, ,501
+NSEL, A, NODE, ,504
+NSEL, A, NODE, ,694
+NSEL, A, NODE, ,697
+NSEL, A, NODE, ,783
+NSEL, A, NODE, ,786
+NSEL, A, NODE, ,798
+NSEL, A, NODE, ,801
+CM,POINTS_FIXES_LANGUE_LATERAUX,NODE 
+
+!______________________________________________
+! Points fixes de la langue
+CMSEL,S,POINTS_FIXES_LANGUE_RACINE
+CMSEL,A,POINTS_FIXES_LANGUE_LATERAUX 
+CM,POINTS_FIXES_LANGUE ,NODE 
+
+!______________________________________________
+! Points fixes pour les ressorts
+NSEL, S, NODE, ,4507,  4516
+CM,POINTS_FIXES_RESSORTS ,NODE 
+
+
+!-----------------------------------------------------------------!
+!			 INSERTION LANGUE / OS HYOIDE				!
+!-----------------------------------------------------------------!
+!_________________________________________________________________
+
+! Noeuds du hyoglosse insérés sur l'os hyoide
+NSEL, S, NODE,,7
+NSEL, A, NODE,,15
+NSEL, A, NODE,,22
+NSEL, A, NODE,,30
+NSEL, A, NODE,,40
+NSEL, A, NODE,,44
+NSEL, A, NODE,,175
+NSEL, A, NODE,,181,183
+NSEL, A, NODE,,420
+NSEL, A, NODE,,428
+NSEL, A, NODE,,435
+NSEL, A, NODE,,443
+NSEL, A, NODE,,453
+NSEL, A, NODE,,457
+NSEL, A, NODE,,588
+NSEL, A, NODE,,594,596
+CM,INSERTIONS_HG_HYOIDE,NODE
+
+! Noeuds du mylohyoïde insérés sur l'os hyoide
+NSEL, S, NODE,,9
+NSEL, A, NODE,,11
+NSEL, A, NODE,,24
+NSEL, A, NODE,,112
+NSEL, A, NODE,,114
+NSEL, A, NODE,,170,171
+NSEL, A, NODE,,422
+NSEL, A, NODE,,424
+NSEL, A, NODE,,437
+NSEL, A, NODE,,525
+NSEL, A, NODE,,527
+NSEL, A, NODE,,583,584
+CM,INSERTIONS_MH_HYOIDE,NODE
+
+! Noeuds du géniohyoïde insérés sur l'os hyoide
+NSEL, S, NODE,,22
+NSEL, A, NODE,,26
+NSEL, A, NODE,,114
+NSEL, A, NODE,,435
+NSEL, A, NODE,,439
+NSEL, A, NODE,,527
+CM,INSERTIONS_GH_HYOIDE,NODE
+
+! Noeuds du génioglosse postérieur attachés sur l'os hyoide
+! "The superior border of the hyoid bone gives attachment to some aponeurotic 
+! fibers of the Genioglossus"
+NSEL, S, NODE,,206
+NSEL, A, NODE,,619
+NSEL, A, NODE,,877,878
+CM,ATTACHES_GGP_HYOIDE,NODE
+
+! Noeuds de la langue couplés avec l'os hyoide
+CMSEL,S,INSERTIONS_HG_HYOIDE
+CMSEL,A,INSERTIONS_MH_HYOIDE
+CMSEL,A,INSERTIONS_GH_HYOIDE
+CMSEL,A,ATTACHES_GGP_HYOIDE
+!NSEL, A, NODE,,61,62
+!NSEL, A, NODE,,191,192
+!NSEL, A, NODE,,205
+!NSEL, A, NODE,,209
+!NSEL, A, NODE,,211,212
+!NSEL, A, NODE,,474,475
+!NSEL, A, NODE,,604,605
+!NSEL, A, NODE,,618
+!NSEL, A, NODE,,622
+!NSEL, A, NODE,,624,625
+!NSEL, A, NODE,,879
+CM,INSERTIONS_LANGUE_HYOIDE,NODE 
+
+
+!-----------------------------------------------------------------!
+!			NOEUDS CONTRAINTS EN DEPLACEMENT			!
+!-----------------------------------------------------------------!
+
+! Noeuds contraints en déplacements dû à la présence de la membrane 
+! thyroïdienne et des ligaments hyo-épliglottiques
+NSEL, S, NODE,,120, 121
+NSEL, A, NODE,,206
+NSEL, A, NODE,,533,534
+NSEL, A, NODE,,619
+NSEL, A, NODE,,846
+NSEL, A, NODE,,848
+CM,ROOT_OF_TONGUE,NODE 

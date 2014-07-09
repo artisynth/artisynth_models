@@ -1,0 +1,4 @@
+<name>
+	-stiffness <stiffness>
+	-damping <damping>
+	-restLength <optLength>

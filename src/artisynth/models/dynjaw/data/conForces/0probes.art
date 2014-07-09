@@ -1,0 +1,89 @@
+[
+  NumericOutputProbe 
+  [ startTime=0
+    stopTime=5.000
+    name="right joint acts"
+    attachedFile="rjoint.txt"
+    updateInterval=0.01
+    displayRange=[ -1.2 1.2 ]
+    track=0
+    props=
+    [ 
+      models/jawmodel/rigidBodyConnectors/RTMJ:activation
+      models/jawmodel/rigidBodyConnectors/RPOST:activation
+      models/jawmodel/rigidBodyConnectors/RLTRL:activation
+    ]
+    variables=
+    [ 
+      P0
+      P1
+      P2
+    ]
+    drivers=
+    [ 
+      "P0"
+      "P1"
+      "P2"
+    ]
+  ]
+  NumericOutputProbe 
+  [ startTime=0
+    stopTime=5.000
+    name="left joint acts"
+    attachedFile="ljoint.txt"
+    updateInterval=0.01
+    displayRange=[ -1.2 1.2 ]
+    track=1
+    props=
+    [ 
+      models/jawmodel/rigidBodyConnectors/LTMJ:activation
+      models/jawmodel/rigidBodyConnectors/LPOST:activation
+      models/jawmodel/rigidBodyConnectors/LLTRL:activation
+    ]
+    variables=
+    [ 
+      P0
+      P1
+      P2
+    ]
+    drivers=
+    [ 
+      "P0"
+      "P1"
+      "P2"
+    ]
+  ]
+  NumericOutputProbe 
+  [ startTime=0
+    stopTime=5.000
+    name="bite acts"
+    attachedFile="bite.txt"
+    updateInterval=0.01
+    displayRange=[ -1.2 1.2 ]
+    track=2
+    props=
+    [ 
+      models/jawmodel/rigidBodyConnectors/RBITE:activation
+      models/jawmodel/rigidBodyConnectors/LBITE:activation
+    ]
+    variables=
+    [ 
+      P0
+      P1
+    ]
+    drivers=
+    [ 
+      "P0"
+      "P1"
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe 
+  [ startTime=0
+    stopTime=0
+    track=0
+    wayPoints=
+    [ 
+      0
+    ]
+  ]
+]

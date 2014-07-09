@@ -1,0 +1,51 @@
+Landmark Abbreviations (Artisynth 21-2-06)
+
+
+
+Muscle Attachments
+
+ 
+
+LAT Left Anterior Temporal
+
+LMT Left Middle Temporal
+
+LPT Left Posterior Temporal
+
+LSM Left Superficial Masseter
+
+LDM Left Deep Masseter
+
+LMP Left Medial Pterygoid
+
+LSP Left Superior Lateral Pterygoid
+
+LIP Left Inferior Lateral Pterygoid
+
+LAD Left Anterior Digastric
+
+LPD Left Posterior Digastric
+
+LAM Left Anterior Mylohyoid
+
+LPM Left Posterior Mylohyoid
+
+LGH Left Geniohyoid
+
+LSH Left Stylohyoid
+
+LTH Left Thyrohyoid
+
+LPC Left Posterior Cricoarytenoid
+
+LLC Left Lateral Cricoarytenoid
+
+LTA Left Transverse Arytenoid (midline between left and right arytenoids) 
+
+LPCT Left Posterior Cricothyroid
+
+LACT Left Anterior Cricothyroid
+
+LSTET Left Sternothyroid
+
+LSTEH Left Sternohyoid

@@ -1,0 +1,20 @@
+artisynth.core.gui.ControlPanel
+[ name="Damping"
+  size=[ 466 249 ]
+  location=[ 1313 440 ]
+  options=""
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/jaw:rotaryDamping"
+    labelText="Jaw rotaryDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1000.0] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/jaw:frameDamping"
+    labelText="Jaw frameDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,100.0000] ]
+  ]
+]

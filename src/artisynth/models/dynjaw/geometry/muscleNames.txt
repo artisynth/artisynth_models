@@ -1,0 +1,23 @@
+_at Anterior Temporal
+_mt Middle Temporal
+_pt Posterior Temporal
+_sm Superficial Masseter
+_dm Deep Masseter
+_mp Medial Pterygoid
+_sp Superior Lateral Pterygoid
+_ip Inferior Lateral Pterygoid
+_ad Anterior Digastric
+_pd Posterior Digastric
+_am Anterior Mylohyoid
+_pm Posterior Mylohyoid
+_gh Geniohyoid
+_sh Stylohyoid
+_th Thyrohyoid
+_pc Posterior Cricoarytenoid
+_lc Lateral Cricoarytenoid
+_pct Posterior Cricothyroid
+_act Anterior Cricothyroid
+_stet Sternothyroid
+_steh Sternohyoid
+_oh Omohyoid
+__ta Transverse Arytenoid

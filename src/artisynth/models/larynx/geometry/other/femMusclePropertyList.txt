@@ -1,0 +1,82 @@
+### From [Pearson2011] and [Peck2000] ####
+Thyrohyoid_L
+	-mass 0.00156
+	-muscleMaxForce 1.133
+Thyrohyoid_R
+	-mass 0.00156
+	-muscleMaxForce 1.133
+Mylohyoid_L
+	-mass 0.0052
+	-muscleMaxForce 1.563
+Mylohyoid_R
+	-mass 0.0052
+	-muscleMaxForce 1.563
+Digastric_L_posterior_belly
+	-mass 0.00253
+	-muscleMaxForce 1.6
+Digastric_R_posterior_belly
+	-mass 0.00253
+	-muscleMaxForce 1.6
+Digastric_L_anterior_belly
+	-mass 0.00237
+	-muscleMaxForce 1.375
+Digastric_R_anterior_belly
+	-mass 0.00237
+	-muscleMaxForce 1.375
+Geniohyoid_L
+	-mass 0.00221
+	-muscleMaxForce 0.92
+Geniohyoid_R
+	-mass 0.00221
+	-muscleMaxForce 0.92
+##########################################
+
+### Estimates [Hannam2008] and [Peck2000] ####
+Sternohyoid_L
+	-density 0.000000588
+	-muscleMaxForce 1.786
+Sternohyoid_R
+	-density 0.000000588
+	-muscleMaxForce 1.786
+Sternothyroid_L
+	-density 0.000000588
+	-muscleMaxForce 2.778
+Sternothyroid_R
+	-density 0.000000588
+	-muscleMaxForce 2.778
+Omohyoid_L_inferior_belly
+	-density 0.000000588
+	-muscleMaxForce 1.667
+Omohyoid_R_inferior_belly
+	-density 0.000000588
+	-muscleMaxForce 1.667
+Omohyoid_L_superior_belly
+	-density 0.000000588
+	-muscleMaxForce 1.667
+Omohyoid_R_superior_belly
+	-density 0.000000588
+	-muscleMaxForce 1.667
+##########################################
+
+### Soft tissue density from [Harper2001] ####
+Digastric_L_tendon
+	-materialType Linear 12000000 0.48
+Digastric_R_tendon
+	-materialType Linear 12000000 0.48
+Omohyoid_L_tendon
+	-materialType Linear 12000000 0.48
+Omohyoid_R_tendon
+	-materialType Linear 12000000 0.48
+Thyrohyoid_membrane_L
+	-density 0.00000106
+	-materialType Linear 500 0.48
+Thyrohyoid_membrane_R
+	-density 0.00000106
+	-materialType Linear 500 0.48
+Cricothyroid_ligament_median_L
+	-density 0.00000106
+	-materialType Linear 120000 0.48
+Cricothyroid_ligament_median_R
+	-density 0.00000106
+	-materialType Linear 120000 0.48
+##########################################

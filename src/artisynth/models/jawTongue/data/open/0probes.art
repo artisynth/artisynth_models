@@ -1,0 +1,411 @@
+[
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="digastric"
+    attachedFile="ad.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=0
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_ad:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/bi_ad:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="inf lat pterygoid"
+    attachedFile="ip.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=1
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_ip:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/bi_ip:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="sup lat pterygoid"
+    attachedFile="sp.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=2
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_sp:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/bi_sp:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="Jaw Con Activations"
+    attachedFile="jawConForces.raw"
+    displayRange=[ -300.0 300.0 ]
+    showHeader=false
+    track=0
+    props=
+    [ 
+      models/jawmodel:constraintForceNorms
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="models/jawmodel:constraintForceNorms[0]" visible=true color=Red ]
+      [ order=1 label="models/jawmodel:constraintForceNorms[1]" visible=true color=DarkGreen ]
+      [ order=2 label="models/jawmodel:constraintForceNorms[2]" visible=true color=Blue ]
+      [ order=3 label="models/jawmodel:constraintForceNorms[3]" visible=true color=Cyan ]
+      [ order=4 label="models/jawmodel:constraintForceNorms[4]" visible=true color=Magenta ]
+      [ order=5 label="models/jawmodel:constraintForceNorms[5]" visible=true color=DarkOrange ]
+      [ order=6 label="models/jawmodel:constraintForceNorms[6]" visible=true color=Pink ]
+      [ order=7 label="models/jawmodel:constraintForceNorms[7]" visible=true color=BlueViolet ]
+      [ order=8 label="models/jawmodel:constraintForceNorms[8]" visible=true color=NavajoWhite ]
+      [ order=9 label="models/jawmodel:constraintForceNorms[9]" visible=true color=Gray ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="RightBolus Resistance"
+    attachedFile="rightBolusForce.raw"
+    active=false
+    displayRange=[ -10.258193858463455 120.0 ]
+    showHeader=false
+    track=1
+    props=
+    [ 
+      models/jawmodel/forceEffectors/rightbolus:forceNorm
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="forceEffectors/rightbolus:forceNorm" visible=true color=Red ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="LeftBolus Resistance"
+    attachedFile="leftBolusForce.raw"
+    active=false
+    displayRange=[ -60.528551143045505 0.0 ]
+    showHeader=false
+    track=2
+    props=
+    [ 
+      models/jawmodel/forceEffectors/leftbolus:forceNorm
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="forceEffectors/leftbolus:forceNorm" visible=true color=Red ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="Incisor Displacement"
+    attachedFile="incisorDisp.raw"
+    displayRange=[ -25.0 8.5 ]
+    showHeader=false
+    track=3
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:displacement
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="frameMarkers/lowerincisor:displacement.x" visible=true color=Red ]
+      [ order=1 label="frameMarkers/lowerincisor:displacement.y" visible=true color=DarkGreen ]
+      [ order=2 label="frameMarkers/lowerincisor:displacement.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="Hyoid Displacement"
+    attachedFile="hyoidDisp.raw"
+    displayRange=[ -25.0 8.5 ]
+    showHeader=false
+    track=4
+    props=
+    [ 
+      models/jawmodel/frameMarkers/hyoidRef:displacement
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="frameMarkers/hyoidRef:displacement.x" visible=true color=Red ]
+      [ order=1 label="frameMarkers/hyoidRef:displacement.y" visible=true color=DarkGreen ]
+      [ order=2 label="frameMarkers/hyoidRef:displacement.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="Left Tmj Displacement"
+    attachedFile="ltmjDisp.raw"
+    displayRange=[ -10.0 10.0 ]
+    showHeader=false
+    track=5
+    props=
+    [ 
+      models/jawmodel/frameMarkers/ltmj:displacement
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="frameMarkers/ltmj:displacement.x" visible=true color=Red ]
+      [ order=1 label="frameMarkers/ltmj:displacement.y" visible=true color=DarkGreen ]
+      [ order=2 label="frameMarkers/ltmj:displacement.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="Right Tmj Displacement"
+    attachedFile="rtmjDisp.raw"
+    displayRange=[ -10.0 10.0 ]
+    showHeader=false
+    track=6
+    props=
+    [ 
+      models/jawmodel/frameMarkers/rtmj:displacement
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="frameMarkers/rtmj:displacement.x" visible=true color=Red ]
+      [ order=1 label="frameMarkers/rtmj:displacement.y" visible=true color=DarkGreen ]
+      [ order=2 label="frameMarkers/rtmj:displacement.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="Jaw Pose"
+    attachedFile="jawPose.raw"
+    active=false
+    displayRange=[ 0.0 10.0 ]
+    showHeader=false
+    track=7
+    props=
+    [ 
+      models/jawmodel/rigidBodies/jaw:pose
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="rigidBodies/jaw:pose[0]" visible=true color=Red ]
+      [ order=1 label="rigidBodies/jaw:pose[1]" visible=true color=DarkGreen ]
+      [ order=2 label="rigidBodies/jaw:pose[2]" visible=true color=Blue ]
+      [ order=3 label="rigidBodies/jaw:pose[3]" visible=true color=Cyan ]
+      [ order=4 label="rigidBodies/jaw:pose[4]" visible=true color=Magenta ]
+      [ order=5 label="rigidBodies/jaw:pose[5]" visible=true color=DarkOrange ]
+      [ order=6 label="rigidBodies/jaw:pose[6]" visible=true color=Pink ]
+      [ order=7 label="rigidBodies/jaw:pose[7]" visible=true color=BlueViolet ]
+      [ order=8 label="rigidBodies/jaw:pose[8]" visible=true color=NavajoWhite ]
+      [ order=9 label="rigidBodies/jaw:pose[9]" visible=true color=Gray ]
+      [ order=10 label="rigidBodies/jaw:pose[10]" visible=true color=DarkOliveGreen ]
+      [ order=11 label="rigidBodies/jaw:pose[11]" visible=true color=IndianRed ]
+      [ order=12 label="rigidBodies/jaw:pose[12]" visible=true color=PeachPuff ]
+      [ order=13 label="rigidBodies/jaw:pose[13]" visible=true color=Red ]
+      [ order=14 label="rigidBodies/jaw:pose[14]" visible=true color=DarkGreen ]
+      [ order=15 label="rigidBodies/jaw:pose[15]" visible=true color=Blue ]
+    ]
+  ]
+  artisynth.core.probes.PointTracingProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="incisorTrace"
+    displayRange=[ -57.701377667819 50.806525242529005 ]
+    renderProps=maspack.render.PointLineRenderProps 
+    [ visible=true
+      lineColor=[ 0.000 1.000 1.000 ]
+      lineWidth=3
+      pointColor=[ 0.000 1.000 1.000 ]
+      pointRadius=1.0
+    ]
+    renderInterval=0.0050
+    track=8
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="frameMarkers/lowerincisor:position.x" visible=true color=Red ]
+      [ order=1 label="frameMarkers/lowerincisor:position.y" visible=true color=DarkGreen ]
+      [ order=2 label="frameMarkers/lowerincisor:position.z" visible=true color=Blue ]
+    ]
+  ]
+  artisynth.core.probes.PointTracingProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="Incisor Trace Position"
+    displayRange=[ -57.110074267459254 50.75277038795085 ]
+    renderProps=maspack.render.PointLineRenderProps 
+    [ visible=true
+      lineColor=[ 0.000 1.000 1.000 ]
+      lineWidth=3
+      pointColor=[ 0.000 1.000 1.000 ]
+      pointRadius=1.0
+    ]
+    renderInterval=0.0050
+    track=9
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="frameMarkers/lowerincisor:position.x" visible=true color=Red ]
+      [ order=1 label="frameMarkers/lowerincisor:position.y" visible=true color=DarkGreen ]
+      [ order=2 label="frameMarkers/lowerincisor:position.z" visible=true color=Blue ]
+    ]
+  ]
+  artisynth.core.probes.PointTracingProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=0.001
+    name="Incisor Trace Position"
+    displayRange=[ -57.027321415591835 50.745247401417444 ]
+    renderProps=maspack.render.PointLineRenderProps 
+    [ visible=true
+      lineColor=[ 0.000 1.000 1.000 ]
+      lineWidth=3
+      pointColor=[ 0.000 1.000 1.000 ]
+      pointRadius=1.0
+    ]
+    renderInterval=0.0050
+    track=10
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="frameMarkers/lowerincisor:position.x" visible=true color=Red ]
+      [ order=1 label="frameMarkers/lowerincisor:position.y" visible=true color=DarkGreen ]
+      [ order=2 label="frameMarkers/lowerincisor:position.z" visible=true color=Blue ]
+    ]
+  ]
+]

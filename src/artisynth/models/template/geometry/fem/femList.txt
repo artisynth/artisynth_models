@@ -1,0 +1,19 @@
+tongue "tongue/tongue" ansys 1000 255 99 71
+softPalate "palate/softPalate" ucd 1 255 0 0
+
+Digastric_L_anterior_belly "larynx/Digastric_L_anterior_belly" tetgen 1 180 82 205
+Digastric_L_posterior_belly "larynx/Digastric_L_posterior_belly" tetgen 1 180 82 205
+Digastric_R_anterior_belly "larynx/Digastric_R_anterior_belly" tetgen 1 180 82 205
+Digastric_R_posterior_belly "larynx/Digastric_R_posterior_belly" tetgen 1 180 82 205
+Epiglottis "larynx/Epiglottis" tetgen 1 180 82 205
+Omohyoid_L_inferior_belly "larynx/Omohyoid_L_inferior_belly" tetgen 1 180 82 205
+Omohyoid_L_superior_belly "larynx/Omohyoid_L_superior_belly" tetgen 1 180 82 205
+Omohyoid_R_inferior_belly "larynx/Omohyoid_R_inferior_belly" tetgen 1 180 82 205
+Omohyoid_R_superior_belly "larynx/Omohyoid_R_superior_belly" tetgen 1 180 82 205
+Sternohyoid_L "larynx/Sternohyoid_L" tetgen 1 180 82 205
+Sternohyoid_R "larynx/Sternohyoid_R" tetgen 1 180 82 205
+Sternothyroid_L "larynx/Sternothyroid_L" tetgen 1 180 82 205
+Sternothyroid_R "larynx/Sternothyroid_R" tetgen 1 180 82 205
+Thyrohyoid_L "larynx/Thyrohyoid_L" tetgen 1 180 82 205
+Thyrohyoid_R "larynx/Thyrohyoid_R" tetgen 1 180 82 205
+Thyroid_gland "larynx/Thyroid_gland" tetgen 1 255 182 193

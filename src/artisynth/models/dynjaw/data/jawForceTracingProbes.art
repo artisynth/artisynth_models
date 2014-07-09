@@ -1,0 +1,142 @@
+[
+  artisynth.core.probes.VectorTracingProbe 
+  [ name="scar force"
+    stopTime=1.500
+    updateInterval=0.001
+    displayRange=[ -1.2 1.2 ]
+    renderProps=maspack.render.LineRenderProps 
+    [ lineStyle=CYLINDER
+      lineColor=[ 0.000 0.300 0.300 ]
+      lineWidth=3
+    ]
+    lengthScaling=0.01
+    track=0
+    props=
+    [ 
+      models/jawmodel/jawScarForce
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    refPositionProp=models/jawmodel/jawComPosition
+  ]
+  artisynth.core.probes.VectorTracingProbe 
+  [ name="scar moment"
+    stopTime=1.500
+    updateInterval=0.001
+    displayRange=[ -1.2 1.2 ]
+    renderProps=maspack.render.LineRenderProps 
+    [ lineStyle=CYLINDER
+      lineColor=[ 0.300 0.000 0.300 ]
+      lineWidth=3
+    ]
+    lengthScaling=0.001
+    track=1
+    props=
+    [ 
+      models/jawmodel/jawScarMoment
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    refPositionProp=models/jawmodel/jawComPosition
+  ]
+  artisynth.core.probes.WayPointProbe 
+  [ name="WayPoints"
+    stopTime=Infinity
+    track=-1
+    wayPoints=
+    [ 
+      0
+    ]
+  ]
+  artisynth.core.probes.VectorTracingProbe 
+  [ name="muscle force"
+    stopTime=1.500
+    updateInterval=0.01
+    displayRange=[ -1.2 1.2 ]
+    renderProps=maspack.render.LineRenderProps 
+    [ lineStyle=CYLINDER
+      lineColor=[ 0.000 0.800 0.800 ]
+      lineWidth=3
+    ]
+    lengthScaling=0.01
+    track=0
+    props=
+    [ 
+      models/jawmodel/jawMuscleForce
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    refPositionProp=models/jawmodel/jawComPosition
+  ]
+  artisynth.core.probes.VectorTracingProbe 
+  [ name="muscle moment"
+    stopTime=1.500
+    updateInterval=0.01
+    displayRange=[ -1.2 1.2 ]
+    renderProps=maspack.render.LineRenderProps 
+    [ lineStyle=CYLINDER
+      lineColor=[ 0.800 0.000 0.800 ]
+      lineWidth=3
+    ]
+    lengthScaling=0.001
+    track=1
+    props=
+    [ 
+      models/jawmodel/jawMuscleMoment
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    refPositionProp=models/jawmodel/jawComPosition
+  ]
+  artisynth.core.probes.VectorTracingProbe 
+  [ name="incisor force"
+    startTime=0.005
+    stopTime=1.505
+    updateInterval=0.01
+    displayRange=[ -1.2 1.2 ]
+    renderProps=maspack.render.LineRenderProps 
+    [ lineStyle=CYLINDER
+      lineColor=[ 0.000 1.000 1.000 ]
+      lineWidth=3
+    ]
+    lengthScaling=0.01
+    track=4
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor/force
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    refPositionProp=models/jawmodel/frameMarkers/lowerincisor/position
+  ]
+]

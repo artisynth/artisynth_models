@@ -1,0 +1,15 @@
+fem "Pharynx" rigidBody "Skull" 1.5
+fem "Pharynx" rigidBody "Mandible" 1.0
+
+fem "Tongue" rigidBody "Hyoid" 1.0
+fem "Tongue" rigidBody "Skull" 2.0
+
+fem "Suprahyoid_muscles_L" rigidBody "Mandible" 1.0
+fem "Suprahyoid_muscles_R" rigidBody "Mandible" 1.0
+fem "Suprahyoid_muscles_L" rigidBody "Hyoid" 1.0
+fem "Suprahyoid_muscles_R" rigidBody "Hyoid" 1.0
+
+fem "Palatine_aponeurosis" fem "Pharynx" 0.5
+
+fem "Tongue" fem "Suprahyoid_muscles_L" 1.0
+fem "Tongue" fem "Suprahyoid_muscles_R" 1.0

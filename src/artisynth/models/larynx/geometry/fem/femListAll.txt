@@ -1,0 +1,44 @@
+Epiglottis "Epiglottis" ansys 1 255 165 0
+
+Sternohyoid_L "Sternohyoid_L" ansys 1 250 128 114
+Sternothyroid_L "Sternothyroid_L" ansys 1 250 128 114
+Thyrohyoid_L "Thyrohyoid_L" ansys 1 250 128 114
+Mylohyoid_L "Mylohyoid_L" ansys 1 250 128 114
+Geniohyoid_L "Geniohyoid_L" ansys 1 250 128 114
+Omohyoid_L_inferior_belly "Omohyoid_L_inferior_belly" ansys 1 250 128 114
+Omohyoid_L_superior_belly "Omohyoid_L_superior_belly" ansys 1 250 128 114
+Omohyoid_L_tendon "Omohyoid_L_tendon" ansys 1 255 192 203
+Digastric_L_anterior_belly "Digastric_L_anterior_belly" ansys 1 250 128 114
+Digastric_L_posterior_belly "Digastric_L_posterior_belly" ansys 1 250 128 114
+Digastric_L_tendon "Digastric_L_tendon" ansys 1 255 192 203
+
+Thyrohyoid_membrane_L "Thyrohyoid_membrane_L" ansys 1 255 192 203
+Cricothyroid_ligament_median_L "Cricothyroid_ligament_median_L" ansys 1 255 192 203
+
+
+Sternohyoid_R "Sternohyoid_R" ansys 1 250 128 114
+Sternothyroid_R "Sternothyroid_R" ansys 1 250 128 114
+Thyrohyoid_R "Thyrohyoid_R" ansys 1 250 128 114
+Mylohyoid_R "Mylohyoid_R" ansys 1 250 128 114
+Geniohyoid_R "Geniohyoid_R" ansys 1 250 128 114
+Omohyoid_R_inferior_belly "Omohyoid_R_inferior_belly" ansys 1 250 128 114
+Omohyoid_R_superior_belly "Omohyoid_R_superior_belly" ansys 1 250 128 114
+Omohyoid_R_tendon "Omohyoid_R_tendon" ansys 1 255 192 203
+Digastric_R_anterior_belly "Digastric_R_anterior_belly" ansys 1 250 128 114
+Digastric_R_posterior_belly "Digastric_R_posterior_belly" ansys 1 250 128 114
+Digastric_R_tendon "Digastric_R_tendon" ansys 1 255 192 203
+
+Thyrohyoid_membrane_R "Thyrohyoid_membrane_R" ansys 1 255 192 203
+Cricothyroid_ligament_median_R "Cricothyroid_ligament_median_R" ansys 1 255 192 203
+
+
+Cricothyroid_ligament_R "Cricothyroid_ligament_R" ansys 1 255 235 205
+Quadrangular_membrane_R "Quadrangular_membrane_R" ansys 1 255 235 205
+
+Cricothyroid_ligament_L "Cricothyroid_ligament_L" ansys 1 255 235 205
+Quadrangular_membrane_L "Quadrangular_membrane_L" ansys 1 255 235 205
+
+Hyoepiglottic_ligament "Hyoepiglottic_ligament" ansys 1 255 235 205
+Thyroepiglottic_ligament "Thyroepiglottic_ligament" ansys 1 255 235 205
+
+Adipose "Adipose" ansys 1 132 112 255

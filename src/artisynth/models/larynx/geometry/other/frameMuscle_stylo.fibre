@@ -1,0 +1,6 @@
+Stylohyoid_L
+	frameMarker Stylohyoid_L_at_hyoid frameMarker Stylohyoid_L_at_bone
+end
+Stylohyoid_R
+	frameMarker Stylohyoid_R_at_hyoid frameMarker Stylohyoid_R_at_bone
+end

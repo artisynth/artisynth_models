@@ -1,0 +1,21 @@
+Thyrohyoid_L "Thyrohyoid_L" ansys 1 250 128 114
+Thyrohyoid_R "Thyrohyoid_R" ansys 1 250 128 114
+
+Epiglottis "Epiglottis" ansys 1 255 165 0
+
+Adipose "Adipose" ansys 1 132 112 255
+
+Cricothyroid_ligament_R "Cricothyroid_ligament_R" ansys 1 255 235 205
+Quadrangular_membrane_R "Quadrangular_membrane_R" ansys 1 255 235 205
+
+Cricothyroid_ligament_L "Cricothyroid_ligament_L" ansys 1 255 235 205
+Quadrangular_membrane_L "Quadrangular_membrane_L" ansys 1 255 235 205
+
+Hyoepiglottic_ligament "Hyoepiglottic_ligament" ansys 1 255 235 205
+Thyroepiglottic_ligament "Thyroepiglottic_ligament" ansys 1 255 235 205
+
+Thyrohyoid_membrane_R "Thyrohyoid_membrane_R" ansys 1 255 192 203
+Cricothyroid_ligament_median_R "Cricothyroid_ligament_median_R" ansys 1 255 192 203
+
+Thyrohyoid_membrane_L "Thyrohyoid_membrane_L" ansys 1 255 192 203
+Cricothyroid_ligament_median_L "Cricothyroid_ligament_median_L" ansys 1 255 192 203

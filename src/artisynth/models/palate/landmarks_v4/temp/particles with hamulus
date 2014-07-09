@@ -1,0 +1,74 @@
+artisynth.core.mechmodels.PointList
+
+[ name="particles"
+  renderProps=maspack.render.PointRenderProps 
+  [ visible=true
+  ]
+  pointDamping:Inherited 
+  [ position=[ 109 21 117 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 109 -21 117 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 140 18 75 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  [ position=[ 140 -18 75 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  5
+  [ position=[ 104 0 121 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  6
+  [ position=[ 104 -5 121.5 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  7
+  [ position=[ 105 -10 120 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  8
+  [ position=[ 106 -15 119 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  9
+  [ position=[ 107.5 -19 118 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  14
+  [ position=[ 115 0 117 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  13
+  [ position=[ 112 -5 118 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  12
+  [ position=[ 110 -10 118 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  11
+  [ position=[ 109 -15 117.5 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+  10
+  [ position=[ 109 -18.5 117 ]
+    velocity=[ 0 0 0 ]
+    dynamic=false
+  ]
+]

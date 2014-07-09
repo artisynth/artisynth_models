@@ -1,0 +1,7 @@
+A dynamic biomechanical model of the human jaw and laryngeal structures. The model geometry has been created through data extraction from high resolution cone-beam CT imaging of a 35 year-old male subject. Dynamic parameters for the model including mandibular muscle properties have been taken from published literature.
+
+The model includes:
+- Rigid-body skeletal components for the mandible, maxilla, hyoid, thyroid, and cricoid
+- Point-to-point, hill-type muscle models
+- Lagrangian rigid-body constraints for the TMJ and bite contact
+- Spring networks for laryngeal connective tissue 

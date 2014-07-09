@@ -1,0 +1,24 @@
+<name>
+	-density <density>
+	-particleDamping <particleDamping>
+	-stiffnessDamping <stiffnessDamping>
+
+	-materialType Linear <YoungsModulus> <PoissonsRatio>
+	-materialType StVenanKirchoff <YoungsModulus> <PoissonsRatio>
+	-materialType NeoHookean <YoungsModulus> <PoissonsRatio>
+	-materialType MooneyRivlin <bulkModulus> <C10> <C01> <C11> <C20> <C02>
+	-materialType IncompNeoHookean <bulkModulus> <shearModulus>
+
+	-muscleMaterial GenericMuscle <maxLambda> <maxStress> <expStressCoeff> <uncrimpingFactor> <fibreModulus>
+	-muscleMaterial BlemkerMuscle <maxLambda> <optLambda> <maxStress> <expStressCoeff> <uncrimpingFactor>
+	-muscleMaterial InactiveMuscle
+
+<name>
+	-density <density>
+	-particleDamping <particleDamping>
+	-stiffnessDamping <stiffnessDamping>
+
+	-materialType MooneyRivlin <bulkModulus> <C10> <C01> <C11> <C20> <C02>
+
+	-muscleMaterial GenericMuscle <maxLambda> <maxStress> <expStressCoeff> <uncrimpingFactor> <fibreModulus>
+

@@ -1,0 +1,7 @@
+hyoid "hyoid.obj" fix 1 105 105 105
+thyroid "thyroid.obj" dynamic 1 238 221 130
+cricoid "cricoid.obj" dynamic 1 238 221 130
+
+Arytenoid_L "Arytenoid_L.obj" dynamic 1 105 105 105
+Arytenoid_R "Arytenoid_R.obj" dynamic 1 105 105 105
+

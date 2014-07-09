@@ -1,0 +1,104 @@
+[
+  NumericInputProbe 
+  [ name="protracthyoid"
+    stopTime=1.000
+    attachedFile="probe_protracthyoid.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=0
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_protracthyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="retracthyoid"
+    stopTime=1.000
+    attachedFile="probe_retracthyoid.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=1
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_retracthyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="suprahyoid"
+    stopTime=1.000
+    attachedFile="probe_suprahyoid.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=2
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_suprahyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="infrahyoid"
+    stopTime=1.000
+    attachedFile="probe_infrahyoid.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=3
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_infrahyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="Hyoid Displacement"
+    stopTime=1.000
+    attachedFile="hyoidDisp.raw"
+    updateInterval=0.001
+    format="%8.2f"
+    displayRange=[ -25.0 8.5 ]
+    showHeader=false
+    track=0
+    props=
+    [ 
+      models/jawmodel/frameMarkers/hyoidRef:displacement
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+]

@@ -1,0 +1,335 @@
+[
+  NumericInputProbe
+  [ startTime=0.0020
+    stopTime=1.002
+    updateInterval=0.01
+    name="target positions"
+    attachedFile="ref_targetPos_input.txt"
+    interpolationOrder=Cubic
+    displayRange=[ -56.930659999999996 50.73646 ]
+    track=0
+    model=models/jawmodel
+    vsize=3
+    props=[
+      "controllers/trackingController/targetPoints/lowerincisor_ref:targetPosition"
+    ]
+    drivers=[
+      "V0"
+    ]
+    inputs=[
+      V0 3
+    ]
+    data=[
+      0.0 0.0 -47.9584 41.7642
+      0.5 0.0 -45.042415500000004 22.489323842734265
+      1.0 0.0 -47.9584 41.7642
+    ]
+    plotTraceInfo=[
+      [ order=0 label="targetPoints/lowerincisor_ref:targetPosition.x" visible=true color=Red ]
+      [ order=1 label="targetPoints/lowerincisor_ref:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=2 label="targetPoints/lowerincisor_ref:targetPosition.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="input excitations"
+    attachedFile="excitations_input.txt"
+    active=false
+    displayRange=[ Inf -Inf ]
+    track=1
+    model=models/jawmodel
+    vsize=25
+    props=[
+      "models/jawmodel/exciters/bi_at:excitation"
+      "models/jawmodel/exciters/bi_mt:excitation"
+      "models/jawmodel/exciters/bi_pt:excitation"
+      "models/jawmodel/exciters/bi_sm:excitation"
+      "models/jawmodel/exciters/bi_dm:excitation"
+      "models/jawmodel/exciters/bi_mp:excitation"
+      "models/jawmodel/exciters/bi_sp:excitation"
+      "models/jawmodel/exciters/bi_ip:excitation"
+      "models/jawmodel/exciters/bi_ad:excitation"
+      "models/jawmodel/exciters/bi_am:excitation"
+      "models/jawmodel/exciters/bi_pm:excitation"
+      "models/jawmodel/exciters/bi_gh:excitation"
+      "models/jawmodel/exciters/bi_my:excitation"
+      "models/jawmodel/exciters/bi_lp:excitation"
+      "models/jawmodel/exciters/bi_t:excitation"
+      "models/jawmodel/exciters/bi_m:excitation"
+      "models/jawmodel/exciters/bi_hopen:excitation"
+      "models/jawmodel/exciters/bi_pro:excitation"
+      "models/jawmodel/exciters/bi_open:excitation"
+      "models/jawmodel/exciters/bi_close:excitation"
+      "models/jawmodel/exciters/bi_stiffenjaw:excitation"
+      "models/jawmodel/exciters/bi_protracthyoid:excitation"
+      "models/jawmodel/exciters/bi_retracthyoid:excitation"
+      "models/jawmodel/exciters/bi_suprahyoid:excitation"
+      "models/jawmodel/exciters/bi_infrahyoid:excitation"
+    ]
+    drivers=[
+      "V0"
+      "V1"
+      "V2"
+      "V3"
+      "V4"
+      "V5"
+      "V6"
+      "V7"
+      "V8"
+      "V9"
+      "V10"
+      "V11"
+      "V12"
+      "V13"
+      "V14"
+      "V15"
+      "V16"
+      "V17"
+      "V18"
+      "V19"
+      "V20"
+      "V21"
+      "V22"
+      "V23"
+      "V24"
+    ]
+    inputs=[
+      V0 1
+      V1 1
+      V2 1
+      V3 1
+      V4 1
+      V5 1
+      V6 1
+      V7 1
+      V8 1
+      V9 1
+      V10 1
+      V11 1
+      V12 1
+      V13 1
+      V14 1
+      V15 1
+      V16 1
+      V17 1
+      V18 1
+      V19 1
+      V20 1
+      V21 1
+      V22 1
+      V23 1
+      V24 1
+    ]
+    data=[
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/bi_at:excitation" visible=true color=Red ]
+      [ order=1 label="exciters/bi_mt:excitation" visible=true color=DarkGreen ]
+      [ order=2 label="exciters/bi_pt:excitation" visible=true color=Blue ]
+      [ order=3 label="exciters/bi_sm:excitation" visible=true color=Cyan ]
+      [ order=4 label="exciters/bi_dm:excitation" visible=true color=Magenta ]
+      [ order=5 label="exciters/bi_mp:excitation" visible=true color=DarkOrange ]
+      [ order=6 label="exciters/bi_sp:excitation" visible=true color=Pink ]
+      [ order=7 label="exciters/bi_ip:excitation" visible=true color=BlueViolet ]
+      [ order=8 label="exciters/bi_ad:excitation" visible=true color=NavajoWhite ]
+      [ order=9 label="exciters/bi_am:excitation" visible=true color=Gray ]
+      [ order=10 label="exciters/bi_pm:excitation" visible=true color=DarkOliveGreen ]
+      [ order=11 label="exciters/bi_gh:excitation" visible=true color=IndianRed ]
+      [ order=12 label="exciters/bi_my:excitation" visible=true color=PeachPuff ]
+      [ order=13 label="exciters/bi_lp:excitation" visible=true color=Red ]
+      [ order=14 label="exciters/bi_t:excitation" visible=true color=DarkGreen ]
+      [ order=15 label="exciters/bi_m:excitation" visible=true color=Blue ]
+      [ order=16 label="exciters/bi_hopen:excitation" visible=true color=Cyan ]
+      [ order=17 label="exciters/bi_pro:excitation" visible=true color=Magenta ]
+      [ order=18 label="exciters/bi_open:excitation" visible=true color=DarkOrange ]
+      [ order=19 label="exciters/bi_close:excitation" visible=true color=Pink ]
+      [ order=20 label="exciters/bi_stiffenjaw:excitation" visible=true color=BlueViolet ]
+      [ order=21 label="exciters/bi_protracthyoid:excitation" visible=true color=NavajoWhite ]
+      [ order=22 label="exciters/bi_retracthyoid:excitation" visible=true color=Gray ]
+      [ order=23 label="exciters/bi_suprahyoid:excitation" visible=true color=DarkOliveGreen ]
+      [ order=24 label="exciters/bi_infrahyoid:excitation" visible=true color=IndianRed ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="target positions"
+    attachedFile="ref_target_position.txt"
+    displayRange=[ -56.91003788525256 50.65014162332605 ]
+    track=0
+    model=models/jawmodel
+    props=[
+      "controllers/trackingController/targetPoints/lowerincisor_ref:targetPosition"
+    ]
+    variables=[
+      P0
+    ]
+    drivers=[
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="targetPoints/lowerincisor_ref:targetPosition.x" visible=true color=Red ]
+      [ order=1 label="targetPoints/lowerincisor_ref:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=2 label="targetPoints/lowerincisor_ref:targetPosition.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="model positions"
+    attachedFile="model_target_position.txt"
+    displayRange=[ -56.930659999999996 50.73646 ]
+    track=1
+    model=models/jawmodel
+    props=[
+      "models/jawmodel/frameMarkers/lowerincisor:targetPosition"
+    ]
+    variables=[
+      P0
+    ]
+    drivers=[
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="frameMarkers/lowerincisor:targetPosition.x" visible=true color=Red ]
+      [ order=1 label="frameMarkers/lowerincisor:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=2 label="frameMarkers/lowerincisor:targetPosition.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="computed excitations"
+    attachedFile="excitations.txt"
+    displayRange=[ -0.0028081938660732817 0.03089013252680045 ]
+    track=2
+    model=models/jawmodel
+    props=[
+      "models/jawmodel/exciters/bi_at:excitation"
+      "models/jawmodel/exciters/bi_mt:excitation"
+      "models/jawmodel/exciters/bi_pt:excitation"
+      "models/jawmodel/exciters/bi_sm:excitation"
+      "models/jawmodel/exciters/bi_dm:excitation"
+      "models/jawmodel/exciters/bi_mp:excitation"
+      "models/jawmodel/exciters/bi_sp:excitation"
+      "models/jawmodel/exciters/bi_ip:excitation"
+      "models/jawmodel/exciters/bi_ad:excitation"
+      "models/jawmodel/exciters/bi_am:excitation"
+      "models/jawmodel/exciters/bi_pm:excitation"
+      "models/jawmodel/exciters/bi_gh:excitation"
+      "models/jawmodel/exciters/bi_my:excitation"
+      "models/jawmodel/exciters/bi_lp:excitation"
+      "models/jawmodel/exciters/bi_t:excitation"
+      "models/jawmodel/exciters/bi_m:excitation"
+      "models/jawmodel/exciters/bi_hopen:excitation"
+      "models/jawmodel/exciters/bi_pro:excitation"
+      "models/jawmodel/exciters/bi_open:excitation"
+      "models/jawmodel/exciters/bi_close:excitation"
+      "models/jawmodel/exciters/bi_stiffenjaw:excitation"
+      "models/jawmodel/exciters/bi_protracthyoid:excitation"
+      "models/jawmodel/exciters/bi_retracthyoid:excitation"
+      "models/jawmodel/exciters/bi_suprahyoid:excitation"
+      "models/jawmodel/exciters/bi_infrahyoid:excitation"
+    ]
+    variables=[
+      P0
+      P1
+      P2
+      P3
+      P4
+      P5
+      P6
+      P7
+      P8
+      P9
+      P10
+      P11
+      P12
+      P13
+      P14
+      P15
+      P16
+      P17
+      P18
+      P19
+      P20
+      P21
+      P22
+      P23
+      P24
+    ]
+    drivers=[
+      "P0"
+      "P1"
+      "P2"
+      "P3"
+      "P4"
+      "P5"
+      "P6"
+      "P7"
+      "P8"
+      "P9"
+      "P10"
+      "P11"
+      "P12"
+      "P13"
+      "P14"
+      "P15"
+      "P16"
+      "P17"
+      "P18"
+      "P19"
+      "P20"
+      "P21"
+      "P22"
+      "P23"
+      "P24"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/bi_at:excitation" visible=true color=Red ]
+      [ order=1 label="exciters/bi_mt:excitation" visible=true color=DarkGreen ]
+      [ order=2 label="exciters/bi_pt:excitation" visible=true color=Blue ]
+      [ order=3 label="exciters/bi_sm:excitation" visible=true color=Cyan ]
+      [ order=4 label="exciters/bi_dm:excitation" visible=true color=Magenta ]
+      [ order=5 label="exciters/bi_mp:excitation" visible=true color=DarkOrange ]
+      [ order=6 label="exciters/bi_sp:excitation" visible=true color=Pink ]
+      [ order=7 label="exciters/bi_ip:excitation" visible=true color=BlueViolet ]
+      [ order=8 label="exciters/bi_ad:excitation" visible=true color=NavajoWhite ]
+      [ order=9 label="exciters/bi_am:excitation" visible=true color=Gray ]
+      [ order=10 label="exciters/bi_pm:excitation" visible=true color=DarkOliveGreen ]
+      [ order=11 label="exciters/bi_gh:excitation" visible=true color=IndianRed ]
+      [ order=12 label="exciters/bi_my:excitation" visible=true color=PeachPuff ]
+      [ order=13 label="exciters/bi_lp:excitation" visible=true color=Red ]
+      [ order=14 label="exciters/bi_t:excitation" visible=true color=DarkGreen ]
+      [ order=15 label="exciters/bi_m:excitation" visible=true color=Blue ]
+      [ order=16 label="exciters/bi_hopen:excitation" visible=true color=Cyan ]
+      [ order=17 label="exciters/bi_pro:excitation" visible=true color=Magenta ]
+      [ order=18 label="exciters/bi_open:excitation" visible=true color=DarkOrange ]
+      [ order=19 label="exciters/bi_close:excitation" visible=true color=Pink ]
+      [ order=20 label="exciters/bi_stiffenjaw:excitation" visible=true color=BlueViolet ]
+      [ order=21 label="exciters/bi_protracthyoid:excitation" visible=true color=NavajoWhite ]
+      [ order=22 label="exciters/bi_retracthyoid:excitation" visible=true color=Gray ]
+      [ order=23 label="exciters/bi_suprahyoid:excitation" visible=true color=DarkOliveGreen ]
+      [ order=24 label="exciters/bi_infrahyoid:excitation" visible=true color=IndianRed ]
+    ]
+  ]
+  WayPointProbe
+  [ startTime=0.0
+    stopTime=Infinity
+    updateInterval=-1.0
+    name="WayPoints"
+    track=-1
+    model=null
+    wayPoints=
+    [ 
+      0.0
+      0.5
+      1.0 breakpoint
+    ]
+  ]
+]

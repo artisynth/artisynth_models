@@ -1,0 +1,3 @@
+rigidBody "thyroid" fem "thyrohyoid_left"
+fem "thyrohyoid_left" fem "sternohyoid_left"
+

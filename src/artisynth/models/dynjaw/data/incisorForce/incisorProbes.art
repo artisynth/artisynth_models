@@ -1,0 +1,89 @@
+[
+  NumericInputProbe 
+  [ name="Incisor Force Direction"
+    stopTime=10.000
+    attachedFile="incForceDir.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=0
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/forceEffectors/incForce:direction
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 3
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Incisor Force Magnitude"
+    stopTime=10.000
+    attachedFile="incForceMag.txt"
+    displayRange=[ -0.5  6.0 ]
+    track=1
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/forceEffectors/incForce:magnitude
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe 
+  [ name="WayPoints"
+    stopTime=Infinity
+    track=0
+    model=.
+    wayPoints=[ 0 ]
+  ]
+  NumericOutputProbe 
+  [ name="Incisor Force"
+    stopTime=10.000
+    attachedFile="incForce.raw"
+    updateInterval=0.01
+    displayRange=[ -6.0 1.0 ]
+    track=0
+    props=
+    [ 
+      models/jawmodel/forceEffectors/incForce:force
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="incisor Displacement"
+    stopTime=10.000
+    attachedFile="incDisp.raw"
+    updateInterval=0.01
+    displayRange=[ -50.0 50.0 ]
+    track=1
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:displacement
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+]

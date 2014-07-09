@@ -1,0 +1,15 @@
+fem "Pharynx" rigidBody "cranium" 1.5
+fem "Pharynx" rigidBody "jaw" 1.0
+
+fem "tongue" rigidBody "hyoid" 1.0
+fem "tongue" rigidBody "cranium" 2.0
+
+fem "Suprahyoid_muscles_L" rigidBody "jaw" 1.0
+fem "Suprahyoid_muscles_R" rigidBody "jaw" 1.0
+fem "Suprahyoid_muscles_L" rigidBody "hyoid" 1.0
+fem "Suprahyoid_muscles_R" rigidBody "hyoid" 1.0
+
+fem "Palatine_aponeurosis" fem "Pharynx" 0.5
+
+fem "tongue" fem "Suprahyoid_muscles_L" 1.0
+fem "tongue" fem "Suprahyoid_muscles_R" 1.0

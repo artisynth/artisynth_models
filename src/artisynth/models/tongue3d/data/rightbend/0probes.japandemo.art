@@ -1,0 +1,224 @@
+[
+  NumericInputProbe 
+  [ name="vml"
+    startTime=0.002
+    stopTime=1.002
+    attachedFile="probe_vml.txt"
+    displayRange=[ -0.10200000000000001 1.122 ]
+    track=4
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/bundles/vm_l:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="val"
+    stopTime=1.000
+    attachedFile="probe_val.txt"
+    displayRange=[ -0.093 1.023 ]
+    track=5
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/bundles/va_l:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="slar"
+    startTime=0.002
+    stopTime=1.002
+    attachedFile="probe_slar.txt"
+    displayRange=[ -0.036 0.39599999999999996 ]
+    track=6
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/bundles/sla_r:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="slmr"
+    stopTime=1.000
+    attachedFile="probe_slmr.txt"
+    displayRange=[ -0.10200000000000001 1.122 ]
+    track=7
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/bundles/slm_r:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="trans"
+    stopTime=1.000
+    attachedFile="probe_trans.txt"
+    displayRange=[ -0.054000000000000006 0.5940000000000001 ]
+    track=9
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/trans:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="styr"
+    stopTime=1.000
+    attachedFile="probe_styr.txt"
+    displayRange=[ -0.0477 0.5246999999999999 ]
+    track=10
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/bundles/sty_r:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="tongue apical"
+    stopTime=1.000
+    attachedFile="probe_tongue_apical.txt"
+    updateInterval=0.01
+    displayRange=[ -0.011298516607911388 0.12428368268697645 ]
+    track=0
+    props=
+    [ 
+      models/Tongue/nodes/apical/position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="tongue rant"
+    stopTime=1.000
+    attachedFile="probe_tongue_rant.txt"
+    updateInterval=0.01
+    displayRange=[ -0.0013798314638876902 0.12237082720950856 ]
+    track=1
+    props=
+    [ 
+      models/Tongue/nodes/rant/position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="tongue mid"
+    stopTime=1.000
+    attachedFile="probe_tongue_mid.txt"
+    updateInterval=0.01
+    displayRange=[ -0.01139664869324509 0.12534534681667805 ]
+    track=2
+    props=
+    [ 
+      models/Tongue/nodes/mid/position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="tongue root"
+    stopTime=1.000
+    attachedFile="probe_tongue_root.txt"
+    updateInterval=0.01
+    displayRange=[ -0.012674704709463724 0.13725385043057348 ]
+    track=3
+    props=
+    [ 
+      models/Tongue/nodes/root/position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="activations"
+    stopTime=1.000
+    attachedFile="activations.rightbend.txt"
+    updateInterval=0.10
+    displayRange=[ -0.0 1.0 ]
+    track=0
+    props=
+    [ 
+      models/Tongue/activations
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+]

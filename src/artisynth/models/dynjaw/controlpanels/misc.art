@@ -1,0 +1,139 @@
+artisynth.core.gui.ControlPanel
+[ name="Misc Jaw"
+  size=[ 518 940 ]
+  location=[ 808 25 ]
+  scrollable=true
+  options="LiveUpdate"
+  maspack.widgets.EnumSelector
+  [ property="models/jawmodel:integrator"
+    labelText="Integration Method"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.DoubleField
+  [ property="models/jawmodel:maxStepSize"
+    labelText="Maximum Step Size"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel:renderFaces"
+    labelText="Skeleton  vis"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel:memShow"
+    labelText="Tissue  vis"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel:musShow"
+    labelText="Muscles  vis"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel:planesVisible"
+    labelText="Constraint vis"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/rigidBodies/pharynx:renderProps.visible"
+    labelText="Pharynx  vis"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/rigidBodies/jaw:dynamic"
+    labelText="JAW Dynamic"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/rigidBodies/hyoid:dynamic"
+    labelText="HYOID Dynamic"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/rigidBodies/thyroid:dynamic"
+    labelText="THYROID Dynamic"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/rigidBodies/cricoid:dynamic"
+    labelText="CRICOID Dynamic"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleField
+  [ property="models/jawmodel/forceEffectors/rightbolus:diameter"
+    labelText="RIGHTBOLUS: Diameter (mm)"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.DoubleField
+  [ property="models/jawmodel/forceEffectors/rightbolus:resistance"
+    labelText="RIGHTBOLUS: Resistance (N)"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/forceEffectors/rightbolus:active"
+    labelText="isActive"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleField
+  [ property="models/jawmodel/forceEffectors/leftbolus:diameter"
+    labelText="LEFTBOLUS: Diameter (mm)"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.DoubleField
+  [ property="models/jawmodel/forceEffectors/leftbolus:resistance"
+    labelText="LEFTBOLUS: Resistance (N)"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel/forceEffectors/leftbolus:active"
+    labelText="isActive"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:headRotation"
+    labelText="Head Angle"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [-30.0000,30.0000] ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:thMemStiffness"
+    labelText="TH Mem Stiffness"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1000.00] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel:ctrMemStiffness"
+    labelText="CTr Mem Stiffness"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1000.00] ]
+  ]
+]

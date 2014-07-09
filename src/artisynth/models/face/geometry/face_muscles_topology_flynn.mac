@@ -1,0 +1,272 @@
+!
+!*****************************************************
+!			Muscles 
+!                       -
+!	Auteur : Julie Groleau (julie.groleau@gmail.com)
+!	Date (cr_ation) : 04/06/07
+!	Date (derni_re modif) : 17/07/07
+!
+!******************************************************
+!/PMACRO
+/PREP7
+
+nb_muscles = 12
+nb_max_fibres = 4
+nb_max_noeuds = 9
+
+
+
+*DIM,ACTIV,,nb_muscles
+*ask,DAO,Do you want the Depressor Anguli Oris in the Model?(0=No 1=Yes),0
+ACTIV(1) = DAO			! Depressor Anguli Oris (DAO)
+*ask,BUC,Do you want the Buccinator in the Model?(0=No 1=Yes),0
+ACTIV(2) = BUC			! Buccinator(BUC)
+*ask,DLI,Do you want the Depressor Labii Inferioris in the Model?(0=No 1=Yes),0
+ACTIV(3) = DLI			! Depressor Labii Inferioris (DLI)
+*ask,MENT,Do you want the Mentalis in the Model?(0=No 1=Yes),0
+ACTIV(4) = MENT			! Mentalis (MENT)
+*ask,MAS,Do you want the Masseter in the Model?(0=No 1=Yes),0
+ACTIV(5) = MAS            	! Masseter (MAS)
+*ask,OOM,Do you want the Orbicularis Oris Marginalis in the Model?(0=No 1=Yes),0
+ACTIV(6) = OOM			! Orbicularis Oris Marginalis (OOM)
+*ask,OOP,Do you want the Orbicularis Oris Peripheralis in the Model?(0=No 1=Yes),0
+ACTIV(7) = OOP			! Orbicularis Oris Peripheralis (OOP)
+*ask,LLSAN,Do you want the Levator Labii Superioris Alaeque Nasi in the Model?(0=No 1=Yes),0
+ACTIV(8) = LLSAN			! Levator Labii Superioris Alaeque Nasi (LLSAN)
+*ask,LAO,Do you want the Levator Anguli Oris in the Model?(0=No 1=Yes),0
+ACTIV(9) = LAO			! Levetor Anguli Oris (LAO)
+*ask,RIS,Do you want the Risorius in the Model?(0=No 1=Yes),0
+ACTIV(10) = RIS			! Risorius (RIS)
+*ask,ZYG,Do you want the Zygomaticus in the Model?(0=No 1=Yes),0
+ACTIV(11) = ZYG      		! Zygomaticus (ZYG)
+*ask,LLS,Do you want the Levator Labii Superioris in the Model?(0=No 1=Yes),0
+ACTIV(12) = LLS      		! Levator Labii Superioris (LLS)
+
+*get,ele_max,elem,,num,maxd           ! Get number of elements
+*DIM,FIRST_ELEM,,nb_muscles
+FIRST_ELEM(1) = ele_max+100			! Triangulaire des l_vres 
+FIRST_ELEM(2) = ele_max+200		! Buccinateur
+FIRST_ELEM(3) = ele_max+300		! Carr_ du menton
+FIRST_ELEM(4) = ele_max+400		! Houppe du menton
+FIRST_ELEM(5) = ele_max+500		! Masseter
+FIRST_ELEM(6) = ele_max+600		! Orbiculaire interne
+FIRST_ELEM(7) = ele_max+700		! Orbiculaire externe
+FIRST_ELEM(8) = ele_max+800		! Releveur aile du nez
+FIRST_ELEM(9) = ele_max+900		! Releveur l_vre sup_rieure
+FIRST_ELEM(10) = ele_max+1000		! Risorius
+FIRST_ELEM(11) = ele_max+1100	! Zygomatique
+FIRST_ELEM(12) = ele_max+1200	! Levator Labii Superioris
+
+
+*DIM,NB_FIBERS,,nb_muscles
+NB_FIBERS(1)=2			! Triangulaire des l_vres 
+NB_FIBERS(2)=2			! Buccinateur
+NB_FIBERS(3)=2			! Carr_ du menton
+NB_FIBERS(4)=2			! Houppe du menton
+NB_FIBERS(5)=4			! Masseter
+NB_FIBERS(6)=2			! Orbiculaire interne
+NB_FIBERS(7)=2			! Orbiculaire externe
+NB_FIBERS(8)=2			! Releveur aile du nez
+NB_FIBERS(9)=1			! Releveur l_vre sup_rieure
+NB_FIBERS(10)=1			! Risorius
+NB_FIBERS(11)=1			! Zygomatique
+NB_FIBERS(12)=1			! Levator Labii Superioris
+
+*DIM,NB_NODES_FIBER,,nb_muscles,nb_max_fibers
+NB_NODES_FIBER(1,1)= 7			! Triangulaire des l_vres 
+NB_NODES_FIBER(1,2)= 5
+NB_NODES_FIBER(2,1)= 6			! Buccinateur
+NB_NODES_FIBER(2,2)= 6
+NB_NODES_FIBER(3,1)= 6			! Carr_ du menton
+NB_NODES_FIBER(3,2)= 5
+NB_NODES_FIBER(4,1)= 5			! Houppe du menton
+NB_NODES_FIBER(4,2)= 6
+NB_NODES_FIBER(5,1)= 6			! Masseter
+NB_NODES_FIBER(5,2)= 6
+NB_NODES_FIBER(5,3)= 6			
+NB_NODES_FIBER(5,4)= 6
+NB_NODES_FIBER(6,1)= 8			! Orbiculaire interne
+NB_NODES_FIBER(6,2)= 7
+NB_NODES_FIBER(7,1)= 9			! Orbiculaire externe
+NB_NODES_FIBER(7,2)= 7
+NB_NODES_FIBER(8,1)= 9			! Releveur aile du nez
+NB_NODES_FIBER(8,2)= 7
+NB_NODES_FIBER(9,1)= 6			! Releveur l_vre sup_rieure
+NB_NODES_FIBER(10,1)= 6			! Risorius
+NB_NODES_FIBER(11,1)= 8			! Zygomatique
+NB_NODES_FIBER(12,1)= 8			! Levator Labii Superioris
+
+*DIM,FIBER,,nb_muscles,nb_max_fibers,nb_max_nodes
+FIBER(1,1,1)= 114011			! Triangulaire des l_vres
+FIBER(1,1,2)= 114012	
+FIBER(1,1,3)= 114013
+FIBER(1,1,4)= 114014
+FIBER(1,1,5)= 114015
+FIBER(1,1,6)= 114016
+FIBER(1,1,7)= 114017
+
+FIBER(1,2,1)= 114201			
+FIBER(1,2,2)= 114202	
+FIBER(1,2,3)= 114203
+FIBER(1,2,4)= 114204
+FIBER(1,2,5)= 114205
+
+FIBER(2,1,1)= 114021			! Buccinateur
+FIBER(2,1,2)= 114022
+FIBER(2,1,3)= 114023
+FIBER(2,1,4)= 114024
+FIBER(2,1,5)= 114025
+FIBER(2,1,6)= 114026
+
+FIBER(2,2,1)= 114031
+FIBER(2,2,2)= 114032
+FIBER(2,2,3)= 114033
+FIBER(2,2,4)= 114034
+FIBER(2,2,5)= 114035
+FIBER(2,2,6)= 114036
+
+FIBER(3,1,1)= 114041			! Carr du menton
+FIBER(3,1,2)= 114042
+FIBER(3,1,3)= 114043
+FIBER(3,1,4)= 114044
+FIBER(3,1,5)= 114045
+FIBER(3,1,6)= 114046
+
+!FIBER(3,2,1)= 114181	
+!FIBER(3,2,2)= 114182
+!FIBER(3,2,3)= 114183
+!FIBER(3,2,4)= 114184
+!FIBER(3,2,5)= 114185
+!FIBER(3,2,6)= 114186
+
+FIBER(3,2,1)= 114182	
+FIBER(3,2,2)= 114183
+FIBER(3,2,3)= 114184
+FIBER(3,2,4)= 114185
+FIBER(3,2,5)= 114186
+
+FIBER(4,1,1)= 114051			! Houppe du menton
+FIBER(4,1,2)= 114052
+FIBER(4,1,3)= 114053
+FIBER(4,1,4)= 114054
+FIBER(4,1,5)= 114055
+
+FIBER(4,2,1)= 114191 			
+FIBER(4,2,2)= 114192
+FIBER(4,2,3)= 114193 
+FIBER(4,2,4)= 114194
+FIBER(4,2,5)= 114195
+FIBER(4,2,6)= 114196
+
+FIBER(5,1,1)= 114061			! Masseter
+FIBER(5,1,2)= 114062
+FIBER(5,1,3)= 114063
+FIBER(5,1,4)= 114064
+FIBER(5,1,5)= 114065
+FIBER(5,1,6)= 114066
+
+FIBER(5,2,1)= 114071
+FIBER(5,2,2)= 114072
+FIBER(5,2,3)= 114073
+FIBER(5,2,4)= 114074
+FIBER(5,2,5)= 114075
+FIBER(5,2,6)= 114076
+
+FIBER(5,3,1)= 114081	
+FIBER(5,3,2)= 114082
+FIBER(5,3,3)= 114083
+FIBER(5,3,4)= 114084
+FIBER(5,3,5)= 114085
+FIBER(5,3,6)= 114086
+
+FIBER(5,4,1)= 114091
+FIBER(5,4,2)= 114092
+FIBER(5,4,3)= 114093
+FIBER(5,4,4)= 114094
+FIBER(5,4,5)= 114095
+FIBER(5,4,6)= 114096
+
+FIBER(6,1,1)= 114101			! Orbiculaire interne
+FIBER(6,1,2)= 114102
+FIBER(6,1,3)= 114103
+FIBER(6,1,4)= 114104
+FIBER(6,1,5)= 114105
+FIBER(6,1,6)= 114106
+FIBER(6,1,7)= 114107
+FIBER(6,1,8)= 114111
+
+FIBER(6,2,1)= 114111
+FIBER(6,2,2)= 114112
+FIBER(6,2,3)= 114113
+FIBER(6,2,4)= 114114
+FIBER(6,2,5)= 114115
+FIBER(6,2,6)= 114116
+FIBER(6,2,7)= 114117
+
+FIBER(7,1,1)= 134227			! new point to close upper part of Orb. ext.
+FIBER(7,1,2)= 114121			! Orbiculaire externe
+FIBER(7,1,3)= 114122
+FIBER(7,1,4)= 114123
+FIBER(7,1,5)= 114124
+FIBER(7,1,6)= 114125
+FIBER(7,1,7)= 114126
+FIBER(7,1,8)= 114127
+FIBER(7,1,9)= 114131
+
+FIBER(7,2,1)= 114131
+FIBER(7,2,2)= 114132
+FIBER(7,2,3)= 114133
+FIBER(7,2,4)= 114134
+FIBER(7,2,5)= 114135
+FIBER(7,2,6)= 114136
+FIBER(7,2,7)= 134228			! new point to close lower part of Orb. ext. 
+
+FIBER(8,1,1)= 114141			! Releveur de l'aile du nez
+FIBER(8,1,2)= 114142
+FIBER(8,1,3)= 114143
+FIBER(8,1,4)= 114144
+FIBER(8,1,5)= 114145
+FIBER(8,1,6)= 114146
+FIBER(8,1,7)= 114147
+FIBER(8,1,8)= 114148
+FIBER(8,1,9)= 114149
+
+FIBER(8,2,1)= 114211
+FIBER(8,2,2)= 114212
+FIBER(8,2,3)= 114213
+FIBER(8,2,4)= 114214
+FIBER(8,2,5)= 114215
+FIBER(8,2,6)= 114216
+FIBER(8,2,7)= 114217
+
+FIBER(9,1,1)= 114221			! Releveur l_vre sup_rieure
+FIBER(9,1,2)= 114222
+FIBER(9,1,3)= 114223
+FIBER(9,1,4)= 114224
+FIBER(9,1,5)= 114225
+FIBER(9,1,6)= 114226
+
+FIBER(10,1,1)= 114161		! Risorius
+FIBER(10,1,2)= 114162
+FIBER(10,1,3)= 114163
+FIBER(10,1,4)= 114164
+FIBER(10,1,5)= 114165
+FIBER(10,1,6)= 114166
+
+FIBER(11,1,1)= 114171		! Zygomatique
+FIBER(11,1,2)= 114172
+FIBER(11,1,3)= 114173
+FIBER(11,1,4)= 114174
+FIBER(11,1,5)= 114175
+FIBER(11,1,6)= 114176
+FIBER(11,1,7)= 114177
+FIBER(11,1,8)= 114178
+
+FIBER(12,1,1)= 114227		! Levator Labii Superioris
+FIBER(12,1,2)= 114228
+FIBER(12,1,3)= 114229
+FIBER(12,1,4)= 114230
+FIBER(12,1,5)= 114231
+FIBER(12,1,6)= 114232
+FIBER(12,1,7)= 114233
+FIBER(12,1,8)= 114234

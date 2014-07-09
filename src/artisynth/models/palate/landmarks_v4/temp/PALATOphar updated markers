@@ -1,0 +1,405 @@
+artisynth.core.mechmodels.PointList
+
+[ name="markers"
+  renderProps=maspack.render.PointRenderProps 
+  [ visible=true
+    pointColor=[ 0.000 1.000 0.000 ]
+  ]
+  pointDamping:Inherited 
+  [ e/94
+    name="LM_palatoglossus_R_0"
+    position=[ 102.25914 20.259949 93.33976 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/6225
+    name="LM_palatoglossus_R_1"
+    position=[ 106.64044 22.825509 96.608029 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/6899
+    name="LM_palatoglossus_R_2"
+    position=[ 108.94146 24.00263 99.559632 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1098
+    name="LM_palatoglossus_R_3"
+    position=[ 110.77138 24.464764 103.18739 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5475
+    name="LM_palatoglossus_R_4"
+    position=[ 112.29886 24.243462 107.11636 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5197
+    name="LM_palatoglossus_R_5"
+    position=[ 112.4509 22.343467 111.7522 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5489
+    name="LM_palatoglossus_R_6"
+    position=[ 111.34498 18.105766 116.04484 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4301
+    name="LM_palatoglossus_R_7"
+    position=[ 109.28711 13.342386 119.57066 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/2198
+    name="LM_palatoglossus_R_8"
+    position=[ 108.22663 8.2394954 121.27186 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/2164
+    name="LM_palatoglossus_R_9"
+    position=[ 107.81801 3.9601392 121.60906 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4162
+    name="LM_palatoglossus_R_10"
+    position=[ 105 0 121.61817 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/6201
+    name="LM_palatoglossus_R_11"
+    position=[ 104.84493 20.826431 93.211137 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/6186
+    name="LM_palatoglossus_R_12"
+    position=[ 108.49862 22.761686 95.369392 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5422
+    name="LM_palatoglossus_R_13"
+    position=[ 110.82443 23.613123 98.438544 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/6919
+    name="LM_palatoglossus_R_14"
+    position=[ 112.59625 24.337992 102.09111 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4497
+    name="LM_palatoglossus_R_15"
+    position=[ 115.28693 23.784657 106.53408 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/6818
+    name="LM_palatoglossus_R_16"
+    position=[ 116.33357 21.91071 110.89115 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4903
+    name="LM_palatoglossus_R_17"
+    position=[ 115.95327 16.747601 114.99317 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4892
+    name="LM_palatoglossus_R_18"
+    position=[ 115.05242 11.279516 118.10362 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/3783
+    name="LM_palatoglossus_R_19"
+    position=[ 114.07054 7.3488911 118.66934 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4100
+    name="LM_palatoglossus_R_20"
+    position=[ 113.6093 4.0241444 118.91464 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1762
+    name="LM_palatoglossus_R_21"
+    position=[ 115 0 118.7784 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5612
+    name="LM_palatoglossus_L_0"
+    position=[ 103.51613 -21.572857 93.752014 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/579
+    name="LM_palatoglossus_L_1"
+    position=[ 106.64044 -22.825509 96.608029 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5332
+    name="LM_palatoglossus_L_2"
+    position=[ 108.94146 -24.00263 99.559632 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5210
+    name="LM_palatoglossus_L_3"
+    position=[ 110.77138 -24.464764 103.18739 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5574
+    name="LM_palatoglossus_L_4"
+    position=[ 112.29886 -24.243462 107.11636 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4557
+    name="LM_palatoglossus_L_5"
+    position=[ 112.4509 -22.343467 111.7522 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1958
+    name="LM_palatoglossus_L_6"
+    position=[ 111.34498 -18.105766 116.04484 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4927
+    name="LM_palatoglossus_L_7"
+    position=[ 109.28711 -13.342386 119.57066 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1842
+    name="LM_palatoglossus_L_8"
+    position=[ 107 -8.2394954 121.27186 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/3240
+    name="LM_palatoglossus_L_9"
+    position=[ 106 -3.9601392 121.60906 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4162
+    name="LM_palatoglossus_L_10"
+    position=[ 105 0 121.61817 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5602
+    name="LM_palatoglossus_L_11"
+    position=[ 105.384 -21.657598 92.085107 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/6612
+    name="LM_palatoglossus_L_12"
+    position=[ 108.49862 -22.761686 95.369392 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5334
+    name="LM_palatoglossus_L_13"
+    position=[ 110.82443 -23.613123 98.438544 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5210
+    name="LM_palatoglossus_L_14"
+    position=[ 112.59625 -24.337992 102.09111 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5583
+    name="LM_palatoglossus_L_15"
+    position=[ 115.28693 -23.784657 106.53408 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4565
+    name="LM_palatoglossus_L_16"
+    position=[ 116.33357 -21.91071 110.89115 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/2013
+    name="LM_palatoglossus_L_17"
+    position=[ 115.95327 -16.747601 114.99317 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1907
+    name="LM_palatoglossus_L_18"
+    position=[ 115.05242 -11.279516 118.10362 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5018
+    name="LM_palatoglossus_L_19"
+    position=[ 114.07054 -7.3488911 118.66934 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/3200
+    name="LM_palatoglossus_L_20"
+    position=[ 114 -4.0241444 118.91464 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1762
+    name="LM_palatoglossus_L_21"
+    position=[ 115 0 118.7784 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1755
+    name="LM_palatopharyngeus_R_0"
+    position=[ 114 0 119 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1647
+    name="LM_palatopharyngeus_R_1"
+    position=[ 118.66618 8 117 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4917
+    name="LM_palatopharyngeus_R_2"
+    position=[ 123.03371 14 113 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4350
+    name="LM_palatopharyngeus_R_3"
+    position=[ 127.03733 17 106.5804 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/3182
+    name="LM_palatopharyngeus_R_4"
+    position=[ 129.94919 19 100.21209 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/3111
+    name="LM_palatopharyngeus_R_5"
+    position=[ 132.86104 20 94.207694 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5170
+    name="LM_palatopharyngeus_R_6"
+    position=[ 134.863 20.5 88.74915 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/945
+    name="LM_palatopharyngeus_R_7"
+    position=[ 136 20 84 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1748
+    name="LM_palatopharyngeus_R_8"
+    position=[ 117 0 117 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/2444
+    name="LM_palatopharyngeus_R_9"
+    position=[ 121 7 116 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1145
+    name="LM_palatopharyngeus_R_10"
+    position=[ 124 12 112 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4355
+    name="LM_palatopharyngeus_R_11"
+    position=[ 127.03733 14 106.5804 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/3177
+    name="LM_palatopharyngeus_R_12"
+    position=[ 129.94919 16 100.21209 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/3084
+    name="LM_palatopharyngeus_R_13"
+    position=[ 132.86104 17 94.207694 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4888
+    name="LM_palatopharyngeus_R_14"
+    position=[ 134.863 17.5 88.74915 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/901
+    name="LM_palatopharyngeus_R_15"
+    position=[ 136 17 84 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1755
+    name="LM_palatopharyngeus_L_0"
+    position=[ 110 0 125 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/2415
+    name="LM_palatopharyngeus_L_1"
+    position=[ 117 -8 123 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1420
+    name="LM_palatopharyngeus_L_2"
+    position=[ 122 -14 119 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4978
+    name="LM_palatopharyngeus_L_3"
+    position=[ 127 -17 112 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1672
+    name="LM_palatopharyngeus_L_4"
+    position=[ 131 -19 104 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4163
+    name="LM_palatopharyngeus_L_5"
+    position=[ 133.5 -20 96 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4982
+    name="LM_palatopharyngeus_L_6"
+    position=[ 135 -20.5 89 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/3400
+    name="LM_palatopharyngeus_L_7"
+    position=[ 136 -20 84 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1748
+    name="LM_palatopharyngeus_L_8"
+    position=[ 130 0 112 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/2381
+    name="LM_palatopharyngeus_L_9"
+    position=[ 131 -7 112 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/2691
+    name="LM_palatopharyngeus_L_10"
+    position=[ 133 -12 108 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4384
+    name="LM_palatopharyngeus_L_11"
+    position=[ 135 -14 103 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4553
+    name="LM_palatopharyngeus_L_12"
+    position=[ 135.5 -15 99 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4986
+    name="LM_palatopharyngeus_L_13"
+    position=[ 136 -16 94.207694 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/5139
+    name="LM_palatopharyngeus_L_14"
+    position=[ 136 -16.5 89 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/691
+    name="LM_palatopharyngeus_L_15"
+    position=[ 136 -17 84 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/4377
+    position=[ 117 15 125 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/3647
+    position=[ 112 15 125 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1940
+    position=[ 117 -15 125 ]
+    velocity=[ 0 0 0 ]
+  ]
+  [ e/1066
+    position=[ 112 -15 125 ]
+    velocity=[ 0 0 0 ]
+  ]
+]

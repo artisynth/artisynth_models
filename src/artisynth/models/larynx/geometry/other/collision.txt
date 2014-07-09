@@ -1,0 +1,75 @@
+fem "Adipose" fem "Hyoepiglottic_ligament"
+fem "Adipose" fem "Thyroepiglottic_ligament"
+fem "Adipose" fem "Thyrohyoid_membrane_L"
+fem "Adipose" fem "Thyrohyoid_membrane_R"
+fem "Adipose" fem "Epiglottis"
+fem "Adipose" fem "Quadrangular_membrane_L"
+fem "Adipose" fem "Quadrangular_membrane_R"
+
+rigidBody "hyoid" fem "Mylohyoid_L"
+rigidBody "hyoid" fem "Mylohyoid_R"
+
+rigidBody "thyroid" fem "Thyrohyoid_L"
+rigidBody "thyroid" fem "Thyrohyoid_R"
+
+rigidBody "thyroid" fem "Sternohyoid_L"
+rigidBody "thyroid" fem "Sternohyoid_R"
+
+rigidBody "cricoid" fem "Sternohyoid_L"
+rigidBody "cricoid" fem "Sternohyoid_R"
+
+rigidBody "cricoid" fem "Sternothyroid_L"
+rigidBody "cricoid" fem "Sternothyroid_R"
+
+rigidBody "Sternum" fem "Sternohyoid_L"
+rigidBody "Sternum" fem "Sternohyoid_R"
+
+rigidBody "Sternum" fem "Sternothyroid_L"
+rigidBody "Sternum" fem "Sternothyroid_R"
+
+rigidBody "Clavicle_L" fem "Sternohyoid_L"
+rigidBody "Clavicle_R" fem "Sternohyoid_R"
+
+rigidBody "Clavicle_L" fem "Sternothyroid_L"
+rigidBody "Clavicle_R" fem "Sternothyroid_R"
+
+rigidBody "Mandible" fem "Digastric_L_posterior_belly"
+rigidBody "Mandible" fem "Digastric_R_posterior_belly"
+
+rigidBody "Mandible" fem "Digastric_L_anterior_belly"
+rigidBody "Mandible" fem "Digastric_L_anterior_belly"
+
+rigidBody "Mandible" fem "Mylohyoid_L"
+rigidBody "Mandible" fem "Mylohyoid_L"
+
+fem "Sternohyoid_L" fem "Sternothyroid_L"
+fem "Sternohyoid_R" fem "Sternothyroid_R"
+
+fem "Sternohyoid_L" fem "Cricothyroid_ligament_median_L"
+fem "Sternohyoid_R" fem "Cricothyroid_ligament_median_R"
+
+fem "Sternohyoid_L" fem "Thyrohyoid_membrane_L"
+fem "Sternohyoid_R" fem "Thyrohyoid_membrane_R"
+
+fem "Sternohyoid_L" fem "Thyrohyoid_L"
+fem "Sternohyoid_R" fem "Thyrohyoid_R"
+
+fem "Mylohyoid_L" fem "Geniohyoid_L"
+fem "Mylohyoid_R" fem "Geniohyoid_R"
+
+fem "Mylohyoid_L" fem "Digastric_L_tendon"
+fem "Mylohyoid_R" fem "Digastric_R_tendon"
+
+fem "Mylohyoid_L" fem "Digastric_L_anterior_belly"
+fem "Mylohyoid_R" fem "Digastric_R_anterior_belly"
+
+fem "Mylohyoid_L" fem "Digastric_L_posterior_belly"
+fem "Mylohyoid_R" fem "Digastric_R_posterior_belly"
+
+fem "Omohyoid_L_superior_belly" fem "Thyrohyoid_L"
+fem "Omohyoid_R_superior_belly" fem "Thyrohyoid_R"
+
+fem "Omohyoid_L_superior_belly" fem "Sternothyroid_L"
+fem "Omohyoid_R_superior_belly" fem "Sternothyroid_R"
+
+fem "Geniohyoid_L" fem "Geniohyoid_R"

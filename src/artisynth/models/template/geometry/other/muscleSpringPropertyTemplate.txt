@@ -1,0 +1,9 @@
+<name>
+	-damping <damping>
+	-maxForce <maxForce>
+	-optLength <optLength>
+	-maxLength <maxLength>
+	-tendonRatio <tendonRatio>
+	-passiveFraction <passiveFraction>
+
+	-muscleType <Constant/Linear/Peck/Pai>

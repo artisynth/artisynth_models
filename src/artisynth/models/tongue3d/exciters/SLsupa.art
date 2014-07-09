@@ -1,0 +1,23 @@
+artisynth.core.mechmodels.MuscleExciter
+[ targets=[
+    b/20/e/42
+    b/20/e/37
+    b/20/e/19
+    b/20/e/43
+    b/20/e/38
+    b/20/e/16
+    b/20/e/44
+    b/20/e/39
+    b/20/e/15
+    b/20/e/95
+    b/20/e/90
+    b/20/e/66
+    b/20/e/94
+    b/20/e/89
+    b/20/e/67
+    b/20/e/93
+    b/20/e/88
+    b/20/e/70
+  ]
+  name="SLsupa"
+]

@@ -1,0 +1,2604 @@
+Region : /anconeus
+ Shape. Dimension=1, line
+ #Scale factor sets=0
+ #Nodes=0
+ #Fields=0
+ Element: 0 0 1
+ Element: 0 0 2
+ Element: 0 0 3
+ Element: 0 0 4
+ Element: 0 0 5
+ Element: 0 0 6
+ Element: 0 0 7
+ Element: 0 0 8
+ Element: 0 0 9
+ Element: 0 0 10
+ Element: 0 0 11
+ Element: 0 0 12
+ Element: 0 0 13
+ Element: 0 0 14
+ Element: 0 0 15
+ Element: 0 0 16
+ Element: 0 0 17
+ Element: 0 0 18
+ Element: 0 0 19
+ Element: 0 0 20
+ Element: 0 0 21
+ Element: 0 0 22
+ Element: 0 0 23
+ Element: 0 0 24
+ Element: 0 0 25
+ Element: 0 0 26
+ Element: 0 0 27
+ Element: 0 0 28
+ Element: 0 0 29
+ Element: 0 0 30
+ Element: 0 0 31
+ Element: 0 0 32
+ Element: 0 0 33
+ Element: 0 0 34
+ Element: 0 0 35
+ Element: 0 0 36
+ Element: 0 0 37
+ Element: 0 0 38
+ Element: 0 0 39
+ Element: 0 0 40
+ Element: 0 0 41
+ Element: 0 0 42
+ Element: 0 0 43
+ Element: 0 0 44
+ Element: 0 0 45
+ Element: 0 0 46
+ Element: 0 0 47
+ Element: 0 0 48
+ Element: 0 0 49
+ Element: 0 0 50
+ Element: 0 0 51
+ Element: 0 0 52
+ Element: 0 0 53
+ Element: 0 0 54
+ Element: 0 0 55
+ Element: 0 0 56
+ Element: 0 0 57
+ Element: 0 0 58
+ Element: 0 0 59
+ Element: 0 0 60
+ Element: 0 0 61
+ Element: 0 0 62
+ Element: 0 0 63
+ Element: 0 0 64
+ Element: 0 0 65
+ Element: 0 0 66
+ Element: 0 0 67
+ Element: 0 0 68
+ Element: 0 0 69
+ Element: 0 0 70
+ Element: 0 0 71
+ Element: 0 0 72
+ Element: 0 0 73
+ Shape. Dimension=2, line*line
+ Element: 0 1 0
+ Faces:
+ 0 0 1
+ 0 0 2
+ 0 0 3
+ 0 0 4
+ Element: 0 2 0
+ Faces:
+ 0 0 5
+ 0 0 6
+ 0 0 3
+ 0 0 7
+ Element: 0 3 0
+ Faces:
+ 0 0 0
+ 0 0 8
+ 0 0 1
+ 0 0 5
+ Element: 0 4 0
+ Faces:
+ 0 0 0
+ 0 0 9
+ 0 0 2
+ 0 0 6
+ Element: 0 5 0
+ Faces:
+ 0 0 4
+ 0 0 7
+ 0 0 8
+ 0 0 9
+ Element: 0 6 0
+ Faces:
+ 0 0 10
+ 0 0 11
+ 0 0 3
+ 0 0 12
+ Element: 0 7 0
+ Faces:
+ 0 0 0
+ 0 0 13
+ 0 0 5
+ 0 0 10
+ Element: 0 8 0
+ Faces:
+ 0 0 0
+ 0 0 14
+ 0 0 6
+ 0 0 11
+ Element: 0 9 0
+ Faces:
+ 0 0 7
+ 0 0 12
+ 0 0 13
+ 0 0 14
+ Element: 0 10 0
+ Faces:
+ 0 0 15
+ 0 0 16
+ 0 0 3
+ 0 0 17
+ Element: 0 11 0
+ Faces:
+ 0 0 0
+ 0 0 18
+ 0 0 10
+ 0 0 15
+ Element: 0 12 0
+ Faces:
+ 0 0 0
+ 0 0 19
+ 0 0 11
+ 0 0 16
+ Element: 0 13 0
+ Faces:
+ 0 0 12
+ 0 0 17
+ 0 0 18
+ 0 0 19
+ Element: 0 14 0
+ Faces:
+ 0 0 0
+ 0 0 20
+ 0 0 15
+ 0 0 1
+ Element: 0 15 0
+ Faces:
+ 0 0 0
+ 0 0 21
+ 0 0 16
+ 0 0 2
+ Element: 0 16 0
+ Faces:
+ 0 0 17
+ 0 0 4
+ 0 0 20
+ 0 0 21
+ Element: 0 17 0
+ Faces:
+ 0 0 2
+ 0 0 22
+ 0 0 23
+ 0 0 24
+ Element: 0 18 0
+ Faces:
+ 0 0 6
+ 0 0 25
+ 0 0 23
+ 0 0 26
+ Element: 0 19 0
+ Faces:
+ 0 0 0
+ 0 0 27
+ 0 0 22
+ 0 0 25
+ Element: 0 20 0
+ Faces:
+ 0 0 24
+ 0 0 26
+ 0 0 9
+ 0 0 27
+ Element: 0 21 0
+ Faces:
+ 0 0 11
+ 0 0 28
+ 0 0 23
+ 0 0 29
+ Element: 0 22 0
+ Faces:
+ 0 0 0
+ 0 0 30
+ 0 0 25
+ 0 0 28
+ Element: 0 23 0
+ Faces:
+ 0 0 26
+ 0 0 29
+ 0 0 14
+ 0 0 30
+ Element: 0 24 0
+ Faces:
+ 0 0 16
+ 0 0 31
+ 0 0 23
+ 0 0 32
+ Element: 0 25 0
+ Faces:
+ 0 0 0
+ 0 0 33
+ 0 0 28
+ 0 0 31
+ Element: 0 26 0
+ Faces:
+ 0 0 29
+ 0 0 32
+ 0 0 19
+ 0 0 33
+ Element: 0 27 0
+ Faces:
+ 0 0 0
+ 0 0 34
+ 0 0 31
+ 0 0 22
+ Element: 0 28 0
+ Faces:
+ 0 0 32
+ 0 0 24
+ 0 0 21
+ 0 0 34
+ Element: 0 29 0
+ Faces:
+ 0 0 22
+ 0 0 35
+ 0 0 36
+ 0 0 37
+ Element: 0 30 0
+ Faces:
+ 0 0 25
+ 0 0 38
+ 0 0 36
+ 0 0 39
+ Element: 0 31 0
+ Faces:
+ 0 0 0
+ 0 0 40
+ 0 0 35
+ 0 0 38
+ Element: 0 32 0
+ Faces:
+ 0 0 37
+ 0 0 39
+ 0 0 27
+ 0 0 40
+ Element: 0 33 0
+ Faces:
+ 0 0 28
+ 0 0 41
+ 0 0 36
+ 0 0 42
+ Element: 0 34 0
+ Faces:
+ 0 0 0
+ 0 0 43
+ 0 0 38
+ 0 0 41
+ Element: 0 35 0
+ Faces:
+ 0 0 39
+ 0 0 42
+ 0 0 30
+ 0 0 43
+ Element: 0 36 0
+ Faces:
+ 0 0 31
+ 0 0 44
+ 0 0 36
+ 0 0 45
+ Element: 0 37 0
+ Faces:
+ 0 0 0
+ 0 0 46
+ 0 0 41
+ 0 0 44
+ Element: 0 38 0
+ Faces:
+ 0 0 42
+ 0 0 45
+ 0 0 33
+ 0 0 46
+ Element: 0 39 0
+ Faces:
+ 0 0 0
+ 0 0 47
+ 0 0 44
+ 0 0 35
+ Element: 0 40 0
+ Faces:
+ 0 0 45
+ 0 0 37
+ 0 0 34
+ 0 0 47
+ Element: 0 41 0
+ Faces:
+ 0 0 35
+ 0 0 48
+ 0 0 49
+ 0 0 50
+ Element: 0 42 0
+ Faces:
+ 0 0 38
+ 0 0 51
+ 0 0 49
+ 0 0 52
+ Element: 0 43 0
+ Faces:
+ 0 0 0
+ 0 0 53
+ 0 0 48
+ 0 0 51
+ Element: 0 44 0
+ Faces:
+ 0 0 50
+ 0 0 52
+ 0 0 40
+ 0 0 53
+ Element: 0 45 0
+ Faces:
+ 0 0 41
+ 0 0 54
+ 0 0 49
+ 0 0 55
+ Element: 0 46 0
+ Faces:
+ 0 0 0
+ 0 0 56
+ 0 0 51
+ 0 0 54
+ Element: 0 47 0
+ Faces:
+ 0 0 52
+ 0 0 55
+ 0 0 43
+ 0 0 56
+ Element: 0 48 0
+ Faces:
+ 0 0 44
+ 0 0 57
+ 0 0 49
+ 0 0 58
+ Element: 0 49 0
+ Faces:
+ 0 0 0
+ 0 0 59
+ 0 0 54
+ 0 0 57
+ Element: 0 50 0
+ Faces:
+ 0 0 55
+ 0 0 58
+ 0 0 46
+ 0 0 59
+ Element: 0 51 0
+ Faces:
+ 0 0 0
+ 0 0 60
+ 0 0 57
+ 0 0 48
+ Element: 0 52 0
+ Faces:
+ 0 0 58
+ 0 0 50
+ 0 0 47
+ 0 0 60
+ Element: 0 53 0
+ Faces:
+ 0 0 48
+ 0 0 61
+ 0 0 62
+ 0 0 63
+ Element: 0 54 0
+ Faces:
+ 0 0 51
+ 0 0 64
+ 0 0 62
+ 0 0 65
+ Element: 0 55 0
+ Faces:
+ 0 0 0
+ 0 0 66
+ 0 0 61
+ 0 0 64
+ Element: 0 56 0
+ Faces:
+ 0 0 63
+ 0 0 65
+ 0 0 53
+ 0 0 66
+ Element: 0 57 0
+ Faces:
+ 0 0 54
+ 0 0 67
+ 0 0 62
+ 0 0 68
+ Element: 0 58 0
+ Faces:
+ 0 0 0
+ 0 0 69
+ 0 0 64
+ 0 0 67
+ Element: 0 59 0
+ Faces:
+ 0 0 65
+ 0 0 68
+ 0 0 56
+ 0 0 69
+ Element: 0 60 0
+ Faces:
+ 0 0 57
+ 0 0 70
+ 0 0 62
+ 0 0 71
+ Element: 0 61 0
+ Faces:
+ 0 0 0
+ 0 0 72
+ 0 0 67
+ 0 0 70
+ Element: 0 62 0
+ Faces:
+ 0 0 68
+ 0 0 71
+ 0 0 59
+ 0 0 72
+ Element: 0 63 0
+ Faces:
+ 0 0 0
+ 0 0 73
+ 0 0 70
+ 0 0 61
+ Element: 0 64 0
+ Faces:
+ 0 0 71
+ 0 0 63
+ 0 0 60
+ 0 0 73
+ Shape. Dimension=3, line*line*line
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 1 0 0
+ Faces:
+ 0 1 0
+ 0 2 0
+ 0 3 0
+ 0 4 0
+ 0 0 0
+ 0 5 0
+ Nodes:
+ 1 2 5 6 25 26
+ Scale factors:
+  1.000000000000000e+00  4.828412936456910e+00  2.007040155803726e+01  9.690818652271203e+01  2.098970807919927e+00
+  1.013469780220599e+01  4.212718697355082e+01  2.034074545596318e+02  1.000000000000000e+00  4.828412936456910e+00
+  1.531410438491514e+01  7.394281972237577e+01  4.558941772495027e+00  2.201245343086878e+01  6.981611018873890e+01
+  3.371010096084080e+02  1.000000000000000e+00  1.666233217533337e+01  2.007040155803726e+01  3.344196976523452e+02
+  3.495359207134524e+00  5.824083618138533e+01  7.015326287677263e+01  1.168916969236269e+03  1.000000000000000e+00
+  1.666233217533337e+01  1.531410438491514e+01  2.551686942291854e+02  1.240717851086212e+01  2.067325297066427e+02
+  1.900048268376185e+02  3.165923539685097e+03  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01
+  1.836251554424075e+01  2.098970807919927e+00  2.098970807919927e+00  3.854238408733723e+01  3.854238408733723e+01
+  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01  1.836251554424075e+01  4.558941772495027e+00
+  4.558941772495027e+00  8.371363916272843e+01  8.371363916272843e+01  1.000000000000000e+00  1.000000000000000e+00
+  1.836251554424075e+01  1.836251554424075e+01  3.495359207134524e+00  3.495359207134524e+00  6.418358777371274e+01
+  6.418358777371274e+01  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01  1.836251554424075e+01
+  1.240717851086212e+01  1.240717851086212e+01  2.278270082658755e+02  2.278270082658755e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 2 0 0
+ Faces:
+ 0 2 0
+ 0 6 0
+ 0 7 0
+ 0 8 0
+ 0 0 0
+ 0 9 0
+ Nodes:
+ 2 3 6 7 25 26
+ Scale factors:
+  1.000000000000000e+00  6.850784251688862e+00  1.531410438491514e+01  1.049136251488960e+02  4.558941772495027e+00
+  3.123232649937544e+01  6.981611018873890e+01  4.782951081951867e+02  1.000000000000000e+00  6.850784251688862e+00
+  1.861420249132544e+01  1.275218852853199e+02  2.750011648448011e+00  1.883973649314856e+01  5.118927367771495e+01
+  3.506866699666808e+02  1.000000000000000e+00  1.611579169405516e+01  1.531410438491514e+01  2.467989162483091e+02
+  1.240717851086212e+01  1.999515043920114e+02  1.900048268376185e+02  3.062078210180081e+03  1.000000000000000e+00
+  1.611579169405516e+01  1.861420249132544e+01  2.999826099011634e+02  5.880069000581569e+00  9.476196716004367e+01
+  1.094527950397910e+02  1.763918445193385e+03  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01
+  1.836251554424075e+01  4.558941772495027e+00  4.558941772495027e+00  8.371363916272843e+01  8.371363916272843e+01
+  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01  1.836251554424075e+01  2.750011648448011e+00
+  2.750011648448011e+00  5.049713164146974e+01  5.049713164146974e+01  1.000000000000000e+00  1.000000000000000e+00
+  1.836251554424075e+01  1.836251554424075e+01  1.240717851086212e+01  1.240717851086212e+01  2.278270082658755e+02
+  2.278270082658755e+02  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01  1.836251554424075e+01
+  5.880069000581569e+00  5.880069000581569e+00  1.079728584243873e+02  1.079728584243873e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 3 0 0
+ Faces:
+ 0 6 0
+ 0 10 0
+ 0 11 0
+ 0 12 0
+ 0 0 0
+ 0 13 0
+ Nodes:
+ 3 4 7 8 25 26
+ Scale factors:
+  1.000000000000000e+00  3.612402048480271e+00  1.861420249132544e+01  6.724198321049059e+01  2.750011648448011e+00
+  9.934147712198200e+00  5.118927367771495e+01  1.849162370935947e+02  1.000000000000000e+00  3.612402048480271e+00
+  2.213879088933274e+01  7.997421355950196e+01  3.784392859904986e+00  1.367074851937488e+01  8.378188216852040e+01
+  3.026538427710958e+02  1.000000000000000e+00  1.235146635405316e+01  1.861420249132544e+01  2.299126957791388e+02
+  5.880069000581569e+00  7.262747442019426e+01  1.094527950397910e+02  1.351902515291055e+03  1.000000000000000e+00
+  1.235146635405316e+01  2.213879088933274e+01  2.734465307890121e+02  9.476439466640468e+00  1.170479232284312e+02
+  2.097969117273732e+02  2.591299496384911e+03  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01
+  1.836251554424075e+01  2.750011648448011e+00  2.750011648448011e+00  5.049713164146974e+01  5.049713164146974e+01
+  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01  1.836251554424075e+01  3.784392859904986e+00
+  3.784392859904986e+00  6.949097271551904e+01  6.949097271551904e+01  1.000000000000000e+00  1.000000000000000e+00
+  1.836251554424075e+01  1.836251554424075e+01  5.880069000581569e+00  5.880069000581569e+00  1.079728584243873e+02
+  1.079728584243873e+02  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01  1.836251554424075e+01
+  9.476439466640468e+00  9.476439466640468e+00  1.740112670102421e+02  1.740112670102421e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 4 0 0
+ Faces:
+ 0 10 0
+ 0 1 0
+ 0 14 0
+ 0 15 0
+ 0 0 0
+ 0 16 0
+ Nodes:
+ 4 1 8 5 25 26
+ Scale factors:
+  1.000000000000000e+00  5.408925084031946e+00  2.213879088933274e+01  1.197470613714498e+02  3.784392859904986e+00
+  2.046949746777148e+01  8.378188216852040e+01  4.531699240487188e+02  1.000000000000000e+00  5.408925084031946e+00
+  2.007040155803726e+01  1.085592984338616e+02  2.098970807919927e+00  1.135317585360889e+01  4.212718697355082e+01
+  2.278627983409429e+02  1.000000000000000e+00  8.237748368392491e+00  2.213879088933274e+01  1.823737885267834e+02
+  9.476439466640468e+00  7.806452375448772e+01  2.097969117273732e+02  1.728254167275952e+03  1.000000000000000e+00
+  8.237748368392491e+00  2.007040155803726e+01  1.653349176877036e+02  3.495359207134524e+00  2.879388960551810e+01
+  7.015326287677263e+01  5.779049268005433e+02  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01
+  1.836251554424075e+01  3.784392859904986e+00  3.784392859904986e+00  6.949097271551904e+01  6.949097271551904e+01
+  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01  1.836251554424075e+01  2.098970807919927e+00
+  2.098970807919927e+00  3.854238408733723e+01  3.854238408733723e+01  1.000000000000000e+00  1.000000000000000e+00
+  1.836251554424075e+01  1.836251554424075e+01  9.476439466640468e+00  9.476439466640468e+00  1.740112670102421e+02
+  1.740112670102421e+02  1.000000000000000e+00  1.000000000000000e+00  1.836251554424075e+01  1.836251554424075e+01
+  3.495359207134524e+00  3.495359207134524e+00  6.418358777371274e+01  6.418358777371274e+01
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 5 0 0
+ Faces:
+ 0 17 0
+ 0 18 0
+ 0 4 0
+ 0 19 0
+ 0 0 0
+ 0 20 0
+ Nodes:
+ 5 6 9 10 26 27
+ Scale factors:
+  1.000000000000000e+00  1.666233217533337e+01  1.609077435667242e+01  2.681098272892119e+02  3.495359207134524e+00
+  5.824083618138533e+01  5.624303629751903e+01  9.371401533385940e+02  1.000000000000000e+00  1.666233217533337e+01
+  1.714390567881108e+01  2.856574512029344e+02  1.240717851086212e+01  2.067325297066427e+02  2.127074981303919e+02
+  3.544202990032692e+03  1.000000000000000e+00  1.557333657214426e+01  1.609077435667242e+01  2.505870447628876e+02
+  4.367492617444410e+00  6.801643250781709e+01  7.027633821173060e+01  1.094437068029123e+03  1.000000000000000e+00
+  1.557333657214426e+01  1.714390567881108e+01  2.669878132972203e+02  1.552637981606246e+01  2.417975386224879e+02
+  2.661827910999709e+02  4.145354195512612e+03  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01
+  1.852256353557783e+01  3.495359207134524e+00  3.495359207134524e+00  6.474301299381617e+01  6.474301299381617e+01
+  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01  1.852256353557783e+01  1.240717851086212e+01
+  1.240717851086212e+01  2.298127522646995e+02  2.298127522646995e+02  1.000000000000000e+00  1.000000000000000e+00
+  1.852256353557783e+01  1.852256353557783e+01  4.367492617444410e+00  4.367492617444410e+00  8.089715949778119e+01
+  8.089715949778119e+01  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01  1.852256353557783e+01
+  1.552637981606246e+01  1.552637981606246e+01  2.875883566205300e+02  2.875883566205300e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 6 0 0
+ Faces:
+ 0 18 0
+ 0 21 0
+ 0 8 0
+ 0 22 0
+ 0 0 0
+ 0 23 0
+ Nodes:
+ 6 7 10 11 26 27
+ Scale factors:
+  1.000000000000000e+00  1.611579169405516e+01  1.714390567881108e+01  2.762876127422487e+02  1.240717851086212e+01
+  1.999515043920114e+02  2.127074981303919e+02  3.427949731633023e+03  1.000000000000000e+00  1.611579169405516e+01
+  2.009164678157753e+01  3.237927943224371e+02  5.880069000581569e+00  9.476196716004367e+01  1.181402694109885e+02
+  1.903923972507047e+03  1.000000000000000e+00  2.034359663844364e+01  1.714390567881108e+01  3.487687019372559e+02
+  1.552637981606246e+01  3.158624082332473e+02  2.661827910999709e+02  5.415115334232913e+03  1.000000000000000e+00
+  2.034359663844364e+01  2.009164678157753e+01  4.087363579264975e+02  7.951627902161351e+00  1.617647106605643e+02
+  1.597612991487622e+02  3.250119428316146e+03  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01
+  1.852256353557783e+01  1.240717851086212e+01  1.240717851086212e+01  2.298127522646995e+02  2.298127522646995e+02
+  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01  1.852256353557783e+01  5.880069000581569e+00
+  5.880069000581569e+00  1.089139516568537e+02  1.089139516568537e+02  1.000000000000000e+00  1.000000000000000e+00
+  1.852256353557783e+01  1.852256353557783e+01  1.552637981606246e+01  1.552637981606246e+01  2.875883566205300e+02
+  2.875883566205300e+02  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01  1.852256353557783e+01
+  7.951627902161351e+00  7.951627902161351e+00  1.472845330290571e+02  1.472845330290571e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 7 0 0
+ Faces:
+ 0 21 0
+ 0 24 0
+ 0 12 0
+ 0 25 0
+ 0 0 0
+ 0 26 0
+ Nodes:
+ 7 8 11 12 26 27
+ Scale factors:
+  1.000000000000000e+00  1.235146635405316e+01  2.009164678157753e+01  2.481612992201753e+02  5.880069000581569e+00
+  7.262747442019426e+01  1.181402694109885e+02  1.459205562688600e+03  1.000000000000000e+00  1.235146635405316e+01
+  2.333876840918650e+01  2.882680127511059e+02  9.476439466640468e+00  1.170479232284312e+02  2.211684260555967e+02
+  2.731754373004598e+03  1.000000000000000e+00  2.077805493560523e+01  2.009164678157753e+01  4.174653405743938e+02
+  7.951627902161351e+00  1.652193613785999e+02  1.597612991487622e+02  3.319529050296641e+03  1.000000000000000e+00
+  2.077805493560523e+01  2.333876840918650e+01  4.849342121354449e+02  1.653466289309466e+01  3.435581339344340e+02
+  3.858986679859058e+02  8.018223722988032e+03  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01
+  1.852256353557783e+01  5.880069000581569e+00  5.880069000581569e+00  1.089139516568537e+02  1.089139516568537e+02
+  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01  1.852256353557783e+01  9.476439466640468e+00
+  9.476439466640468e+00  1.755279521119053e+02  1.755279521119053e+02  1.000000000000000e+00  1.000000000000000e+00
+  1.852256353557783e+01  1.852256353557783e+01  7.951627902161351e+00  7.951627902161351e+00  1.472845330290571e+02
+  1.472845330290571e+02  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01  1.852256353557783e+01
+  1.653466289309466e+01  1.653466289309466e+01  3.062643439767069e+02  3.062643439767069e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 8 0 0
+ Faces:
+ 0 24 0
+ 0 17 0
+ 0 15 0
+ 0 27 0
+ 0 0 0
+ 0 28 0
+ Nodes:
+ 8 5 12 9 26 27
+ Scale factors:
+  1.000000000000000e+00  8.237748368392491e+00  2.333876840918650e+01  1.922589013830663e+02  9.476439466640468e+00
+  7.806452375448772e+01  2.211684260555967e+02  1.821929840879427e+03  1.000000000000000e+00  8.237748368392491e+00
+  1.609077435667242e+01  1.325517502028499e+02  3.495359207134524e+00  2.879388960551810e+01  5.624303629751903e+01
+  4.633159804933271e+02  1.000000000000000e+00  2.034988424247245e+01  2.333876840918650e+01  4.749412354888181e+02
+  1.653466289309466e+01  3.364784758627808e+02  3.858986679859058e+02  7.852993222837490e+03  1.000000000000000e+00
+  2.034988424247245e+01  1.609077435667242e+01  3.274453955300277e+02  4.367492617444410e+00  8.887796919484673e+01
+  7.027633821173060e+01  1.430115347593561e+03  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01
+  1.852256353557783e+01  9.476439466640468e+00  9.476439466640468e+00  1.755279521119053e+02  1.755279521119053e+02
+  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01  1.852256353557783e+01  3.495359207134524e+00
+  3.495359207134524e+00  6.474301299381617e+01  6.474301299381617e+01  1.000000000000000e+00  1.000000000000000e+00
+  1.852256353557783e+01  1.852256353557783e+01  1.653466289309466e+01  1.653466289309466e+01  3.062643439767069e+02
+  3.062643439767069e+02  1.000000000000000e+00  1.000000000000000e+00  1.852256353557783e+01  1.852256353557783e+01
+  4.367492617444410e+00  4.367492617444410e+00  8.089715949778119e+01  8.089715949778119e+01
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 9 0 0
+ Faces:
+ 0 29 0
+ 0 30 0
+ 0 19 0
+ 0 31 0
+ 0 0 0
+ 0 32 0
+ Nodes:
+ 9 10 13 14 27 28
+ Scale factors:
+  1.000000000000000e+00  1.557333657214426e+01  2.350849766473648e+01  3.661057464384086e+02  4.367492617444410e+00
+  6.801643250781709e+01  1.026731899979457e+02  1.598964144773725e+03  1.000000000000000e+00  1.557333657214426e+01
+  2.238220236320448e+01  3.485655706280261e+02  1.552637981606246e+01  2.417975386224879e+02  3.475145750110835e+02
+  5.411961440373277e+03  1.000000000000000e+00  2.040474181530216e+01  2.350849766473648e+01  4.796848253145816e+02
+  7.450048252311474e+00  1.520163110999587e+02  1.751394419416384e+02  3.573675094495234e+03  1.000000000000000e+00
+  2.040474181530216e+01  2.238220236320448e+01  4.567030604790333e+02  1.714676755593745e+01  3.498753649459032e+02
+  3.837824213118211e+02  7.830981220119226e+03  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01
+  2.293504521874805e+01  4.367492617444410e+00  4.367492617444410e+00  1.001686406736358e+02  1.001686406736358e+02
+  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01  2.293504521874805e+01  1.552637981606246e+01
+  1.552637981606246e+01  3.560982231648495e+02  3.560982231648495e+02  1.000000000000000e+00  1.000000000000000e+00
+  2.293504521874805e+01  2.293504521874805e+01  7.450048252311474e+00  7.450048252311474e+00  1.708671935486185e+02
+  1.708671935486185e+02  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01  2.293504521874805e+01
+  1.714676755593745e+01  1.714676755593745e+01  3.932618892507874e+02  3.932618892507874e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 10 0 0
+ Faces:
+ 0 30 0
+ 0 33 0
+ 0 22 0
+ 0 34 0
+ 0 0 0
+ 0 35 0
+ Nodes:
+ 10 11 14 15 27 28
+ Scale factors:
+  1.000000000000000e+00  2.034359663844364e+01  2.238220236320448e+01  4.553344967570520e+02  1.552637981606246e+01
+  3.158624082332473e+02  3.475145750110835e+02  7.069696340005647e+03  1.000000000000000e+00  2.034359663844364e+01
+  2.245287529445771e+01  4.567722383637240e+02  7.951627902161351e+00  1.617647106605643e+02  1.785369096751592e+02
+  3.632082875505683e+03  1.000000000000000e+00  2.053180553725037e+01  2.238220236320448e+01  4.595470264167001e+02
+  1.714676755593745e+01  3.520540970509414e+02  3.837824213118211e+02  7.879746042989403e+03  1.000000000000000e+00
+  2.053180553725037e+01  2.245287529445771e+01  4.609980692979387e+02  8.046593256218527e+00  1.652110879740290e+02
+  1.806691549270990e+02  3.709463955542555e+03  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01
+  2.293504521874805e+01  1.552637981606246e+01  1.552637981606246e+01  3.560982231648495e+02  3.560982231648495e+02
+  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01  2.293504521874805e+01  7.951627902161351e+00
+  7.951627902161351e+00  1.823709454987293e+02  1.823709454987293e+02  1.000000000000000e+00  1.000000000000000e+00
+  2.293504521874805e+01  2.293504521874805e+01  1.714676755593745e+01  1.714676755593745e+01  3.932618892507874e+02
+  3.932618892507874e+02  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01  2.293504521874805e+01
+  8.046593256218527e+00  8.046593256218527e+00  1.845489801882451e+02  1.845489801882451e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 11 0 0
+ Faces:
+ 0 33 0
+ 0 36 0
+ 0 25 0
+ 0 37 0
+ 0 0 0
+ 0 38 0
+ Nodes:
+ 11 12 15 16 27 28
+ Scale factors:
+  1.000000000000000e+00  2.077805493560523e+01  2.245287529445771e+01  4.665270763305356e+02  7.951627902161351e+00
+  1.652193613785999e+02  1.785369096751592e+02  3.709649717263645e+03  1.000000000000000e+00  2.077805493560523e+01
+  2.424641147640621e+01  5.037932696480572e+02  1.653466289309466e+01  3.435581339344340e+02  4.009062401296381e+02
+  8.330051881440560e+03  1.000000000000000e+00  2.131837198844671e+01  2.245287529445771e+01  4.786587477374544e+02
+  8.046593256218527e+00  1.715402682757932e+02  1.806691549270990e+02  3.851572251574205e+03  1.000000000000000e+00
+  2.131837198844671e+01  2.424641147640621e+01  5.168940192389709e+02  1.763266349833991e+01  3.758996796047163e+02
+  4.275288146057575e+02  9.114218305545208e+03  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01
+  2.293504521874805e+01  7.951627902161351e+00  7.951627902161351e+00  1.823709454987293e+02  1.823709454987293e+02
+  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01  2.293504521874805e+01  1.653466289309466e+01
+  1.653466289309466e+01  3.792232411298814e+02  3.792232411298814e+02  1.000000000000000e+00  1.000000000000000e+00
+  2.293504521874805e+01  2.293504521874805e+01  8.046593256218527e+00  8.046593256218527e+00  1.845489801882451e+02
+  1.845489801882451e+02  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01  2.293504521874805e+01
+  1.763266349833991e+01  1.763266349833991e+01  4.044059346613940e+02  4.044059346613940e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 12 0 0
+ Faces:
+ 0 36 0
+ 0 29 0
+ 0 27 0
+ 0 39 0
+ 0 0 0
+ 0 40 0
+ Nodes:
+ 12 9 16 13 27 28
+ Scale factors:
+  1.000000000000000e+00  2.034988424247245e+01  2.424641147640621e+01  4.934116668402217e+02  1.653466289309466e+01
+  3.364784758627808e+02  4.009062401296381e+02  8.158395578722996e+03  1.000000000000000e+00  2.034988424247245e+01
+  2.350849766473648e+01  4.783952061918213e+02  4.367492617444410e+00  8.887796919484673e+01  1.026731899979457e+02
+  2.089387531263576e+03  1.000000000000000e+00  2.200983795810390e+01  2.424641147640621e+01  5.336595876612114e+02
+  1.763266349833991e+01  3.880920663682348e+02  4.275288146057575e+02  9.409839931892968e+03  1.000000000000000e+00
+  2.200983795810390e+01  2.350849766473648e+01  5.174182242393140e+02  7.450048252311474e+00  1.639743548134307e+02
+  1.751394419416384e+02  3.854790737208208e+03  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01
+  2.293504521874805e+01  1.653466289309466e+01  1.653466289309466e+01  3.792232411298814e+02  3.792232411298814e+02
+  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01  2.293504521874805e+01  4.367492617444410e+00
+  4.367492617444410e+00  1.001686406736358e+02  1.001686406736358e+02  1.000000000000000e+00  1.000000000000000e+00
+  2.293504521874805e+01  2.293504521874805e+01  1.763266349833991e+01  1.763266349833991e+01  4.044059346613940e+02
+  4.044059346613940e+02  1.000000000000000e+00  1.000000000000000e+00  2.293504521874805e+01  2.293504521874805e+01
+  7.450048252311474e+00  7.450048252311474e+00  1.708671935486185e+02  1.708671935486185e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 13 0 0
+ Faces:
+ 0 41 0
+ 0 42 0
+ 0 31 0
+ 0 43 0
+ 0 0 0
+ 0 44 0
+ Nodes:
+ 13 14 17 18 28 29
+ Scale factors:
+  1.000000000000000e+00  2.040474181530216e+01  2.287351787380109e+01  4.667282266226104e+02  7.450048252311474e+00
+  1.520163110999587e+02  1.704088118599271e+02  3.477147809054212e+03  1.000000000000000e+00  2.040474181530216e+01
+  2.666502890252154e+01  5.440930302535218e+02  1.714676755593745e+01  3.498753649459032e+02  4.572190524638906e+02
+  9.329436718562780e+03  1.000000000000000e+00  1.599545654082510e+01  2.287351787380109e+01  3.658723610861715e+02
+  6.199190208454888e+00  9.915887756764864e+01  1.417972880361856e+02  2.268112358389666e+03  1.000000000000000e+00
+  1.599545654082510e+01  2.666502890252154e+01  4.265193109701285e+02  1.330683640959275e+01  2.128489234855099e+02
+  3.548271774629167e+02  5.675622696611718e+03  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01
+  2.326121199031186e+01  7.450048252311474e+00  7.450048252311474e+00  1.732971517350696e+02  1.732971517350696e+02
+  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01  2.326121199031186e+01  1.714676755593745e+01
+  1.714676755593745e+01  3.988545950672626e+02  3.988545950672626e+02  1.000000000000000e+00  1.000000000000000e+00
+  2.326121199031186e+01  2.326121199031186e+01  6.199190208454888e+00  6.199190208454888e+00  1.442006776071347e+02
+  1.442006776071347e+02  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01  2.326121199031186e+01
+  1.330683640959275e+01  1.330683640959275e+01  3.095331426439373e+02  3.095331426439373e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 14 0 0
+ Faces:
+ 0 42 0
+ 0 45 0
+ 0 34 0
+ 0 46 0
+ 0 0 0
+ 0 47 0
+ Nodes:
+ 14 15 18 19 28 29
+ Scale factors:
+  1.000000000000000e+00  2.053180553725037e+01  2.666502890252154e+01  5.474811880717328e+02  1.714676755593745e+01
+  3.520540970509414e+02  4.572190524638906e+02  9.387532673114476e+03  1.000000000000000e+00  2.053180553725037e+01
+  2.306666217955836e+01  4.736002222641399e+02  8.046593256218527e+00  1.652110879740290e+02  1.856080483375052e+02
+  3.810868354614223e+03  1.000000000000000e+00  1.399652540350940e+01  2.666502890252154e+01  3.732177544194552e+02
+  1.330683640959275e+01  1.862494738472088e+02  3.548271774629167e+02  4.966347603215252e+03  1.000000000000000e+00
+  1.399652540350940e+01  2.306666217955836e+01  3.228531231703581e+02  5.705558525165409e+00  7.985799483868729e+01
+  1.316081910456897e+02  1.842057389280915e+03  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01
+  2.326121199031186e+01  1.714676755593745e+01  1.714676755593745e+01  3.988545950672626e+02  3.988545950672626e+02
+  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01  2.326121199031186e+01  8.046593256218527e+00
+  8.046593256218527e+00  1.871735115327130e+02  1.871735115327130e+02  1.000000000000000e+00  1.000000000000000e+00
+  2.326121199031186e+01  2.326121199031186e+01  1.330683640959275e+01  1.330683640959275e+01  3.095331426439373e+02
+  3.095331426439373e+02  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01  2.326121199031186e+01
+  5.705558525165409e+00  5.705558525165409e+00  1.327182063770037e+02  1.327182063770037e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 15 0 0
+ Faces:
+ 0 45 0
+ 0 48 0
+ 0 37 0
+ 0 49 0
+ 0 0 0
+ 0 50 0
+ Nodes:
+ 15 16 19 20 28 29
+ Scale factors:
+  1.000000000000000e+00  2.131837198844671e+01  2.306666217955836e+01  4.917436848756600e+02  8.046593256218527e+00
+  1.715402682757932e+02  1.856080483375052e+02  3.956861418508534e+03  1.000000000000000e+00  2.131837198844671e+01
+  2.234716203114374e+01  4.764051130660147e+02  1.763266349833991e+01  3.758996796047163e+02  3.940399882380358e+02
+  8.400291047581613e+03  1.000000000000000e+00  1.909408679698885e+01  2.306666217955836e+01  4.404368497733072e+02
+  5.705558525165409e+00  1.089424297048080e+02  1.316081910456897e+02  2.512938223021089e+03  1.000000000000000e+00
+  1.909408679698885e+01  2.234716203114374e+01  4.266986514890322e+02  1.528798967440007e+01  2.919102017944643e+02
+  3.416431823842710e+02  6.523364578044760e+03  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01
+  2.326121199031186e+01  8.046593256218527e+00  8.046593256218527e+00  1.871735115327130e+02  1.871735115327130e+02
+  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01  2.326121199031186e+01  1.763266349833991e+01
+  1.763266349833991e+01  4.101571235887185e+02  4.101571235887185e+02  1.000000000000000e+00  1.000000000000000e+00
+  2.326121199031186e+01  2.326121199031186e+01  5.705558525165409e+00  5.705558525165409e+00  1.327182063770037e+02
+  1.327182063770037e+02  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01  2.326121199031186e+01
+  1.528798967440007e+01  1.528798967440007e+01  3.556171687219189e+02  3.556171687219189e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 16 0 0
+ Faces:
+ 0 48 0
+ 0 41 0
+ 0 39 0
+ 0 51 0
+ 0 0 0
+ 0 52 0
+ Nodes:
+ 16 13 20 17 28 29
+ Scale factors:
+  1.000000000000000e+00  2.200983795810390e+01  2.234716203114374e+01  4.918574151289658e+02  1.763266349833991e+01
+  3.880920663682348e+02  3.940399882380358e+02  8.672756290132334e+03  1.000000000000000e+00  2.200983795810390e+01
+  2.287351787380109e+01  5.034424219341553e+02  7.450048252311474e+00  1.639743548134307e+02  1.704088118599271e+02
+  3.750670335670009e+03  1.000000000000000e+00  1.932332229667256e+01  2.234716203114374e+01  4.318214143437544e+02
+  1.528798967440007e+01  2.954147517466349e+02  3.416431823842710e+02  6.601681323672153e+03  1.000000000000000e+00
+  1.932332229667256e+01  2.287351787380109e+01  4.419923579341590e+02  6.199190208454888e+00  1.197889503763506e+02
+  1.417972880361856e+02  2.739994697517327e+03  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01
+  2.326121199031186e+01  1.763266349833991e+01  1.763266349833991e+01  4.101571235887185e+02  4.101571235887185e+02
+  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01  2.326121199031186e+01  7.450048252311474e+00
+  7.450048252311474e+00  1.732971517350696e+02  1.732971517350696e+02  1.000000000000000e+00  1.000000000000000e+00
+  2.326121199031186e+01  2.326121199031186e+01  1.528798967440007e+01  1.528798967440007e+01  3.556171687219189e+02
+  3.556171687219189e+02  1.000000000000000e+00  1.000000000000000e+00  2.326121199031186e+01  2.326121199031186e+01
+  6.199190208454888e+00  6.199190208454888e+00  1.442006776071347e+02  1.442006776071347e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 17 0 0
+ Faces:
+ 0 53 0
+ 0 54 0
+ 0 43 0
+ 0 55 0
+ 0 0 0
+ 0 56 0
+ Nodes:
+ 17 18 21 22 29 30
+ Scale factors:
+  1.000000000000000e+00  1.599545654082510e+01  1.602780164621046e+01  2.563720046769245e+02  6.199190208454888e+00
+  9.915887756764864e+01  9.935939102824503e+01  1.589298821115141e+03  1.000000000000000e+00  1.599545654082510e+01
+  1.714623955660313e+01  2.742619296662216e+02  1.330683640959275e+01  2.128489234855099e+02  2.281622048194060e+02
+  3.649558631447644e+03  1.000000000000000e+00  1.342312855978773e+01  1.602780164621046e+01  2.151432420278605e+02
+  7.288569401003175e+00  9.783540408660069e+01  1.168197446439179e+02  1.568086450676884e+03  1.000000000000000e+00
+  1.342312855978773e+01  1.714623955660313e+01  2.301561778852017e+02  6.668366008537668e+00  8.951033421631972e+01
+  1.143374010334963e+02  1.534765633264628e+03  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01
+  1.503789267768934e+01  6.199190208454888e+00  6.199190208454888e+00  9.322275704332723e+01  9.322275704332723e+01
+  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01  1.503789267768934e+01  1.330683640959275e+01
+  1.330683640959275e+01  2.001067778070248e+02  2.001067778070248e+02  1.000000000000000e+00  1.000000000000000e+00
+  1.503789267768934e+01  1.503789267768934e+01  7.288569401003175e+00  7.288569401003175e+00  1.096047244261762e+02
+  1.096047244261762e+02  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01  1.503789267768934e+01
+  6.668366008537668e+00  6.668366008537668e+00  1.002781723719411e+02  1.002781723719411e+02
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 9 10 11 12 13 14 15 16
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 18 0 0
+ Faces:
+ 0 54 0
+ 0 57 0
+ 0 46 0
+ 0 58 0
+ 0 0 0
+ 0 59 0
+ Nodes:
+ 18 19 22 23 29 30
+ Scale factors:
+  1.000000000000000e+00  1.399652540350940e+01  1.714623955660313e+01  2.399877775286535e+02  1.330683640959275e+01
+  1.862494738472088e+02  2.281622048194060e+02  3.193478095875532e+03  1.000000000000000e+00  1.399652540350940e+01
+  1.528927750272258e+01  2.139967609681614e+02  5.705558525165409e+00  7.985799483868729e+01  8.723386759927853e+01
+  1.220971043899678e+03  1.000000000000000e+00  6.029042556470270e+00  1.714623955660313e+01  1.033754079701942e+02
+  6.668366008537668e+00  4.020386244759339e+01  1.143374010334963e+02  6.893450566271571e+02  1.000000000000000e+00
+  6.029042556470270e+00  1.528927750272258e+01  9.217970472159794e+01  4.947999332953935e+00  2.983169854776578e+01
+  7.565133488481894e+01  4.561051174743573e+02  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01
+  1.503789267768934e+01  1.330683640959275e+01  1.330683640959275e+01  2.001067778070248e+02  2.001067778070248e+02
+  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01  1.503789267768934e+01  5.705558525165409e+00
+  5.705558525165409e+00  8.579957676771292e+01  8.579957676771292e+01  1.000000000000000e+00  1.000000000000000e+00
+  1.503789267768934e+01  1.503789267768934e+01  6.668366008537668e+00  6.668366008537668e+00  1.002781723719411e+02
+  1.002781723719411e+02  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01  1.503789267768934e+01
+  4.947999332953935e+00  4.947999332953935e+00  7.440748293823974e+01  7.440748293823974e+01
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 17 18 19 20 21 22 23 24
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 19 0 0
+ Faces:
+ 0 57 0
+ 0 60 0
+ 0 49 0
+ 0 61 0
+ 0 0 0
+ 0 62 0
+ Nodes:
+ 19 20 23 24 29 30
+ Scale factors:
+  1.000000000000000e+00  1.909408679698885e+01  1.528927750272258e+01  2.919347917002339e+02  5.705558525165409e+00
+  1.089424297048080e+02  8.723386759927853e+01  1.665651039577657e+03  1.000000000000000e+00  1.909408679698885e+01
+  1.864501768329003e+01  3.560095859761318e+02  1.528798967440007e+01  2.919102017944643e+02  2.850448378211448e+02
+  5.442670874390548e+03  1.000000000000000e+00  8.238231914929974e+00  1.528927750272258e+01  1.259566138791500e+02
+  4.947999332953935e+00  4.076276601979333e+01  7.565133488481894e+01  6.232332414551707e+02  1.000000000000000e+00
+  8.238231914929974e+00  1.864501768329003e+01  1.536019797329137e+02  4.285388689221781e+00  3.530402586742681e+01
+  7.990114789031121e+01  6.582441865895015e+02  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01
+  1.503789267768934e+01  5.705558525165409e+00  5.705558525165409e+00  8.579957676771292e+01  8.579957676771292e+01
+  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01  1.503789267768934e+01  1.528798967440007e+01
+  1.528798967440007e+01  2.298991479812512e+02  2.298991479812512e+02  1.000000000000000e+00  1.000000000000000e+00
+  1.503789267768934e+01  1.503789267768934e+01  4.947999332953935e+00  4.947999332953935e+00  7.440748293823974e+01
+  7.440748293823974e+01  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01  1.503789267768934e+01
+  4.285388689221781e+00  4.285388689221781e+00  6.444321519070095e+01  6.444321519070095e+01
+ #Scale factor sets=1
+ c.Hermite*c.Hermite*c.Hermite, #Scale factors=64
+ #Nodes=6
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+ x. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ y. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ z. c.Hermite*c.Hermite*c.Hermite, no modify, standard node based.
+   #Nodes=8
+   5. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 33 34 35 36 37 38 39 40
+   5. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 41 42 43 44 45 46 47 48
+   6. #Values=8
+     Value indices: 25 26 27 28 29 30 31 32
+     Scale factor indices: 49 50 51 52 53 54 55 56
+   6. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 57 58 59 60 61 62 63 64
+   1. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 1 2 3 4 5 6 7 8
+   2. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 9 10 11 12 13 14 15 16
+   3. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 17 18 19 20 21 22 23 24
+   4. #Values=8
+     Value indices: 1 2 3 4 5 6 7 8
+     Scale factor indices: 25 26 27 28 29 30 31 32
+ Element: 20 0 0
+ Faces:
+ 0 60 0
+ 0 53 0
+ 0 51 0
+ 0 63 0
+ 0 0 0
+ 0 64 0
+ Nodes:
+ 20 17 24 21 29 30
+ Scale factors:
+  1.000000000000000e+00  1.932332229667256e+01  1.864501768329003e+01  3.602836859213725e+02  1.528798967440007e+01
+  2.954147517466349e+02  2.850448378211448e+02  5.508013270220742e+03  1.000000000000000e+00  1.932332229667256e+01
+  1.602780164621046e+01  3.097103769168638e+02  6.199190208454888e+00  1.197889503763506e+02  9.935939102824503e+01
+  1.919953536039895e+03  1.000000000000000e+00  6.680879173233590e+00  1.864501768329003e+01  1.245651103248644e+02
+  4.285388689221781e+00  2.863016404303259e+01  7.990114789031121e+01  5.338099148578372e+02  1.000000000000000e+00
+  6.680879173233590e+00  1.602780164621046e+01  1.070798062108865e+02  7.288569401003175e+00  4.869405151382973e+01
+  1.168197446439179e+02  7.804585990140173e+02  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01
+  1.503789267768934e+01  1.528798967440007e+01  1.528798967440007e+01  2.298991479812512e+02  2.298991479812512e+02
+  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01  1.503789267768934e+01  6.199190208454888e+00
+  6.199190208454888e+00  9.322275704332723e+01  9.322275704332723e+01  1.000000000000000e+00  1.000000000000000e+00
+  1.503789267768934e+01  1.503789267768934e+01  4.285388689221781e+00  4.285388689221781e+00  6.444321519070095e+01
+  6.444321519070095e+01  1.000000000000000e+00  1.000000000000000e+00  1.503789267768934e+01  1.503789267768934e+01
+  7.288569401003175e+00  7.288569401003175e+00  1.096047244261762e+02  1.096047244261762e+02

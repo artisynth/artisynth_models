@@ -1,0 +1,94 @@
+artisynth.core.gui.ControlPanel
+[ name="Jaw Muscles"
+  size=[ 564 291 ]
+  location=[ 846 309 ]
+  scrollable=true
+  options="LiveUpdate"
+  maspack.widgets.EnumSelector
+  [ property="models/jawmodel:jawMusclesType"
+    labelText="Muscle Type"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.BooleanSelector
+  [ property="models/jawmodel:enableMuscles"
+    labelText="Enable Muscles"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_ad:excitation"
+    labelText="Bilateral Anterior Digastric"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    format="%8f"
+    sliderRange=maspack.util.DoubleInterval [ [0,1] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_ip:excitation"
+    labelText="Bilateral Inferior Lateral Pterygoid"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    format="%8f"
+    sliderRange=maspack.util.DoubleInterval [ [0,1] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_dm:excitation"
+    labelText="Bilateral Deep Masseter"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    format="%8f"
+    sliderRange=maspack.util.DoubleInterval [ [0,1] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_sm:excitation"
+    labelText="Bilateral Superficial Masseter"
+    labelFontColor=[ 0.000 0.000 0.000 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    format="%8f"
+    sliderRange=maspack.util.DoubleInterval [ [0,1] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_mp:excitation"
+    labelText="Bilateral Medial Pterygoid"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    format="%7.5f"
+    sliderRange=maspack.util.DoubleInterval [ [0,0.1] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_at:excitation"
+    labelText="Bilateral Anterior Temporal"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    format="%7.5f"
+    sliderRange=maspack.util.DoubleInterval [ [0,0.1] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_pt:excitation"
+    labelText="Bilateral Posterior Temporal"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    format="%7.5f"
+    sliderRange=maspack.util.DoubleInterval [ [0,0.1] ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_open:excitation"
+    labelText="Bilateral Openers"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    format="%8f"
+    sliderRange=maspack.util.DoubleInterval [ [0,1] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/exciters/bi_close:excitation"
+    labelText="Bilateral Closers"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    format="%7.5f"
+    sliderRange=maspack.util.DoubleInterval [ [0,0.1] ]
+  ]
+]

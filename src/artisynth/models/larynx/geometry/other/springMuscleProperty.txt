@@ -1,0 +1,37 @@
+### From [Pearson2011] and [Peck2000] ####
+Stylohyoid_L
+	-maxForce 10.8
+	-tendonRatio 0
+Stylohyoid_R
+	-maxForce 10.8
+	-tendonRatio 0
+##########################################
+
+Pharyngeal_constrictor_middle_L
+	-maxForce 3.57
+	-tendonRatio 0.5
+Pharyngeal_constrictor_middle_R
+	-maxForce 3.57
+	-tendonRatio 0.5
+Pharyngeal_constrictor_inferior_L
+	-maxForce 2.27
+	-tendonRatio 0.5
+Pharyngeal_constrictor_inferior_R
+	-maxForce 2.27
+	-tendonRatio 0.5
+	
+Cricothyroid_joint_L
+	-damping 40
+	-maxForce 0.5
+	-tendonRatio 0.2
+	-passiveFraction 0
+	-muscleType Peck
+
+Cricothyroid_joint_R
+	-damping 40
+	-maxForce 0.5
+	-tendonRatio 0.2
+	-passiveFraction 0
+	-muscleType Peck
+
+

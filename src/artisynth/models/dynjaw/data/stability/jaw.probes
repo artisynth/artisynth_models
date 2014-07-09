@@ -1,0 +1,42 @@
+[
+  NumericOutputProbe 
+  [ name="pos"
+    stopTime=4150000000
+    attachedFile="jawpos.txt"
+    updateInterval=10000000
+    displayRange=[ -50.0 50.0 ]
+    track=0
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+  NumericOutputProbe 
+  [ name="vel"
+    stopTime=4300000000
+    attachedFile="jawvel.txt"
+    updateInterval=10000000
+    displayRange=[ -50.0 50.0 ]
+    track=1
+    props=
+    [ 
+      models/jawmodel/frameMarkers/lowerincisor:velocity
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+  ]
+]

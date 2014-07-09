@@ -1,0 +1,11 @@
+artisynth.core.mechmodels.MuscleExciter
+[ targets=[
+    b/20/e/40
+    b/20/e/35
+    b/20/e/17
+    b/20/e/91
+    b/20/e/86
+    b/20/e/68
+  ]
+  name="SLalat"
+]

@@ -1,0 +1,269 @@
+[
+  NumericInputProbe 
+  [ name="Thyrohyoid"
+    startTime=0.5
+    stopTime=1.5
+    attachedFile="stepUp_full_activation_long.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=false
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Thyrohyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Sternothyroid"
+    startTime=0.5
+    stopTime=1.5
+    attachedFile="stepUp_full_activation_long.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=false
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Sternothyroid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Sternohyoid"
+    startTime=0.5
+    stopTime=1.5
+    attachedFile="stepUp_full_activation_long.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=false
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Sternohyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Omohyoid_superior_belly"
+    startTime=0.5
+    stopTime=1.5
+    attachedFile="stepUp_full_activation_long.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=false
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Omohyoid_superior_belly:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Stylohyoid"
+    startTime=0.5
+    stopTime=1.5
+    attachedFile="stepUp_full_activation_long.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=false
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Stylohyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Digastric_posterior_belly"
+    startTime=0.5
+    stopTime=1.5
+    attachedFile="stepUp_full_activation_long.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=false
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Digastric_posterior_belly:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Mylohyoid"
+    startTime=0.5
+    stopTime=1.5
+    attachedFile="stepUp_full_activation_long.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=false
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Mylohyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Geniohyoid"
+    startTime=0.5
+    stopTime=1.5
+    attachedFile="stepUp_full_activation_long.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=false
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Geniohyoid:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Digastric_anterior_belly"
+    startTime=0.5
+    stopTime=1.5
+    attachedFile="stepUp_full_activation_long.txt"
+    displayRange=[ 0 1 ]
+    track=0
+    active=false
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Digastric_anterior_belly:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericOutputProbe
+  [
+    startTime=0
+    stopTime=3.0
+    updateInterval=0.01
+    name="Hyoid_position"
+    attachedFile="hyoidMarkers_regetPos_output.txt"
+    interpolationOrder=Cubic
+    track=0
+    props=
+    [
+      models/mech/frameMarkers/Hyoid_anterior:targetPosition
+    ]
+    variables=
+    [
+      P0
+    ]
+
+    drivers=
+    [
+      "P0"
+    ]
+  ]
+  NumericOutputProbe
+  [
+    startTime=0
+    stopTime=3.0
+    updateInterval=0.01
+    name="Hyoid_force"
+    attachedFile="hyoid_force_output.txt"
+    interpolationOrder=Cubic
+    track=0
+    props=
+    [
+      models/mech/rigidBodies/hyoid:transForce
+    ]
+    variables=
+    [
+      P0
+    ]
+
+    drivers=
+    [
+      "P0"
+    ]
+  ]
+  NumericOutputProbe
+  [
+    startTime=0
+    stopTime=3.0
+    updateInterval=0.01
+    name="Cricoid_force"
+    attachedFile="cricoid_force_output.txt"
+    interpolationOrder=Cubic
+    track=0
+    props=
+    [
+      models/mech/rigidBodies/cricoid:transForce
+    ]
+    variables=
+    [
+      P0
+    ]
+
+    drivers=
+    [
+      "P0"
+    ]
+  ]
+]

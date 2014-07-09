@@ -1,0 +1,296 @@
+[
+  NumericInputProbe 
+  [ name="Tongue ggp"
+    stopTime=1.000
+    attachedFile="probe_Tongue_ggp.txt"
+    active=false
+    displayRange=[ -0.07800000000000003 0.49799999999999994 ]
+    track=0
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/ggp:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue ggm"
+    stopTime=1.000
+    attachedFile="probe_Tongue_ggm.txt"
+    active=false
+    displayRange=[ -0.03900000000000001 0.42900000000000005 ]
+    track=1
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/ggm:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue gga"
+    stopTime=1.000
+    attachedFile="probe_Tongue_gga.txt"
+    active=false
+    displayRange=[ -1.2 1.2 ]
+    track=2
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/gga:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue vp"
+    stopTime=1.000
+    attachedFile="probe_Tongue_vp.txt"
+    active=false
+    displayRange=[ -0.030000000000000006 0.33000000000000007 ]
+    track=3
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/vp:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue vm"
+    stopTime=1.234
+    scale=1.234
+    attachedFile="probe_Tongue_vm.txt"
+    active=false
+    displayRange=[ -0.041999999999999996 0.4619999999999999 ]
+    track=4
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/vm:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue hg"
+    stopTime=1.242
+    scale=1.242
+    attachedFile="probe_Tongue_va.txt"
+    displayRange=[ 0.3779999999999999 0.882 ]
+    track=5
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/bundles/hg:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue sla"
+    stopTime=1.204
+    scale=1.204
+    attachedFile="probe_Tongue_sla.txt"
+    active=false
+    displayRange=[ -0.032999999999999995 0.36299999999999993 ]
+    track=6
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/sla:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue slm"
+    stopTime=1.192
+    scale=1.192
+    attachedFile="probe_Tongue_slm.txt"
+    displayRange=[ -0.048 0.528 ]
+    track=7
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/slm:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue slp"
+    startTime=0.002
+    stopTime=1.002
+    attachedFile="probe_Tongue_slp.txt"
+    active=false
+    displayRange=[ -0.032999999999999995 0.36299999999999993 ]
+    track=8
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/slp:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue trans"
+    stopTime=1.000
+    attachedFile="probe_Tongue_trans.txt"
+    active=false
+    displayRange=[ -0.08700000000000004 0.5970000000000001 ]
+    track=9
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/trans:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue sty"
+    stopTime=1.000
+    attachedFile="probe_Tongue_sty.txt"
+    displayRange=[ 0.11699999999999988 0.1529999999999999 ]
+    track=10
+    model=models/jawmodel/models/Tongue
+    props=
+    [ 
+      models/jawmodel/models/Tongue/exciters/sty:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Jaw bi_open"
+    stopTime=3.010
+    scale=3.01
+    displayRange=[ -1.2 1.2 ]
+    track=11
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_open:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Jaw bi_close"
+    stopTime=3.015
+    scale=3.015
+    displayRange=[ 0.0 0.1 ]
+    track=12
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/exciters/bi_close:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+  ]
+  NumericInputProbe 
+  [ name="Tongue Activations"
+    stopTime=1.145
+    scale=1.145
+    attachedFile="activations.strong.txt"
+    displayRange=[ -0.15914000000000003 1.7505400000000002 ]
+    track=13
+    model=models/jawmodel
+    props=
+    [ 
+      models/jawmodel/models/Tongue:activations
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 29
+    ]
+  ]
+]

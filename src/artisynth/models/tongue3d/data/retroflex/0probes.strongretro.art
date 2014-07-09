@@ -1,0 +1,29 @@
+[
+  NumericInputProbe 
+  [ name="activations"
+    stopTime=1.000
+    attachedFile="activations.strong.txt"
+    displayRange=[ -0.017999999999999995 2.0 ]
+    track=0
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/activations
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 29
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe 
+  [ name="WayPoints"
+    stopTime=Infinity
+    track=0
+    model=.
+    wayPoints=[ 0 ]
+  ]
+]

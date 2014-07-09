@@ -1,0 +1,63 @@
+[
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="trans"
+    attachedFile="probe_trans.txt"
+    displayRange=[ -0.014999999999999993 0.1649999999999999 ]
+    track=0
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/trans:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/trans:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0
+    stopTime=1.000
+    updateInterval=-1
+    name="sty"
+    attachedFile="probe_sty.txt"
+    displayRange=[ -1.2 1.2 ]
+    track=1
+    model=models/Tongue
+    props=
+    [ 
+      models/Tongue/exciters/sty:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/sty:excitation" visible=true color=Red ]
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe
+  [ startTime=0
+    stopTime=Infinity
+    updateInterval=-1
+    name="WayPoints"
+    track=0
+    wayPoints=
+    [ 
+      0
+    ]
+  ]
+]

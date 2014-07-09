@@ -1,0 +1,65 @@
+artisynth.core.gui.ControlPanel
+[ name="Damping"
+  size=[ 466 249 ]
+  location=[ 1313 440 ]
+  options=""
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/jaw:rotaryDamping"
+    labelText="Jaw rotaryDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1000.0] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/jaw:frameDamping"
+    labelText="Jaw frameDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,100.0000] ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/hyoid:rotaryDamping"
+    labelText="Hyoid rotaryDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1000.0] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/hyoid:frameDamping"
+    labelText="Hyoid frameDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,100.0000] ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/thyroid:rotaryDamping"
+    labelText="Thyroid rotaryDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1000.0] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/thyroid:frameDamping"
+    labelText="Thyroid frameDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,100.0000] ]
+  ]
+  javax.swing.JSeparator [ ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/cricoid:rotaryDamping"
+    labelText="Cricoid rotaryDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,1000.0] ]
+  ]
+  maspack.widgets.DoubleFieldSlider
+  [ property="models/jawmodel/rigidBodies/cricoid:frameDamping"
+    labelText="Cricoid frameDamping"
+    labelFontColor=[ 0.200 0.200 0.200 ]
+    backgroundColor=[ 0.933 0.933 0.933 ]
+    sliderRange=maspack.util.DoubleInterval [ [0,100.0000] ]
+  ]
+]
