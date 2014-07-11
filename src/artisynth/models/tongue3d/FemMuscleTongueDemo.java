@@ -33,6 +33,7 @@ import artisynth.core.materials.*;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.MuscleExciter;
+import artisynth.core.mechmodels.ExcitationComponent;
 import artisynth.core.mechmodels.Point;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
 import artisynth.core.modelbase.ScanWriteUtils;
@@ -234,6 +235,12 @@ public class FemMuscleTongueDemo extends HexTongueDemo {
          MuscleExciter mex = (MuscleExciter)ClassAliases.newInstance(
             rtok.sval, MuscleExciter.class);
          ScanWriteUtils.scanfull (rtok, mex, fem);
+         // XXX need to add the exciters to their targets. Do this with
+         // a gain of 1 for now.
+         for (int i=0; i<mex.numTargets(); i++){
+            ExcitationComponent targ = mex.getTarget(i);
+            targ.addExcitationSource (mex, 1);
+         }
          fem.addMuscleExciter(mex);
       } catch (Exception e) {
          e.printStackTrace();
