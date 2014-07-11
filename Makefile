@@ -1,4 +1,4 @@
-DATE = `date +%Y%m%d`
+DATE = `date +%Y%m%d` 
 CHECKOUT_NAME=artisynth_models
 DISTRIBUTION_DIR=distribution
 DISTRIBUTION_NAME=$(shell cat VERSION)
