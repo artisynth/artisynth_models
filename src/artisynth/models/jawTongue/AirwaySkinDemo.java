@@ -49,7 +49,7 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
 
 //      addDynamicSoftPalate();
       addKinematicSoftPalate ();
-      airwaySkin = addAirwaySkinToTongue (myJawModel, tongue, softPalate);
+      addAirwaySkinToTongue ();
       addAirwayBoundaryBodies ();
       
       Main.getMainFrame ().setSize (907, 597);
@@ -72,6 +72,10 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
       }
       
       airwaySkin.computeWeights ();
+   }
+   
+   public void addAirwaySkinToTongue () {
+      airwaySkin = createAirwaySkin (myJawModel, tongue, softPalate);
    }
 
    public static AirwaySkin createAirwaySkin() {
@@ -104,9 +108,11 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
    }
    
 
-   public static AirwaySkin addAirwaySkinToTongue (MechModel mech, FemMuscleModel tongue, FemMuscleModel softPalate) {
+   public static AirwaySkin createAirwaySkin (MechModel mech, FemMuscleModel tongue, FemMuscleModel softPalate) {
       AirwaySkin airwaySkin = createAirwaySkin ();
-      airwaySkin.addFemModel (tongue);
+      if (tongue != null) {
+         airwaySkin.addFemModel (tongue);
+      }
       if (softPalate != null) {
          airwaySkin.addFemModel (softPalate);
       }
