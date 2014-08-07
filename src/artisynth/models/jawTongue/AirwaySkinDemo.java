@@ -15,6 +15,7 @@ import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemMuscleModel;
 import artisynth.core.femmodels.FemNode;
+import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.MeshComponent;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.modelbase.Controller;
@@ -48,7 +49,7 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
 
 //      addDynamicSoftPalate();
       addKinematicSoftPalate ();
-      addAirwaySkinToTongue ();
+      airwaySkin = addAirwaySkinToTongue (myJawModel, tongue, softPalate);
       addAirwayBoundaryBodies ();
       
       Main.getMainFrame ().setSize (907, 597);
@@ -103,14 +104,15 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
    }
    
 
-   public void addAirwaySkinToTongue () {
-      airwaySkin = createAirwaySkin ();
+   public static AirwaySkin addAirwaySkinToTongue (MechModel mech, FemMuscleModel tongue, FemMuscleModel softPalate) {
+      AirwaySkin airwaySkin = createAirwaySkin ();
       airwaySkin.addFemModel (tongue);
       if (softPalate != null) {
          airwaySkin.addFemModel (softPalate);
       }
       airwaySkin.computeWeights ();
-      myJawModel.addMeshBody (airwaySkin);
+      mech.addMeshBody (airwaySkin);
+      return airwaySkin;
    }
    
    public void addKinematicSoftPalateSurface() {
