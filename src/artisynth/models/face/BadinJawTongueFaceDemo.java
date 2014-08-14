@@ -49,7 +49,7 @@ import artisynth.models.jawTongue.JawHyoidFemMuscleTongue;
 public class BadinJawTongueFaceDemo extends JawHyoidFemMuscleTongue {
 
    boolean collideTongueFace = true;
-   FemMuscleModel face;
+   protected FemMuscleModel face;
    
    double myIntraoralPressure = 0;
 
