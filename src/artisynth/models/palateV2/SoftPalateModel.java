@@ -45,8 +45,8 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
    //public String geometryName = "softPalate_v6.2_tetgenWhole.1";	// low res palate
    //public String geometryName = "softPalate_v8.3_tetgen";		// low res palate with uvula
    //public String geometryName = "softPalate_v8.3q_tetgen";		// high res palate with uvula
-   //public String geometryName = "softPalate_v9.3_tetgen";		// low res palate with uvula
-   public static final String geometryName = "softPalate_v9.3q_tetgen";		// high res palate with uvula
+   public static String geometryName = "softPalate_v9.3_tetgen";		// low res palate with uvula
+   //public static final String geometryName = "softPalate_v9.3q_tetgen";		// high res palate with uvula
 
    public static final String geometryPath = ArtisynthPath.getSrcRelativePath ( SoftPalateModel.class, "geometry/");
    public static final String dataPath     = ArtisynthPath.getSrcRelativePath ( SoftPalateModel.class, "");
