@@ -1684,6 +1684,11 @@ public class JawModel extends MechModel implements ScalableUnits,
    public int getNumMuscles() {
       return myMuscles.size();
    }
+   
+   public ArrayList<Muscle> getMuscles() {
+    return myMuscles;
+   }
+
 
    public Point3d getJointPoint(int idx) {
       return jointPoint[idx];
