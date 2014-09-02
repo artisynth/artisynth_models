@@ -45,13 +45,17 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
    //public String geometryName = "softPalate_v6.2_tetgenWhole.1";	// low res palate
    //public String geometryName = "softPalate_v8.3_tetgen";		// low res palate with uvula
    //public String geometryName = "softPalate_v8.3q_tetgen";		// high res palate with uvula
-   //public static String geometryName = "softPalate_v9.3_tetgen";		// low res palate with uvula
-   public static final String geometryName = "softPalate_v9.3q_tetgen";		// high res palate with uvula
+   //public static String geometryName = "softPalate_v9.3_tetgen";		  // low res palate with uvula
+   public static final String geometryName = "softPalate_v9.3q_tetgen";         // high res palate with uvula
+   //public static final String geometryName = "softPalate_v10.0_mixedFine";      // mixed elem, high res palate (from Claudio)
+   //public static final String geometryName = "softPalate_v10.0_mixedCoarse";    // mixed elem, low res palate (from Claudio)
+   //public static final String geometryName = "softPalate_v10.1_mixed";          // mixed elem, low res palate (from Claudio)
+   
 
    public static final String geometryPath = ArtisynthPath.getSrcRelativePath ( SoftPalateModel.class, "geometry/");
    public static final String dataPath     = ArtisynthPath.getSrcRelativePath ( SoftPalateModel.class, "");
 
-   enum MaterialType {Linear, Neohookean, MooneyRivlin};
+   public enum MaterialType {Linear, Neohookean, MooneyRivlin};
    public MaterialType materialType = MaterialType.Linear;
 
    public ArrayList<String> bundleNames;
@@ -131,7 +135,17 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
    }
    
    public static FemMuscleModel createSoftPalate(MaterialType materialType, boolean addMuscles) {
-      FemMuscleModel fem = readFemMesh (geometryPath, geometryName);
+      FemMuscleModel fem = readFemMesh (geometryPath, geometryName, 1.0);
+      fem.setName ("softPalate");
+      setSoftPalateProperties (fem, materialType);
+      if (addMuscles) {
+         SoftPalateMuscles.addSoftPalateMuscles (fem);
+      }
+      return fem;
+   }
+   
+   public static FemMuscleModel createSoftPalate(MaterialType materialType, boolean addMuscles, String geometryName) {
+      FemMuscleModel fem = readFemMesh (geometryPath, geometryName, 1.0);
       fem.setName ("softPalate");
       setSoftPalateProperties (fem, materialType);
       if (addMuscles) {
@@ -360,6 +374,82 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
 
    }
 
+   public static FemMuscleModel readFemMesh(String meshDir, String meshBasename, double scale)
+   {
+       boolean isRead = false;
+       Vector3d scaleVec = new Vector3d (scale, scale, scale);
+       FemMuscleModel fem = new FemMuscleModel();
+
+       // Tetgen reader
+       if (isRead == false)
+       {
+           try 
+           {
+               String nodeString = meshDir + meshBasename + ".node";
+               String elemString = meshDir + meshBasename + ".ele";
+               TetGenReader.read ( fem, 1.0, nodeString, elemString, scaleVec );
+               isRead = true;
+           } 
+           catch (Exception e) 
+           {
+               //e.printStackTrace ();
+               isRead = false;
+           }
+       }
+       // Ansys reader
+       if (isRead == false)
+       {
+           try 
+           {
+               String nodeString = meshDir + meshBasename + ".node";
+               String elemString = meshDir + meshBasename + ".elem";
+               AnsysReader.read ( fem, nodeString, elemString, 1.0, scaleVec, /*options=*/0);
+               isRead = true;
+           } 
+           catch (Exception e) 
+           {
+               //e.printStackTrace ();
+               isRead = false;
+           }
+       }
+       // UCD reader
+       if (isRead == false)
+       {
+           try 
+           {
+               String filename = meshDir + meshBasename + ".inp";
+               //AbaqusReader.read(fem, filename, 1.0);
+               UCDReader.read(fem, filename, 1.0, scaleVec);
+               isRead = true;
+           } 
+           catch (Exception e) 
+           {
+               //e.printStackTrace ();
+               isRead = false;
+           }
+       }
+       if (isRead == false)
+       {
+          try 
+          {
+             String filename = meshDir + meshBasename + ".vtk";
+             VTK_IO_copy.readUnstructuredMesh_volume(filename, fem);
+             //fem = (FemMuscleModel)VtkAsciiFemReader.read(filename);
+             isRead = true;
+          } 
+          catch (Exception e) 
+          {
+              isRead = false;
+          }
+       }
+
+       if (isRead == false)
+           System.out.println("Failed to load " + meshBasename);
+
+       return fem;
+   }
+   
+   /*//
    public static FemMuscleModel readFemMesh(String meshDir, String meshName)
    {
       FemMuscleModel fem = new FemMuscleModel ();
@@ -371,7 +461,7 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
       {
 	 try 
 	 {
-	    AnsysReader.read ( fem, meshDir + meshName +".node", meshDir + meshName + ".elem", 1, null, /*options=*/0);
+	    AnsysReader.read ( fem, meshDir + meshName + ".node", meshDir + meshName + ".elem", 1, null, 0);
 	 } 
 	 catch (Exception e2) 
 	 {
@@ -389,6 +479,7 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
       }
       return fem;
    }
+   //*/
 
    public static ControlPanel createMusclePanel(RootModel root,
 	 FemMuscleModel fem, JFrame refFrame) {
