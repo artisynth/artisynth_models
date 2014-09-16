@@ -190,7 +190,7 @@ public class FoodBolus extends RenderableComponentBase
    Vector3d myNormal = new Vector3d ();
 
    private double getPlaneNormal(Vector3d nrm) {
-      RigidTransform3d XPB = myPlane.getXDB();
+      RigidTransform3d XPB = myPlane.getTDB();
       nrm.set (XPB.R.m02, XPB.R.m12, XPB.R.m22);
       return nrm.dot(XPB.p);
    }
@@ -200,7 +200,7 @@ public class FoodBolus extends RenderableComponentBase
    }
    
    public double getDistanceToPlane(Vector3d normal) {
-      RigidTransform3d XPB = myPlane.getXDB();
+      RigidTransform3d XPB = myPlane.getTDB();
       myNormal.set (XPB.R.m02, XPB.R.m12, XPB.R.m22);
       double offset = myNormal.dot(XPB.p);
       plane.set (myNormal, offset);
@@ -210,7 +210,7 @@ public class FoodBolus extends RenderableComponentBase
    
 
    public double getDistanceToPlaneOrigin(Vector3d normal) {
-      RigidTransform3d XPB = myPlane.getXDB();
+      RigidTransform3d XPB = myPlane.getTDB();
       myNormal.sub(collidingPt.getPosition (), XPB.p);
       double dist = myNormal.norm ();
       myNormal.normalize ();
