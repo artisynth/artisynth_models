@@ -139,10 +139,10 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
          return;
       
      Vector3d nrm = new Vector3d(0, 0, 1);
-     RigidTransform3d XDW = getPlaneToWorld();
+     RigidTransform3d TDW = getPlaneToWorld();
 
-     computeRenderPoints (XDW);
-     nrm.transform (XDW);
+     computeRenderPoints (TDW);
+     nrm.transform (TDW);
 
      GL2 gl = renderer.getGL2().getGL2();
      RenderProps props = myRenderProps;
@@ -173,14 +173,14 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
 //        isSelected());
    }
    
-   protected void computeRenderPoints (RigidTransform3d XDW)
+   protected void computeRenderPoints (RigidTransform3d TDW)
    {
      myRenderPnts[0].set ( myPlaneSize/2,  myPlaneSize/2, 0);
      myRenderPnts[1].set (-myPlaneSize/2,  myPlaneSize/2, 0);
      myRenderPnts[2].set (-myPlaneSize/2, -myPlaneSize/2, 0);
      myRenderPnts[3].set ( myPlaneSize/2, -myPlaneSize/2, 0);
      for (int i=0; i<myRenderPnts.length; i++)
-      { myRenderPnts[i].transform (XDW);
+      { myRenderPnts[i].transform (TDW);
       }
    }    
    

@@ -2191,17 +2191,17 @@ public class JawModel extends MechModel implements ScalableUnits,
 
       // connector transforms for both bodies are the same
       // as they are coincident at simulation start
-      RigidTransform3d XCA = new RigidTransform3d();
-      XCA.p.set(cricothryroidArticulation);
-      XCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
+      RigidTransform3d TCA = new RigidTransform3d();
+      TCA.p.set(cricothryroidArticulation);
+      TCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
       // ctJoint.set(cricoid, X, thyroid, X);
 
-      RigidTransform3d XCW = new RigidTransform3d();
+      RigidTransform3d TCW = new RigidTransform3d();
       // System.out.println("cricoid pose = \n" +
       // cricoid.getPose().toString("%8.2f"));
-      // System.out.println("XCA     pose = \n" + XCA.toString("%8.2f"));
+      // System.out.println("TCA     pose = \n" + TCA.toString("%8.2f"));
 
-      ctJoint.setBodies(cricoid, XCA, thyroid, XCA);
+      ctJoint.setBodies(cricoid, TCA, thyroid, TCA);
       addRigidBodyConnector(ctJoint);
 
    }

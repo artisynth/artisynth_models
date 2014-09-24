@@ -369,12 +369,12 @@ public class VHLarynxDemo extends ModelTemplate {
 
 	 // connector transforms for both bodies are the same
 	 // as they are coincident at simulation start
-	 RigidTransform3d XCA = new RigidTransform3d();
-	 XCA.p.set(new Point3d(100, 119.5, 268));
-	 XCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
-	 XCA.mul(OverallTrans);
+	 RigidTransform3d TCA = new RigidTransform3d();
+	 TCA.p.set(new Point3d(100, 119.5, 268));
+	 TCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
+	 TCA.mul(OverallTrans);
 
-	 ctJoint.setBodies(cricoid, XCA, thyroid, XCA);
+	 ctJoint.setBodies(cricoid, TCA, thyroid, TCA);
 	 myMechMod.addRigidBodyConnector(ctJoint);
       }
    }
@@ -404,12 +404,12 @@ public class VHLarynxDemo extends ModelTemplate {
 
 	 // connector transforms for both bodies are the same
 	 // as they are coincident at simulation start
-	 RigidTransform3d XCA = new RigidTransform3d();
-	 XCA.p.set(new Point3d(92, -121, -261));
-	 XCA.p.transform(OverallTrans);
-	 XCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
+	 RigidTransform3d TCA = new RigidTransform3d();
+	 TCA.p.set(new Point3d(92, -121, -261));
+	 TCA.p.transform(OverallTrans);
+	 TCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
 
-	 taJoint.setBodies(Arytenoid_L, XCA, thyroid, XCA);
+	 taJoint.setBodies(Arytenoid_L, TCA, thyroid, TCA);
 	 myMechMod.addRigidBodyConnector(taJoint);
       }
       if (thyroid != null && Arytenoid_R != null) {
@@ -430,12 +430,12 @@ public class VHLarynxDemo extends ModelTemplate {
 
 	 // connector transforms for both bodies are the same
 	 // as they are coincident at simulation start
-	 RigidTransform3d XCA = new RigidTransform3d();
-	 XCA.p.set(new Point3d(108, -121, -261));
-	 XCA.p.transform(OverallTrans);
-	 XCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
+	 RigidTransform3d TCA = new RigidTransform3d();
+	 TCA.p.set(new Point3d(108, -121, -261));
+	 TCA.p.transform(OverallTrans);
+	 TCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
 
-	 taJoint.setBodies(Arytenoid_R, XCA, thyroid, XCA);
+	 taJoint.setBodies(Arytenoid_R, TCA, thyroid, TCA);
 	 myMechMod.addRigidBodyConnector(taJoint);
       }
    }
