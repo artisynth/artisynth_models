@@ -298,10 +298,9 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
 
       if (tongue != null) {
          myControlPanel =
-            FemControlPanel.createControlPanel(
-               this, tongue, myJawModel, driver.getFrame());
+            FemControlPanel.createControlPanel(this, tongue, myJawModel);
          FemControlPanel.createMusclePanel(
-            this, tongue, driver.getFrame(), /* exciters */true);
+            this, tongue, /* exciters */true);
       }
 
       // HexTongueDemo.addInProbes (this, tongue, duration);

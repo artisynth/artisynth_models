@@ -185,7 +185,6 @@ public class AxisDemo extends RootModel {
 
    public void addPanel (DriverInterface driver) {
 
-      JFrame frame = driver.getFrame ();
       panel = new ControlPanel ("Rotation Parameter Control", "");
       panel.addWidget (new JLabel ("Rotation Axis"));
       panel.addWidget ("   x", this, "axisX", 0.0, 1.0);
@@ -197,10 +196,6 @@ public class AxisDemo extends RootModel {
       panel.addWidget ("   y", this, "centerY", -len * 5, len * 5);
       panel.addWidget ("   z", this, "centerZ", -len * 5, len * 5);
       panel.addWidget (new JSeparator ());
-      panel.pack ();
-      panel.setVisible (true);
-      java.awt.Point loc = frame.getLocation ();
-      panel.setLocation (loc.x + frame.getWidth (), loc.y);
       addControlPanel (panel);
    }
 

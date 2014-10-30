@@ -180,16 +180,12 @@ public class SoftPalate_springPeter extends RootModel{
             ":excitation", 0.0, 1.0);
       panel.addWidget ("pharSpring_L", myMechMod, "multiPointSprings/3" +
             ":excitation", 0.0, 1.0);
-      panel.setVisible(true);
-      panel.pack();
-      java.awt.Point loc = driver.getFrame().getLocation();
-      panel.setLocation(loc.x + driver.getFrame().getWidth(), loc.y);
       addControlPanel(panel);
       
       // get the muscle controls from the existing soft palate model (these muscles look bad though!)
-      myControlPanel = RegisteredSoftPalate.createControlPanel (this, softPalate, myMechMod, driver.getFrame ());
+      myControlPanel = RegisteredSoftPalate.createControlPanel (this, softPalate, myMechMod);
       if (softPalate.getMuscleBundles().size()>0)
-	 RegisteredSoftPalate.createMusclePanel(this, softPalate, driver.getFrame());
+	 RegisteredSoftPalate.createMusclePanel(this, softPalate);
    }
    
    private void pullPharMuscles()

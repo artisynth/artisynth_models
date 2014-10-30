@@ -120,10 +120,6 @@ public class SoftPalate_spring extends RootModel{
             ":excitation", 0.0, 1.0);
       panel.addWidget ("spring_L", myMechMod, "multiPointSprings/1" +
             ":excitation", 0.0, 1.0);
-      panel.setVisible(true);
-      panel.pack();
-      java.awt.Point loc = driver.getFrame().getLocation();
-      panel.setLocation(loc.x + driver.getFrame().getWidth(), loc.y);
       addControlPanel(panel);
    }
 }

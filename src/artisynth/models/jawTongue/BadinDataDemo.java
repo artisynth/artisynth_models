@@ -1136,10 +1136,6 @@ public class BadinDataDemo extends RootModel {
          panel.addWidget (stripSuffix(body.getName ()), body, "renderProps.visible");
       }
 
-
-      panel.setLocation (Main.getMainFrame ().getSize ().width, 0);
-      panel.pack ();
-      panel.setVisible (true);
       root.addControlPanel (panel);
    }
    

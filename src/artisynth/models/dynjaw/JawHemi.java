@@ -336,7 +336,7 @@ public class JawHemi extends JawLarynxDemo
    }
    
    
-   public void loadControlPanel(RootModel root, JFrame refFrame)
+   public void loadControlPanel(RootModel root)
    {
       String panelNames[] = new String[]{
          "misc",
@@ -345,7 +345,7 @@ public class JawHemi extends JawLarynxDemo
          "joints",
          "scarStiffness"
       };
-      loadControlPanel (root, refFrame, panelNames);
+      loadControlPanel (root, panelNames);
    }
    
    public void attach(DriverInterface driver)
@@ -353,7 +353,7 @@ public class JawHemi extends JawLarynxDemo
       this.setViewerEye (new Point3d(0.0, -268.0, -23.0));
       this.setViewerCenter (new Point3d(0.0, 44.0, 55.0));
       
-      loadControlPanel (this, driver.getFrame ());
+      loadControlPanel (this);
       
 //      super.attach (driver);
 //      

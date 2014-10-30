@@ -72,10 +72,10 @@ public class JawLarynxDemo extends JawDemo {
 	    "rBiteCant" };
    }
 
-   public void loadControlPanel(RootModel root, JFrame refFrame) {
+   public void loadControlPanel(RootModel root) {
       String panelNames[] = new String[] { "misc", "damping", "muscles",
 	    "joints" };
-      loadControlPanel(root, refFrame, panelNames);
+      loadControlPanel(root, panelNames);
    }
    
    public void addJawOptions(ControlPanel panel)

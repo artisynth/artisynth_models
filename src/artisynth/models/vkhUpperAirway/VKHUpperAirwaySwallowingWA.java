@@ -215,11 +215,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
          (DoubleFieldSlider)panel.addWidget(
             "Tongue_inner", myMechMod, "axialSprings/" + "Tongue_inner" +
                   ":excitation", 0.0, 1.0);
-      
-      
-      panel.setLocation (Main.getMainFrame ().getSize ().width, 0);
-      panel.pack ();
-      panel.setVisible (true);
+
       addControlPanel (panel);
    }
    

@@ -460,15 +460,14 @@ public class JawDemo extends RootModel implements ScalableUnits {
       root.addControlPanel(panel);
    }
 
-   public void loadControlPanel(RootModel root, JFrame refFrame) {
+   public void loadControlPanel(RootModel root) {
       String panelNames[] = new String[] { "miscJawonly", "dampingJawonly",
 	    "muscles", "jointsFlatTmj" };
-      loadControlPanel(root, refFrame, panelNames);
+      loadControlPanel(root, panelNames);
 
    }
 
-   public void loadControlPanel(RootModel root, JFrame refFrame,
-	 String[] filenames) {
+   public void loadControlPanel(RootModel root, String[] filenames) {
       for (int i = 0; i < filenames.length; i++) {
 	 File file = new File(ArtisynthPath.getSrcRelativePath(JawDemo.class,
 	       "controlpanels/" + filenames[i] + ".art"));
@@ -482,10 +481,6 @@ public class JawDemo extends RootModel implements ScalableUnits {
                "Error reading control panel file "+file+": "+e.getMessage());
 	 }
 	 if (panel != null) {
-	    panel.pack();
-	    panel.setVisible(true);
-	    java.awt.Point loc = refFrame.getLocation();
-	    panel.setLocation(loc.x + refFrame.getWidth(), loc.y);
 	    root.addControlPanel(panel);
 	 }
       }
@@ -511,7 +506,7 @@ public class JawDemo extends RootModel implements ScalableUnits {
 
       if (getControlPanels().size() == 0) { // createControlPanel (this,
 					    // driver.getFrame());
-	 loadControlPanel(this, driver.getFrame());
+	 loadControlPanel(this);
       }
 
    }

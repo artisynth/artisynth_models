@@ -382,8 +382,8 @@ public class QuadhexTongueDemo extends HexTongueDemo {
    public void attach (DriverInterface driver) {
 //      setSagittalView(tongue);
       if (myControlPanels.size() == 0 && tongue != null) {
-	 FemControlPanel.createControlPanel(this, tongue, myModels.get(0), driver.getFrame());
-	 FemControlPanel.createMuscleExcitersPanel(this, tongue, driver.getFrame());
+	 FemControlPanel.createControlPanel(this, tongue, myModels.get(0));
+	 FemControlPanel.createMuscleExcitersPanel(this, tongue);
       }
       // createProbes(1.0);
       // e
@@ -404,9 +404,12 @@ public class QuadhexTongueDemo extends HexTongueDemo {
    }
    
    public static void setSagittalView(FemMuscleModel tongue, boolean clipped, double scale, int width, int height) {
-      Main.getMainFrame().setSize(width+frameWidthOffset, height+frameHeightOffset);
       
       GLViewer v = Main.getMain().getViewer();
+      if (v == null) {
+         return;
+      }
+      Main.getMainFrame().setSize(width+frameWidthOffset, height+frameHeightOffset);
       
       v.setOrthographicView (true);
       v.setGridVisible (true);

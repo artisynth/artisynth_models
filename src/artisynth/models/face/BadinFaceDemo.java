@@ -868,9 +868,6 @@ public class BadinFaceDemo extends RootModel {
             stripSuffix (body.getName ()), body, "renderProps.visible");
       }
 
-      panel.setLocation (Main.getMainFrame ().getSize ().width, 0);
-      panel.pack ();
-      panel.setVisible (true);
       root.addControlPanel (panel);
       return panel;
    }
@@ -1143,16 +1140,12 @@ public class BadinFaceDemo extends RootModel {
 //   }
 
    public static ControlPanel createMusclePanel(RootModel root,
-	 FemMuscleModel fem, JFrame refFrame) {
+	 FemMuscleModel fem) {
       ControlPanel controlPanel = new ControlPanel(fem.getName() + " Muscles",
 	    "LiveUpdate");
       controlPanel.setScrollable(true);
       FemControlPanel.addBundlesToPanel(controlPanel, fem, /*reset colors=*/false);
 
-      controlPanel.setVisible(true);
-      controlPanel.pack();
-      java.awt.Point loc = refFrame.getLocation();
-      controlPanel.setLocation(loc.x + refFrame.getWidth(), loc.y);
       root.addControlPanel(controlPanel);
       return controlPanel;
    }
@@ -1166,8 +1159,8 @@ public class BadinFaceDemo extends RootModel {
 
       if (myControlPanels.size() == 0) {
 	 createVisibilityPanel(this, mech);
-	 options = FemControlPanel.createControlPanel(this, face, mech, driver.getFrame());
-	 createMusclePanel(this, face, driver.getFrame());
+	 options = FemControlPanel.createControlPanel(this, face, mech);
+	 createMusclePanel(this, face);
       }
       addWayPoints(this, 1d, 0.01);
       addMuscleProbes(this, face, 1d, "OOP");

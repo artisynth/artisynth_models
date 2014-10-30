@@ -324,28 +324,20 @@ public class RegisteredSoftPalate extends RootModel {
       return indices.toArray (new Integer[indices.size ()][]);      
    }
    public static ControlPanel createMusclePanel(RootModel root,
-	 FemMuscleModel fem, JFrame refFrame) {
+	 FemMuscleModel fem) {
       ControlPanel controlPanel = new ControlPanel("Palate Muscles", "LiveUpdate");
       controlPanel.setScrollable(true);
       FemControlPanel.addBundleControls(controlPanel, fem);
-      controlPanel.setVisible(true);
-      controlPanel.pack();
-      java.awt.Point loc = refFrame.getLocation();
-      controlPanel.setLocation(loc.x + refFrame.getWidth(), loc.y);
       root.addControlPanel(controlPanel);
       return controlPanel;
    }
    public static ControlPanel createControlPanel(RootModel root,
-	 FemMuscleModel fem, ModelComponent topModel, JFrame refFrame) {
+	 FemMuscleModel fem, ModelComponent topModel) {
       ControlPanel controlPanel = new ControlPanel("Palate options", "LiveUpdate");
       controlPanel.setScrollable(true);
       FemControlPanel.addMuscleControls(controlPanel, fem, topModel);
       controlPanel.addWidget("elements visible", fem,  "elements:renderProps.visible");
       controlPanel.addWidget("muscles visisble", fem, "bundles:renderProps.visible");
-      controlPanel.setVisible(true);
-      controlPanel.pack();
-      java.awt.Point loc = refFrame.getLocation();
-      controlPanel.setLocation(loc.x + refFrame.getWidth(), loc.y);
       root.addControlPanel(controlPanel);
       return controlPanel;
    }
@@ -353,9 +345,9 @@ public class RegisteredSoftPalate extends RootModel {
    public void attach (DriverInterface driver) {
       super.attach (driver);
       
-      myControlPanel = RegisteredSoftPalate.createControlPanel (this, myFemMod, myMechMod, driver.getFrame ());
+      myControlPanel = RegisteredSoftPalate.createControlPanel (this, myFemMod, myMechMod);
       if (myFemMod.getMuscleBundles().size()>0)
-	 RegisteredSoftPalate.createMusclePanel(this, myFemMod, driver.getFrame());
+	 RegisteredSoftPalate.createMusclePanel(this, myFemMod);
    }
    public static final void anchorPalate(FemModel3d myFemMod, MechModel myMechMod)
    {

@@ -464,8 +464,6 @@ public class InteractiveFemCreator extends RootModel implements ActionListener,
       topButtonPanel.setBackground(Color.GREEN);
       botButtonPanel.setBackground(Color.GREEN);
       
-      java.awt.Point loc = Main.getMainFrame().getLocation();
-      panel.setLocation(loc.x + Main.getMainFrame().getWidth(), loc.y);
       addControlPanel(panel);
 
    }

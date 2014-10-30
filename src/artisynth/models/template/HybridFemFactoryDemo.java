@@ -327,9 +327,6 @@ public class HybridFemFactoryDemo extends RootModel {
       for (Model mod : myMechMod.models()) {
          panel.addWidget(mod.getName(), mod, "renderProps.visible");
       }
-      panel.setLocation(Main.getMainFrame().getSize().width, 0);
-      panel.pack();
-      panel.setVisible(true);
       addControlPanel(panel);
    }
 }

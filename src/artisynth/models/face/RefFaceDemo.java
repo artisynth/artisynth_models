@@ -135,8 +135,8 @@ public class RefFaceDemo extends RootModel {
       
       if (myControlPanels.size() == 0) {
 	 BadinFaceDemo.createVisibilityPanel(this, mech);
-	 FemControlPanel.createControlPanel(this, face, mech, driver.getFrame());
-	 FemControlPanel.createMuscleBundlesPanel(this, face, driver.getFrame());
+	 FemControlPanel.createControlPanel(this, face, mech);
+	 FemControlPanel.createMuscleBundlesPanel(this, face);
       }
       
       ArtisynthPath.setWorkingDir(new File(ArtisynthPath.getSrcRelativePath(BadinFaceDemo.class, "data/")));

@@ -547,18 +547,18 @@ public class BadinJawHyoid extends JawLarynxDemo {
       JawPanel.createJawTonguePanel (myJawModel, panel);
    }
 
-   public void loadControlPanel (RootModel root, JFrame refFrame) {
+   public void loadControlPanel (RootModel root) {
       String panelNames[] =
          new String[] { "misc", "damping", "laryngealmuscles", "muscles"
 
          };
-      loadControlPanel (root, refFrame, panelNames);
+      loadControlPanel (root, panelNames);
    }
 
    public void attach (DriverInterface driver) {
 
       if (getControlPanels ().size () == 0) {
-         loadControlPanel (this, driver.getFrame ());
+         loadControlPanel (this);
       }
       
       createProbes(duration);

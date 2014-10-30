@@ -178,9 +178,6 @@ public class testFemMuscle extends RootModel {
 		         }
 		 }
       }
-	 panel.setLocation (Main.getMainFrame ().getSize ().width, 0);
-	 panel.pack ();
-	 panel.setVisible (true);
 	 addControlPanel (panel);
    }
    public void attach(DriverInterface driver)

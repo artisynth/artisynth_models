@@ -572,29 +572,21 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
    }
    
    public static ControlPanel createMusclePanel(RootModel root,
-	 FemMuscleModel fem, JFrame refFrame) {
+	 FemMuscleModel fem) {
       ControlPanel controlPanel = new ControlPanel("Palate Muscles", "LiveUpdate");
       controlPanel.setScrollable(true);
       FemControlPanel.addBundleControls(controlPanel, fem);
-      controlPanel.setVisible(true);
-      controlPanel.pack();
-      java.awt.Point loc = refFrame.getLocation();
-      controlPanel.setLocation(loc.x + refFrame.getWidth(), loc.y);
       root.addControlPanel(controlPanel);
       return controlPanel;
    }
    
    public static ControlPanel createControlPanel(RootModel root,
-	 FemMuscleModel fem, ModelComponent topModel, JFrame refFrame) {
+	 FemMuscleModel fem, ModelComponent topModel) {
       ControlPanel controlPanel = new ControlPanel("Palate options", "LiveUpdate");
       controlPanel.setScrollable(true);
       FemControlPanel.addMuscleControls(controlPanel, fem, topModel);
       controlPanel.addWidget("elements visible", fem,  "elements:renderProps.visible");
       controlPanel.addWidget("muscles visisble", fem, "bundles:renderProps.visible");
-      controlPanel.setVisible(true);
-      controlPanel.pack();
-      java.awt.Point loc = refFrame.getLocation();
-      controlPanel.setLocation(loc.x + refFrame.getWidth(), loc.y);
       root.addControlPanel(controlPanel);
       return controlPanel;
    }
@@ -609,9 +601,9 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
       {
 	 super.attach (driver);
 
-	 myControlPanel = SoftPalateModel.createControlPanel (this, softPalate, myMechModel, driver.getFrame ());
+	 myControlPanel = SoftPalateModel.createControlPanel (this, softPalate, myMechModel);
 	 if (softPalate.getMuscleBundles().size()>0)
-	    SoftPalateModel.createMusclePanel(this, softPalate, driver.getFrame());
+	    SoftPalateModel.createMusclePanel(this, softPalate);
 	 
 	 driver.getViewer().setGridVisible(false);
       }

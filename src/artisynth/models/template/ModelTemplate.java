@@ -3189,7 +3189,7 @@ public class ModelTemplate extends RootModel {
             FemModel3d muscle;
             muscle = (FemModel3d)myMechMod.models().get(mu.name);
             createControlPanel(
-               mu, this, myModels.get(0), muscle, driver.getFrame());
+               mu, this, myModels.get(0), muscle);
             // i++;
          }
 
@@ -3209,15 +3209,11 @@ public class ModelTemplate extends RootModel {
 
    public ControlPanel createControlPanel(
       MuscleInfo mu, RootModel root, ModelComponent topModel,
-      FemModel3d muscle, JFrame refFrame) {
+      FemModel3d muscle) {
       ControlPanel controlPanel = null;
       controlPanel = new ControlPanel(mu.name, "LiveUpdate");
       controlPanel.setScrollable(true);
       addControls(controlPanel, muscle, mu.bundleColor);
-      controlPanel.pack();
-      controlPanel.setVisible(true);
-      java.awt.Point loc = refFrame.getLocation();
-      controlPanel.setLocation(loc.x + refFrame.getWidth(), loc.y);
       root.addControlPanel(controlPanel);
 
       return controlPanel;
@@ -3279,9 +3275,6 @@ public class ModelTemplate extends RootModel {
       for (Model mod : myMechMod.models()) {
          panel.addWidget(mod.getName(), mod, "renderProps.visible");
       }
-      panel.setLocation(Main.getMainFrame().getSize().width, 0);
-      panel.pack();
-      panel.setVisible(true);
       addControlPanel(panel);
    }
 
@@ -3315,9 +3308,6 @@ public class ModelTemplate extends RootModel {
             slider.setRoundingTolerance(0.001);
          }
       }
-      panel.setLocation(Main.getMainFrame().getSize().width, 0);
-      panel.pack();
-      panel.setVisible(true);
       addControlPanel(panel);
    }
 
@@ -3397,9 +3387,6 @@ public class ModelTemplate extends RootModel {
           * Main.getWorkspace().rerender(); } }); slider.add (checkBox);
           */
       }
-      panel.setLocation(Main.getMainFrame().getSize().width, 0);
-      panel.pack();
-      panel.setVisible(true);
       addControlPanel(panel);
    }
 

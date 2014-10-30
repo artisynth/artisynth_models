@@ -682,8 +682,8 @@ public class HexTongueDemo extends RootModel {
    public void attach(DriverInterface driver) {
       super.attach(driver);
       if (myControlPanels.size() == 0 && tongue != null) {
-         FemControlPanel.createControlPanel(this, tongue, myModels.get(0), driver.getFrame());
-         FemControlPanel.createMuscleExcitersPanel(this, tongue, driver.getFrame());
+         FemControlPanel.createControlPanel(this, tongue, myModels.get(0));
+         FemControlPanel.createMuscleExcitersPanel(this, tongue);
       }
    }
 

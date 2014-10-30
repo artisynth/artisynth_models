@@ -126,9 +126,9 @@ public class JawTongueSoftPalate extends JawHyoidFemMuscleTongue {
       loadProbes();
       ModelTemplate.addWayPoints(this, 1.2d, 0.01);
       
-      myControlPanel = RegisteredSoftPalate.createControlPanel (this,softPalate, myJawModel, driver.getFrame ());
+      myControlPanel = RegisteredSoftPalate.createControlPanel (this,softPalate, myJawModel);
       if (softPalate.getMuscleBundles().size()>0)
-	 RegisteredSoftPalate.createMusclePanel(this, softPalate, driver.getFrame());
+	 RegisteredSoftPalate.createMusclePanel(this, softPalate);
    }
    public void loadProbes()
    {

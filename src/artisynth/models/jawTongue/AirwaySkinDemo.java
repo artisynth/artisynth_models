@@ -52,7 +52,9 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
       addAirwaySkinToTongue ();
       addAirwayBoundaryBodies ();
       
-      Main.getMainFrame ().setSize (907, 597);
+      if (driver.getFrame() != null) {
+         driver.getFrame ().setSize (907, 597);
+      }
       
       //addTrackingController ();
    }

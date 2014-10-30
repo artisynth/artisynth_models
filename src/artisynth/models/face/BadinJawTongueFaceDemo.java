@@ -303,10 +303,10 @@ public class BadinJawTongueFaceDemo extends JawHyoidFemMuscleTongue {
       super.attach(driver);
       
       ControlPanel panel;
-      panel = FemControlPanel.createControlPanel(this, face, myJawModel, driver.getFrame());
+      panel = FemControlPanel.createControlPanel(this, face, myJawModel);
       panel.setName("Face Controls");
       
-      panel = FemControlPanel.createMuscleBundlesPanel(this, face, driver.getFrame());
+      panel = FemControlPanel.createMuscleBundlesPanel(this, face);
       panel.setName("Face Muscles");
       
       File workingDir = 

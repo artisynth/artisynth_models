@@ -234,7 +234,7 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
       super.attach(driver);
 
       ControlPanel panel;
-      panel = FemControlPanel.createControlPanel(this, face, myJawModel, driver.getFrame());
+      panel = FemControlPanel.createControlPanel(this, face, myJawModel);
       panel.setName("Face Controls");
 
       GLViewer v = driver.getViewer();
