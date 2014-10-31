@@ -1,0 +1,472 @@
+[
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=0.9999999999999999
+    updateInterval=-1.0
+    name="OOPu"
+    attachedFile="inputProbe_OOPu"
+    displayRange=[ -1.2 1.2 ]
+    track=0
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/exciters/OOPu:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/OOPu:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="OOPl"
+    attachedFile="inputProbe_OOPl"
+    active=false
+    displayRange=[ -1.2 1.2 ]
+    track=1
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/exciters/OOPl:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/OOPl:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="OOMu"
+    attachedFile="inputProbe_OOMu"
+    active=false
+    displayRange=[ -1.2 1.2 ]
+    track=2
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/exciters/OOMu:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/OOMu:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="OOMl"
+    attachedFile="inputProbe_OOMl"
+    displayRange=[ -1.2 1.2 ]
+    track=3
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/exciters/OOMl:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/OOMl:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="MENT"
+    attachedFile="inputProbe_MENT"
+    displayRange=[ -1.2 1.2 ]
+    track=4
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/bundles/MENT:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/MENT:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="RIS"
+    attachedFile="inputProbe_RIS"
+    displayRange=[ -1.2 1.2 ]
+    track=5
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/bundles/RIS:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/RIS:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="LLSAN"
+    attachedFile="inputProbe_LLSAN"
+    displayRange=[ -1.2 1.2 ]
+    track=6
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/bundles/LLSAN:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/LLSAN:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="LAO"
+    attachedFile="inputProbe_LAO"
+    active=false
+    displayRange=[ -1.2 1.2 ]
+    track=7
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/bundles/LAO:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/LAO:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="DAO"
+    attachedFile="inputProbe_DAO"
+    active=false
+    displayRange=[ -1.2 1.2 ]
+    track=8
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/bundles/DAO:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/DAO:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="DLI"
+    attachedFile="inputProbe_DLI"
+    active=false
+    displayRange=[ -1.2 1.2 ]
+    track=9
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/bundles/DLI:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/DLI:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="BUC"
+    attachedFile="inputProbe_BUC"
+    active=false
+    displayRange=[ -1.2 1.2 ]
+    track=10
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/bundles/BUC:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/BUC:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="ZYG"
+    attachedFile="inputProbe_ZYG"
+    active=false
+    displayRange=[ -1.2 1.2 ]
+    track=11
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/bundles/ZYG:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/ZYG:excitation" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="intraoralPressure"
+    attachedFile="inputProbe_intraoralPressure"
+    active=false
+    displayRange=[ -1.2 1.2 ]
+    track=12
+    model=.
+    props=
+    [ 
+      intraoralPressure
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="FemMuscleFace:intraoralPressure" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=-1.0
+    name="LLS"
+    attachedFile="inputProbe_LLS"
+    displayRange=[ -1.2 1.2 ]
+    track=13
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/badinface/bundles/LLS:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="bundles/LLS:excitation" visible=true color=Red ]
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe
+  [ startTime=0.0
+    stopTime=9.223372036854776E9
+    updateInterval=-1.0
+    name="WayPoints"
+    track=-1
+    model=null
+    wayPoints=
+    [ 
+      0.0
+      0.01
+      0.02
+      0.030000000000000002
+      0.04
+      0.05
+      0.060000000000000005
+      0.07
+      0.08
+      0.09000000000000001
+      0.1
+      0.11
+      0.12000000000000001
+      0.13
+      0.14
+      0.15000000000000002
+      0.16
+      0.17
+      0.18000000000000002
+      0.19
+      0.2
+      0.21000000000000002
+      0.22
+      0.23
+      0.24000000000000002
+      0.25
+      0.26
+      0.27
+      0.28
+      0.29000000000000004
+      0.30000000000000004
+      0.31
+      0.32
+      0.33
+      0.34
+      0.35000000000000003
+      0.36000000000000004
+      0.37
+      0.38
+      0.39
+      0.4
+      0.41000000000000003
+      0.42000000000000004
+      0.43000000000000005
+      0.44
+      0.45
+      0.46
+      0.47000000000000003
+      0.48000000000000004
+      0.49000000000000005
+      0.5
+      0.51
+      0.52
+      0.53
+      0.54
+      0.55
+      0.56
+      0.5700000000000001
+      0.5800000000000001
+      0.5900000000000001
+      0.6000000000000001
+      0.61
+      0.62
+      0.63
+      0.64
+      0.65
+      0.66
+      0.67
+      0.68
+      0.6900000000000001
+      0.7000000000000001
+      0.7100000000000001
+      0.7200000000000001
+      0.7300000000000001
+      0.74
+      0.75
+      0.76
+      0.77
+      0.78
+      0.79
+      0.8
+      0.81
+      0.8200000000000001
+      0.8300000000000001
+      0.8400000000000001
+      0.8500000000000001
+      0.8600000000000001
+      0.8700000000000001
+      0.88
+      0.89
+      0.9
+      0.91
+      0.92
+      0.93
+      0.9400000000000001
+      0.9500000000000001
+      0.9600000000000001
+      0.9700000000000001
+      0.9800000000000001
+      0.9900000000000001
+      1.0 breakpoint
+    ]
+  ]
+]
