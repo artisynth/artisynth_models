@@ -170,8 +170,9 @@ public class BadinJawTongueFaceDemo extends JawHyoidFemMuscleTongue {
       face = BadinFaceDemo.createFace(BadinFaceDemo.faceGeometryDir,
 	    "badinface_oop_csa_midsagittal", /*linearMaterial=*/false);
       face.setName ("badinface");
-
-      BadinFaceDemo.addMuscles(face, BadinFaceDemo.faceGeometryDir + "face_muscles_yohan.node", BadinFaceDemo.midSagittalPlane);
+      
+      BadinFaceDemo.addMuscles(face, BadinFaceDemo.muscleNodesFile, BadinFaceDemo.midSagittalPlane);
+//      BadinFaceDemo.addMuscles(face, BadinFaceDemo.faceGeometryDir + "face_muscles_yohan.node", BadinFaceDemo.midSagittalPlane);
 //    BadinFemMuscleFaceDemo.setMuscleElements(face, BadinFemMuscleFaceDemo.muscleThickness);
 //    RefFemMuscleFaceDemo.loadMuscleElements(face, face.getMuscleBundles().get("OOP"), 
 //	    BadinFaceDemo.faceGeometryDir+"OOP_7thRing_elements.txt");
