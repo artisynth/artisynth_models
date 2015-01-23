@@ -16,6 +16,7 @@ import maspack.geometry.Face;
 import maspack.geometry.HalfEdge;
 import maspack.geometry.PolygonalMesh;
 import maspack.geometry.Vertex3d;
+import maspack.geometry.io.GenericMeshReader;
 import maspack.matrix.Plane;
 import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
@@ -911,8 +912,11 @@ public class BadinFaceDemo extends RootModel {
             upperlipMesh = face.scanMesh(faceGeometryDir + "upperlip_leftside.smesh");
          }
          else {
-            lowerlipMesh = face.scanMesh(faceGeometryDir + "badinface_lowerlip_filled.smesh");
-            upperlipMesh = face.scanMesh(faceGeometryDir + "badinface_upperlip_filled.smesh");
+//            lowerlipMesh = face.scanMesh(faceGeometryDir + "badinface_lowerlip_filled.smesh");
+//            upperlipMesh = face.scanMesh(faceGeometryDir + "badinface_upperlip_filled.smesh");
+            // these collision surfaces do not share vertices, and do not cause perturbed pivots with Pardiso
+            upperlipMesh = (PolygonalMesh)GenericMeshReader.readMesh (faceGeometryDir + "face_collisionSurf_upperLip_reduced2.ply");
+            lowerlipMesh = (PolygonalMesh)GenericMeshReader.readMesh (faceGeometryDir + "face_collisionSurf_lowerLip_reduced.ply");
          }
 
          face.addMesh(lowerlipMesh);
