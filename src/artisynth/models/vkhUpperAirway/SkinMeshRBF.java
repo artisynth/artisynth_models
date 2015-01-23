@@ -143,7 +143,7 @@ public class SkinMeshRBF extends MeshComponent {
          // marker points into a mesh
          for( int i=0; i<fem.getNodes ().size (); i++ ) {
             FemNode3d n = fem.getNode (i);
-            if( fem.getSurfaceMeshVertex (n) == null ) {
+            if( fem.getSurfaceVertex (n) == null ) {
                inCount++;
                continue;
             }

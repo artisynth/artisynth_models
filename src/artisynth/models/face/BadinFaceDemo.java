@@ -994,7 +994,7 @@ public class BadinFaceDemo extends RootModel {
       } else {
          for (int i = 0; i < intraoralNodes.size(); i++) {
             FemNode3d n = intraoralNodes.get(i);
-            face.getSurfaceMeshVertex(n).computeNormal(tmp);
+            face.getSurfaceVertex(n).computeNormal(tmp);
             tmp.scale(-forcePerNode);
             n.setExternalForce(tmp);
          }
@@ -1060,7 +1060,7 @@ public class BadinFaceDemo extends RootModel {
       //      ArrayList<FemMeshVertex> vertices = new ArrayList<FemMeshVertex>(intraoralNodes.length);
       //      FemMeshVertex[] vertices = new FemMeshVertex[intraoralNodes.length];
       for (FemNode3d n : intraoralNodes) {
-         Vertex3d v = face.getSurfaceMeshVertex(n);
+         Vertex3d v = face.getSurfaceVertex(n);
          Iterator<HalfEdge> itr = v.getIncidentHalfEdges();
          while (itr.hasNext()) {
             Face f = itr.next().getFace();

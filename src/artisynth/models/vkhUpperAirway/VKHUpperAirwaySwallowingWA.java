@@ -386,7 +386,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
       
       for (int i=0; i<nodes.size (); i++) {
          FemNode3d n = nodes.get (i);
-         FemMeshVertex v = airway.getSurfaceMeshVertex (n);
+         Vertex3d v = airway.getSurfaceVertex (n);
          if (v== null) {
             continue;
          }

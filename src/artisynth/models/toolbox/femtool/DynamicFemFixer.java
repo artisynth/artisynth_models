@@ -11,6 +11,7 @@ import maspack.geometry.HalfEdge;
 import maspack.geometry.OBBTree;
 import maspack.geometry.PolygonalMesh;
 import maspack.geometry.TriangleIntersector;
+import maspack.geometry.Vertex3d;
 import maspack.matrix.AffineTransform3d;
 import maspack.matrix.Point3d;
 import maspack.matrix.Vector2d;
@@ -566,7 +567,7 @@ public class DynamicFemFixer extends ModelComponentBase implements HasProperties
       }
    }
 
-   private static double computeNormalConsistency(FemMeshVertex vtx,
+   private static double computeNormalConsistency(Vertex3d vtx,
       Vector3d nrm) {
 
       nrm.set(0, 0, 0);
@@ -616,7 +617,7 @@ public class DynamicFemFixer extends ModelComponentBase implements HasProperties
          if (fem.isSurfaceNode(node)) {
 
             double d =
-               computeNormalConsistency(fem.getSurfaceMeshVertex(node), nrm);
+               computeNormalConsistency(fem.getSurfaceVertex(node), nrm);
 
             // search in both directions
             //Face face = obb.intersect(node.getPosition(), nrm, duv, ti);
@@ -723,7 +724,7 @@ public class DynamicFemFixer extends ModelComponentBase implements HasProperties
       for (FemNode3d node : fem.getNodes()) {
          if (fem.isSurfaceNode(node)) {
 
-            FemMeshVertex vtx = fem.getSurfaceMeshVertex(node);
+            Vertex3d vtx = fem.getSurfaceVertex(node);
             vtx.computeNormal(nrm);
             nrm.normalize();
             nrm.scale(dist);
