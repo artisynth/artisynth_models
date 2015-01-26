@@ -146,12 +146,14 @@ public class RefFaceWithProbe extends RootModel {
 
    public void enableLipLipContact() {
 
-      PolygonalMesh lowerlipMesh, upperlipMesh;
+      //PolygonalMesh lowerlipMesh, upperlipMesh;
       try {
-	 lowerlipMesh = face.scanMesh(refFaceGeometryDir + "lowerlip_filled.smesh");
-	 upperlipMesh = face.scanMesh(refFaceGeometryDir + "upperlip_filled.smesh");
-	 face.addMesh(lowerlipMesh);
-	 face.addMesh(upperlipMesh);
+	 face.addMesh (
+	    face.scanMesh(refFaceGeometryDir + "lowerlip_filled.smesh"));
+	 face.addMesh (
+	    face.scanMesh(refFaceGeometryDir + "upperlip_filled.smesh"));
+//	 face.addMesh(lowerlipMesh);
+//	 face.addMesh(upperlipMesh);
       } catch (IOException e) {
 	 e.printStackTrace();
       }

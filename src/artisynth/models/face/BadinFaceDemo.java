@@ -908,8 +908,10 @@ public class BadinFaceDemo extends RootModel {
       PolygonalMesh lowerlipMesh, upperlipMesh;
       try {
          if (leftSideOnly) {
-            lowerlipMesh = face.scanMesh(faceGeometryDir + "lowerlip_leftside.smesh");
-            upperlipMesh = face.scanMesh(faceGeometryDir + "upperlip_leftside.smesh");
+            face.addMesh (
+               face.scanMesh(faceGeometryDir + "lowerlip_leftside.smesh"));
+            face.addMesh (
+               face.scanMesh(faceGeometryDir + "upperlip_leftside.smesh"));
          }
          else {
 //            lowerlipMesh = face.scanMesh(faceGeometryDir + "badinface_lowerlip_filled.smesh");
@@ -917,10 +919,11 @@ public class BadinFaceDemo extends RootModel {
             // these collision surfaces do not share vertices, and do not cause perturbed pivots with Pardiso
             upperlipMesh = (PolygonalMesh)GenericMeshReader.readMesh (faceGeometryDir + "face_collisionSurf_upperLip_reduced2.ply");
             lowerlipMesh = (PolygonalMesh)GenericMeshReader.readMesh (faceGeometryDir + "face_collisionSurf_lowerLip_reduced.ply");
+            face.addMesh(lowerlipMesh);
+            face.addMesh(upperlipMesh);
          }
 
-         face.addMesh(lowerlipMesh);
-         face.addMesh(upperlipMesh);
+
       } catch (IOException e) {
          // TODO Auto-generated catch block
          e.printStackTrace();
