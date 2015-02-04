@@ -287,16 +287,16 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
 	 Point pL1 = softPalate.getMuscleBundles().get(SoftPalateMuscles.palatoglossus_L_name).getFibres().get( 9).getSecondPoint();
 	 Point pL2 = softPalate.getMuscleBundles().get(SoftPalateMuscles.palatoglossus_L_name).getFibres().get(19).getSecondPoint();
 
-	 mechMod.attachPoint(pR1, tongue, 0.0);
-	 mechMod.attachPoint(pR2, tongue, 0.0);
-	 mechMod.attachPoint(pL1, tongue, 0.0);
-	 mechMod.attachPoint(pL2, tongue, 0.0);
+	 mechMod.attachPoint(pR1, tongue);
+	 mechMod.attachPoint(pR2, tongue);
+	 mechMod.attachPoint(pL1, tongue);
+	 mechMod.attachPoint(pL2, tongue);
 	 
 	 // attaching the posterior palatoglossus
 	 Point pR3 = softPalate.getMuscleBundles().get(SoftPalateMuscles.palatoglossus_post_R_name).getFibres().get( 9).getSecondPoint();
 	 Point pL3 = softPalate.getMuscleBundles().get(SoftPalateMuscles.palatoglossus_post_L_name).getFibres().get( 9).getSecondPoint();
-	 mechMod.attachPoint(pR3, tongue, 0.0);
-	 mechMod.attachPoint(pL3, tongue, 0.0);
+	 mechMod.attachPoint(pR3, tongue);
+	 mechMod.attachPoint(pL3, tongue);
       }
       //*/    
 

@@ -23,7 +23,6 @@ import maspack.properties.PropertyList;
 import maspack.widgets.LabeledComponentBase;
 import maspack.widgets.PropertyWidget;
 import artisynth.core.femmodels.FemElement3d;
-import artisynth.core.femmodels.FemMeshVertex;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.femmodels.IntegrationData3d;

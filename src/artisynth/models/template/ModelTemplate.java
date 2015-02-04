@@ -2300,7 +2300,7 @@ public class ModelTemplate extends RootModel {
                   System.out.println("\tattaching node " + node.getNumber()
                      + " to " + bi.getName());
 
-               myMechMod.attachPoint(node, bi, 0);
+               myMechMod.attachPoint(node, bi);
 
                // Reverse node attachment if results in inverted elements
                for (FemElement3d el : node.getElementDependencies()) {
@@ -2425,7 +2425,7 @@ public class ModelTemplate extends RootModel {
                orig_pos.set(node.getPosition());
 
                // Attach node to fem2
-               myMechMod.attachPoint(node, fem2, 0);
+               myMechMod.attachPoint(node, fem2);
 
                // Reverse node attachment if results in inverted elements
                for (FemElement3d el : node.getElementDependencies()) {

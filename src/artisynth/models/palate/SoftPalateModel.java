@@ -288,10 +288,10 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
 	 int nL1 = 1237;
 	 int nL2 = 1206;
 	 
-	 mechMod.attachPoint(softPalate.getNode(nR1), tongue, 0.0);
-	 mechMod.attachPoint(softPalate.getNode(nR2), tongue, 0.0);
-	 mechMod.attachPoint(softPalate.getNode(nL1), tongue, 0.0);
-	 mechMod.attachPoint(softPalate.getNode(nL2), tongue, 0.0);
+	 mechMod.attachPoint(softPalate.getNode(nR1), tongue);
+	 mechMod.attachPoint(softPalate.getNode(nR2), tongue);
+	 mechMod.attachPoint(softPalate.getNode(nL1), tongue);
+	 mechMod.attachPoint(softPalate.getNode(nL2), tongue);
 
 	 // TODO: this isn't a nice solution
 	 softPalate.getMuscleBundles().get("LM_palatoglossus_R").getFibres().get(0).setFirstPoint(softPalate.getNode(nR1));

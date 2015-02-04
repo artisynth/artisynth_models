@@ -1,29 +1,23 @@
 package artisynth.models.vkhUpperAirway;
 
-import java.awt.event.ActionEvent;
-import java.io.IOException;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 
+import maspack.geometry.BVFeatureQuery;
+import maspack.geometry.PolygonalMesh;
+import maspack.geometry.Vertex3d;
+import maspack.matrix.AxisAlignedRotation;
 import maspack.matrix.AxisAngle;
 import maspack.matrix.Point3d;
 import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
-import maspack.matrix.VectorNd;
 import maspack.render.GLClipPlane;
 import maspack.render.GLGridResolution;
 import maspack.render.GLViewer;
 import maspack.render.GLViewer.DraggerType;
-import maspack.geometry.BVFeatureQuery;
-import maspack.geometry.OBBTree;
-import maspack.geometry.PolygonalMesh;
-import maspack.geometry.Vertex3d;
 import artisynth.core.driver.Main;
-import artisynth.core.driver.ViewerManager;
-import maspack.matrix.AxisAlignedRotation;
 import artisynth.core.femmodels.FemElement3d;
-import artisynth.core.femmodels.FemMeshVertex;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.materials.BlemkerMuscle;
@@ -32,8 +26,6 @@ import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.MechSystemModel;
 import artisynth.core.mechmodels.PointList;
 import artisynth.core.mechmodels.RigidBody;
-import artisynth.core.modelbase.Model;
-import artisynth.core.modelbase.ModelComponent;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
 import artisynth.models.template.ModelTemplate;
@@ -146,7 +138,8 @@ public class VKHUpperAirwayWA extends ModelTemplate {
                if (closestFem.distance < 0 && projectOut) { // node was inside, so get the projection
                   n.getPosition ().set(closestFem.newPos);
                }
-               myMechMod.attachPoint (n, (FemModel3d) closestFem.closest, reduceTol);
+               FemModel3d fem = (FemModel3d)closestFem.closest;
+               myMechMod.addAttachment (fem.createPointAttachment(n,reduceTol));
             }
             else {
                myMechMod.attachPoint (n, (RigidBody) closestRigid.closest);
@@ -156,7 +149,8 @@ public class VKHUpperAirwayWA extends ModelTemplate {
             if (closestFem.distance < 0 && projectOut) { // node was inside, so get the projection
                n.getPosition ().set(closestFem.newPos);
             }
-            myMechMod.attachPoint (n, (FemModel3d) closestFem.closest, reduceTol);
+            FemModel3d fem = (FemModel3d)closestFem.closest;
+            myMechMod.addAttachment (fem.createPointAttachment(n, reduceTol));
          }
          else if (closestRigid.closest != null) {
                myMechMod.attachPoint (n, (RigidBody) closestRigid.closest);

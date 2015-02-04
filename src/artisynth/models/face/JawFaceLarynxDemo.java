@@ -507,7 +507,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                   System.out.println("\tattaching node " + node.getNumber()
                         + " to " + bi.getName());
 
-               myJawModel.attachPoint(node, bi, 0);
+               myJawModel.attachPoint(node, bi);
 
                // Reverse node attachment if results in inverted elements
                for (FemElement3d el : node.getElementDependencies()) {
@@ -813,7 +813,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                orig_pos.set(node.getPosition());
 
                // Attach node to fem2
-               myJawModel.attachPoint(node, fem2, 0);
+               myJawModel.attachPoint(node, fem2);
 
                // Reverse node attachment if results in inverted elements
                for (FemElement3d el : node.getElementDependencies()) {
