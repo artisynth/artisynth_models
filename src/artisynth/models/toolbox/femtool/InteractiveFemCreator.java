@@ -469,8 +469,8 @@ public class InteractiveFemCreator extends RootModel implements ActionListener,
    }
 
    public void reset() {
-      Main.getScheduler().stopRequest();
-      Main.getScheduler().waitForPlayingToStop();
+      Main.getMain().getScheduler().stopRequest();
+      Main.getMain().getScheduler().waitForPlayingToStop();
       buildAndAddDynamicVolume();
       mySurfaceForceController.clearPoints();
       addSurfacePoints(mySurfaceForceController, myDynamicFixer.getModel());
@@ -485,11 +485,11 @@ public class InteractiveFemCreator extends RootModel implements ActionListener,
 
       String cmd = e.getActionCommand();
 
-      Main.getMain();
-      boolean simulating = Main.isSimulating();
+      Main main = Main.getMain();
+      boolean simulating = main.isSimulating();
 
       if (simulating) {
-         Main.getMain().pause();
+         main.pause();
       }
 
       if ("Expand".equals(cmd)) {

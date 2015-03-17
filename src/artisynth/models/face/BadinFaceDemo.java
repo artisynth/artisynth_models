@@ -282,7 +282,7 @@ public class BadinFaceDemo extends RootModel {
          midSagittalPlane.reflect(reflect, rightpts.get(i).getPosition());
          leftpts.get(i).setPosition(reflect);
       }
-      Main.rerender();
+      rerender();
    }
 
 
@@ -1198,7 +1198,7 @@ public class BadinFaceDemo extends RootModel {
    public void fastfwd() {
       WayPoint lastValid = myWayPoints.getLastValid();
       if (lastValid != null) {
-         Main.getScheduler().reset(lastValid);
+         Main.getMain().getScheduler().reset(lastValid);
       }
    }
 

@@ -71,7 +71,7 @@ public class VHLarynxInvDemo extends VHLarynxDemo {
       setSagittalView(1.5);
       addInverseController();
       //addMonitor(new TrackingEnableMonitor());
-      //Main.getInverseManager().setProbeDuration(stopPoint);
+      //Main.getMain().getInverseManager().setProbeDuration(stopPoint);
    }
    
    protected void addInverseController() {

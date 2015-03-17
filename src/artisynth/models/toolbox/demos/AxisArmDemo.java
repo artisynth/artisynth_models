@@ -28,12 +28,8 @@ public class AxisArmDemo extends DoubleArmDemo {
    private Color iffyColour = Color.RED;
    private Color confidentColour = Color.GREEN;
 
-   public AxisArmDemo () {
-      super ();
-   }
-
-   public AxisArmDemo (String name) {
-      super (name);
+   public void build (String[] args) {
+      super.build (args);
 
       // get third arm
       myRotatingBody = model.rigidBodies ().get ("third");

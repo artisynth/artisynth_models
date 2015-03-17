@@ -150,7 +150,7 @@ public class DynamicFemFixerController extends ControllerBase {
             diff = diff/myFemFixer.getModel().numNodes();   // average change
             
             if (diff < convergenceThreshold) {
-               Main.getScheduler().stopRequest();
+               Main.getMain().getScheduler().stopRequest();
             }
             
          } // end convergence check interval

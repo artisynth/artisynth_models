@@ -669,7 +669,7 @@ public class HexTongueDemo extends RootModel {
          checkBox.setLabelText("");
          checkBox.addValueChangeListener(new ValueChangeListener() {
             public void valueChange(ValueChangeEvent e) {
-               Main.getWorkspace().rerender();
+               Main.getMain().rerender();
             }
          });
          slider.add(checkBox);
@@ -695,9 +695,9 @@ public class HexTongueDemo extends RootModel {
       String probeFileName = "/0probes.art";
       ArtisynthPath.setWorkingDir(workingDir);
       try {
-         Main.getWorkspace().scanProbes(
+         scanProbes(
             ArtisynthIO.newReaderTokenizer(workingDir.getAbsolutePath()
-               + probeFileName), this);
+               + probeFileName));
       } catch (IOException e) {
          e.printStackTrace();
       }
@@ -1119,8 +1119,8 @@ public class HexTongueDemo extends RootModel {
          ComponentUtils.findDependentComponents (update, rightsidePoints);
       RemoveComponentsCommand cmd =
          new RemoveComponentsCommand ("delete", delete, update);
-      Main.getUndoManager().saveStateAndExecute (cmd);      
-      Main.rerender();
+      Main.getMain().getUndoManager().saveStateAndExecute (cmd);      
+      Main.getMain().rerender();
 
       // Main.getMain().getSelectionManager().clearSelections();
       // for (Point p : rightsidePoints) {
@@ -1133,8 +1133,7 @@ public class HexTongueDemo extends RootModel {
       // Main.getMain().getSelectionManager().clearSelections();
       // RemoveComponentsCommand cmd = new RemoveComponentsCommand("delete",
       //    dependentSelection);
-      //Main.getUndoManager().saveStateAndExecute(cmd);
-      //Main.rerender();
+      //rerender();
 
    }
 

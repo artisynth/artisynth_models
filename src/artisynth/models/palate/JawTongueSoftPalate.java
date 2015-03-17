@@ -139,8 +139,8 @@ public class JawTongueSoftPalate extends JawHyoidFemMuscleTongue {
 		+ probesFilename;
       try
       {
-	 Main.getWorkspace().scanProbes(
-		  ArtisynthIO.newReaderTokenizer(probeFileFullPath), this);
+	 scanProbes(
+		  ArtisynthIO.newReaderTokenizer(probeFileFullPath));
 	 System.out.println("Loaded Probes from File: " + probeFileFullPath);
       }
       catch (Exception e)

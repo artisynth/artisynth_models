@@ -150,7 +150,7 @@ public class DynamicFemFixerMultiController extends ControllerBase {
             } // end looping through all fixers
             
             if (diff < convergenceThreshold) {
-               Main.getScheduler().stopRequest();
+               Main.getMain().getScheduler().stopRequest();
             }
             
          } // end convergence check interval

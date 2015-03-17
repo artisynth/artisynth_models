@@ -158,7 +158,7 @@ public class JawPanel
       // doubleBox1.setFormat ("%4.1f");
       // doubleBox1.addValueChangeListener(new ValueChangeListener(){
       // public void valueChange(ValueChangeEvent e)
-      // { Main.getWorkspace().rerender();
+      // { rerender();
       // }
       // });
       //
@@ -170,7 +170,7 @@ public class JawPanel
       // checkBox.setLabelText ("isActive");
       // checkBox.addValueChangeListener(new ValueChangeListener(){
       // public void valueChange(ValueChangeEvent e)
-      // { Main.getWorkspace().rerender();
+      // { rerender();
       // }
       // });
       //

@@ -112,14 +112,14 @@ public class MeshEdit extends RootModel {
       for (int i = 0; i < morphmesh.getNumVertices(); i++) {
 	 mech.particles().get(i).setPosition(morphmesh.getVertices().get(i).pnt);
       }
-      Main.rerender();
+      rerender();
    }
    
    public void upmesh() {
       for (int i = 0; i < morphmesh.getNumVertices(); i++) {
 	 morphmesh.getVertices().get(i).pnt.set(mech.particles().get(i).getPosition());
       }
-      Main.rerender();
+      rerender();
    }
    
    public void project() {
@@ -128,7 +128,7 @@ public class MeshEdit extends RootModel {
 	    project((Particle)comp);
 	 }
       }
-      Main.rerender();
+      rerender();
    }
    
    public void mirror() {
@@ -136,7 +136,7 @@ public class MeshEdit extends RootModel {
 	 midSagittalPlane.reflect(reflect, rightpts.get(i).getPosition());
 	 leftpts.get(i).setPosition(reflect);
       }
-      Main.rerender();
+      rerender();
    }
    
    

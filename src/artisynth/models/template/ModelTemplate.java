@@ -3246,7 +3246,7 @@ public class ModelTemplate extends RootModel {
             slider.add(checkBox);
             checkBox.addValueChangeListener(new ValueChangeListener() {
                public void valueChange(ValueChangeEvent e) {
-                  Main.getWorkspace().rerender();
+                  rerender();
                }
             });
             slider.add(checkBox);
@@ -3360,7 +3360,7 @@ public class ModelTemplate extends RootModel {
                slider.add(checkBox);
                checkBox.addValueChangeListener(new ValueChangeListener() {
                   public void valueChange(ValueChangeEvent e) {
-                     Main.getWorkspace().rerender();
+                     rerender();
                   }
                });
                slider.add(checkBox);
@@ -3384,7 +3384,7 @@ public class ModelTemplate extends RootModel {
           * "visible", spring, "renderProps.visible"); slider.add (checkBox);
           * checkBox.addValueChangeListener (new ValueChangeListener() { public
           * void valueChange (ValueChangeEvent e) {
-          * Main.getWorkspace().rerender(); } }); slider.add (checkBox);
+          * rerender(); } }); slider.add (checkBox);
           */
       }
       addControlPanel(panel);
@@ -3495,8 +3495,8 @@ public class ModelTemplate extends RootModel {
       try
       {
          InputStream in = getInputStream(probesPath, probesFilename, probesDest);
-         Main.getWorkspace().scanProbes(
-            ArtisynthIO.newReaderTokenizer(new InputStreamReader(in)), this);
+         scanProbes(
+            ArtisynthIO.newReaderTokenizer(new InputStreamReader(in)));
          System.out.println("Loaded Probes from File: " + probesFilename);
       } catch (Exception e)
       {

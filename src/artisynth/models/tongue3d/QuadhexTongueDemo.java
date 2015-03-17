@@ -409,7 +409,7 @@ public class QuadhexTongueDemo extends HexTongueDemo {
       if (v == null) {
          return;
       }
-      Main.getMainFrame().setSize(width+frameWidthOffset, height+frameHeightOffset);
+      Main.getMain().getMainFrame().setSize(width+frameWidthOffset, height+frameHeightOffset);
       
       v.setOrthographicView (true);
       v.setGridVisible (true);

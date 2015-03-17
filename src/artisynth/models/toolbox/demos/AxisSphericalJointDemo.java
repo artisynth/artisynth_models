@@ -29,12 +29,8 @@ public class AxisSphericalJointDemo extends SphericalJointDemo {
    private Color iffyColour = Color.RED;
    private Color confidentColour = Color.GREEN;
 
-   public AxisSphericalJointDemo () {
-      super ();
-   }
-
-   public AxisSphericalJointDemo (String name) throws IOException {
-      super (name);
+   public void build (String[] args) throws IOException {
+      super.build (args);
 
       // get hand
       myRotatingBody = myHand;

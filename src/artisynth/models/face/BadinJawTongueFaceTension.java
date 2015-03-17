@@ -253,7 +253,7 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
 //    String[] poutMuscles = new String[] {"DAO", "DLI", "MENT"};
         String[] smileMuscles = new String[] {"ZYG", "LAO", "RIS", "LLSAN", "OOP", "OOM", "BUC", "MENT", "DAO", "DLI"};
 //    String[] openSmileMuscles = new String[] {"ZYG", "LAO", "RIS", "LLSAN", "DLI", "DAO"};
-        addFaceMuscleProbes(Main.getRootModel(), face, 0.0d, timeToFinish, smileMuscles);
+        addFaceMuscleProbes(Main.getMain().getRootModel(), face, 0.0d, timeToFinish, smileMuscles);
       }
       
       FrameMarker incisorMarker = myJawModel.frameMarkers().get("lowerincisor");
@@ -555,7 +555,7 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
 //            faceMusclesActivated = true;
 
 //            String[] smileMuscles = new String[] {"ZYG", "LAO", "RIS", "LLSAN"};
-//            addFaceMuscleProbes(Main.getRootModel(), face, 0.0d, timeToFinish / 1e9, smileMuscles);
+//            addFaceMuscleProbes(Main.getMain().getRootModel(), face, 0.0d, timeToFinish / 1e9, smileMuscles);
 //         }
 
          // Add face muscles and probes

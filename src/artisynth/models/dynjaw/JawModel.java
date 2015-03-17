@@ -47,7 +47,7 @@ import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.mechmodels.RigidBodyConnector;
 import artisynth.core.mechmodels.SegmentedPlanarConnector;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
-import artisynth.core.modelbase.Tracable;
+import artisynth.core.modelbase.Traceable;
 import artisynth.core.materials.*;
 import artisynth.core.probes.TracingProbe;
 import artisynth.core.probes.VectorTracingProbe;
@@ -57,7 +57,7 @@ import artisynth.core.util.ScalableUnits;
 import artisynth.core.util.TimeBase;
 
 public class JawModel extends MechModel implements ScalableUnits,
-      Tracable {
+      Traceable {
 
    public boolean debug = false; // set to true for debug printlns
 
@@ -2031,21 +2031,24 @@ public class JawModel extends MechModel implements ScalableUnits,
    }
 
    /*
-    * Tracable interface
+    * Traceable interface
     */
 
-   public String[] getTracables() {
+   public String[] getTraceables() {
       return new String[] { "jawMuscleForce", "jawMuscleMoment"};
-
+   }
+   
+   public String getTraceablePositionProperty (String traceableName) {
+      return "+jawComPosition";
    }
 
-   public TracingProbe getTracingProbe(String tracableName) {
+   public TracingProbe getTracingProbe(String traceableName) {
       VectorTracingProbe vecProbe = null;
       Property jawCom = getProperty("jawComPosition");
-      if (tracableName.equals("jawMuscleForce")) {
+      if (traceableName.equals("jawMuscleForce")) {
 	  vecProbe = new VectorTracingProbe(this, getProperty("jawMuscleForce"),
 	     jawCom, 1.0);
-      } else if (tracableName.equals("jawMuscleMoment")) {
+      } else if (traceableName.equals("jawMuscleMoment")) {
          vecProbe =  new VectorTracingProbe(this, getProperty("jawMuscleMoment"),
             jawCom, 1.0);
       }
@@ -2055,8 +2058,8 @@ public class JawModel extends MechModel implements ScalableUnits,
          return vecProbe;
       }
       else {
-         throw new IllegalArgumentException("Unknown tracable '" + tracableName
-            + "'");
+         throw new IllegalArgumentException(
+            "Unknown traceable '" + traceableName + "'");
       }
    }
 

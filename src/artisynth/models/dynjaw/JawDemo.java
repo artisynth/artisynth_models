@@ -138,8 +138,8 @@ public class JawDemo extends RootModel implements ScalableUnits {
       System.out.println("Loading Probes from File: " + probeFileFullPath);
 
       try {
-	 Main.getWorkspace().scanProbes(
-	       ArtisynthIO.newReaderTokenizer(probeFileFullPath), this);
+	 scanProbes(
+	       ArtisynthIO.newReaderTokenizer(probeFileFullPath));
       } catch (Exception e) {
 	 System.out.println("Error reading probe file");
 	 e.printStackTrace();
@@ -439,7 +439,7 @@ public class JawDemo extends RootModel implements ScalableUnits {
 	 if (propNames[i].contains("Bite")) {
 	    slider.addValueChangeListener(new ValueChangeListener() {
 	       public void valueChange(ValueChangeEvent e) {
-		  ((JawDemo) Main.getWorkspace().getRootModel())
+		  ((JawDemo) Main.getMain().getRootModel())
 			.updateBoluses();
 	       }
 	    });

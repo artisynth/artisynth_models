@@ -31,7 +31,6 @@ import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.modelbase.Model;
-import artisynth.core.modelbase.RenderableModelBaseOld;
 import artisynth.core.util.ArtisynthIO;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.util.MDLMeshIO;

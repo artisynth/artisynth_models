@@ -221,7 +221,7 @@ public class FemMuscleBlock extends RootModel {
 		            slider.add (checkBox);
 		            checkBox.addValueChangeListener (new ValueChangeListener() {
 		               public void valueChange (ValueChangeEvent e) {
-		                  Main.getWorkspace().rerender();
+		                  rerender();
 		               }
 		            });
 		            slider.add (checkBox);
