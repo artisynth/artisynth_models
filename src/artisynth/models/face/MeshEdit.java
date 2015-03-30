@@ -43,11 +43,12 @@ public class MeshEdit extends RootModel {
 
    
    public MeshEdit() {
-   // TODO Auto-generated constructor stub
+      super();
    }
 
-   public MeshEdit(String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
 
       mech = new MechModel("mech");
       addModel(mech);

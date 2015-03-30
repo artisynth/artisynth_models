@@ -69,9 +69,9 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
       super ();
    }
    
-   public SoftPalateModel (String name) 
-   {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
       super.workingDirname = "data_v3/";
       super.setWorkingDir();
 

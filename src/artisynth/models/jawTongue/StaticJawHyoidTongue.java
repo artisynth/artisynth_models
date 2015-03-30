@@ -17,8 +17,9 @@ public class StaticJawHyoidTongue extends BadinJawHyoidTongue {
       super();
    }
 
-   public StaticJawHyoidTongue(String name) throws IOException {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
       
       // fix skeletal bodies
       myJawModel.rigidBodies ().get ("jaw").setDynamic (false);

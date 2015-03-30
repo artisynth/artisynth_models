@@ -1,5 +1,7 @@
 package artisynth.models.dynjaw;
 
+import java.io.IOException;
+
 public class JawMarxGraft extends JawHemi
 {
 
@@ -10,9 +12,9 @@ public class JawMarxGraft extends JawHemi
       super();
    }
         
-   public JawMarxGraft(String name)
-   {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
       setJawReconMesh(jawgraftMesh);
       addJoint (leftSideGraft);
    }

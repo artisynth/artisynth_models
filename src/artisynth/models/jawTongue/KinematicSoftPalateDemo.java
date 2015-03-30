@@ -15,11 +15,12 @@ public class KinematicSoftPalateDemo extends RootModel {
    MechModel myJawModel;
    
    public KinematicSoftPalateDemo () {
-      this(null);
+      super();
    }
 
-   public KinematicSoftPalateDemo (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
       
       myJawModel = new MechModel("mech");
       addModel (myJawModel);

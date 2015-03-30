@@ -15,6 +15,7 @@ import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
 import maspack.render.RenderProps;
 import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemModel.IncompMethod;
 import artisynth.core.femmodels.FemMuscleModel;
 import artisynth.core.femmodels.MuscleBundle;
 import artisynth.core.femmodels.MuscleElementDesc;
@@ -49,8 +50,9 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
 
    }
 
-   public BadinFemMuscleFaceDemo(String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
 
       setFibresActive(false);
       setMuscleElements(muscleThickness);
@@ -84,23 +86,29 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
       
       MuscleBundle oop = face.getMuscleBundles().get("OOP");
       loadoop("7M");
-      oop.clearElements();
-      
-      MuscleExciter ex = new MuscleExciter("OOPu");
-      face.addMuscleExciter(ex);
-      addToExciter(ex, addoop("7Du"));
-      addToExciter(ex, addoop("7Mu"));
-      addToExciter(ex, addoop("7Su"));
-      
-      ex = new MuscleExciter("OOPl");
-      face.addMuscleExciter(ex);
-      addToExciter(ex, addoop("6Dl"));
-      addToExciter(ex, addoop("6Ml"));
-      addToExciter(ex, addoop("6Sl"));
+//      oop.clearElements();
+//      
+//      MuscleExciter ex = new MuscleExciter("OOPu");
+//      face.addMuscleExciter(ex);
+//      addToExciter(ex, addoop("7Du"));
+//      addToExciter(ex, addoop("7Mu"));
+//      addToExciter(ex, addoop("7Su"));
+//      
+//      ex = new MuscleExciter("OOPl");
+//      face.addMuscleExciter(ex);
+//      addToExciter(ex, addoop("6Dl"));
+//      addToExciter(ex, addoop("6Ml"));
+//      addToExciter(ex, addoop("6Sl"));
 
 
       oop.setElementWidgetSize(1);
       RenderProps.setVisible(oop, true);
+      
+      RenderProps.setVisible (face.getElements(), false);
+      RenderProps.setVisible (face.getMuscleBundles(), false);
+      RenderProps.setVisible (face.getNodes(), false);
+      
+      face.setIncompressible (IncompMethod.OFF);
 
    }
    

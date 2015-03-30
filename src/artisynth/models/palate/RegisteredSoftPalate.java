@@ -64,8 +64,9 @@ public class RegisteredSoftPalate extends RootModel {
       super ();
    }
    
-   public RegisteredSoftPalate (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
 
       // create mech model
       myMechMod = new MechModel ("mech");

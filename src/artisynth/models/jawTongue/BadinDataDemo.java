@@ -64,8 +64,9 @@ public class BadinDataDemo extends RootModel {
       super ();
    }
 
-   public BadinDataDemo (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
           
       if (!(new File(badinGeometryDir)).exists () /*||
           !(new File(badinGeometryDir+"ubcMarkers")).exists ()*/) {

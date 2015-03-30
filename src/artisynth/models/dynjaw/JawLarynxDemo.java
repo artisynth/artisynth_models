@@ -1,6 +1,7 @@
 package artisynth.models.dynjaw;
 
 import java.awt.Color;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 
@@ -18,8 +19,10 @@ public class JawLarynxDemo extends JawDemo {
       super();
    }
 
-   public JawLarynxDemo(String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
+
       //setIncisorVisible();
       String[] hiddenBodies = new String[] { "cranium", "pharynx", "vertebrae" };
       for (int i = 0; i < hiddenBodies.length; i++) {

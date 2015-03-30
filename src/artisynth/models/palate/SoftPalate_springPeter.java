@@ -35,8 +35,9 @@ public class SoftPalate_springPeter extends RootModel{
       super ();
    }
    
-   public SoftPalate_springPeter (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
       
       myMechMod = new MechModel ("mech");
       myMechMod.setMaxStepSize (defaultMaxStepSizeSec);

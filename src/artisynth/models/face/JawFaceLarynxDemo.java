@@ -148,8 +148,9 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
       super();
    }
 
-   public JawFaceLarynxDemo(String name) throws IOException {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
 
       addRigidBody("Thyroid", "Thyroid.obj");
       addRigidBody("Cricoid", "Cricoid.obj");

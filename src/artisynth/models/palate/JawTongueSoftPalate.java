@@ -3,6 +3,7 @@ package artisynth.models.palate;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.io.File;
+import java.io.IOException;
 
 import maspack.render.RenderProps;
 import maspack.render.RenderProps.Faces;
@@ -38,8 +39,9 @@ public class JawTongueSoftPalate extends JawHyoidFemMuscleTongue {
       super ();
    }
 
-   public JawTongueSoftPalate (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
       String palateDir = PathFinder.findSourceDir (this);
       System.out.println ("palateDir=" + palateDir);
       ArtisynthPath.setWorkingDir (new File(palateDir + "/data"));

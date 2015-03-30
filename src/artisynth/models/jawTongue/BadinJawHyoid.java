@@ -140,12 +140,9 @@ public class BadinJawHyoid extends JawLarynxDemo {
       super ();
    }
 
-   public BadinJawHyoid (String name) {
-      super (name);
-      
-      //Main.getMain ().setStepTime (0.001);
-      
-//      scaleDistance (0.001d);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
    }
 
 
@@ -215,12 +212,12 @@ public class BadinJawHyoid extends JawLarynxDemo {
          setHyoidSpringStiffness ();
       }
       
-      origJawWorld = new RigidTransform3d (
-         myJawModel.rigidBodies ().get("jaw").getPose ());
-      setJawPosture (getJawIPWorld ());
-      updateJawConstraints();
-      resetSpringLengthProps();
-      setJawPosture (origJawWorld);
+//      origJawWorld = new RigidTransform3d (
+//         myJawModel.rigidBodies ().get("jaw").getPose ());
+//      setJawPosture (getJawIPWorld ());
+//      updateJawConstraints();
+//      resetSpringLengthProps();
+//      setJawPosture (origJawWorld);
       
 //      transformLarynx();
 //      addPalate();
@@ -563,6 +560,15 @@ public class BadinJawHyoid extends JawLarynxDemo {
       
       createProbes(duration);
 //      loadProbes ();
+      
+      // this used to be done in build, but requires component changed event hack
+      origJawWorld = new RigidTransform3d (
+         myJawModel.rigidBodies ().get("jaw").getPose ());
+      setJawPosture (getJawIPWorld ());
+      updateJawConstraints();
+      resetSpringLengthProps();
+      setJawPosture (origJawWorld);
+      
       
       // set rest posture in attach() so that jaw pose is changes after 
       // tongue is dynamically-attached for BadinJawHyoidTongue

@@ -36,11 +36,12 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
    }
    
    public AirwaySkinDemo () throws IOException {
-      this(null);
+	   super();
    }
 
-   public AirwaySkinDemo (String name) throws IOException {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
    }
 
    @Override

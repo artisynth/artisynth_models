@@ -38,11 +38,11 @@ public class PharynxDemo extends JawLarynxDemo {
    HashMap<Vertex3d,Particle> vmap = new HashMap<Vertex3d,Particle> ();
 
    public PharynxDemo () {
-      this(null);
    }
 
-   public PharynxDemo (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
       
       RigidBody pharynx_surf = myJawModel.createAndAddBody (
          "pharynx", "pharynx/meshes/pharynx.obj");

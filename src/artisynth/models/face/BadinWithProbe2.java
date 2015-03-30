@@ -54,8 +54,9 @@ public class BadinWithProbe2 extends BadinJawFaceDemo {
       super ();
    }
 
-   public BadinWithProbe2 (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
 
       RigidBody hyoid = myJawModel.rigidBodies ().get ("hyoid");
       hyoid.setDynamic (false);

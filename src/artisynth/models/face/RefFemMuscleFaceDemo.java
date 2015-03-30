@@ -54,8 +54,9 @@ public class RefFemMuscleFaceDemo extends RefFaceDemo{
 
    }
 
-   public RefFemMuscleFaceDemo(String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
 
       setFibresActive(false);
       setMuscleElements(muscleThickness);

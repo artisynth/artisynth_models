@@ -68,15 +68,14 @@ public class JawDemo extends RootModel implements ScalableUnits {
 
    protected String probesFilename = "incisorDispProbes.art";
 
-   boolean modelLoadedFromFile = false;
-
    public JawDemo() {
       super(null);
-      modelLoadedFromFile = true;
    }
 
-   public JawDemo(String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
+
       loadModel();
       addModel(myJawModel);
 //      setIncisorVisible();
@@ -487,22 +486,8 @@ public class JawDemo extends RootModel implements ScalableUnits {
    }
 
    public void attach(DriverInterface driver) {
-      if (!modelLoadedFromFile) {
-	 setWorkingDir();
-	 loadProbes();
-
-	 if (addIncisorTrace) {
-
-	 }
-      } else {
-	 if (myJawModel.myMuscles.size() == 0)
-	    for (AxialSpring s : myJawModel.axialSprings())
-	       if (s instanceof Muscle)
-		  myJawModel.myMuscles.add((Muscle) s);
-
-         // dont't think we need this, and it also makes all constraints visible
-	 //myJawModel.initCons();
-      }
+      setWorkingDir();
+      loadProbes();
 
       if (getControlPanels().size() == 0) { // createControlPanel (this,
 					    // driver.getFrame());

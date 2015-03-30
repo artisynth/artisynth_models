@@ -1,13 +1,16 @@
 package artisynth.models.face;
 
+import java.io.IOException;
+
 public class BadinJawFaceDemo extends BadinJawTongueFaceDemo {
 
    public BadinJawFaceDemo() {
       super();
    }
 
-   public BadinJawFaceDemo(String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
    }
 
    @Override

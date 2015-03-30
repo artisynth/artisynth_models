@@ -47,8 +47,9 @@ public class TongueBracingDemo extends BadinJawHyoidTongue {
       super();
    }
 
-   public TongueBracingDemo(String name) throws IOException {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
       
       // fix skeletal bodies
       myJawModel.rigidBodies ().get ("jaw").setDynamic (false);

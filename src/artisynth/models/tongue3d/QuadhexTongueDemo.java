@@ -52,9 +52,9 @@ public class QuadhexTongueDemo extends HexTongueDemo {
       super ();
    }
 
-   public QuadhexTongueDemo (String name) {
-      super ();
-      setName(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
       
       mech = new MechModel("mech");
       mech.setIntegrator (Integrator.ConstrainedBackwardEuler);

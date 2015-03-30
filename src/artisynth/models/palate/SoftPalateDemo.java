@@ -52,9 +52,10 @@ public class SoftPalateDemo extends RootModel {
    public SoftPalateDemo () throws IOException {
    }
 
-   public SoftPalateDemo (String name) throws IOException {
-
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
+      
       myMechMod = new MechModel ("mech");
       myFemMod = new FemMuscleModel ("palate");
          UCDReader.read (myFemMod, palateGeomPath + "softPalate.inp", myDensity);

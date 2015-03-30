@@ -183,8 +183,9 @@ public class HexTongueDemo extends RootModel {
       super();
    }
 
-   public HexTongueDemo (String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
 
       mech = new MechModel("mech");
       mech.setIntegrator(Integrator.ConstrainedBackwardEuler);
@@ -213,6 +214,42 @@ public class HexTongueDemo extends RootModel {
 
       RenderProps.setVisible (tongue.getMuscleBundles (), true);
       // tongue.loadFibreEx ("r/i.excitations");
+      
+//      splitTongueAlongMidline();
+   }
+   
+   public void splitTongueAlongMidline()  {
+     
+      ArrayList<FemNode3d> midlineNodes = new ArrayList<FemNode3d> ();
+      for (FemNode3d n : tongue.getNodes ()) {
+         if (Math.abs (n.getPosition ().y) < 1e-6) {
+            midlineNodes.add (n);
+            RenderProps.setPointColor (n, Color.magenta);
+         }
+      }
+      int idx = -1;
+      Vector3d centroid = new Vector3d ();
+      for (FemNode3d n : midlineNodes) {
+         FemNode3d newNode = new FemNode3d (n.getPosition ());
+//         double newMass = n.getMass ()/2d;
+//         n.setMass(newMass);
+//         newNode.setMass (newMass);
+         newNode.setMass(n.getMass ());
+         tongue.addNode (newNode);
+         for (FemElement3d e : n.getElementDependencies ()) {
+            e.computeCentroid (centroid);
+            if (centroid.y < 0) {
+               for (int i = 0; i < e.getNodes ().length; i++) {
+                  if (e.getNodes ()[i] == n) {
+                     idx = i;
+                     break;
+                  }
+               }
+               e.getNodes ()[idx] = newNode;
+            }
+         }
+      }
+
    }
 
    /*

@@ -16,10 +16,12 @@ public class SoftPalateBracingDemo extends TongueBracingDemo {
    RigidBody pharyngealWall;
    
    public SoftPalateBracingDemo () {
+      super();
    }
 
-   public SoftPalateBracingDemo (String name) throws IOException {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
       
       softPalate = SoftPalateModel.createSoftPalate ();
       myJawModel.addModel (softPalate);

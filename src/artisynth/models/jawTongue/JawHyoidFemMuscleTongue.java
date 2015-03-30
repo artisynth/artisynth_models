@@ -41,8 +41,9 @@ public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
       super();
    }
 
-   public JawHyoidFemMuscleTongue (String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
 
       myJawModel.setIntegrator(Integrator.ConstrainedBackwardEuler);
       // myJawModel.setMaxStepSizeSec (0.002);

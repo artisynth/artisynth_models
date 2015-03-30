@@ -2,6 +2,7 @@ package artisynth.models.palateV2;
 
 import java.awt.Color;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -66,24 +67,20 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
    public boolean useControls = false;
    public boolean useProbes = true;
    public boolean usePharWall = false;
+   
+   private boolean noInit = false;
 
    public SoftPalateModel (String name, boolean noInit) 
    {
-      super (name);
-      if (noInit == false)
-      {
-	 createModel();
-      }
-      else
-      {
-	 // if called from script of inheriting class, this gives the option to change properties before initializing
-      }
+      this.noInit = noInit;
    }
 
-   public SoftPalateModel (String name) 
-   {
-      super (name);
-      createModel();
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
+      if (!noInit) {
+         createModel();
+      }
    }
    
    public void createModel()

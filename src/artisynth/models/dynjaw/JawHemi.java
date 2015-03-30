@@ -1,6 +1,7 @@
 package artisynth.models.dynjaw;
 
 import java.awt.Color;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -39,9 +40,9 @@ public class JawHemi extends JawLarynxDemo
       super();
    }
         
-   public JawHemi(String name)
-   {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
 
       String jawreconMesh = "postcan.obj";
    // "jawRecon" + (leftSideGraft?"Left":"Right") + ".obj";

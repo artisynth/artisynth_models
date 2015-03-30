@@ -1,5 +1,7 @@
 package artisynth.models.dynjaw;
 
+import java.io.IOException;
+
 import artisynth.core.mechmodels.Muscle;
 
 public class JawGraft extends JawHemi
@@ -12,9 +14,9 @@ public class JawGraft extends JawHemi
       super();
    }
         
-   public JawGraft(String name)
-   {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
       setJawReconMesh(jawgraftMesh);
       addJoint (leftSideGraft);
       doReattach ();

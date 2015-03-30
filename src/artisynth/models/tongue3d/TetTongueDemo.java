@@ -11,8 +11,9 @@ public class TetTongueDemo extends HexTongueDemo {
       super ();
    }
 
-   public TetTongueDemo (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
    }
    
    public static void createTetTongue(FemMuscleModel tongue, boolean linearMaterial, boolean useIcpMuscles) {

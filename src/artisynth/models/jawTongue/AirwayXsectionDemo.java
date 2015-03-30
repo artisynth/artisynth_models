@@ -94,12 +94,14 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
    public PropertyList getAllPropertyInfo () {
       return myProps;
    }
+
    public AirwayXsectionDemo () throws IOException {
-      this(null);
+	   super();
    }
 
-   public AirwayXsectionDemo (String name) throws IOException {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
       
       RenderProps.setEdgeColor (this, Color.CYAN);
       RenderProps.setEdgeWidth (this, 6);

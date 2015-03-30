@@ -46,8 +46,9 @@ public class RefFaceDemo extends RootModel {
       super ();
    }
 
-   public RefFaceDemo (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
 
       // create mech model
       mech = new MechModel ("mech");

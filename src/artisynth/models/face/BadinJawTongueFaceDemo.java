@@ -68,8 +68,9 @@ public class BadinJawTongueFaceDemo extends JawHyoidFemMuscleTongue {
       super ();
    }
 
-   public BadinJawTongueFaceDemo (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
 
       face = createScaledFace();
       myJawModel.addModel (face);

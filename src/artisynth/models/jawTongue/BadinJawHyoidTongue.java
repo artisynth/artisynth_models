@@ -95,8 +95,10 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
       super();
    }
 
-   public BadinJawHyoidTongue (String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);
+   
       addTongueToJaw();
 
       attachTongueToJaw();

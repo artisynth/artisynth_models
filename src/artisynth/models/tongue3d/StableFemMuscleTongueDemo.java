@@ -19,8 +19,9 @@ public class StableFemMuscleTongueDemo extends FemMuscleTongueDemo {
       super ();
    }
 
-   public StableFemMuscleTongueDemo (String name) {
-      super (name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
 
       /*
        * change integrator, material, damping parameters for better stability 

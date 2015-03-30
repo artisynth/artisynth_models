@@ -1,6 +1,7 @@
 package artisynth.models.tongue3d;
 
 import java.awt.Color;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import maspack.geometry.Face;
@@ -43,8 +44,9 @@ public class TongueLollipop extends FemMuscleTongueDemo {
       return myProps;
    }
    
-   public TongueLollipop(String name) {
-      super(name);
+   @Override
+   public void build (String[] args) throws IOException {
+      super.build (args);      
       createLollipop();
       addCollisions();
       adjustTongueParameters();
