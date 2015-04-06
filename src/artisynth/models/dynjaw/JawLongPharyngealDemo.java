@@ -1,5 +1,6 @@
 package artisynth.models.dynjaw;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -11,38 +12,95 @@ import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.modelbase.ComponentListView;
+import java.io.StringReader;
+import maspack.util.ReaderTokenizer;
 
 public class JawLongPharyngealDemo extends JawLarynxDemo{
 
    
-   private String s1 = "lPalatopharyngeus maxilla thyroid  \n" +
-   		"rPalatopharyngeus maxilla thyroid \n" + 
-   		 "lSalpingopharyngeus cranium thyroid \n" + 
-   		"rSalpingopharyngeus cranium thyroid \n" + 
-   		 "lStylopharyngeus cranium thyroid \n" + 
-   		"rStylopharyngeus cranium thyroid \n";
+   private static String s1 = "lPalatopharyngeus maxilla thyroid 19.44 22.04 55.81 18.93 30.01 8.47 \n" +
+   		"rPalatopharyngeus maxilla thyroid -19.44 22.04 55.81 -18.84 30.07 8.46 \n" + 
+   		 "lSalpingopharyngeus cranium thyroid 16.37 23.66 67.91 18.93 30.01 8.47\n" + 
+   		"rSalpingopharyngeus cranium thyroid -16.37 23.66 67.91 -18.84 30.07 8.46\n" + 
+   		 "lStylopharyngeus cranium thyroid 39.5132 43.205 65.41897 18.93 30.01 8.47\n" + 
+   		"rStylopharyngeus cranium thyroid -39.5132 43.205 65.41897 -18.84 30.07 8.46\n";
    
    /**
     * @param args
+    * @throws IOException 
     */
-   public JawLongPharyngealDemo () {
+   public JawLongPharyngealDemo () throws IOException {
       // TODO Auto-generated constructor stub
       super();
+
    }
 
+   public static void main(String [] args){
+      ReaderTokenizer rt = new ReaderTokenizer (new StringReader (s1));
+      try {
+           while(rt.nextToken () != rt.TT_EOF){
+              rt.pushBack ();
+              String muscleName = rt.scanWord ();
+              String originBody = rt.scanWord ();
+              String insertionBody = rt.scanWord ();
+              double [] originPoint = new double[3];
+              rt.scanNumbers (originPoint, 3);
+              double [] insertionPoint = new double[3];
+              rt.scanNumbers (insertionPoint, 3);
+              System.out.println(muscleName + " " + originBody + " " + insertionBody + " " + originPoint.toString () + " " + insertionPoint.toString ());
+           }
+      }
+      catch (IOException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }      
+   }
    
    @Override
    public void build (String[] args) throws IOException {
       super.build (args);
       
-      //Get a list of rigid bodies in this myJawModel
-      System.out.println("Hi from JawLongPharyngealDemo.build()");
-      ComponentListView<RigidBody> rigidBodies = myJawModel.rigidBodies ();
-      for (RigidBody rb : rigidBodies){
-         System.out.println(rb.getName ());
+      
+      double maxForce = 15.6;
+      double optLength = 73.024;
+      double maxL = 93.828;
+      double tendonRatio = 0.0;
+      double muscleDamping = 0.0;
+      
+      ReaderTokenizer rt = new ReaderTokenizer (new StringReader (s1));
+      while (rt.nextToken () != ReaderTokenizer.TT_EOF){
+         rt.pushBack ();
+         String muscleName = rt.scanWord ();
+         String originBody = rt.scanWord ();
+         String insertionBody = rt.scanWord ();
+         double [] originPoint = new double[3];
+         rt.scanNumbers (originPoint, 3);
+         double [] insertionPoint = new double[3];
+         rt.scanNumbers (insertionPoint, 3);
+         
+         //Add frame markers for this muscle
+         FrameMarker fmOrigin = new FrameMarker(muscleName + "_origin");
+         FrameMarker fmInsertion = new FrameMarker(muscleName + "_insertion");
+         fmOrigin.setFrame (myJawModel.rigidBodies ().get (originBody));
+         fmInsertion.setFrame (myJawModel.rigidBodies ().get (insertionBody));
+         fmOrigin.setLocation (new Point3d(originPoint));
+         fmInsertion.setLocation (new Point3d(insertionPoint));
+         myJawModel.addFrameMarker (fmOrigin);
+         myJawModel.addFrameMarker (fmInsertion);
+         
+         //Set muscle properties and add it to the myJawModel mechmodel
+         Muscle m = new Muscle(muscleName);
+         m.setFirstPoint (fmOrigin);
+         m.setSecondPoint (fmInsertion);
+         m.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+         AxialSpring.setDamping (m, muscleDamping);
+         myJawModel.addAxialSpring (m);
+         
+         //Set the renderprops for this muscle
+         m.setExcitationColor (Color.RED);
       }
       
-      //Coordinate data for the palatopharyngeus
+/*      //Coordinate data for the palatopharyngeus
       double [] lPalatopharyngeusOrigin = {19.44, 22.04, 55.81};
       double [] lPalatopharyngeusInsertion = {18.93, 30.01, 8.47};
       double [] rPalatopharyngeusOrigin = {-19.44, 22.04, 55.81};
@@ -171,5 +229,8 @@ public class JawLongPharyngealDemo extends JawLarynxDemo{
       rStylopharyngeus.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
       AxialSpring.setDamping (rStylopharyngeus, muscleDamping);
       myJawModel.addAxialSpring (rStylopharyngeus);
+*/
+      
+   
    }
 }
