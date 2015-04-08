@@ -9,9 +9,13 @@ import maspack.matrix.Point3d;
 import artisynth.core.materials.PeckAxialMuscle;
 import artisynth.core.mechmodels.AxialSpring;
 import artisynth.core.mechmodels.FrameMarker;
+import artisynth.core.mechmodels.MultiPointMuscle;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.modelbase.ComponentListView;
+import artisynth.core.probes.InputProbe;
+import artisynth.core.probes.OutputProbe;
+
 import java.io.StringReader;
 import maspack.util.ReaderTokenizer;
 
@@ -25,6 +29,13 @@ public class JawLongPharyngealDemo extends JawLarynxDemo{
    		 "lStylopharyngeus cranium thyroid 39.5132 43.205 65.41897 18.93 30.01 8.47\n" + 
    		"rStylopharyngeus cranium thyroid -39.5132 43.205 65.41897 -18.84 30.07 8.46\n";
    
+   
+   private static double maxForce = 15.6;
+   private static double optLength = 73.024;
+   private static double maxL = 93.828;
+   private static double tendonRatio = 0.0;
+   private static double muscleDamping = 0.0;
+   
    /**
     * @param args
     * @throws IOException 
@@ -32,7 +43,6 @@ public class JawLongPharyngealDemo extends JawLarynxDemo{
    public JawLongPharyngealDemo () throws IOException {
       // TODO Auto-generated constructor stub
       super();
-
    }
 
    public static void main(String [] args){
@@ -60,7 +70,7 @@ public class JawLongPharyngealDemo extends JawLarynxDemo{
    public void build (String[] args) throws IOException {
       super.build (args);
       
-      
+      /*
       double maxForce = 15.6;
       double optLength = 73.024;
       double maxL = 93.828;
@@ -97,140 +107,223 @@ public class JawLongPharyngealDemo extends JawLarynxDemo{
          myJawModel.addAxialSpring (m);
          
          //Set the renderprops for this muscle
-         m.setExcitationColor (Color.RED);
+         m.setExcitationColor (Color.RED);*/
+         buildStylopharyngeus();
+         buildPalatopharyngeus();
+         buildSalpingopharyngeus();
+      }
+   
+   
+      private void buildStylopharyngeus(){
+         /*
+          * The stylopharyngeus originates from the styloglossus region of the styloid process.
+          * It has a distinct elbow on its way to insertion at various parts of the thyroid cartilage.
+          * In this simulation, it's approximated by two MultiPointMuscles that merge into those
+          * two insertion points. Both muscles have the same elbow point, which is a reasonable 
+          * approximation. The MultiPointMuscle that attaches to the horn of the thyroid cartilage is
+          * internally referred to as Stph_high and the other one is Stph_low
+         */
+
+         //Features common to the left Stph
+         FrameMarker lStphOrigin = new FrameMarker("lStph_origin");
+         FrameMarker lStphElbow = new FrameMarker("lStph_elbow");
+         
+         //Assemble left Stph_high
+         FrameMarker lStphHighInsertion = new FrameMarker("lStphHigh_insertion");
+         lStphOrigin.setFrame (myJawModel.rigidBodies ().get ("maxilla"));
+         lStphElbow.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         lStphHighInsertion.setFrame (myJawModel.rigidBodies ().get ("thyroid"));
+         lStphOrigin.setLocation (new Point3d(39.5, 42.2, 65.4));
+         lStphElbow.setLocation (new Point3d(14.0, 30.6, 41.5));
+         lStphHighInsertion.setLocation (new Point3d(18.9, 30.0, 8.4));
+         myJawModel.addFrameMarker (lStphOrigin);
+         myJawModel.addFrameMarker (lStphElbow);
+         myJawModel.addFrameMarker (lStphHighInsertion);
+         MultiPointMuscle lStphHighMuscle = MultiPointMuscle.createPeck ("lStph_high", maxForce, optLength, maxL, tendonRatio);
+         lStphHighMuscle.addPoint (lStphOrigin);
+         lStphHighMuscle.addPoint (lStphElbow);
+         lStphHighMuscle.addPoint (lStphHighInsertion);
+         AxialSpring.setDamping (lStphHighMuscle, muscleDamping);
+         myJawModel.addMultiPointSpring (lStphHighMuscle);
+         lStphHighMuscle.setExcitationColor (Color.RED);
+         
+
+         //ASsemble the left Stph_low
+         FrameMarker lStphLowInsertion = new FrameMarker("lStphLow_insertion");
+         lStphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         lStphLowInsertion.setLocation (new Point3d(17.4, 26.4, -13.7));
+         myJawModel.addFrameMarker (lStphLowInsertion);
+         MultiPointMuscle lStphLowMuscle = MultiPointMuscle.createPeck ("lStph_low", maxForce, optLength, maxL, tendonRatio);
+         lStphLowMuscle.addPoint (lStphOrigin);
+         lStphLowMuscle.addPoint (lStphElbow);
+         lStphLowMuscle.addPoint (lStphLowInsertion);
+         AxialSpring.setDamping (lStphLowMuscle, muscleDamping);
+         myJawModel.addMultiPointSpring (lStphLowMuscle);
+         lStphLowMuscle.setExcitationColor (Color.RED);
+         
+         
+         
+         
+         //Features common to the right Stph
+         FrameMarker rStphOrigin = new FrameMarker("rStph_origin");
+         FrameMarker rStphElbow = new FrameMarker("rStph_elbow");
+         
+         
+         //Assemble right Stph_high
+         FrameMarker rStphHighInsertion = new FrameMarker("rStphHigh_insertion");
+         rStphOrigin.setFrame (myJawModel.rigidBodies ().get ("maxilla"));
+         rStphElbow.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         rStphHighInsertion.setFrame (myJawModel.rigidBodies ().get ("thyroid"));
+         rStphOrigin.setLocation (new Point3d(-39.5, 42.2, 65.4));
+         rStphElbow.setLocation (new Point3d(-14.0, 30.6, 41.5));
+         rStphHighInsertion.setLocation (new Point3d(-18.9, 30.0, 8.4));
+         myJawModel.addFrameMarker (rStphOrigin);
+         myJawModel.addFrameMarker (rStphElbow);
+         myJawModel.addFrameMarker (rStphHighInsertion);
+         MultiPointMuscle rStphHighMuscle = MultiPointMuscle.createPeck ("rStph_high", maxForce, optLength, maxL, tendonRatio);
+         rStphHighMuscle.addPoint (rStphOrigin);
+         rStphHighMuscle.addPoint (rStphElbow);
+         rStphHighMuscle.addPoint (rStphHighInsertion);
+         AxialSpring.setDamping (rStphHighMuscle, muscleDamping);
+         myJawModel.addMultiPointSpring (rStphHighMuscle);
+         rStphHighMuscle.setExcitationColor (Color.RED);
+
+         
+         //ASsemble the left Stph_low
+         FrameMarker rStphLowInsertion = new FrameMarker("rStphLow_insertion");
+         rStphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         rStphLowInsertion.setLocation (new Point3d(-17.4, 26.4, -13.7));
+         myJawModel.addFrameMarker (rStphLowInsertion);
+         MultiPointMuscle rStphLowMuscle = MultiPointMuscle.createPeck ("rStph_low", maxForce, optLength, maxL, tendonRatio);
+         rStphLowMuscle.addPoint (rStphOrigin);
+         rStphLowMuscle.addPoint (rStphElbow);
+         rStphLowMuscle.addPoint (rStphLowInsertion);
+         AxialSpring.setDamping (rStphLowMuscle, muscleDamping);
+         myJawModel.addMultiPointSpring (rStphLowMuscle);
+         rStphLowMuscle.setExcitationColor (Color.RED);
+         
       }
       
-/*      //Coordinate data for the palatopharyngeus
-      double [] lPalatopharyngeusOrigin = {19.44, 22.04, 55.81};
-      double [] lPalatopharyngeusInsertion = {18.93, 30.01, 8.47};
-      double [] rPalatopharyngeusOrigin = {-19.44, 22.04, 55.81};
-      double [] rPalatopharyngeusInsertion = {-18.84, 30.07, 8.46};
+      private void buildPalatopharyngeus(){
 
-      //Coordinate data for the salpingopharyngeus
-      double [] lSalpingopharyngeusOrigin = {16.37, 23.66, 67.91};
-      double [] lSalpingopharyngeusInsertion = {18.93, 30.01, 8.47};
-      double [] rSalpingopharyngeusOrigin = {-16.37, 23.66, 67.91};
-      double [] rSalpingopharyngeusInsertion = {-18.84, 30.07, 8.46};
-      
-      //Coordinate data for stylopharyngeus
-      double [] lStylopharyngeusOrigin = {39.5132, 43.205, 65.41897};
-      double [] lStylopharyngeusInsertion = {18.93, 30.01, 8.47};
-      double [] rStylopharyngeusOrigin = {-39.5132, 43.205, 65.41897};
-      double [] rStylopharyngeusInsertion = {-18.84, 30.07, 8.46};
+         /*
+          * The palatopharyngeus muscles would be better simulated with low and high insertion points
+          * around the thyroid cartilage, just like the palatopharyngeus. The muscles are almost
+          * linear in shape so they are modelled as regular Axial Springs
+         */         
+         
+         
+         //Features common to the left Pph
+         FrameMarker lPphOrigin = new FrameMarker("lPph_origin");
+         
 
-      double maxForce = 15.6;
-      double optLength = 73.024;
-      double maxL = 93.828;
-      double tendonRatio = 0.0;
-      double muscleDamping = 0.0;
-      
-      //Add the palatopharyngeus muscles
-      FrameMarker lPalatopharyngeusOriginFrameMarker = new FrameMarker ("lPalatopharyngeusOrigin"); 
-      FrameMarker lPalatopharyngeusInsertionFrameMarker = new FrameMarker ("lPalatopharyngeusInsertion");
-      FrameMarker rPalatopharyngeusOriginFrameMarker = new FrameMarker ("rPalatopharyngeusOrigin"); 
-      FrameMarker rPalatopharyngeusInsertionFrameMarker = new FrameMarker ("rPalatopharyngeusInsertion");
-      
-      lPalatopharyngeusOriginFrameMarker.setFrame (rigidBodies.get ("maxilla"));
-      lPalatopharyngeusInsertionFrameMarker.setFrame (rigidBodies.get ("thyroid"));
-      rPalatopharyngeusOriginFrameMarker.setFrame (rigidBodies.get("maxilla"));
-      rPalatopharyngeusInsertionFrameMarker.setFrame (rigidBodies.get("thyroid"));
-      
-      lPalatopharyngeusOriginFrameMarker.setLocation (new Point3d(lPalatopharyngeusOrigin));
-      lPalatopharyngeusInsertionFrameMarker.setLocation (new Point3d(lPalatopharyngeusInsertion));
-      rPalatopharyngeusOriginFrameMarker.setLocation (new Point3d(rPalatopharyngeusOrigin));
-      rPalatopharyngeusInsertionFrameMarker.setLocation (new Point3d(rPalatopharyngeusInsertion));
-      
-      myJawModel.addFrameMarker(lPalatopharyngeusOriginFrameMarker);
-      myJawModel.addFrameMarker(lPalatopharyngeusInsertionFrameMarker);
-      myJawModel.addFrameMarker (rPalatopharyngeusOriginFrameMarker);
-      myJawModel.addFrameMarker (rPalatopharyngeusInsertionFrameMarker);
-      
-      Muscle lPalatopharyngeus = new Muscle ("lPalatopharyngeus");
-      lPalatopharyngeus.setFirstPoint (lPalatopharyngeusOriginFrameMarker);
-      lPalatopharyngeus.setSecondPoint (lPalatopharyngeusInsertionFrameMarker);
-      lPalatopharyngeus.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
-      AxialSpring.setDamping (lPalatopharyngeus, muscleDamping);
-      myJawModel.addAxialSpring (lPalatopharyngeus);
-      Muscle rPalatopharyngeus = new Muscle ("rPalatopharyngeus");
-      rPalatopharyngeus.setFirstPoint (rPalatopharyngeusOriginFrameMarker);
-      rPalatopharyngeus.setSecondPoint (rPalatopharyngeusInsertionFrameMarker);
-      rPalatopharyngeus.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
-      AxialSpring.setDamping (rPalatopharyngeus, muscleDamping);
-      myJawModel.addAxialSpring (rPalatopharyngeus);
+         //Add lPph high
+         FrameMarker lPphHighInsertion = new FrameMarker("lPph_high_insertion");
+         lPphOrigin.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         lPphOrigin.setLocation (new Point3d(19.44, 22.04, 55.81));
+         lPphHighInsertion.setFrame (myJawModel.rigidBodies ().get ("thyroid"));
+         lPphHighInsertion.setLocation (new Point3d(6.8, 36.3, -11.7));
+         myJawModel.addFrameMarker (lPphOrigin);
+         myJawModel.addFrameMarker (lPphHighInsertion);
+         Muscle lPphHigh = new Muscle("lPph_high");
+         lPphHigh.setFirstPoint (lPphOrigin);
+         lPphHigh.setSecondPoint (lPphHighInsertion);
+         AxialSpring.setDamping (lPphHigh, muscleDamping);
+         lPphHigh.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+         lPphHigh.setExcitationColor (Color.RED);
+         myJawModel.addAxialSpring (lPphHigh);
+         
+         //Add lPph low
+         FrameMarker lPphLowInsertion = new FrameMarker("lPph_low_insertion");
+         lPphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         lPphLowInsertion.setLocation (new Point3d(10.5, 34.2, -22.8));
+         myJawModel.addFrameMarker (lPphLowInsertion);
+         Muscle lPphLow = new Muscle("lPph_low");
+         lPphLow.setFirstPoint (lPphOrigin);
+         lPphLow.setSecondPoint (lPphLowInsertion);
+         AxialSpring.setDamping (lPphLow, muscleDamping);
+         lPphLow.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+         lPphLow.setExcitationColor (Color.RED);
+         myJawModel.addAxialSpring (lPphLow);
 
+         
+         //Features common to the right Pph
+         FrameMarker rPphOrigin = new FrameMarker("rPph_origin");
 
-      
-      //Add the salpingopharyngeus muscles
-      FrameMarker lSalpingopharyngeusOriginFrameMarker = new FrameMarker ("lSalpingopharyngeusOrigin");
-      FrameMarker lSalpingopharyngeusInsertionFrameMarker = new FrameMarker ("lSalpingopharyngeusInsertion");
-      FrameMarker rSalpingopharyngeusOriginFrameMarker = new FrameMarker ("rSalpingopharyngeusOrigin");
-      FrameMarker rSalpingopharyngeusInsertionFrameMarker = new FrameMarker ("rSalpingopharyngeusInsertion");
-      
-      lSalpingopharyngeusOriginFrameMarker.setFrame (rigidBodies.get("cranium"));
-      lSalpingopharyngeusInsertionFrameMarker.setFrame (rigidBodies.get("thyroid"));
-      rSalpingopharyngeusOriginFrameMarker.setFrame (rigidBodies.get("cranium"));
-      rSalpingopharyngeusInsertionFrameMarker.setFrame (rigidBodies.get("thyroid"));
-      
-      lSalpingopharyngeusOriginFrameMarker.setLocation (new Point3d(lSalpingopharyngeusOrigin));
-      lSalpingopharyngeusInsertionFrameMarker.setLocation (new Point3d(lSalpingopharyngeusInsertion));
-      rSalpingopharyngeusOriginFrameMarker.setLocation (new Point3d(rSalpingopharyngeusOrigin));
-      rSalpingopharyngeusInsertionFrameMarker.setLocation (new Point3d(rSalpingopharyngeusInsertion));
-      
-      myJawModel.addFrameMarker (lSalpingopharyngeusOriginFrameMarker);
-      myJawModel.addFrameMarker (lSalpingopharyngeusInsertionFrameMarker);
-      myJawModel.addFrameMarker (rSalpingopharyngeusOriginFrameMarker);
-      myJawModel.addFrameMarker (rSalpingopharyngeusInsertionFrameMarker); 
+         //Add rPph high
+         FrameMarker rPphHighInsertion = new FrameMarker("rPph_high_insertion");
+         rPphOrigin.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         rPphOrigin.setLocation (new Point3d(-19.44, 22.04, 55.81));
+         rPphHighInsertion.setFrame (myJawModel.rigidBodies ().get ("thyroid"));
+         rPphHighInsertion.setLocation (new Point3d(-6.8, 36.3, -11.7));
+         myJawModel.addFrameMarker (rPphOrigin);
+         myJawModel.addFrameMarker (rPphHighInsertion);
+         Muscle rPphHigh = new Muscle("rPph_high");
+         rPphHigh.setFirstPoint (rPphOrigin);
+         rPphHigh.setSecondPoint (rPphHighInsertion);
+         AxialSpring.setDamping (rPphHigh, muscleDamping);
+         rPphHigh.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+         rPphHigh.setExcitationColor (Color.RED);
+         myJawModel.addAxialSpring (rPphHigh);
 
-      Muscle lSalpingopharyngeus = new Muscle ("lSalpingopharyngeus");
-      lSalpingopharyngeus.setFirstPoint (lSalpingopharyngeusOriginFrameMarker);
-      lSalpingopharyngeus.setSecondPoint (lSalpingopharyngeusInsertionFrameMarker);
-      lSalpingopharyngeus.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
-      AxialSpring.setDamping (lSalpingopharyngeus, muscleDamping);
-      myJawModel.addAxialSpring (lSalpingopharyngeus);  
-      Muscle rSalpingopharyngeus = new Muscle ("rSalpingopharyngeus");
-      rSalpingopharyngeus.setFirstPoint (rSalpingopharyngeusOriginFrameMarker);
-      rSalpingopharyngeus.setSecondPoint (rSalpingopharyngeusInsertionFrameMarker);
-      rSalpingopharyngeus.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
-      AxialSpring.setDamping (rSalpingopharyngeus, muscleDamping);
-      myJawModel.addAxialSpring (rSalpingopharyngeus);
-      
-      
-      
-      //Add the stylopharyngeus muscles
-      FrameMarker lStylopharyngeusOriginFrameMarker = new FrameMarker ("lStylopharyngeusOrigin");
-      FrameMarker lStylopharyngeusInsertionFrameMarker = new FrameMarker ("lStylopharyngeusInsertion");
-      FrameMarker rStylopharyngeusOriginFrameMarker = new FrameMarker ("rStylopharyngeusOrigin");
-      FrameMarker rStylopharyngeusInsertionFrameMarker = new FrameMarker ("rStylopharyngeusInsertion");
-      
-      lStylopharyngeusOriginFrameMarker.setFrame (rigidBodies.get("cranium"));
-      lStylopharyngeusInsertionFrameMarker.setFrame (rigidBodies.get("thyroid"));
-      rStylopharyngeusOriginFrameMarker.setFrame (rigidBodies.get("cranium"));
-      rStylopharyngeusInsertionFrameMarker.setFrame (rigidBodies.get("thyroid"));
-      
-      lStylopharyngeusOriginFrameMarker.setLocation (new Point3d(lStylopharyngeusOrigin));
-      lStylopharyngeusInsertionFrameMarker.setLocation (new Point3d(lStylopharyngeusInsertion));
-      rStylopharyngeusOriginFrameMarker.setLocation (new Point3d(rStylopharyngeusOrigin));
-      rStylopharyngeusInsertionFrameMarker.setLocation (new Point3d(rStylopharyngeusInsertion));
-      
-      myJawModel.addFrameMarker(lStylopharyngeusOriginFrameMarker);
-      myJawModel.addFrameMarker(lStylopharyngeusInsertionFrameMarker);
-      myJawModel.addFrameMarker (rStylopharyngeusOriginFrameMarker);
-      myJawModel.addFrameMarker (rStylopharyngeusInsertionFrameMarker);
-      
-      Muscle lStylopharyngeus = new Muscle ("lStylopharyngeus");
-      lStylopharyngeus.setFirstPoint (lStylopharyngeusOriginFrameMarker);
-      lStylopharyngeus.setSecondPoint (lStylopharyngeusInsertionFrameMarker);
-      lStylopharyngeus.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
-      AxialSpring.setDamping (lStylopharyngeus, muscleDamping);
-      myJawModel.addAxialSpring (lStylopharyngeus);  
-      Muscle rStylopharyngeus= new Muscle ("rStylopharyngeus");
-      rStylopharyngeus.setFirstPoint (rStylopharyngeusOriginFrameMarker);
-      rStylopharyngeus.setSecondPoint (rStylopharyngeusInsertionFrameMarker);
-      rStylopharyngeus.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
-      AxialSpring.setDamping (rStylopharyngeus, muscleDamping);
-      myJawModel.addAxialSpring (rStylopharyngeus);
-*/
-      
-   
-   }
+         //Add rPph low
+         FrameMarker rPphLowInsertion = new FrameMarker("rPph_low_insertion");
+         rPphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         rPphLowInsertion.setLocation (new Point3d(-10.5, 34.2, -22.8));
+         myJawModel.addFrameMarker (rPphLowInsertion);
+         Muscle rPphLow = new Muscle("rPph_low");
+         rPphLow.setFirstPoint (rPphOrigin);
+         rPphLow.setSecondPoint (rPphLowInsertion);
+         AxialSpring.setDamping (rPphLow, muscleDamping);
+         rPphLow.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+         rPphLow.setExcitationColor (Color.RED);
+         myJawModel.addAxialSpring (rPphLow);
+         
+         
+         
+      }
+
+      private void buildSalpingopharyngeus(){
+         /*
+          * The salpingopharyngeus is modeled with 2 Axial Springs.
+          */
+         
+         //Assemble the left salpingopharyngeus
+         FrameMarker lSalpOrigin = new FrameMarker("lSalp_origin");
+         lSalpOrigin.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         lSalpOrigin.setLocation (new Point3d(16.37, 23.66, 67.91));
+         FrameMarker lSalpInsertion = new FrameMarker("lSalp_insertion");
+         lSalpInsertion.setFrame (myJawModel.rigidBodies ().get ("thyroid"));
+         lSalpInsertion.setLocation (new Point3d(18.3, 26.9, -11.1));
+         myJawModel.addFrameMarker (lSalpOrigin);
+         myJawModel.addFrameMarker (lSalpInsertion);
+         Muscle lSalp = new Muscle("lSalp");
+         lSalp.setFirstPoint (lSalpOrigin);
+         lSalp.setSecondPoint (lSalpInsertion);
+         AxialSpring.setDamping (lSalp, muscleDamping);
+         lSalp.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+         lSalp.setExcitationColor (Color.RED);
+         myJawModel.addAxialSpring (lSalp);
+         
+         //Assemble the right salpingopharyngeus
+         FrameMarker rSalpOrigin = new FrameMarker("rSalp_origin");
+         rSalpOrigin.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+         rSalpOrigin.setLocation (new Point3d(-16.37, 23.66, 67.91));
+         FrameMarker rSalpInsertion = new FrameMarker("rSalp_insertion");
+         rSalpInsertion.setFrame (myJawModel.rigidBodies ().get ("thyroid"));
+         rSalpInsertion.setLocation (new Point3d(-18.3, 26.9, -11.1));
+         myJawModel.addFrameMarker (rSalpOrigin);
+         myJawModel.addFrameMarker (rSalpInsertion);
+         Muscle rSalp = new Muscle("rSalp");
+         rSalp.setFirstPoint (rSalpOrigin);
+         rSalp.setSecondPoint (rSalpInsertion);
+         AxialSpring.setDamping (rSalp, muscleDamping);
+         rSalp.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+         rSalp.setExcitationColor (Color.RED);
+         myJawModel.addAxialSpring (rSalp);
+         
+         
+         
+      }
 }
+
