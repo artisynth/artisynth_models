@@ -9,9 +9,11 @@ import maspack.matrix.Point3d;
 import maspack.render.RenderProps;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.mechmodels.AxialSpring;
+import artisynth.core.mechmodels.ExcitationComponent;
 import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.MultiPointMuscle;
 import artisynth.core.mechmodels.Muscle;
+import artisynth.core.mechmodels.MuscleExciter;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
 import artisynth.core.workspace.DriverInterface;
@@ -257,15 +259,50 @@ public class RajJawLarynxDemo extends JawDemo {
       
       
       
+      //Add the excitation components
+      MuscleExciter exciter;
+      ExcitationComponent exc;
       
-      
-      
-      
-      
-      
-      
+      //Bilateral exciter for the salpingopharyngeus
+      exciter = new MuscleExciter ("bi_salp");
+      exc = (Muscle) myJawModel.axialSprings ().get ("lSalp");
+      exciter.addTarget (exc, 1.0);
+      exc = (Muscle) myJawModel.axialSprings ().get ("rSalp");
+      exciter.addTarget (exc, 1.0);
+      myJawModel.addMuscleExciter (exciter);
       
 
+      //Bilateral exciter for the low and high Palatopharyngeal muscles
+      exciter = new MuscleExciter ("bi_Pph_low");
+      exc = (Muscle) myJawModel.axialSprings ().get ("lPph_low");
+      exciter.addTarget (exc, 1.0);
+      exc = (Muscle) myJawModel.axialSprings ().get ("rPph_low");
+      exciter.addTarget (exc, 1.0);      
+      myJawModel.addMuscleExciter (exciter);
+      
+      exciter = new MuscleExciter ("bi_Pph_high");
+      exc = (Muscle) myJawModel.axialSprings ().get ("lPph_high");
+      exciter.addTarget (exc, 1.0);
+      exc = (Muscle) myJawModel.axialSprings ().get ("rPph_high");      
+      exciter.addTarget (exc, 1.0);
+      myJawModel.addMuscleExciter (exciter);
+      
+      
+      //Bilateral exciter for the low and high stylopharyngeus muscles
+      exciter = new MuscleExciter ("bi_Stph_low");
+      exc = (MultiPointMuscle) myJawModel.multiPointSprings ().get ("lStph_low"); 
+      exciter.addTarget (exc, 1.0);
+      exc = (MultiPointMuscle) myJawModel.multiPointSprings ().get ("rStph_low");
+      exciter.addTarget (exc, 1.0);      
+      myJawModel.addMuscleExciter (exciter);
+      
+      exciter = new MuscleExciter ("bi_Stph_high");      
+      exc = (MultiPointMuscle) myJawModel.multiPointSprings ().get ("lStph_high");
+      exciter.addTarget (exc, 1.0);      
+      exc = (MultiPointMuscle) myJawModel.multiPointSprings ().get ("rStph_high");
+      exciter.addTarget (exc, 1.0);            
+      myJawModel.addMuscleExciter (exciter);
+      
       //setIncisorVisible();
    }
 
