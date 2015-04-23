@@ -168,7 +168,7 @@ public class RajJawLarynxDemo extends JawDemo {
       
       //Add lPph low
       FrameMarker lPphLowInsertion = new FrameMarker("lPph_low_insertion");
-      lPphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+      lPphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("thyroid"));
       lPphLowInsertion.setLocation (new Point3d(10.5, 34.2, -22.8));
       myJawModel.addFrameMarker (lPphLowInsertion);
       Muscle lPphLow = new Muscle("lPph_low");
@@ -201,7 +201,7 @@ public class RajJawLarynxDemo extends JawDemo {
 
       //Add rPph low
       FrameMarker rPphLowInsertion = new FrameMarker("rPph_low_insertion");
-      rPphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("cranium"));
+      rPphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("thyroid"));
       rPphLowInsertion.setLocation (new Point3d(-10.5, 34.2, -22.8));
       myJawModel.addFrameMarker (rPphLowInsertion);
       Muscle rPphLow = new Muscle("rPph_low");
