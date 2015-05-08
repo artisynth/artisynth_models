@@ -70,10 +70,10 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
    
    private boolean noInit = false;
 
-   public SoftPalateModel (String name, boolean noInit) 
-   {
-      this.noInit = noInit;
-   }
+//   public SoftPalateModel (String name, boolean noInit) 
+//   {
+//      this.noInit = noInit;
+//   }
 
    @Override
    public void build (String[] args) throws IOException {
@@ -430,7 +430,8 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
           try 
           {
              String filename = meshDir + meshBasename + ".vtk";
-             VTK_IO_copy.readUnstructuredMesh_volume(filename, fem);
+             VtkInputOutput.readUnstructuredMesh_volume(fem, filename);
+             //VTK_IO_copy.readUnstructuredMesh_volume(filename, fem);
              //fem = (FemMuscleModel)VtkAsciiFemReader.read(filename);
              isRead = true;
           } 
