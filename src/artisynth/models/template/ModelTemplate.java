@@ -1565,14 +1565,14 @@ public class ModelTemplate extends RootModel {
          }
       } catch (Exception e) {
          if (format.matches("ansys")) {
-            throw new InternalErrorException(" Can't create Ansys FEM from "
-               + femPath + meshName + ".node|.elem");
+            throw new RuntimeException(" Can't create Ansys FEM from "
+               + femPath + meshName + ".node|.elem", e);
          } else if (format.matches("ansys")) {
-            throw new InternalErrorException(" Can't create TetGen FEM from "
-               + femPath + meshName + ".node|.ele");
+            throw new RuntimeException(" Can't create TetGen FEM from "
+               + femPath + meshName + ".node|.ele", e);
          } else if (format.matches("ucd")) {
-            throw new InternalErrorException(" Can't create UCD FEM from "
-               + femPath + meshName + ".inp");
+            throw new RuntimeException(" Can't create UCD FEM from "
+               + femPath + meshName + ".inp", e);
          }
       }
 
