@@ -130,13 +130,7 @@ public class SurfaceForceController extends ControllerBase {
          }
          
          // System.out.println("Force: " + dir.toString("% .2g"));
-         
-         
-//         if (p instanceof FemNode3d) {
-//            p.addForce(dir);
-//         } else {
-            force.setForce(dir);   
-//         }
+         force.setForce(dir);   
       }
    }   
    
