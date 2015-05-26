@@ -1265,13 +1265,17 @@ public class BadinJawHyoid extends JawLarynxDemo {
    }
 
    public void setRestPosture () {
+      setRestPosture ("tongue_rest_il01.txt");
+   }
+   
+   public void setRestPosture (String tongueRestNodesFilename) {
       System.out.println("setting jaw rest posture");
       setJawPosture (jawRestPose_symmetric);
 
       if (myJawModel.models ().size () > 0  && myJawModel.models ().get (0) instanceof FemMuscleModel) {
 	      System.out.println("setting tongue rest posture");
 	 FemMuscleModel tongue = (FemMuscleModel)myJawModel.models ().get (0);
-	 HexTongueDemo.setTonguePosture (tongue, regGeomDir + "tongue_rest_il01.txt", /*isRestPosture= */true);
+	 HexTongueDemo.setTonguePosture (tongue, regGeomDir + tongueRestNodesFilename, /*isRestPosture= */true);
       }
    }
    
