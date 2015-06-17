@@ -55,7 +55,6 @@ public class FemMuscleTongueDemo extends HexTongueDemo {
 
    @Override
    public void build (String[] args) throws IOException {
-      super.build (args);      
 
       mech = new MechModel("mech");
       mech.setIntegrator(Integrator.ConstrainedBackwardEuler);
