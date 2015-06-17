@@ -24,12 +24,14 @@ import artisynth.core.driver.Main;
 import artisynth.core.driver.ViewerManager;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemModel.IncompMethod;
+import artisynth.core.femmodels.FemModel.SurfaceRender;
 import artisynth.core.femmodels.FemMuscleModel;
 import artisynth.core.femmodels.FemMuscleStiffener;
 import artisynth.core.femmodels.FemNode;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.gui.FemControlPanel;
+import artisynth.core.materials.GenericMuscle;
 import artisynth.core.mechmodels.CollisionManager;
 import artisynth.core.mechmodels.CollisionHandlerList;
 import artisynth.core.mechmodels.MechModel;
@@ -38,6 +40,7 @@ import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.probes.NumericOutputProbe;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
+import artisynth.models.tongue3d.FemMuscleTongueDemo;
 import artisynth.models.tongue3d.HexTongueDemo;
 import artisynth.models.tongue3d.TetTongueDemo;
 
@@ -62,9 +65,16 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
 
    boolean useLinearMaterial = false;
    boolean useIcpMuscleDefs = true;
-   boolean useHexahedralTongue = true;
    boolean useIncompressibleConstraint = true;
    boolean doActivationStiffening = true;
+   
+   public static final TongueType DEFAULT_TONGUE_TYPE = TongueType.HexLineMuscles;
+   
+   public enum TongueType {
+      TetLineMuscles,
+      HexLineMuscles,
+      HexElementMuscles,
+   }
 
    protected FemMuscleModel tongue;
    protected FemMuscleStiffener stiffener = null;
@@ -98,8 +108,15 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
    @Override
    public void build (String[] args) throws IOException {
       super.build (args);
-   
-      addTongueToJaw();
+      
+      TongueType tongueType = DEFAULT_TONGUE_TYPE;
+      try {
+       tongueType = TongueType.valueOf (args[0]);
+      } catch (Exception e) {
+         // use default
+      }
+      
+      addTongueToJaw(tongueType);
 
       attachTongueToJaw();
 
@@ -148,16 +165,66 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
       RenderProps.setVisible(myJawModel.frameMarkers(), false);
    }
 
-   public void addTongueToJaw() {
+   public void addTongueToJaw(TongueType tt) {
+      System.out.println("adding tongue of type "+tt.toString ());
+      switch(tt) {
+         case TetLineMuscles:
+            tongue = TetTongueDemo.createTetTongue(useLinearMaterial, useIcpMuscleDefs);
+            
+            stiffener = new FemMuscleStiffener(tongue);
 
-      if (useHexahedralTongue) {
-         tongue =
-            HexTongueDemo.createHexTongue(useLinearMaterial, useIcpMuscleDefs);
+            RenderProps.setPointStyle(tongue, PointStyle.SPHERE);
+            RenderProps.setPointRadius(tongue, 1);
+            RenderProps.setLineWidth(tongue, 1);
+            RenderProps.setLineStyle(tongue.getMuscleBundles(), LineStyle.CYLINDER);
+            RenderProps.setLineRadius(tongue.getMuscleBundles(), 0.3);
+            RenderProps.setVisible(tongue.getNodes(), false);
+            RenderProps.setVisible(tongue.getElements(), true);
+            RenderProps.setLineWidth(tongue.getElements(), 1);
+            
+            break;
+         case HexLineMuscles:
+            tongue = HexTongueDemo.createHexTongue(useLinearMaterial, useIcpMuscleDefs);
+
+            stiffener = new FemMuscleStiffener(tongue);
+
+            RenderProps.setPointStyle(tongue, PointStyle.SPHERE);
+            RenderProps.setPointRadius(tongue, 1);
+            RenderProps.setLineWidth(tongue, 1);
+            RenderProps.setLineStyle(tongue.getMuscleBundles(), LineStyle.CYLINDER);
+            RenderProps.setLineRadius(tongue.getMuscleBundles(), 0.3);
+            RenderProps.setVisible(tongue.getNodes(), false);
+            RenderProps.setVisible(tongue.getElements(), true);
+            RenderProps.setLineWidth(tongue.getElements(), 1);
+
+            break;
+         case HexElementMuscles:
+            tongue = FemMuscleTongueDemo.createFemMuscleTongue (useLinearMaterial);
+            
+            GenericMuscle mat = new GenericMuscle();
+            // mat.setMaxStress(60000);
+            tongue.setMuscleMaterial(mat);
+
+            FemMuscleTongueDemo.addExciters(tongue);
+            
+            tongue.setElementWidgetSize(0);
+            tongue.setDirectionRenderLen(0.5);
+            // tongue.setSurfaceRendering (SurfaceRender.Strain);
+            tongue.setSurfaceRendering(SurfaceRender.None);
+            // tongue.setSurfaceRendering(SurfaceRender.Shaded);
+            RenderProps.setVisible(tongue.getElements(), true);
+            RenderProps.setVisible(tongue.getNodes(), false);
+            RenderProps.setLineStyle(tongue.getMuscleBundles(), LineStyle.LINE);
+            RenderProps.setLineWidth(tongue.getMuscleBundles(), 2);
+            RenderProps.setVisible(tongue.getMuscleBundles(), true);
+            RenderProps.setLineWidth(tongue.getElements(), 1);
+
+            break;         
+         default: 
+            System.err.println("unknown tongue type "+tt);
+            return;
       }
-      else {
-         tongue =
-            TetTongueDemo.createTetTongue(useLinearMaterial, useIcpMuscleDefs);
-      }
+
       tongue.scaleDistance(m2mm);
       if (useIncompressibleConstraint) {
          tongue.setIncompressible(IncompMethod.AUTO);
@@ -166,21 +233,10 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
          tongue.setIncompressible(IncompMethod.OFF);
       }
 
-      stiffener = new FemMuscleStiffener(tongue);
-
       RigidTransform3d tongueBackward = new RigidTransform3d();
       tongueBackward.p.x = 2.0; // mm
       tongue.transformGeometry(tongueBackward);
-
-      RenderProps.setPointStyle(tongue, PointStyle.SPHERE);
-      RenderProps.setPointRadius(tongue, 1);
-      RenderProps.setLineWidth(tongue, 1);
-      RenderProps.setLineStyle(tongue.getMuscleBundles(), LineStyle.CYLINDER);
-      RenderProps.setLineRadius(tongue.getMuscleBundles(), 0.3);
-      RenderProps.setVisible(tongue.getNodes(), false);
-      RenderProps.setVisible(tongue.getElements(), true);
-      RenderProps.setLineWidth(tongue.getElements(), 1);
-
+      
       myJawModel.addModel(tongue);
 
    }
