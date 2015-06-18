@@ -170,6 +170,7 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
       switch(tt) {
          case TetLineMuscles:
             tongue = TetTongueDemo.createTetTongue(useLinearMaterial, useIcpMuscleDefs);
+            tongue.scaleDistance(m2mm);
             
             stiffener = new FemMuscleStiffener(tongue);
 
@@ -185,7 +186,8 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
             break;
          case HexLineMuscles:
             tongue = HexTongueDemo.createHexTongue(useLinearMaterial, useIcpMuscleDefs);
-
+            tongue.scaleDistance(m2mm);
+            
             stiffener = new FemMuscleStiffener(tongue);
 
             RenderProps.setPointStyle(tongue, PointStyle.SPHERE);
@@ -200,6 +202,7 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
             break;
          case HexElementMuscles:
             tongue = FemMuscleTongueDemo.createFemMuscleTongue (useLinearMaterial);
+            tongue.scaleDistance(m2mm);
             
             GenericMuscle mat = new GenericMuscle();
             // mat.setMaxStress(60000);
@@ -225,7 +228,7 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
             return;
       }
 
-      tongue.scaleDistance(m2mm);
+
       if (useIncompressibleConstraint) {
          tongue.setIncompressible(IncompMethod.AUTO);
       }
