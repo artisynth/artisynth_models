@@ -77,6 +77,7 @@ public class JawDemo extends RootModel implements ScalableUnits {
       super.build (args);
 
       loadModel();
+      myJawModel.setLateralWallOffset (0.0);
       addModel(myJawModel);
 //      setIncisorVisible();
       setupJawModel();

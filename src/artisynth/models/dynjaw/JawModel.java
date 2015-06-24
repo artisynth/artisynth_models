@@ -2401,6 +2401,15 @@ public class JawModel extends MechModel implements ScalableUnits,
    public double getLCondylarAngle() {
       return condylarAngle[LEFT];
    }
+   
+   public void setLateralWallOffset (double offset) {
+      if (ltrlWallOffset[0] != offset && ltrlWallOffset[1] != offset) {
+         ltrlWallOffset[0] = offset;
+         ltrlWallOffset[1] = offset;
+         updateCon (JawPlanes.LLTRL);
+         updateCon (JawPlanes.RLTRL);
+      }
+   }
 
    public void setLCondylarAngle(double angle) {
       if (condylarAngle[LEFT] != angle) {
