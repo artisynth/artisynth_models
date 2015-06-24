@@ -11,6 +11,9 @@ import java.util.HashMap;
 //import org.python.modules.types;
 
 
+
+import com.sun.org.apache.bcel.internal.generic.LMUL;
+
 import maspack.geometry.PolygonalMesh;
 import maspack.matrix.AxisAngle;
 import maspack.matrix.Matrix;
@@ -2411,6 +2414,15 @@ public class JawModel extends MechModel implements ScalableUnits,
       }
    }
 
+   public void setMedialWallOffset (double offset) {
+      if (medWallOffset[0] != offset && medWallOffset[1] != offset) {
+         medWallOffset[0] = offset;
+         medWallOffset[1] = offset;
+         updateCon (JawPlanes.LMED);
+         updateCon (JawPlanes.RMED);
+      }
+   }
+   
    public void setLCondylarAngle(double angle) {
       if (condylarAngle[LEFT] != angle) {
          condylarAngle[LEFT] = angle;
