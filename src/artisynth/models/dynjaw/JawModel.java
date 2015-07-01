@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 
 
-import com.sun.org.apache.bcel.internal.generic.LMUL;
+//import com.sun.org.apache.bcel.internal.generic.LMUL;
 
 import maspack.geometry.PolygonalMesh;
 import maspack.matrix.AxisAngle;
