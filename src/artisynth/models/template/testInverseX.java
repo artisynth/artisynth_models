@@ -196,7 +196,7 @@ public class testInverseX extends RootModel {
       
       invcon.addExciter(((FemMuscleModel)fem1).getMuscleBundles().get(0));
       invcon.addExciter(((FemMuscleModel)fem2).getMuscleBundles().get(0));
-      
+      invcon.createProbesAndPanel (this);
       addController(invcon);
    }
 }

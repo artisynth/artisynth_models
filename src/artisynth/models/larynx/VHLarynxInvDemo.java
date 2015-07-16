@@ -76,7 +76,6 @@ public class VHLarynxInvDemo extends VHLarynxDemo {
    
    protected void addInverseController() {
       invcon = new TrackingController(myMechMod, "inverse"); 
-      invcon.setManaged(false);
       //invcon.addMotionTarget(myMechMod.rigidBodies().get("hyoid"));
       
       for(String markerName: targetMarkers) {
@@ -125,7 +124,7 @@ public class VHLarynxInvDemo extends VHLarynxDemo {
       
       configureInputProbes(invcon);
       configureOutputProbes(invcon);
-      invcon.createInverseControlPanel ();
+      invcon.createPanel (this);
    }
    private void configureInputProbes(TrackingController track) {
       NumericInputProbe targetProbe = new NumericInputProbe();
