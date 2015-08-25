@@ -190,9 +190,7 @@ public class FoodBolus extends RenderableComponentBase
    Vector3d myNormal = new Vector3d ();
 
    private double getPlaneNormal(Vector3d nrm) {
-      RigidTransform3d XPB = myPlane.getTDB();
-      nrm.set (XPB.R.m02, XPB.R.m12, XPB.R.m22);
-      return nrm.dot(XPB.p);
+      return myPlane.getPlaneNormal (nrm);
    }
    
    public Vector3d getNormal() {
@@ -200,9 +198,10 @@ public class FoodBolus extends RenderableComponentBase
    }
    
    public double getDistanceToPlane(Vector3d normal) {
-      RigidTransform3d XPB = myPlane.getTDB();
-      myNormal.set (XPB.R.m02, XPB.R.m12, XPB.R.m22);
-      double offset = myNormal.dot(XPB.p);
+      double offset = myPlane.getPlaneNormal (myNormal);
+//      RigidTransform3d XPB = myPlane.getTDB();
+//      myNormal.set (XPB.R.m02, XPB.R.m12, XPB.R.m22);
+//      double offset = myNormal.dot(XPB.p);
       plane.set (myNormal, offset);
       myNormal.normalize ();
       return plane.distance (collidingPt.getPosition());
@@ -210,8 +209,8 @@ public class FoodBolus extends RenderableComponentBase
    
 
    public double getDistanceToPlaneOrigin(Vector3d normal) {
-      RigidTransform3d XPB = myPlane.getTDB();
-      myNormal.sub(collidingPt.getPosition (), XPB.p);
+      RigidTransform3d TDW = myPlane.getCurrentTDW();
+      myNormal.sub(collidingPt.getPosition (), TDW.p);
       double dist = myNormal.norm ();
       myNormal.normalize ();
       return dist;
@@ -376,8 +375,7 @@ public class FoodBolus extends RenderableComponentBase
 	
    //TODO - make Bolus appear to be squished - for now just render sphere
    public void render (GLRenderer renderer, int flags)
-    { GL2 gl = renderer.getGL2().getGL2();
-       renderer.setMaterialAndShading (
+    { renderer.setMaterialAndShading (
           myRenderProps, myRenderProps.getLineMaterial(), isSelected());       
       if (myRenderProps.isVisible())
 	 drawSolid (renderer, myRenderProps);

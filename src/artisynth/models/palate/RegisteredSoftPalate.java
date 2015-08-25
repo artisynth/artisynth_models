@@ -221,7 +221,7 @@ public class RegisteredSoftPalate extends RootModel {
          pnt.set (newLoc);
       }
       marker.setPosition (pnt);
-      marker.setElement (elem);
+      marker.setFromElement (elem);
       fem.addMarker (marker, elem);
       return marker;
    }

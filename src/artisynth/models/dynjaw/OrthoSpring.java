@@ -223,11 +223,10 @@ public class OrthoSpring extends FrameSpring
 
    public void render (GLRenderer renderer, int flags)
     { 
-      GL2 gl = renderer.getGL2().getGL2();
-      gl.glLineWidth (myRenderProps.getLineWidth());
-      Frame.drawAxes (renderer, myRenderXCW, 1f);
-      Frame.drawAxes (renderer, myRenderXDW, 1f);
-      gl.glLineWidth (1);
+      renderer.setLineWidth (myRenderProps.getLineWidth());
+      Frame.drawAxes (renderer, myRenderXCW, 1f, isSelected());
+      Frame.drawAxes (renderer, myRenderXDW, 1f, isSelected());
+      renderer.setLineWidth (1);
     
     }
 

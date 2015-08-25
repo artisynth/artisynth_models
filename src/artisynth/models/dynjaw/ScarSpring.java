@@ -185,18 +185,17 @@ public class ScarSpring extends OrthoSpring implements TransformableGeometry
 
    public void render (GLRenderer renderer, int flags)
    { 
-     GL2 gl = renderer.getGL2().getGL2();
      renderer.setMaterialAndShading (myRenderProps, myRenderProps.getFaceMaterial(), isSelected());
      renderer.setFaceMode (Faces.FRONT_AND_BACK);
 //     renderer.setFaceMode (myRenderProps.getFaceStyle());
-     gl.glLineWidth (myRenderProps.getLineWidth());
+     renderer.setLineWidth (myRenderProps.getLineWidth());
 //     Frame.drawAxes (gl, myRenderXCW, 1f);
 //     Frame.drawAxes (gl, myRenderXDW, 1f);
 //     drawOrthoPlanes (renderer, myRenderXDW);
      drawOrthoLines (renderer, myRenderXDW, myRenderProps);
      renderer.drawLine (
         myRenderProps, myRenderOriginC, myRenderOriginD, isSelected ());
-     gl.glLineWidth (1);
+     renderer.setLineWidth (1);
      renderer.restoreShading (myRenderProps);
    }
    
@@ -238,7 +237,7 @@ public class ScarSpring extends OrthoSpring implements TransformableGeometry
       gl.glPushMatrix();
       renderer.setLightingEnabled (false);
       GLViewer.mulTransform (gl, XFrameToWorld);
-      gl.glLineWidth (props.getLineWidth());
+      renderer.setLineWidth (props.getLineWidth());
       gl.glBegin (GL2.GL_LINES);
       renderer.setColor (props.getLineColorArray(), isSelected());
       float l = (float)myPlaneSize/2;

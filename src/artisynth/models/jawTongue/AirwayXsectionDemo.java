@@ -357,7 +357,7 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
       GL2 gl = renderer.getGL2 ().getGL2 ();
       
       if (props.getEdgeWidth () > 0) {
-         gl.glLineWidth (props.getEdgeWidth ());
+         renderer.setLineWidth (props.getEdgeWidth ());
          float[] rgb = props.getEdgeColorArray ();
          if (rgb == null) {
             rgb = props.getLineColorArray ();
@@ -378,7 +378,7 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
             }
          }
          gl.glEnable (GL2.GL_LIGHTING);
-         gl.glLineWidth (1);
+         renderer.setLineWidth (1);
 
       }
    }
