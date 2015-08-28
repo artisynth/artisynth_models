@@ -149,9 +149,9 @@ public class RefFaceWithProbe extends RootModel {
 
       //PolygonalMesh lowerlipMesh, upperlipMesh;
       try {
-	 face.addMesh (
+	 face.addMeshComp (
 	    face.scanMesh(refFaceGeometryDir + "lowerlip_filled.smesh"));
-	 face.addMesh (
+	 face.addMeshComp (
 	    face.scanMesh(refFaceGeometryDir + "upperlip_filled.smesh"));
 //	 face.addMesh(lowerlipMesh);
 //	 face.addMesh(upperlipMesh);

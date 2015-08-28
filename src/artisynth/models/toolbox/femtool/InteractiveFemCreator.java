@@ -27,7 +27,7 @@ import artisynth.core.femmodels.AnsysWriter;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.gui.ControlPanel;
-import artisynth.core.mechmodels.FixedMesh;
+import artisynth.core.mechmodels.FixedMeshBody;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.MeshComponent;
 import artisynth.core.modelbase.StepAdjustment;
@@ -157,7 +157,7 @@ public class InteractiveFemCreator extends RootModel implements ActionListener,
       if (surfaceMesh == null) {
          return;
       }
-      FixedMesh fmesh = new FixedMesh(surfaceMesh);
+      FixedMeshBody fmesh = new FixedMeshBody(surfaceMesh);
       RenderProps.setAlpha(fmesh, 0.2);
       RenderProps.setFaceColor(fmesh, Color.GREEN);
       myModel.addMeshBody(fmesh);

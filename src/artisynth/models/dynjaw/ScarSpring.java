@@ -24,7 +24,7 @@ import artisynth.core.driver.Main;
 import artisynth.core.mechmodels.Frame;
 import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.Point;
-import artisynth.core.mechmodels.RigidBodyConnector;
+import artisynth.core.mechmodels.BodyConnector;
 import artisynth.core.modelbase.ComponentUtils;
 import artisynth.core.modelbase.CompositeComponent;
 import artisynth.core.modelbase.CompositeComponentBase;

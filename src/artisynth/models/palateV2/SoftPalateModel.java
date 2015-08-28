@@ -209,7 +209,7 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
 
    public static void setupRenderProps(MechModel myMechModel, FemMuscleModel tongue, FemModel3d softPalate)
    {
-      for(RigidBodyConnector c: myMechModel.rigidBodyConnectors())
+      for(BodyConnector c: myMechModel.bodyConnectors())
 	 RenderProps.setVisible(c, false);
 
       myMechModel.rigidBodies().get("maxilla").getRenderProps().setAlpha(0.2);

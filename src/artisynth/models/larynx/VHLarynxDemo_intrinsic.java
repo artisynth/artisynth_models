@@ -163,7 +163,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
 	 TCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
 
 	 ctJoint.setBodies(cricoid, TCA, thyroid, TCA);
-	 myMechMod.addRigidBodyConnector(ctJoint);
+	 myMechMod.addBodyConnector(ctJoint);
       }
       //###################################################################
       //###### Add thyroarytenoid joint ###################################
@@ -193,7 +193,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
 	 TCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
 
 	 taJoint.setBodies(Arytenoid_L, TCA, thyroid, TCA);
-	 myMechMod.addRigidBodyConnector(taJoint);
+	 myMechMod.addBodyConnector(taJoint);
       }
       if (thyroid != null && Arytenoid_R != null) {
 	 RevoluteJoint taJoint = new RevoluteJoint();
@@ -219,7 +219,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
 	 TCA.R.setAxisAngle(0, 1, 0, Math.PI / 2);
 
 	 taJoint.setBodies(Arytenoid_R, TCA, thyroid, TCA);
-	 myMechMod.addRigidBodyConnector(taJoint);
+	 myMechMod.addBodyConnector(taJoint);
       }
       //###################################################################
       

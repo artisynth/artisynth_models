@@ -20,7 +20,7 @@ import artisynth.core.mechmodels.AxialSpring;
 import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.RigidBody;
-import artisynth.core.mechmodels.RigidBodyConnector;
+import artisynth.core.mechmodels.BodyConnector;
 import artisynth.core.materials.RotAxisFrameMaterial;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
@@ -59,7 +59,7 @@ public class JawHemi extends JawLarynxDemo
          "leftbolus")).setActive (false);
       
       // hide all planar constraints as they obstruct graft
-//      for (RigidBodyConnector c : myJawModel.rigidBodyConnectors())
+//      for (BodyConnector c : myJawModel.bodyConnectors())
 //      {
 //         if (c.getClass().isAssignableFrom(PlanarConnector.class))
 //            RenderProps.setVisible(c, false);
@@ -117,7 +117,7 @@ public class JawHemi extends JawLarynxDemo
       }
       
 //      myJawModel.setShowMembrane (false);
-      RigidBodyConnector ctjoint = myJawModel.rigidBodyConnectors ()
+      BodyConnector ctjoint = myJawModel.bodyConnectors ()
          .get("cricothyroid");
       ctjoint.setEnabled (false);
       RenderProps.setVisible (ctjoint, false);
@@ -142,7 +142,7 @@ public class JawHemi extends JawLarynxDemo
       String[] todisable = new String[]{"TMJ", "MED", "POST"};
       for (String name : todisable)
       {
-         RigidBodyConnector con = myJawModel.rigidBodyConnectors ()
+         BodyConnector con = myJawModel.bodyConnectors ()
             .get ((isLeftSide?"L":"R")+name);
          con.setEnabled (isEnabled);
          RenderProps.setVisible (con, isEnabled);

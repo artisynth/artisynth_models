@@ -44,7 +44,7 @@ import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.MuscleExciter;
 import artisynth.core.mechmodels.PlanarConnector;
 import artisynth.core.mechmodels.RigidBody;
-import artisynth.core.mechmodels.RigidBodyConnector;
+import artisynth.core.mechmodels.BodyConnector;
 import artisynth.core.mechmodels.SegmentedPlanarConnector;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
 import artisynth.core.materials.RotAxisFrameMaterial;
@@ -369,7 +369,7 @@ public class BadinJawHyoid extends JawLarynxDemo {
          RigidTransform3d X = BadinJawHyoid.centerBodyAtCOM (body);
          // re-compute inertia for new body pose (paranoid)
          //body.setInertiaFromMesh (density);
-         for (RigidBodyConnector con : myJawModel.rigidBodyConnectors ())
+         for (BodyConnector con : myJawModel.bodyConnectors ())
          {
             if (con.getBodyA () == body)
             {
@@ -417,7 +417,7 @@ public class BadinJawHyoid extends JawLarynxDemo {
 
       LinkedList<ModelComponent> componentsToDelete = new LinkedList<ModelComponent> ();
       componentsToDelete.add (myJawModel.rigidBodies ().get("cricoid"));
-      componentsToDelete.add (myJawModel.rigidBodyConnectors ().get("cricothyroid"));
+      componentsToDelete.add (myJawModel.bodyConnectors ().get("cricothyroid"));
       RemoveComponentsCommand cmd =
          new RemoveComponentsCommand (
             "delete", componentsToDelete);
@@ -521,7 +521,7 @@ public class BadinJawHyoid extends JawLarynxDemo {
    private void setupJoints(boolean tmjsUnilateral) {
       String[] joints = new String[]{"LTMJ", "RTMJ"};
       for (String name : joints) {
-         RigidBodyConnector con = myJawModel.rigidBodyConnectors ().get (name);
+         BodyConnector con = myJawModel.bodyConnectors ().get (name);
          if (con != null) {
             if (con instanceof PlanarConnector) {
                ((PlanarConnector)con).setUnilateral (tmjsUnilateral);
@@ -533,9 +533,9 @@ public class BadinJawHyoid extends JawLarynxDemo {
       }
       
       RenderProps.setVisible (
-         myJawModel.rigidBodyConnectors ().get ("LBITE"), showBitePlanes);
+         myJawModel.bodyConnectors ().get ("LBITE"), showBitePlanes);
       RenderProps.setVisible (
-         myJawModel.rigidBodyConnectors ().get ("RBITE"), showBitePlanes);
+         myJawModel.bodyConnectors ().get ("RBITE"), showBitePlanes);
    }
 
    public void addJawOptions (ControlPanel panel) {
@@ -920,7 +920,7 @@ public class BadinJawHyoid extends JawLarynxDemo {
          RigidTransform3d X = BadinJawHyoid.centerBodyAtCOM (body);
          // re-compute inertia for new body pose (paranoid)
          // body.setInertiaFromMesh (density); Not needed: JL
-         for (RigidBodyConnector con : myJawModel.rigidBodyConnectors ())
+         for (BodyConnector con : myJawModel.bodyConnectors ())
          {
             if (con.getBodyA () == body)
             {
@@ -1130,8 +1130,8 @@ public class BadinJawHyoid extends JawLarynxDemo {
       myJawModel.setGlobalConRot (new AxisAngle(0,0,1,-Math.PI/2));
       myJawModel.updateCons ();
       
-      RenderProps.setVisible(myJawModel.rigidBodyConnectors ().get ("RBITE"), false);
-      RenderProps.setVisible(myJawModel.rigidBodyConnectors ().get ("LBITE"), false);
+      RenderProps.setVisible(myJawModel.bodyConnectors ().get ("RBITE"), false);
+      RenderProps.setVisible(myJawModel.bodyConnectors ().get ("LBITE"), false);
       
       
    }
@@ -1221,7 +1221,7 @@ public class BadinJawHyoid extends JawLarynxDemo {
          }
       }
       
-      myJawModel.rigidBodyConnectors ().get ("cricothyroid").transformGeometry (thyroidPose);
+      myJawModel.bodyConnectors ().get ("cricothyroid").transformGeometry (thyroidPose);
 
      
    }

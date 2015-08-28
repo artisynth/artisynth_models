@@ -47,7 +47,7 @@ import artisynth.core.mechmodels.MuscleExciter;
 import artisynth.core.mechmodels.PlanarConnector;
 import artisynth.core.mechmodels.RevoluteJoint;
 import artisynth.core.mechmodels.RigidBody;
-import artisynth.core.mechmodels.RigidBodyConnector;
+import artisynth.core.mechmodels.BodyConnector;
 import artisynth.core.mechmodels.SegmentedPlanarConnector;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
 import artisynth.core.modelbase.Traceable;
@@ -545,14 +545,14 @@ public class JawModel extends MechModel implements ScalableUnits,
       initCons();
 
       for (PlanarConnector pc : con) {
-	 addRigidBodyConnector(pc);
+	 addBodyConnector(pc);
       }
 
       // do not use medial constraints in default jaw model
-      rigidBodyConnectors().get("LMED").setEnabled(false);
-      rigidBodyConnectors().get("RMED").setEnabled(false);
-      RenderProps.setVisible(rigidBodyConnectors().get("LMED"), false);
-      RenderProps.setVisible(rigidBodyConnectors().get("RMED"), false);
+      bodyConnectors().get("LMED").setEnabled(false);
+      bodyConnectors().get("RMED").setEnabled(false);
+      RenderProps.setVisible(bodyConnectors().get("LMED"), false);
+      RenderProps.setVisible(bodyConnectors().get("RMED"), false);
 
       // add cricothyroid revolute joint
       if (!fixedLaryngeal) {
@@ -563,8 +563,8 @@ public class JawModel extends MechModel implements ScalableUnits,
 
       if (useCurvJoint) {
 	 // remove planar tmj constraints (first two in list)
-	 removeRigidBodyConnector(con.get(0));
-	 removeRigidBodyConnector(con.get(1));
+	 removeBodyConnector(con.get(0));
+	 removeBodyConnector(con.get(1));
 
 	 addCurvilinearTmjs();
       }
@@ -2115,7 +2115,7 @@ public class JawModel extends MechModel implements ScalableUnits,
 	 }
       }
 
-      for (RigidBodyConnector con : mech.rigidBodyConnectors()) {
+      for (BodyConnector con : mech.bodyConnectors()) {
 	 if (con.getBodyA() == body) {
 	    System.out.println("jaw con - " + con.getName());
 	    con.transformGeometry(XComToWorld);
@@ -2140,7 +2140,7 @@ public class JawModel extends MechModel implements ScalableUnits,
 	 conPt.add(myFrameMarkers.get(jp.getContactName()));
 	 conPose.add(new RigidTransform3d());
 	 // try to find existing constraints
-	 RigidBodyConnector rbc = rigidBodyConnectors().get(jp.name());
+	 BodyConnector rbc = bodyConnectors().get(jp.name());
 	 if (rbc != null && rbc instanceof PlanarConnector) {
 	    pc = (PlanarConnector) rbc;
 	    System.out.println("initCons - found pc = " + rbc.getName());
@@ -2208,7 +2208,7 @@ public class JawModel extends MechModel implements ScalableUnits,
       // System.out.println("TCA     pose = \n" + TCA.toString("%8.2f"));
 
       ctJoint.setBodies(cricoid, TCA, thyroid, TCA);
-      addRigidBodyConnector(ctJoint);
+      addBodyConnector(ctJoint);
 
    }
 
@@ -2637,10 +2637,10 @@ public class JawModel extends MechModel implements ScalableUnits,
 
       if (useCurvJoint) {
 	 // manually get constraint forces for new curvilinear tmjs
-	 tmjForceNorms.set(0, rigidBodyConnectors().get("LTMJ")
+	 tmjForceNorms.set(0, bodyConnectors().get("LTMJ")
 	       .getActivation(0)
 	       / NEWTONS_TO_FORCEUNITS);
-	 tmjForceNorms.set(1, rigidBodyConnectors().get("RTMJ")
+	 tmjForceNorms.set(1, bodyConnectors().get("RTMJ")
 	       .getActivation(0)
 	       / NEWTONS_TO_FORCEUNITS);
       }
@@ -2660,7 +2660,7 @@ public class JawModel extends MechModel implements ScalableUnits,
       tmj.setPlaneSize(40);
       tmj.setUnilateral(true);
       updateCurvCon(tmj, myFrameMarkers.get(contactName), jaw);
-      addRigidBodyConnector(tmj);
+      addBodyConnector(tmj);
    }
 
    public void updateCurvCon(SegmentedPlanarConnector tmj,
@@ -2676,7 +2676,7 @@ public class JawModel extends MechModel implements ScalableUnits,
    }
 
    public void updateCurvCon(String name, String contactName, RigidBody jaw) {
-      RigidBodyConnector con = myConnectors.get(name);
+      BodyConnector con = myConnectors.get(name);
       if (con instanceof SegmentedPlanarConnector) {
 	 SegmentedPlanarConnector tmj = (SegmentedPlanarConnector) con;
 	 FrameMarker contactPoint = myFrameMarkers.get(contactName);

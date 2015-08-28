@@ -909,9 +909,9 @@ public class BadinFaceDemo extends RootModel {
       PolygonalMesh lowerlipMesh, upperlipMesh;
       try {
          if (leftSideOnly) {
-            face.addMesh (
+            face.addMeshComp (
                face.scanMesh(faceGeometryDir + "lowerlip_leftside.smesh"));
-            face.addMesh (
+            face.addMeshComp (
                face.scanMesh(faceGeometryDir + "upperlip_leftside.smesh"));
          }
          else {

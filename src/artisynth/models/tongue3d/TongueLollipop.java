@@ -150,7 +150,7 @@ public class TongueLollipop extends FemMuscleTongueDemo {
       
       mech.addRigidBody(rbHead);
       mech.addRigidBody(rbStick);
-      mech.addRigidBodyConnector(weld);
+      mech.addBodyConnector(weld);
       lolliHead = rbHead;
       lolliStick = rbStick;
       

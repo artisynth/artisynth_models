@@ -4,9 +4,9 @@ import maspack.geometry.MeshBase;
 import maspack.matrix.VectorNd;
 import maspack.render.color.ColorMapBase;
 import maspack.render.color.HueColorMap;
-import artisynth.core.femmodels.SkinMesh;
+import artisynth.core.femmodels.SkinMeshBody;
 
-public class AirwaySkin extends SkinMesh {
+public class AirwaySkin extends SkinMeshBody {
 
    public AirwaySkin () {
    }

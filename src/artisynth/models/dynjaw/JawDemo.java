@@ -29,7 +29,7 @@ import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.PlanarConnector;
 import artisynth.core.mechmodels.PointForce;
 import artisynth.core.mechmodels.RigidBody;
-import artisynth.core.mechmodels.RigidBodyConnector;
+import artisynth.core.mechmodels.BodyConnector;
 import artisynth.core.modelbase.ComponentUtils;
 import artisynth.core.probes.NumericInputProbe;
 import artisynth.core.probes.NumericOutputProbe;
@@ -161,7 +161,7 @@ public class JawDemo extends RootModel implements ScalableUnits {
 
    public void addConForceProbe(double duration, double interval) {
       ArrayList<Property> props = new ArrayList<Property>();
-      for (RigidBodyConnector rbc : myJawModel.rigidBodyConnectors()) {
+      for (BodyConnector rbc : myJawModel.bodyConnectors()) {
 	 if (rbc.isEnabled() && rbc.getProperty("activation") != null) {
 	    props.add(rbc.getProperty("activation"));
 	 }
@@ -365,9 +365,9 @@ public class JawDemo extends RootModel implements ScalableUnits {
       Point3d leftbitePos = myJawModel.frameMarkers().get("lbite")
 	    .getPosition();
       createFoodBolus("rightbolus", rightbitePos, (PlanarConnector) myJawModel
-	    .rigidBodyConnectors().get("rbite"));
+	    .bodyConnectors().get("rbite"));
       createFoodBolus("leftbolus", leftbitePos, (PlanarConnector) myJawModel
-	    .rigidBodyConnectors().get("lbite"));
+	    .bodyConnectors().get("lbite"));
       updateBoluses();
 
    }
@@ -381,7 +381,7 @@ public class JawDemo extends RootModel implements ScalableUnits {
    }
 
    public void updateBolusDirection(String constraintName, FoodBolus bolus) {
-      PlanarConnector bite = (PlanarConnector) myJawModel.rigidBodyConnectors()
+      PlanarConnector bite = (PlanarConnector) myJawModel.bodyConnectors()
 	    .get(constraintName);
       if (bite != null && bolus != null) {
 	 bolus.setPlane(bite);

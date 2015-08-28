@@ -2491,7 +2491,7 @@ public class ModelTemplate extends RootModel {
 
       SolidJoint jnt = new SolidJoint(rb1, rb2);
       jnt.setName(rb1.getName()+"_to_"+rb2.getName());
-      myMechMod.addRigidBodyConnector(jnt);
+      myMechMod.addBodyConnector(jnt);
 
    }
 

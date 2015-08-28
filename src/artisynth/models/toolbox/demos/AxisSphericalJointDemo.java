@@ -34,7 +34,7 @@ public class AxisSphericalJointDemo extends SphericalJointDemo {
 
       // get hand
       myRotatingBody = myHand;
-      RenderProps.setAlpha (myMechMod.rigidBodyConnectors ().get (0), 0.5);
+      RenderProps.setAlpha (myMechMod.bodyConnectors ().get (0), 0.5);
       addExtras ();
       addControllers ();
    }

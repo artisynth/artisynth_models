@@ -249,9 +249,9 @@ public class JawPanel
       if (panel == null)
          return;
 
-      if (jaw.findComponent("rigidBodyConnectors/" + conName) != null)
+      if (jaw.findComponent("bodyConnectors/" + conName) != null)
          panel.addWidget(conName.toUpperCase() + " Disarticulated", jaw,
-            "rigidBodyConnectors/" + conName + ":unilateral");
+            "bodyConnectors/" + conName + ":unilateral");
    }
 
    public static void addHeadRotationControls(JawModel jaw,

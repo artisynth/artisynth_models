@@ -23,7 +23,7 @@ import artisynth.core.mechmodels.DynamicAttachment;
 import artisynth.core.mechmodels.MultiPointMuscle;
 import artisynth.core.mechmodels.MultiPointSpring;
 import artisynth.core.mechmodels.PointParticleAttachment;
-import artisynth.core.mechmodels.RigidBodyConnector;
+import artisynth.core.mechmodels.BodyConnector;
 import artisynth.core.util.ArtisynthIO;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
@@ -109,7 +109,7 @@ public class JawTongueSoftPalate extends JawHyoidFemMuscleTongue {
 	 RenderProps.setLineRadius (s, 0.3);
 	 RenderProps.setVisible(s, true);
       }
-      for(RigidBodyConnector c: myJawModel.rigidBodyConnectors()) {
+      for(BodyConnector c: myJawModel.bodyConnectors()) {
 	 RenderProps.setVisible(c, false);
       }
       RenderProps.setAlpha(myJawModel.rigidBodies().get("maxilla"), 0.2);

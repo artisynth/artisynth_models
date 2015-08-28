@@ -23,7 +23,7 @@ import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.MuscleExciter;
 import artisynth.core.mechmodels.RigidBody;
-import artisynth.core.mechmodels.RigidBodyConnector;
+import artisynth.core.mechmodels.BodyConnector;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
 import artisynth.core.probes.NumericInputProbe;
 import artisynth.core.util.ArtisynthPath;
@@ -122,7 +122,7 @@ public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
          body.setAxisLength(0);
       }
 
-      for (RigidBodyConnector con : mech.rigidBodyConnectors())
+      for (BodyConnector con : mech.bodyConnectors())
       {
          RenderProps.setVisible(con, false);
       }

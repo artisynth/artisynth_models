@@ -36,9 +36,9 @@ public class RajJawLarynxDemo extends JawDemo {
 	 if (body != null) RenderProps.setVisible(body, false);
       }
 
-      RenderProps.setFaceColor(myJawModel.rigidBodyConnectors().get("RTMJ"),
+      RenderProps.setFaceColor(myJawModel.bodyConnectors().get("RTMJ"),
 	    Color.PINK);
-      RenderProps.setFaceColor(myJawModel.rigidBodyConnectors().get("LTMJ"),
+      RenderProps.setFaceColor(myJawModel.bodyConnectors().get("LTMJ"),
 	    Color.PINK);
       
       
