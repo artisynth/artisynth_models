@@ -204,9 +204,11 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
             tongue = FemMuscleTongueDemo.createFemMuscleTongue (useLinearMaterial);
             tongue.scaleDistance(m2mm);
             
-            GenericMuscle mat = new GenericMuscle();
+//            GenericMuscle mat = new GenericMuscle();
             // mat.setMaxStress(60000);
-            tongue.setMuscleMaterial(mat);
+//            tongue.setMuscleMaterial(mat);
+            
+            useIncompressibleConstraint = false; // hard incompressibility unstable with element muscles
 
             FemMuscleTongueDemo.addExciters(tongue);
             

@@ -4,33 +4,26 @@ import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 
-import maspack.interpolation.Interpolation;
-import maspack.interpolation.Interpolation.Order;
-import maspack.matrix.RigidTransform3d;
-import maspack.properties.PropertyMode;
-import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
 import artisynth.core.femmodels.FemElement;
+import artisynth.core.femmodels.FemModel.SurfaceRender;
 import artisynth.core.femmodels.FemMuscleModel;
 import artisynth.core.femmodels.FemNode;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.femmodels.MuscleBundle;
-import artisynth.core.femmodels.FemModel.SurfaceRender;
-import artisynth.core.femmodels.FemModel.IncompMethod;
-import artisynth.core.materials.GenericMuscle;
-import artisynth.core.mechmodels.MechModel;
-import artisynth.core.mechmodels.Muscle;
-import artisynth.core.mechmodels.MuscleExciter;
-import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.mechmodels.BodyConnector;
+import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
-import artisynth.core.probes.NumericInputProbe;
+import artisynth.core.mechmodels.Muscle;
+import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
-import artisynth.core.workspace.RootModel;
 import artisynth.models.tongue3d.FemMuscleTongueDemo;
 import artisynth.models.tongue3d.HexTongueDemo;
+import maspack.interpolation.Interpolation.Order;
+import maspack.properties.PropertyMode;
+import maspack.render.RenderProps;
+import maspack.render.RenderProps.LineStyle;
+import maspack.render.RenderProps.PointStyle;
 
 public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
 
@@ -43,7 +36,7 @@ public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
 
    @Override
    public void build (String[] args) throws IOException {
-      super.build (args);
+      super.build (new String[]{"HexElementMuscles"});
 
       myJawModel.setIntegrator(Integrator.ConstrainedBackwardEuler);
       // myJawModel.setMaxStepSizeSec (0.002);
@@ -76,33 +69,13 @@ public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
       }
       RenderProps.setVisible(tongue.getElements(), true);
       RenderProps.setVisible(tongue.getMuscleBundles(), true);
+      tongue.setSurfaceRendering (SurfaceRender.Shaded);
 
    }
 
-   public void addTongueToJaw() {
-
-      tongue = FemMuscleTongueDemo.createFemMuscleTongue(useLinearMaterial);
-
-      GenericMuscle mat = new GenericMuscle();
-      // mat.setMaxStress(60000);
-      tongue.setMuscleMaterial(mat);
-
-      tongue.scaleDistance(m2mm);
-      if (useIncompressibleConstraint) {
-         tongue.setIncompressible(IncompMethod.AUTO);
-      }
-      else {
-         tongue.setIncompressible(IncompMethod.OFF);
-      }
-
-      // stiffener = new FemMuscleStiffener(tongue);
-
-      RigidTransform3d tongueBackward = new RigidTransform3d();
-      tongueBackward.p.x = 2.0; // mm
-      tongue.transformGeometry(tongueBackward);
-
-      myJawModel.addModel(tongue);
-
+   @Override
+   public void addTongueToJaw(TongueType tongutType) {
+      super.addTongueToJaw (tongutType);
       FemMuscleTongueDemo.addExciters(tongue);
    }
 

@@ -796,8 +796,9 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
       }
       root.addBreakPoint(duration);
    }
+   
    @Override
-   public void addTongueToJaw() {   
+   public void addTongueToJaw(TongueType tt) {   
       // do not add tongue
    }
 

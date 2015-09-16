@@ -14,7 +14,7 @@ public class BadinJawFaceDemo extends BadinJawTongueFaceDemo {
    }
 
    @Override
-   public void addTongueToJaw() {	
+   public void addTongueToJaw(TongueType tt) {	
       // do not add tongue
    }
 
