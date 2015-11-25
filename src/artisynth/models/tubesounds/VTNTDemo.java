@@ -37,7 +37,6 @@ import artisynth.core.probes.Probe;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
 import artisynth.core.workspace.RootModel;
-import artisynth.models.tongueAirway.AreaFunctionPlotter;
 //import artisynth.models.tongueAirway.AreaFunctionPlotter;
 
 public class VTNTDemo extends RootModel implements Runnable, HasAudio {
