@@ -1,0 +1,65 @@
+This demo  models sound  generation and propagation  in the  vocal tract
+(visible  as a  mesh) and  the nasal  tract (not  visible).  The glottal
+excitation can  be generated with  a Rosenberg parametric model  or with
+the  Ishizaka-Flanagan two-mass model.  The acoustics  of the  vocal and
+nasal tracts are modeled  using the linearized discretized Navier-Stokes
+equation, which is  integrated in real time and  coupled to the dynamics
+of the two-mass model.
+
+Vowel  shapes can  be generated  by  clicking the  preset buttons  which
+generate  area functions  for the  six  Russian vowels  as described  in
+"Acoustics Theory of Speech Production", Chapter 2.3, Gunnar Fant, 1970.
+The default  area function for  the nasal tract  is taken from  Dang and
+Honda JASA 96(4) 1994, p2093  fig.6, third subject.  The vocal and nasal
+tract shapes can also be changed interactively with the sliders.
+
+Noise is generated at the glottis and at the narrowest part of the vocal
+tract  using   the  model  described  in  Sondhi   and  Schroeter,  IEEE
+Trans.  Acoust. Speech  and  Signal  Proc, Vol.  ASSP-35,  no. 7,  1987,
+pp. 955-967.
+    
+Various other parameters can be set in the control panels. Note that the
+non-linear two-mass model can become unstable.
+
+Explanation of selected GUI elements:
+
+- Main  display:  Vocal  tract   morphed  to  generate  particular  area
+functions.
+
+- PlotGraph displays the spectral response of the tract and computes the
+  formants. dB (vertical) versus Hz.
+
+- Nasal Tract: 
+  * Velum slider closes (0) and opens (1) the velum.
+  * M-N Bal sets acoustical energy radiated from Mouth versus Nose.
+  * NasalLen is the length of the nasal tract in cm.
+  * A(i) are areas in cm^2 at selected points, A(last) at the nose.
+
+- Vocal Tract:
+  * Lip M and d are effective Mass and damping of the lip model (piston in
+    wall model).
+  * Wall damp attenuation coeff. for losses at the wall (for both nasal
+    and vocal tract).
+  * Length is the length in cm of the tract.
+  * A(i) are areas in cm^2 at selected points, A(last) at the mouth.
+  * Reset button to recover from instabilities etc.
+  * (Un)mute toggles audio on/off.
+  * [aoui-ie] Fant Russian vowels. [-] is a neutral position.
+  * Formants recomputes the impulse response.
+  * ToggleLip model can turn the lipmodel on or off.
+
+- Rosenberg Glottal Model
+ * Freq sets the frequency of the excitation.
+ * OpenQ is the duty ration (open time versus closed time).
+ * Slope determines the slope of the glottal wave.
+ * Gain is the acoustic energy. Set to 0 to turn off.
+
+- TwoMass Glottal Model
+ * q is a scale factor for masses and spring constants affecting frequency.
+ * p-lung is the lung pressure in cm H2O.
+ * Ag0 is the rest area of the glottal slit.
+ * Below the Save button the glottal volume velocity.
+
+All configurations of the sliders can be saved and loaded.
+
+Note the timeline must be running for the VT to move
