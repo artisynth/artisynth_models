@@ -106,7 +106,7 @@ public class JawDemo extends RootModel implements ScalableUnits {
       if (workingDirname == null) return;
       // set default working directory to repository location
       File workingDir = new File (
-         ArtisynthPath.getSrcRelativePath(this, workingDirname));
+         ArtisynthPath.getSrcRelativePath(JawDemo.class, workingDirname));
       ArtisynthPath.setWorkingDir(workingDir);
       if (debug) {
 	 System.out.println("Set working directory to "

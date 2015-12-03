@@ -32,7 +32,7 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
    
    // TODO: Use Unique names instead of using this hack.
    static {
-      ModelComponentBase.enforceUniqueNames = false;
+      //ModelComponentBase.enforceUniqueNames = false;
    }
    
    public AirwaySkinDemo () throws IOException {
@@ -41,6 +41,8 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
 
    @Override
    public void build (String[] args) throws IOException {
+      // TODO: Use Unique names instead of using this hack.      
+      ModelComponentBase.enforceUniqueNames = false;
       super.build (args);
    }
 

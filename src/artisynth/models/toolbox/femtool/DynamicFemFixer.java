@@ -766,7 +766,7 @@ public class DynamicFemFixer extends ModelComponentBase implements HasProperties
    public void removeMeshConstraints(FemNode3d node) {
 
       for (ParticleMeshConstraint c : myMeshConstraints) {
-         if (c.getParticle() == node) {
+         if (c.getParticle(0) == node) {
             removeMeshConstraint(c);
          }
       }
@@ -786,7 +786,7 @@ public class DynamicFemFixer extends ModelComponentBase implements HasProperties
    public void removeMeshConstraint(FemNode3d node, PolygonalMesh mesh) {
 
       for (ParticleMeshConstraint c : myMeshConstraints) {
-         if (c.getMesh() == mesh && c.getParticle() == node) {
+         if (c.getMesh() == mesh && c.getParticle(0) == node) {
             removeMeshConstraint(c);
          }
       }

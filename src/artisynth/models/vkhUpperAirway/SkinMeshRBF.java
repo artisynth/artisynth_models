@@ -11,6 +11,7 @@ import maspack.geometry.PolygonalMesh;
 import maspack.geometry.PolylineMesh;
 import maspack.geometry.Vertex3d;
 import maspack.matrix.AffineTransform3dBase;
+import maspack.matrix.PolarDecomposition3d;
 import maspack.matrix.Matrix;
 import maspack.matrix.Matrix.WriteFormat;
 import maspack.matrix.Point3d;
@@ -29,6 +30,7 @@ import artisynth.core.mechmodels.MeshComponent;
 import artisynth.core.mechmodels.MeshInfo;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.modelbase.CompositeComponent;
+import artisynth.core.modelbase.TransformableGeometry;
 import artisynth.core.util.*;
 
 public class SkinMeshRBF extends MeshComponent {
@@ -234,9 +236,10 @@ public class SkinMeshRBF extends MeshComponent {
    }  
 
    public void transformGeometry (
-      AffineTransform3dBase X, TransformableGeometry topObject, int flags) {
-
-      if ((flags & TransformableGeometry.SIMULATING) != 0) {
+      AffineTransform3dBase X, PolarDecomposition3d pd,
+      Map<TransformableGeometry,Boolean> transformSet, int flags) {
+      
+      if ((flags & TransformableGeometry.TG_SIMULATING) != 0) {
          return;
       }
       for (int i=0; i<myBasePnts.length; i++) {
@@ -249,7 +252,7 @@ public class SkinMeshRBF extends MeshComponent {
       }
       updateSlavePos();
    }
-
+  
    protected boolean scanItem (ReaderTokenizer rtok, Deque<ScanToken> tokens) 
       throws IOException {
       return super.scanItem (rtok, tokens);

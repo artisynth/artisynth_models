@@ -2,9 +2,12 @@ package artisynth.models.dynjaw;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Map;
+import java.util.List;
 
 import javax.media.opengl.GL2;
 
+import maspack.geometry.GeometryTransformer;
 import maspack.matrix.AffineTransform3d;
 import maspack.matrix.AffineTransform3dBase;
 import maspack.matrix.AxisAngle;
@@ -29,7 +32,8 @@ import artisynth.core.modelbase.ComponentUtils;
 import artisynth.core.modelbase.CompositeComponent;
 import artisynth.core.modelbase.CompositeComponentBase;
 import artisynth.core.modelbase.ScanWriteUtils;
-import artisynth.core.util.TransformableGeometry;
+import artisynth.core.modelbase.TransformGeometryContext;
+import artisynth.core.modelbase.TransformableGeometry;
 
 public class ScarSpring extends OrthoSpring implements TransformableGeometry
 {
@@ -120,20 +124,24 @@ public class ScarSpring extends OrthoSpring implements TransformableGeometry
       super.applyForces (t);
    }
 
-   public void transformGeometry(AffineTransform3dBase X,
-      TransformableGeometry topObject, int flags)
-   {
+   public void transformGeometry (
+      GeometryTransformer gtr, TransformGeometryContext context, int flags) {
+      
       /*
        * only transform attach frame B because attach frame A 
        * is defined by the frame marker on frame A
        */
-      AffineTransform3d Xlocal = new AffineTransform3d();
-      myX2B.mulAffineLeft (X, Xlocal.A);
+      gtr.transform (myX2B);
+   }   
+   
+   public void addTransformableDependencies (
+      TransformGeometryContext context, int flags) {
+      // no dependencies
    }
 
    public void transformGeometry(AffineTransform3dBase X)
    {
-      transformGeometry (X, this, 0);
+      TransformGeometryContext.transform (this, X, 0);
    }
    
    public double getPlaneSize()

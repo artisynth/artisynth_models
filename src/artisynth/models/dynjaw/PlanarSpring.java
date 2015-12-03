@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Deque;
+import java.util.Map;
 
 import javax.media.opengl.GL2;
 
+import maspack.geometry.GeometryTransformer;
 import maspack.matrix.AffineTransform3dBase;
 import maspack.matrix.Matrix;
 import maspack.matrix.Matrix3d;
@@ -38,6 +40,8 @@ import artisynth.core.modelbase.CompositeComponent;
 import artisynth.core.modelbase.CompositeComponentBase;
 import artisynth.core.modelbase.ModelComponent;
 import artisynth.core.modelbase.ScanWriteUtils;
+import artisynth.core.modelbase.TransformGeometryContext;
+import artisynth.core.modelbase.TransformableGeometry;
 import artisynth.core.util.*;
 
 public class PlanarSpring extends AxialSpring implements PlanarComponent,
@@ -253,28 +257,21 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
   
    public void transformGeometry(AffineTransform3dBase X)
    {
-      transformGeometry(X, this, 0);
+      TransformGeometryContext.transform (this, X, 0);
    }
 
   public void transformGeometry (
-    AffineTransform3dBase X, TransformableGeometry topObject, int flags)
-  {
-     myPlane.transform(X);
+     GeometryTransformer gtr, TransformGeometryContext context, int flags) {
      
-     PolarDecomposition3d PD = new PolarDecomposition3d();
-     PD.factorLeft (X.getMatrix());
-
-     RotationMatrix3d R = new RotationMatrix3d();
-     Matrix3d P = new Matrix3d();
-
-     PD.getR(R);
-     PD.getP(P);
-
-     myPlaneToWorld.R.mul (R, myPlaneToWorld.R);
-     myPlaneToWorld.p.mulAdd (
-        X.getMatrix(), myPlaneToWorld.p, X.getOffset());
-  }
+     gtr.transform (myPlane, myPlaneToWorld.p);
+     gtr.transform (myPlaneToWorld);
+  } 
   
+  public void addTransformableDependencies (
+     TransformGeometryContext context, int flags) {
+     // no dependencies
+  }
+
   /**
    * Nothing to do for scale mass.
    */

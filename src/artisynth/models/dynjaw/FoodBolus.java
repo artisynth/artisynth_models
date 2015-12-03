@@ -4,9 +4,12 @@ import java.awt.Color;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Deque;
+import java.util.Map;
+import java.util.List;
 
 import javax.media.opengl.GL2;
 
+import maspack.geometry.GeometryTransformer;
 import maspack.matrix.AffineTransform3dBase;
 import maspack.matrix.Matrix;
 import maspack.matrix.Plane;
@@ -17,6 +20,7 @@ import maspack.matrix.SparseNumberedBlockMatrix;
 import maspack.matrix.Vector3d;
 import maspack.matrix.VectorNd;
 import maspack.matrix.VectorNi;
+import maspack.matrix.PolarDecomposition3d;
 import maspack.properties.PropertyList;
 import maspack.render.GLRenderer;
 import maspack.render.RenderProps;
@@ -31,6 +35,8 @@ import artisynth.core.modelbase.CompositeComponent;
 import artisynth.core.modelbase.CompositeComponentBase;
 import artisynth.core.modelbase.RenderableComponentBase;
 import artisynth.core.modelbase.ScanWriteUtils;
+import artisynth.core.modelbase.TransformGeometryContext;
+import artisynth.core.modelbase.TransformableGeometry;
 import artisynth.core.util.*;
 
 public class FoodBolus extends RenderableComponentBase 
@@ -467,16 +473,18 @@ public class FoodBolus extends RenderableComponentBase
     }
 
    public void transformGeometry (AffineTransform3dBase X) {
-      transformGeometry (X, this, 0);
-      
+      TransformGeometryContext.transform (this, X, 0);
    }
 
    public void transformGeometry (
-      AffineTransform3dBase X, TransformableGeometry topObject, int flags) {
-      
+      GeometryTransformer gt, TransformGeometryContext context, int flags) {
       // transform done in mech model
-//      myPlane.transform (X);
-      
+      // myPlane.transform (X);
+   }  
+
+   public void addTransformableDependencies (
+      TransformGeometryContext context, int flags) {
+      // no dependencies
    }
 
    public void advanceAuxState (double t0, double t1) {

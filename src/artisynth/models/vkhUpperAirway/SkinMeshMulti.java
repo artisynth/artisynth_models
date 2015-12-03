@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Deque;
+import java.util.Map;
 
 import maspack.geometry.BVFeatureQuery;
 import maspack.geometry.HalfEdge;
@@ -20,6 +21,7 @@ import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
 import maspack.matrix.VectorNd;
+import maspack.matrix.PolarDecomposition3d;
 import maspack.render.GLRenderer;
 import maspack.render.RenderList;
 import maspack.util.IndentingPrintWriter;
@@ -34,6 +36,7 @@ import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.modelbase.CompositeComponent;
 import artisynth.core.modelbase.CompositeComponentBase;
 import artisynth.core.modelbase.ScanWriteUtils;
+import artisynth.core.modelbase.TransformableGeometry;
 import artisynth.core.util.*;
 
 public class SkinMeshMulti extends MeshComponent {
@@ -514,9 +517,9 @@ public class SkinMeshMulti extends MeshComponent {
    }  
 
    public void transformGeometry (
-      AffineTransform3dBase X, TransformableGeometry topObject, int flags) {
-
-      if ((flags & TransformableGeometry.SIMULATING) != 0) {
+      AffineTransform3dBase X, PolarDecomposition3d pd,
+      Map<TransformableGeometry,Boolean> transformSet, int flags) {
+      if ((flags & TransformableGeometry.TG_SIMULATING) != 0) {
          return;
       }
       for (int i=0; i<myBasePnts.length; i++) {
@@ -527,8 +530,8 @@ public class SkinMeshMulti extends MeshComponent {
             myBasePnts[i].transform (X);
          }
       }
-      updateSlavePos();
-   }
+      updateSlavePos();     
+   }  
 
 //   @Override
 //   public void connectToHierarchy () {
