@@ -20,8 +20,7 @@ public class AirwaySkin extends SkinMeshBody {
    
    public void colorWeights(int idx) {
       MeshBase mesh = getMesh();
-      /* XXX - waiting for vertex coloring to be added to MeshBase*/
-//      mesh.setVertexColoring(true);
+      mesh.setUseVertexColoring(true);
       float[] rgb = new float[3];
       double a = mesh.getRenderProps ().getAlpha ();
       for (int i = 0; i < mesh.getNumVertices (); i++) {
