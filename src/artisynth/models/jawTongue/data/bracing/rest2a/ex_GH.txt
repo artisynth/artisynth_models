@@ -1,0 +1,4 @@
+0.0 1.5 1.0
+CubicStep 1 explicit
+0.0  0.0
+0.3  0.0

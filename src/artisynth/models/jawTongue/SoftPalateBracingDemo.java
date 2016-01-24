@@ -44,7 +44,7 @@ public class SoftPalateBracingDemo extends TongueBracingDemo {
 //      for (CollisionHandler ch :  myJawModel.getCollisionManager ().collisionHandlers ()) {
 //         cm.addCollisionHandler (ch);
 //      }
-      cm.setHandlersToMeasure (new int[]{4}); // tongue-pharynx
+      cm.setHandlersToMeasure (new int[]{3}); // tongue-pharynx
       addMonitor (cm);
    }
    
