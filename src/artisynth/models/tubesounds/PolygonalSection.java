@@ -150,7 +150,7 @@ public class PolygonalSection
 	public boolean setVertices (PolygonalMesh mesh, Plane plane)
         {
             ArrayList verts = mesh.getVertices();
-            boolean[] marked = new boolean[mesh.getNumVertices()];
+            boolean[] marked = new boolean[mesh.numVertices()];
 
             vertices.clear();
             // start by finding the closest vertex to the plane

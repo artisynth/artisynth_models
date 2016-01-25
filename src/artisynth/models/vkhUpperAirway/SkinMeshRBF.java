@@ -76,7 +76,7 @@ public class SkinMeshRBF extends MeshComponent {
    
    private void setBasePnts() {
       MeshBase mesh = getMesh();
-      int numVtxs = mesh.getNumVertices();
+      int numVtxs = mesh.numVertices();
       myBasePnts = new Point3d[numVtxs];
       for (int i=0; i<numVtxs; i++) {
          Vertex3d vtx = mesh.getVertices().get(i);
@@ -182,7 +182,7 @@ public class SkinMeshRBF extends MeshComponent {
    
    public void updateSlavePos () {
       MeshBase mesh = myMeshInfo.getMesh();
-      int numVerts = mesh.getNumVertices ();
+      int numVerts = mesh.numVertices ();
       
       recomputeRBFWeights();
       

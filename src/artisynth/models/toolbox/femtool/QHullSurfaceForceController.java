@@ -102,9 +102,9 @@ public class QHullSurfaceForceController extends ControllerBase {
    
    private void computeHull(PolygonalMesh mesh) {
       QuickHull3D hull = new QuickHull3D();
-      double coords[] = new double[3*mesh.getNumVertices()];
+      double coords[] = new double[3*mesh.numVertices()];
       
-      for (int i=0; i<mesh.getNumVertices(); i++) {
+      for (int i=0; i<mesh.numVertices(); i++) {
          Point3d pos = mesh.getVertex(i).getPosition();
          coords[i*3] = pos.x;
          coords[i*3+1] = pos.y;

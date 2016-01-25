@@ -1254,7 +1254,8 @@ public class BadinJawHyoid extends JawLarynxDemo {
          
          if (mesh != null) {
             body.setMesh (mesh, fileName);
-            if (mesh.getTextureVertices () ==  null || mesh.getTextureVertices ().size() == 0) {
+            if (mesh.getTextureCoords() == null || 
+                mesh.getTextureCoords().size() == 0) {
                RenderProps.setTextureEnabled (body, false);
             }
          }

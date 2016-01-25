@@ -512,10 +512,10 @@ public class HexTongueDemo extends RootModel {
                }
             }
          }
-         if (idxs.size() != verts.getNumVertices()) {
+         if (idxs.size() != verts.numVertices()) {
             System.err.printf(
                "error finding attachment node indices, %d points, "
-                  + "but %d nodes found\n", verts.getNumVertices(), idxs
+                  + "but %d nodes found\n", verts.numVertices(), idxs
                   .size());
          }
       } catch (IOException e) {

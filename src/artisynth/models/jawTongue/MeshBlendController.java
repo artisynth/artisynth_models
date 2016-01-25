@@ -29,7 +29,7 @@ public class MeshBlendController extends ControllerBase {
    }
    
    public MeshBlendController (PolygonalMesh mesh0, PolygonalMesh mesh1) {
-      assert mesh0.getNumVertices () == mesh1.getNumVertices ();
+      assert mesh0.numVertices () == mesh1.numVertices ();
       this.mesh0 = mesh0;
       this.mesh1 = mesh1;
       blendedMesh = new PolygonalMesh (mesh0);
@@ -46,7 +46,7 @@ public class MeshBlendController extends ControllerBase {
       ArrayList<Vertex3d> vtx0 = mesh0.getVertices ();
       ArrayList<Vertex3d> vtx1 = mesh1.getVertices ();
       ArrayList<Vertex3d> blendedVtx = blendedMesh.getVertices ();
-      for (int i = 0; i < blendedMesh.getNumVertices (); i++) {
+      for (int i = 0; i < blendedMesh.numVertices (); i++) {
          pnt.interpolate (vtx0.get (i).pnt, blendFactor, vtx1.get (i).pnt);
          blendedVtx.get (i).setPosition (pnt);
       }

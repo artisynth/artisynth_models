@@ -160,7 +160,7 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
       myJawModel.addMeshBody (centerlineMeshComponent);
       
       RenderProps.setLineColor (centerlineMeshComponent, 
-         Color.getHSBColor (centerlineMesh.getNumLines ()/8f, 0.5f, 0.5f));
+         Color.getHSBColor (centerlineMesh.numLines ()/8f, 0.5f, 0.5f));
    }
 
    public void loadCenterlineFromFile(String filename) {
@@ -171,16 +171,16 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
          // TODO Auto-generated catch block
          e.printStackTrace();
       }
-      if (centerlineMesh.getNumLines () > 1) {
+      if (centerlineMesh.numLines () > 1) {
          System.out.println("Warning loaded centerline mesh has multiple lines, using the last one");
       }
-      centerline = centerlineMesh.getLines ().get (centerlineMesh.getNumLines ()-1);
+      centerline = centerlineMesh.getLines ().get (centerlineMesh.numLines ()-1);
       centerlineMeshComponent = new MeshComponent ("centerline");
       centerlineMeshComponent.setMesh (centerlineMesh);
       myJawModel.addMeshBody (centerlineMeshComponent);
       
       RenderProps.setLineColor (centerlineMeshComponent, 
-         Color.getHSBColor (centerlineMesh.getNumLines ()/8f, 0.5f, 0.5f));
+         Color.getHSBColor (centerlineMesh.numLines ()/8f, 0.5f, 0.5f));
    }
    
    public void addXsectionPlanesFromCenterline(int n) {
@@ -225,7 +225,7 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
       }
       centerline = centerlineMesh.addLine (vtxs);
       RenderProps.setLineColor (centerlineMeshComponent, 
-         Color.getHSBColor (centerlineMesh.getNumLines ()/8f, 0.5f, 0.5f));
+         Color.getHSBColor (centerlineMesh.numLines ()/8f, 0.5f, 0.5f));
 
    }
    

@@ -282,7 +282,7 @@ public class VKHUpperAirwayWA extends ModelTemplate {
       
       
       if (debug) 
-         System.out.println("Num nodes in airway: " + airway.getNumVertices ());
+         System.out.println("Num nodes in airway: " + airway.numVertices ());
       
       double reduceTol = 1e-7;
       

@@ -79,7 +79,7 @@ public class SkinMeshMulti extends MeshComponent {
       this();
       setMesh (mesh);
       mesh.setFixed (false);
-      int size = mesh.getNumVertices ();
+      int size = mesh.numVertices ();
       
       myControllerType = new ControlTypes[size];
       myNumFemWeights = new int[size];
@@ -111,7 +111,7 @@ public class SkinMeshMulti extends MeshComponent {
    
    private void setBasePnts() {
       MeshBase mesh = getMesh();
-      int numVtxs = mesh.getNumVertices();
+      int numVtxs = mesh.numVertices();
       myBasePnts = new Point3d[numVtxs];
       for (int i=0; i<numVtxs; i++) {
          Vertex3d vtx = mesh.getVertices().get(i);
@@ -421,7 +421,7 @@ public class SkinMeshMulti extends MeshComponent {
    public void updateSlavePos () {
 
       MeshBase mesh = getMesh();
-      int numVerts = mesh.getNumVertices ();
+      int numVerts = mesh.numVertices ();
       
       int rigidCount = 0;
       int femCount = 0;

@@ -130,8 +130,8 @@ public class TongueLollipop extends FemMuscleTongueDemo {
       
       
       PolygonalMesh head = MeshFactory.createCylinder(0.0125, 0.004, 20);
-      Face topFace = head.getFaces().get(head.getNumFaces()-1);
-      Face bottomFace = head.getFaces().get(head.getNumFaces()-2);
+      Face topFace = head.getFaces().get(head.numFaces()-1);
+      Face bottomFace = head.getFaces().get(head.numFaces()-2);
       MeshFactory.triangulateFaceCentroid(topFace);
       MeshFactory.triangulateFaceCentroid(bottomFace);
       

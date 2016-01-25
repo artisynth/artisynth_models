@@ -189,7 +189,7 @@ public class PharynxDemo extends JawLarynxDemo {
       RenderProps.setVisible(fem.getNodes (), false);
       // for extruded FEM the first n nodes are co-incident 
       // with the n vertices of the surface mesh
-      for (int i = 0; i < surf.getMesh ().getNumVertices (); i++) {
+      for (int i = 0; i < surf.getMesh ().numVertices (); i++) {
          RenderProps.setVisible (fem.getNode (i), true);
       }
    }

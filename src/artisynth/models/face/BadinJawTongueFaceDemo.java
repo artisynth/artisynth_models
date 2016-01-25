@@ -131,7 +131,8 @@ public class BadinJawTongueFaceDemo extends JawHyoidFemMuscleTongue {
          
          if (mesh != null) {
             body.setMesh (mesh, fileName);
-            if (mesh.getTextureVertices () ==  null || mesh.getTextureVertices ().size() == 0) {
+            if (mesh.getTextureCoords() == null || 
+                mesh.getTextureCoords().size() == 0) {
                RenderProps.setTextureEnabled (body, false);
             }
          }

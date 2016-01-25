@@ -105,7 +105,7 @@ public abstract class VolumetricMeshGenerator {
       Vector3d p = principle.p;
 
       // loop through all nodes, projecting onto axes
-      for (int i=0; i<mesh.getNumVertices(); i++) {
+      for (int i=0; i<mesh.numVertices(); i++) {
          
          for (int j=0; j<3; j++) {
             

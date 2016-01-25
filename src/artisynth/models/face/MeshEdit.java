@@ -110,14 +110,14 @@ public class MeshEdit extends RootModel {
    }
    
    public void downmesh() {
-      for (int i = 0; i < morphmesh.getNumVertices(); i++) {
+      for (int i = 0; i < morphmesh.numVertices(); i++) {
 	 mech.particles().get(i).setPosition(morphmesh.getVertices().get(i).pnt);
       }
       rerender();
    }
    
    public void upmesh() {
-      for (int i = 0; i < morphmesh.getNumVertices(); i++) {
+      for (int i = 0; i < morphmesh.numVertices(); i++) {
 	 morphmesh.getVertices().get(i).pnt.set(mech.particles().get(i).getPosition());
       }
       rerender();
