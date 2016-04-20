@@ -6,4 +6,3 @@ JAVA_SUBDIRS =
 default: build
 
 -include $(ROOT_DIR)/Makefile.base
-
