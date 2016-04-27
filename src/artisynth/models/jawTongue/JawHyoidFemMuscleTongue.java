@@ -73,12 +73,6 @@ public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
 
    }
 
-   @Override
-   public void addTongueToJaw(TongueType tongutType) {
-      super.addTongueToJaw (tongutType);
-      FemMuscleTongueDemo.addExciters(tongue);
-   }
-
    public static void setBlackWhite(MechModel mech, FemMuscleModel fem) {
       RenderProps.setFaceColor(fem, Color.WHITE);
       RenderProps.setLineColor(fem, Color.BLACK);
