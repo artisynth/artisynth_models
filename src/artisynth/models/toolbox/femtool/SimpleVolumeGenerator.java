@@ -13,7 +13,7 @@ import artisynth.core.femmodels.FemModel3d;
 public class SimpleVolumeGenerator extends VolumetricMeshGenerator implements HasProperties {
 
    public enum TemplateType {
-      BEAM, CYLINDER, ELLIPSOID
+      BEAM, CYLINDER, SPINDLE
    }
    public static TemplateType DEFAULT_TEMPLATE = TemplateType.BEAM;
    private TemplateType templateType = DEFAULT_TEMPLATE;
@@ -87,7 +87,7 @@ public class SimpleVolumeGenerator extends VolumetricMeshGenerator implements Ha
             return createBoundingBeam(surface, resolution[0], resolution[1], resolution[2]);
          case CYLINDER:
             return null;
-         case ELLIPSOID:
+         case SPINDLE:
             return null;
          default:
       }

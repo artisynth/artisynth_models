@@ -7,6 +7,7 @@ import java.io.IOException;
 import maspack.geometry.PolygonalMesh;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
+import maspack.render.Renderer;
 import maspack.render.RenderProps;
 import maspack.widgets.BooleanSelector;
 import maspack.widgets.DoubleFieldSlider;
@@ -65,7 +66,7 @@ public class testFemMuscle extends RootModel {
       fem1 = new FemMuscleModel ("fem1");
       FemFactory.createHexGrid(fem1, 6, 1, 1, 10, 2, 2);
       fem1.transformGeometry(new RigidTransform3d(4,0,0));
-      RenderProps.setPointStyle (fem1, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (fem1, Renderer.PointStyle.SPHERE);
       RenderProps.setPointRadius(fem1, 0.03);
       RenderProps.setLineWidth(fem1, 2);
       fem1.setDensity(1);
@@ -101,14 +102,14 @@ public class testFemMuscle extends RootModel {
       p1.setDynamic(false);
       myMechMod.addParticle(p1);
       RenderProps.setPointColor (p1, Color.GREEN);
-      RenderProps.setPointStyle (p1, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (p1, Renderer.PointStyle.SPHERE);
       RenderProps.setPointRadius(p1, 0.03);
       
       Particle p2 = new Particle(1,-1,0,0);
       p2.setDynamic(false);
       myMechMod.addParticle(p2);
       RenderProps.setPointColor (p2, Color.BLUE);
-      RenderProps.setPointStyle (p2, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (p2, Renderer.PointStyle.SPHERE);
       RenderProps.setPointRadius(p2, 0.03);
       myMechMod.attachPoint(p2, body);
       

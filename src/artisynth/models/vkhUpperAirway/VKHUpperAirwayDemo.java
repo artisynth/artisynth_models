@@ -4,10 +4,10 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 import maspack.matrix.AxisAngle;
-import maspack.render.GLClipPlane;
-import maspack.render.GLGridResolution;
-import maspack.render.GLViewer;
-import maspack.render.GLViewer.DraggerType;
+import maspack.render.GL.GLClipPlane;
+import maspack.render.GL.GLGridResolution;
+import maspack.render.GL.GLViewer;
+import maspack.render.Dragger3d.DraggerType;
 import artisynth.core.driver.Main;
 import artisynth.core.driver.ViewerManager;
 import maspack.matrix.AxisAlignedRotation;

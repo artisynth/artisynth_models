@@ -22,8 +22,8 @@ import artisynth.models.tongue3d.HexTongueDemo;
 import maspack.interpolation.Interpolation.Order;
 import maspack.properties.PropertyMode;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
 
 public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
 

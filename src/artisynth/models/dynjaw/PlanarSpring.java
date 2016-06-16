@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Deque;
 import java.util.Map;
 
-import javax.media.opengl.GL2;
-
 import maspack.geometry.GeometryTransformer;
 import maspack.matrix.AffineTransform3dBase;
 import maspack.matrix.Matrix;
@@ -23,9 +21,11 @@ import maspack.matrix.Vector3d;
 import maspack.properties.HasProperties;
 import maspack.properties.PropertyList;
 import maspack.properties.PropertyInfo.Edit;
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.Shading;
+import maspack.render.Renderer.FaceStyle;
 import maspack.util.IndentingPrintWriter;
 import maspack.util.NumberFormat;
 import maspack.util.ReaderTokenizer;
@@ -137,7 +137,7 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
       }
    }
    
-   public void render (GLRenderer renderer, int flags)
+   public void render (Renderer renderer, int flags)
    {
       if (!isEnabled())
          return;
@@ -148,20 +148,25 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
      computeRenderPoints (TDW);
      nrm.transform (TDW);
 
-     GL2 gl = renderer.getGL2().getGL2();
+     //GL2 gl = renderer.getGL2().getGL2();
      RenderProps props = myRenderProps;
 
-     renderer.setMaterialAndShading (props, props.getFaceMaterial(), isSelected());
-     renderer.setFaceMode (props.getFaceStyle());
-     gl.glBegin (GL2.GL_POLYGON);
-     gl.glNormal3d (nrm.x, nrm.y, nrm.z);
-     for (int i=0; i<myRenderPnts.length; i++)
-      { Point3d p = myRenderPnts[i];
-        gl.glVertex3d (p.x, p.y, p.z);
-      }
-     gl.glEnd ();
-     renderer.setDefaultFaceMode ();
-     renderer.restoreShading (props);
+     Shading savedShading = renderer.setPropsShading(props);
+     renderer.setFaceColoring (props, isSelected());
+     FaceStyle savedStyle = renderer.setFaceStyle (props.getFaceStyle());
+
+       renderer.beginDraw (Renderer.DrawMode.TRIANGLES);
+       renderer.setNormal (nrm.x, nrm.y, nrm.z);
+       renderer.addVertex (myRenderPnts[0]);
+       renderer.addVertex (myRenderPnts[1]);
+       renderer.addVertex (myRenderPnts[2]);
+       renderer.addVertex (myRenderPnts[0]);
+       renderer.addVertex (myRenderPnts[2]);
+       renderer.addVertex (myRenderPnts[3]);
+       renderer.endDraw();
+
+       renderer.setFaceStyle (savedStyle);
+     renderer.setShading (savedShading);
      
      if (isActive())
      {
@@ -288,7 +293,7 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
   public RenderProps createRenderProps()
   {
     RenderProps props = new RenderProps();
-    props.setFaceStyle (RenderProps.Faces.FRONT_AND_BACK);
+    props.setFaceStyle (Renderer.FaceStyle.FRONT_AND_BACK);
     props.setFaceColor(Color.WHITE);
     props.setAlpha(0.5);
     props.setLineStyle(LineStyle.LINE);

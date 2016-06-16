@@ -11,11 +11,11 @@ import maspack.geometry.PolygonalMesh;
 import maspack.matrix.Point3d;
 import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.RigidBody;
@@ -135,7 +135,7 @@ public class AxisDemo extends RootModel {
       sphere_mesh.scale (1, 1, 1.5);
       sphere.setMesh (sphere_mesh, null);
 
-      RenderProps.setFaceStyle (sphere, Faces.NONE);
+      RenderProps.setFaceStyle (sphere, FaceStyle.NONE);
       RenderProps.setEdgeColor (sphere, Color.BLUE);
       RenderProps.setDrawEdges (sphere, true);
       RenderProps.setLineColor (sphere, Color.BLUE);
@@ -162,7 +162,7 @@ public class AxisDemo extends RootModel {
 
    // render a line for the computed axis and point for its estimated center
    @Override
-   public void render (GLRenderer renderer, int flags) {
+   public void render (Renderer renderer, int flags) {
 
       Point3d p0 = new Point3d (computedAxis);
       p0.scale (2 * len);
@@ -177,7 +177,7 @@ public class AxisDemo extends RootModel {
          new float[] { (float)computedPoint.x, (float)computedPoint.y,
                       (float)computedPoint.z };
 
-      renderer.drawLine (rotAxisRenderProps, coords0, coords1, true, false);
+      renderer.drawLine (rotAxisRenderProps, coords0, coords1, null, true, false);
       renderer.drawPoint (rotCenterRenderProps, coords, false);
    }
 

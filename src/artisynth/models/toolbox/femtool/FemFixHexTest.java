@@ -2,17 +2,15 @@ package artisynth.models.toolbox.femtool;
 
 import java.awt.Color;
 
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.femmodels.FemElement3d;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.femmodels.HexElement;
-import artisynth.core.femmodels.PyramidElement;
-import artisynth.core.femmodels.TetElement;
-import artisynth.core.femmodels.WedgeElement;
+import artisynth.core.femmodels.FemElementRenderer;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.modelbase.StepAdjustment;
 import artisynth.core.util.TimeBase;
@@ -37,6 +35,8 @@ public class FemFixHexTest extends RootModel {
 
    MechModel myModel;
    FemModel3d fem;
+
+   FemElementRenderer[] myRenderers = new FemElementRenderer[8];
 
    public FemFixHexTest(String name) {
       myModel = new MechModel("test");
@@ -147,7 +147,7 @@ public class FemFixHexTest extends RootModel {
 
  
    @Override
-   public void render(GLRenderer renderer, int flags) {
+   public void render(Renderer renderer, int flags) {
 
       if (renderRest) {
          for (FemElement3d elem : fem.getElements()) {
@@ -158,25 +158,14 @@ public class FemFixHexTest extends RootModel {
 
    }
 
-   private void renderRestElement(GLRenderer renderer, FemElement3d elem) {
+   private void renderRestElement(Renderer renderer, FemElement3d elem) {
 
-      FemNode3d[] nodes = elem.getNodes(); 
-      float [][] v = new float[nodes.length][3];
-
-      for (int i=0; i<nodes.length; i++) {
-         v[i][0]=(float)(nodes[i].getRestPosition().x);
-         v[i][1]=(float)(nodes[i].getRestPosition().y);
-         v[i][2]=(float)(nodes[i].getRestPosition().z);        
-      }
-
-      if (elem instanceof HexElement) {
-         renderer.drawHex(restRenderProps, 1, v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7]);
-      } else if (elem instanceof WedgeElement) {
-         renderer.drawWedge(restRenderProps, 1, v[0], v[1], v[2], v[3], v[4], v[5]);
-      } else if (elem instanceof PyramidElement) {
-         renderer.drawPyramid(restRenderProps, 1, v[0], v[1], v[2], v[3], v[4]);
-      } else if (elem instanceof TetElement) {
-         renderer.drawTet(restRenderProps, 1, v[0], v[1], v[2], v[3]);
+      int idx = FemFixTest.getElementTypeIndex (elem);
+      if (idx != -1) {
+         if (myRenderers[idx] == null) {
+            myRenderers[idx] = new FemElementRenderer (elem);
+         }
+         myRenderers[idx].renderRestWidget (renderer, elem, 1.0, myRenderProps);
       }
 
    }

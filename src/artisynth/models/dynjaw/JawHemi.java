@@ -12,9 +12,9 @@ import maspack.matrix.RigidTransform3d;
 import maspack.matrix.RotationMatrix3d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
-import maspack.render.TextureProps;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.TextureProps.Mode;
+import maspack.render.ColorMapProps;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.ColorMixing;
 import maspack.spatialmotion.SpatialInertia;
 import artisynth.core.mechmodels.AxialSpring;
 import artisynth.core.mechmodels.FrameMarker;
@@ -88,16 +88,16 @@ public class JawHemi extends JawLarynxDemo
       // setup render and texture props
       RenderProps p = new RenderProps(jaw.getRenderProps());
       p.setFaceColor (new Color(1f, 1f, 0.75f));
-      TextureProps tp = new TextureProps();
+      ColorMapProps tp = new ColorMapProps();
       tp.setEnabled (false);
-      tp.setMode (Mode.MODULATE);
-      tp.setSphereMappingEnabled (false);
-      tp.setAutomatic (false);
+      tp.setColorMixing (ColorMixing.MODULATE);
+      //tp.setSphereMappingEnabled (false);
+      //tp.setAutomatic (false);
       String name = ArtisynthPath.getSrcRelativePath (
          JawModel.class, "skull.jpg");
       System.out.println(name);
       tp.setFileName(name);
-      p.setTextureProps(tp);
+      p.setColorMap(tp);
       jaw.setRenderProps(p);
       
    }

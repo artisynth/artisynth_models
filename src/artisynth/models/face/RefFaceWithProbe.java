@@ -9,8 +9,8 @@ import maspack.geometry.PolygonalMesh;
 import maspack.matrix.Point3d;
 import maspack.properties.PropertyMode;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.femmodels.AnsysWriter;
 import artisynth.core.femmodels.FemElement3d;
 import artisynth.core.femmodels.FemNode3d;
@@ -162,11 +162,11 @@ public class RefFaceWithProbe extends RootModel {
    }
    
    public void setupRenderProps() {
-      RenderProps.setFaceStyle(mech, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle(mech, FaceStyle.FRONT_AND_BACK);
 
       for (RigidBody body : mech.rigidBodies()) {
 	 RenderProps.setFaceColor(body, new Color(0.4f, 0.6f, 0.8f));
-	 RenderProps.setFaceStyle(body, Faces.FRONT_AND_BACK);
+	 RenderProps.setFaceStyle(body, FaceStyle.FRONT_AND_BACK);
 	 RenderProps.setVisible(body, true);
       }
 

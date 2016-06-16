@@ -26,8 +26,8 @@ import maspack.properties.Property;
 import maspack.properties.PropertyList;
 import maspack.properties.PropertyMode;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.PointStyle;
 import maspack.render.Renderable;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.driver.Main;
@@ -789,7 +789,7 @@ public class BadinFaceDemo extends RootModel {
    }
 
    public void setupRenderProps () {
-      RenderProps.setFaceStyle (mech, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle (mech, FaceStyle.FRONT_AND_BACK);
 
       for (RigidBody body : mech.rigidBodies ()) {
          if (body.getName () == null)

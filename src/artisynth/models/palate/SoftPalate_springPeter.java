@@ -7,8 +7,8 @@ import java.io.IOException;
 import maspack.geometry.PolygonalMesh;
 import maspack.matrix.Point3d;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.femmodels.FemMuscleModel;
 import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.MechModel;
@@ -103,7 +103,7 @@ public class SoftPalate_springPeter extends RootModel{
       
       // set some rendering behavior
       RenderProps.setPointStyle (softPalate, PointStyle.SPHERE);
-      RenderProps.setLineStyle (myMechMod.multiPointSprings(), LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle (myMechMod.multiPointSprings(), LineStyle.SPINDLE);
       RenderProps.setLineColor (myMechMod.multiPointSprings(), Color.RED);
       RenderProps.setLineRadius (myMechMod.multiPointSprings(), 0.5);
       RenderProps.setPointStyle(myMechMod.frameMarkers(), PointStyle.SPHERE);

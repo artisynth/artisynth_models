@@ -11,7 +11,8 @@ import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemElement3d;
 import artisynth.core.femmodels.FemModel3d;
@@ -103,11 +104,11 @@ public class HybridFemFactoryDemo extends RootModel {
             femFactory.setBorderPercentage(0.03);
          } else if (templateCase == 2) {
             System.out.println("Case 2: Using hybrid ellipsoid template.");
-            femFactory.setTemplateType(TemplateType.ELLIPSOID);
+            femFactory.setTemplateType(TemplateType.SPINDLE);
             femFactory.setBorderPercentage(0.01);
          } else {
             System.out.println("Case 3: Using hybrid ellipsoid template 2.");
-            femFactory.setTemplateType(TemplateType.ELLIPSOID);
+            femFactory.setTemplateType(TemplateType.SPINDLE);
             femFactory.setBorderPercentage(0.03);
          }
          
@@ -229,7 +230,7 @@ public class HybridFemFactoryDemo extends RootModel {
          }
       }
 
-      RenderProps.setFaceStyle(fem, RenderProps.Faces.FRONT);
+      RenderProps.setFaceStyle(fem, Renderer.FaceStyle.FRONT);
       RenderProps.setFaceColor(fem, Color.PINK);
       RenderProps.setLineWidth(fem, 2);
       RenderProps.setLineColor(fem, Color.GRAY);
@@ -258,20 +259,20 @@ public class HybridFemFactoryDemo extends RootModel {
 
    private void drawLine(Point3d c, Point3d d) {
       AxialSpring spring0 = new AxialSpring(50, 20, 10);
-      RenderProps.setLineStyle(spring0, RenderProps.LineStyle.CYLINDER);
+      RenderProps.setLineStyle(spring0, Renderer.LineStyle.CYLINDER);
       RenderProps.setLineRadius(spring0, 0.1);
       RenderProps.setLineColor(spring0, Color.GREEN);
 
       Particle p0 = new Particle(5, c);
       RenderProps.setPointRadius(p0, 0.1);
-      RenderProps.setPointStyle(p0, RenderProps.PointStyle.POINT);
+      RenderProps.setPointStyle(p0, Renderer.PointStyle.POINT);
       RenderProps.setPointColor(p0, Color.BLUE);
       p0.setDynamic(true);
       myMechMod.addParticle(p0);
 
       Particle p1 = new Particle(5, d);
       RenderProps.setPointRadius(p1, 0.2);
-      RenderProps.setPointStyle(p1, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle(p1, Renderer.PointStyle.SPHERE);
       RenderProps.setPointColor(p1, Color.RED);
       p0.setDynamic(true);
       myMechMod.addParticle(p1);
@@ -281,7 +282,7 @@ public class HybridFemFactoryDemo extends RootModel {
 
    private void drawVector(Point3d c, Vector3d u, Color co) {
       AxialSpring spring0 = new AxialSpring(50, 20, 10);
-      RenderProps.setLineStyle(spring0, RenderProps.LineStyle.CYLINDER);
+      RenderProps.setLineStyle(spring0, Renderer.LineStyle.CYLINDER);
       RenderProps.setLineRadius(spring0, 0.1);
       RenderProps.setLineColor(spring0, co);
 
@@ -292,7 +293,7 @@ public class HybridFemFactoryDemo extends RootModel {
       p.scaledAdd(1, u);
       Particle p1 = new Particle(5, p);
       RenderProps.setPointRadius(p1, 0.1);
-      RenderProps.setPointStyle(p1, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle(p1, Renderer.PointStyle.SPHERE);
       RenderProps.setPointColor(p1, Color.RED);
       myMechMod.addParticle(p1);
       myMechMod.attachAxialSpring(p0, p1, spring0);

@@ -22,7 +22,7 @@ import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
 import maspack.matrix.VectorNd;
 import maspack.matrix.PolarDecomposition3d;
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderList;
 import maspack.util.IndentingPrintWriter;
 import maspack.util.NumberFormat;

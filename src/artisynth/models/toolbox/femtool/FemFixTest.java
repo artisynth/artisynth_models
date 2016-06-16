@@ -6,18 +6,24 @@ import java.util.ArrayList;
 
 import maspack.matrix.AffineTransform3d;
 import maspack.properties.PropertyList;
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.RenderList;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemElement3d;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemNode3d;
-import artisynth.core.femmodels.HexElement;
-import artisynth.core.femmodels.PyramidElement;
+import artisynth.core.femmodels.FemElementRenderer;
 import artisynth.core.femmodels.TetElement;
+import artisynth.core.femmodels.HexElement;
 import artisynth.core.femmodels.WedgeElement;
+import artisynth.core.femmodels.PyramidElement;
+import artisynth.core.femmodels.QuadtetElement;
+import artisynth.core.femmodels.QuadhexElement;
+import artisynth.core.femmodels.QuadwedgeElement;
+import artisynth.core.femmodels.QuadpyramidElement;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.modelbase.StepAdjustment;
@@ -58,6 +64,8 @@ public class FemFixTest extends RootModel {
    MechModel myModel;
    FemModel3d origModel;
    FemModel3d fixModel;
+
+   FemElementRenderer[] myRenderers = new FemElementRenderer[8];
 
    public static PropertyList myProps =
       new PropertyList(FemFixTest.class, RootModel.class);
@@ -314,7 +322,7 @@ public class FemFixTest extends RootModel {
    }
 
    @Override
-   public void render(GLRenderer renderer, int flags) {
+   public void render(Renderer renderer, int flags) {
 
       if (renderRest) {
          for (FemElement3d elem : fixModel.getElements()) {
@@ -325,27 +333,46 @@ public class FemFixTest extends RootModel {
 
    }
 
-   private void renderRestElement(GLRenderer renderer, FemElement3d elem) {
+   static int getElementTypeIndex (FemElement3d elem) {
 
-      FemNode3d[] nodes = elem.getNodes(); 
-      float [][] v = new float[nodes.length][3];
-
-      for (int i=0; i<nodes.length; i++) {
-         v[i][0]=(float)(nodes[i].getRestPosition().x);
-         v[i][1]=(float)(nodes[i].getRestPosition().y);
-         v[i][2]=(float)(nodes[i].getRestPosition().z);        
+      if (elem instanceof TetElement) {
+         return 0;
       }
-
-      if (elem instanceof HexElement) {
-         renderer.drawHex(restRenderProps, 1, v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7]);
-      } else if (elem instanceof WedgeElement) {
-         renderer.drawWedge(restRenderProps, 1, v[0], v[1], v[2], v[3], v[4], v[5]);
-      } else if (elem instanceof PyramidElement) {
-         renderer.drawPyramid(restRenderProps, 1, v[0], v[1], v[2], v[3], v[4]);
-      } else if (elem instanceof TetElement) {
-         renderer.drawTet(restRenderProps, 1, v[0], v[1], v[2], v[3]);
+      else if (elem instanceof HexElement) {
+         return 1;
       }
+      else if (elem instanceof WedgeElement) {
+         return 2;
+      }
+      else if (elem instanceof PyramidElement) {
+         return 3;
+      }
+      else if (elem instanceof QuadtetElement) {
+         return 4;
+      }
+      else if (elem instanceof QuadhexElement) {
+         return 5;
+      }
+      else if (elem instanceof QuadwedgeElement) {
+         return 6;
+      }
+      else if (elem instanceof QuadpyramidElement) {
+         return 7;
+      }
+      else {
+         return -1;
+      }
+   }
 
+   private void renderRestElement(Renderer renderer, FemElement3d elem) {
+
+      int idx = getElementTypeIndex (elem);
+      if (idx != -1) {
+         if (myRenderers[idx] == null) {
+            myRenderers[idx] = new FemElementRenderer (elem);
+         }
+         myRenderers[idx].renderRestWidget (renderer, elem, 1.0, myRenderProps);
+      }
    }
    
    @Override

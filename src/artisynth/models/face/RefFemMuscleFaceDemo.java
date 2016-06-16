@@ -12,7 +12,7 @@ import maspack.matrix.Point3d;
 import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.PointStyle;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.femmodels.AnsysReader;
 import artisynth.core.femmodels.FemElement3d;

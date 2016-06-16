@@ -11,9 +11,9 @@ import maspack.matrix.Point3d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
 import maspack.render.RenderableUtils;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemElement3d;
@@ -100,13 +100,13 @@ public class SoftPalateDemo extends RootModel {
       }
 
       RenderProps.setFaceColor (myFemMod, Color.PINK);
-       RenderProps.setFaceStyle (myFemMod, Faces.FRONT);
+       RenderProps.setFaceStyle (myFemMod, FaceStyle.FRONT);
        RenderProps.setDrawEdges (myFemMod, true);
       // RenderProps.setPointStyle (myFemMod, PointStyle.SPHERE);
        RenderProps.setPointStyle (myFemMod.markers (), PointStyle.SPHERE);
       RenderProps.setPointRadius (myFemMod, 0.3);
       RenderProps.setPointColor (myFemMod, Color.BLUE);
-      RenderProps.setLineStyle (myFemMod, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle (myFemMod, LineStyle.SPINDLE);
       RenderProps.setLineColor (myFemMod, Color.DARK_GRAY);
       RenderProps.setLineRadius (myFemMod, 0.5);
 

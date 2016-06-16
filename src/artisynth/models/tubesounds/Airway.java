@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 import artisynth.core.modelbase.*;
 import artisynth.core.driver.Main;
-import javax.media.opengl.GLDrawable;
 import java.awt.Color;
 
 public class Airway extends RenderableModelBase
@@ -29,9 +28,9 @@ public class Airway extends RenderableModelBase
     }
     
 
-    //GLRenderable
+    //IsRenderable
     public void render(
-       GLRenderer renderer, int flags) {
+       Renderer renderer, int flags) {
         mesh.render(renderer, flags);
     }
     
@@ -215,17 +214,17 @@ public class Airway extends RenderableModelBase
       RenderProps props = mesh.createRenderProps();
       props.setDrawEdges (false);
       props.setLineColor (new Color (0.5f,0.5f,0.5f));
-      props.setFaceStyle (RenderProps.Faces.FRONT_AND_BACK);
+      props.setFaceStyle (Renderer.FaceStyle.FRONT_AND_BACK);
         //mesh.setRenderFaces(PolygonalMesh.FRONT_FACE);
-      props.setShading (RenderProps.Shading.GOURARD);
+      props.setShading (Renderer.Shading.SMOOTH);
       props.setBackColor (Color.GREEN);
         
-      TextureProps tprops = props.getTextureProps();
-      tprops.setEnabled (true);
-
-      tprops.setFileName (textureFileName);
-      tprops.setSphereMappingEnabled(true);
-      tprops.setMode(TextureProps.Mode.MODULATE);
+      ColorMapProps cprops = new ColorMapProps();
+      cprops.setEnabled (true);
+      cprops.setFileName (textureFileName);
+      //cprops.setSphereMappingEnabled(true);
+      cprops.setColorMixing(Renderer.ColorMixing.MODULATE);
+      props.setColorMap (cprops);
         
         /*Material mat = new Material();
         mat.setAmbient (0, 0, 0, 1f);

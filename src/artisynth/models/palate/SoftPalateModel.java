@@ -12,9 +12,9 @@ import maspack.geometry.*;
 import maspack.matrix.Point3d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.*;
@@ -230,13 +230,13 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
       fem.setSurfaceRendering   (SurfaceRender.Shaded);
       fem.setElementWidgetSize  (1.0);
       RenderProps.setFaceColor  (fem, Color.PINK);
-      RenderProps.setFaceStyle  (fem, Faces.NONE);
+      RenderProps.setFaceStyle  (fem, FaceStyle.NONE);
       RenderProps.setDrawEdges  (fem, true);
       RenderProps.setPointStyle (fem, PointStyle.SPHERE);
       RenderProps.setLineWidth  (fem, 1);
       RenderProps.setPointRadius(fem, 0.3);
       RenderProps.setPointColor (fem, Color.BLUE);
-      RenderProps.setLineStyle  (fem, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle  (fem, LineStyle.SPINDLE);
       RenderProps.setLineColor  (fem, Color.LIGHT_GRAY);
       RenderProps.setLineRadius (fem, 0.8);
       

@@ -14,7 +14,7 @@ import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
+import maspack.render.Renderer.FaceStyle;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.femmodels.FemElement3d;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
@@ -75,12 +75,12 @@ public class FemArmTest extends RootModel {
       boneRenderProps = new RenderProps();
       boneRenderProps.setFaceColor(new Color(208, 215, 185));
       boneRenderProps.setVisible(true);
-      boneRenderProps.setFaceStyle(Faces.FRONT_AND_BACK);
+      boneRenderProps.setFaceStyle(FaceStyle.FRONT_AND_BACK);
 
       muscleRenderProps = new RenderProps();
       muscleRenderProps.setFaceColor(new Color(165, 66, 56));
       muscleRenderProps.setVisible(true);
-      muscleRenderProps.setFaceStyle(Faces.FRONT_AND_BACK);
+      muscleRenderProps.setFaceStyle(FaceStyle.FRONT_AND_BACK);
 
       armBones = new ArrayList<RigidBody>();
 

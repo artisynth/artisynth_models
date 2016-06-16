@@ -15,7 +15,8 @@ import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
+import maspack.render.Renderer;
+import maspack.render.Renderer.LineStyle;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.femmodels.AnsysReader;
 import artisynth.core.femmodels.FemElement3d;
@@ -281,9 +282,9 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
          }
          femMuscle.setSurfaceRendering(SurfaceRender.None);
       }
-      RenderProps.setFaceStyle(femMuscle, RenderProps.Faces.FRONT);
-      RenderProps.setShading(femMuscle, RenderProps.Shading.FLAT);
-      // RenderProps.setShading (femMuscle, RenderProps.Shading.GOURARD);
+      RenderProps.setFaceStyle(femMuscle, Renderer.FaceStyle.FRONT);
+      RenderProps.setShading(femMuscle, Renderer.Shading.FLAT);
+      // RenderProps.setShading (femMuscle, Renderer.Shading.SMOOTH);
       RenderProps.setFaceColor(femMuscle, color);
       RenderProps.setLineWidth(femMuscle, lineWidth);
       RenderProps.setLineColor(femMuscle, Color.PINK);
@@ -291,9 +292,9 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
       RenderProps.setPointRadius(femMuscle, pointRadius);
       RenderProps.setPointColor(femMuscle, Color.WHITE);
       if (!drawNodes) {
-         RenderProps.setPointStyle(femMuscle, RenderProps.PointStyle.POINT);
+         RenderProps.setPointStyle(femMuscle, Renderer.PointStyle.POINT);
       } else {
-         RenderProps.setPointStyle(femMuscle, RenderProps.PointStyle.SPHERE);
+         RenderProps.setPointStyle(femMuscle, Renderer.PointStyle.SPHERE);
       }
 
       // highlight inverted elements
@@ -421,7 +422,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                n.setDynamic(false);
                if (drawAttachedNodes != drawNodes && drawAttachedNodes) {
                   RenderProps.setPointStyle(muscleModel.getNode(i),
-                        RenderProps.PointStyle.SPHERE);
+                        Renderer.PointStyle.SPHERE);
                   RenderProps.setPointRadius(muscleModel.getNode(i),
                         pointRadius * 1.5);
                   RenderProps.setPointColor(muscleModel.getNode(i),
@@ -442,7 +443,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                myJawModel.attachPoint(n, bi);
                if (drawAttachedNodes != drawNodes && drawAttachedNodes) {
                   RenderProps.setPointStyle(muscleModel.getNode(i),
-                        RenderProps.PointStyle.SPHERE);
+                        Renderer.PointStyle.SPHERE);
                   RenderProps.setPointRadius(muscleModel.getNode(i),
                         pointRadius * 1.5);
                   RenderProps.setPointColor(muscleModel.getNode(i), Color.BLUE);
@@ -483,7 +484,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                n.setDynamic(false);
                if (drawAttachedNodes != drawNodes && drawAttachedNodes) {
                   RenderProps.setPointStyle(muscleModel.getNode(i),
-                        RenderProps.PointStyle.SPHERE);
+                        Renderer.PointStyle.SPHERE);
                   RenderProps.setPointRadius(muscleModel.getNode(i),
                         pointRadius * 1.5);
                   RenderProps.setPointColor(muscleModel.getNode(i),
@@ -528,7 +529,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                } else if (drawAttachedNodes) {
                   RenderProps.setPointRadius(node, pointRadius);
                   RenderProps
-                  .setPointStyle(node, RenderProps.PointStyle.SPHERE);
+                  .setPointStyle(node, Renderer.PointStyle.SPHERE);
                   RenderProps.setPointColor(node, Color.GREEN);
                }
             }
@@ -649,13 +650,13 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
    // RenderProps.setPointRadius(fem1.getNode(node1),
    // pointRadius);
    // RenderProps.setPointStyle(fem1.getNode(node1),
-   // RenderProps.PointStyle.SPHERE);
+   // Renderer.PointStyle.SPHERE);
    // RenderProps.setPointColor(fem1.getNode(node1),
    // Color.GREEN);
    // RenderProps.setPointRadius(fem2.getNode(node2),
    // pointRadius);
    // RenderProps.setPointStyle(fem2.getNode(node2),
-   // RenderProps.PointStyle.SPHERE);
+   // Renderer.PointStyle.SPHERE);
    // RenderProps.setPointColor(fem2.getNode(node2),
    // Color.GREEN);
    // }
@@ -834,7 +835,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                } else if (drawAttachedNodes) {
                   RenderProps.setPointRadius(node, pointRadius);
                   RenderProps
-                  .setPointStyle(node, RenderProps.PointStyle.SPHERE);
+                  .setPointStyle(node, Renderer.PointStyle.SPHERE);
                   RenderProps.setPointColor(node, Color.GREEN);
                }
             }
@@ -861,7 +862,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                // System.out.println("\t"+node.myNumber);
                if (drawAttachedNodes != drawNodes && drawAttachedNodes) {
                   RenderProps
-                  .setPointStyle(node, RenderProps.PointStyle.SPHERE);
+                  .setPointStyle(node, Renderer.PointStyle.SPHERE);
                   RenderProps.setPointColor(node, Color.BLUE);
                   RenderProps.setPointRadius(node, pointRadius * 1.5);
                }
@@ -1027,7 +1028,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                      bundle.getFibres().clear();
                      // bundle.setFibresActive(false);
                   } else {
-                     RenderProps.setLineStyle(bundle, LineStyle.ELLIPSOID);
+                     RenderProps.setLineStyle(bundle, LineStyle.SPINDLE);
                      RenderProps.setLineRadius(bundle, lineRadius);
                   }
                   if (drawBundleExcitation) {
@@ -1050,7 +1051,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                            && drawAttachedNodes) {
                         RenderProps.setPointRadius(cur, pointRadius);
                         RenderProps.setPointStyle(cur,
-                              RenderProps.PointStyle.SPHERE);
+                              Renderer.PointStyle.SPHERE);
                         RenderProps.setPointColor(cur, Color.GREEN);
                      }
                   }
@@ -1109,7 +1110,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                      bundle.getFibres().clear();
                      // bundle.setFibresActive(false);
                   } else {
-                     RenderProps.setLineStyle(bundle, LineStyle.ELLIPSOID);
+                     RenderProps.setLineStyle(bundle, LineStyle.SPINDLE);
                      RenderProps.setLineRadius(bundle, lineRadius);
                   }
                   if (drawBundleExcitation) {
@@ -1132,7 +1133,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                            && drawAttachedNodes) {
                         RenderProps.setPointRadius(cur, pointRadius);
                         RenderProps.setPointStyle(cur,
-                              RenderProps.PointStyle.SPHERE);
+                              Renderer.PointStyle.SPHERE);
                         RenderProps.setPointColor(cur, Color.GREEN);
                      }
                   }
@@ -1187,7 +1188,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                bundle.getFibres().clear();
                // bundle.setFibresActive(false);
             } else {
-               RenderProps.setLineStyle(bundle, LineStyle.ELLIPSOID);
+               RenderProps.setLineStyle(bundle, LineStyle.SPINDLE);
                RenderProps.setLineRadius(bundle, lineRadius);
             }
             if (drawBundleExcitation) {

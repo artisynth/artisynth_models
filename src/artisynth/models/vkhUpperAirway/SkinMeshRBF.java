@@ -19,7 +19,7 @@ import maspack.matrix.RigidTransform3d;
 import maspack.matrix.SparseMatrixNd;
 import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderList;
 import maspack.solvers.PardisoSolver;
 import maspack.util.NumberFormat;
@@ -215,11 +215,11 @@ public class SkinMeshRBF extends MeshComponent {
    }
    
    @Override
-   public void render(GLRenderer renderer, int flags) {
+   public void render(Renderer renderer, int flags) {
       MeshBase mesh = getMesh();
       if (mesh != null) {
          // System.out.println ("drawMesh " + getName());
-         flags |= isSelected() ? GLRenderer.SELECTED : 0;
+         flags |= isSelected() ? Renderer.HIGHLIGHT : 0;
          mesh.render (renderer, myRenderProps, flags);
       }
    }

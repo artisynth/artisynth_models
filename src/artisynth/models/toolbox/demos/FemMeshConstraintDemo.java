@@ -8,6 +8,7 @@ import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
+import maspack.render.Renderer;
 import artisynth.core.femmodels.FemFactory;
 import artisynth.core.femmodels.FemFactory.FemElemType;
 import artisynth.core.femmodels.FemModel3d;
@@ -39,7 +40,7 @@ public class FemMeshConstraintDemo extends RootModel {
       PolygonalMesh mesh = MeshFactory.createHollowedBox (
          wx, wy, wz, rbase, nsegs);
 
-      RenderProps.setPointStyle (mech, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (mech, Renderer.PointStyle.SPHERE);
       RenderProps.setPointRadius (mech, 0.02);
       RenderProps.setPointColor (mech, Color.RED);
       

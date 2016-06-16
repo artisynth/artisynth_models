@@ -10,7 +10,8 @@ import maspack.matrix.AxisAngle;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
-import maspack.render.TextureProps;
+import maspack.render.Renderer;
+import maspack.render.ColorMapProps;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemMuscleModel;
@@ -94,14 +95,14 @@ public class AirwaySkinDemo extends StaticJawHyoidTongue {
          airwaySkin = new AirwaySkin(mesh);
          
          RenderProps props = airwaySkin.getRenderProps ();
-         props.setFaceStyle(RenderProps.Faces.FRONT_AND_BACK);
+         props.setFaceStyle(Renderer.FaceStyle.FRONT_AND_BACK);
          props.setFaceColor (Color.WHITE);
-         props.setShading(RenderProps.Shading.GOURARD);
-         TextureProps tprops = new TextureProps();
+         props.setShading(Renderer.Shading.SMOOTH);
+         ColorMapProps tprops = new ColorMapProps();
          tprops.setFileName(textureFilename);
          tprops.setEnabled(true);
-         tprops.setMode(TextureProps.Mode.MODULATE);
-         props.setTextureProps(tprops);
+         tprops.setColorMixing(Renderer.ColorMixing.MODULATE);
+         props.setColorMap (tprops);
          
       }
       catch (IOException e) {

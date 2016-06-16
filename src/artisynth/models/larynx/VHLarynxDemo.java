@@ -16,13 +16,14 @@ import maspack.matrix.AxisAngle;
 import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
-import maspack.render.GLClipPlane;
-import maspack.render.GLGridResolution;
-import maspack.render.GLViewer;
-import maspack.render.GLViewer.DraggerType;
+import maspack.render.GL.GLClipPlane;
+import maspack.render.GL.GLGridResolution;
+import maspack.render.GL.GLViewer;
+import maspack.render.Dragger3d.DraggerType;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.driver.Main;
 import maspack.matrix.AxisAlignedRotation;
 import artisynth.core.driver.ViewerManager;
@@ -325,16 +326,16 @@ public class VHLarynxDemo extends ModelTemplate {
       //###################################################################
       
       /*
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Thyrohyoid_membrane_L"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Thyrohyoid_membrane_R"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Cricothyroid_ligament_median_L"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Cricothyroid_ligament_median_R"), RenderProps.Faces.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Thyrohyoid_membrane_L"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Thyrohyoid_membrane_R"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Cricothyroid_ligament_median_L"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Cricothyroid_ligament_median_R"), Renderer.FaceStyle.FRONT);
       
       
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Digastric_L_tendon"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Digastric_R_tendon"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Omohyoid_L_tendon"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Omohyoid_R_tendon"), RenderProps.Faces.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Digastric_L_tendon"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Digastric_R_tendon"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Omohyoid_L_tendon"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Omohyoid_R_tendon"), Renderer.FaceStyle.FRONT);
       */
       
       //myMechMod.scaleDistance(1/1000d);
@@ -362,7 +363,7 @@ public class VHLarynxDemo extends ModelTemplate {
 	 ctJoint.setAxisLength(0.4 * (pmax.x - pmin.x));
 	 
          if (ctJoint != null) {
-            RenderProps.setLineSlices(ctJoint, 12);
+            //RenderProps.setLineSlices(ctJoint, 12);
             RenderProps.setLineColor(ctJoint, Color.ORANGE);
             RenderProps.setLineRadius(ctJoint, 0.6);
          }
@@ -397,7 +398,7 @@ public class VHLarynxDemo extends ModelTemplate {
 	 
 	 RenderProps pp = taJoint.getRenderProps();
 	      if (taJoint != null) {
-		 pp.setLineSlices(12);
+		 //pp.setLineSlices(12);
 		 pp.setLineColor(Color.ORANGE);
 		 pp.setLineRadius(0.6);
 	      }
@@ -423,7 +424,7 @@ public class VHLarynxDemo extends ModelTemplate {
 	 
 	 RenderProps pp = taJoint.getRenderProps();
 	      if (taJoint != null) {
-		 pp.setLineSlices(12);
+		 //pp.setLineSlices(12);
 		 pp.setLineColor(Color.ORANGE);
 		 pp.setLineRadius(0.6);
 	      }
@@ -505,7 +506,7 @@ public class VHLarynxDemo extends ModelTemplate {
 		       marker.setFrame(cricoid);
 		       marker.setLocation(p_proj);
 		       if(drawAttachedNodes) {
-		  		RenderProps.setPointStyle (marker, RenderProps.PointStyle.SPHERE);
+		  		RenderProps.setPointStyle (marker, Renderer.PointStyle.SPHERE);
 		  		RenderProps.setPointRadius (marker, pointRadius*1.5);
 		  		RenderProps.setPointColor (marker, Color.BLUE);
 		       }
@@ -562,8 +563,8 @@ public class VHLarynxDemo extends ModelTemplate {
 	    }
 	    // Set rendering
 	    RenderProps.setFaceColor(body_down, new Color(238, 221, 130));
-	    RenderProps.setShading (body_down, RenderProps.Shading.FLAT);
-	    RenderProps.setFaceStyle (body_down, RenderProps.Faces.FRONT_AND_BACK);
+	    RenderProps.setShading (body_down, Renderer.Shading.FLAT);
+	    RenderProps.setFaceStyle (body_down, Renderer.FaceStyle.FRONT_AND_BACK);
 	    
 	    
 	    count = 0;
@@ -575,7 +576,7 @@ public class VHLarynxDemo extends ModelTemplate {
 		  marker.setLocation(v.getWorldPoint());
 		  myMechMod.addFrameMarker(marker);
 		  if(drawAttachedNodes) {
-	  		RenderProps.setPointStyle (marker, RenderProps.PointStyle.SPHERE);
+	  		RenderProps.setPointStyle (marker, Renderer.PointStyle.SPHERE);
 	  		RenderProps.setPointRadius (marker, pointRadius*1.5);
 	  		RenderProps.setPointColor (marker, Color.BLUE);
 		  }
@@ -684,7 +685,7 @@ public class VHLarynxDemo extends ModelTemplate {
    //               marker.setFrame(cricoid);
    //               marker.setLocation(p_proj);
    //               if(drawAttachedNodes) {
-   //                  RenderProps.setPointStyle (marker, RenderProps.PointStyle.SPHERE);
+   //                  RenderProps.setPointStyle (marker, Renderer.PointStyle.SPHERE);
    //                  RenderProps.setPointRadius (marker, pointRadius*1.5);
    //                  RenderProps.setPointColor (marker, Color.BLUE);
    //               }
@@ -720,7 +721,7 @@ public class VHLarynxDemo extends ModelTemplate {
    //            nLoc.scaledAdd(scaleFactor, toCentre);
    //            marker.setLocation(nLoc);
    //            if(drawAttachedNodes) {
-   //               RenderProps.setPointStyle (marker, RenderProps.PointStyle.SPHERE);
+   //               RenderProps.setPointStyle (marker, Renderer.PointStyle.SPHERE);
    //               RenderProps.setPointRadius (marker, pointRadius*1.5);
    //               RenderProps.setPointColor (marker, Color.GRAY);
    //            }
@@ -816,7 +817,7 @@ public class VHLarynxDemo extends ModelTemplate {
 	    for(int i=startingNodeIdx;i<=endingNodeIdx;i++) {
 	       myMechMod.attachPoint (femMuscle.getNode(i), body);
 	       if(drawAttachedNodes) {
-  		RenderProps.setPointStyle (femMuscle.getNode(i), RenderProps.PointStyle.SPHERE);
+  		RenderProps.setPointStyle (femMuscle.getNode(i), Renderer.PointStyle.SPHERE);
   		RenderProps.setPointRadius (femMuscle.getNode(i), pointRadius*1.5);
   		RenderProps.setPointColor (femMuscle.getNode(i), Color.BLUE);
   	     }
@@ -825,7 +826,7 @@ public class VHLarynxDemo extends ModelTemplate {
 	    for(int i=startingNodeIdx;i<=endingNodeIdx;i++) {
 	       femMuscle.getNode(i).setDynamic(false);
 	       if(drawAttachedNodes) {
-  		RenderProps.setPointStyle (femMuscle.getNode(i), RenderProps.PointStyle.SPHERE);
+  		RenderProps.setPointStyle (femMuscle.getNode(i), Renderer.PointStyle.SPHERE);
   		RenderProps.setPointRadius (femMuscle.getNode(i), pointRadius*1.5);
   		RenderProps.setPointColor (femMuscle.getNode(i), Color.GRAY);
   	     }

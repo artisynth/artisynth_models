@@ -7,12 +7,13 @@ import java.io.IOException;
 import maspack.matrix.AxisAngle;
 import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
-import maspack.render.GLClipPlane;
-import maspack.render.GLGridResolution;
-import maspack.render.GLViewer;
-import maspack.render.GLViewer.DraggerType;
+import maspack.render.GL.GLClipPlane;
+import maspack.render.GL.GLGridResolution;
+import maspack.render.GL.GLViewer;
+import maspack.render.Dragger3d.DraggerType;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
+import maspack.render.Renderer;
+import maspack.render.Renderer.LineStyle;
 import artisynth.core.driver.Main;
 import maspack.matrix.AxisAlignedRotation;
 import artisynth.core.driver.ViewerManager;
@@ -122,7 +123,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       
       Particle p = new Particle(1,100,-150.5,-229);
       p.setName("Hyoid_anterior");
-      RenderProps.setPointStyle (p, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (p, Renderer.PointStyle.SPHERE);
       RenderProps.setPointRadius (p, pointRadius*1.5);
       RenderProps.setPointColor (p, Color.CYAN);
       myMechMod.addParticle(p);
@@ -150,7 +151,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
 	 
 	 RenderProps pp = ctJoint.getRenderProps();
 	      if (ctJoint != null) {
-		 pp.setLineSlices(12);
+		 //pp.setLineSlices(12);
 		 pp.setLineColor(Color.ORANGE);
 		 pp.setLineRadius(0.6);
 	      }
@@ -180,7 +181,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
 	 
 	 RenderProps pp = taJoint.getRenderProps();
 	      if (taJoint != null) {
-		 pp.setLineSlices(12);
+		 //pp.setLineSlices(12);
 		 pp.setLineColor(Color.ORANGE);
 		 pp.setLineRadius(0.6);
 	      }
@@ -206,7 +207,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
 	 
 	 RenderProps pp = taJoint.getRenderProps();
 	      if (taJoint != null) {
-		 pp.setLineSlices(12);
+		 //pp.setLineSlices(12);
 		 pp.setLineColor(Color.ORANGE);
 		 pp.setLineRadius(0.6);
 	      }
@@ -236,16 +237,16 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
          super.myMechMod.rigidBodies ().get ("bone").setDynamic (false);
       
       /*
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Thyrohyoid_membrane_L"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Thyrohyoid_membrane_R"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Cricothyroid_ligament_L"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Cricothyroid_ligament_R"), RenderProps.Faces.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Thyrohyoid_membrane_L"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Thyrohyoid_membrane_R"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Cricothyroid_ligament_L"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Cricothyroid_ligament_R"), Renderer.FaceStyle.FRONT);
       
       
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Digastric_L_tendon"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Digastric_R_tendon"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Omohyoid_L_tendon"), RenderProps.Faces.FRONT);
-      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Omohyoid_R_tendon"), RenderProps.Faces.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Digastric_L_tendon"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Digastric_R_tendon"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Omohyoid_L_tendon"), Renderer.FaceStyle.FRONT);
+      RenderProps.setFaceStyle ((FemMuscleModel)super.myMechMod.models().get("Omohyoid_R_tendon"), Renderer.FaceStyle.FRONT);
       */
       
       if(super.myMechMod.rigidBodies ().get ("Skin")!=null) {
@@ -322,7 +323,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
             femMuscle.addNode(node);
             
             RenderProps.setPointRadius (node, pointRadius);
-            RenderProps.setPointStyle (node, RenderProps.PointStyle.SPHERE);
+            RenderProps.setPointStyle (node, Renderer.PointStyle.SPHERE);
             RenderProps.setPointColor (node, Color.BLUE);
             
             System.out.println("Node: " + x + ", " + y + ", " + z);
@@ -350,7 +351,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
             System.out.println("FrameMarker: " + x + ", " + y + ", " + z);
             
             RenderProps.setPointRadius (node, pointRadius);
-            RenderProps.setPointStyle (node, RenderProps.PointStyle.SPHERE);
+            RenderProps.setPointStyle (node, Renderer.PointStyle.SPHERE);
             RenderProps.setPointColor (node, Color.GREEN);
          }
          
@@ -436,7 +437,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       System.out.println("centreP: " + centreP.x + "," + centreP.y + "," + centreP.z);
       grid.transformGeometry(new RigidTransform3d(centreP.x,centreP.y+0.5,centreP.z,1,0,0,Math.toRadians(-35)));
       RenderProps.setPointRadius (grid, 0.2*pointRadius);
-      RenderProps.setPointStyle (grid, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (grid, Renderer.PointStyle.SPHERE);
       myMechMod.addModel(grid);
       PointList<FemNode3d> grid_nodes = grid.getNodes();
 
@@ -493,7 +494,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
 	 }
       }
       RenderProps.setPointRadius (Hyoepiglottic_ligament, 0.2*pointRadius);
-      RenderProps.setPointStyle (Hyoepiglottic_ligament, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (Hyoepiglottic_ligament, Renderer.PointStyle.SPHERE);
       myMechMod.addModel(Hyoepiglottic_ligament);
       //####################################################
       */
@@ -515,7 +516,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       System.out.println("centreP: " + centreP.x + "," + centreP.y + "," + centreP.z);
       grid.transformGeometry(new RigidTransform3d(centreP.x,centreP.y+1.2,centreP.z,1,0,0,Math.toRadians(15)));
       RenderProps.setPointRadius (grid, 0.2*pointRadius);
-      RenderProps.setPointStyle (grid, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (grid, Renderer.PointStyle.SPHERE);
       myMechMod.addModel(grid);
       PointList<FemNode3d> grid_nodes = grid.getNodes();
       
@@ -572,7 +573,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
 	 }
       }
       RenderProps.setPointRadius (Thyroepiglottic_ligament, 0.2*pointRadius);
-      RenderProps.setPointStyle (Thyroepiglottic_ligament, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (Thyroepiglottic_ligament, Renderer.PointStyle.SPHERE);
       myMechMod.addModel(Thyroepiglottic_ligament);
       //####################################################
       */
@@ -695,7 +696,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       }
 
       RenderProps.setPointRadius (adipose, pointRadius);
-      RenderProps.setPointStyle (adipose, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (adipose, Renderer.PointStyle.SPHERE);
       myMechMod.addModel(adipose);
       */
       
@@ -705,7 +706,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       spring.addPoint(((FemMuscleModel)myMechMod.models().get("Epiglottis")).getNode(16));
       spring.setMuscleType(MuscleType.Linear);
       spring.setMaxForce(1);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*3);
       RenderProps.setLineColor (spring, Color.RED);
       myMechMod.addMultiPointSpring(spring);
@@ -714,7 +715,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       spring.addPoint(((FemMuscleModel)myMechMod.models().get("Epiglottis")).getNode(14));
       spring.setMuscleType(MuscleType.Linear);
       spring.setMaxForce(1);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*3);
       RenderProps.setLineColor (spring, Color.RED);
       myMechMod.addMultiPointSpring(spring);
@@ -728,7 +729,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       adipose.transformGeometry(new RigidTransform3d(100,135,235));
       adipose.transformGeometry(OverallTrans);
       RenderProps.setPointRadius (adipose, pointRadius);
-      RenderProps.setPointStyle (adipose, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (adipose, Renderer.PointStyle.SPHERE);
       RenderProps.setPointColor (adipose.getNodes(), Color.WHITE);
       myMechMod.addModel (adipose);
       */
@@ -739,7 +740,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       for(int n: nodesAttach){
 	 FemNode3d nod = adipose.getNode(n);
 	 myMechMod.attachPoint (nod,hyoid);
-	 RenderProps.setPointStyle (nod, RenderProps.PointStyle.SPHERE);
+	 RenderProps.setPointStyle (nod, Renderer.PointStyle.SPHERE);
 	 RenderProps.setPointRadius (nod, pointRadius*1.5);
 	 RenderProps.setPointColor (nod, Color.BLUE);
       }

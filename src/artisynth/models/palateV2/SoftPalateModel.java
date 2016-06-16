@@ -10,9 +10,9 @@ import javax.swing.JFrame;
 import maspack.geometry.PolygonalMesh;
 import maspack.matrix.*;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.*;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
@@ -236,13 +236,13 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
       softPalate.setSurfaceRendering   (SurfaceRender.Shaded);
       softPalate.setElementWidgetSize  (1.0);
       RenderProps.setFaceColor  (softPalate, new Color(153, 153, 255));	// 153,153,255
-      RenderProps.setFaceStyle  (softPalate, Faces.NONE);
+      RenderProps.setFaceStyle  (softPalate, FaceStyle.NONE);
       RenderProps.setDrawEdges  (softPalate, true);
       RenderProps.setPointStyle (softPalate, PointStyle.SPHERE);
       RenderProps.setLineWidth  (softPalate, 1);
       RenderProps.setPointRadius(softPalate, 0.1);
       RenderProps.setPointColor (softPalate, Color.BLUE);
-      RenderProps.setLineStyle  (softPalate, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle  (softPalate, LineStyle.SPINDLE);
       RenderProps.setLineColor  (softPalate, Color.LIGHT_GRAY);
       RenderProps.setLineRadius (softPalate, 0.8);
 
@@ -333,7 +333,7 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
 
       pharWall.getRenderProps().setDrawEdges(false);
       pharWall.getRenderProps().setLineWidth(1);
-      pharWall.getRenderProps().setFaceStyle(maspack.render.RenderProps.Faces.FRONT_AND_BACK);
+      pharWall.getRenderProps().setFaceStyle(maspack.render.Renderer.FaceStyle.FRONT_AND_BACK);
       pharWall.getRenderProps().setFaceColor(java.awt.Color.blue);
 
       myMechModel.addRigidBody(pharWall);

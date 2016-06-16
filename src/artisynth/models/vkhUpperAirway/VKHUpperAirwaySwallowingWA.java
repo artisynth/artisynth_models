@@ -12,12 +12,13 @@ import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
-import maspack.render.GLClipPlane;
-import maspack.render.GLGridResolution;
-import maspack.render.GLViewer;
-import maspack.render.GLViewer.DraggerType;
+import maspack.render.GL.GLClipPlane;
+import maspack.render.GL.GLGridResolution;
+import maspack.render.GL.GLViewer;
+import maspack.render.Dragger3d.DraggerType;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
+import maspack.render.Renderer;
+import maspack.render.Renderer.LineStyle;
 import maspack.widgets.DoubleFieldSlider;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemElement3d;
@@ -170,7 +171,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
          mat.setOptLength(spring.getLength());
          mat.setMaxForce (10);
          spring.setMaterial (mat);
-         RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+         RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
          RenderProps.setLineRadius (spring, lineRadius*1);
          RenderProps.setLineColor (spring, Color.WHITE);
          spring.setExcitationColor(Color.RED);
@@ -193,7 +194,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
       mat.setOptLength(spring.getLength());
       mat.setMaxForce (10);
       spring.setMaterial (mat);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*1);
       myMechMod.addAxialSpring(spring);
       
@@ -220,7 +221,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
       mat.setOptLength(spring.getLength());
       mat.setMaxForce (10);
       spring.setMaterial (mat);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*2);
       myMechMod.addAxialSpring(spring);
       
@@ -232,7 +233,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
       mat.setOptLength(spring.getLength());
       mat.setMaxForce (10);
       spring.setMaterial (mat);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*2);
       myMechMod.addAxialSpring(spring);
       
@@ -244,7 +245,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
       mat.setOptLength(spring.getLength());
       mat.setMaxForce (10);
       spring.setMaterial (mat);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*2);
       myMechMod.addAxialSpring(spring);
 
@@ -256,7 +257,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
       mat.setOptLength(spring.getLength());
       mat.setMaxForce (10);
       spring.setMaterial (mat);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*2);
       myMechMod.addAxialSpring(spring);
       
@@ -271,7 +272,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
       mat.setOptLength(spring.getLength());
       mat.setMaxForce (10);
       spring.setMaterial (mat);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*3);
       myMechMod.addAxialSpring(spring);
       
@@ -283,7 +284,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
       mat.setOptLength(spring.getLength());
       mat.setMaxForce (10);
       spring.setMaterial (mat);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*3);
       myMechMod.addAxialSpring(spring);
       */
@@ -298,7 +299,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
       mat.setOptLength(spring.getLength());
       mat.setMaxForce (10);
       spring.setMaterial (mat);
-      RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+      RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*3);
       myMechMod.addAxialSpring(spring);
       */
@@ -323,8 +324,8 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
             }
             fem.setSurfaceRendering (SurfaceRender.None);
          }
-         RenderProps.setFaceStyle (fem, RenderProps.Faces.FRONT);
-         RenderProps.setShading (fem, RenderProps.Shading.FLAT);
+         RenderProps.setFaceStyle (fem, Renderer.FaceStyle.FRONT);
+         RenderProps.setShading (fem, Renderer.Shading.FLAT);
          
          myMechMod.addModel (fem);
          

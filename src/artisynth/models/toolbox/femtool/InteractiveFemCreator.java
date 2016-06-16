@@ -21,7 +21,7 @@ import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.AnsysWriter;
 import artisynth.core.femmodels.FemModel3d;

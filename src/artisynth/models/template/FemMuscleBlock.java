@@ -8,7 +8,8 @@ import maspack.geometry.PolygonalMesh;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
+import maspack.render.Renderer;
+import maspack.render.Renderer.LineStyle;
 import maspack.widgets.BooleanSelector;
 import maspack.widgets.DoubleFieldSlider;
 import maspack.widgets.PropertyWidget;
@@ -68,7 +69,7 @@ public class FemMuscleBlock extends RootModel {
       fem1 = new FemMuscleModel ("fem1");
       FemFactory.createHexGrid(fem1, 6, 1, 1, 10, 2, 2);
       fem1.transformGeometry(new RigidTransform3d(4,0,0));
-      RenderProps.setPointStyle (fem1, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (fem1, Renderer.PointStyle.SPHERE);
       RenderProps.setPointRadius(fem1, 0.03);
       RenderProps.setLineWidth(fem1, 2);
       fem1.setDensity(1);
@@ -113,7 +114,7 @@ public class FemMuscleBlock extends RootModel {
 	    fibre.setConstantMuscleMaterial(1);
 	    fibre.setFirstPoint(fem1.getNode(j*11+i));
 	    fibre.setSecondPoint(fem1.getNode(j*11+i+1));
-	    RenderProps.setLineStyle(fibre, LineStyle.ELLIPSOID);
+	    RenderProps.setLineStyle(fibre, LineStyle.SPINDLE);
 	    RenderProps.setLineColor(fibre, Color.BLUE);
 	    bundle1.addFibre (fibre);
 	 }
@@ -122,7 +123,7 @@ public class FemMuscleBlock extends RootModel {
       
       RenderableComponentList particles = myMechMod.particles();
       RenderProps.setPointColor (particles, Color.GREEN);
-      RenderProps.setPointStyle (particles, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (particles, Renderer.PointStyle.SPHERE);
       RenderProps.setPointRadius(particles, 0.03);
       
       Particle p1 = new Particle(1,-2,0,0);

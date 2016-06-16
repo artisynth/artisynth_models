@@ -7,8 +7,6 @@ import java.util.Deque;
 import java.util.Map;
 import java.util.List;
 
-import javax.media.opengl.GL2;
-
 import maspack.geometry.GeometryTransformer;
 import maspack.matrix.AffineTransform3dBase;
 import maspack.matrix.Matrix;
@@ -22,7 +20,7 @@ import maspack.matrix.VectorNd;
 import maspack.matrix.VectorNi;
 import maspack.matrix.PolarDecomposition3d;
 import maspack.properties.PropertyList;
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderProps;
 import maspack.render.Renderable;
 import maspack.util.*;
@@ -130,8 +128,8 @@ public class FoodBolus extends RenderableComponentBase
       RenderProps props = new RenderProps();
       props.setFaceColor (new Color(0.5f, 0.5f, 0.5f));
       props.setAlpha (1.0f);
-      props.setShading(RenderProps.Shading.PHONG);
-      props.setPointSlices(30);
+      props.setShading(Renderer.Shading.SMOOTH);
+      //props.setPointSlices(30);
       return props;
     }
 
@@ -370,22 +368,21 @@ public class FoodBolus extends RenderableComponentBase
     }
 	
    //TODO - project colliding point onto bite plane and draw sphere normal to bite plane
-   public void drawSolid(GLRenderer renderer, RenderProps props)
+   public void drawSolid(Renderer renderer, RenderProps props)
     {
       float[] bolusCentre = collidingPt.myRenderCoords.clone();
       bolusCentre[2] += myDiameter/2.0;
       props.setPointRadius(myDiameter/2.0);
 //      props.drawSphere(renderer, bolusCentre);
-      renderer.drawSphere (props, bolusCentre);
+      renderer.drawSphere (bolusCentre, props.getPointRadius());
     }
 	
    //TODO - make Bolus appear to be squished - for now just render sphere
-   public void render (GLRenderer renderer, int flags)
-    { renderer.setMaterialAndShading (
-          myRenderProps, myRenderProps.getLineMaterial(), isSelected());       
+   public void render (Renderer renderer, int flags)
+   { renderer.setPropsShading (myRenderProps);
+      renderer.setLineColoring (myRenderProps, isSelected());       
       if (myRenderProps.isVisible())
 	 drawSolid (renderer, myRenderProps);
-      renderer.restoreShading (myRenderProps);
     }
 
    public void scaleDistance (double s)

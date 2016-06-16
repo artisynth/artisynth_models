@@ -2,16 +2,14 @@ package artisynth.models.dynjaw;
 
 import java.util.LinkedList;
 
-import javax.media.opengl.GL2;
-
 import maspack.matrix.AxisAngle;
 import maspack.matrix.Matrix3d;
 import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
-import maspack.render.GLRenderable;
-import maspack.render.GLRenderer;
+import maspack.render.IsRenderable;
+import maspack.render.Renderer;
 import maspack.render.RenderList;
 import maspack.render.RenderProps;
 import maspack.spatialmotion.Twist;
@@ -208,7 +206,7 @@ public class OrthoSpring extends FrameSpring
     {
       int code = 0;
       if (myRenderProps != null && myRenderProps.getAlpha() != 1)
-       { code |= TRANSLUCENT;
+       { code |= TRANSPARENT;
        }
       return code;
     }
@@ -221,13 +219,11 @@ public class OrthoSpring extends FrameSpring
       return -1;
    }
 
-   public void render (GLRenderer renderer, int flags)
+   public void render (Renderer renderer, int flags)
     { 
-      renderer.setLineWidth (myRenderProps.getLineWidth());
-      Frame.drawAxes (renderer, myRenderXCW, 1f, isSelected());
-      Frame.drawAxes (renderer, myRenderXDW, 1f, isSelected());
-      renderer.setLineWidth (1);
-    
+       int width = myRenderProps.getLineWidth();
+       renderer.drawAxes (myRenderXCW, 1f, width, isSelected());
+       renderer.drawAxes (myRenderXDW, 1f, width, isSelected());
     }
 
    public void getSelection (LinkedList<Object> list, int qid) {

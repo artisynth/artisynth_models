@@ -8,6 +8,7 @@ import maspack.geometry.PolygonalMesh;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
+import maspack.render.Renderer;
 import maspack.widgets.BooleanSelector;
 import maspack.widgets.DoubleFieldSlider;
 import maspack.widgets.PropertyWidget;
@@ -62,7 +63,7 @@ public class testInverseX extends RootModel {
       fem1 = new FemMuscleModel ("fem1");
       FemFactory.createHexGrid(fem1, 2, 0.5, 0.5, 5, 2, 2);
       fem1.transformGeometry(new RigidTransform3d(2,0,0.5));
-      RenderProps.setPointStyle (fem1, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (fem1, Renderer.PointStyle.SPHERE);
       RenderProps.setPointRadius(fem1, 0.03);
       RenderProps.setLineWidth(fem1, 2);
       fem1.setDensity(1);
@@ -71,7 +72,7 @@ public class testInverseX extends RootModel {
       fem2 = new FemMuscleModel ("fem2");
       FemFactory.createHexGrid(fem2, 2, 0.5, 0.5, 5, 2, 2);
       fem2.transformGeometry(new RigidTransform3d(2,0,-0.5));
-      RenderProps.setPointStyle (fem2, RenderProps.PointStyle.SPHERE);
+      RenderProps.setPointStyle (fem2, Renderer.PointStyle.SPHERE);
       RenderProps.setPointRadius(fem2, 0.03);
       RenderProps.setLineWidth(fem2, 2);
       fem2.setDensity(1);

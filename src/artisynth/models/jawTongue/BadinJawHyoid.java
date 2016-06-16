@@ -20,8 +20,8 @@ import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
 import maspack.matrix.VectorNd;
 import maspack.properties.PropertyList;
-import maspack.render.GLViewer;
-import maspack.render.GLViewerFrame;
+import maspack.render.GL.GLViewer;
+import maspack.render.GL.GLViewerFrame;
 import maspack.render.RenderProps;
 import maspack.render.Renderable;
 import maspack.matrix.AxisAlignedRotation;
@@ -1256,7 +1256,7 @@ public class BadinJawHyoid extends JawLarynxDemo {
             body.setMesh (mesh, fileName);
             if (mesh.getTextureCoords() == null || 
                 mesh.getTextureCoords().size() == 0) {
-               RenderProps.setTextureEnabled (body, false);
+               RenderProps.setColorMapEnabled (body, false);
             }
          }
       }

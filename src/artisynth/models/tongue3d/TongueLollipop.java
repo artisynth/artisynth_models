@@ -14,7 +14,7 @@ import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
 import maspack.render.RenderProps;
 import maspack.render.Renderable;
-import maspack.render.RenderProps.Shading;
+import maspack.render.Renderer.Shading;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
 import artisynth.core.femmodels.MuscleBundle;
 import artisynth.core.materials.LinearMaterial;
@@ -94,7 +94,7 @@ public class TongueLollipop extends FemMuscleTongueDemo {
    public void setupAdditionalRenderProps() {
       if (lolliHead != null) {
          RenderProps.setFaceColor(lolliHead, Color.GREEN);
-         RenderProps.setShading(lolliHead, Shading.GOURARD);
+         RenderProps.setShading(lolliHead, Shading.SMOOTH);
          RenderProps.setAlpha(lolliHead, 0.9);
       }
       if (lolliStick != null) {

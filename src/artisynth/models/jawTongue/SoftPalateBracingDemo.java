@@ -9,7 +9,7 @@ import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.workspace.DriverInterface;
 import artisynth.models.palateV2.SoftPalateModel;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
+import maspack.render.Renderer.LineStyle;
 
 public class SoftPalateBracingDemo extends TongueBracingDemo {
 

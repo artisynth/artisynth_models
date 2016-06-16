@@ -27,8 +27,9 @@ import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
 import maspack.util.InternalErrorException;
 import maspack.util.ReaderTokenizer;
 import maspack.util.Logger.LogLevel;
@@ -789,7 +790,7 @@ public class ModelTemplate extends RootModel {
                   ms.scanDamping(rtok);
                } else if (rtok.sval.matches("-stiffness")) {
                   ms.scanStiffness(rtok);
-               } else if (rtok.sval.matches("-restLength")) {
+               } else if (rtok.sval.matches("GLRendererstLength")) {
                   ms.scanRestLength(rtok);
                } else {
                   rtok.pushBack();
@@ -1460,9 +1461,9 @@ public class ModelTemplate extends RootModel {
 
       // Rendering
       RenderProps.setFaceColor(body, color);
-      RenderProps.setShading(body, RenderProps.Shading.FLAT);
-      // RenderProps.setShading (body, RenderProps.Shading.GOURARD);
-      RenderProps.setFaceStyle(body, RenderProps.Faces.FRONT_AND_BACK);
+      RenderProps.setShading(body, Renderer.Shading.FLAT);
+      // RenderProps.setShading (body, Renderer.Shading.SMOOTH);
+      RenderProps.setFaceStyle(body, Renderer.FaceStyle.FRONT_AND_BACK);
 
       myMechMod.addRigidBody(body);
 
@@ -1641,9 +1642,9 @@ public class ModelTemplate extends RootModel {
          }
          femMuscle.setSurfaceRendering(SurfaceRender.None);
       }
-      RenderProps.setFaceStyle(femMuscle, RenderProps.Faces.FRONT);
-      RenderProps.setShading(femMuscle, RenderProps.Shading.FLAT);
-      // RenderProps.setShading (femMuscle, RenderProps.Shading.GOURARD);
+      RenderProps.setFaceStyle(femMuscle, Renderer.FaceStyle.FRONT);
+      RenderProps.setShading(femMuscle, Renderer.Shading.FLAT);
+      // RenderProps.setShading (femMuscle, Renderer.Shading.SMOOTH);
       RenderProps.setFaceColor(femMuscle, color);
       RenderProps.setLineWidth(femMuscle, lineWidth);
       RenderProps.setLineColor(femMuscle, Color.PINK);
@@ -1651,9 +1652,9 @@ public class ModelTemplate extends RootModel {
       RenderProps.setPointRadius(femMuscle, pointRadius);
       RenderProps.setPointColor(femMuscle, Color.WHITE);
       if (!drawNodes) {
-         RenderProps.setPointStyle(femMuscle, RenderProps.PointStyle.POINT);
+         RenderProps.setPointStyle(femMuscle, Renderer.PointStyle.POINT);
       } else {
-         RenderProps.setPointStyle(femMuscle, RenderProps.PointStyle.SPHERE);
+         RenderProps.setPointStyle(femMuscle, Renderer.PointStyle.SPHERE);
       }
 
       // Apply transform
@@ -1814,7 +1815,7 @@ public class ModelTemplate extends RootModel {
             bundle.getFibres().clear();
             // bundle.setFibresActive(false);
          } else {
-            RenderProps.setLineStyle(bundle, LineStyle.ELLIPSOID);
+            RenderProps.setLineStyle(bundle, LineStyle.SPINDLE);
             RenderProps.setLineRadius(bundle, lineRadius);
          }
          if (drawBundleExcitation) {
@@ -1915,7 +1916,7 @@ public class ModelTemplate extends RootModel {
                      bundle.getFibres().clear();
                      // bundle.setFibresActive(false);
                   } else {
-                     RenderProps.setLineStyle(bundle, LineStyle.ELLIPSOID);
+                     RenderProps.setLineStyle(bundle, LineStyle.SPINDLE);
                      RenderProps.setLineRadius(bundle, lineRadius);
                   }
                   if (drawBundleExcitation) {
@@ -1938,7 +1939,7 @@ public class ModelTemplate extends RootModel {
                         && drawAttachedNodes) {
                         RenderProps.setPointRadius(cur, pointRadius);
                         RenderProps.setPointStyle(
-                           cur, RenderProps.PointStyle.SPHERE);
+                           cur, Renderer.PointStyle.SPHERE);
                         RenderProps.setPointColor(cur, Color.GREEN);
                      }
                   }
@@ -1999,7 +2000,7 @@ public class ModelTemplate extends RootModel {
                      bundle.getFibres().clear();
                      // bundle.setFibresActive(false);
                   } else {
-                     RenderProps.setLineStyle(bundle, LineStyle.ELLIPSOID);
+                     RenderProps.setLineStyle(bundle, LineStyle.SPINDLE);
                      RenderProps.setLineRadius(bundle, lineRadius);
                   }
                   if (drawBundleExcitation) {
@@ -2022,7 +2023,7 @@ public class ModelTemplate extends RootModel {
                         && drawAttachedNodes) {
                         RenderProps.setPointRadius(cur, pointRadius);
                         RenderProps.setPointStyle(
-                           cur, RenderProps.PointStyle.SPHERE);
+                           cur, Renderer.PointStyle.SPHERE);
                         RenderProps.setPointColor(cur, Color.GREEN);
                      }
                   }
@@ -2078,7 +2079,7 @@ public class ModelTemplate extends RootModel {
                bundle.getFibres().clear();
                // bundle.setFibresActive(false);
             } else {
-               RenderProps.setLineStyle(bundle, LineStyle.ELLIPSOID);
+               RenderProps.setLineStyle(bundle, LineStyle.SPINDLE);
                RenderProps.setLineRadius(bundle, lineRadius);
             }
             if (drawBundleExcitation) {
@@ -2212,7 +2213,7 @@ public class ModelTemplate extends RootModel {
                n.setDynamic(false);
                if (drawAttachedNodes != drawNodes && drawAttachedNodes) {
                   RenderProps.setPointStyle(
-                     muscleModel.getNode(i), RenderProps.PointStyle.SPHERE);
+                     muscleModel.getNode(i), Renderer.PointStyle.SPHERE);
                   RenderProps.setPointRadius(
                      muscleModel.getNode(i), pointRadius * 1.5);
                   RenderProps.setPointColor(
@@ -2233,7 +2234,7 @@ public class ModelTemplate extends RootModel {
                myMechMod.attachPoint(n, bi);
                if (drawAttachedNodes != drawNodes && drawAttachedNodes) {
                   RenderProps.setPointStyle(
-                     muscleModel.getNode(i), RenderProps.PointStyle.SPHERE);
+                     muscleModel.getNode(i), Renderer.PointStyle.SPHERE);
                   RenderProps.setPointRadius(
                      muscleModel.getNode(i), pointRadius * 1.5);
                   RenderProps.setPointColor(muscleModel.getNode(i), Color.BLUE);
@@ -2275,7 +2276,7 @@ public class ModelTemplate extends RootModel {
                n.setDynamic(false);
                if (drawAttachedNodes != drawNodes && drawAttachedNodes) {
                   RenderProps.setPointStyle(
-                     muscleModel.getNode(i), RenderProps.PointStyle.SPHERE);
+                     muscleModel.getNode(i), Renderer.PointStyle.SPHERE);
                   RenderProps.setPointRadius(
                      muscleModel.getNode(i), pointRadius * 1.5);
                   RenderProps.setPointColor(
@@ -2320,7 +2321,7 @@ public class ModelTemplate extends RootModel {
                } else if (drawAttachedNodes) {
                   RenderProps.setPointRadius(node, pointRadius);
                   RenderProps
-                  .setPointStyle(node, RenderProps.PointStyle.SPHERE);
+                  .setPointStyle(node, Renderer.PointStyle.SPHERE);
                   RenderProps.setPointColor(node, Color.GREEN);
                }
             }
@@ -2445,7 +2446,7 @@ public class ModelTemplate extends RootModel {
                } else if (drawAttachedNodes) {
                   RenderProps.setPointRadius(node, pointRadius);
                   RenderProps
-                  .setPointStyle(node, RenderProps.PointStyle.SPHERE);
+                  .setPointStyle(node, Renderer.PointStyle.SPHERE);
                   RenderProps.setPointColor(node, Color.GREEN);
                }
             }
@@ -2473,7 +2474,7 @@ public class ModelTemplate extends RootModel {
                // System.out.println("\t"+node.myNumber);
                if (drawAttachedNodes != drawNodes && drawAttachedNodes) {
                   RenderProps
-                  .setPointStyle(node, RenderProps.PointStyle.SPHERE);
+                  .setPointStyle(node, Renderer.PointStyle.SPHERE);
                   RenderProps.setPointColor(node, Color.BLUE);
                   RenderProps.setPointRadius(node, pointRadius * 1.5);
                }
@@ -2608,13 +2609,13 @@ public class ModelTemplate extends RootModel {
                         RenderProps.setPointRadius(
                            fem1.getNode(node1), pointRadius);
                         RenderProps.setPointStyle(
-                           fem1.getNode(node1), RenderProps.PointStyle.SPHERE);
+                           fem1.getNode(node1), Renderer.PointStyle.SPHERE);
                         RenderProps.setPointColor(
                            fem1.getNode(node1), Color.GREEN);
                         RenderProps.setPointRadius(
                            fem2.getNode(node2), pointRadius);
                         RenderProps.setPointStyle(
-                           fem2.getNode(node2), RenderProps.PointStyle.SPHERE);
+                           fem2.getNode(node2), Renderer.PointStyle.SPHERE);
                         RenderProps.setPointColor(
                            fem2.getNode(node2), Color.GREEN);
                      }
@@ -2683,7 +2684,7 @@ public class ModelTemplate extends RootModel {
                if (drawAttachedNodes != drawNodes && drawAttachedNodes) {
                   RenderProps.setPointRadius(marker, pointRadius);
                   RenderProps.setPointStyle(
-                     marker, RenderProps.PointStyle.SPHERE);
+                     marker, Renderer.PointStyle.SPHERE);
                   RenderProps.setPointColor(marker, Color.GREEN);
                }
 
@@ -2746,7 +2747,7 @@ public class ModelTemplate extends RootModel {
                if (drawAttachedNodes) {
                   RenderProps.setPointRadius(marker, pointRadius * 1.5);
                   RenderProps.setPointStyle(
-                     marker, RenderProps.PointStyle.SPHERE);
+                     marker, Renderer.PointStyle.SPHERE);
                   RenderProps.setPointColor(marker, Color.BLUE);
                }
 
@@ -2776,7 +2777,7 @@ public class ModelTemplate extends RootModel {
                if (drawAttachedNodes) {
                   RenderProps.setPointRadius(marker, pointRadius * 1.5);
                   RenderProps.setPointStyle(
-                     marker, RenderProps.PointStyle.SPHERE);
+                     marker, Renderer.PointStyle.SPHERE);
                   RenderProps.setPointColor(marker, Color.DARK_GRAY);
                }
 
@@ -2972,7 +2973,7 @@ public class ModelTemplate extends RootModel {
                         spring.setMaterial(mat);
 
                         // Set rendering
-                        RenderProps.setLineStyle(spring, LineStyle.ELLIPSOID);
+                        RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
                         RenderProps.setLineRadius(spring, lineRadius * 3);
                         if (drawBundleExcitation) {
                            RenderProps.setLineColor(spring, Color.WHITE);

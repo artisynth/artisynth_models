@@ -6,10 +6,10 @@ import java.io.File;
 import java.io.IOException;
 
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
+import maspack.render.Renderer.PointStyle;
 import maspack.util.PathFinder;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemModel;

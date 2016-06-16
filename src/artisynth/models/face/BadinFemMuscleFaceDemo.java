@@ -124,9 +124,10 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
       RigidBody image = new RigidBody("ctimage");
       image.setDynamic(false);
       image.setPose(pose);
-      image.setMesh(MeshFactory.createPlane(len, len), null);
-      RenderProps.setTextureFileName(image, imageFileName);
-      RenderProps.setTextureEnabled(image, true);
+      image.setMesh(
+         MeshFactory.createRectangle(len, len, /*textureCoords=*/true), null);
+      RenderProps.setColorMapFileName(image, imageFileName);
+      RenderProps.setColorMapEnabled(image, true);
       RenderProps.setFaceColor(image, Color.WHITE);
       mech.addRigidBody(image);
       mech.addFrameMarker (new FrameMarker(), image, new Point3d(len/2,-len/2,0));

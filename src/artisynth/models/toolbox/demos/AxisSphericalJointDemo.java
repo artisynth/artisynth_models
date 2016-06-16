@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import maspack.matrix.Point3d;
 import maspack.matrix.Vector3d;
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.mechmodels.Particle;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.modelbase.StepAdjustment;
@@ -104,7 +104,7 @@ public class AxisSphericalJointDemo extends SphericalJointDemo {
 
    // render a line for the computed axis and point for its estimated center
    @Override
-   public void render (GLRenderer renderer, int flags) {
+   public void render (Renderer renderer, int flags) {
       super.render (renderer, flags);
 
       Point3d p0 = new Point3d (computedAxis);
@@ -120,7 +120,7 @@ public class AxisSphericalJointDemo extends SphericalJointDemo {
          new float[] { (float)computedPoint.x, (float)computedPoint.y,
                       (float)computedPoint.z };
 
-      renderer.drawLine (rotAxisRenderProps, coords0, coords1, true, false);
+      renderer.drawLine (rotAxisRenderProps, coords0, coords1, null, true, false);
       renderer.drawPoint (rotCenterRenderProps, coords, false);
    }
 

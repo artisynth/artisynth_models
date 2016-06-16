@@ -14,7 +14,7 @@ import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.properties.Property;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
+import maspack.render.Renderer.LineStyle;
 import maspack.util.ReaderTokenizer;
 import maspack.widgets.LabeledControl;
 import maspack.widgets.ValueChangeEvent;
@@ -578,5 +578,4 @@ public class JawDemo extends RootModel implements ScalableUnits {
 	 traceprobe.setName("trace_" + name);
       }
    }
-
 }

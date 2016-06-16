@@ -14,8 +14,8 @@ import maspack.matrix.Point3d;
 import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.PointStyle;
 import artisynth.core.driver.Main;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.mechmodels.MechModel;
@@ -53,7 +53,7 @@ public class MeshEdit extends RootModel {
       mech = new MechModel("mech");
       addModel(mech);
       
-      RenderProps.setFaceStyle(mech, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle(mech, FaceStyle.FRONT_AND_BACK);
       RenderProps.setPointColor(mech, Color.MAGENTA);
       RenderProps.setPointRadius(mech, 0.00025);
       RenderProps.setPointStyle(mech, PointStyle.SPHERE);

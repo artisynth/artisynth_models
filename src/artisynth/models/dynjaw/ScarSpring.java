@@ -5,8 +5,6 @@ import java.io.PrintWriter;
 import java.util.Map;
 import java.util.List;
 
-import javax.media.opengl.GL2;
-
 import maspack.geometry.GeometryTransformer;
 import maspack.matrix.AffineTransform3d;
 import maspack.matrix.AffineTransform3dBase;
@@ -17,11 +15,12 @@ import maspack.matrix.PolarDecomposition3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.RotationMatrix3d;
 import maspack.properties.PropertyList;
-import maspack.render.GLRenderer;
-import maspack.render.GLViewer;
+import maspack.render.Renderer;
+import maspack.render.GL.GLViewer;
 import maspack.render.RenderList;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.Shading;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.driver.Main;
 import artisynth.core.mechmodels.Frame;
@@ -84,7 +83,7 @@ public class ScarSpring extends OrthoSpring implements TransformableGeometry
        { planeRenderPnts[i] = new Point3d();
        }
       setPlaneSize (defaultPlaneSize);
-      RenderProps.setFaceStyle (this, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle (this, FaceStyle.FRONT_AND_BACK);
    }
 
    public ScarSpring(String name)
@@ -191,24 +190,19 @@ public class ScarSpring extends OrthoSpring implements TransformableGeometry
 
    }
 
-   public void render (GLRenderer renderer, int flags)
+   public void render (Renderer renderer, int flags)
    { 
-     renderer.setMaterialAndShading (myRenderProps, myRenderProps.getFaceMaterial(), isSelected());
-     renderer.setFaceMode (Faces.FRONT_AND_BACK);
-//     renderer.setFaceMode (myRenderProps.getFaceStyle());
+     renderer.setPropsShading (myRenderProps);
+     renderer.setFaceColoring (myRenderProps, isSelected());
+     renderer.setFaceStyle (FaceStyle.FRONT_AND_BACK);
      renderer.setLineWidth (myRenderProps.getLineWidth());
-//     Frame.drawAxes (gl, myRenderXCW, 1f);
-//     Frame.drawAxes (gl, myRenderXDW, 1f);
-//     drawOrthoPlanes (renderer, myRenderXDW);
      drawOrthoLines (renderer, myRenderXDW, myRenderProps);
      renderer.drawLine (
         myRenderProps, myRenderOriginC, myRenderOriginD, isSelected ());
-     renderer.setLineWidth (1);
-     renderer.restoreShading (myRenderProps);
    }
    
    private void drawOrthoPlanes (
-      GLRenderer renderer, RigidTransform3d XFrameToWorld)
+      Renderer renderer, RigidTransform3d XFrameToWorld)
     { 
 
        X.p.set (XFrameToWorld.p);
@@ -220,43 +214,41 @@ public class ScarSpring extends OrthoSpring implements TransformableGeometry
     }
    
    private void drawPlane (
-      GLRenderer renderer, RigidTransform3d XFrameToWorld, float[] color)
+      Renderer renderer, RigidTransform3d XFrameToWorld, float[] color)
     { 
-      GL2 gl = renderer.getGL2 ();
-      gl.glPushMatrix();
-//      renderer.setLightingEnabled (false);
-      GLViewer.mulTransform (gl, XFrameToWorld);
-      gl.glBegin (GL2.GL_POLYGON);
-      gl.glNormal3f (0f, 0f, 1f);
-      renderer.setColor (color[0], color[1], color[2]);
-      for (int i=0; i<planeRenderPnts.length; i++)
-      { Point3d p = planeRenderPnts[i];
-        gl.glVertex3d (p.x, p.y, p.z);
-      }
-      gl.glEnd();
-//      renderer.setLightingEnabled (true);
-      gl.glPopMatrix();
+       renderer.pushModelMatrix();
+       renderer.mulModelMatrix (XFrameToWorld);
+       renderer.beginDraw (Renderer.DrawMode.TRIANGLES);
+       renderer.setNormal (0f, 0f, 1f);
+       renderer.setColor (color[0], color[1], color[2]);
+       renderer.addVertex (planeRenderPnts[0]);
+       renderer.addVertex (planeRenderPnts[1]);
+       renderer.addVertex (planeRenderPnts[2]);
+       renderer.addVertex (planeRenderPnts[0]);
+       renderer.addVertex (planeRenderPnts[2]);
+       renderer.addVertex (planeRenderPnts[3]);
+       renderer.endDraw();
+       renderer.popModelMatrix();
     }
    
    private void drawOrthoLines (
-      GLRenderer renderer, RigidTransform3d XFrameToWorld, RenderProps props)
+      Renderer renderer, RigidTransform3d XFrameToWorld, RenderProps props)
     { 
-      GL2 gl = renderer.getGL2 ();
-      gl.glPushMatrix();
-      renderer.setLightingEnabled (false);
-      GLViewer.mulTransform (gl, XFrameToWorld);
+       renderer.pushModelMatrix();
+       Shading savedShading = renderer.setShading (Shading.NONE);
+       renderer.mulModelMatrix (XFrameToWorld);
       renderer.setLineWidth (props.getLineWidth());
-      gl.glBegin (GL2.GL_LINES);
-      renderer.setColor (props.getLineColorArray(), isSelected());
+      renderer.beginDraw (Renderer.DrawMode.LINES);
+      renderer.setLineColoring (props, isSelected());
       float l = (float)myPlaneSize/2;
-      gl.glVertex3f (0f, 0f, l);
-      gl.glVertex3f (0f, 0f, -l);
-      gl.glVertex3f (0f, l, 0f);
-      gl.glVertex3f (0f, -l, 0f);
-      gl.glVertex3f (l, 0f, 0f);
-      gl.glVertex3f (-l, 0f, 0f);
-      gl.glEnd();
-      renderer.setLightingEnabled (true);
-      gl.glPopMatrix();
+      renderer.addVertex (0f, 0f, l);
+      renderer.addVertex (0f, 0f, -l);
+      renderer.addVertex (0f, l, 0f);
+      renderer.addVertex (0f, -l, 0f);
+      renderer.addVertex (l, 0f, 0f);
+      renderer.addVertex (-l, 0f, 0f);
+      renderer.endDraw();
+      renderer.setShading (savedShading);
+      renderer.popModelMatrix();
     }
 }

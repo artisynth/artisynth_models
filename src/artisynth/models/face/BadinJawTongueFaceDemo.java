@@ -21,7 +21,7 @@ import maspack.matrix.VectorNd;
 import maspack.properties.PropertyList;
 import maspack.properties.PropertyMode;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Shading;
+import maspack.render.Renderer.Shading;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemElement;
 import artisynth.core.femmodels.FemElement3d;
@@ -133,7 +133,7 @@ public class BadinJawTongueFaceDemo extends JawHyoidFemMuscleTongue {
             body.setMesh (mesh, fileName);
             if (mesh.getTextureCoords() == null || 
                 mesh.getTextureCoords().size() == 0) {
-               RenderProps.setTextureEnabled (body, false);
+               RenderProps.setColorMapEnabled (body, false);
             }
          }
       }

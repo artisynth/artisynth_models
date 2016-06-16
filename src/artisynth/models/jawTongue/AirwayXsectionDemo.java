@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.util.ArrayList;
 
-import javax.media.opengl.GL2;
-
 import maspack.collision.IntersectionContour;
 import maspack.collision.MeshIntersectionPoint;
 import maspack.collision.SurfaceMeshContourIxer;
@@ -22,10 +20,12 @@ import maspack.matrix.RotationMatrix3d;
 import maspack.matrix.Vector3d;
 import maspack.matrix.VectorNd;
 import maspack.properties.PropertyList;
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderList;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.Faces;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.Shading;
+import maspack.render.Renderer.DrawMode;
 import artisynth.core.mechmodels.MeshComponent;
 import artisynth.core.modelbase.MonitorBase;
 import artisynth.core.modelbase.RenderableComponentList;
@@ -136,12 +136,12 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
       RenderProps.setVisible (tongue.getMuscleBundles(), false);
       
       
-      RenderProps.setFaceStyle (planes, Faces.NONE);
+      RenderProps.setFaceStyle (planes, FaceStyle.NONE);
       RenderProps.setDrawEdges (planes, true);
       RenderProps.setFaceColor (planes, Color.LIGHT_GRAY);
       RenderProps.setEdgeColor (planes, Color.WHITE);
       RenderProps.setEdgeWidth (planes, 2);
-      RenderProps.setTextureEnabled (planes, false);
+      RenderProps.setColorMapEnabled (planes, false);
 
    }
    
@@ -347,39 +347,31 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
       
    }
 
-   public void render (GLRenderer renderer, int flags) {
+   public void render (Renderer renderer, int flags) {
       render (renderer, flags, myRenderProps);
    }
 
-   public void render (GLRenderer renderer, int flags, RenderProps props) {
+   public void render (Renderer renderer, int flags, RenderProps props) {
       super.render (renderer, flags);
 
-      GL2 gl = renderer.getGL2 ().getGL2 ();
+      //GL2 gl = renderer.getGL2 ().getGL2 ();
       
       if (props.getEdgeWidth () > 0) {
          renderer.setLineWidth (props.getEdgeWidth ());
-         float[] rgb = props.getEdgeColorArray ();
-         if (rgb == null) {
-            rgb = props.getLineColorArray ();
-         }
-         renderer.setColor (rgb, false);
-         renderer.setLightingEnabled (false);
+         renderer.setEdgeColoring (props, false);
+         renderer.setShading (Shading.NONE);
          
          synchronized(myRenderContours) {
             for (IntersectionContour contour : myRenderContours) {
                if (contour != null) {
-//                  gl.glBegin (GL2.GL_LINE_LOOP);
-                  gl.glBegin (GL2.GL_LINE_STRIP);
+                  renderer.beginDraw (DrawMode.LINE_STRIP);
                   for (MeshIntersectionPoint p : contour) {
-                     gl.glVertex3d (p.x, p.y, p.z);
+                     renderer.addVertex (p.x, p.y, p.z);
                   }
-                  gl.glEnd ();
+                  renderer.endDraw();
                }
             }
          }
-         gl.glEnable (GL2.GL_LIGHTING);
-         renderer.setLineWidth (1);
-
       }
    }
    

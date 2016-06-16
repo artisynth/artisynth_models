@@ -25,10 +25,10 @@ import maspack.properties.PropertyMode;
 import maspack.render.LineRenderProps;
 import maspack.render.RenderProps;
 import maspack.render.Renderable;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.LineStyle;
-import maspack.render.RenderProps.PointStyle;
-import maspack.render.RenderProps.Shading;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.Renderer.PointStyle;
+import maspack.render.Renderer.Shading;
 import maspack.util.ReaderTokenizer;
 import maspack.widgets.LabeledComponentBase;
 import maspack.widgets.LabeledControl;
@@ -592,7 +592,7 @@ public class HexTongueDemo extends RootModel {
       tongue.setElementWidgetSize(1.0);
       RenderProps.setFaceColor(tongue, new Color(.8f, .5f, .5f));
       RenderProps.setLineColor(tongue, new Color(.2f, .2f, .2f)); // dark grey
-      RenderProps.setFaceStyle(tongue, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle(tongue, FaceStyle.FRONT_AND_BACK);
       RenderProps.setDrawEdges(tongue, false);
       RenderProps.setVisibleMode(tongue.getNodes(), PropertyMode.Inherited);
       RenderProps.setPointRadius(tongue.getNodes(), 0.00035);
@@ -1044,8 +1044,8 @@ public class HexTongueDemo extends RootModel {
                body.scaleDistance(mm2m);
                // body.setPose(skullForward);
                RenderProps.setFaceColor(body, new Color(1f, 0.8f, 0.6f));
-               RenderProps.setFaceStyle(body, Faces.FRONT_AND_BACK);
-               RenderProps.setShading(body, Shading.GOURARD);
+               RenderProps.setFaceStyle(body, FaceStyle.FRONT_AND_BACK);
+               RenderProps.setShading(body, Shading.SMOOTH);
             }
          }
       }

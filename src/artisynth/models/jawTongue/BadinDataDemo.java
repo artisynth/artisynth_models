@@ -17,8 +17,8 @@ import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.render.RenderProps;
 import maspack.render.Renderable;
-import maspack.render.RenderProps.Faces;
-import maspack.render.RenderProps.PointStyle;
+import maspack.render.Renderer.FaceStyle;
+import maspack.render.Renderer.PointStyle;
 import maspack.util.NumberFormat;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.driver.Main;
@@ -76,7 +76,7 @@ public class BadinDataDemo extends RootModel {
       
 
       mech = new MechModel ("mech");
-      RenderProps.setFaceStyle (mech, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle (mech, FaceStyle.FRONT_AND_BACK);
       addModel (mech);
       
 
@@ -242,9 +242,10 @@ public class BadinDataDemo extends RootModel {
       RigidBody image = new RigidBody ("ctimage");
       image.setDynamic (false);
       image.setPose (pose);
-      image.setMesh (MeshFactory.createPlane (len, len), null);
-      RenderProps.setTextureFileName (image, imageFileName);
-      RenderProps.setTextureEnabled (image, true);
+      image.setMesh (
+         MeshFactory.createRectangle (len, len, /*textureCoords=*/true), null);
+      RenderProps.setColorMapFileName (image, imageFileName);
+      RenderProps.setColorMapEnabled (image, true);
       RenderProps.setFaceColor (image, Color.WHITE);
       mech.addRigidBody (image);
       mech.addFrameMarker (new FrameMarker(), image, new Point3d(len/2,-len/2,0));
@@ -496,9 +497,9 @@ public class BadinDataDemo extends RootModel {
    
    public void addBadinCT () {
       RigidBody ct = addBodyFromMdl ("badinskull", badinGeometryDir+"badinskull_amira_face.mdl");
-      RenderProps.setFaceStyle (ct, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle (ct, FaceStyle.FRONT_AND_BACK);
       RigidBody skin = addBodyFromMdl ("badinskin", badinGeometryDir+"badinskin_face.mdl");
-      RenderProps.setFaceStyle (skin, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle (skin, FaceStyle.FRONT_AND_BACK);
    }
    
    public RigidBody addBodyFromMdl(String name, String fullMeshFileName) {
@@ -1060,7 +1061,7 @@ public class BadinDataDemo extends RootModel {
    }
    
    public void setupRenderProps() {
-      RenderProps.setFaceStyle (mech, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle (mech, FaceStyle.FRONT_AND_BACK);
       
       for (RigidBody body : mech.rigidBodies ()) {
          if (body.getName () == null)
@@ -1088,7 +1089,7 @@ public class BadinDataDemo extends RootModel {
    }
    
    public void setupRenderPropsX() {
-      RenderProps.setFaceStyle (mech, Faces.FRONT_AND_BACK);
+      RenderProps.setFaceStyle (mech, FaceStyle.FRONT_AND_BACK);
       
       for (RigidBody body : mech.rigidBodies ()) {
          if (body.getName () == null)

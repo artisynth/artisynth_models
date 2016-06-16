@@ -27,7 +27,7 @@ import artisynth.core.mechmodels.PointList;
 public class HybridFemGenerator extends VolumetricMeshGenerator implements HasProperties {
 
    public enum TemplateType {
-      BEAM, CYLINDER, ELLIPSOID
+      BEAM, CYLINDER, SPINDLE
    }
    
    public static double DEFAULT_ACCURACY = 0.05;
@@ -79,7 +79,7 @@ public class HybridFemGenerator extends VolumetricMeshGenerator implements HasPr
          case CYLINDER:
             model = createCylinderWithSurface(surface, res[0], res[1], res[2]);
             break;
-         case ELLIPSOID:
+         case SPINDLE:
             if (res.length > 3) {
                model = createEllipsoidWithSurface(surface, res[0], res[1], res[2], res[3]);
             } else {

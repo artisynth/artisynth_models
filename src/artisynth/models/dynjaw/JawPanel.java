@@ -6,7 +6,7 @@ import javax.swing.JSeparator;
 
 import maspack.properties.Property;
 import maspack.render.RenderProps;
-import maspack.render.RenderProps.LineStyle;
+import maspack.render.Renderer.LineStyle;
 import maspack.widgets.BooleanSelector;
 import maspack.widgets.DoubleField;
 import artisynth.core.driver.Main;

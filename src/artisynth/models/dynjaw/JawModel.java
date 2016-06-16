@@ -27,11 +27,11 @@ import maspack.matrix.Vector3d;
 import maspack.matrix.VectorNd;
 import maspack.properties.Property;
 import maspack.properties.PropertyList;
-import maspack.render.GLRenderer;
+import maspack.render.Renderer;
 import maspack.render.RenderList;
 import maspack.render.RenderProps;
-import maspack.render.TextureProps;
-import maspack.render.RenderProps.LineStyle;
+import maspack.render.ColorMapProps;
+import maspack.render.Renderer.LineStyle;
 import maspack.spatialmotion.SpatialInertia;
 import maspack.spatialmotion.Wrench;
 import maspack.util.DoubleInterval;
@@ -575,37 +575,37 @@ public class JawModel extends MechModel implements ScalableUnits,
 
       // Particle RenderProps
       props.setPointRadius(1.0);
-      props.setPointStyle(RenderProps.PointStyle.SPHERE);
-      props.setPointSlices(12);
+      props.setPointStyle(Renderer.PointStyle.SPHERE);
+      //props.setPointSlices(12);
       props.setPointColor(Color.PINK);
 
       // Line RenderProps
       props.setLineRadius(2.0);
-      props.setLineSlices(8);
+      //props.setLineSlices(8);
       props.setLineWidth(3);
-      props.setLineStyle(RenderProps.LineStyle.LINE);
+      props.setLineStyle(Renderer.LineStyle.LINE);
       props.setLineColor(Color.WHITE);
 
       // Mesh RenderProps
-      props.setShading(RenderProps.Shading.GOURARD);
+      props.setShading(Renderer.Shading.SMOOTH);
       props.setFaceColor(new Color(1f, 0.8f, 0.6f));
-      props.setFaceStyle(RenderProps.Faces.FRONT_AND_BACK);
+      props.setFaceStyle(Renderer.FaceStyle.FRONT_AND_BACK);
 
-      TextureProps tp = new TextureProps();
+      ColorMapProps tp = new ColorMapProps();
       tp.setFileName(ArtisynthPath.getSrcRelativePath(JawModel.class,
 	    "skull.jpg"));
-      tp.setSphereMappingEnabled(false);
-      tp.setAutomatic(false);
-      tp.setMode(TextureProps.Mode.MODULATE);
+      //tp.setSphereMappingEnabled(false);
+      //tp.setAutomatic(false);
+      tp.setColorMixing(Renderer.ColorMixing.MODULATE);
       tp.setEnabled(true);
 
-      props.setTextureProps(tp);
+      props.setColorMap(tp);
       setRenderProps(props);
 
       // Spring Render Props
       RenderProps.setLineRadius(myAxialSprings, 2.0);
-      RenderProps.setLineSlices(myAxialSprings, 8);
-      RenderProps.setLineStyle(myAxialSprings, RenderProps.LineStyle.ELLIPSOID);
+      //RenderProps.setLineSlices(myAxialSprings, 8);
+      RenderProps.setLineStyle(myAxialSprings, Renderer.LineStyle.SPINDLE);
       RenderProps.setLineColor(myAxialSprings, Color.RED);
    }
 
@@ -613,7 +613,7 @@ public class JawModel extends MechModel implements ScalableUnits,
       RigidBody body = myRigidBodies.get("pharynx");
       if (body == null) return;
 
-      RenderProps.setTextureFileName(body, ArtisynthPath.getSrcRelativePath(
+      RenderProps.setColorMapFileName(body, ArtisynthPath.getSrcRelativePath(
 	    JawModel.class, "flesh.jpg"));
    }
 
@@ -1962,7 +1962,7 @@ public class JawModel extends MechModel implements ScalableUnits,
 	       props = RenderProps.createLineProps(null);
 	    }
 	    props.setPointRadius(1.0);
-	    props.setPointSlices(20);
+	    //props.setPointSlices(20);
 	    props.setPointColor(Color.PINK);
 	    m.setRenderProps(props);
 	 }
@@ -2162,7 +2162,7 @@ public class JawModel extends MechModel implements ScalableUnits,
 
       for (PlanarConnector pc : con) {
 	 RenderProps props = new RenderProps(myRenderProps);
-	 props.setFaceStyle(RenderProps.Faces.FRONT_AND_BACK);
+	 props.setFaceStyle(Renderer.FaceStyle.FRONT_AND_BACK);
 	 props.setAlpha(0.8);
 	 pc.setRenderProps(props);
 	 if (pc.getName().endsWith("BITE")) {
@@ -2190,7 +2190,7 @@ public class JawModel extends MechModel implements ScalableUnits,
       ctJoint.setAxisLength(1.0 * (pmax.x - pmin.x));
 
       if (ctJoint != null) {
-	 RenderProps.setLineSlices(ctJoint, 12);
+	 //RenderProps.setLineSlices(ctJoint, 12);
 	 RenderProps.setLineColor(ctJoint, Color.ORANGE);
 	 RenderProps.setLineRadius(ctJoint, 0.6);
       }
