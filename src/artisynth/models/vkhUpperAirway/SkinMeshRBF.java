@@ -215,6 +215,14 @@ public class SkinMeshRBF extends MeshComponent {
    }
    
    @Override
+   public void prerender (RenderList list) {
+      MeshBase mesh = getMesh();
+      if (mesh != null) {
+         mesh.prerender (myRenderProps);
+      }
+   }
+   
+   @Override
    public void render(Renderer renderer, int flags) {
       MeshBase mesh = getMesh();
       if (mesh != null) {
