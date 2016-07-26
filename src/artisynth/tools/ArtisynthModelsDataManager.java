@@ -2,7 +2,6 @@ package artisynth.tools;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -15,12 +14,12 @@ import maspack.crypt.Base64;
 import maspack.crypt.GenericCryptor;
 import maspack.json.JSONReader;
 
-public class ModelsDataManager extends ArtisynthDataManager {
+public class ArtisynthModelsDataManager extends ArtisynthDataManager {
    
-   private static File publicConfig = ArtisynthPath.getSrcRelativeFile(ModelsDataManager.class, ".owncloud.public.config");
-   private static File privateConfig = ArtisynthPath.getSrcRelativeFile(ModelsDataManager.class, ".private/.owncloud.private.config");
+   private static File publicConfig = ArtisynthPath.getSrcRelativeFile(ArtisynthModelsDataManager.class, ".owncloud.public.config");
+   private static File privateConfig = ArtisynthPath.getSrcRelativeFile(ArtisynthModelsDataManager.class, ".private/.owncloud.private.config");
       
-   public ModelsDataManager() {
+   public ArtisynthModelsDataManager() {
       super();
       loadConfig();
    }
@@ -105,7 +104,7 @@ public class ModelsDataManager extends ArtisynthDataManager {
    
    public static void main(String[] args) {
       
-      ModelsDataManager manager = new ModelsDataManager();
+      ArtisynthModelsDataManager manager = new ArtisynthModelsDataManager();
       File file = ArtisynthPath.getSrcRelativeFile(manager, "data/upload.txt");
       try {
          File test = manager.getPackageRelativeFile(manager, "test.txt");
