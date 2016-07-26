@@ -16,7 +16,7 @@ import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JSeparator;
 
-import maspack.fileutil.FileGrabber;
+import maspack.fileutil.FileManager;
 import maspack.fileutil.uri.URIx;
 import maspack.geometry.BVFeatureQuery;
 import maspack.geometry.MeshFactory;
@@ -98,7 +98,7 @@ import artisynth.core.workspace.RootModel;
 public class ModelTemplate extends RootModel {
 
    // SANCHEZ, added so we can download files from a zip file or remote source
-   FileGrabber fileManager = null;
+   FileManager fileManager = null;
 
    // #####################################################################
    // CONTROLS
@@ -243,7 +243,7 @@ public class ModelTemplate extends RootModel {
       // ###################################################################
       // ###### Initialization #############################################
 
-      fileManager = new FileGrabber(basePath, remoteDataSource);
+      fileManager = new FileManager(basePath, remoteDataSource);
       // Disable most logging since this class is designed to look for
       // non-existent files, such as .femAttach, on the off-chance that they
       // exist

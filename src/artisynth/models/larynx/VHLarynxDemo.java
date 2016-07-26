@@ -46,8 +46,8 @@ import artisynth.core.util.ArtisynthPath;
 import artisynth.core.util.TimeBase;
 import artisynth.core.workspace.DriverInterface;
 import artisynth.models.template.ModelTemplate;
-import artisynth.models.toolbox.femtool.HybridFemFactory;
-import artisynth.models.toolbox.femtool.HybridFemGenerator;
+import artisynth.tools.femtool.HybridFemFactory;
+import artisynth.tools.femtool.HybridFemGenerator;
 
 public class VHLarynxDemo extends ModelTemplate {
    public VHLarynxDemo() {

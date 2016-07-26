@@ -26,10 +26,10 @@ import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.modelbase.Model;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.RootModel;
-import artisynth.models.toolbox.femtool.HybridFemFactory;
-import artisynth.models.toolbox.femtool.HybridFemGenerator;
-import artisynth.models.toolbox.femtool.VolumetricMeshGenerator;
-import artisynth.models.toolbox.femtool.HybridFemGenerator.TemplateType;
+import artisynth.tools.femtool.HybridFemFactory;
+import artisynth.tools.femtool.HybridFemGenerator;
+import artisynth.tools.femtool.VolumetricMeshGenerator;
+import artisynth.tools.femtool.HybridFemGenerator.TemplateType;
 
 public class HybridFemFactoryDemo extends RootModel {
 
