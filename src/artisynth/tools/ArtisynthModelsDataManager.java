@@ -45,7 +45,7 @@ public class ArtisynthModelsDataManager extends ArtisynthDataManager {
       
       // default to source-relative
       String remote_uri = (new File(ArtisynthPath.getHomeDir()+ "/src/").getAbsoluteFile()).toURI().toString();
-      String local_dir = ArtisynthPath.getHomeRelativePath("/tmp/.cache/data/artisynth_models", ".");
+      String local_dir = (new File(ArtisynthPath.getCacheDir(), "data/artisynth_models")).getAbsolutePath();
       String username = null;
       String password = null;
       String cipher = null;

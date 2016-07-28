@@ -36,8 +36,8 @@ import maspack.render.Renderer.PointStyle;
 
 public class InteractiveFemCreator extends RootModel implements ActionListener   {
 
-   private String outElemFile =  ArtisynthPath.getHomeDir() + "/tmp/mesh.elem";
-   private String outNodeFile =  ArtisynthPath.getHomeDir() + "/tmp/mesh.node";
+   private String outElemFile =  ArtisynthPath.getTempDir().getAbsolutePath() + "/mesh.elem";
+   private String outNodeFile =  ArtisynthPath.getTempDir().getAbsolutePath() + "/mesh.node";
    
    public enum InitialFemGeneratorType {
       BASIC_TEMPLATE, HYBRID_PROJECTION, EXISTING_FEM
