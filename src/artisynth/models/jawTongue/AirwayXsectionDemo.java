@@ -7,7 +7,7 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 
 import maspack.collision.IntersectionContour;
-import maspack.collision.MeshIntersectionPoint;
+import maspack.collision.IntersectionPoint;
 import maspack.collision.SurfaceMeshContourIxer;
 import maspack.geometry.PolygonalMesh;
 import maspack.geometry.Polyline;
@@ -304,8 +304,8 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
          if (collided) {
             for (int ci = 0; ci < myIxer.getContours ().size (); ci++) {
                IntersectionContour contour = myIxer.getContours ().get (ci);
-               if (!contour.isOpen ()) {
-                  crossSectionalArea += contour.getArea ();
+               if (contour.isClosed()) {
+                  crossSectionalArea += contour.computePlanarArea ();
                   contours.add (contour);
                }
             }
@@ -365,7 +365,7 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
             for (IntersectionContour contour : myRenderContours) {
                if (contour != null) {
                   renderer.beginDraw (DrawMode.LINE_STRIP);
-                  for (MeshIntersectionPoint p : contour) {
+                  for (IntersectionPoint p : contour) {
                      renderer.addVertex (p.x, p.y, p.z);
                   }
                   renderer.endDraw();

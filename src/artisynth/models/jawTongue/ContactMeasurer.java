@@ -7,7 +7,7 @@ import artisynth.core.mechmodels.CollidableBody;
 import artisynth.core.mechmodels.CollisionHandler;
 import artisynth.core.mechmodels.CollisionManager;
 import artisynth.core.modelbase.MonitorBase;
-import maspack.collision.MeshIntersectionContour;
+import maspack.collision.IntersectionContour;
 import maspack.geometry.Vertex3d;
 import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
@@ -76,11 +76,11 @@ public class ContactMeasurer extends MonitorBase {
          
          double collArea = 0;
          if (h.getRenderContactInfo () != null) {
-            if (h.getRenderContactInfo ().contours != null
-            && h.getRenderContactInfo ().contours.size () > 0) {
-               for (MeshIntersectionContour c : h
-                  .getRenderContactInfo ().contours) {
-                  collArea += c.getArea ();
+            if (h.getRenderContactInfo ().getContours() != null
+            && h.getRenderContactInfo ().getContours().size () > 0) {
+               for (IntersectionContour c : h
+                  .getRenderContactInfo ().getContours()) {
+                  collArea += c.computePlanarArea ();
                }
             }
 //            else if (h.getRenderContactInfo ().regions != null
