@@ -105,6 +105,13 @@ public class BadinJawHyoid extends JawLarynxDemo {
    public static final RigidTransform3d jawIPPose_symmetric = new RigidTransform3d(
       new Vector3d (93.679, 0, 92.2072), new AxisAngle (0,1,0, Math.toRadians (8.3136)));
    
+   public static final RigidTransform3d jawEEPose_symmetric = new RigidTransform3d(
+      new Vector3d (93.96, 0.0, 89.47), new AxisAngle (0,1,0, Math.toRadians (5.9154)));
+   
+   public static final RigidTransform3d hyoidEEPose = new RigidTransform3d(
+      new Vector3d (115.5, 0.0, 62.0), new AxisAngle ());
+
+   
    public static RigidTransform3d getJawIPWorld () {
 
       RigidTransform3d XJawIPWorld = new RigidTransform3d (
@@ -1292,6 +1299,16 @@ public class BadinJawHyoid extends JawLarynxDemo {
    }
 
    
+   public void setEEPosture () {
+//    setRestPosture ();
+    setJawPosture(jawEEPose_symmetric);
+    setBodyPosture (hyoidEEPose, "hyoid");
+
+    if (myJawModel.models ().size () > 0  && myJawModel.models ().get (0) instanceof FemMuscleModel) {
+       FemMuscleModel tongue = (FemMuscleModel)myJawModel.models ().get (0);
+       HexTongueDemo.setTonguePosture (tongue, regGeomDir + "tongue_ee.txt", false/*dont reset rest pos*/);
+    }
+ }
    
    
    public void setJawPosture(RigidTransform3d XJawToWorld) {
