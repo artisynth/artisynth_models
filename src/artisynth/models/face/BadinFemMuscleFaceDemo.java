@@ -104,7 +104,7 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
       oop.setElementWidgetSize(1);
       RenderProps.setVisible(oop, true);
       
-      RenderProps.setVisible (face.getElements(), false);
+      //RenderProps.setVisible (face.getElements(), false);
       RenderProps.setVisible (face.getMuscleBundles(), false);
       RenderProps.setVisible (face.getNodes(), false);
       

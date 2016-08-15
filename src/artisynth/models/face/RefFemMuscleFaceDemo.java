@@ -68,7 +68,7 @@ public class RefFemMuscleFaceDemo extends RefFaceDemo{
       
       ((GenericMuscle)face.getMuscleMaterial()).setMaxStress(100000);
       face.setDirectionRenderLen(0.5);
-      face.setElementWidgetSize(0);
+      //face.setElementWidgetSize(0);
       RenderProps.setLineWidth(face.getElements(), 0);
       // face.setSubSurfaceRendering(false);
    }
