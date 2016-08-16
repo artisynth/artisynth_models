@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import maspack.collision.IntersectionContour;
 import maspack.collision.IntersectionPoint;
-import maspack.collision.SurfaceMeshContourIxer;
+import maspack.collision.SurfaceMeshCollider;
 import maspack.geometry.PolygonalMesh;
 import maspack.geometry.Polyline;
 import maspack.geometry.PolylineMesh;
@@ -286,7 +286,7 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
    //ArrayList<ContactInfo> contacts = new ArrayList<ContactInfo> ();
    ArrayList<IntersectionContour> myRenderContours = new ArrayList<IntersectionContour> ();
    ArrayList<IntersectionContour> contours = new ArrayList<IntersectionContour> ();
-   SurfaceMeshContourIxer myIxer = new SurfaceMeshContourIxer ();
+   SurfaceMeshCollider myIxer = new SurfaceMeshCollider ();
    
    public double[] computeXsectionalAreas() {
       double[] areas = new double[planes.size ()];
@@ -298,12 +298,12 @@ public class AirwayXsectionDemo extends AirwaySkinDemo {
             continue;
          }
          double crossSectionalArea = 0;
-         boolean collided = myIxer.findContours (
+         ArrayList<IntersectionContour> contourList = myIxer.getContours (
               (PolygonalMesh)planes.get(i).getMesh (), 
               (PolygonalMesh)airwaySkin.getMesh ());
-         if (collided) {
-            for (int ci = 0; ci < myIxer.getContours ().size (); ci++) {
-               IntersectionContour contour = myIxer.getContours ().get (ci);
+         if (contourList != null) {
+            for (int ci = 0; ci < contourList.size (); ci++) {
+               IntersectionContour contour = contourList.get (ci);
                if (contour.isClosed()) {
                   crossSectionalArea += contour.computePlanarArea ();
                   contours.add (contour);
