@@ -29,6 +29,7 @@ import java.awt.event.ActionEvent;
 public class DeformedJawDemoX extends JawDemo {
 
    FemModelDeformer myDeformer;
+   boolean myDeformed = false;
    PointForce myPointForce;
    ArrayList<FemNode3d> myControlNodes;
 
@@ -79,14 +80,15 @@ public class DeformedJawDemoX extends JawDemo {
       myPointForce.setAxisLength (30.0);
    }
 
+
+
    public StepAdjustment advance (double t0, double t1, int flags) {
 
       double tpan1 = 2.0;
       double tforce1 = 4.0;
       double tgrid = 5.0;
-      double tdeform = 5.5;
-      double tafter = 5.5;
-      double tforce2 = 7.5;
+      double tdeform = 6.0;
+      double tforce2 = 8.0;
 
       GLViewer viewer = getMainViewer();
 
@@ -133,12 +135,14 @@ public class DeformedJawDemoX extends JawDemo {
          }
       }
       else if (t1 <= tdeform) {
-         if (t0 == tgrid) {
+         double s = (t1-tgrid)/(tdeform-tgrid);
+         if (s >= 0.5 && !myDeformed) {
             System.out.println ("applying ...");
             FemGeometryTransformer xformer = myDeformer.getTransformer();
             xformer.setUndoState (GeometryTransformer.UndoState.SAVING);
             TransformGeometryContext.transform (myJawModel, xformer, 0);
             System.out.println ("done");
+            myDeformed = true;
          }
          else if (t1 == tdeform) {
             myJawModel.setDynamicsEnabled (true);
@@ -146,10 +150,8 @@ public class DeformedJawDemoX extends JawDemo {
             //RenderProps.setVisible (myDeformer, false);
          }
       }
-      else if (t1 <= tafter) {
-      }
       else if (t1 <= tforce2) {
-         double s = (t1-tafter)/(tforce2-tafter);
+         double s = (t1-tdeform)/(tforce2-tdeform);
          Vector3d fmax = new Vector3d (0, 2000, -2000);
          Vector3d f = new Vector3d();
          double lam = s < 0.5 ? 2*s : 2*(1-s);
