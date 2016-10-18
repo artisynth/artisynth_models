@@ -57,7 +57,6 @@ import artisynth.core.materials.LinearMaterial;
 import artisynth.core.materials.MooneyRivlinMaterial;
 import artisynth.core.mechmodels.CollisionManager;
 import artisynth.core.mechmodels.MechModel;
-import artisynth.core.mechmodels.CollisionHandlerList;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.MuscleExciter;
@@ -1077,6 +1076,7 @@ public class HexTongueDemo extends RootModel {
       RenderProps.setLineWidth(collisions, 2);
       RenderProps.setLineColor(collisions, new Color(0f, 0f, 0.5f));
       collisions.setContactNormalLen(-5.0 * mm2m);
+      collisions.setDrawContactNormals(true);
    }
 
    public static void setTonguePosture(FemMuscleModel tongue, String filename,

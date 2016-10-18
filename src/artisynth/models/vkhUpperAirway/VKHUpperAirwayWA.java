@@ -113,7 +113,7 @@ public class VKHUpperAirwayWA extends ModelTemplate {
       
       MechModel myMechModel=(MechModel) this.models ().get(0);
       System.out.println("PenetrationTol is: " + myMechModel.getPenetrationTol());
-      myMechModel.getCollisionManager().setPenetrationTol(0.2);
+      myMechModel.setPenetrationTol(0.2);
       
    }
    

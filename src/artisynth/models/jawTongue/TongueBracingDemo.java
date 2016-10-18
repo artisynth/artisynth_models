@@ -80,6 +80,7 @@ public class TongueBracingDemo extends BadinJawHyoidTongue {
       
       CollisionManager cm = myJawModel.getCollisionManager ();
       cm.setContactNormalLen (0);
+      cm.setDrawContactNormals(false);
       RenderProps.setLineWidth (cm, 3);
       RenderProps.setLineColor (cm, new Color(0f,0f,1f));
       RenderProps.setEdgeWidth (cm, 4);

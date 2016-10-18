@@ -13,30 +13,25 @@ import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.VectorNd;
 import maspack.properties.PropertyList;
-import maspack.render.GL.GLViewer;
 import maspack.render.RenderProps;
-import maspack.render.Renderable;
 import maspack.render.Renderer.LineStyle;
 import maspack.render.Renderer.PointStyle;
+import maspack.render.GL.GLViewer;
 import maspack.util.ReaderTokenizer;
-import artisynth.core.modelbase.StepAdjustment;
-import artisynth.core.driver.Main;
-import artisynth.core.driver.ViewerManager;
-import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemModel.IncompMethod;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
+import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemMuscleModel;
 import artisynth.core.femmodels.FemMuscleStiffener;
 import artisynth.core.femmodels.FemNode;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.gui.FemControlPanel;
-import artisynth.core.materials.GenericMuscle;
 import artisynth.core.mechmodels.CollisionManager;
-import artisynth.core.mechmodels.CollisionHandlerList;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.RigidBody;
+import artisynth.core.modelbase.StepAdjustment;
 import artisynth.core.probes.NumericOutputProbe;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
@@ -333,6 +328,7 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
       RenderProps.setLineWidth(collisions, 2);
       RenderProps.setLineColor(collisions, new Color(0f, 0f, 0.5f));
       collisions.setContactNormalLen(-5.0);
+      collisions.setDrawContactNormals(true);
    }
 
    // public void addSoftPalate () {

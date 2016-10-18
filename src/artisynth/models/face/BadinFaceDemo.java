@@ -846,6 +846,7 @@ public class BadinFaceDemo extends RootModel {
 
       CollisionManager collisions = mech.getCollisionManager();
       collisions.setContactNormalLen(-0.002);
+      collisions.setDrawContactNormals(true);
       RenderProps.setLineColor(collisions, new Color(0.2f,0.2f,0.5f));
       RenderProps.setVisible(collisions, true);
 
@@ -1240,6 +1241,7 @@ public class BadinFaceDemo extends RootModel {
       RenderProps.setLineWidth (collisions, 2);      
       RenderProps.setLineColor (collisions, new Color (0f, 0f, 0.5f));
       collisions.setContactNormalLen (-0.005);
+      collisions.setDrawContactNormals(true);
    }
 
    public static void setNodesNonDynamicByNumber (FemModel3d fem, String nodeIndicesFilename) {

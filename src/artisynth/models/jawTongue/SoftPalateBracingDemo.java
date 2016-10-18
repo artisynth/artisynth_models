@@ -6,6 +6,8 @@ import java.io.IOException;
 import artisynth.core.femmodels.FemMuscleModel;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
 import artisynth.core.mechmodels.RigidBody;
+import artisynth.core.mechmodels.CollisionResponse;
+import artisynth.core.mechmodels.CollisionManager;
 import artisynth.core.workspace.DriverInterface;
 import artisynth.models.palateV2.SoftPalateModel;
 import maspack.render.RenderProps;
@@ -39,11 +41,15 @@ public class SoftPalateBracingDemo extends TongueBracingDemo {
 //         SoftPalateModel.setupSoftPalateRenderProps (softPalate);
       setupRenderProps ();
       
-      System.out.println("num handlers - "+myJawModel.getCollisionManager ().collisionHandlers ().size ());
-      ContactMeasurer cm = new ContactMeasurer (myJawModel.getCollisionManager ());
+      //System.out.println("num handlers - "+myJawModel.getCollisionManagerOld ().collisionHandlers ().size ());
+      CollisionResponse resp = myJawModel.setCollisionResponse (tongue, pharyngealWall);
+      ContactMeasurer cm = new ContactMeasurer (resp);
 //      for (CollisionHandler ch :  myJawModel.getCollisionManager ().collisionHandlers ()) {
 //         cm.addCollisionHandler (ch);
 //      }
+      // need AJL_CONTOUR collider to be able to measure contact area
+      myJawModel.getCollisionManager().setColliderType(
+         CollisionManager.ColliderType.AJL_CONTOUR);
       cm.setHandlersToMeasure (new int[]{3}); // tongue-pharynx
       addMonitor (cm);
    }

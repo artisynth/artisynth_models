@@ -115,6 +115,7 @@ public class TongueLollipop extends FemMuscleTongueDemo {
       RenderProps.setLineWidth(collisions, 3);
       RenderProps.setLineColor(collisions, Color.YELLOW);
       collisions.setContactNormalLen(0.001);
+      collisions.setDrawContactNormals(true);
    }
    
    protected void createLollipop() {
