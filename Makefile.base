@@ -33,6 +33,9 @@ LD_SO = $(LD) $(LD_FLAGS) $(LD_SHARED)
 JUNKFILES = *.o *~ *.class .\#* \#*
 
 RM_CMD = rm -rf
+ifndef FIND_CMD
+FIND_CMD = find
+endif
 
 %.class: %.java
 	$(JAVAC) $(JAVACFLAGS) $<
@@ -92,12 +95,12 @@ help:
 
 .PHONY: klean
 klean:
-	rm -f `find -L . -name "*~"`
-	find -L . -name "*.class" -exec rm {} \;
+	rm -f `$(FIND_CMD) -L . -name "*~"`
+	$(FIND_CMD) -L . -name "*.class" -exec rm {} \;
 
 .PHONY: build
 build:
-	find -L . -name "*.java" -print | xargs -s 27000 "$(JAVAC)" $(JAVACFLAGS)
+	$(FIND_CMD) -L . -name "*.java" -print | xargs -s 27000 "$(JAVAC)" $(JAVACFLAGS)
 
 .PHONY: all
 all:
