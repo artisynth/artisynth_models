@@ -55,7 +55,7 @@ public class CmissFileManager extends FileManager {
       
       EncryptedUserAuthenticator auth = new EncryptedUserAuthenticator(crypt);
       auth.setUserName("phuman");
-      auth.setEncryptedPassword("4F0263DF8BA45A8DBE19FD3717AF0ED4"); // encrypted password
+      auth.setEncryptedPassword("TwJj34ukWo2+Gf03F68O1A=="); // encrypted password
       
       addUserAuthenticator(uriMatcher, auth);
       
