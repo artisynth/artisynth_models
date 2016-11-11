@@ -5,24 +5,34 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
+import maspack.collision.IntersectionContour;
+import maspack.collision.SurfaceMeshContourIxer;
 import maspack.geometry.MeshFactory;
 import maspack.geometry.PolygonalMesh;
+import maspack.geometry.Polyline;
+import maspack.geometry.PolylineMesh;
+import maspack.geometry.Vertex3d;
 import maspack.matrix.AxisAngle;
 import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
+import maspack.matrix.RotationMatrix3d;
 import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
 import maspack.render.RenderProps;
 import artisynth.core.femmodels.FemElement3d;
 import artisynth.core.femmodels.FemModel.IncompMethod;
 import artisynth.core.femmodels.FemMuscleModel;
+import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.femmodels.MuscleBundle;
 import artisynth.core.femmodels.MuscleElementDesc;
 import artisynth.core.materials.GenericMuscle;
 import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.MechModel;
+import artisynth.core.mechmodels.MeshComponent;
 import artisynth.core.mechmodels.MuscleExciter;
+import artisynth.core.mechmodels.Point;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
@@ -70,6 +80,8 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
       // face.setSubSurfaceRendering(false);
       RenderProps.setVisible(face.markers(), false);
       RenderProps.setVisible(face.getMuscleBundles(), true);
+      setUpperFaceStatic();
+      buildCutPlanes();
 
       
 //    double len = 0.25; // from manual scaling of ct image to fit badinskull mesh
@@ -78,6 +90,94 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
 //          new AxisAngle (0.99911, 0.02975, -0.02975,  Math.toRadians(90.051))));//(1,0,0,Math.PI/2.0)));
 
       
+   }
+   
+   public void setUpperFaceStatic(){
+      double tol = 0.13;
+      for(FemNode3d n : face.getNodes()){
+         if(n.getPosition ().z>tol){
+            n.setDynamic (false);
+         }
+      }
+   }
+   
+   private void buildCutPlanes(){
+      Point3d centroid = new Point3d();
+      Vector3d tangent = new Vector3d();
+      Vector3d v1 = face.getNode (2003).getPosition().clone ();
+      v1.sub(face.getNode(6391).getPosition().clone());
+      Vector3d v2 = face.getNodes ().get ("1054").getPosition().clone ();
+      v2.sub (face.getNodes ().get ("1053").getPosition().clone ());
+      tangent.cross (v1, v2);
+      centroid.setZero ();
+      centroid.scaledAdd (2/(double)8, face.getNodes ().get ("1054").getPosition ());
+      centroid.scaledAdd (2/(double)8, face.getNodes ().get ("1053").getPosition ());
+      centroid.scaledAdd (2/(double)8, face.getNode (6391).getPosition ());
+      centroid.scaledAdd (2/(double)8, face.getNode (2003).getPosition ());
+      RotationMatrix3d R = new RotationMatrix3d();
+      R.setZDirection (new Vector3d(1,0,0));
+      RigidTransform3d T = new RigidTransform3d(centroid,R.getAxisAngle ());
+      PolygonalMesh mesh = MeshFactory.createRectangle (0.1, 0.1, true);
+      mesh.setMeshToWorld (T);
+      MeshComponent comp = new MeshComponent();
+      comp.setMesh (mesh);
+      mech.add (comp);
+   }
+   
+   public List<Double> getXSectionAreas (boolean recompute) {
+      ArrayList<Double> toRet = new ArrayList<> ();
+      double area=0;
+      if (recompute) {
+         area=computeXsectionalAreasAndGenerateContours ();
+      }
+      toRet.add (area);
+      return toRet;
+   }
+   
+   protected double computeXsectionalAreasAndGenerateContours () {
+      double area=0;
+      SurfaceMeshContourIxer intersector = new SurfaceMeshContourIxer();
+      MeshComponent comp = (MeshComponent)findComponent("models/mech/17");
+         boolean collided =
+            intersector.findContours (
+               (PolygonalMesh)comp.getMesh (),
+               face.getSurfaceMesh ());
+         if (collided) {
+            // areas[i] = useClosestToCenterlineApproach (i);
+            area = useSubtractSmallFromBigApproach (intersector);
+         }
+      return area;
+   }
+   
+   protected double useSubtractSmallFromBigApproach (SurfaceMeshContourIxer intersector) {
+      double finalArea = 0;
+      double largestArea = 0;
+      int largestAreaContourIdx = -1;
+      for (int j = 0; j < intersector.getContours ().size (); j++) {
+         IntersectionContour contour = intersector.getContours ().get (j);
+         double area = contour.computePlanarArea ();
+         if (area > largestArea && contour.isClosed()) {
+            largestArea = area;
+            largestAreaContourIdx = j;
+         }
+      }
+
+      if (largestAreaContourIdx == -1) {
+         finalArea = 0;
+      }
+      else {
+         finalArea = largestArea; // Add largest area.
+         for (int j = 0; j < intersector.getContours ().size (); j++) {
+            IntersectionContour contour = intersector.getContours ().get (j);
+            if (j != largestAreaContourIdx) {
+               if (contour.isClosed ()) {
+                  double area = contour.computePlanarArea ();
+                  finalArea -= area; // Subtract "island" areas.
+               }
+            }
+         }
+      }
+      return finalArea;
    }
    
    public void setDefaultOOP() {
