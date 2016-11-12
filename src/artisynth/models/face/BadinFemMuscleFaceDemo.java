@@ -103,50 +103,54 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
    
    private void buildCutPlanes(){
       Point3d centroid = new Point3d();
-      Vector3d tangent = new Vector3d();
+      /*Vector3d tangent = new Vector3d();
       Vector3d v1 = face.getNode (2003).getPosition().clone ();
       v1.sub(face.getNode(6391).getPosition().clone());
       Vector3d v2 = face.getNodes ().get ("1054").getPosition().clone ();
       v2.sub (face.getNodes ().get ("1053").getPosition().clone ());
-      tangent.cross (v1, v2);
-      centroid.setZero ();
-      centroid.scaledAdd (2/(double)8, face.getNodes ().get ("1054").getPosition ());
-      centroid.scaledAdd (2/(double)8, face.getNodes ().get ("1053").getPosition ());
-      centroid.scaledAdd (2/(double)8, face.getNode (6391).getPosition ());
-      centroid.scaledAdd (2/(double)8, face.getNode (2003).getPosition ());
-      RotationMatrix3d R = new RotationMatrix3d();
-      R.setZDirection (new Vector3d(1,0,0));
-      RigidTransform3d T = new RigidTransform3d(centroid,R.getAxisAngle ());
-      PolygonalMesh mesh = MeshFactory.createRectangle (0.1, 0.1, true);
-      mesh.setMeshToWorld (T);
-      MeshComponent comp = new MeshComponent();
-      comp.setMesh (mesh);
-      mech.add (comp);
+      tangent.cross (v1, v2);*/
+      for(int i = 0; i < 5; i++){
+         centroid.setZero ();
+         centroid.scaledAdd (i/(double)8, face.getNodes ().get ("1054").getPosition ());
+         centroid.scaledAdd (i/(double)8, face.getNodes ().get ("1053").getPosition ());
+         centroid.scaledAdd ((4-i)/(double)8, face.getNode (6391).getPosition ());
+         centroid.scaledAdd ((4-i)/(double)8, face.getNode (2003).getPosition ());
+         RotationMatrix3d R = new RotationMatrix3d();
+         R.setZDirection (new Vector3d(1,0,0));
+         RigidTransform3d T = new RigidTransform3d(centroid,R.getAxisAngle ());
+         PolygonalMesh mesh = MeshFactory.createRectangle (0.1, 0.1, true);
+         mesh.setMeshToWorld (T);
+         MeshComponent comp = new MeshComponent();
+         comp.setMesh (mesh);
+         mech.add (comp);
+      }
    }
    
    public List<Double> getXSectionAreas (boolean recompute) {
       ArrayList<Double> toRet = new ArrayList<> ();
-      double area=0;
+      List<Double> areas = new ArrayList<>();
       if (recompute) {
-         area=computeXsectionalAreasAndGenerateContours ();
+         computeXsectionalAreasAndGenerateContours (areas);
       }
-      toRet.add (area);
+      toRet.addAll (areas);
       return toRet;
    }
    
-   protected double computeXsectionalAreasAndGenerateContours () {
-      double area=0;
+   protected List<Double> computeXsectionalAreasAndGenerateContours (List<Double> areas) {
       SurfaceMeshContourIxer intersector = new SurfaceMeshContourIxer();
-      MeshComponent comp = (MeshComponent)findComponent("models/mech/17");
+      for(int i = 17 ; i < 22 ; i++){
+         String comppath = "models/mech/"+Integer.toString(i);
+         MeshComponent comp = (MeshComponent)findComponent(comppath);
          boolean collided =
             intersector.findContours (
                (PolygonalMesh)comp.getMesh (),
                face.getSurfaceMesh ());
          if (collided) {
             // areas[i] = useClosestToCenterlineApproach (i);
-            area = useSubtractSmallFromBigApproach (intersector);
+            areas.add (useSubtractSmallFromBigApproach (intersector));
          }
-      return area;
+      }
+      return areas;
    }
    
    protected double useSubtractSmallFromBigApproach (SurfaceMeshContourIxer intersector) {
