@@ -1,0 +1,19 @@
+###Maxilla_Markers
+
+#Deep Masseter 
+
+#Superficial Masseter
+masseter_on_skull CEY_skull 177.52533 75.859954 205.98904
+#U_R_02 CEY_skull 51.089312 81.389044 206.21708
+ 
+
+########################################################################################
+###Mandible_Markers
+
+ 
+#Superficial Masseter
+#Lo_L_02 CEY_mandible 168.38653 93.741445 160.60158
+#Lo_R_02 CEY_mandible 65.416239 99.541113 154.37069
+
+
+ 

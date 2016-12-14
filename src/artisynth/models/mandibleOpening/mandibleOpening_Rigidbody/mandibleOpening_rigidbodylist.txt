@@ -1,0 +1,3 @@
+CEY_mandible "CEY_mandible_3.obj" dynamic 1 204 153 51
+CEY_skull "CEY_skull_3.obj" fix 1 204 153 51
+ 

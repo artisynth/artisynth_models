@@ -1,0 +1,100 @@
+Deep_Masseter_L
+        frameMarker SY_maxilla_marker_U_L_01 frameMarker SY_mandible_marker_Lo_L_01
+end
+
+Superficial_Masseter_L
+        frameMarker SY_maxilla_marker_U_L_02 frameMarker SY_mandible_marker_Lo_L_02
+end
+Anterior_Temporal_L
+frameMarker SY_maxilla_marker_U_L_03 frameMarker SY_mandible_marker_Lo_L_10
+end
+
+Middle_Temporal_L
+frameMarker SY_maxilla_marker_U_L_04 frameMarker SY_mandible_marker_Lo_L_11
+end
+
+Posterior_Temporal_L
+frameMarker SY_maxilla_marker_U_L_05 frameMarker SY_mandible_marker_Lo_L_12
+end
+
+Medial_Pterygoid_L
+frameMarker SY_maxilla_marker_U_L_06 frameMarker SY_mandible_marker_Lo_L_03
+end
+
+Superior_Lateral_Pterygoid_L
+frameMarker SY_maxilla_marker_U_L_07 frameMarker SY_mandible_marker_Lo_L_08
+end
+
+Inferior_Lateral_Pterygoid_L
+frameMarker SY_maxilla_marker_U_L_08 frameMarker SY_mandible_marker_Lo_L_09
+end
+
+Anterior_Mylohyoid_L
+        frameMarker SY_mandible_marker_Lo_L_05 frameMarker SY_hyoid_marker_L_02
+end
+
+Posterior_Mylohyoid_L
+       frameMarker SY_mandible_marker_Lo_L_04 frameMarker SY_hyoid_marker_L_03
+end
+
+Digastric_L
+        frameMarker SY_mandible_marker_Lo_L_07 frameMarker SY_hyoid_marker_L_04
+end
+
+Geniohyoid_L
+        frameMarker SY_mandible_marker_Lo_L_06 frameMarker SY_hyoid_marker_L_01
+end                                                               
+
+
+Deep_Masseter_R
+        frameMarker SY_maxilla_marker_U_R_01 frameMarker SY_mandible_marker_Lo_R_01
+end
+
+Superficial_Masseter_R
+        frameMarker SY_maxilla_marker_U_R_02 frameMarker SY_mandible_marker_Lo_R_02
+end
+
+Anterior_Temporal_R
+frameMarker SY_maxilla_marker_U_R_03 frameMarker SY_mandible_marker_Lo_R_10
+end
+
+Middle_Temporal_R
+frameMarker SY_maxilla_marker_U_R_04 frameMarker SY_mandible_marker_Lo_R_11
+end
+
+Posterior_Temporal_R
+frameMarker SY_maxilla_marker_U_R_05 frameMarker SY_mandible_marker_Lo_R_12
+end
+
+Medial_Pterygoid_R
+frameMarker SY_maxilla_marker_U_R_06 frameMarker SY_mandible_marker_Lo_R_03
+end
+
+Superior_Lateral_Pterygoid_R
+frameMarker SY_maxilla_marker_U_R_07 frameMarker SY_mandible_marker_Lo_R_08
+end
+
+Inferior_Lateral_Pterygoid_R
+frameMarker SY_maxilla_marker_U_R_08 frameMarker SY_mandible_marker_Lo_R_09
+end
+ 
+###############################################################################
+Anterior_Mylohyoid_R
+        frameMarker SY_mandible_marker_Lo_R_05 frameMarker SY_hyoid_marker_R_02
+end
+
+Posterior_Mylohyoid_R
+        frameMarker SY_mandible_marker_Lo_R_04 frameMarker SY_hyoid_marker_R_03
+end
+
+Digastric_R
+        frameMarker SY_mandible_marker_Lo_R_07 frameMarker SY_hyoid_marker_R_04
+end
+
+Geniohyoid_R
+        frameMarker SY_mandible_marker_Lo_R_06 frameMarker SY_hyoid_marker_R_01
+end
+
+
+ 
+
