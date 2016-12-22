@@ -2735,8 +2735,6 @@ public class ModelTemplate extends RootModel {
             rtok.nextToken();
             pointLoc[2] = rtok.nval;
             body = myMechMod.rigidBodies().get(bodyName);
-            marker.setLocation(new Point3d(
-               pointLoc[0], pointLoc[1], pointLoc[2]));
             marker.setName(pName);
             if (body != null) {
                if (debug)
@@ -2751,13 +2749,14 @@ public class ModelTemplate extends RootModel {
                   RenderProps.setPointColor(marker, Color.BLUE);
                }
 
+               // XXX Sanchez: I'm guessing location is in world coordinates, since
+               //              originally was applied before setting the frame.
+               Point3d pos = new Point3d(pointLoc[0], pointLoc[1], pointLoc[2]);
                if (centerRigidBodies) {
-                  marker.getLocation().sub(bodyTranslationMap.get(body)); // subtract
-                  // adjusted
-                  // position
-               }
-
+                  pos.sub(bodyTranslationMap.get(body)); // subtract adjusted position
+               }             
                marker.setFrame(body);
+               marker.setWorldLocation(pos); // XXX maybe use setLocation(pos)
                myMechMod.addFrameMarker(marker);
             } else if (body == null && myMechMod.rigidBodies().size() > 0) {
                body = block;
@@ -2782,6 +2781,8 @@ public class ModelTemplate extends RootModel {
                }
 
                marker.setFrame(body);
+               Point3d pos = new Point3d(pointLoc[0], pointLoc[1], pointLoc[2]);
+               marker.setWorldLocation(pos);
                myMechMod.addFrameMarker(marker);
             } else if (debug) {
                System.out.println("Warning: Cannot attach nodes!");
