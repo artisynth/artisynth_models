@@ -1,6 +1,293 @@
-masseter CEY_skull 178.27491 76.628657 206.69839
+##masseter
+Lt_superficial_masseter_skull CEY_skull 178.27491 76.628657 206.69839
+Lt_superficial_masseter_mandible CEY_mandible 168.72043 95.184426 161.06123
+ 
+Rt_superficial_masseter_skull CEY_skull 51.563782 79.343503 206.47845
+Rt_superficial_masseter_mandible CEY_mandible 65.612161 97.541938 154.82096
 
+Lt_deep_masseter_skull CEY_skull 181.1394 89.683009 209.08484
+Lt_deep_masseter_mandible CEY_mandible 167.79853 98.121917 185.40937
  
- 
+Rt_deep_masseter_skull CEY_skull 49.052573 93.514075 208.58778
+Rt_deep_masseter_mandible CEY_mandible 62.649926 101.59066 180.98963 
 
+##temporal
+Lt_anterior_temporal_skull CEY_skull 168.33538 98.884301 249.76681
+Lt_anterior_temporal_mandible CEY_mandible 163.12974 79.474123 199.36962
+
+Lt_middle_temporal_skull CEY_skull 184.77581 139.18022 261.13207
+Lt_middle_temporal_mandible CEY_mandible 166.17658 82.615006 208.75846
+
+Lt_posterior_temporal_skull CEY_skull 186.4419 169.92426 240.25337
+Lt_posterior_temporal_mandible CEY_mandible 168.00027 86.938836 204.00185
+
+Rt_anterior_temporal_skull CEY_skull 62.456665 98.00075 249.81755
+Rt_anterior_temporal_mandible CEY_mandible 67.140233 80.616161 196.07364
+
+Rt_middle_temporal_skull CEY_skull 47.446646 135.45838 260.65207
+Rt_middle_temporal_mandible CEY_mandible 62.952252 84.516583 206.23585
+
+Rt_posterior_temporal_skull CEY_skull 48.606234 166.63546 243.57433
+Rt_posterior_temporal_mandible CEY_mandible 63.843442 89.404834 199.62748
+
+##medial pterygoid
+Lt_medial_pterygoid_skull CEY_skull 135.7586 91.390495 198.9508
+Lt_medial_pterygoid_mandible CEY_mandible 163.00468 96.344162 153.99503
+
+Rt_medial_pterygoid_skull CEY_skull 95.782255 93.978586 197.90843
+Rt_medial_pterygoid_mandible CEY_mandible 72.842813 99.461889 148.69776
+
+##lateral pterygoid
+Lt_superior_lateral_pterygoid_skull CEY_skull 156.73046 76.048761 218.19231
+Lt_superior_lateral_pterygoid_mandible CEY_mandible 166.90494 120.95407 206.84446
+
+Lt_inferior_lateral_pterygoid_skull CEY_skull 138.79701 91.864769 199.47503
+Lt_inferior_lateral_pterygoid_mandible CEY_mandible 166.24293 121.14395 201.55258
+
+Rt_superior_lateral_pterygoid_skull CEY_skull 72.331878 76.457589 219.43123
+Rt_superior_lateral_pterygoid_mandible CEY_mandible 61.873749 119.52684 204.73833
+
+Rt_inferior_lateral_pterygoid_skull CEY_skull 94.312259 93.328994 200.11348
+Rt_inferior_lateral_pterygoid_mandible CEY_mandible 62.931166 120.48828 199.53048
+
+##On the hyoid
+##Geniohyoid
+Lt_geniohyoid_hyoid CEY_hyoid 113.90825 67.786274 118.37132
+Rt_geniohyoid_hyoid CEY_hyoid 107.39416 69.378791 118.47649
+
+##Mylohyoid
+Lt_anterior_mylohyoid_hyoid CEY_hyoid 114.48458 67.321878 117.04499
+Rt_anterior_mylohyoid_hyoid CEY_hyoid 106.37578 69.093512 116.91762
+
+Lt_posterior_mylohyoid_hyoid CEY_hyoid 116.06277 67.741737 117.08929
+Rt_posterior_mylohyoid_hyoid CEY_hyoid 104.75244 70.043878 116.91075
+
+##Digastric
+Lt_digastric_hyoid CEY_hyoid 129.7904 80.147073 115.97524
+Rt_digastric_hyoid CEY_hyoid 93.204472 81.771247 115.8397
+
+##Stylohyoid
+Lt_styloyoid_hyoid CEY_hyoid 121.52475 70.425002 117.86958
+Rt_styloyoid_hyoid CEY_hyoid 101.60993 71.451406 117.28713
+
+
+##On the mandible
+##Geniohyoid
+Lt_geniohyoid_mandible CEY_mandible 115.61451 39.087197 135.19439
+Rt_geniohyoid_mandible CEY_mandible 112.87767 39.105355 135.28433
+
+##Mylohyoid
+Lt_anterior_mylohyoid_mandible CEY_mandible 132.5806 50.396153 143.54992
+Rt_anterior_mylohyoid_mandible CEY_mandible 99.921631 47.601246 143.21951
+
+Lt_posterior_mylohyoid_mandible CEY_mandible 144.57094 76.128444 155.77966
+Rt_posterior_mylohyoid_mandible CEY_mandible 88.562772 72.498078 151.64839
+
+##Digastric
+Lt_digastric_mandible CEY_mandible 119.95456 39.772467 134.69396 
+Rt_digastric_mandible CEY_mandible 109.55158 39.867723 134.40015  
+
+##On the skull
+##Stylohyoid
+Lt_styloyoid_skull CEY_skull 156.18305 132.00648 181.18694 
+Rt_styloyoid_skull CEY_skull 78.091942 130.96579 179.1381
+
+
+##for_springs
+##############################################capsular_ligaments
+##on the skull left
+capsular_ligament_skull_left_1 CEY_skull 180.81705 115.48446 210.34211
+capsular_ligament_skull_left_2 CEY_skull 178.91983 121.82564 211.41636
+capsular_ligament_skull_left_3 CEY_skull 176.56262 128.41414 211.94216
+capsular_ligament_skull_left_4 CEY_skull 173.69451 131.55057 208.91195
+capsular_ligament_skull_left_5 CEY_skull 168.85817 132.17977 203.90337
+capsular_ligament_skull_left_6 CEY_skull 165.30902 133.02179 205.04458
+capsular_ligament_skull_left_7 CEY_skull 161.80555 134.58342 206.16349
+capsular_ligament_skull_left_8 CEY_skull 158.69614 134.10208 205.43805
+capsular_ligament_skull_left_9 CEY_skull 156.56179 132.96975 205.16649
+capsular_ligament_skull_left_10 CEY_skull 154.77243 130.56483 205.59588
+capsular_ligament_skull_left_11 CEY_skull 153.75129 127.98303 205.01916
+capsular_ligament_skull_left_12 CEY_skull 154.02037 124.25201 203.53957
+capsular_ligament_skull_left_13 CEY_skull 156.25933 121.7942 205.76827
+capsular_ligament_skull_left_14 CEY_skull 161.16596 118.85821 207.19609
+capsular_ligament_skull_left_15 CEY_skull 171.4215 113.84358 206.44076
+capsular_ligament_skull_left_16 CEY_skull 178.53195 112.21198 206.42977
+
+##on the disc
+capsular_ligament_disc_left_upper_1 CEY_disc_left 178.41037 118.34118 206.19625
+capsular_ligament_disc_left_upper_2 CEY_disc_left 178.56265 122.6625 206.77458
+capsular_ligament_disc_left_upper_3 CEY_disc_left 175.00966 126.9585 208.38697
+capsular_ligament_disc_left_upper_4 CEY_disc_left 171.99341 128.97768 206.67581
+capsular_ligament_disc_left_upper_5 CEY_disc_left 168.18773 129.64561 205.13603
+capsular_ligament_disc_left_upper_6 CEY_disc_left 164.57985 130.661 204.98222
+capsular_ligament_disc_left_upper_7 CEY_disc_left 160.33504 130.75623 207.52043
+capsular_ligament_disc_left_upper_8 CEY_disc_left 158.19243 129.53996 206.54254
+capsular_ligament_disc_left_upper_9 CEY_disc_left 157.06581 128.44158 205.92415
+capsular_ligament_disc_left_upper_10 CEY_disc_left 156.53774 127.25711 205.83935
+capsular_ligament_disc_left_upper_11 CEY_disc_left 157.15553 124.66592 205.69257 
+capsular_ligament_disc_left_upper_12 CEY_disc_left 158.49894 123.10778 205.94376
+capsular_ligament_disc_left_upper_13 CEY_disc_left 163.68196 121.55201 207.76119
+capsular_ligament_disc_left_upper_14 CEY_disc_left 170.51001 117.52101 206.25235
+capsular_ligament_disc_left_upper_15 CEY_disc_left 175.84563 116.64648 205.71249
+capsular_ligament_disc_left_upper_16 CEY_disc_left 178.41037 118.34118 206.19625 
+
+capsular_ligament_disc_left_lower_1 CEY_disc_left 178.27986 118.59394 205.58961
+capsular_ligament_disc_left_lower_2 CEY_disc_left 178.34267 122.72046 205.83593
+capsular_ligament_disc_left_lower_3 CEY_disc_left 174.58109 126.88182 207.49005
+capsular_ligament_disc_left_lower_4 CEY_disc_left 171.71597 128.43798 206.05562
+capsular_ligament_disc_left_lower_5 CEY_disc_left 167.93595 129.11421 204.58237
+capsular_ligament_disc_left_lower_6 CEY_disc_left 164.52046 130.0926 204.33076
+capsular_ligament_disc_left_lower_7 CEY_disc_left 160.4494 130.19901 206.79335
+capsular_ligament_disc_left_lower_8 CEY_disc_left 158.43441 129.0111 205.80991
+capsular_ligament_disc_left_lower_9 CEY_disc_left 157.55919 128.00287 205.29637
+capsular_ligament_disc_left_lower_10 CEY_disc_left 157.0657 126.82995 205.28103
+capsular_ligament_disc_left_lower_11 CEY_disc_left 157.51614 124.76959 205.33157
+capsular_ligament_disc_left_lower_12 CEY_disc_left 158.81014 123.24495 205.68748
+capsular_ligament_disc_left_lower_13 CEY_disc_left 163.82229 121.66211 207.34915
+capsular_ligament_disc_left_lower_14 CEY_disc_left 171.31744 118.66892 206.96699
+capsular_ligament_disc_left_lower_15 CEY_disc_left 170.20801 117.68507 205.95814
+capsular_ligament_disc_left_lower_16 CEY_disc_left 175.7742 116.64658 205.3227
+## on the condyle
+
+capsular_ligament_mandible_left_1 CEY_mandible 178.60657 118.61717 199.31323
+capsular_ligament_mandible_left_2 CEY_mandible 177.09474 122.87949 199.45353
+capsular_ligament_mandible_left_3 CEY_mandible 173.00278 126.22905 199.44168
+capsular_ligament_mandible_left_4 CEY_mandible 170.07387 127.36199 199.55019
+capsular_ligament_mandible_left_5 CEY_mandible 167.6665 128.24682 198.90026
+capsular_ligament_mandible_left_6 CEY_mandible 164.59568 129.07413 198.38606
+capsular_ligament_mandible_left_7 CEY_mandible 162.05824 128.99938 198.4724
+capsular_ligament_mandible_left_8 CEY_mandible 160.55127 128.21144 198.53937
+capsular_ligament_mandible_left_9 CEY_mandible 159.23793 127.06523 198.80862
+capsular_ligament_mandible_left_10 CEY_mandible 158.02309 125.79765 199.53119
+capsular_ligament_mandible_left_11 CEY_mandible 157.74684 124.13129 199.5418
+capsular_ligament_mandible_left_12 CEY_mandible 158.37017 122.90233 199.68778
+capsular_ligament_mandible_left_13 CEY_mandible 160.27167 122.05134 201.47716
+capsular_ligament_mandible_left_14 CEY_mandible 165.39974 121.15183 203.78508
+capsular_ligament_mandible_left_15 CEY_mandible 171.08503 115.98438 202.60754
+capsular_ligament_mandible_left_16 CEY_mandible 176.51773 115.15415 200.95013
+##################################################################################
+##################################################################################
+##on the skull right
+capsular_ligament_skull_right_1 CEY_skull 51.896801 118.76698 207.19543
+capsular_ligament_skull_right_2 CEY_skull 53.216423 122.54426 210.51284
+capsular_ligament_skull_right_3 CEY_skull 54.276015 127.56266 212.89879
+capsular_ligament_skull_right_4 CEY_skull 56.355495 132.30702 211.8054
+capsular_ligament_skull_right_5 CEY_skull 58.978177 134.01715 209.15629
+capsular_ligament_skull_right_6 CEY_skull 62.683781 134.93167 205.29889
+capsular_ligament_skull_right_7 CEY_skull 65.726735 134.14375 204.89046
+capsular_ligament_skull_right_8 CEY_skull 70.875986 134.93415 204.8309
+capsular_ligament_skull_right_9 CEY_skull 74.883276 133.80383 205.79801
+capsular_ligament_skull_right_10 CEY_skull 76.894158 131.11325 205.52768
+capsular_ligament_skull_right_11 CEY_skull 77.387581 127.89623 204.90861
+capsular_ligament_skull_right_12 CEY_skull 76.604586 124.95649 204.91145
+capsular_ligament_skull_right_13 CEY_skull 74.348383 121.8355 205.379
+capsular_ligament_skull_right_14 CEY_skull 71.417724 119.5978 205.8013
+capsular_ligament_skull_right_15 CEY_skull 65.048693 118.43441 205.91102
+capsular_ligament_skull_right_16 CEY_skull 56.175842 115.72875 204.5588
  
+##on the disc
+capsular_ligament_disc_right_upper_1 CEY_disc_right 54.847579 119.73571 205.53537
+capsular_ligament_disc_right_upper_2 CEY_disc_right 53.386606 123.48162 207.57247
+capsular_ligament_disc_right_upper_3 CEY_disc_right 54.400794 127.06575 208.06834
+capsular_ligament_disc_right_upper_4 CEY_disc_right 56.499076 129.34227 207.437
+capsular_ligament_disc_right_upper_5 CEY_disc_right 59.64224 130.52293 206.31476
+capsular_ligament_disc_right_upper_6 CEY_disc_right 63.246362 131.32535 204.55005
+capsular_ligament_disc_right_upper_7 CEY_disc_right 66.217661 131.59819 204.59218 
+capsular_ligament_disc_right_upper_8 CEY_disc_right 69.671397 132.23146 205.15019
+capsular_ligament_disc_right_upper_9 CEY_disc_right 72.47614 131.29802 205.51129
+capsular_ligament_disc_right_upper_10 CEY_disc_right 73.787528 130.08838 205.72222
+capsular_ligament_disc_right_upper_11 CEY_disc_right 74.431088 128.00297 205.21454
+capsular_ligament_disc_right_upper_12 CEY_disc_right 74.517976 125.85031 205.51371
+capsular_ligament_disc_right_upper_13 CEY_disc_right 72.262953 123.42062 205.34894
+capsular_ligament_disc_right_upper_14 CEY_disc_right 68.02472 121.8344 206.78121
+capsular_ligament_disc_right_upper_15 CEY_disc_right 64.537597 120.38981 206.37486
+capsular_ligament_disc_right_upper_16 CEY_disc_right 57.678165 118.70982 205.1279
+
+capsular_ligament_disc_right_lower_1 CEY_disc_right 54.720781 119.78703 205.22241
+capsular_ligament_disc_right_lower_2 CEY_disc_right 53.256933 123.47304 206.79188
+capsular_ligament_disc_right_lower_3 CEY_disc_right 54.365298 126.89976 207.18999
+capsular_ligament_disc_right_lower_4 CEY_disc_right 56.821754 129.11719 206.7465
+capsular_ligament_disc_right_lower_5 CEY_disc_right 59.826836 129.82156 205.77023
+capsular_ligament_disc_right_lower_6 CEY_disc_right 63.633877 130.59288 203.97092
+capsular_ligament_disc_right_lower_7 CEY_disc_right 66.230189 130.97707 203.99605
+capsular_ligament_disc_right_lower_8 CEY_disc_right 69.649355 131.58003 204.3893
+capsular_ligament_disc_right_lower_9 CEY_disc_right 72.149676 130.75986 204.60484
+capsular_ligament_disc_right_lower_10 CEY_disc_right 73.278298 129.82405 204.77215
+capsular_ligament_disc_right_lower_11 CEY_disc_right 73.907864 127.87136 204.33036
+capsular_ligament_disc_right_lower_12 CEY_disc_right 74.294279 125.78958 204.60621
+capsular_ligament_disc_right_lower_13 CEY_disc_right 72.14036 123.06509 204.34706
+capsular_ligament_disc_right_lower_14 CEY_disc_right 68.079387 121.18266 205.61191
+capsular_ligament_disc_right_lower_15 CEY_disc_right 64.462126 119.8773 205.71816
+capsular_ligament_disc_right_lower_16 CEY_disc_right 57.566179 118.86905 204.87002
+## on the condyle
+
+capsular_ligament_mandible_right_1 CEY_mandible 52.218116 118.16339 201.68843
+capsular_ligament_mandible_right_2 CEY_mandible 51.87818 123.03307 201.28348
+capsular_ligament_mandible_right_3 CEY_mandible 53.14727 125.4257 200.69381
+capsular_ligament_mandible_right_4 CEY_mandible 56.080514 128.28143 200.34523
+capsular_ligament_mandible_right_5 CEY_mandible 59.009407 129.32375 200.17669
+capsular_ligament_mandible_right_6 CEY_mandible 63.321093 129.95722 199.72921
+capsular_ligament_mandible_right_7 CEY_mandible 66.437874 130.55327 200.07953
+capsular_ligament_mandible_right_8 CEY_mandible 69.330226 130.31427 200.34594
+capsular_ligament_mandible_right_9 CEY_mandible 71.204465 129.40521 200.96014
+capsular_ligament_mandible_right_10 CEY_mandible 71.887546 128.76389 200.95099
+capsular_ligament_mandible_right_11 CEY_mandible 72.580406 127.67633 201.06676
+capsular_ligament_mandible_right_12 CEY_mandible 72.868473 125.7388 201.04236
+capsular_ligament_mandible_right_13 CEY_mandible 70.647244 123.15713 201.67352
+capsular_ligament_mandible_right_14 CEY_mandible 66.827619 121.27683 203.61861
+capsular_ligament_mandible_right_15 CEY_mandible 64.488595 120.14411 203.50999
+capsular_ligament_mandible_right_16 CEY_mandible 56.353846 116.90683 201.1717
+
+###############################################################################################
+###### temporomandibular ligament
+## Left
+Lt_temporomandibular_ligament_skull_1 CEY_skull 182.2875 109.11274 210.67723
+Lt_temporomandibular_ligament_skull_2 CEY_skull 182.20111 110.38211 210.54734
+Lt_temporomandibular_ligament_skull_3 CEY_skull 181.90422 111.72936 210.37247
+Lt_temporomandibular_ligament_skull_4 CEY_skull 181.52692 112.91418 210.22172
+Lt_temporomandibular_ligament_skull_5 CEY_skull 181.25475 113.67749 210.11353
+
+Lt_temporomandibular_ligament_condyle_1 CEY_mandible 175.21068 120.68506 193.43434
+Lt_temporomandibular_ligament_condyle_2 CEY_mandible 175.12898 121.42191 193.92154
+Lt_temporomandibular_ligament_condyle_3 CEY_mandible 175.20581 122.05925 194.78626
+Lt_temporomandibular_ligament_condyle_4 CEY_mandible 175.08116 122.67758 195.41497
+Lt_temporomandibular_ligament_condyle_5 CEY_mandible 175.04322 123.14153 196.06907
+
+
+
+
+## Right
+
+
+Rt_temporomandibular_ligament_skull_1 CEY_skull 48.412062 111.6908 210.115  
+Rt_temporomandibular_ligament_skull_2 CEY_skull 48.544652 113.04247 210.0393
+Rt_temporomandibular_ligament_skull_3 CEY_skull 48.989825 114.49572 209.75108
+Rt_temporomandibular_ligament_skull_4 CEY_skull 49.681693 116.02513 209.34856
+Rt_temporomandibular_ligament_skull_5 CEY_skull 50.363867 117.54446 209.31729
+
+Rt_temporomandibular_ligament_condyle_1 CEY_mandible 55.045246 119.64963 190.0592
+Rt_temporomandibular_ligament_condyle_2 CEY_mandible 54.630349 120.89086 190.84761
+Rt_temporomandibular_ligament_condyle_3 CEY_mandible 54.089723 121.7753 192.03209
+Rt_temporomandibular_ligament_condyle_4 CEY_mandible 53.945595 122.72611 192.98282
+Rt_temporomandibular_ligament_condyle_5 CEY_mandible 53.955494 123.53587 193.89322
+
+###############################################################################################
+###### temporomandibular ligament
+## on the skull
+
+Lt_sphenomandibular_ligament_skull_1 CEY_skull 149.18368 123.31374 204.681 
+Lt_sphenomandibular_ligament_skull_2 CEY_skull 149.69653 124.24703 204.21114
+Lt_sphenomandibular_ligament_skull_3 CEY_skull 150.28092 125.09468 203.87876
+
+Rt_sphenomandibular_ligament_skull_1 CEY_skull 82.024018 123.35299 202.86055
+Rt_sphenomandibular_ligament_skull_2 CEY_skull 81.896435 124.13308 202.13117
+Rt_sphenomandibular_ligament_skull_3 CEY_skull 81.559915 124.92108 201.73886
+
+## on the mandible
+Lt_sphenomandibular_ligament_mandible_1 CEY_mandible 158.45454 96.848474 177.02201
+Lt_sphenomandibular_ligament_mandible_2 CEY_mandible 159.17126 97.047292 177.21499
+Lt_sphenomandibular_ligament_mandible_3 CEY_mandible 160.05 97.337468 177.38989
+
+Rt_sphenomandibular_ligament_mandible_1 CEY_mandible 72.919704 100.63477 173.51879
+Rt_sphenomandibular_ligament_mandible_2 CEY_mandible 71.157021 100.51553 173.70026
+Rt_sphenomandibular_ligament_mandible_3 CEY_mandible 70.297345 100.95379 173.87583

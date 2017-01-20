@@ -1,0 +1,339 @@
+####left_upper_capsular_ligament
+left_upper_capsular_ligament_1
+frameMarker capsular_ligament_skull_left_1 frameMarker capsular_ligament_disc_left_upper_1
+end
+
+left_upper_capsular_ligament_2
+frameMarker capsular_ligament_skull_left_2 frameMarker capsular_ligament_disc_left_upper_2
+end
+
+left_upper_capsular_ligament_3
+frameMarker capsular_ligament_skull_left_3 frameMarker capsular_ligament_disc_left_upper_3
+end
+
+left_upper_capsular_ligament_4
+frameMarker capsular_ligament_skull_left_4 frameMarker capsular_ligament_disc_left_upper_4
+end
+
+left_upper_capsular_ligament_5
+frameMarker capsular_ligament_skull_left_5 frameMarker capsular_ligament_disc_left_upper_5
+end
+
+left_upper_capsular_ligament_6
+frameMarker capsular_ligament_skull_left_6 frameMarker capsular_ligament_disc_left_upper_6
+end
+
+left_upper_capsular_ligament_7
+frameMarker capsular_ligament_skull_left_7 frameMarker capsular_ligament_disc_left_upper_7
+end
+
+left_upper_capsular_ligament_8
+frameMarker capsular_ligament_skull_left_8 frameMarker capsular_ligament_disc_left_upper_8
+end
+
+left_upper_capsular_ligament_9
+frameMarker capsular_ligament_skull_left_9 frameMarker capsular_ligament_disc_left_upper_9
+end
+
+left_upper_capsular_ligament_10
+frameMarker capsular_ligament_skull_left_10 frameMarker capsular_ligament_disc_left_upper_10
+end
+
+left_upper_capsular_ligament_11
+frameMarker capsular_ligament_skull_left_11 frameMarker capsular_ligament_disc_left_upper_11
+end
+
+left_upper_capsular_ligament_12
+frameMarker capsular_ligament_skull_left_12 frameMarker capsular_ligament_disc_left_upper_12
+end
+
+left_upper_capsular_ligament_13
+frameMarker capsular_ligament_skull_left_13 frameMarker capsular_ligament_disc_left_upper_13
+end
+
+left_upper_capsular_ligament_14
+frameMarker capsular_ligament_skull_left_14 frameMarker capsular_ligament_disc_left_upper_14
+end
+
+left_upper_capsular_ligament_15
+frameMarker capsular_ligament_skull_left_15 frameMarker capsular_ligament_disc_left_upper_15
+end
+
+left_upper_capsular_ligament_16
+frameMarker capsular_ligament_skull_left_16 frameMarker capsular_ligament_disc_left_upper_16
+end
+
+####left_lower_capsular_ligament
+left_lower_capsular_ligament_1
+frameMarker capsular_ligament_mandible_left_1 frameMarker capsular_ligament_disc_left_lower_1
+end
+
+left_lower_capsular_ligament_2
+frameMarker capsular_ligament_mandible_left_2 frameMarker capsular_ligament_disc_left_lower_2
+end
+
+left_lower_capsular_ligament_3
+frameMarker capsular_ligament_mandible_left_3 frameMarker capsular_ligament_disc_left_lower_3
+end
+
+left_lower_capsular_ligament_4
+frameMarker capsular_ligament_mandible_left_4 frameMarker capsular_ligament_disc_left_lower_4
+end
+
+left_lower_capsular_ligament_5
+frameMarker capsular_ligament_mandible_left_5 frameMarker capsular_ligament_disc_left_lower_5
+end
+
+left_lower_capsular_ligament_6
+frameMarker capsular_ligament_mandible_left_6 frameMarker capsular_ligament_disc_left_lower_6
+end
+
+left_lower_capsular_ligament_7
+frameMarker capsular_ligament_mandible_left_7 frameMarker capsular_ligament_disc_left_lower_7
+end
+
+left_lower_capsular_ligament_8
+frameMarker capsular_ligament_mandible_left_8 frameMarker capsular_ligament_disc_left_lower_8
+end
+
+left_lower_capsular_ligament_9
+frameMarker capsular_ligament_mandible_left_9 frameMarker capsular_ligament_disc_left_lower_9
+end
+
+left_lower_capsular_ligament_10
+frameMarker capsular_ligament_mandible_left_10 frameMarker capsular_ligament_disc_left_lower_10
+end
+
+left_lower_capsular_ligament_11
+frameMarker capsular_ligament_mandible_left_11 frameMarker capsular_ligament_disc_left_lower_11
+end
+
+left_lower_capsular_ligament_12
+frameMarker capsular_ligament_mandible_left_12 frameMarker capsular_ligament_disc_left_lower_12
+end
+
+left_lower_capsular_ligament_13
+frameMarker capsular_ligament_mandible_left_13 frameMarker capsular_ligament_disc_left_lower_13
+end
+
+left_lower_capsular_ligament_14
+frameMarker capsular_ligament_mandible_left_14 frameMarker capsular_ligament_disc_left_lower_14
+end
+
+left_lower_capsular_ligament_15
+frameMarker capsular_ligament_mandible_left_15 frameMarker capsular_ligament_disc_left_lower_15
+end
+
+left_lower_capsular_ligament_16
+frameMarker capsular_ligament_mandible_left_16 frameMarker capsular_ligament_disc_left_lower_16
+end
+
+####right_upper_capsular_ligament
+right_upper_capsular_ligament_1
+frameMarker capsular_ligament_skull_right_1 frameMarker capsular_ligament_disc_right_upper_1
+end
+
+right_upper_capsular_ligament_2
+frameMarker capsular_ligament_skull_right_2 frameMarker capsular_ligament_disc_right_upper_2
+end
+
+right_upper_capsular_ligament_3
+frameMarker capsular_ligament_skull_right_3 frameMarker capsular_ligament_disc_right_upper_3
+end
+
+right_upper_capsular_ligament_4
+frameMarker capsular_ligament_skull_right_4 frameMarker capsular_ligament_disc_right_upper_4
+end
+
+right_upper_capsular_ligament_5
+frameMarker capsular_ligament_skull_right_5 frameMarker capsular_ligament_disc_right_upper_5
+end
+
+right_upper_capsular_ligament_6
+frameMarker capsular_ligament_skull_right_6 frameMarker capsular_ligament_disc_right_upper_6
+end
+
+right_upper_capsular_ligament_7
+frameMarker capsular_ligament_skull_right_7 frameMarker capsular_ligament_disc_right_upper_7
+end
+
+right_upper_capsular_ligament_8
+frameMarker capsular_ligament_skull_right_8 frameMarker capsular_ligament_disc_right_upper_8
+end
+
+right_upper_capsular_ligament_9
+frameMarker capsular_ligament_skull_right_9 frameMarker capsular_ligament_disc_right_upper_9
+end
+
+right_upper_capsular_ligament_10
+frameMarker capsular_ligament_skull_right_10 frameMarker capsular_ligament_disc_right_upper_10
+end
+
+right_upper_capsular_ligament_11
+frameMarker capsular_ligament_skull_right_11 frameMarker capsular_ligament_disc_right_upper_11
+end
+
+right_upper_capsular_ligament_12
+frameMarker capsular_ligament_skull_right_12 frameMarker capsular_ligament_disc_right_upper_12
+end
+
+right_upper_capsular_ligament_13
+frameMarker capsular_ligament_skull_right_13 frameMarker capsular_ligament_disc_right_upper_13
+end
+
+right_upper_capsular_ligament_14
+frameMarker capsular_ligament_skull_right_14 frameMarker capsular_ligament_disc_right_upper_14
+end
+
+right_upper_capsular_ligament_15
+frameMarker capsular_ligament_skull_right_15 frameMarker capsular_ligament_disc_right_upper_15
+end
+
+right_upper_capsular_ligament_16
+frameMarker capsular_ligament_skull_right_16 frameMarker capsular_ligament_disc_right_upper_16
+end
+####right_lower_capsular_ligament
+right_lower_capsular_ligament_1
+frameMarker capsular_ligament_mandible_right_1 frameMarker capsular_ligament_disc_right_lower_1
+end
+
+right_lower_capsular_ligament_2
+frameMarker capsular_ligament_mandible_right_2 frameMarker capsular_ligament_disc_right_lower_2
+end
+
+right_lower_capsular_ligament_3
+frameMarker capsular_ligament_mandible_right_3 frameMarker capsular_ligament_disc_right_lower_3
+end
+
+right_lower_capsular_ligament_4
+frameMarker capsular_ligament_mandible_right_4 frameMarker capsular_ligament_disc_right_lower_4
+end
+
+right_lower_capsular_ligament_5
+frameMarker capsular_ligament_mandible_right_5 frameMarker capsular_ligament_disc_right_lower_5
+end
+
+right_lower_capsular_ligament_6
+frameMarker capsular_ligament_mandible_right_6 frameMarker capsular_ligament_disc_right_lower_6
+end
+
+right_lower_capsular_ligament_7
+frameMarker capsular_ligament_mandible_right_7 frameMarker capsular_ligament_disc_right_lower_7
+end
+
+right_lower_capsular_ligament_8
+frameMarker capsular_ligament_mandible_right_8 frameMarker capsular_ligament_disc_right_lower_8
+end
+
+right_lower_capsular_ligament_9
+frameMarker capsular_ligament_mandible_right_9 frameMarker capsular_ligament_disc_right_lower_9
+end
+
+right_lower_capsular_ligament_10
+frameMarker capsular_ligament_mandible_right_10 frameMarker capsular_ligament_disc_right_lower_10
+end
+
+right_lower_capsular_ligament_11
+frameMarker capsular_ligament_mandible_right_11 frameMarker capsular_ligament_disc_right_lower_11
+end
+
+right_lower_capsular_ligament_12
+frameMarker capsular_ligament_mandible_right_12 frameMarker capsular_ligament_disc_right_lower_12
+end
+
+right_lower_capsular_ligament_13
+frameMarker capsular_ligament_mandible_right_13 frameMarker capsular_ligament_disc_right_lower_13
+end
+
+right_lower_capsular_ligament_14
+frameMarker capsular_ligament_mandible_right_14 frameMarker capsular_ligament_disc_right_lower_14
+end
+
+right_lower_capsular_ligament_15
+frameMarker capsular_ligament_mandible_right_15 frameMarker capsular_ligament_disc_right_lower_15
+end
+
+right_lower_capsular_ligament_16
+frameMarker capsular_ligament_mandible_right_16 frameMarker capsular_ligament_disc_right_lower_16
+end
+
+################################################################################################
+####################temporomandibular ligament
+################################################################################################
+left_temporomandibular_ligament_1
+frameMarker Lt_temporomandibular_ligament_skull_1 frameMarker Lt_temporomandibular_ligament_condyle_1
+end
+
+left_temporomandibular_ligament_2
+frameMarker Lt_temporomandibular_ligament_skull_2 frameMarker Lt_temporomandibular_ligament_condyle_2
+end
+
+left_temporomandibular_ligament_3
+frameMarker Lt_temporomandibular_ligament_skull_3 frameMarker Lt_temporomandibular_ligament_condyle_3
+end
+
+left_temporomandibular_ligament_4
+frameMarker Lt_temporomandibular_ligament_skull_4 frameMarker Lt_temporomandibular_ligament_condyle_4
+end
+
+left_temporomandibular_ligament_5
+frameMarker Lt_temporomandibular_ligament_skull_5 frameMarker Lt_temporomandibular_ligament_condyle_5
+end
+
+right_temporomandibular_ligament_1
+frameMarker Rt_temporomandibular_ligament_skull_1 frameMarker Rt_temporomandibular_ligament_condyle_1
+end
+
+right_temporomandibular_ligament_2
+frameMarker Rt_temporomandibular_ligament_skull_2 frameMarker Rt_temporomandibular_ligament_condyle_2
+end
+
+right_temporomandibular_ligament_3
+frameMarker Rt_temporomandibular_ligament_skull_3 frameMarker Rt_temporomandibular_ligament_condyle_3
+end
+
+right_temporomandibular_ligament_4
+frameMarker Rt_temporomandibular_ligament_skull_4 frameMarker Rt_temporomandibular_ligament_condyle_4
+end
+
+right_temporomandibular_ligament_5
+frameMarker Rt_temporomandibular_ligament_skull_5 frameMarker Rt_temporomandibular_ligament_condyle_5
+end
+################################################################################################
+####################sphenomandibular ligament
+################################################################################################
+
+left_sphenomandibular_ligament_1
+frameMarker Lt_sphenomandibular_ligament_skull_1 frameMarker Lt_sphenomandibular_ligament_mandible_1
+end
+
+left_sphenomandibular_ligament_2
+frameMarker Lt_sphenomandibular_ligament_skull_2 frameMarker Lt_sphenomandibular_ligament_mandible_2
+end
+
+left_sphenomandibular_ligament_3
+frameMarker Lt_sphenomandibular_ligament_skull_3 frameMarker Lt_sphenomandibular_ligament_mandible_3
+end
+
+
+right_sphenomandibular_ligament_1
+frameMarker Rt_sphenomandibular_ligament_skull_1 frameMarker Rt_sphenomandibular_ligament_mandible_1
+end
+
+right_sphenomandibular_ligament_2
+frameMarker Rt_sphenomandibular_ligament_skull_2 frameMarker Rt_sphenomandibular_ligament_mandible_2
+end
+
+right_sphenomandibular_ligament_3
+frameMarker Rt_sphenomandibular_ligament_skull_3 frameMarker Rt_sphenomandibular_ligament_mandible_3
+end
+
+
+
+
+
+
+
+
+
+

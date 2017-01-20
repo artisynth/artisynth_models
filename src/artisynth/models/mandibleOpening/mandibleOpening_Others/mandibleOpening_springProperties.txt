@@ -1,0 +1,195 @@
+left_upper_capsular_ligament_1
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_2
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_3
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_4
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_5
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_6
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_7
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_8
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_9
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_10
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_11
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_12
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_13
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_14
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_15
+  -damping 0.04
+  -stiffness 9400
+left_upper_capsular_ligament_16
+  -damping 0.04
+  -stiffness 9400
+###################################################
+right_upper_capsular_ligament_1
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_2
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_3
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_4
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_5
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_6
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_7
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_8
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_9
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_10
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_11
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_12
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_13
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_14
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_15
+  -damping 0.04
+  -stiffness 9400
+right_upper_capsular_ligament_16
+  -damping 0.04
+  -stiffness 9400
+###############################################
+left_lower_capsular_ligament_1
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_2
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_3
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_4
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_5
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_6
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_7
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_8
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_9
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_10
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_11
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_12
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_13
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_14
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_15
+ -stiffness 9400
+ -damping 0.04
+left_lower_capsular_ligament_16
+ -stiffness 9400
+ -damping 0.04
+ ###########################################
+right_lower_capsular_ligament_1
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_2
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_3
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_4
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_5
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_6
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_7
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_8
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_9
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_10
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_11
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_12
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_13
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_14
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_15
+ -stiffness 9400
+ -damping 0.04
+right_lower_capsular_ligament_16
+ -stiffness 9400
+ -damping 0.04

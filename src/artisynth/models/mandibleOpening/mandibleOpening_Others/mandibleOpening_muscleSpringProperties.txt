@@ -1,0 +1,129 @@
+Lt_deep_masseter
+  -maxForce 81.6 
+  -damping 0.05
+  -passiveFraction 0.155
+
+Lt_superficial_masseter
+  -maxForce 190.4
+  -damping 0.05
+  -passiveFraction 0.155
+
+Lt_anterior_temporal
+ -maxForce 158.0
+ -damping 0.05
+ -passiveFraction 0.155
+
+Lt_middle_temporal
+-maxForce 95.6
+ -damping 0.05
+-passiveFraction 0.155
+
+Lt_posterior_temporal
+ -maxForce 75.6
+ -damping 0.05
+ -passiveFraction 0.155
+
+Lt_medial_pterygoid
+ -maxForce 174.8
+ -damping 0.05
+ -passiveFraction 0.155
+
+Lt_superior_lateral_pterygoid
+ -maxForce 17.0
+ -damping 0.05
+ -passiveFraction 0.155
+
+Lt_inferior_lateral_pterygoid
+  -maxForce 50.0
+  -damping 0.05
+  -passiveFraction 0.155
+
+Lt_anterior_mylohyoid
+ -maxForce 20.0
+ -damping 0.05
+ -passiveFraction 0.155
+
+Lt_posterior_mylohyoid
+ -maxForce 20.0
+ -damping 0.05
+ -passiveFraction 0.155
+
+Lt_digastric
+  -maxForce 50.0
+   -damping 0.05
+  -passiveFraction 0.155
+
+Lt_geniohyoid
+  -maxForce 20.0                                                          
+  -damping 0.05
+  -passiveFraction 0.155
+
+Lt_stylohyoid
+   -maxForce 20.0                                                          
+  -damping 0.05
+  -passiveFraction 0.155
+####################################################
+Rt_deep_masseter
+  -maxForce 81.6 
+  -damping 0.05
+  -passiveFraction 0.155
+
+Rt_superficial_masseter
+  -maxForce 190.4
+  -damping 0.05
+  -passiveFraction 0.155
+
+Rt_anterior_temporal
+ -maxForce 158.0
+ -damping 0.05
+ -passiveFraction 0.155
+
+Rt_middle_temporal
+-maxForce 95.6
+ -damping 0.05
+-passiveFraction 0.155
+
+Rt_posterior_temporal
+ -maxForce 75.6
+ -damping 0.05
+ -passiveFraction 0.155
+
+Rt_medial_pterygoid
+ -maxForce 174.8
+ -damping 0.05
+ -passiveFraction 0.155
+
+Rt_superior_lateral_pterygoid
+ -maxForce 17.0
+ -damping 0.05
+ -passiveFraction 0.155
+
+Rt_inferior_lateral_pterygoid
+  -maxForce 50.0
+  -damping 0.05
+  -passiveFraction 0.155
+
+Rt_anterior_mylohyoid
+ -maxForce 20.0
+ -damping 0.05
+ -passiveFraction 0.155
+
+Rt_posterior_mylohyoid
+ -maxForce 20.0
+ -damping 0.05
+ -passiveFraction 0.155
+
+Rt_digastric
+  -maxForce 50.0
+   -damping 0.05
+  -passiveFraction 0.155
+
+Rt_geniohyoid
+  -maxForce 20.0                                                          
+  -damping 0.05
+  -passiveFraction 0.155
+
+Rt_stylohyoid
+   -maxForce 20.0                                                          
+  -damping 0.05
+  -passiveFraction 0.155

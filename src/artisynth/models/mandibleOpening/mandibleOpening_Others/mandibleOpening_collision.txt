@@ -1,1 +1,5 @@
 rigidBody "CEY_mandible"  rigidBody "CEY_skull"
+rigidBody "CEY_mandible"  rigidBody "CEY_disc_left"
+rigidBody "CEY_mandible"  rigidBody "CEY_disc_right"
+rigidBody "CEY_skull"  rigidBody "CEY_disc_left"
+rigidBody "CEY_skull"  rigidBody "CEY_disc_right"

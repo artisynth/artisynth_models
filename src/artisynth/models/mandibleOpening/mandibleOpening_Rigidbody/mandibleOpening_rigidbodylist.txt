@@ -1,3 +1,5 @@
 CEY_mandible "CEY_mandible_3.obj" dynamic 1 204 153 51
+CEY_disc_left "CEY_disc_left.obj" dynamic 1 204 120 120
+CEY_disc_right "CEY_disc_right.obj" dynamic 1 204 120 120
 CEY_skull "CEY_skull_3.obj" fix 1 204 153 51
- 
+CEY_hyoid "CEY_hyoid.obj" fix 1 204 153 51

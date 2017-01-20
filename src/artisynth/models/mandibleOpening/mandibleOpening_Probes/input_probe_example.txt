@@ -1,0 +1,30 @@
+#Names must be matched with the muscleSpring names in muscleSplinglist
+[
+  NumericInputProbe
+  [ startTime=0
+    stopTime=120000000
+    updateInterval=-1
+    name="Deep_Masseter_L"
+    scale=10
+    attachedFile="obturator_20_closing_muscle.txt"
+    interpolationOrder=Cubic
+    displayRange=[ 0.0 1 ]
+    track=0
+    model=models/mech
+    props=
+    [ 
+      models/mech/exciters/Deep_Masseter_L:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+    ]
+    inputs=
+    [ 
+      V0 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/Deep_Masseter_L:excitation" visible=true color=Red ]
+    ]
+  ]
+ 

@@ -1,0 +1,38 @@
+NumericOutputProbe
+  [ startTime=0
+    stopTime=120000000
+    updateInterval=10000000
+    name="Obturator_tracing_5"
+    attachedFile="Obturator_tracing_5.txt"
+    displayRange=[ Inf -Inf ]
+    track=0
+    props=
+    [ 
+        models/mech/frameMarkers/Obturator_tracing_5:targetPosition
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="markers/Obturator_tracing_5:targetPosition.x" visible=true color=Red ]
+      [ order=1 label="markers/Obturator_tracing_5:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=2 label="markers/Obturator_tracing_5:targetPosition.z" visible=true color=Blue ]
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe
+  [ startTime=0
+    stopTime=9223372036874777807
+    updateInterval=-1
+    name="WayPoints"
+    track=-1
+    wayPoints=
+    [ 
+      0
+    ]
+  ]  
+  
