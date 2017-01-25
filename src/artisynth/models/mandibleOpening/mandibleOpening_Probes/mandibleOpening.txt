@@ -27,9 +27,6 @@
       [ order=0 label="exciters/Lt_superficial_masseter" visible=true color=Red ]
     ]
   ]
- 
-
-[
   NumericInputProbe
   [ startTime=0
     stopTime=120000000
@@ -57,8 +54,6 @@
       [ order=0 label="exciters/Rt_superficial_masseter" visible=true color=Red ]
     ]
   ]
-
-[
   NumericInputProbe
   [ startTime=0
     stopTime=120000000
@@ -86,9 +81,6 @@
       [ order=0 label="exciters/Lt_digastric" visible=true color=Red ]
     ]
   ]
-
-
-[
   NumericInputProbe
   [ startTime=0
     stopTime=120000000
@@ -116,3 +108,4 @@
       [ order=0 label="exciters/Rt_digastric" visible=true color=Red ]
     ]
   ]
+]
