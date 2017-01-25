@@ -28,9 +28,7 @@ public class mandibleOpening_1_2016_11_26 extends ModelTemplate{
    
    public void build(String[] args) throws IOException {
 
-      super.build(args);
-
-    
+      super.build(args);      
       
       super.MAX_STEP_SIZE_SEC = 0.001;
       super.COLLISION_FRICTION_COEFF = 0.0;
@@ -107,15 +105,13 @@ public class mandibleOpening_1_2016_11_26 extends ModelTemplate{
 
       // super.FEM_MATERIAL = new LinearMaterial(1960000, 0.30);
 
- super.otherPath = ArtisynthPath.getSrcRelativePath(
- this, "mandibleOpening_Others/");
+ super.otherPath = ArtisynthPath.getSrcRelativePath(this, "mandibleOpening_Others/");
           System.out.println("otherPath: " + otherPath);
       // super.femPropertyListFilename ="SY_Obturator_7_femPropertiesList.txt";
    super.frameMarkerListFilename = "mandibleOpening_frameMarkers.txt";
  //  RenderProps.setVisible(myMechMod.frameMarkers(), drawAttachedNodes);
      super.muscleSpringListFilename = "mandibleOpening_muscleSpringlist.txt";
-    super.muscleSpringPropertyListFilename =
-   "mandibleOpening_muscleSpringProperties.txt";
+    super.muscleSpringPropertyListFilename = "mandibleOpening_muscleSpringProperties.txt";
 
 
 
@@ -140,7 +136,8 @@ public class mandibleOpening_1_2016_11_26 extends ModelTemplate{
 //    super.workingDirname = ArtisynthPath.getSrcRelativePath(
 //       this, "mandibleOpening_Probes/");
  
- super.workingDirname = "mandibleOpening_Probes/";
+ super.workingDirname = ArtisynthPath.getSrcRelativePath(this, "mandibleOpening_Probes/");
+ super.probesPath = ArtisynthPath.getSrcRelativePath(this, "mandibleOpening_Probes/");
  super.probesFilename = "mandibleOpening.txt";
  
  
