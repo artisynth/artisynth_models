@@ -115,7 +115,7 @@ public class ModelTemplate extends RootModel {
    protected boolean fiberDefinedAcrossSets = false;
    protected boolean centerRigidBodies = false;
 
-   private String basePath = ArtisynthPath.getSrcRelativePath(ModelTemplate.class, "/");
+   protected String basePath = ArtisynthPath.getSrcRelativePath(ModelTemplate.class, "/");
    protected String rigidBodyPath = basePath + "geometry/rigidBodies/";
    protected String femPath = basePath + "geometry/fem/";
    protected String otherPath = basePath + "geometry/other/";
@@ -3400,8 +3400,11 @@ public class ModelTemplate extends RootModel {
       if (workingDirname == null)
          return;
       // set default working directory to repository location
-      File workingDir = ArtisynthPath.getSrcRelativeFile(
-         this, workingDirname);
+      File workingDir = new File(workingDirname);
+      if (!workingDir.isAbsolute()) {
+         workingDir = ArtisynthPath.getSrcRelativeFile(
+            this, workingDirname);
+      }
       ArtisynthPath.setWorkingDir(workingDir);
       if (debug)
       {
