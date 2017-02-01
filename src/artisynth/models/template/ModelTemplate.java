@@ -3459,6 +3459,9 @@ public class ModelTemplate extends RootModel {
          String fullPath = uri.getPath();
          File f = new File(fullPath);
          if (f.canRead()) {
+            if (debug) {
+               System.out.println("Reading file " + f.getAbsolutePath());
+            }
             return new FileInputStream(f);
          }
 
@@ -3474,10 +3477,17 @@ public class ModelTemplate extends RootModel {
          // if we are downloading/extracting files, make a local copy
          if (downloadFiles) {
             File f = fileManager.get(new File(destFolder, fileName), uri);
+            if (debug) {
+               System.out.println("Reading file " + f.getAbsolutePath());
+            }
             return new FileInputStream(f);
          } else {
             // otherwise, just return a stream
-            return fileManager.getInputStream(new File(destFolder, fileName), uri, fileManager.getOptions());
+            File f = new File(destFolder, fileName);
+            if (debug) {
+               System.out.println("Reading file " + f.getAbsolutePath());
+            }
+            return fileManager.getInputStream(f, uri, fileManager.getOptions());
          }
       } catch (Exception e) {
          throw new IOException("Cannot read file: " + fileName, e);

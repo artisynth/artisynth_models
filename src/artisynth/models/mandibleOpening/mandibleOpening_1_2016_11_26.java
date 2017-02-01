@@ -30,6 +30,9 @@ public class mandibleOpening_1_2016_11_26 extends ModelTemplate{
 
       super.build(args);      
       
+      // turn on debug mode
+      super.debug = true;
+      
       super.MAX_STEP_SIZE_SEC = 0.001;
       super.COLLISION_FRICTION_COEFF = 0.0;
       super.SetAutoAttach = true;
