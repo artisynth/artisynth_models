@@ -14,6 +14,7 @@ import maspack.matrix.Point3d;
 import maspack.matrix.PolarDecomposition3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.RotationMatrix3d;
+import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
 import maspack.render.Renderer;
 import maspack.render.GL.GLViewer;
@@ -165,7 +166,7 @@ public class ScarSpring extends OrthoSpring implements TransformableGeometry
 //      }
    }   
    
-   public void updateBounds (Point3d pmin, Point3d pmax)
+   public void updateBounds (Vector3d pmin, Vector3d pmax)
    {
       Point3d tmp = new Point3d();
       for (int i=0; i<planeRenderPnts.length; i++)

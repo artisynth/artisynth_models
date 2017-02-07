@@ -193,7 +193,7 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
       }
    }    
    
-   public void updateBounds (Point3d pmin, Point3d pmax)
+   public void updateBounds (Vector3d pmin, Vector3d pmax)
    {
      computeRenderPoints (getPlaneToWorld());
      for (int i=0; i<myRenderPnts.length; i++)

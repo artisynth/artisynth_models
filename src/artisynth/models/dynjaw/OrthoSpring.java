@@ -196,7 +196,7 @@ public class OrthoSpring extends FrameSpring
       myRenderXDW.mul (myFrameB.getPose (), myX2B);
     }
 
-   public void updateBounds (Point3d pmin, Point3d pmax)
+   public void updateBounds (Vector3d pmin, Vector3d pmax)
     {
        myFrameA.updateBounds (pmin, pmax);
        myFrameB.updateBounds (pmin, pmax);
