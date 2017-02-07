@@ -36,12 +36,14 @@ public class Airway extends RenderableModelBase
     
     public void prerender (RenderList list)
     {
+        mesh.prerender(list);
     }   
     
     public int getRenderHints() {
         return mesh.getRenderHints();
     }
-    public void updateBounds(Point3d pmin, Point3d pmax) {
+
+    public void updateBounds (Vector3d pmin, Vector3d pmax) {
         mesh.updateBounds(pmin,pmax);
     }
 
