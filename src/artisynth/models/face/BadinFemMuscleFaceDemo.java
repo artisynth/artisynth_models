@@ -127,8 +127,8 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
    }
    
    public List<Double> getXSectionAreas (boolean recompute) {
-      ArrayList<Double> toRet = new ArrayList<> ();
-      List<Double> areas = new ArrayList<>();
+      ArrayList<Double> toRet = new ArrayList<Double> ();
+      List<Double> areas = new ArrayList<Double>();
       if (recompute) {
          computeXsectionalAreasAndGenerateContours (areas);
       }
