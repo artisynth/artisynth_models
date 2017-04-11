@@ -181,7 +181,8 @@ public class PharynxDemo extends JawLarynxDemo {
    
    public void addFemSheet(RigidBody surf) {
       FemMuscleModel fem = new FemMuscleModel ();
-      FemFactory.createExtrusion ((FemModel3d)fem, FemElementType.Tet, 1, 1d, surf.getMesh());
+      FemFactory.createExtrusion (
+         (FemModel3d)fem, FemElementType.Tet, 1, 1d, 0, surf.getMesh());
       fem.setName (surf.getName ());
       setFemRenderProps(fem);
       myJawModel.addModel (fem);
