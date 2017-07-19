@@ -1,0 +1,148 @@
+grammar org.propspeclang.PSL with org.eclipse.xtext.common.Terminals
+
+generate pSL "http://www.propspeclang.org/PSL"
+
+Model:
+	COMMENT* (statements+=Statement) (COMMENT | statements+=Statement)*
+;
+
+terminal COMMENT: 
+    '#' !('\n'|'\r')* ('\r'? '\n')?
+;
+
+Statement:
+	PropSpec
+	|
+	('redef' PropSpec+ 'when' CombPropSpec+ 'end')
+	|
+	('skip' CombPropSpec+ 'end')
+;
+
+PropSpec:
+	( // Optional decorator.
+		('@COMB' '(' INT ')') // Combinatorial.
+		|
+		('@PROB' ('(' PosDouble (',' PosDouble)* ')')?) // Probabilistic.
+	)
+	?
+	( // Actual property specification.
+		CombPropSpec // Combinatorial.
+		|
+		(STRING '~' '[' Dist+ ']') // Probabilistic.
+	)
+;
+
+CombPropSpec:
+	STRING '=' '{' VALUE* '}'
+;
+
+terminal VALUE: // Copied from the STRING terminal, with % where " was.
+    '%' ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'%') )* '%'
+;
+
+PosDouble: // Unfortunately, support for doubles specified in other forms didn't work.
+	INT
+	|
+	(INT '.')
+	|
+	('.' INT)
+	|
+	(INT '.' INT)
+;
+
+PosOrNegInt:
+	('+' | '-')? INT
+;
+
+Dist:
+	// Ansari(int m, int n).
+    ('Ansari' '(' PosOrNegInt ',' PosOrNegInt ')') |
+    // Arcsine(double a, double b).
+    ('Arcsine' '(' Double ',' Double ')') |
+    // Beta(double a, double b).
+    ('Beta' '(' Double ',' Double ')') |
+    // BetaBinomial(double mu, double sigma, int bd).
+    ('BetaBinomial' '(' Double ',' Double ',' PosOrNegInt ')') |
+    // BetaPrime(double a, double b).
+    ('BetaPrime' '(' Double ',' Double ')') |
+    // Binomial(double n, double p).
+    ('Binomial' '(' Double ',' Double ')') |
+    // Cauchy(double location, double scale).
+    ('Cauchy' '(' Double ',' Double ')') |
+    // Chi(double df).
+    ('Chi' '(' Double ')') |
+    // ChiSquare(double df).
+    ('ChiSquare' '(' Double ')') |
+    // Exponential(double scale).
+    ('Exponential' '(' Double ')') |
+    // F(Double df1, double df2).
+    ('F' '(' Double ',' Double ')') |
+    // Fretchet(double loc, double scale, double shape).
+    ('Fretchet' '(' Double ',' Double ',' Double ')') |
+    // Gamma(double shape, double scale).
+    ('Gamma' '(' Double ',' Double ')') |
+    // GeneralizedPareto(double loc, double scale, double shape).
+    ('GeneralizedPareto' '(' Double ',' Double ',' Double ')') |
+    // Geometric(double p).
+    ('Geometric' '(' Double ')') |
+    // GEV(double loc, double scale, double shape).
+    ('GEV' '(' Double ',' Double ',' Double ')') |
+    // Gumbel(double loc, double scale).
+    ('Gumbel' '(' Double ',' Double ')') |
+    // HyperGeometric(double r, double b, double n).
+    ('HyperGeometric' '(' Double ',' Double ',' Double ')') |
+    // InvGamma(double shape, double scale).
+    ('InvGamma' '(' Double ',' Double ')') |
+    // InvNormal(double mu, double sigma).
+    ('InvNormal' '(' Double ',' Double ')') |
+    // Kendall(int n).
+    ('Kendall' '(' PosOrNegInt ')') |
+    // Kumaraswamy(double a, double b).
+    ('Kumaraswamy' '(' Double ',' Double ')') |
+    // Laplace(double location, double scale).
+    ('Laplace' '(' Double ',' Double ')') |
+    // Logarithmic(double mu).
+    ('Logarithmic' '(' Double ')') |
+    // Logistic(double location, double scale).
+    ('Logistic' '(' Double ',' Double ')') |
+    // LogNormal(double meanlog, double sdlog).
+    ('LogNormal' '(' Double ',' Double ')') |
+    // Nakagami(double m, double omega).
+    ('Nakagami' '(' Double ',' Double ')') |
+    // NegBinomial(double size, double prob).
+    ('NegBinomial' '(' Double ',' Double ')') |
+    // NonCentralBeta(double a, double b, double ncp).
+    ('NonCentralBeta' '(' Double ',' Double ',' Double ')') |
+    // NonCentralChiSquare(double df, double ncp).
+    ('NonCentralChiSquare' '(' Double ',' Double ')') |
+    // NonCentralF(double df1, double df2, double ncp).
+    ('NonCentralF' '(' Double ',' Double ',' Double ')') |
+    // NonCentralT(double df, double ncp).
+    ('NonCentralT' '(' Double ',' Double ')') |
+    // Normal(double mu, double sigma).
+    ('Normal' '(' Double ',' Double ')') |
+    // Poisson(double lambda).
+    ('Poisson' '(' Double ')') |
+    // Rayleigh(double scale).
+    ('Rayleigh' '(' Double ')') |
+    // ReverseWeibull(double loc, double scale, double shape).
+    ('ReverseWeibull' '(' Double ',' Double ',' Double ')') |
+    // SignRank(int n).
+    ('SignRank' '(' PosOrNegInt ')') |
+    // Spearman(int n).
+    ('Spearman' '(' PosOrNegInt ')') |
+    // T(double df).
+    ('T' '(' Double ')') |
+    // Tukey(double rr, double cc, double df).
+    ('Tukey' '(' Double ',' Double ',' Double ')') |
+    // Uniform(double a, double b).
+    ('Uniform' '(' Double ',' Double ')') |
+    // Weibull(double shape, double scale).
+    ('Weibull' '(' Double ',' Double ')') |
+    // Zipf(int N, double s).
+    ('Zipf' '(' PosOrNegInt ',' Double ')')
+;
+
+Double:
+	('+' |'-')? PosDouble
+;

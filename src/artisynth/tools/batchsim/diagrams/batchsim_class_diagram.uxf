@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>36</y>
+      <w>162</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>/BatchWorkerBase/
+--
++BatchWorkerBase(String[] args): ctor
++finalize(): void
++run(): void
+--
+#otherParserOptions(): void
+#startLogSession(): void
+#setUpStopConditionMonitor(): void
+#preSim(): void
+#postSim(): void
+#recordSimResults(): void
+#addLogEntry(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>174</y>
+      <w>150</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>BatchManager
+--
++BatchManager(String[] args): ctor
++main(String[] args): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>606</x>
+      <y>228</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>SimpleTimedBatchWorker
+--
++SimpleTimedBatchWorker(String[] args): ctor
+--
+#otherParserOptions(): void
+#startLogSession(): void
+#setUpStopConditionMonitor(): void
+#preSim(): void
+#postSim(): void
+#recordSimResults(): void
+#addLogEntry(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>282</x>
+      <y>36</y>
+      <w>270</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>ConditionMonitor
+--
++ConditionMonitor(): ctor
++ConditionMonitor(ConditionChecker&lt;?&gt; checker): ctor
++hasAnyConditionBeenMet(): boolean
++hasConditionBeenMet(Condition cond): boolean
++getMetConditions(): List&lt;Condition&gt;
++addConditionChecker(ConditionChecker&lt;?&gt; checker): void
++removeConditionChecker(ConditionChecker&lt;?&gt; checker): void
++apply(double t0, double t1): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>48</x>
+      <y>234</y>
+      <w>324</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>/ConditionCheckerBase&lt;C extends Condition&gt;/
+--
++ConditionCheckerBase(C cond): ctor
++ConditionCheckerBase(C cond, ConditionChecker&lt;?&gt; nestedChecker): ctor
++getCondition(): C
++setCondition(C cond): void
++conditionMet(): boolean
++conditionMet(C cond): boolean
+--
+#doCheck(C cond): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>132</x>
+      <y>366</y>
+      <w>546</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>TimeChecker
+--
++TimeChecker(TimeCondition cond, double minTime, double maxTime): ctor
++TimeChecker(TimeCondition cond, double minTime, double maxTime, double epsilon): ctor
++TimeChecker(TimeCondition cond, ConditionChecker&lt;?&gt; nestedChecker, double minTime, double maxTime): ctor
++TimeChecker(TimeCondition cond, ConditionChecker&lt;?&gt; nestedChecker, double minTime, double maxTime, double epsilon): ctor
+--
+#doCheck(TimeCondition cond): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>66</x>
+      <y>120</y>
+      <w>180</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ConditionChecker&lt;C extends Condition&gt;
+--
++getCondition(): C
++setCondition(C cond): void
++conditionMet(): boolean
++conditionMet(C cond): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>162</x>
+      <y>462</y>
+      <w>636</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>EquilibriumChecker
+--
++EquilibriumChecker(EquilibriumCondition cond, double velocityDelta, List&lt;ModelComponent&gt; components): ctor
++EquilibriumChecker(EquilibriumCondition cond, ConditionChecker&lt;?&gt; nestedChecker, double velocityDelta, List&lt;ModelComponent&gt; components): ctor
+--
+#doCheck(EquilibriumCondition cond): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>438</x>
+      <y>288</y>
+      <w>54</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Condition
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>498</x>
+      <y>180</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>StopConditionMonitor
+--
+--
++apply(double t0, double t1): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>810</x>
+      <y>96</y>
+      <w>84</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>JavaOSC
+--
+&lt;&lt;package&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>48</x>
+      <y>318</y>
+      <w>126</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m2=&lt;&lt;bind&gt;&gt;\nC::EquilibriumCondition</panel_attributes>
+    <additional_attributes>20.0;10.0;20.0;250.0;190.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>318</y>
+      <w>114</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;bind&gt;&gt; C::TimeCondition</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;70.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>714</x>
+      <y>414</y>
+      <w>96</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>EquilibriumCondition</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>714</x>
+      <y>384</y>
+      <w>72</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>TimeCondition</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>156</y>
+      <w>222</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>350.0;220.0;350.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>180</y>
+      <w>72</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+&lt;&lt;filterPattern&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>366</x>
+      <y>294</y>
+      <w>84</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>180</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>414</y>
+      <w>54</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;120.0;70.0;120.0;70.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>306</y>
+      <w>354</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;570.0;60.0;570.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>336</y>
+      <w>18</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>384</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>36</y>
+      <w>168</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/artisynth.core.modelbase::MonitorBase/
+--
+/Details omitted./</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>36</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>126</y>
+      <w>18</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>78</y>
+      <w>144</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2=*</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>126</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>132</y>
+      <w>54</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>150</y>
+      <w>18</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>846</x>
+      <y>132</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>774</x>
+      <y>114</y>
+      <w>48</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>288</y>
+      <w>72</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>318</y>
+      <w>18</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

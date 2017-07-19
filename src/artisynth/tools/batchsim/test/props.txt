@@ -1,0 +1,50 @@
+"prop" = {}
+@PROB "prop2" = {}
+
+@PROB(0.5, 0.3333333, 0.1666666666) "distanceGridDensity" = {%1.0% %1.5% %2.0%}
+
+"controllers/0:controllerActive"         = {%true% %false%}
+"controllers/0:controlWrappable"         = {%true% %false%}
+"controllers/0:{origin insertion}Motion" = {%FIXED% %ATTACHED% %PARAMETRIC%}
+@COMB(10) "originInterpolation"          ~ [Uniform(1, 2) Uniform(0, 1) Uniform(0, 1)]
+@COMB(10) "insertionInterpolation"       ~ [Uniform(-1, 0) Uniform(0, 1) Uniform(0, 1)]
+redef
+   "controllers/0:controlWrappable"         = {%false%}
+   "controllers/0:{origin insertion}Motion" = {%FIXED%}
+when
+   "controllers/0:controllerActive"         = {%false%}
+end
+######### vs. #########
+skip
+   "controllers/0:controllerActive" = {%false%}
+   "controllers/0:controlWrappable" = {%true%}
+end
+skip
+   "controllers/0:controllerActive" = {%false%}
+   "controllers/0:originMotion"     = {%ATTACHED% %PARAMETRIC%}
+end
+skip
+   "controllers/0:controllerActive" = {%false%}
+   "controllers/0:insertionMotion"  = {%ATTACHED% %PARAMETRIC%}
+end
+
+
+skip
+   "controllers/0:controllerActive"         = {%true%}
+   "controllers/0:controlWrappable"         = {%false%}
+   "controllers/0:{origin insertion}Motion" = {%FIXED%}
+end
+
+#"skeleton"          = {%skeleton19% %skeleton171% %skeletonJ-18% %skeletonJ-19%}
+"humerusResolution" = {%Red0% %Red1% %Red2% %Red3%}
+"side"              = {%Left% %Right%}
+redef @PROB(0.25, 0.75) "side" = {%Left% %Right%}
+when "humerusResolution" = {%Red0%}
+end
+
+"geometry"   = {%CYLINDER% %SPHERE%}
+"wrapMethod" = {%ANALYTIC% %SIGNED_DISTANCE_GRID%}
+"resolution" = {%10% %20% %100%}
+redef "resolution" = {%4%} when "wrapMethod" = {%ANALYTIC%} end
+
+@PROB "wrappableType" = {%GEOMETRIC% %HUMERUS%}
