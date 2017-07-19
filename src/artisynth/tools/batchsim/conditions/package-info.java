@@ -1,10 +1,10 @@
 /**
- * Package containing {@link artisynth.models.batchsim.conditions.Condition
- * Conditions}, {@link artisynth.models.batchsim.conditions.ConditionChecker
+ * Package containing {@link artisynth.tools.batchsim.conditions.Condition
+ * Conditions}, {@link artisynth.tools.batchsim.conditions.ConditionChecker
  * ConditionCheckers}, the
- * {@link artisynth.models.batchsim.conditions.ConditionMonitor
+ * {@link artisynth.tools.batchsim.conditions.ConditionMonitor
  * ConditionMonitor}, and the
- * {@link artisynth.models.batchsim.conditions.StopConditionMonitor
+ * {@link artisynth.tools.batchsim.conditions.StopConditionMonitor
  * StopConditionMonitor}.
  * <p>
  * Although the idea of {@code Conditions}, {@code ConditionCheckers}, and
@@ -17,14 +17,14 @@
  * <p>
  * The best way to learn to use this package effectively is simply by reading
  * the JavaDocs of its contained classes and interfaces. Start with the
- * {@link artisynth.models.batchsim.conditions.Condition Condition} and
- * {@link artisynth.models.batchsim.conditions.ConditionChecker
+ * {@link artisynth.tools.batchsim.conditions.Condition Condition} and
+ * {@link artisynth.tools.batchsim.conditions.ConditionChecker
  * ConditionChecker} interfaces (in that order). Then, move on to the
- * {@link artisynth.models.batchsim.conditions.ConditionCheckerBase
+ * {@link artisynth.tools.batchsim.conditions.ConditionCheckerBase
  * ConditionCheckerBase},
- * {@link artisynth.models.batchsim.conditions.ConditionMonitor
+ * {@link artisynth.tools.batchsim.conditions.ConditionMonitor
  * ConditionMonitor}, and
- * {@link artisynth.models.batchsim.conditions.StopConditionMonitor
+ * {@link artisynth.tools.batchsim.conditions.StopConditionMonitor
  * StopConditionMonitor} classes (in that order). Finally, have a look at the
  * various commonly-used {@code ConditionChecker} subclasses that have already
  * been implemented for convenience, and don't be afraid to implement new

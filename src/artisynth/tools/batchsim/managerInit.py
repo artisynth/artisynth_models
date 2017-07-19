@@ -5,7 +5,7 @@ Batch Simulation Framework.
 @author: Francois Roewer-Despres
 @version: 1.0
 '''
-from artisynth.models.batchsim.manager import BatchManager
+from artisynth.tools.batchsim.manager import BatchManager
 from jarray import array
 import sys
 

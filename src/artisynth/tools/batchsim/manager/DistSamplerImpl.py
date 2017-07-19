@@ -9,7 +9,7 @@ jdistlib is http://jdistlib.sourceforge.net/.
 @version: 1.0
 """
 
-from artisynth.models.batchsim.manager import DistributionSampler
+from artisynth.tools.batchsim.manager import DistributionSampler
 from jarray import array
 from jdistlib import *
 from jdistlib.evd import *

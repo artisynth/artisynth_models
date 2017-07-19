@@ -29,7 +29,7 @@ worker subclass, they can be hard-coded into the script file. For example:
 @author: Francois Roewer-Despres
 @version: 1.0
 '''
-from artisynth.models.batchsim import SimpleTimedBatchWorker # Change this.
+from artisynth.tools.batchsim import SimpleTimedBatchWorker # Change this.
 from jarray import array
 import sys
 

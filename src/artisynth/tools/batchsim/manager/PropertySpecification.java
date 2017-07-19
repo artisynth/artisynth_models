@@ -25,7 +25,7 @@ import maspack.util.IndentingPrintWriter;
  * a specific {@code Distribution}, and the probabilistic property
  * specification's list of distribution identifiers serves as a sort of handle
  * on the associated {@code Property}'s distribution vector. Refer to the Batch
- * Simulation Framework {@link artisynth.models.batchsim documentation} for
+ * Simulation Framework {@link artisynth.tools.batchsim documentation} for
  * details.
  * 
  * @author Francois Roewer-Despres

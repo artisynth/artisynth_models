@@ -188,7 +188,7 @@ import maspack.util.ReaderTokenizer;
  * {@code Conditions} to the {@code BatchWorkerBase}'s
  * {@code StopConditionMonitor}, as otherwise a simulation may either never
  * stop, or else may be deemed a failure once it does stop. Refer to the
- * {@link artisynth.models.batchsim.conditions} package for details on adding
+ * {@link artisynth.tools.batchsim.conditions} package for details on adding
  * {@code Conditions} to a {@code StopConditionMonitor}.
  * <p>
  * Although the {@code BatchWorkerBase} can take command-line arguments to set
@@ -665,7 +665,7 @@ public abstract class BatchWorkerBase implements Runnable {
     * 
     * 
     * @see #run()
-    * @see artisynth.models.batchsim.conditions
+    * @see artisynth.tools.batchsim.conditions
     * @see #preSim()
     * @see #postSim()
     */

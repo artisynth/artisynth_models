@@ -43,7 +43,7 @@ import maspack.util.ReaderTokenizer;
 
 /**
  * A {@code BatchManager} takes an input file containing
- * {@link PropertySpecification}s (see {@link artisynth.models.batchsim
+ * {@link PropertySpecification}s (see {@link artisynth.tools.batchsim
  * batchsim} for details), and creates a `task' for each possible combination of
  * property-value pairs found in the input file (for
  * {@link SpecificationType#COMBINATORIAL combinatorial specifications}), or by
@@ -85,7 +85,7 @@ import maspack.util.ReaderTokenizer;
  * custom or default {@code BatchManager} program, respectively.
  * <p>
  * The default {@code BatchManager} is sufficient for many common use cases. For
- * example, the {@link artisynth.models.batchsim Batch Simulation Framework} is
+ * example, the {@link artisynth.tools.batchsim Batch Simulation Framework} is
  * designed to run in a distributed fashion: the {@code BatchManager} server and
  * the {@code BatchWorker} clients can run on different machines, communicating
  * with each other over a network. Yet, the typical use case sees the

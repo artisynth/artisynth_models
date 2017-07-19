@@ -10,7 +10,7 @@ import java.util.Map;
  * {@code artisynth_projects} repository without causing compiler errors, since
  * the {@code jdistlib} library can't be distributed with {@code ArtiSynth} due
  * to licensing issues. To use probabilistic simulations in the
- * {@link artisynth.models.batchsim Batch Simulation Framework}, please
+ * {@link artisynth.tools.batchsim Batch Simulation Framework}, please
  * <a href="http://jdistlib.sourceforge.net/">download jdistlib</a>, and put the
  * resulting jar somewhere on the build path or class path, for example in
  * {@code artisynth_core/lib/}.

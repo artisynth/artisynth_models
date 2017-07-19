@@ -14,7 +14,7 @@
  * The basic idea is to specify a list of {@code Properties}, and, for each
  * {@code Property}, to specify a set of values that it should take. This
  * property-value-set specification is known as a
- * {@link artisynth.models.batchsim.PropertySpecification property specification}.
+ * {@link artisynth.tools.batchsim.PropertySpecification property specification}.
  * Thus, the user input to BatchSim consists of a list of property specifications.
  * BatchSim iterates through this list in a combinatorial fashion (explained later),
  * and performs one simulation per resulting combination by setting, for each
@@ -64,10 +64,10 @@
  * {@code ArtiSynth} model simulations, and it can easily be made to do so in a
  * distributed and parallel fashion, as is usually desired.
  * <p>
- * Specifically, one {@link artisynth.models.batchsim.BatchManager manager}
+ * Specifically, one {@link artisynth.tools.batchsim.BatchManager manager}
  * process creates a number of "tasks", where each task represents a simulation
  * to perform. The manager then places these simulation tasks in a "bag of
- * tasks". Next, a certain number of {@link artisynth.models.batchsim.BatchWorkerBase
+ * tasks". Next, a certain number of {@link artisynth.tools.batchsim.BatchWorkerBase
  * worker} processes are created. Each worker requests a task from the manager,
  * completes the task (by performing the simulation the task describes),
  * records user-specified simulation results as output, and repeats until the
@@ -79,7 +79,7 @@
  * BatchSim includes a number of convenience methods for recording certain kinds
  * of simple, generic simulation output, but custom output and output formats
  * can be specified by the user (see {@link
- * artisynth.models.batchsim.BatchWorkerBase BatchWorkerBase} for details).
+ * artisynth.tools.batchsim.BatchWorkerBase BatchWorkerBase} for details).
  * <br>
  * <br>
  * <h1>2. SIMULATION TASKS AND PROPERTY SPECIFICATIONS</h1>
@@ -249,9 +249,9 @@ Task(vectors)
  * <br>
  * where each {@code <Name_of_distributionX>} is the <b>non-quoted</b> string
  * name of a probability distribution. To be valid, the string name must match
- * {@link artisynth.models.batchsim.DistributionSampler.Distribution#toString()
+ * {@link artisynth.tools.batchsim.DistributionSampler.Distribution#toString()
  * Distribution.toString()} for some
- * {@link artisynth.models.batchsim.DistributionSampler.Distribution
+ * {@link artisynth.tools.batchsim.DistributionSampler.Distribution
  * Distribution} value. Following the distribution name, a comma-separated list
  * of parameter values (integers or doubles) enclosed in one pair of
  * parentheses should appear. The values must appear in the same order, and be
@@ -438,13 +438,13 @@ Task(vectors)
  * which to perform simulations. Refer to the
  * <a href="http://artisynth.magic.ubc.ca/pmwiki.php?n=Documentation.ModelingGuide">
  * ArtiSynth Modeling Guide</a> for details.</li>
- * <li>(Optional) A {@link artisynth.models.batchsim.BatchWorkerBase worker}
+ * <li>(Optional) A {@link artisynth.tools.batchsim.BatchWorkerBase worker}
  * subclass to customize simulation stop conditions and output, and
  * (optionally) to customize simulation input (for example, by adding an
  * {@link artisynth.core.probes.InputProbe InputProbe}). Refer to the
- * {@link artisynth.models.batchsim.BatchWorkerBase BatchWorkerBase} JavaDocs
+ * {@link artisynth.tools.batchsim.BatchWorkerBase BatchWorkerBase} JavaDocs
  * for details. Alternatively, a "default" worker subclass can be used: {@link
- * artisynth.models.batchsim.SimpleTimedBatchWorker SimpleTimedBatchWorker},
+ * artisynth.tools.batchsim.SimpleTimedBatchWorker SimpleTimedBatchWorker},
  * which has a single time stop condition (stopping the simulation after a
  * certain amount of time has elapsed), records the end-state of the model in
  * binary waypoint files, and does some simple logging.</li>
@@ -491,7 +491,7 @@ Task(vectors)
  * the file is named something else, and additional command-line argument
  * giving the alternative filename must be provided to the manager.</li>
  * <li>In one terminal window, {@code cd} to {@code batch}. Then, run<br>
- * <code>&nbsp;&nbsp;java artisynth.models.batchsim.BatchManager [options]</code><br>
+ * <code>&nbsp;&nbsp;java artisynth.tools.batchsim.BatchManager [options]</code><br>
  * to start a manager as a stand alone application, or run<br>
  * <code>&nbsp;&nbsp;artisynth [other ArtiSynth options] -model &lt;model_classname&gt;<br>
  * &nbsp;&nbsp;&nbsp;&nbsp;-script &lt;path_to_batchsim_package&gt;/managerInit.py &lt;script_args_destined_for_manager&gt;</code><br>
@@ -539,8 +539,8 @@ Task(vectors)
  * within {@code Eclipse}) present only the simplest and most common use case.
  * It allows BatchSim to run in its "default" mode. Additional modes and behaviours
  * can be specified by appropriate command-line arguments. See {@link
- * artisynth.models.batchsim.BatchWorkerBase BatchWorkerBase} and {@link
- * artisynth.models.batchsim.BatchManager BatchManager} for additional details.
+ * artisynth.tools.batchsim.BatchWorkerBase BatchWorkerBase} and {@link
+ * artisynth.tools.batchsim.BatchManager BatchManager} for additional details.
  * 
  * @author Francois Roewer-Despres
  * @version 1.0
