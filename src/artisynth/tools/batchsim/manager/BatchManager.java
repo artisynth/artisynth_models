@@ -376,7 +376,7 @@ public class BatchManager {
     */
    protected void setupParser () {
       myHelpHolder = new BooleanHolder (false);
-      myPropsFileHolder = new StringHolder ("props.txt");
+      myPropsFileHolder = new StringHolder ("props.psl");
       myNumMonteCarloHolder = new LongHolder (1);
       myPortHolder = new IntHolder (DEFAULT_REQUEST_PORT);
       myInteractionLevelHolder = new IntHolder (2);
@@ -397,7 +397,7 @@ public class BatchManager {
          "-f, -file %s #<FILENAME>#read the property specifications from file "
          + "FILENAME; if FILENAME is `-', read from standard input (which "
          + "forces an interaction level of 0; see -i option); FILENAME "
-         + "defaults to \"props.txt\"", myPropsFileHolder);
+         + "defaults to \"props.psl\"", myPropsFileHolder);
       myParser.addOption (
          "-m, -monteCarlo %d {[0, " + Long.MAX_VALUE + "]}"
          + "#<N>#if, and only if, the input file (see -f option) contains "
