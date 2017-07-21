@@ -56,7 +56,7 @@
  * embarrassingly parallel</a> problem.
  * <p>
  * BatchSim exploits this by adhering to the manager-worker model (a special case of
- * the <a href="https://en.wikipedia.org/wiki/Client–server_model">client-server
+ * the <a href="https://en.wikipedia.org/wiki/Client-server_model">client-server
  * model</a>). By following this design pattern, BatchSim not only achieves terrific
  * load balancing, but also enables the distribution of the "manager" and the
  * "workers" over several networked computers. As such, BatchSim is a

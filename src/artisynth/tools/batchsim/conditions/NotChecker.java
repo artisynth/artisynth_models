@@ -1,7 +1,7 @@
 package artisynth.tools.batchsim.conditions;
 
 /**
- * A {@code NotChecker} is a special kind of {@link ConditionChecker} that does
+ * A {@code NotChecker} is a special kind of {@link ConditionChecker} that does
  * not really have a {@link Condition} of its own to check. Rather, a
  * {@code NotChecker} checks whether its nested {@code ConditionChecker}'s
  * {@code Condition} is met. If so, it considers its own {@code Condition} to be
