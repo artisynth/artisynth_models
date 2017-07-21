@@ -109,7 +109,26 @@ public interface ConditionChecker<C extends Condition> {
 
    /**
     * Determines whether the given {@link Condition} and also the nested
-    * {@link ConditionChecker}'s current/active {@code Condition} are both met.
+    * {@link ConditionChecker}'s current/active {@code Condition} are
+    * <b>both</b> met.
+    * <p>
+    * This method behaves as though by returning the value of the call
+    * 
+    * <pre>
+    * conditionMet (getCondition (), 0, 0)
+    * </pre>
+    * 
+    * @param cond
+    * the {@code Condition} to check
+    * @return true if both {@code Conditions} are met; false otherwise
+    * @see #conditionMet()
+    */
+   boolean conditionMet (C cond);
+
+   /**
+    * Determines whether the given {@link Condition} and also the nested
+    * {@link ConditionChecker}'s current/active {@code Condition} are
+    * <b>both</b> met.
     * 
     * @param cond
     * the {@code Condition} to check

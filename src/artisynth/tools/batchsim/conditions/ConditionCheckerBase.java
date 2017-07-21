@@ -116,6 +116,11 @@ implements ConditionChecker<C> {
       }
 
       @Override
+      public boolean conditionMet (TrueCondition cond) {
+         return true;
+      }
+
+      @Override
       public boolean conditionMet (TrueCondition cond, double t0, double t1) {
          return true;
       }
@@ -221,6 +226,11 @@ implements ConditionChecker<C> {
    @Override
    public boolean conditionMet (double t0, double t1) {
       return conditionMet (getCondition (), t0, t1);
+   }
+
+   @Override
+   public boolean conditionMet (C cond) {
+      return conditionMet (cond, 0, 0);
    }
 
    @Override
