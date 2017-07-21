@@ -106,6 +106,11 @@ implements ConditionChecker<C> {
       }
 
       @Override
+      public boolean conditionMet () {
+         return true;
+      }
+
+      @Override
       public boolean conditionMet (double t0, double t1) {
          return true;
       }
@@ -206,6 +211,11 @@ implements ConditionChecker<C> {
          nestedChecker = new TrueConditionChecker ();
       }
       myNestedChecker = nestedChecker;
+   }
+
+   @Override
+   public boolean conditionMet () {
+      return conditionMet (0, 0);
    }
 
    @Override

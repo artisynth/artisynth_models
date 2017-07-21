@@ -59,13 +59,17 @@ extends ConditionCheckerBase<EmptyCondition> {
        * step is given as {@code prev}. This value should be compared to the
        * current value to determine if the object has converged.
        * <p>
-       * The value of {@code prev} will be {@code null} if this is the very
-       * first time step in the simulation.
-       * <p>
        * Whether or not the object has converged, the current value of the
        * object should be placed in the {@link ObjectHolder#value} field of
        * {@code current}.
+       * <p>
+       * If this is the very first time step, {@code first} will be {@code true}
+       * and {@code prev} will be {@code null}. If {@code first} is
+       * {@code false}, {@code prev} will be {@code null} if, and only if, the
+       * value of {@code current} was {@code null} in the previous time step.
        *
+       * @param first
+       * {@code true} if, and only if, this is the very first time step.
        * @param prev
        * the value of the tracked object in the previous time step, or
        * {@code null} if this is the very first time step
@@ -74,7 +78,8 @@ extends ConditionCheckerBase<EmptyCondition> {
        * @return whether or not the object has converged between the previous
        * time step and the current one
        */
-      boolean checkConvergence (Object prev, ObjectHolder current);
+      boolean checkConvergence (
+         boolean first, Object prev, ObjectHolder current);
    }
 
    /**
@@ -170,7 +175,8 @@ extends ConditionCheckerBase<EmptyCondition> {
             pair.prev = null;
          }
          pair.current.value = null;
-         result &= pair.checker.checkConvergence (pair.prev, pair.current);
+         result &=
+            pair.checker.checkConvergence (reset, pair.prev, pair.current);
          pair.prev = pair.current.value;
       }
       return result;
