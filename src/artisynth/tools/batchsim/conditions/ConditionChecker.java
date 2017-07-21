@@ -72,19 +72,24 @@ public interface ConditionChecker<C extends Condition> {
    void setNestedChecker (ConditionChecker<? extends Condition> nestedChecker);
 
    /**
-    * Determines whether the current/active {@link Condition} and also the nested
-    * {@link ConditionChecker}'s current/active {@code Condition} are <b>both</b> met.
+    * Determines whether the current/active {@link Condition} and also the
+    * nested {@link ConditionChecker}'s current/active {@code Condition} are
+    * <b>both</b> met.
     * <p>
     * This method behaves as though by returning the value of the call
     * 
     * <pre>
-    * conditionMet(getCondition())
+    * conditionMet (getCondition (), t0, t1)
     * </pre>
     * 
+    * @param t0
+    * time at start of step
+    * @param t1
+    * time at end of step
     * @return true if both {@code Conditions} are met; false otherwise
     * @see #conditionMet(Condition)
     */
-   boolean conditionMet ();
+   boolean conditionMet (double t0, double t1);
 
    /**
     * Determines whether the given {@link Condition} and also the nested
@@ -92,9 +97,13 @@ public interface ConditionChecker<C extends Condition> {
     * 
     * @param cond
     * the {@code Condition} to check
+    * @param t0
+    * time at start of step
+    * @param t1
+    * time at end of step
     * @return true if both {@code Conditions} are met; false otherwise
     * @see #conditionMet()
     */
-   boolean conditionMet (C cond);
+   boolean conditionMet (C cond, double t0, double t1);
 
 }

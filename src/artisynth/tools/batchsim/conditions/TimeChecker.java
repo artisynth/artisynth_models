@@ -2,8 +2,6 @@ package artisynth.tools.batchsim.conditions;
 
 import java.util.Objects;
 
-import artisynth.core.driver.Main;
-
 /**
  * A {@code TimeChecker} compares the current time in {@code ArtiSynth} (via
  * {@code Main.getMain().getTime()}) to an internal time range, and checks
@@ -209,41 +207,40 @@ extends ConditionCheckerBase<TimeChecker.TimeCondition> {
    }
 
    @Override
-   protected boolean checkCondition (TimeCondition cond) {
-      double time = Main.getMain ().getTime ();
+   protected boolean checkCondition (TimeCondition cond, double t0, double t1) {
       switch (cond) {
          case LESS_THAN_MIN:
-            return time < min;
+            return t0 < min;
          case NOT_LESS_THAN_MIN:
-            return !(time < min);
+            return !(t0 < min);
          case EQUAL_MIN:
-            return Math.abs (time - min) < eps;
+            return Math.abs (t0 - min) < eps;
          case NOT_EQUAL_MIN:
-            return !checkCondition (TimeCondition.EQUAL_MIN);
+            return !checkCondition (TimeCondition.EQUAL_MIN, t0, t1);
          case GREATER_THAN_MIN:
-            return time > min;
+            return t0 > min;
          case NOT_GREATER_THAN_MIN:
-            return !(time > min);
+            return !(t0 > min);
          case IN_RANGE_INCLUSIVE:
-            return min <= time && time <= max;
+            return min <= t0 && t0 <= max;
          case NOT_IN_RANGE_INCLUSIVE:
-            return !checkCondition (TimeCondition.IN_RANGE_INCLUSIVE);
+            return !checkCondition (TimeCondition.IN_RANGE_INCLUSIVE, t0, t1);
          case IN_RANGE_EXCLUSIVE:
-            return min < time && time < max;
+            return min < t0 && t0 < max;
          case NOT_IN_RANGE_EXCLUSIVE:
-            return !checkCondition (TimeCondition.IN_RANGE_EXCLUSIVE);
+            return !checkCondition (TimeCondition.IN_RANGE_EXCLUSIVE, t0, t1);
          case LESS_THAN_MAX:
-            return time < max;
+            return t0 < max;
          case NOT_LESS_THAN_MAX:
-            return !(time < max);
+            return !(t0 < max);
          case EQUAL_MAX:
-            return Math.abs (time - max) < eps;
+            return Math.abs (t0 - max) < eps;
          case NOT_EQUAL_MAX:
-            return !checkCondition (TimeCondition.EQUAL_MAX);
+            return !checkCondition (TimeCondition.EQUAL_MAX, t0, t1);
          case GREATER_THAN_MAX:
-            return time > max;
+            return t0 > max;
          case NOT_GREATER_THAN_MAX:
-            return !(time > max);
+            return !(t0 > max);
          default:
             throw new UnsupportedOperationException (Objects.toString (cond));
       }

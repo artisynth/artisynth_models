@@ -13,8 +13,8 @@ package artisynth.tools.batchsim.conditions;
  * @author Francois Roewer-Despres
  * @version 1.0
  */
-public class NotChecker extends ConditionCheckerBase<NotChecker.NotCondition> {
-   
+public class NotChecker extends ConditionCheckerBase<EmptyCondition> {
+
    /**
     * Creates a new {@link NotChecker} to logically negate the given nested
     * {@link ConditionChecker}.
@@ -25,7 +25,7 @@ public class NotChecker extends ConditionCheckerBase<NotChecker.NotCondition> {
    public NotChecker (ConditionChecker<?> nestedChecker) {
       this (null, nestedChecker);
    }
-   
+
    /**
     * Creates a new {@link NotChecker}, with the given name, to logically negate
     * the given nested {@link ConditionChecker}.
@@ -38,26 +38,16 @@ public class NotChecker extends ConditionCheckerBase<NotChecker.NotCondition> {
    public NotChecker (String name, ConditionChecker<?> nestedChecker) {
       super (name, null, nestedChecker);
    }
-   
-   /**
-    * Acts simply as a placeholder. This enum is unused, and anywhere a
-    * reference to a constant of this enum type is required, {@code null} should
-    * be supplied instead.
-    * 
-    * @author Francois Roewer-Despres
-    * @version 1.0
-    */
-   public static enum NotCondition implements Condition {
-   }
-   
+
    @Override
-   public boolean conditionMet (NotCondition cond) {
-      return checkCondition (cond);
+   public boolean conditionMet (EmptyCondition cond, double t0, double t1) {
+      return checkCondition (cond, t0, t1);
    }
 
    @Override
-   protected boolean checkCondition (NotCondition cond) {
-      return !myNestedChecker.conditionMet ();
+   protected boolean checkCondition (
+      EmptyCondition cond, double t0, double t1) {
+      return !myNestedChecker.conditionMet (t0, t1);
    }
 
 }

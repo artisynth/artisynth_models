@@ -106,12 +106,12 @@ implements ConditionChecker<C> {
       }
 
       @Override
-      public boolean conditionMet () {
+      public boolean conditionMet (double t0, double t1) {
          return true;
       }
 
       @Override
-      public boolean conditionMet (TrueCondition cond) {
+      public boolean conditionMet (TrueCondition cond, double t0, double t1) {
          return true;
       }
 
@@ -150,7 +150,8 @@ implements ConditionChecker<C> {
     * @param nestedChecker
     * the nested {@code ConditionChecker} of this {@code ConditionChecker}
     */
-   public ConditionCheckerBase (C cond, ConditionChecker<? extends Condition> nestedChecker) {
+   public ConditionCheckerBase (C cond,
+   ConditionChecker<? extends Condition> nestedChecker) {
       this (null, cond, nestedChecker);
    }
 
@@ -192,14 +193,15 @@ implements ConditionChecker<C> {
    public void setCondition (C cond) {
       myCondition = cond;
    }
-   
+
    @Override
    public ConditionChecker<? extends Condition> getNestedChecker () {
       return myNestedChecker;
    }
 
    @Override
-   public void setNestedChecker (ConditionChecker<? extends Condition> nestedChecker) {
+   public void setNestedChecker (
+      ConditionChecker<? extends Condition> nestedChecker) {
       if (nestedChecker == null) {
          nestedChecker = new TrueConditionChecker ();
       }
@@ -207,13 +209,14 @@ implements ConditionChecker<C> {
    }
 
    @Override
-   public boolean conditionMet () {
-      return conditionMet (getCondition ());
+   public boolean conditionMet (double t0, double t1) {
+      return conditionMet (getCondition (), t0, t1);
    }
 
    @Override
-   public boolean conditionMet (C cond) {
-      return checkCondition (cond) && myNestedChecker.conditionMet ();
+   public boolean conditionMet (C cond, double t0, double t1) {
+      return checkCondition (cond, t0, t1)
+      && myNestedChecker.conditionMet (t0, t1);
    }
 
    /**
@@ -228,8 +231,12 @@ implements ConditionChecker<C> {
     * 
     * @param cond
     * the {@code Condition} to check
+    * @param t0
+    * time at start of step
+    * @param t1
+    * time at end of step
     * @return true if the given {@code Condition} is met, and false otherwise
     */
-   protected abstract boolean checkCondition (C cond);
+   protected abstract boolean checkCondition (C cond, double t0, double t1);
 
 }

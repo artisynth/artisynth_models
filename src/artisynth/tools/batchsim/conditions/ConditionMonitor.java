@@ -52,8 +52,8 @@ public class ConditionMonitor extends MonitorBase {
    protected List<Condition> myMetConditions;
 
    /**
-    * A list of {@link ConditionChecker}s whose {@link Condition} is
-    * checked during each call to {@link #apply(double, double)}.
+    * A list of {@link ConditionChecker}s whose {@link Condition} is checked
+    * during each call to {@link #apply(double, double)}.
     */
    protected List<ConditionChecker<?>> myCheckers;
 
@@ -174,7 +174,7 @@ public class ConditionMonitor extends MonitorBase {
    public synchronized void apply (double t0, double t1) {
       myMetConditions.clear ();
       for (ConditionChecker<?> checker : myCheckers) {
-         if (checker.conditionMet ()) {
+         if (checker.conditionMet (t0, t1)) {
             Condition cond = checker.getCondition ();
             if (!myMetConditions.contains (cond)) {
                myMetConditions.add (cond);

@@ -43,14 +43,14 @@ extends ConditionCheckerBase<EquilibriumChecker.EquilibriumCondition> {
     * the initial {@link EquilibriumCondition} of this
     * {@code EquilibriumChecker}
     * @param velocityDelta
-    * a threshold value: velocity differences that are less than this value
-    * will be considered "not changing" (equal to some constant, perhaps 0)
+    * a threshold value: velocity differences that are less than this value will
+    * be considered "not changing" (equal to some constant, perhaps 0)
     * @param components
     * a list of {@link ModelComponent}s for which the {@code "velocity"}
     * {@link Property} should be checked for an equilibrium state
     * @throws IllegalArgumentException
-    * if any of the given {@code ModelComponents} do not have a
-    * {@code Property} called {@code "velocity"}
+    * if any of the given {@code ModelComponents} do not have a {@code Property}
+    * called {@code "velocity"}
     */
    public EquilibriumChecker (EquilibriumCondition cond, double velocityDelta,
    List<ModelComponent> components) throws IllegalArgumentException {
@@ -67,14 +67,14 @@ extends ConditionCheckerBase<EquilibriumChecker.EquilibriumCondition> {
     * the initial {@link EquilibriumCondition} of this
     * {@code EquilibriumChecker}
     * @param velocityDelta
-    * a threshold value: velocity differences that are less than this value
-    * will be considered "not changing" (equal to some constant, perhaps 0)
+    * a threshold value: velocity differences that are less than this value will
+    * be considered "not changing" (equal to some constant, perhaps 0)
     * @param components
     * a list of {@link ModelComponent}s for which the {@code "velocity"}
     * {@link Property} should be checked for an equilibrium state
     * @throws IllegalArgumentException
-    * if any of the given {@code ModelComponents} do not have a
-    * {@code Property} called {@code "velocity"}
+    * if any of the given {@code ModelComponents} do not have a {@code Property}
+    * called {@code "velocity"}
     */
    public EquilibriumChecker (String name, EquilibriumCondition cond,
    double velocityDelta, List<ModelComponent> components)
@@ -92,14 +92,14 @@ extends ConditionCheckerBase<EquilibriumChecker.EquilibriumCondition> {
     * @param nestedChecker
     * the nested {@link ConditionChecker} of this {@code EquilibriumChecker}
     * @param velocityDelta
-    * a threshold value: velocity differences that are less than this value
-    * will be considered "not changing" (equal to some constant, perhaps 0)
+    * a threshold value: velocity differences that are less than this value will
+    * be considered "not changing" (equal to some constant, perhaps 0)
     * @param components
     * a list of {@link ModelComponent}s for which the {@code "velocity"}
     * {@link Property} should be checked for an equilibrium state
     * @throws IllegalArgumentException
-    * if any of the given {@code ModelComponents} do not have a
-    * {@code Property} called {@code "velocity"}
+    * if any of the given {@code ModelComponents} do not have a {@code Property}
+    * called {@code "velocity"}
     */
    public EquilibriumChecker (EquilibriumCondition cond,
    ConditionChecker<?> nestedChecker, double velocityDelta,
@@ -119,14 +119,14 @@ extends ConditionCheckerBase<EquilibriumChecker.EquilibriumCondition> {
     * @param nestedChecker
     * the nested {@link ConditionChecker} of this {@code EquilibriumChecker}
     * @param velocityDelta
-    * a threshold value: velocity differences that are less than this value
-    * will be considered "not changing" (equal to some constant, perhaps 0)
+    * a threshold value: velocity differences that are less than this value will
+    * be considered "not changing" (equal to some constant, perhaps 0)
     * @param components
     * a list of {@link ModelComponent}s for which the {@code "velocity"}
     * {@link Property} should be checked for an equilibrium state
     * @throws IllegalArgumentException
-    * if any of the given {@code ModelComponents} do not have a
-    * {@code Property} called {@code "velocity"}
+    * if any of the given {@code ModelComponents} do not have a {@code Property}
+    * called {@code "velocity"}
     */
    public EquilibriumChecker (String name, EquilibriumCondition cond,
    ConditionChecker<?> nestedChecker, double velocityDelta,
@@ -143,7 +143,8 @@ extends ConditionCheckerBase<EquilibriumChecker.EquilibriumCondition> {
    }
 
    @Override
-   protected boolean checkCondition (EquilibriumCondition cond) {
+   protected boolean checkCondition (
+      EquilibriumCondition cond, double t0, double t1) {
       switch (cond) {
          case STATIC:
             for (ModelComponent comp : comps) {
