@@ -53,20 +53,56 @@ public class PropertySpecification implements Cloneable, Printable {
       PROBABILISTIC;
    }
 
-   public static class DistributionPrinter {
+   /**
+    * A {@code DistributionPrinter} prints a given probability distribution.
+    *
+    * @author Francois Roewer-Despres
+    */
+   public static class DistributionPrinter implements Printable {
+
+      /**
+       * If not {@code null}, represents a custom discrete probability
+       * distribution.
+       */
       protected HashMap<String,Double> myPmf;
+
+      /**
+       * If not {@code null}, represents the name of a {@link Distribution}.
+       */
       protected Distribution myDistribution;
+
+      /**
+       * If not {@code null}, represents the parameter values of a
+       * {@link Distribution}.
+       */
       protected List<Double> myParams;
 
+      /**
+       * Creates a new {@link DistributionPrinter} with a custom discrete
+       * probability distribution.
+       *
+       * @param pmf
+       * the custom discrete probability distribution
+       */
       public DistributionPrinter (HashMap<String,Double> pmf) {
          myPmf = pmf;
       }
 
+      /**
+       * Creates a new {@link DistributionPrinter} with the given
+       * {@link Distribution} and parameter values.
+       *
+       * @param dist
+       * the {@code Distribution}
+       * @param params
+       * the parameter values
+       */
       public DistributionPrinter (Distribution dist, List<Double> params) {
          myDistribution = dist;
          myParams = params;
       }
 
+      @Override
       public void print (IndentingPrintWriter writer) {
          if (myPmf != null) {
             for (String value : myPmf.keySet ()) {
@@ -93,10 +129,26 @@ public class PropertySpecification implements Cloneable, Printable {
       }
    }
 
+   /**
+    * A {@code Redef} consists of a specific {@link PropertySpecification}
+    * redefinition for a specific "when" block implemented with a
+    * {@link CombinationChecker}.
+    *
+    * @author Francois Roewer-Despres
+    */
    protected static class Redef implements Printable {
       CombinationChecker checker;
       PropertySpecification propSpec;
 
+      /**
+       * Creates a new {@link Redef} with the given {@link CombinationChecker}
+       * "when" block and the given {@link PropertySpecification}.
+       *
+       * @param checker
+       * the "when" block
+       * @param propSpec
+       * the {@code PropertySpecification}
+       */
       public Redef (CombinationChecker checker,
       PropertySpecification propSpec) {
          this.checker = checker;
@@ -121,6 +173,7 @@ public class PropertySpecification implements Cloneable, Printable {
       }
    }
 
+   /** A unique counter for indices. */
    protected static int indexCounter = 0;
 
    protected int myIndex;
@@ -220,6 +273,13 @@ public class PropertySpecification implements Cloneable, Printable {
       }
    }
 
+   /**
+    * Adds a value to this {@link SpecificationType#COMBINATORIAL}
+    * {@link PropertySpecification}.
+    *
+    * @param value
+    * the value to add
+    */
    public void add (String value) {
       if (myRedefStack.isEmpty ()) {
          doAdd (value, null);
@@ -229,6 +289,16 @@ public class PropertySpecification implements Cloneable, Printable {
       }
    }
 
+   /**
+    * Adds a {@link Distribution} identifier and a {@link DistributionPrinter}
+    * to this {@link SpecificationType#PROBABILISTIC}
+    * {@link PropertySpecification}.
+    *
+    * @param distributionId
+    * the {@code Distribution} identifier
+    * @param printer
+    * the {@code DistributionPrinter}
+    */
    public void add (Integer distributionId, DistributionPrinter printer) {
       if (myRedefStack.isEmpty ()) {
          doAdd (distributionId, printer);
@@ -306,6 +376,14 @@ public class PropertySpecification implements Cloneable, Printable {
       }
    }
 
+   /**
+    * Returns the list of {@link DistributionPrinter DistributionPrinters} of
+    * this {@link SpecificationType#PROBABILISTIC}
+    * {@link PropertySpecification}.
+    *
+    * @return the {@code DistributionPrinter} list of this
+    * {@code PropertySpecification}
+    */
    protected List<DistributionPrinter> getDistributionPrinters () {
       if (myRedefStack.isEmpty ()) {
          return myDistributionPrinters;
@@ -315,11 +393,32 @@ public class PropertySpecification implements Cloneable, Printable {
       }
    }
 
+   /**
+    * Creates and adds a new {@link Redef} to this
+    * {@link PropertySpecification}.
+    *
+    * @param propSpec
+    * the {@code PropertySpecification} for the {@code Redef}
+    * @param checker
+    * the "when" block {@link CombinationChecker} for the {@code Redef}
+    */
    public void addRedef (
       PropertySpecification propSpec, CombinationChecker checker) {
       myRedefs.add (new Redef (checker, propSpec));
    }
 
+   /**
+    * Redefines this {@link PropertySpecification} to the
+    * {@code PropertySpecification} of one of its {@link Redef}'s, {@code R},
+    * such that {@code R}'s "when" block's {@link CombinationChecker} has one of
+    * its combinations met, given the current (partial) task.
+    *
+    * @param task
+    * the current (partial) task
+    * @return whether a redefinition was done or not
+    * @throws RuntimeException
+    * if multiple redefinitions match the given task
+    */
    public boolean redefIfNecessary (List<String[]> task)
       throws RuntimeException {
       boolean found = false;
@@ -344,6 +443,12 @@ public class PropertySpecification implements Cloneable, Printable {
       return found;
    }
 
+   /**
+    * Undoes the most recent redefinition.
+    *
+    * @throws NoSuchElementException
+    * if no previous redefinition was done
+    */
    public void undoRedef () throws NoSuchElementException {
       myRedefStack.pop ();
    }

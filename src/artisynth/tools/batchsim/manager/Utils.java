@@ -60,6 +60,14 @@ public class Utils {
       }
    }
 
+   /**
+    * Given a {@link Printable}, returns its string representation as would be
+    * printed using {@link Printable#print(IndentingPrintWriter)}.
+    *
+    * @param printable
+    * the {@code Printable}
+    * @return a string representation of the {@code Printable}
+    */
    public static String printableToString (Printable printable) {
       StringWriter writer = new StringWriter ();
       printable.print (new IndentingPrintWriter (writer));

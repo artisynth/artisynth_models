@@ -25,8 +25,24 @@ import static artisynth.tools.batchsim.manager.PropertySpecification.*;
 import static artisynth.tools.batchsim.manager.PropertySpecification.SpecificationType.*;
 import maspack.util.ReaderTokenizer;
 
+/**
+ * A {@code FileParser} parses the input file (property specification file) on
+ * behalf of a {@link BatchManager}. This is done in accordance to the Property
+ * Specification Language (PSL) of BatchSim. The two classes are intimately
+ * coupled, and are only separated to reduce clutter in the {@code BatchManager}
+ * class (following proper OO theory, the code found here should reside within
+ * the {@code BatchManager} itself).
+ *
+ * @author Francois Roewer-Despres
+ */
 public class FileParser {
 
+   /**
+    * The settings directing how a {@link FileParser} will parse an input file
+    * (and what this file is).
+    *
+    * @author Francois Roewer-Despres
+    */
    public static class Settings {
       public BatchManager manager;
       public ArtisynthJythonConsole console;
@@ -39,6 +55,11 @@ public class FileParser {
       public int seed;
    }
 
+   /**
+    * The results of parsing the input file.
+    *
+    * @author Francois Roewer-Despres
+    */
    public static class ParseResults {
       public List<PropertySpecification> propertySpecifications;
       public List<CombinationChecker> skipStatementCheckers;
@@ -55,6 +76,15 @@ public class FileParser {
    protected List<PropertySpecification> myPropSpecs;
    protected List<CombinationChecker> mySkipCheckers;
 
+   /**
+    * Creates a new {@link FileParser} with the given {@link Settings}.
+    *
+    * @param settings
+    * the settings for this {@code FileParser}
+    * @throws FileNotFoundException
+    * if the {@link ReaderTokenizer} cannot be created because the input file
+    * cannot be found
+    */
    public FileParser (Settings settings) throws FileNotFoundException {
       mySettings = settings;
       createReaderTokenizer ();
@@ -238,6 +268,17 @@ public class FileParser {
       }
    }
 
+   /**
+    * Reads the next amount of input, interpreting it as a skip statement or
+    * when block of a redefinition statement, depending on the incoming flag.
+    *
+    * @param skipOrWhen
+    * either "skip" or "when" depending of the value of the last consumed token
+    * @return a {@link CombinationChecker} representing the read skip or when
+    * @throws IOException
+    * if an I/O error occurs, or the file format is incorrect (causing a parse
+    * error)
+    */
    protected CombinationChecker readSkipOrWhen (String skipOrWhen)
       throws IOException {
       List<PropertySpecification> propSpecs = new LinkedList<> ();
@@ -292,6 +333,14 @@ public class FileParser {
       return new CombinationChecker (propSpecs);
    }
 
+   /**
+    * Reads the next amount of input, interpreting it as a redefinition
+    * statement (where the "redef" keyword token has already been consumed).
+    *
+    * @throws IOException
+    * if an I/O error occurs, or the file format is incorrect (causing a parse
+    * error)
+    */
    protected void readRedefStatement () throws IOException {
       List<PropertySpecification> propSpecs = new LinkedList<> ();
       int lineno = rtok.lineno ();
@@ -351,6 +400,24 @@ public class FileParser {
       }
    }
 
+   /**
+    * Reads the next amount of input, interpreting it as a
+    * {@link PropertySpecification} (either
+    * {@link SpecificationType#COMBINATORIAL} or
+    * {@link SpecificationType#PROBABILISTIC}). Specifically, expect a
+    * double-quoted string (the property path), then either `=' or `~', then a
+    * combinatorial value set or a probabilistic distribution vector.
+    *
+    * @param decorator
+    * the decorator for this {@code PropertySpecification}, or {@code null}
+    * @param decArgs
+    * the decorator arguments, or {@code null}
+    * @return a list of property specifications, each expanded from the one read
+    * in, if applicable
+    * @throws IOException
+    * if an I/O error occurs, or the file format is incorrect (causing a parse
+    * error)
+    */
    protected List<PropertySpecification> readPropSpec (
       SpecificationType decorator, ArrayList<Number> decArgs)
       throws IOException {

@@ -1,12 +1,25 @@
 package artisynth.tools.batchsim.manager;
 
 import java.util.HashMap;
-import java.util.NoSuchElementException;
+
+import artisynth.tools.batchsim.manager.PropertySpecification.Redef;
+import artisynth.tools.batchsim.manager.PropertySpecification.SpecificationType;
+
 import java.util.LinkedList;
 import java.util.List;
 
 import maspack.util.IndentingPrintWriter;
 
+/**
+ * A {@code CombinationChecker} checks whether a particular task pushed to the
+ * checker matches any combination of {@link SpecificationType#COMBINATORIAL}
+ * {@link PropertySpecification} values from its list.
+ * <p>
+ * {@code CombinationCheckers} are used to implement "skip" statements and
+ * "when" blocks of {@link Redef} statements.
+ *
+ * @author Francois Roewer-Despres
+ */
 public class CombinationChecker implements Printable {
 
    protected List<PropertySpecification> myOriginalPropSpecs;
@@ -14,6 +27,15 @@ public class CombinationChecker implements Printable {
    protected LinkedList<PropPathValueSetPair> myCurPropSpecs =
       new LinkedList<> ();
 
+   /**
+    * A {@link PropPathValueSetPair} is just a
+    * {@link SpecificationType#COMBINATORIAL} {@link PropertySpecification}'s
+    * property path as well as its value set.
+    * <p>
+    * It is sort of a light clone of a {@code PropertySpecification}.
+    *
+    * @author Francois Roewer-Despres
+    */
    protected static class PropPathValueSetPair {
       public String myPropPath;
       public List<Object> myValueSet;
@@ -24,6 +46,13 @@ public class CombinationChecker implements Printable {
       }
    }
 
+   /**
+    * Creates a new {@link CombinationChecker} with the given list of
+    * {@link SpecificationType#COMBINATORIAL} {@link PropertySpecification}s.
+    *
+    * @param propSpecs
+    * the list of {@code PropertySpecification}s
+    */
    public CombinationChecker (List<PropertySpecification> propSpecs) {
       myOriginalPropSpecs = propSpecs;
       for (PropertySpecification propSpec : myOriginalPropSpecs) {
@@ -32,11 +61,24 @@ public class CombinationChecker implements Printable {
       }
    }
 
+   /**
+    * Returns the list of {@link PropertySpecification}s of this
+    * {@link CombinationChecker}.
+    *
+    * @return the list of {@code PropertySpecification}s
+    */
    public List<PropertySpecification> getPropSpecs () {
       return myOriginalPropSpecs;
    }
 
-   public void popIfNecessary (String propPath) throws NoSuchElementException {
+   /**
+    * If a {@link PropertySpecification} with the given property path was pushed
+    * last, pop it.
+    *
+    * @param propPath
+    * the property path
+    */
+   public void popIfNecessary (String propPath) {
       if (!myCurPropSpecs.isEmpty ()) {
          if (myCurPropSpecs.peek ().myPropPath.equals (propPath)) {
             pop ();
@@ -49,11 +91,31 @@ public class CombinationChecker implements Printable {
       myPropSpecs.put (pair.myPropPath, pair.myValueSet);
    }
 
+   /**
+    * Pushes the {@link PropertySpecification} with the given property path and
+    * value, then checks if this {@link CombinationChecker} has a matching
+    * combination.
+    *
+    * @param propPath
+    * the property path
+    * @param value
+    * the value
+    * @return whether a combination is matching
+    */
    public boolean pushAndCheck (String propPath, String value) {
       push (propPath, value);
       return check ();
    }
 
+   /**
+    * Pushes the {@link PropertySpecification} with the given property path and
+    * value.
+    *
+    * @param propPath
+    * the property path
+    * @param value
+    * the value
+    */
    public void push (String propPath, String value) {
       if (myPropSpecs.containsKey (propPath)) {
          if (myPropSpecs.get (propPath).contains (value)) {
@@ -63,10 +125,18 @@ public class CombinationChecker implements Printable {
       }
    }
 
+   /**
+    * Checks if this {@link CombinationChecker} has a matching combination.
+    *
+    * @return whether a combination is matching
+    */
    public boolean check () {
       return myPropSpecs.isEmpty ();
    }
 
+   /**
+    * Pops everything from this {@link CombinationChecker}.
+    */
    public void clear () {
       while (!myCurPropSpecs.isEmpty ()) {
          pop ();
