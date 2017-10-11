@@ -72,7 +72,7 @@ public class GravityPressureFunction extends RegistrationPressureFunctionBase {
          return;
       } else if (dist >= targetRadius) {
          // drop off with dist^2, peak reached when spheres are adjacent
-         pnorm = maxPressure*targetRadius*targetRadius/dist*dist; 
+         pnorm = maxPressure*targetRadius*targetRadius/(dist*dist); 
       } else {
          // linearly go to zero as we approach full overlap
          pnorm = maxPressure*dist/targetRadius;
