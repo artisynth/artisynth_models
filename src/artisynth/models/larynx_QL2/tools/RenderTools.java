@@ -6,8 +6,8 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.util.HashMap;
 
-import javax.media.opengl.GLAutoDrawable;
-import javax.media.opengl.GLEventListener;
+import com.jogamp.opengl.GLAutoDrawable;
+import com.jogamp.opengl.GLEventListener;
 
 import com.jogamp.graph.curve.opengl.RenderState;
 
@@ -43,7 +43,8 @@ import artisynth.models.larynx_QL2.components.PointBody;
 import artisynth.models.larynx_QL2.components.SoftBody;
 import artisynth.models.larynx_QL2.components.Structures;
 import artisynth.models.larynx_QL2.components.Tissue;
-import jogamp.graph.curve.opengl.TextRendererImpl01;
+import com.jogamp.graph.curve.opengl.TextRegionUtil;
+//import com.jogamp.graph.curve.opengl.TextRendererImpl01;
 import maspack.geometry.PolygonalMesh;
 import maspack.matrix.AxisAngle;
 import maspack.matrix.Point3d;
@@ -65,7 +66,7 @@ import maspack.render.GL.GL3.GL3Viewer;
  *   @author Scott Moisik (Scott.Moisik@ntu.edu.sg), 2017, Nanyang Technological University, Singapore. 
  *   <p>
  *   If you use this model in your research, please cite: 
- *   Moisik, S. R., & Gick, B. (2017). The quantal larynx: the stable regions of laryngeal biomechanics and implications for speech production. Journal of Speech Language and Hearing Research, 60(3), 540–560. https://doi.org/10.1044/2016_JSLHR-S-16-0019
+ *   Moisik, S. R., & Gick, B. (2017). The quantal larynx: the stable regions of laryngeal biomechanics and implications for speech production. Journal of Speech Language and Hearing Research, 60(3), 540-560. https://doi.org/10.1044/2016_JSLHR-S-16-0019
 
  *  **/
 public class RenderTools {
@@ -494,14 +495,14 @@ public class RenderTools {
                 }
         }
         
-        public class TextWrapper extends TextRendererImpl01 {
-
-                public TextWrapper(RenderState arg0, int arg1) {
-                        super(arg0, arg1);
-                        // TODO Auto-generated constructor stub
-                }
-                
-        }
+//         public class TextWrapper extends TextRendererImpl01 {
+// 
+//                 public TextWrapper(RenderState arg0, int arg1) {
+//                         super(arg0, arg1);
+//                         // TODO Auto-generated constructor stub
+//                 }
+//                 
+//         }
         
         /*
         public static class TextFeeder implements GLEventListener {
