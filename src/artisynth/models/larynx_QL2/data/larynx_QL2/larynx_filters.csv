@@ -1,0 +1,15 @@
+filter 1 subsurface box, position, 0.00235618, 0.00321962, -0.0110865, scale, 0.003501251, 0.00684324, 0.012537617, option name, rightVocalFold
+filter 2 subsurface box, position, -0.002356184, 0.003219621, -0.011086515, scale, 0.003500726, 0.00684324, 0.012537617, option name, leftVocalFold
+filter 3 subsurface box, position, 0.00311066, 0.0115579, -0.0125343, scale, 0.003503151, 0.003920733, 0.006913097, option name, rightFalseFold
+filter 4 subsurface box, position, -0.003110662, 0.011557865, -0.012534285, scale, 0.003501225, 0.003920635, 0.006912924, option name, leftFalseFold
+filter 5 subsurface box, position, 0.007793918, 0.021395783, 0.001405784, scale, 0.009932186, 0.008750013, 0.006317079, option name, rightAEFold
+filter 6 subsurface box, position, -0.007793918, 0.021395783, 0.001405784, scale, 0.009932186, 0.008750013, 0.006317079, option name, leftAEFold
+filter 7 subsurface box, position, 0.0, 0.028035671893814663, -0.0042640832889846055, scale, 0.013302166056669337, 0.008230771, 0.0046321085999375565, option name, epiglotticTubercle
+filter 8 attach box, position, 0.0, 0.041218447, -0.015723844, scale, 0.050752428, 0.028660605, 0.029018863, attachment, hyoid, proximity, 0.001
+filter 9 attach box, position, 0.0078782, 0.018797959, -0.002275718, scale, 0.00683042, 0.009834123, 0.006673228, attachment, cuneiform_R, proximity, 0.001
+filter 10 attach box, position, 0.00661888, 0.0096528, -0.0018362785462261964, scale, 0.011434641, 0.0198631, 0.016927399, attachment, arytenoid_R, proximity, 0.0015000000000000022
+filter 11 attach box, position, -0.0078782, 0.018797959, -0.002275718, scale, 0.00683042, 0.009834123, 0.006673228, attachment, cuneiform_L, proximity, 0.001
+filter 12 attach box, position, -0.00661888490017441, 0.009652803, -0.0018362785462261964, scale, 0.011434641, 0.0198631, 0.016927399, attachment, arytenoid_L, proximity, 0.0015000000000000022
+filter 13 attach box, position, 0.0, 0.034279063, -0.001517757, scale, 0.030497239, 0.036726742, 0.0246875, attachment, epiglottis, proximity, 7.5E-4
+filter 14 attach box, position, 0.0, 0.001689756, -0.011060744, scale, 0.048292168, 0.047695968, 0.047695968, attachment, thyroid, proximity, 5.0E-4
+filter 15 attach box, position, 0.0, -0.00558754, 0.0, scale, 0.030878454, 0.030878454, 0.030878454, attachment, cricoid, proximity, 5.0E-4

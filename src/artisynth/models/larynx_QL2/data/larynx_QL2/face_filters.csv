@@ -1,0 +1,11 @@
+filter 1 attach box, position, 0.0, 0.142349343, 0.018931154, scale, 0.179585633, 0.1, 0.278596259, attachment, maxilla, proximity, 0.002
+filter 2 pruin box, position, 0.0, -0.029567445, 0.0, scale, 0.193098647, 0.1157625, 0.207892818
+filter 3 pruin box, position, 0.0, 0.0, 0.096029506, scale, 0.179585633, 0.355567269, 0.179585633
+filter 4 pruin box, position, 0.0, 0.20043589, -0.024113187, scale, 0.171033936, 0.171033936, 0.171033936
+filter 5 pruin box, position, 0.0, 0.118888403, -0.100496199, scale, 0.037546919, 0.039721432, 0.039721432
+filter 6 attach box, position, 0.0, 0.037354387, -0.001664754, scale, 0.179585633, 0.1157625, 0.045410608, attachment, mandible, proximity, 0.001
+filter 7 attach box, position, 0.0, -0.007974859, -0.107464912, scale, 0.127628156, 0.127628156, 0.179585633, attachment, mandible, proximity, 0.001
+filter 8 attach box, position, 0.0, 0.142755805, -0.079665163, scale, 0.167223931, 0.063102553, 0.143373618, attachment, maxilla, proximity, 0.1037
+filter 9 attach box, position, 0.0, 0.00107622, -0.060126853, scale, 0.177352008, 0.057235876, 0.177352008, attachment, mandible, proximity, 0.0928
+filter 11 subsurface box, position, 0.0, 0.065763972, -0.078191853, scale, 0.039523073, 0.010389086, 0.029125905, option name, lowerLip
+filter 12 subsurface box, position, 2.08E-4, 0.07645236, -0.094242925, scale, 0.03922739, 0.009446824, 0.022593554, option name, upperLip

@@ -1,0 +1,2448 @@
+element, genioglossus posterior right,17,
+element, genioglossus posterior right,19,
+element, genioglossus posterior right,21,
+element, genioglossus posterior right,27,
+element, genioglossus posterior right,29,
+element, genioglossus posterior right,31,
+element, genioglossus posterior right,56,
+element, genioglossus posterior right,58,
+element, genioglossus posterior right,62,
+element, genioglossus posterior right,77,
+element, genioglossus posterior right,79,
+element, genioglossus posterior right,81,
+element, genioglossus posterior right,106,
+element, genioglossus posterior right,107,
+element, genioglossus posterior right,109,
+element, genioglossus posterior right,112,
+element, genioglossus posterior right,113,
+element, genioglossus posterior right,115,
+element, genioglossus posterior right,118,
+element, genioglossus posterior right,119,
+element, genioglossus posterior right,121,
+element, genioglossus posterior right,124,
+element, genioglossus posterior right,125,
+element, genioglossus posterior right,148,
+element, genioglossus posterior right,155,
+element, genioglossus posterior right,180,
+element, genioglossus posterior right,185,
+element, genioglossus posterior right,186,
+element, genioglossus posterior right,187,
+element, genioglossus posterior right,188,
+element, genioglossus posterior right,199,
+element, genioglossus posterior right,200,
+element, genioglossus posterior right,201,
+element, genioglossus posterior right,202,
+element, genioglossus posterior right,213,
+element, genioglossus posterior right,214,
+element, genioglossus posterior right,215,
+element, genioglossus posterior right,216,
+element, genioglossus posterior right,227,
+element, genioglossus posterior right,228,
+element, genioglossus posterior right,229,
+element, genioglossus posterior right,230,
+element, genioglossus posterior right,241,
+element, genioglossus posterior right,243,
+element, genioglossus posterior right,245,
+element, genioglossus posterior right,247,
+element, genioglossus posterior right,349,
+element, genioglossus posterior right,352,
+element, genioglossus posterior right,355,
+fiber_node, genioglossus posterior right,397,396
+fiber_node, genioglossus posterior right,396,133
+fiber_node, genioglossus posterior right,133,270
+fiber_node, genioglossus posterior right,270,123
+fiber_node, genioglossus posterior right,123,115
+fiber_node, genioglossus posterior right,115,110
+fiber_node, genioglossus posterior right,110,109
+fiber_node, genioglossus posterior right,109,203
+fiber_node, genioglossus posterior right,203,204
+fiber_node, genioglossus posterior right,204,205
+fiber_node, genioglossus posterior right,205,120
+fiber_node, genioglossus posterior right,399,398
+fiber_node, genioglossus posterior right,398,134
+fiber_node, genioglossus posterior right,134,272
+fiber_node, genioglossus posterior right,272,124
+fiber_node, genioglossus posterior right,124,116
+fiber_node, genioglossus posterior right,116,108
+fiber_node, genioglossus posterior right,108,107
+fiber_node, genioglossus posterior right,107,212
+fiber_node, genioglossus posterior right,212,213
+fiber_node, genioglossus posterior right,213,214
+fiber_node, genioglossus posterior right,214,102
+fiber_node, genioglossus posterior right,401,400
+fiber_node, genioglossus posterior right,400,135
+fiber_node, genioglossus posterior right,135,274
+fiber_node, genioglossus posterior right,274,125
+fiber_node, genioglossus posterior right,125,117
+fiber_node, genioglossus posterior right,117,106
+fiber_node, genioglossus posterior right,106,105
+fiber_node, genioglossus posterior right,105,221
+fiber_node, genioglossus posterior right,221,222
+fiber_node, genioglossus posterior right,222,223
+fiber_node, genioglossus posterior right,223,100
+fiber_node, genioglossus posterior right,403,402
+fiber_node, genioglossus posterior right,402,136
+fiber_node, genioglossus posterior right,136,276
+fiber_node, genioglossus posterior right,276,126
+fiber_node, genioglossus posterior right,126,118
+fiber_node, genioglossus posterior right,118,103
+fiber_node, genioglossus posterior right,103,104
+fiber_node, genioglossus posterior right,104,230
+fiber_node, genioglossus posterior right,230,231
+fiber_node, genioglossus posterior right,231,232
+fiber_node, genioglossus posterior right,232,98
+fiber_node, genioglossus posterior right,403,402
+fiber_node, genioglossus posterior right,402,136
+fiber_node, genioglossus posterior right,136,130
+fiber_node, genioglossus posterior right,130,129
+fiber_node, genioglossus posterior right,129,128
+fiber_node, genioglossus posterior right,128,127
+fiber_node, genioglossus posterior right,127,239
+fiber_node, genioglossus posterior right,239,240
+fiber_node, genioglossus posterior right,240,241
+fiber_node, genioglossus posterior right,241,96
+fiber_node, genioglossus posterior right,403,402
+fiber_node, genioglossus posterior right,402,136
+fiber_node, genioglossus posterior right,136,278
+fiber_node, genioglossus posterior right,278,286
+fiber_node, genioglossus posterior right,286,289
+fiber_node, genioglossus posterior right,289,290
+fiber_node, genioglossus posterior right,290,303
+fiber_node, genioglossus posterior right,303,304
+fiber_node, genioglossus posterior right,304,305
+fiber_node, genioglossus posterior right,305,291
+fiber_node, genioglossus posterior right,932,940
+fiber_node, genioglossus posterior right,940,862
+fiber_node, genioglossus posterior right,862,898
+fiber_node, genioglossus posterior right,898,850
+fiber_node, genioglossus posterior right,850,837
+fiber_node, genioglossus posterior right,837,830
+fiber_node, genioglossus posterior right,830,829
+fiber_node, genioglossus posterior right,829,876
+fiber_node, genioglossus posterior right,876,877
+fiber_node, genioglossus posterior right,877,878
+fiber_node, genioglossus posterior right,878,845
+fiber_node, genioglossus posterior right,933,941
+fiber_node, genioglossus posterior right,941,863
+fiber_node, genioglossus posterior right,863,897
+fiber_node, genioglossus posterior right,897,851
+fiber_node, genioglossus posterior right,851,836
+fiber_node, genioglossus posterior right,836,835
+fiber_node, genioglossus posterior right,835,828
+fiber_node, genioglossus posterior right,828,879
+fiber_node, genioglossus posterior right,879,880
+fiber_node, genioglossus posterior right,880,881
+fiber_node, genioglossus posterior right,881,844
+fiber_node, genioglossus posterior right,934,942
+fiber_node, genioglossus posterior right,942,864
+fiber_node, genioglossus posterior right,864,901
+fiber_node, genioglossus posterior right,901,852
+fiber_node, genioglossus posterior right,852,840
+fiber_node, genioglossus posterior right,840,834
+fiber_node, genioglossus posterior right,834,827
+fiber_node, genioglossus posterior right,827,882
+fiber_node, genioglossus posterior right,882,883
+fiber_node, genioglossus posterior right,883,884
+fiber_node, genioglossus posterior right,884,843
+fiber_node, genioglossus posterior right,935,943
+fiber_node, genioglossus posterior right,943,865
+fiber_node, genioglossus posterior right,865,902
+fiber_node, genioglossus posterior right,902,853
+fiber_node, genioglossus posterior right,853,841
+fiber_node, genioglossus posterior right,841,833
+fiber_node, genioglossus posterior right,833,826
+fiber_node, genioglossus posterior right,826,885
+fiber_node, genioglossus posterior right,885,886
+fiber_node, genioglossus posterior right,886,887
+fiber_node, genioglossus posterior right,887,842
+fiber_node, genioglossus posterior right,935,943
+fiber_node, genioglossus posterior right,943,865
+fiber_node, genioglossus posterior right,865,854
+fiber_node, genioglossus posterior right,854,855
+fiber_node, genioglossus posterior right,855,856
+fiber_node, genioglossus posterior right,856,857
+fiber_node, genioglossus posterior right,857,888
+fiber_node, genioglossus posterior right,888,889
+fiber_node, genioglossus posterior right,889,890
+fiber_node, genioglossus posterior right,890,858
+fiber_node, genioglossus posterior right,935,943
+fiber_node, genioglossus posterior right,943,865
+fiber_node, genioglossus posterior right,865,903
+fiber_node, genioglossus posterior right,903,904
+fiber_node, genioglossus posterior right,904,905
+fiber_node, genioglossus posterior right,905,906
+fiber_node, genioglossus posterior right,906,929
+fiber_node, genioglossus posterior right,929,909
+fiber_node, genioglossus posterior right,909,910
+fiber_node, genioglossus posterior right,910,907
+element, genioglossus posterior left,387,
+element, genioglossus posterior left,389,
+element, genioglossus posterior left,391,
+element, genioglossus posterior left,397,
+element, genioglossus posterior left,399,
+element, genioglossus posterior left,401,
+element, genioglossus posterior left,426,
+element, genioglossus posterior left,428,
+element, genioglossus posterior left,432,
+element, genioglossus posterior left,447,
+element, genioglossus posterior left,449,
+element, genioglossus posterior left,451,
+element, genioglossus posterior left,476,
+element, genioglossus posterior left,477,
+element, genioglossus posterior left,479,
+element, genioglossus posterior left,482,
+element, genioglossus posterior left,483,
+element, genioglossus posterior left,485,
+element, genioglossus posterior left,488,
+element, genioglossus posterior left,489,
+element, genioglossus posterior left,491,
+element, genioglossus posterior left,494,
+element, genioglossus posterior left,495,
+element, genioglossus posterior left,518,
+element, genioglossus posterior left,525,
+element, genioglossus posterior left,550,
+element, genioglossus posterior left,555,
+element, genioglossus posterior left,556,
+element, genioglossus posterior left,557,
+element, genioglossus posterior left,558,
+element, genioglossus posterior left,569,
+element, genioglossus posterior left,570,
+element, genioglossus posterior left,571,
+element, genioglossus posterior left,572,
+element, genioglossus posterior left,583,
+element, genioglossus posterior left,584,
+element, genioglossus posterior left,585,
+element, genioglossus posterior left,586,
+element, genioglossus posterior left,597,
+element, genioglossus posterior left,598,
+element, genioglossus posterior left,599,
+element, genioglossus posterior left,600,
+element, genioglossus posterior left,611,
+element, genioglossus posterior left,613,
+element, genioglossus posterior left,615,
+element, genioglossus posterior left,617,
+element, genioglossus posterior left,719,
+element, genioglossus posterior left,722,
+element, genioglossus posterior left,725,
+fiber_node, genioglossus posterior left,810,809
+fiber_node, genioglossus posterior left,809,546
+fiber_node, genioglossus posterior left,546,683
+fiber_node, genioglossus posterior left,683,536
+fiber_node, genioglossus posterior left,536,528
+fiber_node, genioglossus posterior left,528,523
+fiber_node, genioglossus posterior left,523,522
+fiber_node, genioglossus posterior left,522,616
+fiber_node, genioglossus posterior left,616,617
+fiber_node, genioglossus posterior left,617,618
+fiber_node, genioglossus posterior left,618,533
+fiber_node, genioglossus posterior left,812,811
+fiber_node, genioglossus posterior left,811,547
+fiber_node, genioglossus posterior left,547,685
+fiber_node, genioglossus posterior left,685,537
+fiber_node, genioglossus posterior left,537,529
+fiber_node, genioglossus posterior left,529,521
+fiber_node, genioglossus posterior left,521,520
+fiber_node, genioglossus posterior left,520,625
+fiber_node, genioglossus posterior left,625,626
+fiber_node, genioglossus posterior left,626,627
+fiber_node, genioglossus posterior left,627,515
+fiber_node, genioglossus posterior left,814,813
+fiber_node, genioglossus posterior left,813,548
+fiber_node, genioglossus posterior left,548,687
+fiber_node, genioglossus posterior left,687,538
+fiber_node, genioglossus posterior left,538,530
+fiber_node, genioglossus posterior left,530,519
+fiber_node, genioglossus posterior left,519,518
+fiber_node, genioglossus posterior left,518,634
+fiber_node, genioglossus posterior left,634,635
+fiber_node, genioglossus posterior left,635,636
+fiber_node, genioglossus posterior left,636,513
+fiber_node, genioglossus posterior left,816,815
+fiber_node, genioglossus posterior left,815,549
+fiber_node, genioglossus posterior left,549,689
+fiber_node, genioglossus posterior left,689,539
+fiber_node, genioglossus posterior left,539,531
+fiber_node, genioglossus posterior left,531,516
+fiber_node, genioglossus posterior left,516,517
+fiber_node, genioglossus posterior left,517,643
+fiber_node, genioglossus posterior left,643,644
+fiber_node, genioglossus posterior left,644,645
+fiber_node, genioglossus posterior left,645,511
+fiber_node, genioglossus posterior left,816,815
+fiber_node, genioglossus posterior left,815,549
+fiber_node, genioglossus posterior left,549,543
+fiber_node, genioglossus posterior left,543,542
+fiber_node, genioglossus posterior left,542,541
+fiber_node, genioglossus posterior left,541,540
+fiber_node, genioglossus posterior left,540,652
+fiber_node, genioglossus posterior left,652,653
+fiber_node, genioglossus posterior left,653,654
+fiber_node, genioglossus posterior left,654,509
+fiber_node, genioglossus posterior left,816,815
+fiber_node, genioglossus posterior left,815,549
+fiber_node, genioglossus posterior left,549,691
+fiber_node, genioglossus posterior left,691,699
+fiber_node, genioglossus posterior left,699,702
+fiber_node, genioglossus posterior left,702,703
+fiber_node, genioglossus posterior left,703,716
+fiber_node, genioglossus posterior left,716,717
+fiber_node, genioglossus posterior left,717,718
+fiber_node, genioglossus posterior left,718,704
+fiber_node, genioglossus posterior left,932,940
+fiber_node, genioglossus posterior left,940,862
+fiber_node, genioglossus posterior left,862,898
+fiber_node, genioglossus posterior left,898,850
+fiber_node, genioglossus posterior left,850,837
+fiber_node, genioglossus posterior left,837,830
+fiber_node, genioglossus posterior left,830,829
+fiber_node, genioglossus posterior left,829,876
+fiber_node, genioglossus posterior left,876,877
+fiber_node, genioglossus posterior left,877,878
+fiber_node, genioglossus posterior left,878,845
+fiber_node, genioglossus posterior left,933,941
+fiber_node, genioglossus posterior left,941,863
+fiber_node, genioglossus posterior left,863,897
+fiber_node, genioglossus posterior left,897,851
+fiber_node, genioglossus posterior left,851,836
+fiber_node, genioglossus posterior left,836,835
+fiber_node, genioglossus posterior left,835,828
+fiber_node, genioglossus posterior left,828,879
+fiber_node, genioglossus posterior left,879,880
+fiber_node, genioglossus posterior left,880,881
+fiber_node, genioglossus posterior left,881,844
+fiber_node, genioglossus posterior left,934,942
+fiber_node, genioglossus posterior left,942,864
+fiber_node, genioglossus posterior left,864,901
+fiber_node, genioglossus posterior left,901,852
+fiber_node, genioglossus posterior left,852,840
+fiber_node, genioglossus posterior left,840,834
+fiber_node, genioglossus posterior left,834,827
+fiber_node, genioglossus posterior left,827,882
+fiber_node, genioglossus posterior left,882,883
+fiber_node, genioglossus posterior left,883,884
+fiber_node, genioglossus posterior left,884,843
+fiber_node, genioglossus posterior left,935,943
+fiber_node, genioglossus posterior left,943,865
+fiber_node, genioglossus posterior left,865,902
+fiber_node, genioglossus posterior left,902,853
+fiber_node, genioglossus posterior left,853,841
+fiber_node, genioglossus posterior left,841,833
+fiber_node, genioglossus posterior left,833,826
+fiber_node, genioglossus posterior left,826,885
+fiber_node, genioglossus posterior left,885,886
+fiber_node, genioglossus posterior left,886,887
+fiber_node, genioglossus posterior left,887,842
+fiber_node, genioglossus posterior left,935,943
+fiber_node, genioglossus posterior left,943,865
+fiber_node, genioglossus posterior left,865,854
+fiber_node, genioglossus posterior left,854,855
+fiber_node, genioglossus posterior left,855,856
+fiber_node, genioglossus posterior left,856,857
+fiber_node, genioglossus posterior left,857,888
+fiber_node, genioglossus posterior left,888,889
+fiber_node, genioglossus posterior left,889,890
+fiber_node, genioglossus posterior left,890,858
+fiber_node, genioglossus posterior left,935,943
+fiber_node, genioglossus posterior left,943,865
+fiber_node, genioglossus posterior left,865,903
+fiber_node, genioglossus posterior left,903,904
+fiber_node, genioglossus posterior left,904,905
+fiber_node, genioglossus posterior left,905,906
+fiber_node, genioglossus posterior left,906,929
+fiber_node, genioglossus posterior left,929,909
+fiber_node, genioglossus posterior left,909,910
+fiber_node, genioglossus posterior left,910,907
+element, genioglossus medial right,125,
+element, genioglossus medial right,127,
+element, genioglossus medial right,149,
+element, genioglossus medial right,156,
+element, genioglossus medial right,179,
+element, genioglossus medial right,242,
+element, genioglossus medial right,244,
+element, genioglossus medial right,246,
+element, genioglossus medial right,248,
+element, genioglossus medial right,343,
+element, genioglossus medial right,346,
+fiber_node, genioglossus medial right,403,402
+fiber_node, genioglossus medial right,402,136
+fiber_node, genioglossus medial right,136,278
+fiber_node, genioglossus medial right,278,286
+fiber_node, genioglossus medial right,286,289
+fiber_node, genioglossus medial right,289,290
+fiber_node, genioglossus medial right,290,303
+fiber_node, genioglossus medial right,303,304
+fiber_node, genioglossus medial right,304,305
+fiber_node, genioglossus medial right,305,291
+fiber_node, genioglossus medial right,405,404
+fiber_node, genioglossus medial right,404,138
+fiber_node, genioglossus medial right,138,139
+fiber_node, genioglossus medial right,139,144
+fiber_node, genioglossus medial right,144,248
+fiber_node, genioglossus medial right,248,249
+fiber_node, genioglossus medial right,249,250
+fiber_node, genioglossus medial right,250,145
+fiber_node, genioglossus medial right,935,943
+fiber_node, genioglossus medial right,943,865
+fiber_node, genioglossus medial right,865,903
+fiber_node, genioglossus medial right,903,904
+fiber_node, genioglossus medial right,904,905
+fiber_node, genioglossus medial right,905,906
+fiber_node, genioglossus medial right,906,929
+fiber_node, genioglossus medial right,929,909
+fiber_node, genioglossus medial right,909,910
+fiber_node, genioglossus medial right,910,907
+fiber_node, genioglossus medial right,936,944
+fiber_node, genioglossus medial right,944,867
+fiber_node, genioglossus medial right,867,868
+fiber_node, genioglossus medial right,868,870
+fiber_node, genioglossus medial right,870,891
+fiber_node, genioglossus medial right,891,892
+fiber_node, genioglossus medial right,892,893
+fiber_node, genioglossus medial right,893,871
+element, genioglossus medial left,495,
+element, genioglossus medial left,497,
+element, genioglossus medial left,519,
+element, genioglossus medial left,526,
+element, genioglossus medial left,549,
+element, genioglossus medial left,612,
+element, genioglossus medial left,614,
+element, genioglossus medial left,616,
+element, genioglossus medial left,618,
+element, genioglossus medial left,713,
+element, genioglossus medial left,716,
+fiber_node, genioglossus medial left,816,815
+fiber_node, genioglossus medial left,815,549
+fiber_node, genioglossus medial left,549,691
+fiber_node, genioglossus medial left,691,699
+fiber_node, genioglossus medial left,699,702
+fiber_node, genioglossus medial left,702,703
+fiber_node, genioglossus medial left,703,716
+fiber_node, genioglossus medial left,716,717
+fiber_node, genioglossus medial left,717,718
+fiber_node, genioglossus medial left,718,704
+fiber_node, genioglossus medial left,818,817
+fiber_node, genioglossus medial left,817,551
+fiber_node, genioglossus medial left,551,552
+fiber_node, genioglossus medial left,552,557
+fiber_node, genioglossus medial left,557,661
+fiber_node, genioglossus medial left,661,662
+fiber_node, genioglossus medial left,662,663
+fiber_node, genioglossus medial left,663,558
+fiber_node, genioglossus medial left,935,943
+fiber_node, genioglossus medial left,943,865
+fiber_node, genioglossus medial left,865,903
+fiber_node, genioglossus medial left,903,904
+fiber_node, genioglossus medial left,904,905
+fiber_node, genioglossus medial left,905,906
+fiber_node, genioglossus medial left,906,929
+fiber_node, genioglossus medial left,929,909
+fiber_node, genioglossus medial left,909,910
+fiber_node, genioglossus medial left,910,907
+fiber_node, genioglossus medial left,936,944
+fiber_node, genioglossus medial left,944,867
+fiber_node, genioglossus medial left,867,868
+fiber_node, genioglossus medial left,868,870
+fiber_node, genioglossus medial left,870,891
+fiber_node, genioglossus medial left,891,892
+fiber_node, genioglossus medial left,892,893
+fiber_node, genioglossus medial left,893,871
+element, genioglossus anterior right,151,
+element, genioglossus anterior right,171,
+element, genioglossus anterior right,181,
+element, genioglossus anterior right,269,
+element, genioglossus anterior right,270,
+element, genioglossus anterior right,271,
+element, genioglossus anterior right,272,
+element, genioglossus anterior right,283,
+element, genioglossus anterior right,291,
+element, genioglossus anterior right,292,
+element, genioglossus anterior right,293,
+element, genioglossus anterior right,294,
+element, genioglossus anterior right,340,
+element, genioglossus anterior right,343,
+fiber_node, genioglossus anterior right,405,404
+fiber_node, genioglossus anterior right,404,138
+fiber_node, genioglossus anterior right,138,139
+fiber_node, genioglossus anterior right,139,144
+fiber_node, genioglossus anterior right,144,248
+fiber_node, genioglossus anterior right,248,249
+fiber_node, genioglossus anterior right,249,250
+fiber_node, genioglossus anterior right,250,145
+fiber_node, genioglossus anterior right,405,406
+fiber_node, genioglossus anterior right,406,149
+fiber_node, genioglossus anterior right,149,154
+fiber_node, genioglossus anterior right,154,257
+fiber_node, genioglossus anterior right,257,258
+fiber_node, genioglossus anterior right,258,259
+fiber_node, genioglossus anterior right,259,155
+fiber_node, genioglossus anterior right,405,407
+fiber_node, genioglossus anterior right,407,312
+fiber_node, genioglossus anterior right,312,319
+fiber_node, genioglossus anterior right,319,326
+fiber_node, genioglossus anterior right,326,327
+fiber_node, genioglossus anterior right,327,328
+fiber_node, genioglossus anterior right,328,325
+fiber_node, genioglossus anterior right,936,944
+fiber_node, genioglossus anterior right,944,867
+fiber_node, genioglossus anterior right,867,868
+fiber_node, genioglossus anterior right,868,870
+fiber_node, genioglossus anterior right,870,891
+fiber_node, genioglossus anterior right,891,892
+fiber_node, genioglossus anterior right,892,893
+fiber_node, genioglossus anterior right,893,871
+fiber_node, genioglossus anterior right,936,945
+fiber_node, genioglossus anterior right,945,872
+fiber_node, genioglossus anterior right,872,874
+fiber_node, genioglossus anterior right,874,894
+fiber_node, genioglossus anterior right,894,895
+fiber_node, genioglossus anterior right,895,896
+fiber_node, genioglossus anterior right,896,875
+fiber_node, genioglossus anterior right,936,937
+fiber_node, genioglossus anterior right,937,911
+fiber_node, genioglossus anterior right,911,913
+fiber_node, genioglossus anterior right,913,915
+fiber_node, genioglossus anterior right,915,916
+fiber_node, genioglossus anterior right,916,917
+fiber_node, genioglossus anterior right,917,914
+element, genioglossus anterior left,521,
+element, genioglossus anterior left,541,
+element, genioglossus anterior left,551,
+element, genioglossus anterior left,639,
+element, genioglossus anterior left,640,
+element, genioglossus anterior left,641,
+element, genioglossus anterior left,642,
+element, genioglossus anterior left,653,
+element, genioglossus anterior left,661,
+element, genioglossus anterior left,662,
+element, genioglossus anterior left,663,
+element, genioglossus anterior left,664,
+element, genioglossus anterior left,710,
+element, genioglossus anterior left,713,
+fiber_node, genioglossus anterior left,818,817
+fiber_node, genioglossus anterior left,817,551
+fiber_node, genioglossus anterior left,551,552
+fiber_node, genioglossus anterior left,552,557
+fiber_node, genioglossus anterior left,557,661
+fiber_node, genioglossus anterior left,661,662
+fiber_node, genioglossus anterior left,662,663
+fiber_node, genioglossus anterior left,663,558
+fiber_node, genioglossus anterior left,818,819
+fiber_node, genioglossus anterior left,819,562
+fiber_node, genioglossus anterior left,562,567
+fiber_node, genioglossus anterior left,567,670
+fiber_node, genioglossus anterior left,670,671
+fiber_node, genioglossus anterior left,671,672
+fiber_node, genioglossus anterior left,672,568
+fiber_node, genioglossus anterior left,818,820
+fiber_node, genioglossus anterior left,820,725
+fiber_node, genioglossus anterior left,725,732
+fiber_node, genioglossus anterior left,732,739
+fiber_node, genioglossus anterior left,739,740
+fiber_node, genioglossus anterior left,740,741
+fiber_node, genioglossus anterior left,741,738
+fiber_node, genioglossus anterior left,936,944
+fiber_node, genioglossus anterior left,944,867
+fiber_node, genioglossus anterior left,867,868
+fiber_node, genioglossus anterior left,868,870
+fiber_node, genioglossus anterior left,870,891
+fiber_node, genioglossus anterior left,891,892
+fiber_node, genioglossus anterior left,892,893
+fiber_node, genioglossus anterior left,893,871
+fiber_node, genioglossus anterior left,936,945
+fiber_node, genioglossus anterior left,945,872
+fiber_node, genioglossus anterior left,872,874
+fiber_node, genioglossus anterior left,874,894
+fiber_node, genioglossus anterior left,894,895
+fiber_node, genioglossus anterior left,895,896
+fiber_node, genioglossus anterior left,896,875
+fiber_node, genioglossus anterior left,936,937
+fiber_node, genioglossus anterior left,937,911
+fiber_node, genioglossus anterior left,911,913
+fiber_node, genioglossus anterior left,913,915
+fiber_node, genioglossus anterior left,915,916
+fiber_node, genioglossus anterior left,916,917
+fiber_node, genioglossus anterior left,917,914
+element, styloglossus right,155,
+element, styloglossus right,159,
+element, styloglossus right,163,
+element, styloglossus right,165,
+element, styloglossus right,167,
+element, styloglossus right,285,
+element, styloglossus right,307,
+element, styloglossus right,336,
+element, styloglossus right,337,
+element, styloglossus right,362,
+element, styloglossus right,363,
+element, styloglossus right,365,
+element, styloglossus right,366,
+element, styloglossus right,367,
+element, styloglossus right,368,
+element, styloglossus right,369,
+fiber_node, styloglossus right,906,290
+fiber_node, styloglossus right,290,294
+fiber_node, styloglossus right,294,298
+fiber_node, styloglossus right,298,300
+fiber_node, styloglossus right,300,301
+fiber_node, styloglossus right,301,947
+fiber_node, styloglossus right,905,289
+fiber_node, styloglossus right,289,293
+fiber_node, styloglossus right,293,297
+fiber_node, styloglossus right,297,299
+fiber_node, styloglossus right,299,947
+fiber_node, styloglossus right,856,128
+fiber_node, styloglossus right,128,71
+fiber_node, styloglossus right,71,159
+fiber_node, styloglossus right,159,74
+fiber_node, styloglossus right,74,947
+fiber_node, styloglossus right,857,127
+fiber_node, styloglossus right,127,70
+fiber_node, styloglossus right,70,160
+fiber_node, styloglossus right,160,69
+fiber_node, styloglossus right,69,196
+fiber_node, styloglossus right,196,947
+fiber_node, styloglossus right,337,314
+fiber_node, styloglossus right,314,163
+fiber_node, styloglossus right,163,165
+fiber_node, styloglossus right,165,297
+fiber_node, styloglossus right,297,299
+fiber_node, styloglossus right,299,301
+fiber_node, styloglossus right,301,947
+fiber_node, styloglossus right,343,320
+fiber_node, styloglossus right,320,150
+fiber_node, styloglossus right,150,140
+fiber_node, styloglossus right,140,293
+fiber_node, styloglossus right,293,298
+fiber_node, styloglossus right,298,300
+fiber_node, styloglossus right,300,302
+fiber_node, styloglossus right,302,947
+fiber_node, styloglossus right,336,313
+fiber_node, styloglossus right,313,391
+fiber_node, styloglossus right,391,94
+fiber_node, styloglossus right,94,288
+fiber_node, styloglossus right,288,412
+fiber_node, styloglossus right,412,411
+fiber_node, styloglossus right,411,410
+fiber_node, styloglossus right,410,409
+fiber_node, styloglossus right,409,947
+fiber_node, styloglossus right,336,313
+fiber_node, styloglossus right,313,391
+fiber_node, styloglossus right,391,94
+fiber_node, styloglossus right,94,288
+fiber_node, styloglossus right,288,75
+fiber_node, styloglossus right,75,198
+fiber_node, styloglossus right,198,76
+fiber_node, styloglossus right,76,197
+fiber_node, styloglossus right,197,947
+fiber_node, styloglossus right,336,313
+fiber_node, styloglossus right,313,390
+fiber_node, styloglossus right,390,93
+fiber_node, styloglossus right,93,287
+fiber_node, styloglossus right,287,72
+fiber_node, styloglossus right,72,71
+fiber_node, styloglossus right,71,160
+fiber_node, styloglossus right,160,69
+fiber_node, styloglossus right,69,195
+fiber_node, styloglossus right,195,947
+element, styloglossus left,525,
+element, styloglossus left,529,
+element, styloglossus left,533,
+element, styloglossus left,535,
+element, styloglossus left,537,
+element, styloglossus left,655,
+element, styloglossus left,677,
+element, styloglossus left,706,
+element, styloglossus left,707,
+element, styloglossus left,732,
+element, styloglossus left,733,
+element, styloglossus left,735,
+element, styloglossus left,736,
+element, styloglossus left,737,
+element, styloglossus left,738,
+element, styloglossus left,739,
+fiber_node, styloglossus left,906,703
+fiber_node, styloglossus left,703,707
+fiber_node, styloglossus left,707,711
+fiber_node, styloglossus left,711,713
+fiber_node, styloglossus left,713,714
+fiber_node, styloglossus left,714,946
+fiber_node, styloglossus left,905,702
+fiber_node, styloglossus left,702,706
+fiber_node, styloglossus left,706,710
+fiber_node, styloglossus left,710,712
+fiber_node, styloglossus left,712,946
+fiber_node, styloglossus left,856,541
+fiber_node, styloglossus left,541,484
+fiber_node, styloglossus left,484,572
+fiber_node, styloglossus left,572,487
+fiber_node, styloglossus left,487,946
+fiber_node, styloglossus left,857,540
+fiber_node, styloglossus left,540,483
+fiber_node, styloglossus left,483,573
+fiber_node, styloglossus left,573,482
+fiber_node, styloglossus left,482,609
+fiber_node, styloglossus left,609,946
+fiber_node, styloglossus left,750,727
+fiber_node, styloglossus left,727,576
+fiber_node, styloglossus left,576,578
+fiber_node, styloglossus left,578,710
+fiber_node, styloglossus left,710,712
+fiber_node, styloglossus left,712,714
+fiber_node, styloglossus left,714,946
+fiber_node, styloglossus left,756,733
+fiber_node, styloglossus left,733,563
+fiber_node, styloglossus left,563,553
+fiber_node, styloglossus left,553,706
+fiber_node, styloglossus left,706,711
+fiber_node, styloglossus left,711,713
+fiber_node, styloglossus left,713,715
+fiber_node, styloglossus left,715,946
+fiber_node, styloglossus left,749,726
+fiber_node, styloglossus left,726,804
+fiber_node, styloglossus left,804,507
+fiber_node, styloglossus left,507,701
+fiber_node, styloglossus left,701,825
+fiber_node, styloglossus left,825,824
+fiber_node, styloglossus left,824,823
+fiber_node, styloglossus left,823,822
+fiber_node, styloglossus left,822,946
+fiber_node, styloglossus left,749,726
+fiber_node, styloglossus left,726,804
+fiber_node, styloglossus left,804,507
+fiber_node, styloglossus left,507,701
+fiber_node, styloglossus left,701,488
+fiber_node, styloglossus left,488,611
+fiber_node, styloglossus left,611,489
+fiber_node, styloglossus left,489,610
+fiber_node, styloglossus left,610,946
+fiber_node, styloglossus left,749,726
+fiber_node, styloglossus left,726,803
+fiber_node, styloglossus left,803,506
+fiber_node, styloglossus left,506,700
+fiber_node, styloglossus left,700,485
+fiber_node, styloglossus left,485,484
+fiber_node, styloglossus left,484,573
+fiber_node, styloglossus left,573,482
+fiber_node, styloglossus left,482,608
+fiber_node, styloglossus left,608,946
+element, geniohyoid right,24,
+element, geniohyoid right,25,
+element, geniohyoid right,51,
+element, geniohyoid right,52,
+element, geniohyoid right,98,
+element, geniohyoid right,99,
+element, geniohyoid right,100,
+element, geniohyoid right,101,
+element, geniohyoid right,102,
+element, geniohyoid right,103,
+element, geniohyoid right,356,
+element, geniohyoid right,357,
+fiber_node, geniohyoid right,21,32
+fiber_node, geniohyoid right,32,51
+fiber_node, geniohyoid right,51,271
+fiber_node, geniohyoid right,271,82
+fiber_node, geniohyoid right,82,379
+fiber_node, geniohyoid right,379,364
+fiber_node, geniohyoid right,25,31
+fiber_node, geniohyoid right,31,50
+fiber_node, geniohyoid right,50,269
+fiber_node, geniohyoid right,269,81
+fiber_node, geniohyoid right,81,378
+fiber_node, geniohyoid right,378,363
+fiber_node, geniohyoid right,110,115
+fiber_node, geniohyoid right,115,123
+fiber_node, geniohyoid right,123,270
+fiber_node, geniohyoid right,270,133
+fiber_node, geniohyoid right,133,396
+fiber_node, geniohyoid right,396,397
+fiber_node, geniohyoid right,113,114
+fiber_node, geniohyoid right,114,122
+fiber_node, geniohyoid right,122,267
+fiber_node, geniohyoid right,267,132
+fiber_node, geniohyoid right,132,393
+fiber_node, geniohyoid right,393,395
+fiber_node, geniohyoid right,830,837
+fiber_node, geniohyoid right,837,850
+fiber_node, geniohyoid right,850,898
+fiber_node, geniohyoid right,898,862
+fiber_node, geniohyoid right,862,940
+fiber_node, geniohyoid right,940,932
+fiber_node, geniohyoid right,831,838
+fiber_node, geniohyoid right,838,849
+fiber_node, geniohyoid right,849,900
+fiber_node, geniohyoid right,900,860
+fiber_node, geniohyoid right,860,938
+fiber_node, geniohyoid right,938,931
+element, geniohyoid left,394,
+element, geniohyoid left,395,
+element, geniohyoid left,421,
+element, geniohyoid left,422,
+element, geniohyoid left,468,
+element, geniohyoid left,469,
+element, geniohyoid left,470,
+element, geniohyoid left,471,
+element, geniohyoid left,472,
+element, geniohyoid left,473,
+element, geniohyoid left,726,
+element, geniohyoid left,727,
+fiber_node, geniohyoid left,434,445
+fiber_node, geniohyoid left,445,464
+fiber_node, geniohyoid left,464,684
+fiber_node, geniohyoid left,684,495
+fiber_node, geniohyoid left,495,792
+fiber_node, geniohyoid left,792,777
+fiber_node, geniohyoid left,438,444
+fiber_node, geniohyoid left,444,463
+fiber_node, geniohyoid left,463,682
+fiber_node, geniohyoid left,682,494
+fiber_node, geniohyoid left,494,791
+fiber_node, geniohyoid left,791,776
+fiber_node, geniohyoid left,523,528
+fiber_node, geniohyoid left,528,536
+fiber_node, geniohyoid left,536,683
+fiber_node, geniohyoid left,683,546
+fiber_node, geniohyoid left,546,809
+fiber_node, geniohyoid left,809,810
+fiber_node, geniohyoid left,526,527
+fiber_node, geniohyoid left,527,535
+fiber_node, geniohyoid left,535,680
+fiber_node, geniohyoid left,680,545
+fiber_node, geniohyoid left,545,806
+fiber_node, geniohyoid left,806,808
+fiber_node, geniohyoid left,830,837
+fiber_node, geniohyoid left,837,850
+fiber_node, geniohyoid left,850,898
+fiber_node, geniohyoid left,898,862
+fiber_node, geniohyoid left,862,940
+fiber_node, geniohyoid left,940,932
+fiber_node, geniohyoid left,831,838
+fiber_node, geniohyoid left,838,849
+fiber_node, geniohyoid left,849,900
+fiber_node, geniohyoid left,900,860
+fiber_node, geniohyoid left,860,938
+fiber_node, geniohyoid left,938,931
+element, mylohyoid right,22,
+element, mylohyoid right,23,
+element, mylohyoid right,44,
+element, mylohyoid right,48,
+element, mylohyoid right,49,
+element, mylohyoid right,50,
+element, mylohyoid right,53,
+element, mylohyoid right,60,
+element, mylohyoid right,92,
+element, mylohyoid right,93,
+element, mylohyoid right,94,
+element, mylohyoid right,95,
+element, mylohyoid right,96,
+element, mylohyoid right,97,
+element, mylohyoid right,128,
+element, mylohyoid right,129,
+element, mylohyoid right,130,
+element, mylohyoid right,137,
+element, mylohyoid right,138,
+element, mylohyoid right,139,
+element, mylohyoid right,358,
+element, mylohyoid right,359,
+element, mylohyoid right,360,
+element, mylohyoid right,361,
+fiber_node, mylohyoid right,372,369
+fiber_node, mylohyoid right,369,362
+fiber_node, mylohyoid right,362,394
+fiber_node, mylohyoid right,394,930
+fiber_node, mylohyoid right,387,384
+fiber_node, mylohyoid right,384,377
+fiber_node, mylohyoid right,377,392
+fiber_node, mylohyoid right,392,939
+fiber_node, mylohyoid right,90,87
+fiber_node, mylohyoid right,87,80
+fiber_node, mylohyoid right,80,131
+fiber_node, mylohyoid right,131,861
+fiber_node, mylohyoid right,283,280
+fiber_node, mylohyoid right,280,268
+fiber_node, mylohyoid right,268,266
+fiber_node, mylohyoid right,266,899
+fiber_node, mylohyoid right,57,53
+fiber_node, mylohyoid right,53,49
+fiber_node, mylohyoid right,49,121
+fiber_node, mylohyoid right,121,848
+fiber_node, mylohyoid right,44,45
+fiber_node, mylohyoid right,45,30
+fiber_node, mylohyoid right,30,112
+fiber_node, mylohyoid right,112,839
+fiber_node, mylohyoid right,17,22
+fiber_node, mylohyoid right,22,23
+fiber_node, mylohyoid right,23,111
+fiber_node, mylohyoid right,111,832
+fiber_node, mylohyoid right,371,370
+fiber_node, mylohyoid right,370,363
+fiber_node, mylohyoid right,363,395
+fiber_node, mylohyoid right,395,931
+fiber_node, mylohyoid right,386,385
+fiber_node, mylohyoid right,385,378
+fiber_node, mylohyoid right,378,393
+fiber_node, mylohyoid right,393,938
+fiber_node, mylohyoid right,89,88
+fiber_node, mylohyoid right,88,81
+fiber_node, mylohyoid right,81,132
+fiber_node, mylohyoid right,132,860
+fiber_node, mylohyoid right,282,281
+fiber_node, mylohyoid right,281,269
+fiber_node, mylohyoid right,269,267
+fiber_node, mylohyoid right,267,900
+fiber_node, mylohyoid right,56,52
+fiber_node, mylohyoid right,52,50
+fiber_node, mylohyoid right,50,122
+fiber_node, mylohyoid right,122,849
+fiber_node, mylohyoid right,47,46
+fiber_node, mylohyoid right,46,31
+fiber_node, mylohyoid right,31,114
+fiber_node, mylohyoid right,114,838
+fiber_node, mylohyoid right,16,24
+fiber_node, mylohyoid right,24,25
+fiber_node, mylohyoid right,25,113
+fiber_node, mylohyoid right,113,831
+element, mylohyoid left,392,
+element, mylohyoid left,393,
+element, mylohyoid left,414,
+element, mylohyoid left,418,
+element, mylohyoid left,419,
+element, mylohyoid left,420,
+element, mylohyoid left,423,
+element, mylohyoid left,430,
+element, mylohyoid left,462,
+element, mylohyoid left,463,
+element, mylohyoid left,464,
+element, mylohyoid left,465,
+element, mylohyoid left,466,
+element, mylohyoid left,467,
+element, mylohyoid left,498,
+element, mylohyoid left,499,
+element, mylohyoid left,500,
+element, mylohyoid left,507,
+element, mylohyoid left,508,
+element, mylohyoid left,509,
+element, mylohyoid left,728,
+element, mylohyoid left,729,
+element, mylohyoid left,730,
+element, mylohyoid left,731,
+fiber_node, mylohyoid left,785,782
+fiber_node, mylohyoid left,782,775
+fiber_node, mylohyoid left,775,807
+fiber_node, mylohyoid left,807,930
+fiber_node, mylohyoid left,800,797
+fiber_node, mylohyoid left,797,790
+fiber_node, mylohyoid left,790,805
+fiber_node, mylohyoid left,805,939
+fiber_node, mylohyoid left,503,500
+fiber_node, mylohyoid left,500,493
+fiber_node, mylohyoid left,493,544
+fiber_node, mylohyoid left,544,861
+fiber_node, mylohyoid left,696,693
+fiber_node, mylohyoid left,693,681
+fiber_node, mylohyoid left,681,679
+fiber_node, mylohyoid left,679,899
+fiber_node, mylohyoid left,470,466
+fiber_node, mylohyoid left,466,462
+fiber_node, mylohyoid left,462,534
+fiber_node, mylohyoid left,534,848
+fiber_node, mylohyoid left,457,458
+fiber_node, mylohyoid left,458,443
+fiber_node, mylohyoid left,443,525
+fiber_node, mylohyoid left,525,839
+fiber_node, mylohyoid left,430,435
+fiber_node, mylohyoid left,435,436
+fiber_node, mylohyoid left,436,524
+fiber_node, mylohyoid left,524,832
+fiber_node, mylohyoid left,784,783
+fiber_node, mylohyoid left,783,776
+fiber_node, mylohyoid left,776,808
+fiber_node, mylohyoid left,808,931
+fiber_node, mylohyoid left,799,798
+fiber_node, mylohyoid left,798,791
+fiber_node, mylohyoid left,791,806
+fiber_node, mylohyoid left,806,938
+fiber_node, mylohyoid left,502,501
+fiber_node, mylohyoid left,501,494
+fiber_node, mylohyoid left,494,545
+fiber_node, mylohyoid left,545,860
+fiber_node, mylohyoid left,695,694
+fiber_node, mylohyoid left,694,682
+fiber_node, mylohyoid left,682,680
+fiber_node, mylohyoid left,680,900
+fiber_node, mylohyoid left,469,465
+fiber_node, mylohyoid left,465,463
+fiber_node, mylohyoid left,463,535
+fiber_node, mylohyoid left,535,849
+fiber_node, mylohyoid left,460,459
+fiber_node, mylohyoid left,459,444
+fiber_node, mylohyoid left,444,527
+fiber_node, mylohyoid left,527,838
+fiber_node, mylohyoid left,429,437
+fiber_node, mylohyoid left,437,438
+fiber_node, mylohyoid left,438,526
+fiber_node, mylohyoid left,526,831
+element, hyoglossus right,10,
+element, hyoglossus right,11,
+element, hyoglossus right,12,
+element, hyoglossus right,13,
+element, hyoglossus right,14,
+element, hyoglossus right,15,
+element, hyoglossus right,38,
+element, hyoglossus right,39,
+element, hyoglossus right,40,
+element, hyoglossus right,41,
+element, hyoglossus right,42,
+element, hyoglossus right,43,
+element, hyoglossus right,82,
+element, hyoglossus right,83,
+element, hyoglossus right,84,
+element, hyoglossus right,85,
+element, hyoglossus right,163,
+element, hyoglossus right,165,
+element, hyoglossus right,167,
+element, hyoglossus right,169,
+fiber_node, hyoglossus right,296,68
+fiber_node, hyoglossus right,68,40
+fiber_node, hyoglossus right,40,41
+fiber_node, hyoglossus right,41,42
+fiber_node, hyoglossus right,42,43
+fiber_node, hyoglossus right,301,196
+fiber_node, hyoglossus right,196,161
+fiber_node, hyoglossus right,161,186
+fiber_node, hyoglossus right,186,184
+fiber_node, hyoglossus right,184,182
+fiber_node, hyoglossus right,299,74
+fiber_node, hyoglossus right,74,3
+fiber_node, hyoglossus right,3,4
+fiber_node, hyoglossus right,4,5
+fiber_node, hyoglossus right,5,6
+fiber_node, hyoglossus right,297,159
+fiber_node, hyoglossus right,159,162
+fiber_node, hyoglossus right,162,175
+fiber_node, hyoglossus right,175,173
+fiber_node, hyoglossus right,173,174
+fiber_node, hyoglossus right,293,71
+fiber_node, hyoglossus right,71,18
+fiber_node, hyoglossus right,18,19
+fiber_node, hyoglossus right,19,20
+fiber_node, hyoglossus right,20,21
+fiber_node, hyoglossus right,295,67
+fiber_node, hyoglossus right,67,36
+fiber_node, hyoglossus right,36,37
+fiber_node, hyoglossus right,37,38
+fiber_node, hyoglossus right,38,39
+fiber_node, hyoglossus right,302,195
+fiber_node, hyoglossus right,195,187
+fiber_node, hyoglossus right,187,185
+fiber_node, hyoglossus right,185,183
+fiber_node, hyoglossus right,183,181
+fiber_node, hyoglossus right,300,69
+fiber_node, hyoglossus right,69,11
+fiber_node, hyoglossus right,11,12
+fiber_node, hyoglossus right,12,13
+fiber_node, hyoglossus right,13,14
+fiber_node, hyoglossus right,298,160
+fiber_node, hyoglossus right,160,177
+fiber_node, hyoglossus right,177,178
+fiber_node, hyoglossus right,178,179
+fiber_node, hyoglossus right,179,180
+fiber_node, hyoglossus right,294,70
+fiber_node, hyoglossus right,70,26
+fiber_node, hyoglossus right,26,27
+fiber_node, hyoglossus right,27,28
+fiber_node, hyoglossus right,28,29
+element, hyoglossus left,380,
+element, hyoglossus left,381,
+element, hyoglossus left,382,
+element, hyoglossus left,383,
+element, hyoglossus left,384,
+element, hyoglossus left,385,
+element, hyoglossus left,408,
+element, hyoglossus left,409,
+element, hyoglossus left,410,
+element, hyoglossus left,411,
+element, hyoglossus left,412,
+element, hyoglossus left,413,
+element, hyoglossus left,452,
+element, hyoglossus left,453,
+element, hyoglossus left,454,
+element, hyoglossus left,455,
+element, hyoglossus left,533,
+element, hyoglossus left,535,
+element, hyoglossus left,537,
+element, hyoglossus left,539,
+fiber_node, hyoglossus left,709,481
+fiber_node, hyoglossus left,481,453
+fiber_node, hyoglossus left,453,454
+fiber_node, hyoglossus left,454,455
+fiber_node, hyoglossus left,455,456
+fiber_node, hyoglossus left,714,609
+fiber_node, hyoglossus left,609,574
+fiber_node, hyoglossus left,574,599
+fiber_node, hyoglossus left,599,597
+fiber_node, hyoglossus left,597,595
+fiber_node, hyoglossus left,712,487
+fiber_node, hyoglossus left,487,416
+fiber_node, hyoglossus left,416,417
+fiber_node, hyoglossus left,417,418
+fiber_node, hyoglossus left,418,419
+fiber_node, hyoglossus left,710,572
+fiber_node, hyoglossus left,572,575
+fiber_node, hyoglossus left,575,588
+fiber_node, hyoglossus left,588,586
+fiber_node, hyoglossus left,586,587
+fiber_node, hyoglossus left,706,484
+fiber_node, hyoglossus left,484,431
+fiber_node, hyoglossus left,431,432
+fiber_node, hyoglossus left,432,433
+fiber_node, hyoglossus left,433,434
+fiber_node, hyoglossus left,708,480
+fiber_node, hyoglossus left,480,449
+fiber_node, hyoglossus left,449,450
+fiber_node, hyoglossus left,450,451
+fiber_node, hyoglossus left,451,452
+fiber_node, hyoglossus left,715,608
+fiber_node, hyoglossus left,608,600
+fiber_node, hyoglossus left,600,598
+fiber_node, hyoglossus left,598,596
+fiber_node, hyoglossus left,596,594
+fiber_node, hyoglossus left,713,482
+fiber_node, hyoglossus left,482,424
+fiber_node, hyoglossus left,424,425
+fiber_node, hyoglossus left,425,426
+fiber_node, hyoglossus left,426,427
+fiber_node, hyoglossus left,711,573
+fiber_node, hyoglossus left,573,590
+fiber_node, hyoglossus left,590,591
+fiber_node, hyoglossus left,591,592
+fiber_node, hyoglossus left,592,593
+fiber_node, hyoglossus left,707,483
+fiber_node, hyoglossus left,483,439
+fiber_node, hyoglossus left,439,440
+fiber_node, hyoglossus left,440,441
+fiber_node, hyoglossus left,441,442
+element, verticalis right,189,
+element, verticalis right,190,
+element, verticalis right,191,
+element, verticalis right,192,
+element, verticalis right,193,
+element, verticalis right,194,
+element, verticalis right,195,
+element, verticalis right,196,
+element, verticalis right,197,
+element, verticalis right,198,
+element, verticalis right,203,
+element, verticalis right,204,
+element, verticalis right,205,
+element, verticalis right,206,
+element, verticalis right,207,
+element, verticalis right,208,
+element, verticalis right,209,
+element, verticalis right,210,
+element, verticalis right,211,
+element, verticalis right,212,
+element, verticalis right,217,
+element, verticalis right,218,
+element, verticalis right,219,
+element, verticalis right,220,
+element, verticalis right,221,
+element, verticalis right,222,
+element, verticalis right,223,
+element, verticalis right,224,
+element, verticalis right,225,
+element, verticalis right,226,
+element, verticalis right,231,
+element, verticalis right,232,
+element, verticalis right,233,
+element, verticalis right,234,
+element, verticalis right,235,
+element, verticalis right,236,
+element, verticalis right,237,
+element, verticalis right,238,
+element, verticalis right,239,
+element, verticalis right,240,
+element, verticalis right,249,
+element, verticalis right,250,
+element, verticalis right,251,
+element, verticalis right,252,
+element, verticalis right,253,
+element, verticalis right,254,
+element, verticalis right,255,
+element, verticalis right,256,
+element, verticalis right,257,
+element, verticalis right,258,
+element, verticalis right,259,
+element, verticalis right,260,
+element, verticalis right,261,
+element, verticalis right,262,
+element, verticalis right,263,
+element, verticalis right,264,
+element, verticalis right,265,
+element, verticalis right,266,
+element, verticalis right,267,
+element, verticalis right,268,
+element, verticalis right,273,
+element, verticalis right,274,
+element, verticalis right,275,
+element, verticalis right,276,
+element, verticalis right,277,
+element, verticalis right,278,
+element, verticalis right,279,
+element, verticalis right,280,
+element, verticalis right,281,
+element, verticalis right,282,
+element, verticalis right,295,
+element, verticalis right,296,
+element, verticalis right,297,
+element, verticalis right,298,
+element, verticalis right,299,
+element, verticalis right,300,
+element, verticalis right,301,
+element, verticalis right,302,
+element, verticalis right,303,
+element, verticalis right,304,
+element, verticalis right,314,
+element, verticalis right,315,
+element, verticalis right,316,
+element, verticalis right,317,
+element, verticalis right,318,
+element, verticalis right,319,
+element, verticalis right,323,
+element, verticalis right,324,
+element, verticalis right,325,
+element, verticalis right,326,
+element, verticalis right,329,
+element, verticalis right,331,
+element, verticalis right,333,
+element, verticalis right,334,
+fiber_node, verticalis right,323,322
+fiber_node, verticalis right,322,321
+fiber_node, verticalis right,202,157
+fiber_node, verticalis right,157,201
+fiber_node, verticalis right,200,147
+fiber_node, verticalis right,147,199
+fiber_node, verticalis right,302,300
+fiber_node, verticalis right,300,298
+fiber_node, verticalis right,195,69
+fiber_node, verticalis right,69,160
+fiber_node, verticalis right,187,11
+fiber_node, verticalis right,11,177
+fiber_node, verticalis right,185,12
+fiber_node, verticalis right,12,178
+fiber_node, verticalis right,183,13
+fiber_node, verticalis right,13,179
+fiber_node, verticalis right,181,14
+fiber_node, verticalis right,14,180
+fiber_node, verticalis right,324,331
+fiber_node, verticalis right,331,330
+fiber_node, verticalis right,330,329
+fiber_node, verticalis right,329,320
+fiber_node, verticalis right,158,262
+fiber_node, verticalis right,262,261
+fiber_node, verticalis right,261,260
+fiber_node, verticalis right,260,156
+fiber_node, verticalis right,148,253
+fiber_node, verticalis right,253,252
+fiber_node, verticalis right,252,251
+fiber_node, verticalis right,251,146
+fiber_node, verticalis right,295,308
+fiber_node, verticalis right,308,307
+fiber_node, verticalis right,307,306
+fiber_node, verticalis right,306,294
+fiber_node, verticalis right,67,244
+fiber_node, verticalis right,244,243
+fiber_node, verticalis right,243,242
+fiber_node, verticalis right,242,70
+fiber_node, verticalis right,36,235
+fiber_node, verticalis right,235,234
+fiber_node, verticalis right,234,233
+fiber_node, verticalis right,233,26
+fiber_node, verticalis right,37,226
+fiber_node, verticalis right,226,225
+fiber_node, verticalis right,225,224
+fiber_node, verticalis right,224,27
+fiber_node, verticalis right,38,217
+fiber_node, verticalis right,217,216
+fiber_node, verticalis right,216,215
+fiber_node, verticalis right,215,28
+fiber_node, verticalis right,39,208
+fiber_node, verticalis right,208,207
+fiber_node, verticalis right,207,206
+fiber_node, verticalis right,206,29
+fiber_node, verticalis right,325,328
+fiber_node, verticalis right,328,327
+fiber_node, verticalis right,327,326
+fiber_node, verticalis right,326,319
+fiber_node, verticalis right,155,259
+fiber_node, verticalis right,259,258
+fiber_node, verticalis right,258,257
+fiber_node, verticalis right,257,154
+fiber_node, verticalis right,145,250
+fiber_node, verticalis right,250,249
+fiber_node, verticalis right,249,248
+fiber_node, verticalis right,248,144
+fiber_node, verticalis right,291,305
+fiber_node, verticalis right,305,304
+fiber_node, verticalis right,304,303
+fiber_node, verticalis right,303,290
+fiber_node, verticalis right,96,241
+fiber_node, verticalis right,241,240
+fiber_node, verticalis right,240,239
+fiber_node, verticalis right,239,127
+fiber_node, verticalis right,98,232
+fiber_node, verticalis right,232,231
+fiber_node, verticalis right,231,230
+fiber_node, verticalis right,230,104
+fiber_node, verticalis right,100,223
+fiber_node, verticalis right,223,222
+fiber_node, verticalis right,222,221
+fiber_node, verticalis right,221,105
+fiber_node, verticalis right,102,214
+fiber_node, verticalis right,214,213
+fiber_node, verticalis right,213,212
+fiber_node, verticalis right,212,107
+fiber_node, verticalis right,120,205
+fiber_node, verticalis right,205,204
+fiber_node, verticalis right,204,203
+fiber_node, verticalis right,203,109
+element, verticalis left,559,
+element, verticalis left,560,
+element, verticalis left,561,
+element, verticalis left,562,
+element, verticalis left,563,
+element, verticalis left,564,
+element, verticalis left,565,
+element, verticalis left,566,
+element, verticalis left,567,
+element, verticalis left,568,
+element, verticalis left,573,
+element, verticalis left,574,
+element, verticalis left,575,
+element, verticalis left,576,
+element, verticalis left,577,
+element, verticalis left,578,
+element, verticalis left,579,
+element, verticalis left,580,
+element, verticalis left,581,
+element, verticalis left,582,
+element, verticalis left,587,
+element, verticalis left,588,
+element, verticalis left,589,
+element, verticalis left,590,
+element, verticalis left,591,
+element, verticalis left,592,
+element, verticalis left,593,
+element, verticalis left,594,
+element, verticalis left,595,
+element, verticalis left,596,
+element, verticalis left,601,
+element, verticalis left,602,
+element, verticalis left,603,
+element, verticalis left,604,
+element, verticalis left,605,
+element, verticalis left,606,
+element, verticalis left,607,
+element, verticalis left,608,
+element, verticalis left,609,
+element, verticalis left,610,
+element, verticalis left,619,
+element, verticalis left,620,
+element, verticalis left,621,
+element, verticalis left,622,
+element, verticalis left,623,
+element, verticalis left,624,
+element, verticalis left,625,
+element, verticalis left,626,
+element, verticalis left,627,
+element, verticalis left,628,
+element, verticalis left,629,
+element, verticalis left,630,
+element, verticalis left,631,
+element, verticalis left,632,
+element, verticalis left,633,
+element, verticalis left,634,
+element, verticalis left,635,
+element, verticalis left,636,
+element, verticalis left,637,
+element, verticalis left,638,
+element, verticalis left,643,
+element, verticalis left,644,
+element, verticalis left,645,
+element, verticalis left,646,
+element, verticalis left,647,
+element, verticalis left,648,
+element, verticalis left,649,
+element, verticalis left,650,
+element, verticalis left,651,
+element, verticalis left,652,
+element, verticalis left,665,
+element, verticalis left,666,
+element, verticalis left,667,
+element, verticalis left,668,
+element, verticalis left,669,
+element, verticalis left,670,
+element, verticalis left,671,
+element, verticalis left,672,
+element, verticalis left,673,
+element, verticalis left,674,
+element, verticalis left,684,
+element, verticalis left,685,
+element, verticalis left,686,
+element, verticalis left,687,
+element, verticalis left,688,
+element, verticalis left,689,
+element, verticalis left,693,
+element, verticalis left,694,
+element, verticalis left,695,
+element, verticalis left,696,
+element, verticalis left,699,
+element, verticalis left,701,
+element, verticalis left,703,
+element, verticalis left,704,
+fiber_node, verticalis left,736,735
+fiber_node, verticalis left,735,734
+fiber_node, verticalis left,615,570
+fiber_node, verticalis left,570,614
+fiber_node, verticalis left,613,560
+fiber_node, verticalis left,560,612
+fiber_node, verticalis left,715,713
+fiber_node, verticalis left,713,711
+fiber_node, verticalis left,608,482
+fiber_node, verticalis left,482,573
+fiber_node, verticalis left,600,424
+fiber_node, verticalis left,424,590
+fiber_node, verticalis left,598,425
+fiber_node, verticalis left,425,591
+fiber_node, verticalis left,596,426
+fiber_node, verticalis left,426,592
+fiber_node, verticalis left,594,427
+fiber_node, verticalis left,427,593
+fiber_node, verticalis left,737,744
+fiber_node, verticalis left,744,743
+fiber_node, verticalis left,743,742
+fiber_node, verticalis left,742,733
+fiber_node, verticalis left,571,675
+fiber_node, verticalis left,675,674
+fiber_node, verticalis left,674,673
+fiber_node, verticalis left,673,569
+fiber_node, verticalis left,561,666
+fiber_node, verticalis left,666,665
+fiber_node, verticalis left,665,664
+fiber_node, verticalis left,664,559
+fiber_node, verticalis left,708,721
+fiber_node, verticalis left,721,720
+fiber_node, verticalis left,720,719
+fiber_node, verticalis left,719,707
+fiber_node, verticalis left,480,657
+fiber_node, verticalis left,657,656
+fiber_node, verticalis left,656,655
+fiber_node, verticalis left,655,483
+fiber_node, verticalis left,449,648
+fiber_node, verticalis left,648,647
+fiber_node, verticalis left,647,646
+fiber_node, verticalis left,646,439
+fiber_node, verticalis left,450,639
+fiber_node, verticalis left,639,638
+fiber_node, verticalis left,638,637
+fiber_node, verticalis left,637,440
+fiber_node, verticalis left,451,630
+fiber_node, verticalis left,630,629
+fiber_node, verticalis left,629,628
+fiber_node, verticalis left,628,441
+fiber_node, verticalis left,452,621
+fiber_node, verticalis left,621,620
+fiber_node, verticalis left,620,619
+fiber_node, verticalis left,619,442
+fiber_node, verticalis left,738,741
+fiber_node, verticalis left,741,740
+fiber_node, verticalis left,740,739
+fiber_node, verticalis left,739,732
+fiber_node, verticalis left,568,672
+fiber_node, verticalis left,672,671
+fiber_node, verticalis left,671,670
+fiber_node, verticalis left,670,567
+fiber_node, verticalis left,558,663
+fiber_node, verticalis left,663,662
+fiber_node, verticalis left,662,661
+fiber_node, verticalis left,661,557
+fiber_node, verticalis left,704,718
+fiber_node, verticalis left,718,717
+fiber_node, verticalis left,717,716
+fiber_node, verticalis left,716,703
+fiber_node, verticalis left,509,654
+fiber_node, verticalis left,654,653
+fiber_node, verticalis left,653,652
+fiber_node, verticalis left,652,540
+fiber_node, verticalis left,511,645
+fiber_node, verticalis left,645,644
+fiber_node, verticalis left,644,643
+fiber_node, verticalis left,643,517
+fiber_node, verticalis left,513,636
+fiber_node, verticalis left,636,635
+fiber_node, verticalis left,635,634
+fiber_node, verticalis left,634,518
+fiber_node, verticalis left,515,627
+fiber_node, verticalis left,627,626
+fiber_node, verticalis left,626,625
+fiber_node, verticalis left,625,520
+fiber_node, verticalis left,533,618
+fiber_node, verticalis left,618,617
+fiber_node, verticalis left,617,616
+fiber_node, verticalis left,616,522
+element, transversus right,185,
+element, transversus right,186,
+element, transversus right,187,
+element, transversus right,188,
+element, transversus right,189,
+element, transversus right,190,
+element, transversus right,191,
+element, transversus right,192,
+element, transversus right,193,
+element, transversus right,194,
+element, transversus right,195,
+element, transversus right,196,
+element, transversus right,197,
+element, transversus right,198,
+element, transversus right,199,
+element, transversus right,200,
+element, transversus right,201,
+element, transversus right,202,
+element, transversus right,203,
+element, transversus right,204,
+element, transversus right,205,
+element, transversus right,206,
+element, transversus right,207,
+element, transversus right,208,
+element, transversus right,209,
+element, transversus right,210,
+element, transversus right,211,
+element, transversus right,212,
+element, transversus right,213,
+element, transversus right,214,
+element, transversus right,215,
+element, transversus right,216,
+element, transversus right,217,
+element, transversus right,218,
+element, transversus right,219,
+element, transversus right,220,
+element, transversus right,221,
+element, transversus right,222,
+element, transversus right,223,
+element, transversus right,224,
+element, transversus right,225,
+element, transversus right,226,
+element, transversus right,227,
+element, transversus right,228,
+element, transversus right,229,
+element, transversus right,230,
+element, transversus right,231,
+element, transversus right,232,
+element, transversus right,233,
+element, transversus right,234,
+element, transversus right,235,
+element, transversus right,236,
+element, transversus right,237,
+element, transversus right,238,
+element, transversus right,239,
+element, transversus right,240,
+element, transversus right,241,
+element, transversus right,242,
+element, transversus right,243,
+element, transversus right,244,
+element, transversus right,245,
+element, transversus right,246,
+element, transversus right,247,
+element, transversus right,248,
+element, transversus right,249,
+element, transversus right,250,
+element, transversus right,251,
+element, transversus right,252,
+element, transversus right,253,
+element, transversus right,254,
+element, transversus right,255,
+element, transversus right,256,
+element, transversus right,257,
+element, transversus right,258,
+element, transversus right,259,
+element, transversus right,260,
+element, transversus right,261,
+element, transversus right,262,
+element, transversus right,263,
+element, transversus right,264,
+element, transversus right,265,
+element, transversus right,266,
+element, transversus right,267,
+element, transversus right,268,
+element, transversus right,269,
+element, transversus right,270,
+element, transversus right,271,
+element, transversus right,272,
+element, transversus right,273,
+element, transversus right,274,
+element, transversus right,275,
+element, transversus right,276,
+element, transversus right,277,
+element, transversus right,278,
+element, transversus right,279,
+element, transversus right,280,
+element, transversus right,281,
+element, transversus right,282,
+element, transversus right,291,
+element, transversus right,292,
+element, transversus right,293,
+element, transversus right,294,
+element, transversus right,295,
+element, transversus right,296,
+element, transversus right,297,
+element, transversus right,298,
+element, transversus right,299,
+element, transversus right,300,
+element, transversus right,301,
+element, transversus right,302,
+element, transversus right,303,
+element, transversus right,304,
+element, transversus right,313,
+element, transversus right,314,
+element, transversus right,315,
+element, transversus right,316,
+element, transversus right,317,
+element, transversus right,318,
+element, transversus right,319,
+element, transversus right,320,
+element, transversus right,321,
+element, transversus right,322,
+element, transversus right,323,
+element, transversus right,324,
+element, transversus right,325,
+element, transversus right,326,
+element, transversus right,327,
+element, transversus right,329,
+element, transversus right,331,
+element, transversus right,333,
+element, transversus right,334,
+element, transversus right,335,
+fiber_node, transversus right,29,109
+fiber_node, transversus right,109,829
+fiber_node, transversus right,206,203
+fiber_node, transversus right,203,876
+fiber_node, transversus right,207,204
+fiber_node, transversus right,204,877
+fiber_node, transversus right,208,205
+fiber_node, transversus right,205,878
+fiber_node, transversus right,39,120
+fiber_node, transversus right,120,845
+fiber_node, transversus right,28,107
+fiber_node, transversus right,107,828
+fiber_node, transversus right,215,212
+fiber_node, transversus right,212,879
+fiber_node, transversus right,216,213
+fiber_node, transversus right,213,880
+fiber_node, transversus right,217,214
+fiber_node, transversus right,214,881
+fiber_node, transversus right,38,102
+fiber_node, transversus right,102,844
+fiber_node, transversus right,27,105
+fiber_node, transversus right,105,827
+fiber_node, transversus right,224,221
+fiber_node, transversus right,221,882
+fiber_node, transversus right,225,222
+fiber_node, transversus right,222,883
+fiber_node, transversus right,226,223
+fiber_node, transversus right,223,884
+fiber_node, transversus right,37,100
+fiber_node, transversus right,100,843
+fiber_node, transversus right,26,104
+fiber_node, transversus right,104,826
+fiber_node, transversus right,233,230
+fiber_node, transversus right,230,885
+fiber_node, transversus right,234,231
+fiber_node, transversus right,231,886
+fiber_node, transversus right,235,232
+fiber_node, transversus right,232,887
+fiber_node, transversus right,36,98
+fiber_node, transversus right,98,842
+fiber_node, transversus right,70,127
+fiber_node, transversus right,127,857
+fiber_node, transversus right,242,239
+fiber_node, transversus right,239,888
+fiber_node, transversus right,243,240
+fiber_node, transversus right,240,889
+fiber_node, transversus right,244,241
+fiber_node, transversus right,241,890
+fiber_node, transversus right,67,96
+fiber_node, transversus right,96,858
+fiber_node, transversus right,294,290
+fiber_node, transversus right,290,906
+fiber_node, transversus right,309,306
+fiber_node, transversus right,306,303
+fiber_node, transversus right,303,929
+fiber_node, transversus right,310,307
+fiber_node, transversus right,307,304
+fiber_node, transversus right,304,909
+fiber_node, transversus right,311,308
+fiber_node, transversus right,308,305
+fiber_node, transversus right,305,910
+fiber_node, transversus right,302,295
+fiber_node, transversus right,295,291
+fiber_node, transversus right,291,907
+fiber_node, transversus right,199,146
+fiber_node, transversus right,146,144
+fiber_node, transversus right,144,870
+fiber_node, transversus right,254,251
+fiber_node, transversus right,251,248
+fiber_node, transversus right,248,891
+fiber_node, transversus right,255,252
+fiber_node, transversus right,252,249
+fiber_node, transversus right,249,892
+fiber_node, transversus right,256,253
+fiber_node, transversus right,253,250
+fiber_node, transversus right,250,893
+fiber_node, transversus right,200,148
+fiber_node, transversus right,148,145
+fiber_node, transversus right,145,871
+fiber_node, transversus right,201,156
+fiber_node, transversus right,156,154
+fiber_node, transversus right,154,874
+fiber_node, transversus right,263,260
+fiber_node, transversus right,260,257
+fiber_node, transversus right,257,894
+fiber_node, transversus right,264,261
+fiber_node, transversus right,261,258
+fiber_node, transversus right,258,895
+fiber_node, transversus right,265,262
+fiber_node, transversus right,262,259
+fiber_node, transversus right,259,896
+fiber_node, transversus right,202,158
+fiber_node, transversus right,158,155
+fiber_node, transversus right,155,875
+fiber_node, transversus right,321,320
+fiber_node, transversus right,320,319
+fiber_node, transversus right,319,913
+fiber_node, transversus right,332,329
+fiber_node, transversus right,329,326
+fiber_node, transversus right,326,915
+fiber_node, transversus right,333,330
+fiber_node, transversus right,330,327
+fiber_node, transversus right,327,916
+fiber_node, transversus right,334,331
+fiber_node, transversus right,331,328
+fiber_node, transversus right,328,917
+fiber_node, transversus right,323,324
+fiber_node, transversus right,324,325
+fiber_node, transversus right,325,914
+fiber_node, transversus right,344,343
+fiber_node, transversus right,343,342
+fiber_node, transversus right,342,920
+fiber_node, transversus right,351,350
+fiber_node, transversus right,350,349
+fiber_node, transversus right,349,922
+fiber_node, transversus right,352,357
+fiber_node, transversus right,357,356
+fiber_node, transversus right,356,924
+fiber_node, transversus right,353,354
+fiber_node, transversus right,354,355
+fiber_node, transversus right,355,923
+fiber_node, transversus right,346,347
+fiber_node, transversus right,347,348
+fiber_node, transversus right,348,921
+fiber_node, transversus right,345,360
+fiber_node, transversus right,360,358
+fiber_node, transversus right,358,925
+element, transversus left,555,
+element, transversus left,556,
+element, transversus left,557,
+element, transversus left,558,
+element, transversus left,559,
+element, transversus left,560,
+element, transversus left,561,
+element, transversus left,562,
+element, transversus left,563,
+element, transversus left,564,
+element, transversus left,565,
+element, transversus left,566,
+element, transversus left,567,
+element, transversus left,568,
+element, transversus left,569,
+element, transversus left,570,
+element, transversus left,571,
+element, transversus left,572,
+element, transversus left,573,
+element, transversus left,574,
+element, transversus left,575,
+element, transversus left,576,
+element, transversus left,577,
+element, transversus left,578,
+element, transversus left,579,
+element, transversus left,580,
+element, transversus left,581,
+element, transversus left,582,
+element, transversus left,583,
+element, transversus left,584,
+element, transversus left,585,
+element, transversus left,586,
+element, transversus left,587,
+element, transversus left,588,
+element, transversus left,589,
+element, transversus left,590,
+element, transversus left,591,
+element, transversus left,592,
+element, transversus left,593,
+element, transversus left,594,
+element, transversus left,595,
+element, transversus left,596,
+element, transversus left,597,
+element, transversus left,598,
+element, transversus left,599,
+element, transversus left,600,
+element, transversus left,601,
+element, transversus left,602,
+element, transversus left,603,
+element, transversus left,604,
+element, transversus left,605,
+element, transversus left,606,
+element, transversus left,607,
+element, transversus left,608,
+element, transversus left,609,
+element, transversus left,610,
+element, transversus left,611,
+element, transversus left,612,
+element, transversus left,613,
+element, transversus left,614,
+element, transversus left,615,
+element, transversus left,616,
+element, transversus left,617,
+element, transversus left,618,
+element, transversus left,619,
+element, transversus left,620,
+element, transversus left,621,
+element, transversus left,622,
+element, transversus left,623,
+element, transversus left,624,
+element, transversus left,625,
+element, transversus left,626,
+element, transversus left,627,
+element, transversus left,628,
+element, transversus left,629,
+element, transversus left,630,
+element, transversus left,631,
+element, transversus left,632,
+element, transversus left,633,
+element, transversus left,634,
+element, transversus left,635,
+element, transversus left,636,
+element, transversus left,637,
+element, transversus left,638,
+element, transversus left,639,
+element, transversus left,640,
+element, transversus left,641,
+element, transversus left,642,
+element, transversus left,643,
+element, transversus left,644,
+element, transversus left,645,
+element, transversus left,646,
+element, transversus left,647,
+element, transversus left,648,
+element, transversus left,649,
+element, transversus left,650,
+element, transversus left,651,
+element, transversus left,652,
+element, transversus left,661,
+element, transversus left,662,
+element, transversus left,663,
+element, transversus left,664,
+element, transversus left,665,
+element, transversus left,666,
+element, transversus left,667,
+element, transversus left,668,
+element, transversus left,669,
+element, transversus left,670,
+element, transversus left,671,
+element, transversus left,672,
+element, transversus left,673,
+element, transversus left,674,
+element, transversus left,683,
+element, transversus left,684,
+element, transversus left,685,
+element, transversus left,686,
+element, transversus left,687,
+element, transversus left,688,
+element, transversus left,689,
+element, transversus left,690,
+element, transversus left,691,
+element, transversus left,692,
+element, transversus left,693,
+element, transversus left,694,
+element, transversus left,695,
+element, transversus left,696,
+element, transversus left,697,
+element, transversus left,699,
+element, transversus left,701,
+element, transversus left,703,
+element, transversus left,704,
+element, transversus left,705,
+fiber_node, transversus left,442,522
+fiber_node, transversus left,522,829
+fiber_node, transversus left,619,616
+fiber_node, transversus left,616,876
+fiber_node, transversus left,620,617
+fiber_node, transversus left,617,877
+fiber_node, transversus left,621,618
+fiber_node, transversus left,618,878
+fiber_node, transversus left,452,533
+fiber_node, transversus left,533,845
+fiber_node, transversus left,441,520
+fiber_node, transversus left,520,828
+fiber_node, transversus left,628,625
+fiber_node, transversus left,625,879
+fiber_node, transversus left,629,626
+fiber_node, transversus left,626,880
+fiber_node, transversus left,630,627
+fiber_node, transversus left,627,881
+fiber_node, transversus left,451,515
+fiber_node, transversus left,515,844
+fiber_node, transversus left,440,518
+fiber_node, transversus left,518,827
+fiber_node, transversus left,637,634
+fiber_node, transversus left,634,882
+fiber_node, transversus left,638,635
+fiber_node, transversus left,635,883
+fiber_node, transversus left,639,636
+fiber_node, transversus left,636,884
+fiber_node, transversus left,450,513
+fiber_node, transversus left,513,843
+fiber_node, transversus left,439,517
+fiber_node, transversus left,517,826
+fiber_node, transversus left,646,643
+fiber_node, transversus left,643,885
+fiber_node, transversus left,647,644
+fiber_node, transversus left,644,886
+fiber_node, transversus left,648,645
+fiber_node, transversus left,645,887
+fiber_node, transversus left,449,511
+fiber_node, transversus left,511,842
+fiber_node, transversus left,483,540
+fiber_node, transversus left,540,857
+fiber_node, transversus left,655,652
+fiber_node, transversus left,652,888
+fiber_node, transversus left,656,653
+fiber_node, transversus left,653,889
+fiber_node, transversus left,657,654
+fiber_node, transversus left,654,890
+fiber_node, transversus left,480,509
+fiber_node, transversus left,509,858
+fiber_node, transversus left,707,703
+fiber_node, transversus left,703,906
+fiber_node, transversus left,722,719
+fiber_node, transversus left,719,716
+fiber_node, transversus left,716,929
+fiber_node, transversus left,723,720
+fiber_node, transversus left,720,717
+fiber_node, transversus left,717,909
+fiber_node, transversus left,724,721
+fiber_node, transversus left,721,718
+fiber_node, transversus left,718,910
+fiber_node, transversus left,715,708
+fiber_node, transversus left,708,704
+fiber_node, transversus left,704,907
+fiber_node, transversus left,612,559
+fiber_node, transversus left,559,557
+fiber_node, transversus left,557,870
+fiber_node, transversus left,667,664
+fiber_node, transversus left,664,661
+fiber_node, transversus left,661,891
+fiber_node, transversus left,668,665
+fiber_node, transversus left,665,662
+fiber_node, transversus left,662,892
+fiber_node, transversus left,669,666
+fiber_node, transversus left,666,663
+fiber_node, transversus left,663,893
+fiber_node, transversus left,613,561
+fiber_node, transversus left,561,558
+fiber_node, transversus left,558,871
+fiber_node, transversus left,614,569
+fiber_node, transversus left,569,567
+fiber_node, transversus left,567,874
+fiber_node, transversus left,676,673
+fiber_node, transversus left,673,670
+fiber_node, transversus left,670,894
+fiber_node, transversus left,677,674
+fiber_node, transversus left,674,671
+fiber_node, transversus left,671,895
+fiber_node, transversus left,678,675
+fiber_node, transversus left,675,672
+fiber_node, transversus left,672,896
+fiber_node, transversus left,615,571
+fiber_node, transversus left,571,568
+fiber_node, transversus left,568,875
+fiber_node, transversus left,734,733
+fiber_node, transversus left,733,732
+fiber_node, transversus left,732,913
+fiber_node, transversus left,745,742
+fiber_node, transversus left,742,739
+fiber_node, transversus left,739,915
+fiber_node, transversus left,746,743
+fiber_node, transversus left,743,740
+fiber_node, transversus left,740,916
+fiber_node, transversus left,747,744
+fiber_node, transversus left,744,741
+fiber_node, transversus left,741,917
+fiber_node, transversus left,736,737
+fiber_node, transversus left,737,738
+fiber_node, transversus left,738,914
+fiber_node, transversus left,757,756
+fiber_node, transversus left,756,755
+fiber_node, transversus left,755,920
+fiber_node, transversus left,764,763
+fiber_node, transversus left,763,762
+fiber_node, transversus left,762,922
+fiber_node, transversus left,765,770
+fiber_node, transversus left,770,769
+fiber_node, transversus left,769,924
+fiber_node, transversus left,766,767
+fiber_node, transversus left,767,768
+fiber_node, transversus left,768,923
+fiber_node, transversus left,759,760
+fiber_node, transversus left,760,761
+fiber_node, transversus left,761,921
+fiber_node, transversus left,758,773
+fiber_node, transversus left,773,771
+fiber_node, transversus left,771,925
+element, inferior longitudinal right,16,
+element, inferior longitudinal right,18,
+element, inferior longitudinal right,20,
+element, inferior longitudinal right,76,
+element, inferior longitudinal right,159,
+element, inferior longitudinal right,160,
+element, inferior longitudinal right,189,
+element, inferior longitudinal right,190,
+element, inferior longitudinal right,191,
+element, inferior longitudinal right,192,
+element, inferior longitudinal right,173,
+element, inferior longitudinal right,284,
+element, inferior longitudinal right,306,
+element, inferior longitudinal right,337,
+fiber_node, inferior longitudinal right,360,343
+fiber_node, inferior longitudinal right,343,320
+fiber_node, inferior longitudinal right,320,156
+fiber_node, inferior longitudinal right,156,146
+fiber_node, inferior longitudinal right,146,294
+fiber_node, inferior longitudinal right,294,70
+fiber_node, inferior longitudinal right,70,26
+fiber_node, inferior longitudinal right,26,27
+fiber_node, inferior longitudinal right,27,28
+fiber_node, inferior longitudinal right,28,215
+fiber_node, inferior longitudinal right,215,216
+fiber_node, inferior longitudinal right,216,217
+fiber_node, inferior longitudinal right,217,38
+fiber_node, inferior longitudinal right,361,336
+fiber_node, inferior longitudinal right,336,313
+fiber_node, inferior longitudinal right,313,150
+fiber_node, inferior longitudinal right,150,140
+fiber_node, inferior longitudinal right,140,293
+fiber_node, inferior longitudinal right,293,71
+fiber_node, inferior longitudinal right,71,18
+fiber_node, inferior longitudinal right,18,19
+fiber_node, inferior longitudinal right,19,20
+fiber_node, inferior longitudinal right,20,21
+fiber_node, inferior longitudinal right,21,29
+fiber_node, inferior longitudinal right,29,206
+fiber_node, inferior longitudinal right,206,207
+fiber_node, inferior longitudinal right,207,208
+fiber_node, inferior longitudinal right,208,39
+fiber_node, inferior longitudinal right,358,342
+fiber_node, inferior longitudinal right,342,319
+fiber_node, inferior longitudinal right,319,154
+fiber_node, inferior longitudinal right,154,144
+fiber_node, inferior longitudinal right,144,290
+fiber_node, inferior longitudinal right,290,127
+fiber_node, inferior longitudinal right,127,104
+fiber_node, inferior longitudinal right,104,105
+fiber_node, inferior longitudinal right,105,107
+fiber_node, inferior longitudinal right,107,212
+fiber_node, inferior longitudinal right,212,213
+fiber_node, inferior longitudinal right,213,214
+fiber_node, inferior longitudinal right,214,102
+fiber_node, inferior longitudinal right,359,335
+fiber_node, inferior longitudinal right,335,312
+fiber_node, inferior longitudinal right,312,149
+fiber_node, inferior longitudinal right,149,139
+fiber_node, inferior longitudinal right,139,289
+fiber_node, inferior longitudinal right,289,128
+fiber_node, inferior longitudinal right,128,103
+fiber_node, inferior longitudinal right,103,106
+fiber_node, inferior longitudinal right,106,108
+fiber_node, inferior longitudinal right,108,110
+fiber_node, inferior longitudinal right,110,109
+fiber_node, inferior longitudinal right,109,203
+fiber_node, inferior longitudinal right,203,204
+fiber_node, inferior longitudinal right,204,205
+fiber_node, inferior longitudinal right,205,120
+element, inferior longitudinal left,386,
+element, inferior longitudinal left,388,
+element, inferior longitudinal left,390,
+element, inferior longitudinal left,446,
+element, inferior longitudinal left,529,
+element, inferior longitudinal left,530,
+element, inferior longitudinal left,559,
+element, inferior longitudinal left,560,
+element, inferior longitudinal left,561,
+element, inferior longitudinal left,562,
+element, inferior longitudinal left,543,
+element, inferior longitudinal left,654,
+element, inferior longitudinal left,676,
+element, inferior longitudinal left,707,
+fiber_node, inferior longitudinal left,773,756
+fiber_node, inferior longitudinal left,756,733
+fiber_node, inferior longitudinal left,733,569
+fiber_node, inferior longitudinal left,569,559
+fiber_node, inferior longitudinal left,559,707
+fiber_node, inferior longitudinal left,707,483
+fiber_node, inferior longitudinal left,483,439
+fiber_node, inferior longitudinal left,439,440
+fiber_node, inferior longitudinal left,440,441
+fiber_node, inferior longitudinal left,441,628
+fiber_node, inferior longitudinal left,628,629
+fiber_node, inferior longitudinal left,629,630
+fiber_node, inferior longitudinal left,630,451
+fiber_node, inferior longitudinal left,774,749
+fiber_node, inferior longitudinal left,749,726
+fiber_node, inferior longitudinal left,726,563
+fiber_node, inferior longitudinal left,563,553
+fiber_node, inferior longitudinal left,553,706
+fiber_node, inferior longitudinal left,706,484
+fiber_node, inferior longitudinal left,484,431
+fiber_node, inferior longitudinal left,431,432
+fiber_node, inferior longitudinal left,432,433
+fiber_node, inferior longitudinal left,433,434
+fiber_node, inferior longitudinal left,434,442
+fiber_node, inferior longitudinal left,442,619
+fiber_node, inferior longitudinal left,619,620
+fiber_node, inferior longitudinal left,620,621
+fiber_node, inferior longitudinal left,621,452
+fiber_node, inferior longitudinal left,771,755
+fiber_node, inferior longitudinal left,755,732
+fiber_node, inferior longitudinal left,732,567
+fiber_node, inferior longitudinal left,567,557
+fiber_node, inferior longitudinal left,557,703
+fiber_node, inferior longitudinal left,703,540
+fiber_node, inferior longitudinal left,540,517
+fiber_node, inferior longitudinal left,517,518
+fiber_node, inferior longitudinal left,518,520
+fiber_node, inferior longitudinal left,520,625
+fiber_node, inferior longitudinal left,625,626
+fiber_node, inferior longitudinal left,626,627
+fiber_node, inferior longitudinal left,627,515
+fiber_node, inferior longitudinal left,772,748
+fiber_node, inferior longitudinal left,748,725
+fiber_node, inferior longitudinal left,725,562
+fiber_node, inferior longitudinal left,562,552
+fiber_node, inferior longitudinal left,552,702
+fiber_node, inferior longitudinal left,702,541
+fiber_node, inferior longitudinal left,541,516
+fiber_node, inferior longitudinal left,516,519
+fiber_node, inferior longitudinal left,519,521
+fiber_node, inferior longitudinal left,521,523
+fiber_node, inferior longitudinal left,523,522
+fiber_node, inferior longitudinal left,522,616
+fiber_node, inferior longitudinal left,616,617
+fiber_node, inferior longitudinal left,617,618
+fiber_node, inferior longitudinal left,618,533
+element, superior longitudinal,32,
+element, superior longitudinal,33,
+element, superior longitudinal,34,
+element, superior longitudinal,35,
+element, superior longitudinal,36,
+element, superior longitudinal,37,
+element, superior longitudinal,74,
+element, superior longitudinal,75,
+element, superior longitudinal,157,
+element, superior longitudinal,158,
+element, superior longitudinal,161,
+element, superior longitudinal,162,
+element, superior longitudinal,166,
+element, superior longitudinal,168,
+element, superior longitudinal,170,
+element, superior longitudinal,172,
+element, superior longitudinal,174,
+element, superior longitudinal,176,
+element, superior longitudinal,177,
+element, superior longitudinal,178,
+element, superior longitudinal,196,
+element, superior longitudinal,197,
+element, superior longitudinal,198,
+element, superior longitudinal,210,
+element, superior longitudinal,211,
+element, superior longitudinal,212,
+element, superior longitudinal,224,
+element, superior longitudinal,225,
+element, superior longitudinal,226,
+element, superior longitudinal,238,
+element, superior longitudinal,239,
+element, superior longitudinal,240,
+element, superior longitudinal,263,
+element, superior longitudinal,265,
+element, superior longitudinal,267,
+element, superior longitudinal,286,
+element, superior longitudinal,287,
+element, superior longitudinal,288,
+element, superior longitudinal,289,
+element, superior longitudinal,290,
+element, superior longitudinal,308,
+element, superior longitudinal,309,
+element, superior longitudinal,310,
+element, superior longitudinal,311,
+element, superior longitudinal,312,
+element, superior longitudinal,328,
+element, superior longitudinal,330,
+element, superior longitudinal,332,
+element, superior longitudinal,336,
+element, superior longitudinal,337,
+element, superior longitudinal,338,
+element, superior longitudinal,402,
+element, superior longitudinal,403,
+element, superior longitudinal,404,
+element, superior longitudinal,405,
+element, superior longitudinal,406,
+element, superior longitudinal,407,
+element, superior longitudinal,444,
+element, superior longitudinal,445,
+element, superior longitudinal,527,
+element, superior longitudinal,528,
+element, superior longitudinal,531,
+element, superior longitudinal,532,
+element, superior longitudinal,536,
+element, superior longitudinal,538,
+element, superior longitudinal,540,
+element, superior longitudinal,542,
+element, superior longitudinal,544,
+element, superior longitudinal,546,
+element, superior longitudinal,547,
+element, superior longitudinal,548,
+element, superior longitudinal,566,
+element, superior longitudinal,567,
+element, superior longitudinal,568,
+element, superior longitudinal,580,
+element, superior longitudinal,581,
+element, superior longitudinal,582,
+element, superior longitudinal,594,
+element, superior longitudinal,595,
+element, superior longitudinal,596,
+element, superior longitudinal,608,
+element, superior longitudinal,609,
+element, superior longitudinal,610,
+element, superior longitudinal,633,
+element, superior longitudinal,635,
+element, superior longitudinal,637,
+element, superior longitudinal,656,
+element, superior longitudinal,657,
+element, superior longitudinal,658,
+element, superior longitudinal,659,
+element, superior longitudinal,660,
+element, superior longitudinal,678,
+element, superior longitudinal,679,
+element, superior longitudinal,680,
+element, superior longitudinal,681,
+element, superior longitudinal,682,
+element, superior longitudinal,698,
+element, superior longitudinal,700,
+element, superior longitudinal,702,
+element, superior longitudinal,706,
+element, superior longitudinal,707,
+element, superior longitudinal,708,
+fiber_node, superior longitudinal,341,318
+fiber_node, superior longitudinal,318,153
+fiber_node, superior longitudinal,153,143
+fiber_node, superior longitudinal,143,292
+fiber_node, superior longitudinal,292,95
+fiber_node, superior longitudinal,95,97
+fiber_node, superior longitudinal,97,99
+fiber_node, superior longitudinal,99,101
+fiber_node, superior longitudinal,101,119
+fiber_node, superior longitudinal,348,325
+fiber_node, superior longitudinal,325,155
+fiber_node, superior longitudinal,155,145
+fiber_node, superior longitudinal,145,291
+fiber_node, superior longitudinal,291,96
+fiber_node, superior longitudinal,96,98
+fiber_node, superior longitudinal,98,100
+fiber_node, superior longitudinal,100,102
+fiber_node, superior longitudinal,102,120
+fiber_node, superior longitudinal,346,323
+fiber_node, superior longitudinal,323,202
+fiber_node, superior longitudinal,202,200
+fiber_node, superior longitudinal,200,302
+fiber_node, superior longitudinal,302,244
+fiber_node, superior longitudinal,244,235
+fiber_node, superior longitudinal,235,226
+fiber_node, superior longitudinal,226,217
+fiber_node, superior longitudinal,217,208
+fiber_node, superior longitudinal,345,322
+fiber_node, superior longitudinal,322,157
+fiber_node, superior longitudinal,157,147
+fiber_node, superior longitudinal,147,300
+fiber_node, superior longitudinal,300,247
+fiber_node, superior longitudinal,247,238
+fiber_node, superior longitudinal,238,229
+fiber_node, superior longitudinal,229,220
+fiber_node, superior longitudinal,220,211
+fiber_node, superior longitudinal,344,321
+fiber_node, superior longitudinal,321,201
+fiber_node, superior longitudinal,201,199
+fiber_node, superior longitudinal,199,298
+fiber_node, superior longitudinal,298,246
+fiber_node, superior longitudinal,246,237
+fiber_node, superior longitudinal,237,228
+fiber_node, superior longitudinal,228,219
+fiber_node, superior longitudinal,219,210
+fiber_node, superior longitudinal,339,316
+fiber_node, superior longitudinal,316,164
+fiber_node, superior longitudinal,164,166
+fiber_node, superior longitudinal,166,301
+fiber_node, superior longitudinal,301,195
+fiber_node, superior longitudinal,195,187
+fiber_node, superior longitudinal,187,185
+fiber_node, superior longitudinal,185,183
+fiber_node, superior longitudinal,183,181
+fiber_node, superior longitudinal,338,315
+fiber_node, superior longitudinal,315,151
+fiber_node, superior longitudinal,151,141
+fiber_node, superior longitudinal,141,299
+fiber_node, superior longitudinal,299,69
+fiber_node, superior longitudinal,69,11
+fiber_node, superior longitudinal,11,12
+fiber_node, superior longitudinal,12,13
+fiber_node, superior longitudinal,13,14
+fiber_node, superior longitudinal,337,314
+fiber_node, superior longitudinal,314,163
+fiber_node, superior longitudinal,163,165
+fiber_node, superior longitudinal,165,297
+fiber_node, superior longitudinal,297,160
+fiber_node, superior longitudinal,160,177
+fiber_node, superior longitudinal,177,178
+fiber_node, superior longitudinal,178,179
+fiber_node, superior longitudinal,179,180
+fiber_node, superior longitudinal,340,317
+fiber_node, superior longitudinal,317,152
+fiber_node, superior longitudinal,152,142
+fiber_node, superior longitudinal,142,296
+fiber_node, superior longitudinal,296,68
+fiber_node, superior longitudinal,68,40
+fiber_node, superior longitudinal,40,41
+fiber_node, superior longitudinal,41,42
+fiber_node, superior longitudinal,42,43
+fiber_node, superior longitudinal,347,324
+fiber_node, superior longitudinal,324,158
+fiber_node, superior longitudinal,158,148
+fiber_node, superior longitudinal,148,295
+fiber_node, superior longitudinal,295,67
+fiber_node, superior longitudinal,67,36
+fiber_node, superior longitudinal,36,37
+fiber_node, superior longitudinal,37,38
+fiber_node, superior longitudinal,38,39
+fiber_node, superior longitudinal,919,912
+fiber_node, superior longitudinal,912,873
+fiber_node, superior longitudinal,873,869
+fiber_node, superior longitudinal,869,908
+fiber_node, superior longitudinal,908,859
+fiber_node, superior longitudinal,859,927
+fiber_node, superior longitudinal,927,928
+fiber_node, superior longitudinal,928,846
+fiber_node, superior longitudinal,846,847
+fiber_node, superior longitudinal,921,914
+fiber_node, superior longitudinal,914,875
+fiber_node, superior longitudinal,875,871
+fiber_node, superior longitudinal,871,907
+fiber_node, superior longitudinal,907,858
+fiber_node, superior longitudinal,858,842
+fiber_node, superior longitudinal,842,843
+fiber_node, superior longitudinal,843,844
+fiber_node, superior longitudinal,844,845
+fiber_node, superior longitudinal,754,731
+fiber_node, superior longitudinal,731,566
+fiber_node, superior longitudinal,566,556
+fiber_node, superior longitudinal,556,705
+fiber_node, superior longitudinal,705,508
+fiber_node, superior longitudinal,508,510
+fiber_node, superior longitudinal,510,512
+fiber_node, superior longitudinal,512,514
+fiber_node, superior longitudinal,514,532
+fiber_node, superior longitudinal,761,738
+fiber_node, superior longitudinal,738,568
+fiber_node, superior longitudinal,568,558
+fiber_node, superior longitudinal,558,704
+fiber_node, superior longitudinal,704,509
+fiber_node, superior longitudinal,509,511
+fiber_node, superior longitudinal,511,513
+fiber_node, superior longitudinal,513,515
+fiber_node, superior longitudinal,515,533
+fiber_node, superior longitudinal,759,736
+fiber_node, superior longitudinal,736,615
+fiber_node, superior longitudinal,615,613
+fiber_node, superior longitudinal,613,715
+fiber_node, superior longitudinal,715,657
+fiber_node, superior longitudinal,657,648
+fiber_node, superior longitudinal,648,639
+fiber_node, superior longitudinal,639,630
+fiber_node, superior longitudinal,630,621
+fiber_node, superior longitudinal,758,735
+fiber_node, superior longitudinal,735,570
+fiber_node, superior longitudinal,570,560
+fiber_node, superior longitudinal,560,713
+fiber_node, superior longitudinal,713,660
+fiber_node, superior longitudinal,660,651
+fiber_node, superior longitudinal,651,642
+fiber_node, superior longitudinal,642,633
+fiber_node, superior longitudinal,633,624
+fiber_node, superior longitudinal,757,734
+fiber_node, superior longitudinal,734,614
+fiber_node, superior longitudinal,614,612
+fiber_node, superior longitudinal,612,711
+fiber_node, superior longitudinal,711,659
+fiber_node, superior longitudinal,659,650
+fiber_node, superior longitudinal,650,641
+fiber_node, superior longitudinal,641,632
+fiber_node, superior longitudinal,632,623
+fiber_node, superior longitudinal,752,729
+fiber_node, superior longitudinal,729,577
+fiber_node, superior longitudinal,577,579
+fiber_node, superior longitudinal,579,714
+fiber_node, superior longitudinal,714,608
+fiber_node, superior longitudinal,608,600
+fiber_node, superior longitudinal,600,598
+fiber_node, superior longitudinal,598,596
+fiber_node, superior longitudinal,596,594
+fiber_node, superior longitudinal,751,728
+fiber_node, superior longitudinal,728,564
+fiber_node, superior longitudinal,564,554
+fiber_node, superior longitudinal,554,712
+fiber_node, superior longitudinal,712,482
+fiber_node, superior longitudinal,482,424
+fiber_node, superior longitudinal,424,425
+fiber_node, superior longitudinal,425,426
+fiber_node, superior longitudinal,426,427
+fiber_node, superior longitudinal,750,727
+fiber_node, superior longitudinal,727,576
+fiber_node, superior longitudinal,576,578
+fiber_node, superior longitudinal,578,710
+fiber_node, superior longitudinal,710,573
+fiber_node, superior longitudinal,573,590
+fiber_node, superior longitudinal,590,591
+fiber_node, superior longitudinal,591,592
+fiber_node, superior longitudinal,592,593
+fiber_node, superior longitudinal,753,730
+fiber_node, superior longitudinal,730,565
+fiber_node, superior longitudinal,565,555
+fiber_node, superior longitudinal,555,709
+fiber_node, superior longitudinal,709,481
+fiber_node, superior longitudinal,481,453
+fiber_node, superior longitudinal,453,454
+fiber_node, superior longitudinal,454,455
+fiber_node, superior longitudinal,455,456
+fiber_node, superior longitudinal,760,737
+fiber_node, superior longitudinal,737,571
+fiber_node, superior longitudinal,571,561
+fiber_node, superior longitudinal,561,708
+fiber_node, superior longitudinal,708,480
+fiber_node, superior longitudinal,480,449
+fiber_node, superior longitudinal,449,450
+fiber_node, superior longitudinal,450,451
+fiber_node, superior longitudinal,451,452

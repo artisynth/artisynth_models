@@ -1,0 +1,674 @@
+element, left thyroarytenoid (vocalis; FEM intrinsic), 995
+element, left thyroarytenoid (vocalis; FEM intrinsic), 997
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1019
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1021
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1331
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1333
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1357
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1359
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1013
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1015
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1037
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1039
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1351
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1353
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1377
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1379
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1017
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1041
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1355
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1381
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1043
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1383
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1045
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1385
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1061
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1063
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1405
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1407
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1065
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1409
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1671
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1673
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1699
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1701
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1675
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1703
+element, left thyroarytenoid (vocalis; FEM intrinsic), 993
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1329
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1023
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1047
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1361
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1387
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1025
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1049
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1363
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1389
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1339
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1051
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1365
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1391
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1393
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1687
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1685
+element, left thyroarytenoid (vocalis; FEM intrinsic), 1944
+fiber_marker, left thyroarytenoid (vocalis; FEM intrinsic), 1379, 1383, -0.004289269537743316, 0.004405751134594736, -0.005047741579154845, -0.00435532843523017, 0.003973948840240923, -0.009678891622107375
+fiber_marker, left thyroarytenoid (vocalis; FEM intrinsic), 1383, 1387, -0.00435532843523017, 0.003973948840240923, -0.009678891622107375, -0.0040859395069697615, 0.0037311593654514776, -0.012986163751962654
+fiber_marker, left thyroarytenoid (vocalis; FEM intrinsic), 1387, 1363, -0.0040859395069697615, 0.0037311593654514776, -0.012986163751962654, -0.0036456670408378036, 0.0034443995511643896, -0.016256073948650293
+fiber_marker, left thyroarytenoid (vocalis; FEM intrinsic), 1363, 1391, -0.0036456670408378036, 0.0034443995511643896, -0.016256073948650293, -0.00300952926843551, 0.0036283596563122748, -0.019509810150620956
+element, left thyroarytenoid (muscularis; FEM intrinsic), 999
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1001
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1023
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1025
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1335
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1337
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1361
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1363
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1339
+element, left thyroarytenoid (muscularis; FEM intrinsic), 703
+element, left thyroarytenoid (muscularis; FEM intrinsic), 697
+element, left thyroarytenoid (muscularis; FEM intrinsic), 699
+element, left thyroarytenoid (muscularis; FEM intrinsic), 717
+element, left thyroarytenoid (muscularis; FEM intrinsic), 719
+element, left thyroarytenoid (muscularis; FEM intrinsic), 993
+element, left thyroarytenoid (muscularis; FEM intrinsic), 995
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1017
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1019
+element, left thyroarytenoid (muscularis; FEM intrinsic), 701
+element, left thyroarytenoid (muscularis; FEM intrinsic), 721
+element, left thyroarytenoid (muscularis; FEM intrinsic), 997
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1021
+element, left thyroarytenoid (muscularis; FEM intrinsic), 723
+element, left thyroarytenoid (muscularis; FEM intrinsic), 737
+element, left thyroarytenoid (muscularis; FEM intrinsic), 739
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1041
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1043
+element, left thyroarytenoid (muscularis; FEM intrinsic), 741
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1045
+element, left thyroarytenoid (muscularis; FEM intrinsic), 743
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1047
+element, left thyroarytenoid (muscularis; FEM intrinsic), 977
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1313
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1333
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1329
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1331
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1355
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1357
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1359
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1365
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1381
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1383
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1385
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1387
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1049
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1389
+element, left thyroarytenoid (muscularis; FEM intrinsic), 427
+element, left thyroarytenoid (muscularis; FEM intrinsic), 429
+element, left thyroarytenoid (muscularis; FEM intrinsic), 445
+element, left thyroarytenoid (muscularis; FEM intrinsic), 447
+element, left thyroarytenoid (muscularis; FEM intrinsic), 693
+element, left thyroarytenoid (muscularis; FEM intrinsic), 695
+element, left thyroarytenoid (muscularis; FEM intrinsic), 713
+element, left thyroarytenoid (muscularis; FEM intrinsic), 715
+element, left thyroarytenoid (muscularis; FEM intrinsic), 431
+element, left thyroarytenoid (muscularis; FEM intrinsic), 449
+element, left thyroarytenoid (muscularis; FEM intrinsic), 433
+element, left thyroarytenoid (muscularis; FEM intrinsic), 451
+element, left thyroarytenoid (muscularis; FEM intrinsic), 465
+element, left thyroarytenoid (muscularis; FEM intrinsic), 467
+element, left thyroarytenoid (muscularis; FEM intrinsic), 735
+element, left thyroarytenoid (muscularis; FEM intrinsic), 469
+element, left thyroarytenoid (muscularis; FEM intrinsic), 989
+element, left thyroarytenoid (muscularis; FEM intrinsic), 991
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1013
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1015
+element, left thyroarytenoid (muscularis; FEM intrinsic), 733
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1037
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1039
+element, left thyroarytenoid (muscularis; FEM intrinsic), 443
+element, left thyroarytenoid (muscularis; FEM intrinsic), 461
+element, left thyroarytenoid (muscularis; FEM intrinsic), 463
+element, left thyroarytenoid (muscularis; FEM intrinsic), 711
+element, left thyroarytenoid (muscularis; FEM intrinsic), 731
+element, left thyroarytenoid (muscularis; FEM intrinsic), 477
+element, left thyroarytenoid (muscularis; FEM intrinsic), 479
+element, left thyroarytenoid (muscularis; FEM intrinsic), 751
+element, left thyroarytenoid (muscularis; FEM intrinsic), 753
+element, left thyroarytenoid (muscularis; FEM intrinsic), 481
+element, left thyroarytenoid (muscularis; FEM intrinsic), 755
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1011
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1035
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1059
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1061
+element, left thyroarytenoid (muscularis; FEM intrinsic), 1063
+fiber_marker, left thyroarytenoid (muscularis; FEM intrinsic), 1339, 1335, -0.0028107772289912084, 6.736883372330177E-4, -0.018524257967163605, -0.005689031663093309, 0.001756592963731159, -0.014519900593197145
+fiber_marker, left thyroarytenoid (muscularis; FEM intrinsic), 1335, 1019, -0.005689031663093309, 0.001756592963731159, -0.014519900593197145, -0.007245026746207628, 0.0027601511197925185, -0.010202594521233047
+fiber_marker, left thyroarytenoid (muscularis; FEM intrinsic), 1019, 717, -0.007245026746207628, 0.0027601511197925185, -0.010202594521233047, -0.008816974947485533, 0.003703089408758819, -0.006000164987007835
+fiber_marker, left thyroarytenoid (muscularis; FEM intrinsic), 717, 733, -0.008816974947485533, 0.003703089408758819, -0.006000164987007835, -0.009411966860709413, 0.004617663789214876, -0.0027592939584979125
+element, left thyroepiglottic (FEM intrinsic), 1393
+element, left thyroepiglottic (FEM intrinsic), 1687
+element, left thyroepiglottic (FEM intrinsic), 1389
+element, left thyroepiglottic (FEM intrinsic), 1391
+element, left thyroepiglottic (FEM intrinsic), 1411
+element, left thyroepiglottic (FEM intrinsic), 1683
+element, left thyroepiglottic (FEM intrinsic), 1685
+element, left thyroepiglottic (FEM intrinsic), 1433
+element, left thyroepiglottic (FEM intrinsic), 1435
+element, left thyroepiglottic (FEM intrinsic), 1721
+element, left thyroepiglottic (FEM intrinsic), 1723
+element, left thyroepiglottic (FEM intrinsic), 1944
+element, left thyroepiglottic (FEM intrinsic), 795
+element, left thyroepiglottic (FEM intrinsic), 797
+element, left thyroepiglottic (FEM intrinsic), 811
+element, left thyroepiglottic (FEM intrinsic), 813
+element, left thyroepiglottic (FEM intrinsic), 1111
+element, left thyroepiglottic (FEM intrinsic), 1113
+element, left thyroepiglottic (FEM intrinsic), 1133
+element, left thyroepiglottic (FEM intrinsic), 1135
+element, left thyroepiglottic (FEM intrinsic), 1049
+element, left thyroepiglottic (FEM intrinsic), 1051
+element, left thyroepiglottic (FEM intrinsic), 1067
+element, left thyroepiglottic (FEM intrinsic), 1069
+element, left thyroepiglottic (FEM intrinsic), 1091
+element, left thyroepiglottic (FEM intrinsic), 1093
+element, left thyroepiglottic (FEM intrinsic), 1089
+element, left thyroepiglottic (FEM intrinsic), 1431
+element, left thyroepiglottic (FEM intrinsic), 1455
+element, left thyroepiglottic (FEM intrinsic), 1457
+element, left thyroepiglottic (FEM intrinsic), 1115
+element, left thyroepiglottic (FEM intrinsic), 1459
+element, left thyroepiglottic (FEM intrinsic), 1109
+element, left thyroepiglottic (FEM intrinsic), 1131
+element, left thyroepiglottic (FEM intrinsic), 1453
+element, left thyroepiglottic (FEM intrinsic), 1477
+element, left thyroepiglottic (FEM intrinsic), 1479
+element, left thyroepiglottic (FEM intrinsic), 1481
+element, left thyroepiglottic (FEM intrinsic), 1155
+element, left thyroepiglottic (FEM intrinsic), 1157
+element, left thyroepiglottic (FEM intrinsic), 1501
+element, left thyroepiglottic (FEM intrinsic), 1503
+element, left thyroepiglottic (FEM intrinsic), 1413
+element, left thyroepiglottic (FEM intrinsic), 1705
+element, left thyroepiglottic (FEM intrinsic), 1719
+element, left thyroepiglottic (FEM intrinsic), 1437
+element, left thyroepiglottic (FEM intrinsic), 1725
+element, left thyroepiglottic (FEM intrinsic), 1737
+element, left thyroepiglottic (FEM intrinsic), 1739
+element, left thyroepiglottic (FEM intrinsic), 1741
+element, left thyroepiglottic (FEM intrinsic), 807
+element, left thyroepiglottic (FEM intrinsic), 809
+element, left thyroepiglottic (FEM intrinsic), 825
+element, left thyroepiglottic (FEM intrinsic), 827
+element, left thyroepiglottic (FEM intrinsic), 1129
+element, left thyroepiglottic (FEM intrinsic), 1151
+element, left thyroepiglottic (FEM intrinsic), 1153
+element, left thyroepiglottic (FEM intrinsic), 829
+element, left thyroepiglottic (FEM intrinsic), 843
+element, left thyroepiglottic (FEM intrinsic), 845
+element, left thyroepiglottic (FEM intrinsic), 1171
+element, left thyroepiglottic (FEM intrinsic), 1173
+element, left thyroepiglottic (FEM intrinsic), 847
+element, left thyroepiglottic (FEM intrinsic), 1175
+element, left thyroepiglottic (FEM intrinsic), 1499
+element, left thyroepiglottic (FEM intrinsic), 1517
+element, left thyroepiglottic (FEM intrinsic), 1519
+element, left thyroepiglottic (FEM intrinsic), 553
+element, left thyroepiglottic (FEM intrinsic), 555
+element, left thyroepiglottic (FEM intrinsic), 571
+element, left thyroepiglottic (FEM intrinsic), 573
+element, left thyroepiglottic (FEM intrinsic), 859
+element, left thyroepiglottic (FEM intrinsic), 861
+element, left thyroepiglottic (FEM intrinsic), 569
+element, left thyroepiglottic (FEM intrinsic), 587
+element, left thyroepiglottic (FEM intrinsic), 589
+element, left thyroepiglottic (FEM intrinsic), 857
+element, left thyroepiglottic (FEM intrinsic), 871
+element, left thyroepiglottic (FEM intrinsic), 873
+element, left thyroepiglottic (FEM intrinsic), 591
+element, left thyroepiglottic (FEM intrinsic), 875
+element, left thyroepiglottic (FEM intrinsic), 1187
+element, left thyroepiglottic (FEM intrinsic), 1189
+element, left thyroepiglottic (FEM intrinsic), 863
+element, left thyroepiglottic (FEM intrinsic), 1191
+element, left thyroepiglottic (FEM intrinsic), 1199
+element, left thyroepiglottic (FEM intrinsic), 1201
+element, left thyroepiglottic (FEM intrinsic), 2049
+element, left thyroepiglottic (FEM intrinsic), 2053
+element, left thyroepiglottic (FEM intrinsic), 1203
+fiber_marker, left thyroepiglottic (FEM intrinsic), 1393, 1435, -0.0016860564729018973, 0.004988293976145267, -0.020568251188809998, -0.004044675492594001, 0.008535345560936708, -0.01764043161454628
+fiber_marker, left thyroepiglottic (FEM intrinsic), 1435, 1455, -0.004044675492594001, 0.008535345560936708, -0.01764043161454628, -0.006043501466936734, 0.013069756736953575, -0.0150532860620622
+fiber_marker, left thyroepiglottic (FEM intrinsic), 1455, 1153, -0.006043501466936734, 0.013069756736953575, -0.0150532860620622, -0.008044123671563366, 0.017581933980754437, -0.012502831643329689
+fiber_marker, left thyroepiglottic (FEM intrinsic), 1153, 859, -0.008044123671563366, 0.017581933980754437, -0.012502831643329689, -0.010046867051101133, 0.02248392665764156, -0.010148416941892682
+element, left ventricularis (posterolateral; FEM intrinsic), 477
+element, left ventricularis (posterolateral; FEM intrinsic), 479
+element, left ventricularis (posterolateral; FEM intrinsic), 491
+element, left ventricularis (posterolateral; FEM intrinsic), 493
+element, left ventricularis (posterolateral; FEM intrinsic), 751
+element, left ventricularis (posterolateral; FEM intrinsic), 753
+element, left ventricularis (posterolateral; FEM intrinsic), 767
+element, left ventricularis (posterolateral; FEM intrinsic), 769
+element, left ventricularis (posterolateral; FEM intrinsic), 263
+element, left ventricularis (posterolateral; FEM intrinsic), 265
+element, left ventricularis (posterolateral; FEM intrinsic), 273
+element, left ventricularis (posterolateral; FEM intrinsic), 275
+element, left ventricularis (posterolateral; FEM intrinsic), 495
+element, left ventricularis (posterolateral; FEM intrinsic), 505
+element, left ventricularis (posterolateral; FEM intrinsic), 507
+element, left ventricularis (posterolateral; FEM intrinsic), 277
+element, left ventricularis (posterolateral; FEM intrinsic), 287
+element, left ventricularis (posterolateral; FEM intrinsic), 289
+element, left ventricularis (posterolateral; FEM intrinsic), 509
+element, left ventricularis (posterolateral; FEM intrinsic), 519
+element, left ventricularis (posterolateral; FEM intrinsic), 521
+element, left ventricularis (posterolateral; FEM intrinsic), 279
+element, left ventricularis (posterolateral; FEM intrinsic), 291
+element, left ventricularis (posterolateral; FEM intrinsic), 511
+element, left ventricularis (posterolateral; FEM intrinsic), 523
+element, left ventricularis (posterolateral; FEM intrinsic), 301
+element, left ventricularis (posterolateral; FEM intrinsic), 303
+element, left ventricularis (posterolateral; FEM intrinsic), 535
+element, left ventricularis (posterolateral; FEM intrinsic), 537
+element, left ventricularis (posterolateral; FEM intrinsic), 293
+element, left ventricularis (posterolateral; FEM intrinsic), 305
+element, left ventricularis (posterolateral; FEM intrinsic), 525
+element, left ventricularis (posterolateral; FEM intrinsic), 539
+fiber_marker, left ventricularis (posterolateral; FEM intrinsic), 1403, 751, -0.005573719101943457, 0.007562405373671597, 0.0011495967006752515, -0.009188854841534675, 0.007928886426867498, 2.6672164893492265E-4
+fiber_marker, left ventricularis (posterolateral; FEM intrinsic), 751, 493, -0.009188854841534675, 0.007928886426867498, 2.6672164893492265E-4, -0.011797338105329874, 0.00977118682241252, -0.002170819404447521
+fiber_marker, left ventricularis (posterolateral; FEM intrinsic), 493, 507, -0.011797338105329874, 0.00977118682241252, -0.002170819404447521, -0.012672794072335281, 0.011860851488539638, -0.004514256922203597
+fiber_marker, left ventricularis (posterolateral; FEM intrinsic), 507, 277, -0.012672794072335281, 0.011860851488539638, -0.004514256922203597, -0.013583135454884536, 0.01393707376401275, -0.006885437691384776
+fiber_marker, left ventricularis (posterolateral; FEM intrinsic), 277, 537, -0.013583135454884536, 0.01393707376401275, -0.006885437691384776, -0.013030132186090901, 0.01629344696023025, -0.009441130988909398
+element, left ventricularis (anterolateral; FEM intrinsic), 479
+element, left ventricularis (anterolateral; FEM intrinsic), 481
+element, left ventricularis (anterolateral; FEM intrinsic), 493
+element, left ventricularis (anterolateral; FEM intrinsic), 495
+element, left ventricularis (anterolateral; FEM intrinsic), 753
+element, left ventricularis (anterolateral; FEM intrinsic), 755
+element, left ventricularis (anterolateral; FEM intrinsic), 769
+element, left ventricularis (anterolateral; FEM intrinsic), 771
+element, left ventricularis (anterolateral; FEM intrinsic), 497
+element, left ventricularis (anterolateral; FEM intrinsic), 507
+element, left ventricularis (anterolateral; FEM intrinsic), 509
+element, left ventricularis (anterolateral; FEM intrinsic), 773
+element, left ventricularis (anterolateral; FEM intrinsic), 787
+element, left ventricularis (anterolateral; FEM intrinsic), 789
+element, left ventricularis (anterolateral; FEM intrinsic), 499
+element, left ventricularis (anterolateral; FEM intrinsic), 511
+element, left ventricularis (anterolateral; FEM intrinsic), 775
+element, left ventricularis (anterolateral; FEM intrinsic), 791
+element, left ventricularis (anterolateral; FEM intrinsic), 267
+element, left ventricularis (anterolateral; FEM intrinsic), 269
+element, left ventricularis (anterolateral; FEM intrinsic), 277
+element, left ventricularis (anterolateral; FEM intrinsic), 279
+element, left ventricularis (anterolateral; FEM intrinsic), 513
+element, left ventricularis (anterolateral; FEM intrinsic), 523
+element, left ventricularis (anterolateral; FEM intrinsic), 525
+element, left ventricularis (anterolateral; FEM intrinsic), 793
+element, left ventricularis (anterolateral; FEM intrinsic), 807
+element, left ventricularis (anterolateral; FEM intrinsic), 809
+element, left ventricularis (anterolateral; FEM intrinsic), 527
+element, left ventricularis (anterolateral; FEM intrinsic), 539
+element, left ventricularis (anterolateral; FEM intrinsic), 541
+element, left ventricularis (anterolateral; FEM intrinsic), 811
+element, left ventricularis (anterolateral; FEM intrinsic), 827
+element, left ventricularis (anterolateral; FEM intrinsic), 829
+element, left ventricularis (anterolateral; FEM intrinsic), 529
+element, left ventricularis (anterolateral; FEM intrinsic), 543
+element, left ventricularis (anterolateral; FEM intrinsic), 813
+element, left ventricularis (anterolateral; FEM intrinsic), 831
+fiber_marker, left ventricularis (anterolateral; FEM intrinsic), 493, 497, -0.010628405225581741, 0.009205250485129332, -0.003005722923486403, -0.01134081370053991, 0.010584082241465132, -0.005708875389654091
+fiber_marker, left ventricularis (anterolateral; FEM intrinsic), 497, 511, -0.01134081370053991, 0.010584082241465132, -0.005708875389654091, -0.01212482727909154, 0.011969918592372978, -0.008504763130784378
+fiber_marker, left ventricularis (anterolateral; FEM intrinsic), 511, 525, -0.01212482727909154, 0.011969918592372978, -0.008504763130784378, -0.01156045835454269, 0.014510388028350363, -0.011554526870644205
+fiber_marker, left ventricularis (anterolateral; FEM intrinsic), 525, 541, -0.01156045835454269, 0.014510388028350363, -0.011554526870644205, -0.010955211032692244, 0.017107689103570443, -0.014629658607795044
+fiber_marker, left ventricularis (anterolateral; FEM intrinsic), 541, 831, -0.010955211032692244, 0.017107689103570443, -0.014629658607795044, -0.009570606112313309, 0.017657286874225984, -0.017271877635222952
+element, left ventricularis (anteromedial; FEM intrinsic), 775
+element, left ventricularis (anteromedial; FEM intrinsic), 777
+element, left ventricularis (anteromedial; FEM intrinsic), 791
+element, left ventricularis (anteromedial; FEM intrinsic), 793
+element, left ventricularis (anteromedial; FEM intrinsic), 1085
+element, left ventricularis (anteromedial; FEM intrinsic), 1087
+element, left ventricularis (anteromedial; FEM intrinsic), 1107
+element, left ventricularis (anteromedial; FEM intrinsic), 1109
+element, left ventricularis (anteromedial; FEM intrinsic), 1129
+element, left ventricularis (anteromedial; FEM intrinsic), 1131
+element, left ventricularis (anteromedial; FEM intrinsic), 1451
+element, left ventricularis (anteromedial; FEM intrinsic), 1453
+element, left ventricularis (anteromedial; FEM intrinsic), 1475
+element, left ventricularis (anteromedial; FEM intrinsic), 1477
+fiber_marker, left ventricularis (anteromedial; FEM intrinsic), 1477, 1109, -0.003517915598906697, 0.015174301855701329, -0.012409161223484047, -0.007062743846062608, 0.013435965183738553, -0.011214209824155412
+fiber_marker, left ventricularis (anteromedial; FEM intrinsic), 1109, 775, -0.007062743846062608, 0.013435965183738553, -0.011214209824155412, -0.009496665810866585, 0.010190389651273023, -0.010328967525421775
+fiber_marker, left ventricularis (anteromedial; FEM intrinsic), 775, 757, -0.009496665810866585, 0.010190389651273023, -0.010328967525421775, -0.009495645236718473, 0.008824482891157932, -0.006842855201196837
+fiber_marker, left ventricularis (anteromedial; FEM intrinsic), 757, 755, -0.009495645236718473, 0.008824482891157932, -0.006842855201196837, -0.010087793708608742, 0.007539107467839772, -0.004492504192623107
+element, right thyroarytenoid (vocalis; FEM intrinsic), 992
+element, right thyroarytenoid (vocalis; FEM intrinsic), 994
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1016
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1018
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1328
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1330
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1354
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1356
+element, right thyroarytenoid (vocalis; FEM intrinsic), 996
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1020
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1332
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1358
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1012
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1014
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1036
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1038
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1350
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1352
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1376
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1378
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1040
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1380
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1042
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1382
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1044
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1384
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1060
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1062
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1404
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1406
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1064
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1408
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1670
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1672
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1698
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1700
+element, right thyroarytenoid (vocalis; FEM intrinsic), 998
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1022
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1334
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1360
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1046
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1386
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1024
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1048
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1362
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1388
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1338
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1000
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1336
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1050
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1364
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1390
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1392
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1686
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1684
+element, right thyroarytenoid (vocalis; FEM intrinsic), 1944
+fiber_marker, right thyroarytenoid (vocalis; FEM intrinsic), 1378, 1382, 0.004296351904223013, 0.0044153348925039665, -0.00505206349719154, 0.004353596049022784, 0.003973797550430275, -0.009677752647551666
+fiber_marker, right thyroarytenoid (vocalis; FEM intrinsic), 1382, 1386, 0.004353596049022784, 0.003973797550430275, -0.009677752647551666, 0.004085527605330955, 0.0037304675956021474, -0.012986896739232923
+fiber_marker, right thyroarytenoid (vocalis; FEM intrinsic), 1386, 1362, 0.004085527605330955, 0.0037304675956021474, -0.012986896739232923, 0.0036460177307005705, 0.003444577364419478, -0.01625749783375828
+fiber_marker, right thyroarytenoid (vocalis; FEM intrinsic), 1362, 1390, 0.0036460177307005705, 0.003444577364419478, -0.01625749783375828, 0.003009638581746914, 0.0036280476752474956, -0.019510050474881406
+element, right ventricularis (anteromedial; FEM intrinsic), 482
+element, right ventricularis (anteromedial; FEM intrinsic), 484
+element, right ventricularis (anteromedial; FEM intrinsic), 496
+element, right ventricularis (anteromedial; FEM intrinsic), 498
+element, right ventricularis (anteromedial; FEM intrinsic), 756
+element, right ventricularis (anteromedial; FEM intrinsic), 758
+element, right ventricularis (anteromedial; FEM intrinsic), 772
+element, right ventricularis (anteromedial; FEM intrinsic), 774
+element, right ventricularis (anteromedial; FEM intrinsic), 480
+element, right ventricularis (anteromedial; FEM intrinsic), 494
+element, right ventricularis (anteromedial; FEM intrinsic), 754
+element, right ventricularis (anteromedial; FEM intrinsic), 770
+fiber_marker, right ventricularis (anteromedial; FEM intrinsic), 1476, 1108, 0.0035179789933154296, 0.01517533858402253, -0.01240933702658936, 0.007070993632417425, 0.013186540601366724, -0.011709714429535464
+fiber_marker, right ventricularis (anteromedial; FEM intrinsic), 1108, 774, 0.007070993632417425, 0.013186540601366724, -0.011709714429535464, 0.009476460907228024, 0.010436338140017602, -0.009837142212331874
+fiber_marker, right ventricularis (anteromedial; FEM intrinsic), 774, 756, 0.009476460907228024, 0.010436338140017602, -0.009837142212331874, 0.009493392003207852, 0.008824699176188697, -0.006859879246913867
+fiber_marker, right ventricularis (anteromedial; FEM intrinsic), 756, 754, 0.009493392003207852, 0.008824699176188697, -0.006859879246913867, 0.01005410815016044, 0.007533693648413109, -0.0044934104703339955
+element, right thyroarytenoid (muscularis; FEM intrinsic), 998
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1000
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1022
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1024
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1334
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1336
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1360
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1362
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1338
+element, right thyroarytenoid (muscularis; FEM intrinsic), 702
+element, right thyroarytenoid (muscularis; FEM intrinsic), 696
+element, right thyroarytenoid (muscularis; FEM intrinsic), 698
+element, right thyroarytenoid (muscularis; FEM intrinsic), 716
+element, right thyroarytenoid (muscularis; FEM intrinsic), 718
+element, right thyroarytenoid (muscularis; FEM intrinsic), 992
+element, right thyroarytenoid (muscularis; FEM intrinsic), 994
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1016
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1018
+element, right thyroarytenoid (muscularis; FEM intrinsic), 700
+element, right thyroarytenoid (muscularis; FEM intrinsic), 720
+element, right thyroarytenoid (muscularis; FEM intrinsic), 996
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1020
+element, right thyroarytenoid (muscularis; FEM intrinsic), 722
+element, right thyroarytenoid (muscularis; FEM intrinsic), 736
+element, right thyroarytenoid (muscularis; FEM intrinsic), 738
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1040
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1042
+element, right thyroarytenoid (muscularis; FEM intrinsic), 740
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1044
+element, right thyroarytenoid (muscularis; FEM intrinsic), 742
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1046
+element, right thyroarytenoid (muscularis; FEM intrinsic), 976
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1312
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1332
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1328
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1330
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1354
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1356
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1358
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1364
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1380
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1382
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1384
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1386
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1048
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1388
+element, right thyroarytenoid (muscularis; FEM intrinsic), 426
+element, right thyroarytenoid (muscularis; FEM intrinsic), 428
+element, right thyroarytenoid (muscularis; FEM intrinsic), 444
+element, right thyroarytenoid (muscularis; FEM intrinsic), 446
+element, right thyroarytenoid (muscularis; FEM intrinsic), 692
+element, right thyroarytenoid (muscularis; FEM intrinsic), 694
+element, right thyroarytenoid (muscularis; FEM intrinsic), 712
+element, right thyroarytenoid (muscularis; FEM intrinsic), 714
+element, right thyroarytenoid (muscularis; FEM intrinsic), 430
+element, right thyroarytenoid (muscularis; FEM intrinsic), 448
+element, right thyroarytenoid (muscularis; FEM intrinsic), 432
+element, right thyroarytenoid (muscularis; FEM intrinsic), 450
+element, right thyroarytenoid (muscularis; FEM intrinsic), 464
+element, right thyroarytenoid (muscularis; FEM intrinsic), 466
+element, right thyroarytenoid (muscularis; FEM intrinsic), 734
+element, right thyroarytenoid (muscularis; FEM intrinsic), 468
+element, right thyroarytenoid (muscularis; FEM intrinsic), 988
+element, right thyroarytenoid (muscularis; FEM intrinsic), 990
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1012
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1014
+element, right thyroarytenoid (muscularis; FEM intrinsic), 732
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1036
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1038
+element, right thyroarytenoid (muscularis; FEM intrinsic), 442
+element, right thyroarytenoid (muscularis; FEM intrinsic), 460
+element, right thyroarytenoid (muscularis; FEM intrinsic), 462
+element, right thyroarytenoid (muscularis; FEM intrinsic), 710
+element, right thyroarytenoid (muscularis; FEM intrinsic), 730
+element, right thyroarytenoid (muscularis; FEM intrinsic), 476
+element, right thyroarytenoid (muscularis; FEM intrinsic), 478
+element, right thyroarytenoid (muscularis; FEM intrinsic), 750
+element, right thyroarytenoid (muscularis; FEM intrinsic), 752
+element, right thyroarytenoid (muscularis; FEM intrinsic), 480
+element, right thyroarytenoid (muscularis; FEM intrinsic), 754
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1010
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1034
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1058
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1060
+element, right thyroarytenoid (muscularis; FEM intrinsic), 1062
+fiber_marker, right thyroarytenoid (muscularis; FEM intrinsic), 1338, 1334, 0.0028105425359250787, 6.732105977103692E-4, -0.018524245209967122, 0.0056885017329558136, 0.001757446261753674, -0.014519287543851418
+fiber_marker, right thyroarytenoid (muscularis; FEM intrinsic), 1334, 1018, 0.0056885017329558136, 0.001757446261753674, -0.014519287543851418, 0.0072413499669918, 0.002758671798427194, -0.01019596919099501
+fiber_marker, right thyroarytenoid (muscularis; FEM intrinsic), 1018, 716, 0.0072413499669918, 0.002758671798427194, -0.01019596919099501, 0.00880818473793595, 0.0036959128228230887, -0.006000091086691696
+fiber_marker, right thyroarytenoid (muscularis; FEM intrinsic), 716, 732, 0.00880818473793595, 0.0036959128228230887, -0.006000091086691696, 0.009423028363822201, 0.004638121121668737, -0.0027572863033579788
+element, right ventricularis (anterolateral; FEM intrinsic), 478
+element, right ventricularis (anterolateral; FEM intrinsic), 480
+element, right ventricularis (anterolateral; FEM intrinsic), 492
+element, right ventricularis (anterolateral; FEM intrinsic), 494
+element, right ventricularis (anterolateral; FEM intrinsic), 752
+element, right ventricularis (anterolateral; FEM intrinsic), 754
+element, right ventricularis (anterolateral; FEM intrinsic), 768
+element, right ventricularis (anterolateral; FEM intrinsic), 770
+element, right ventricularis (anterolateral; FEM intrinsic), 266
+element, right ventricularis (anterolateral; FEM intrinsic), 268
+element, right ventricularis (anterolateral; FEM intrinsic), 276
+element, right ventricularis (anterolateral; FEM intrinsic), 278
+element, right ventricularis (anterolateral; FEM intrinsic), 496
+element, right ventricularis (anterolateral; FEM intrinsic), 498
+element, right ventricularis (anterolateral; FEM intrinsic), 508
+element, right ventricularis (anterolateral; FEM intrinsic), 510
+element, right ventricularis (anterolateral; FEM intrinsic), 512
+element, right ventricularis (anterolateral; FEM intrinsic), 522
+element, right ventricularis (anterolateral; FEM intrinsic), 524
+element, right ventricularis (anterolateral; FEM intrinsic), 790
+element, right ventricularis (anterolateral; FEM intrinsic), 792
+element, right ventricularis (anterolateral; FEM intrinsic), 806
+element, right ventricularis (anterolateral; FEM intrinsic), 808
+element, right ventricularis (anterolateral; FEM intrinsic), 526
+element, right ventricularis (anterolateral; FEM intrinsic), 538
+element, right ventricularis (anterolateral; FEM intrinsic), 540
+element, right ventricularis (anterolateral; FEM intrinsic), 810
+element, right ventricularis (anterolateral; FEM intrinsic), 826
+element, right ventricularis (anterolateral; FEM intrinsic), 828
+element, right ventricularis (anterolateral; FEM intrinsic), 528
+element, right ventricularis (anterolateral; FEM intrinsic), 542
+element, right ventricularis (anterolateral; FEM intrinsic), 812
+element, right ventricularis (anterolateral; FEM intrinsic), 830
+fiber_marker, right ventricularis (anterolateral; FEM intrinsic), 492, 496, 0.010447438876798443, 0.00916102070773443, -0.0029666949155508966, 0.011331983199900041, 0.010580689624977298, -0.0057213896495580605
+fiber_marker, right ventricularis (anterolateral; FEM intrinsic), 496, 510, 0.011331983199900041, 0.010580689624977298, -0.0057213896495580605, 0.012122817006993051, 0.01196686436613785, -0.008507775593175181
+fiber_marker, right ventricularis (anterolateral; FEM intrinsic), 510, 524, 0.012122817006993051, 0.01196686436613785, -0.008507775593175181, 0.01156081115222029, 0.01450708718158409, -0.011560065438674508
+fiber_marker, right ventricularis (anterolateral; FEM intrinsic), 524, 540, 0.01156081115222029, 0.01450708718158409, -0.011560065438674508, 0.010954121194044045, 0.01710264754391598, -0.014631328654637515
+fiber_marker, right ventricularis (anterolateral; FEM intrinsic), 540, 830, 0.010954121194044045, 0.01710264754391598, -0.014631328654637515, 0.00957249602235849, 0.01765545679050474, -0.017272359355939404
+element, right thyroepiglottic (FEM intrinsic), 1392
+element, right thyroepiglottic (FEM intrinsic), 1686
+element, right thyroepiglottic (FEM intrinsic), 1388
+element, right thyroepiglottic (FEM intrinsic), 1390
+element, right thyroepiglottic (FEM intrinsic), 1410
+element, right thyroepiglottic (FEM intrinsic), 1682
+element, right thyroepiglottic (FEM intrinsic), 1684
+element, right thyroepiglottic (FEM intrinsic), 1432
+element, right thyroepiglottic (FEM intrinsic), 1434
+element, right thyroepiglottic (FEM intrinsic), 1720
+element, right thyroepiglottic (FEM intrinsic), 1722
+element, right thyroepiglottic (FEM intrinsic), 1944
+element, right thyroepiglottic (FEM intrinsic), 792
+element, right thyroepiglottic (FEM intrinsic), 794
+element, right thyroepiglottic (FEM intrinsic), 808
+element, right thyroepiglottic (FEM intrinsic), 810
+element, right thyroepiglottic (FEM intrinsic), 1108
+element, right thyroepiglottic (FEM intrinsic), 1110
+element, right thyroepiglottic (FEM intrinsic), 1130
+element, right thyroepiglottic (FEM intrinsic), 1132
+element, right thyroepiglottic (FEM intrinsic), 796
+element, right thyroepiglottic (FEM intrinsic), 812
+element, right thyroepiglottic (FEM intrinsic), 1112
+element, right thyroepiglottic (FEM intrinsic), 1134
+element, right thyroepiglottic (FEM intrinsic), 1048
+element, right thyroepiglottic (FEM intrinsic), 1050
+element, right thyroepiglottic (FEM intrinsic), 1066
+element, right thyroepiglottic (FEM intrinsic), 1068
+element, right thyroepiglottic (FEM intrinsic), 1090
+element, right thyroepiglottic (FEM intrinsic), 1092
+element, right thyroepiglottic (FEM intrinsic), 1088
+element, right thyroepiglottic (FEM intrinsic), 1430
+element, right thyroepiglottic (FEM intrinsic), 1454
+element, right thyroepiglottic (FEM intrinsic), 1456
+element, right thyroepiglottic (FEM intrinsic), 1114
+element, right thyroepiglottic (FEM intrinsic), 1458
+element, right thyroepiglottic (FEM intrinsic), 1452
+element, right thyroepiglottic (FEM intrinsic), 1476
+element, right thyroepiglottic (FEM intrinsic), 1478
+element, right thyroepiglottic (FEM intrinsic), 1480
+element, right thyroepiglottic (FEM intrinsic), 1154
+element, right thyroepiglottic (FEM intrinsic), 1156
+element, right thyroepiglottic (FEM intrinsic), 1500
+element, right thyroepiglottic (FEM intrinsic), 1502
+element, right thyroepiglottic (FEM intrinsic), 1412
+element, right thyroepiglottic (FEM intrinsic), 1704
+element, right thyroepiglottic (FEM intrinsic), 1718
+element, right thyroepiglottic (FEM intrinsic), 1436
+element, right thyroepiglottic (FEM intrinsic), 1724
+element, right thyroepiglottic (FEM intrinsic), 1736
+element, right thyroepiglottic (FEM intrinsic), 1738
+element, right thyroepiglottic (FEM intrinsic), 1740
+element, right thyroepiglottic (FEM intrinsic), 806
+element, right thyroepiglottic (FEM intrinsic), 824
+element, right thyroepiglottic (FEM intrinsic), 826
+element, right thyroepiglottic (FEM intrinsic), 1128
+element, right thyroepiglottic (FEM intrinsic), 1150
+element, right thyroepiglottic (FEM intrinsic), 1152
+element, right thyroepiglottic (FEM intrinsic), 828
+element, right thyroepiglottic (FEM intrinsic), 830
+element, right thyroepiglottic (FEM intrinsic), 842
+element, right thyroepiglottic (FEM intrinsic), 844
+element, right thyroepiglottic (FEM intrinsic), 1170
+element, right thyroepiglottic (FEM intrinsic), 1172
+element, right thyroepiglottic (FEM intrinsic), 846
+element, right thyroepiglottic (FEM intrinsic), 1174
+element, right thyroepiglottic (FEM intrinsic), 1498
+element, right thyroepiglottic (FEM intrinsic), 536
+element, right thyroepiglottic (FEM intrinsic), 538
+element, right thyroepiglottic (FEM intrinsic), 552
+element, right thyroepiglottic (FEM intrinsic), 554
+element, right thyroepiglottic (FEM intrinsic), 570
+element, right thyroepiglottic (FEM intrinsic), 572
+element, right thyroepiglottic (FEM intrinsic), 858
+element, right thyroepiglottic (FEM intrinsic), 860
+element, right thyroepiglottic (FEM intrinsic), 568
+element, right thyroepiglottic (FEM intrinsic), 586
+element, right thyroepiglottic (FEM intrinsic), 588
+element, right thyroepiglottic (FEM intrinsic), 856
+element, right thyroepiglottic (FEM intrinsic), 870
+element, right thyroepiglottic (FEM intrinsic), 872
+element, right thyroepiglottic (FEM intrinsic), 590
+element, right thyroepiglottic (FEM intrinsic), 874
+element, right thyroepiglottic (FEM intrinsic), 1186
+element, right thyroepiglottic (FEM intrinsic), 1188
+element, right thyroepiglottic (FEM intrinsic), 862
+element, right thyroepiglottic (FEM intrinsic), 1190
+element, right thyroepiglottic (FEM intrinsic), 1200
+element, right thyroepiglottic (FEM intrinsic), 1202
+fiber_marker, right thyroepiglottic (FEM intrinsic), 1392, 1434, 0.0016863822993935518, 0.004988281055987234, -0.02056846675955073, 0.004045428164016122, 0.008536259528988819, -0.01764193794294901
+fiber_marker, right thyroepiglottic (FEM intrinsic), 1434, 1110, 0.004045428164016122, 0.008536259528988819, -0.01764193794294901, 0.006044906768879412, 0.013069703116900266, -0.015053858717502287
+fiber_marker, right thyroepiglottic (FEM intrinsic), 1110, 1152, 0.006044906768879412, 0.013069703116900266, -0.015053858717502287, 0.008044061975620761, 0.01757868927315724, -0.012504048210559797
+fiber_marker, right thyroepiglottic (FEM intrinsic), 1152, 858, 0.008044061975620761, 0.01757868927315724, -0.012504048210559797, 0.01004804245504745, 0.02247663045747825, -0.01015897640517663
+element, right ventricularis (posterolateral; FEM intrinsic), 476
+element, right ventricularis (posterolateral; FEM intrinsic), 478
+element, right ventricularis (posterolateral; FEM intrinsic), 490
+element, right ventricularis (posterolateral; FEM intrinsic), 492
+element, right ventricularis (posterolateral; FEM intrinsic), 750
+element, right ventricularis (posterolateral; FEM intrinsic), 752
+element, right ventricularis (posterolateral; FEM intrinsic), 766
+element, right ventricularis (posterolateral; FEM intrinsic), 768
+element, right ventricularis (posterolateral; FEM intrinsic), 262
+element, right ventricularis (posterolateral; FEM intrinsic), 264
+element, right ventricularis (posterolateral; FEM intrinsic), 272
+element, right ventricularis (posterolateral; FEM intrinsic), 274
+element, right ventricularis (posterolateral; FEM intrinsic), 494
+element, right ventricularis (posterolateral; FEM intrinsic), 504
+element, right ventricularis (posterolateral; FEM intrinsic), 506
+element, right ventricularis (posterolateral; FEM intrinsic), 276
+element, right ventricularis (posterolateral; FEM intrinsic), 286
+element, right ventricularis (posterolateral; FEM intrinsic), 288
+element, right ventricularis (posterolateral; FEM intrinsic), 508
+element, right ventricularis (posterolateral; FEM intrinsic), 518
+element, right ventricularis (posterolateral; FEM intrinsic), 520
+element, right ventricularis (posterolateral; FEM intrinsic), 278
+element, right ventricularis (posterolateral; FEM intrinsic), 290
+element, right ventricularis (posterolateral; FEM intrinsic), 510
+element, right ventricularis (posterolateral; FEM intrinsic), 522
+element, right ventricularis (posterolateral; FEM intrinsic), 300
+element, right ventricularis (posterolateral; FEM intrinsic), 302
+element, right ventricularis (posterolateral; FEM intrinsic), 534
+element, right ventricularis (posterolateral; FEM intrinsic), 536
+element, right ventricularis (posterolateral; FEM intrinsic), 292
+element, right ventricularis (posterolateral; FEM intrinsic), 304
+element, right ventricularis (posterolateral; FEM intrinsic), 524
+element, right ventricularis (posterolateral; FEM intrinsic), 538
+fiber_marker, right ventricularis (posterolateral; FEM intrinsic), 1402, 750, 0.005570000065046761, 0.007561875499042904, 0.0011541131501584625, 0.00919054842213871, 0.007935216115976392, 2.7264688113707414E-4
+fiber_marker, right ventricularis (posterolateral; FEM intrinsic), 750, 492, 0.00919054842213871, 0.007935216115976392, 2.7264688113707414E-4, 0.011760928428587579, 0.009767270811089421, -0.0021643708774103853
+fiber_marker, right ventricularis (posterolateral; FEM intrinsic), 492, 506, 0.011760928428587579, 0.009767270811089421, -0.0021643708774103853, 0.012662090786374456, 0.01184957371418349, -0.004516091869265245
+fiber_marker, right ventricularis (posterolateral; FEM intrinsic), 506, 276, 0.012662090786374456, 0.01184957371418349, -0.004516091869265245, 0.01358927298374887, 0.013935996602097796, -0.0068873095851880095
+fiber_marker, right ventricularis (posterolateral; FEM intrinsic), 276, 536, 0.01358927298374887, 0.013935996602097796, -0.0068873095851880095, 0.013032108631577938, 0.016283949376556903, -0.009441014470090681
