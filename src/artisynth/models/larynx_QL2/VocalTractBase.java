@@ -3,7 +3,6 @@ package artisynth.models.larynx_QL2;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyListener;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.event.MouseInputListener;
@@ -20,17 +19,14 @@ import artisynth.core.gui.selectionManager.SelectionListener;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.MuscleExciter;
 import artisynth.core.modelbase.ComponentChangeListener;
-import artisynth.core.modelbase.Controller;
 import artisynth.core.workspace.RootModel;
 import artisynth.core.modelbase.StepAdjustment;
 import artisynth.core.util.ArtisynthPath;
-import artisynth.models.larynx_QL2.components.Names.Files;
 import artisynth.models.larynx_QL2.components.Names.VocalTractType;
 import artisynth.models.larynx_QL2.tools.ControlTools;
 import artisynth.models.larynx_QL2.tools.RenderTools;
-import artisynth.models.larynx_QL2.tools.ViewerTools;
+//import artisynth.models.larynx_QL2.tools.ViewerTools;
 import artisynth.models.larynx_QL2.tools.AuxTools.Timer;
-import artisynth.models.larynx_QL2.tools.RenderTools.TextFeeder2;
 import artisynth.models.larynx_QL2.components.SoftBody;
 import artisynth.models.larynx_QL2.components.Structures;
 import artisynth.models.larynx_QL2.DriverListener;
@@ -267,9 +263,11 @@ public abstract class VocalTractBase extends RootModel {
 				setTimelineVisible(false);
 			}
 			
+			/*
 			if (showOnSecondaryScreenFlag) {
 				ViewerTools.showOnScreen(1, driver.getFrame());
 			}
+			*/
 			
 			for (DriverListener dl : driverListeners) {
 				dl.driverAttach(driver);
