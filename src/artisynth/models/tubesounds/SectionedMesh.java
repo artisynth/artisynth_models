@@ -12,6 +12,7 @@ import java.util.Vector;
 import maspack.geometry.PolygonalMesh;
 import maspack.geometry.io.WavefrontReader;
 import maspack.matrix.AffineTransform3dBase;
+import maspack.matrix.VectorTransformer3d;
 import maspack.matrix.Plane;
 import maspack.util.*;
 import maspack.matrix.Vector3d;
@@ -183,6 +184,32 @@ public class SectionedMesh extends PolygonalMesh
         super.inverseTransform(X);
         for (int i=0; i<sections.length; i++) {
             sections[i].getPlane().inverseTransform (X);
+        }
+    }
+
+    /**
+     * Applies a transformation to the vertices
+     * of this mesh. The topology of the mesh remains unchanged.
+     *
+     * @param T transformation
+     */
+    public void transform (VectorTransformer3d T) {
+        super.transform(T);
+        for (int i=0; i<sections.length; i++) {
+            sections[i].getPlane().transform (T);
+        }
+    }
+
+    /**
+     * Applies an inverse transformation to the vertices of this
+     * mesh. The topology of the mesh remains unchanged.
+     *
+     * @param T transformation
+     */
+    public void inverseTransform (VectorTransformer3d T) {
+        super.inverseTransform(T);
+        for (int i=0; i<sections.length; i++) {
+            sections[i].getPlane().inverseTransform (T);
         }
     }
 
