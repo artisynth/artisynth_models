@@ -157,8 +157,7 @@
  *       endFor
  *       vectors.add(sampledVector)
  *    endFor
- *    createSimulation * <code>&nbsp;&nbsp;&nbsp;&nbsp;-script &lt;driver_script_filename&gt; &lt;script_args_destined_for_manager&gt;</code><br>
-Task(vectors)
+ *    createSimulationTask(vectors)
  * endFor
  * </pre>
  * 
@@ -431,7 +430,7 @@ Task(vectors)
  * </ul>
  * <h2>2.6. Property Specifications: Decorators</h2>
  * <ul>
- * <li>Sometimes, we may want to specify as property specification as
+ * <li>Sometimes, we may want to specify a property specification as
  * probabilistic, but then pre-sample from its distribution vector a certain
  * number of times, say {@code k}, to get {@code k} fixed values from those
  * distribution. Then, we may want to treat these {@code k} values as though
@@ -457,24 +456,43 @@ Task(vectors)
  * have value-specific probabilities. Here, the sum of pi, i = 1..N should equal
  * 1, and all should be greater than 0. The first form is just shorthand for
  * this form where pi = 1/N for all i. Note that the number of values in the
- * value set <b>must</b> match the number of arguments to the @PROB
+ * value set <b>must</b> match the number of arguments to the {@code @PROB}
  * decorator.</li>
  * <li>{@code @COMB(k) <probabilistic_property_specification>} to sample the
  * distribution vector of the property specification {@code k} times.</li>
  * </ol>
  * </li>
+ * <li>
+ * Sometimes it may be useful to have a property specification that exists
+ * solely for triggering control statements (see Section 2.7). Since property
+ * specifications that don't correspond to a real {@code Property} in the
+ * {@code RootModel} subclass used in the simulation results in BatchSim
+ * throwing a runtime error, the only way to use such a phony specification
+ * would be to add a new {@code Property} to the {@code RootModel} subclass,
+ * which is not very elegant. Instead, a third kind of decorator exists, the
+ * {@code @PHONY} decorator, which simply flags the property specification as
+ * phony. The manager never passes any phony property specifications to the
+ * workers, which resolves the problem. 
+ * </li>
+ * <li>
+ * At the present time, it is not possible to add multiple {@code @PROB} or
+ * {@code @COMB} decorators to a property specification. However, any property
+ * specification (whether decorated or not) can be <b>prepended</b> by at most
+ * one {@code @PHONY} decorator.
+ * </li>
  * </ul>
  * <h2>2.7. Control Statements</h2>
- * Property Specifications can be grouped by (currently) 2 control structures.
+ * Property Specifications can be grouped by (currently) 3 control structures.
  * This makes a sort of mini programming language, which is called the Property
- * Specification Language, or PSL. The 2 statements are skip statements and
- * redefinition statements. These statements are useful for removing certain
- * combinations of values that may be 'illegal' and would otherwise be discarded
- * as invalid simulations in post-processing. The power of these statements comes
- * from the fact that they save valuable computation time by not running simulations
- * that will end up being discarded anyways. It is also helpful, because discarding
- * specific pieces of data later on may be non-trivial, and may require manual
- * intervention (although this depends on how the output data is recorded).
+ * Specification Language, or PSL. The 3 structures are <u>skip statements</u>,
+ * <u>redefinition statements</u>, and <u>Jython code blocks</u>. These structures
+ * are useful for removing certain combinations of values that may be 'illegal' and
+ * would otherwise be discarded as invalid simulations in post-processing. The power
+ * of using these structures comes from the fact that they save valuable computation
+ * time by not running simulations that will end up being discarded anyways. It is
+ * also helpful, because discarding specific pieces of data later on may be
+ * non-trivial, and may require manual intervention (although this depends on how the
+ * output data is recorded).
  * <ul>
  * <li><u>Skip statements</u>. A skip statement is a list of <b>combinatorial</b>
  * property specifications, each of which has to be defined at some time earlier
@@ -525,8 +543,8 @@ Task(vectors)
  * the when block and ends at a property specification in the preceding redef block. The
  * redef statement, then, is valid if, and only if, the property specification graph that
  * results from the introduction of these new edges is still a DAG (i.e. has no cycles).
- * This is done to prevent cyclical redefinitions, which are not only hard to implement,
- * but usual cause infinite loops unless extreme care is taken to avoid them. Redef
+ * This is done to prevent cyclical redefinitions, which are usually hard to get right,
+ * and often cause infinite loops unless extreme care is taken to avoid them. Redef
  * statements can be useful in the following way (for example):<br>
  * <code>&nbsp;&nbsp;&nbsp;"prop1" = {%LOW% %HIGH%}</code><br>
  * <code>&nbsp;&nbsp;&nbsp;"prop2" = {} # I.e. prop2 is set to null.</code><br>
@@ -551,17 +569,58 @@ Task(vectors)
  * in terms of the other. However, the logic may be much more complicated to express with
  * one of the statements compared to the other, so both are available, for convenience.
  * </li>
+ * <li><u>Jython code blocks</u>. Jython code blocks are different from skip and redef
+ * statements in that they cannot be stand-alone statements, and must instead occur within
+ * a skip statement or the when block of a redef statement. They act as an additional way
+ * in which skip or when matches can be detected. This can be useful, for example, to
+ * match conditional on the value of a probabilistic property specification. In fact,
+ * these code blocks can entirely replace the combinatorial matching described above. The
+ * advantage of the combinatorial matching, however, is in terms of a convenient syntax,
+ * <b>and noticeably faster computation time</b> on the part of the manager (the workers
+ * are unaffected). The syntax of a Jython code block is the keyword "jython" followed by
+ * a list of arbitrary Jython code line, each of which must be <b>prepended by a `$'</b>,
+ * followed by the keyword "end". Within the Jython code, 2 special functions are exposed.
+ * The {@code get()} function takes a string representing a property path, and returns the
+ * current value of the property specification with that property path (as a string), or
+ * {@code None} if the value is not set. The {@code return_value()} function takes a
+ * boolean and returns nothing. It is a callback that returns the value of the code block
+ * to the manager. That is, if the code block should trigger a match (either in a skip
+ * statement or a when block), then {@code return_value(True)} should be called. Otherwise,
+ * {@code return_value(False)} should be called. Calling {@code return_value()} multiple
+ * times within a single Jython code block is not permitted. Note that if a skip statement
+ * or when block contains both Jython code blocks and combinatorial property specifications,
+ * then all of them must match for a global match to be established. For example:<br>
+ * <code>&nbsp;&nbsp;&nbsp;"prop1" = {%0% %1% %2%}</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;"prop2" = {%3% %4% %5%}</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;skip</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jython</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$prop1_val = get("prop1")</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$return_value(prop1_val in ["1", "2"])</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"prop2" = {%3% %4%}</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;end</code><br>
+ * is identical to the example of the skip statement shown above, <b>except that it will be
+ * computationally slower</b>. In addition, one-liners can be specified by appending an
+ * additional `$' to the end of the Jython code. For example, the following is identical to
+ * the previous example:<br>
+ * <code>&nbsp;&nbsp;&nbsp;"prop1" = {%0% %1% %2%}</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;"prop2" = {%3% %4% %5%}</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;skip</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jython $return_value(get("prop1") in ["1", "2"])$ end</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"prop2" = {%3% %4%}</code><br>
+ * <code>&nbsp;&nbsp;&nbsp;end</code><br>
+ * </li>
  * </ul>
- * Note that very little checking is done to ensure valid use of skip and redefinition
- * statements. This is because they can interact is complex and very subtle ways that
- * are hard to very ahead of time. In particular, no checks are made for multiple
- * redefs that are triggered at the same time, or when skip and redefs or skips and
- * other skips are incompatible. In particular, multiple redefs can "cascade", where
- * one redef is triggered, which redefines some other property, which later (due to
- * this definition) triggers another redef. Although this is valid, and even encouraged
- * in many cases, no checks are made to ensure nothing is done incorrectly; instead,
- * task creation proceeds assuming everything will work out, and only if an error is
- * detected during creation will an meaningful error message be given.<br>
+ * Note that very little checking is done to ensure valid use of these control structures,
+ * because they can interact in complex and very subtle ways that are hard to verify ahead
+ * of time. In particular, no checks are made for multiple redefs that are triggered at
+ * the same time, or when skip and redefs or skips and other skips are incompatible. In
+ * particular, multiple redefs can "cascade", where one redef is triggered, which
+ * redefines some other property, which later (due to this definition) triggers another
+ * redef. Although this is valid, and even encouraged in many cases, no checks are made to
+ * ensure nothing is done incorrectly; instead, task creation proceeds assuming everything
+ * will work out, and only if an error is detected during task creation will a meaningful
+ * error message be given.<br>
  * <br>
  * <h1>3. USING THE BATCH SIMULATION FRAMEWORK</h1>
  * <h2>3.1. Prerequisites for using BatchSim</h2>

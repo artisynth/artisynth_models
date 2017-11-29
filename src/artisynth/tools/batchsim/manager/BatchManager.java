@@ -34,6 +34,8 @@ import artisynth.core.driver.Main;
 import artisynth.core.gui.jythonconsole.ArtisynthJythonConsole;
 import artisynth.core.modelbase.ModelComponent;
 import artisynth.core.workspace.RootModel;
+import artisynth.tools.batchsim.manager.PropertySpecification.PhonyPropValue;
+
 import static artisynth.tools.batchsim.manager.FileParser.*;
 import static artisynth.tools.batchsim.manager.PropertySpecification.SpecificationType.*;
 import maspack.properties.Property;
@@ -43,8 +45,8 @@ import maspack.util.ReaderTokenizer;
 
 /**
  * A {@code BatchManager} takes an input file containing
- * {@link PropertySpecification}s (see {@link artisynth.tools.batchsim
- * batchsim} for details), and creates a `task' for each possible combination of
+ * {@link PropertySpecification}s (see {@link artisynth.tools.batchsim batchsim}
+ * for details), and creates a `task' for each possible combination of
  * property-value pairs found in the input file (for
  * {@link SpecificationType#COMBINATORIAL combinatorial specifications}), or by
  * sampling the given probability distribution for each {@code Property} (for
@@ -267,7 +269,7 @@ public class BatchManager {
          public void run () {
             try {
                if (inputFileContainsCombinatorialSpecs) {
-                  combinatorialRunHelper (0, new LinkedList<String[]> ());
+                  combinatorialRunHelper (0, new LinkedList<PhonyPropValue> ());
                }
                else {
                   probabilisticRunHelper ();
@@ -297,7 +299,7 @@ public class BatchManager {
           * @throws InterruptedException
           * if the queue is interrupted while waiting to put()
           */
-         private void combinatorialRunHelper (int i, List<String[]> task)
+         private void combinatorialRunHelper (int i, List<PhonyPropValue> task)
             throws InterruptedException {
             PropertySpecification propSpec = myPropertySpecifications.get (i);
             boolean redefed = propSpec.redefIfNecessary (task);
@@ -307,12 +309,15 @@ public class BatchManager {
                   boolean skip = false;
                   String propPath = propSpec.getPropertyPath ();
                   for (CombinationChecker checker : mySkipStatementCheckers) {
-                     skip |= checker.pushAndCheck (propPath, (String)value);
+                     skip |=
+                        checker.pushAndCheck (propPath, (String)value, task);
                   }
                   if (!skip) {
-                     task.add (new String[] { propPath, (String)value });
+                     task.add (
+                        new PhonyPropValue (
+                           propSpec.isPhony (), propPath, (String)value));
                      if (i == myPropertySpecifications.size () - 1) {
-                        myTaskQueue.put (new LinkedList<> (task));
+                        myTaskQueue.put (removePhonies (task));
                         myTotalNumTasks.getAndIncrement ();
                      }
                      else {
@@ -328,10 +333,12 @@ public class BatchManager {
             else { // Assume PROBABILISTIC
                // Create a single (possibly vector) value out of all sample IDs.
                task.add (
-                  new String[] { propSpec.getPropertyPath (), Utils
-                     .createDistributionVectorAsString (mySampler, propSpec) });
+                  new PhonyPropValue (
+                     propSpec.isPhony (), propSpec.getPropertyPath (),
+                     Utils.createDistributionVectorAsString (
+                        mySampler, propSpec)));
                if (i == myPropertySpecifications.size () - 1) {
-                  myTaskQueue.put (new LinkedList<> (task));
+                  myTaskQueue.put (removePhonies (task));
                   myTotalNumTasks.getAndIncrement ();
                }
                else {
@@ -345,6 +352,25 @@ public class BatchManager {
          }
 
          /**
+          * Returns a "scrubbed" task that has all the phony
+          * {@link PhonyPropValue}s in the given task removed (and converted to
+          * an array of String).
+          * 
+          * @param task
+          * the task containing phonies
+          * @return the scrubbed task
+          */
+         private List<String[]> removePhonies (List<PhonyPropValue> task) {
+            List<String[]> scrubbed = new LinkedList<> ();
+            for (PhonyPropValue ppv : task) {
+               if (!ppv.phony) {
+                  scrubbed.add (new String[] { ppv.propPath, ppv.value });
+               }
+            }
+            return scrubbed;
+         }
+
+         /**
           * Creates {@link BatchManager#getTotalNumberOfTasks()} Monte Carlo
           * simulation tasks, and places them in the queue.
           * 
@@ -355,10 +381,12 @@ public class BatchManager {
             for (int i = 0; i < myNumMonteCarloHolder.value; i++) {
                LinkedList<String[]> task = new LinkedList<> ();
                for (PropertySpecification propSpec : myPropertySpecifications) {
-                  task.add (
-                     new String[] { propSpec.getPropertyPath (),
-                                    Utils.createDistributionVectorAsString (
-                                       mySampler, propSpec) });
+                  if (!propSpec.isPhony ()) {
+                     task.add (
+                        new String[] { propSpec.getPropertyPath (),
+                                       Utils.createDistributionVectorAsString (
+                                          mySampler, propSpec) });
+                  }
                }
                myTaskQueue.put (task);
                myTotalNumTasks.getAndIncrement ();
@@ -555,6 +583,7 @@ public class BatchManager {
          case '@':
          case '(':
          case ')':
+         case '$':
             toRet = true;
             break;
          default:

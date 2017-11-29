@@ -2,6 +2,7 @@ package artisynth.tools.batchsim.manager;
 
 import java.util.HashMap;
 
+import artisynth.tools.batchsim.manager.PropertySpecification.PhonyPropValue;
 import artisynth.tools.batchsim.manager.PropertySpecification.Redef;
 import artisynth.tools.batchsim.manager.PropertySpecification.SpecificationType;
 
@@ -17,11 +18,18 @@ import maspack.util.IndentingPrintWriter;
  * <p>
  * {@code CombinationCheckers} are used to implement "skip" statements and
  * "when" blocks of {@link Redef} statements.
+ * <p>
+ * If the block also contains nested Jython code blocks, a
+ * {@code CombinationChecker} will execute it as an additional check. For
+ * {@link #check()} to return {@code true}, there must be both a matching
+ * combination of {@code PropertySpecification}s <b>and</b> all Jython code
+ * blocks must evaluate to true.
  *
  * @author Francois Roewer-Despres
  */
 public class CombinationChecker implements Printable {
 
+   protected List<JythonCodeBlock> myJythonCodeBlocks;
    protected List<PropertySpecification> myOriginalPropSpecs;
    protected HashMap<String,List<Object>> myPropSpecs = new HashMap<> ();
    protected LinkedList<PropPathValueSetPair> myCurPropSpecs =
@@ -50,10 +58,14 @@ public class CombinationChecker implements Printable {
     * Creates a new {@link CombinationChecker} with the given list of
     * {@link SpecificationType#COMBINATORIAL} {@link PropertySpecification}s.
     *
+    * @param jythonCodeBlocks
+    * the list of Jython code blocks
     * @param propSpecs
     * the list of {@code PropertySpecification}s
     */
-   public CombinationChecker (List<PropertySpecification> propSpecs) {
+   public CombinationChecker (List<JythonCodeBlock> jythonCodeBlocks,
+   List<PropertySpecification> propSpecs) {
+      myJythonCodeBlocks = jythonCodeBlocks;
       myOriginalPropSpecs = propSpecs;
       for (PropertySpecification propSpec : myOriginalPropSpecs) {
          myPropSpecs
@@ -100,11 +112,14 @@ public class CombinationChecker implements Printable {
     * the property path
     * @param value
     * the value
+    * @param task
+    * the current partial task
     * @return whether a combination is matching
     */
-   public boolean pushAndCheck (String propPath, String value) {
+   public boolean pushAndCheck (
+      String propPath, String value, List<PhonyPropValue> task) {
       push (propPath, value);
-      return check ();
+      return check (task);
    }
 
    /**
@@ -128,10 +143,16 @@ public class CombinationChecker implements Printable {
    /**
     * Checks if this {@link CombinationChecker} has a matching combination.
     *
+    * @param task
+    * the current partial task
     * @return whether a combination is matching
     */
-   public boolean check () {
-      return myPropSpecs.isEmpty ();
+   public boolean check (List<PhonyPropValue> task) {
+      boolean match = myJythonCodeBlocks.isEmpty ();
+      for (JythonCodeBlock block : myJythonCodeBlocks) {
+         match |= block.check (task);
+      }
+      return match && myPropSpecs.isEmpty ();
    }
 
    /**
@@ -145,6 +166,9 @@ public class CombinationChecker implements Printable {
 
    @Override
    public void print (IndentingPrintWriter writer) {
+      for (JythonCodeBlock block : myJythonCodeBlocks) {
+         block.print (writer);
+      }
       for (PropertySpecification propSpec : myOriginalPropSpecs) {
          propSpec.print (writer, false);
       }

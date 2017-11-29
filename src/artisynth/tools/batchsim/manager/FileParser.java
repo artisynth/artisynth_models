@@ -112,16 +112,36 @@ public class FileParser {
       rtok = new ReaderTokenizer (reader);
       rtok.commentChar (mySettings.comment);
       rtok.quoteChar (mySettings.delim);
+      rtok.quoteChar ('$'); // For Jython code blocks.
    }
 
    public ParseResults parse () throws IOException {
       while (rtok.nextToken () != ReaderTokenizer.TT_EOF) {
+         boolean phony = false;
          SpecificationType decorator = null;
          ArrayList<Number> decArgs = null;
          if (rtok.ttype == '@') {
-            decArgs = new ArrayList<> ();
-            decorator = readDecorator (decArgs);
-            myPropSpecs.addAll (readPropSpec (decorator, decArgs));
+            String phonyName = rtok.scanWord ();
+            if ("PHONY".equals (phonyName)) {
+               phony = true;
+               rtok.nextToken ();
+               if (rtok.ttype == '@') {
+                  decArgs = new ArrayList<> ();
+                  decorator = readDecorator (decArgs);
+               }
+               else {
+                  rtok.pushBack ();
+               }
+            }
+            else if ("COMB".equals (phonyName) || "PROB".equals (phonyName)) {
+               rtok.pushBack ();
+            }
+            else {
+               throw new IOException (
+                  "unrecognized decorator on line " + rtok.lineno () + ": `"
+                  + phonyName + "'");
+            }
+            myPropSpecs.addAll (readPropSpec (phony, decorator, decArgs));
          }
          else if (rtok.ttype == ReaderTokenizer.TT_WORD) {
             String token = rtok.sval;
@@ -143,7 +163,7 @@ public class FileParser {
          }
          else {
             rtok.pushBack ();
-            myPropSpecs.addAll (readPropSpec (decorator, decArgs));
+            myPropSpecs.addAll (readPropSpec (phony, decorator, decArgs));
          }
       }
 
@@ -175,6 +195,11 @@ public class FileParser {
       }
       else if ("PROB".equals (decoratorName)) {
          decorator = PROBABILISTIC;
+      }
+      else if ("PHONY".equals (decoratorName)) {
+         throw new IOException (
+            "@PHONY decorator not allowed in this position on line "
+            + rtok.lineno ());
       }
       else {
          throw new IOException (
@@ -281,12 +306,17 @@ public class FileParser {
     */
    protected CombinationChecker readSkipOrWhen (String skipOrWhen)
       throws IOException {
+      List<JythonCodeBlock> codeBlocks = new LinkedList<> ();
       List<PropertySpecification> propSpecs = new LinkedList<> ();
       while (true) {
          rtok.nextToken ();
          if (rtok.ttype == ReaderTokenizer.TT_WORD) {
             if (rtok.sval.equals ("end")) {
                break;
+            }
+            else if (rtok.sval.equals ("jython")) {
+               codeBlocks.add (readJythonCodeBlock ());
+               continue;
             }
             else {
                throwAppropriateException ();
@@ -297,7 +327,7 @@ public class FileParser {
          List<PropertySpecification> tmp;
          switch (rtok.nextToken ()) {
             case '=':
-               tmp = readCombinatorialValueSet (propPath);
+               tmp = readCombinatorialValueSet (false, propPath);
                break;
             case '~':
                throw new IOException (
@@ -326,11 +356,35 @@ public class FileParser {
          }
          propSpecs.addAll (tmp);
       }
-      if (propSpecs.isEmpty ()) {
+      if (propSpecs.isEmpty () && codeBlocks.isEmpty ()) {
          throw new IOException (
             skipOrWhen + " on line " + rtok.lineno () + " cannot be empty");
       }
-      return new CombinationChecker (propSpecs);
+      return new CombinationChecker (codeBlocks, propSpecs);
+   }
+
+   /**
+    * Reads the next amount of input, interpreting it as a Jython code block
+    * (where the "jython" keyword token has already been consumed).
+    * 
+    * @return the read block
+    * @throws IOException
+    * if an I/O error occurs, or the file format is incorrect (causing a parse
+    * error)
+    */
+   protected JythonCodeBlock readJythonCodeBlock () throws IOException {
+      StringBuilder builder = new StringBuilder ();
+      rtok.nextToken ();
+      while (!rtok.tokenIsWord ("end")) {
+         rtok.pushBack ();
+         builder.append (rtok.scanQuotedString ('$')).append ('\n');
+         rtok.nextToken ();
+      }
+      if (builder.length () == 0) {
+         throw new IOException (
+            "Jython code block on line " + rtok.lineno () + " cannot be empty");
+      }
+      return new JythonCodeBlock (builder.toString (), mySettings.console);
    }
 
    /**
@@ -354,16 +408,35 @@ public class FileParser {
                throwAppropriateException ();
             }
          }
+         boolean phony = false;
          SpecificationType decorator = null;
          ArrayList<Number> decArgs = null;
          if (rtok.ttype == '@') {
-            decArgs = new ArrayList<> ();
-            decorator = readDecorator (decArgs);
+            String phonyName = rtok.scanWord ();
+            if ("PHONY".equals (phonyName)) {
+               phony = true;
+               rtok.nextToken ();
+               if (rtok.ttype == '@') {
+                  decArgs = new ArrayList<> ();
+                  decorator = readDecorator (decArgs);
+               }
+               else {
+                  rtok.pushBack ();
+               }
+            }
+            else if ("COMB".equals (phonyName) || "PROB".equals (phonyName)) {
+               rtok.pushBack ();
+            }
+            else {
+               throw new IOException (
+                  "unrecognized decorator on line " + rtok.lineno () + ": `"
+                  + phonyName + "'");
+            }
          }
          else {
             rtok.pushBack ();
          }
-         propSpecs.addAll (readPropSpec (decorator, decArgs));
+         propSpecs.addAll (readPropSpec (phony, decorator, decArgs));
       }
       if (propSpecs.isEmpty ()) {
          throw new IOException (
@@ -408,6 +481,8 @@ public class FileParser {
     * double-quoted string (the property path), then either `=' or `~', then a
     * combinatorial value set or a probabilistic distribution vector.
     *
+    * @param phony
+    * whether to mark this {@code PropertySpecification} as phony
     * @param decorator
     * the decorator for this {@code PropertySpecification}, or {@code null}
     * @param decArgs
@@ -419,17 +494,17 @@ public class FileParser {
     * error)
     */
    protected List<PropertySpecification> readPropSpec (
-      SpecificationType decorator, ArrayList<Number> decArgs)
+      boolean phony, SpecificationType decorator, ArrayList<Number> decArgs)
       throws IOException {
       List<PropertySpecification> propSpecs;
       String propPath = rtok.scanQuotedString ('"');
       switch (rtok.nextToken ()) {
          case '=':
-            propSpecs = readCombinatorialValueSet (propPath);
+            propSpecs = readCombinatorialValueSet (phony, propPath);
             break;
          case '~':
             createSampler ();
-            propSpecs = readProbabilisticDistributionVector (propPath);
+            propSpecs = readProbabilisticDistributionVector (phony, propPath);
             break;
          default:
             throw new IOException (
@@ -455,6 +530,8 @@ public class FileParser {
     * Specifically, expects the next token to be `{', and reads until the first
     * occurrence of `}' thereafter, or until I/O or parse error occurs.
     * 
+    * @param phony
+    * whether to mark this {@code PropertySpecification} as phony
     * @param propPath
     * the property path of the property associated with this value set
     * @return a list of combinatorial property specifications, each expanded
@@ -464,9 +541,9 @@ public class FileParser {
     * error)
     */
    protected List<PropertySpecification> readCombinatorialValueSet (
-      String propPath) throws IOException {
+      boolean phony, String propPath) throws IOException {
       PropertySpecification propSpec =
-         new PropertySpecification (propPath, COMBINATORIAL, -1);
+         new PropertySpecification (phony, propPath, COMBINATORIAL, -1);
       rtok.scanCharacter ('{');
       while (rtok.nextToken () != '}') {
          if (rtok.tokenIsQuotedString (mySettings.delim)) {
@@ -488,6 +565,8 @@ public class FileParser {
     * Specifically, expects the next token to be `[', and reads until the first
     * occurrence of `]' thereafter, or until I/O or parse error occurs.
     * 
+    * @param phony
+    * whether to mark this {@code PropertySpecification} as phony
     * @param propPath
     * the property path of the property associated with this value set
     * @return a list of probabilistic property specifications, each expanded
@@ -498,9 +577,9 @@ public class FileParser {
     * error)
     */
    protected List<PropertySpecification> readProbabilisticDistributionVector (
-      String propPath) throws IOException {
+      boolean phony, String propPath) throws IOException {
       PropertySpecification propSpec =
-         new PropertySpecification (propPath, PROBABILISTIC, -1);
+         new PropertySpecification (phony, propPath, PROBABILISTIC, -1);
       rtok.scanCharacter ('[');
       while (rtok.nextToken () != ']') {
          if (rtok.ttype == ReaderTokenizer.TT_WORD) {
@@ -564,7 +643,8 @@ public class FileParser {
       }
       PropertySpecification decoratedPropSpec =
          new PropertySpecification (
-            propSpec.getPropertyPath (), decorator, propSpec.getIndex ());
+            propSpec.isPhony (), propSpec.getPropertyPath (), decorator,
+            propSpec.getIndex ());
       switch (decorator) {
          case COMBINATORIAL:
             for (int i = 0; i < decArgs.get (0).intValue (); i++) {

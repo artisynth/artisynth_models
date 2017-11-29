@@ -54,6 +54,25 @@ public class PropertySpecification implements Cloneable, Printable {
    }
 
    /**
+    * A {@code PhonyPropValue} represents a tuple consisting of just the
+    * phoniness, property path, and a specific value of a property
+    * specification.
+    *
+    * @author Francois Roewer-Despres
+    */
+   public static class PhonyPropValue {
+      public boolean phony;
+      public String propPath;
+      public String value;
+
+      public PhonyPropValue (boolean phony, String propPath, String value) {
+         this.phony = phony;
+         this.propPath = propPath;
+         this.value = value;
+      }
+   }
+
+   /**
     * A {@code DistributionPrinter} prints a given probability distribution.
     *
     * @author Francois Roewer-Despres
@@ -177,6 +196,7 @@ public class PropertySpecification implements Cloneable, Printable {
    protected static int indexCounter = 0;
 
    protected int myIndex;
+   protected boolean myPhony;
    protected String myPropertyPath;
    protected List<Object> myValueSetOrDistIdList;
    protected List<DistributionPrinter> myDistributionPrinters;
@@ -188,6 +208,8 @@ public class PropertySpecification implements Cloneable, Printable {
     * Creates a new property specification for the given property path, of the
     * given specification type, and with the given index.
     * 
+    * @param phony
+    * whether to mark this property specification as phony
     * @param propertyPath
     * the property path of this property specification
     * @param specificationType
@@ -195,9 +217,10 @@ public class PropertySpecification implements Cloneable, Printable {
     * @param index
     * the index of this property specification
     */
-   public PropertySpecification (String propertyPath,
+   public PropertySpecification (boolean phony, String propertyPath,
    SpecificationType specificationType, int index) {
       myIndex = index;
+      myPhony = phony;
       myPropertyPath = propertyPath;
       myValueSetOrDistIdList = new LinkedList<> ();
       myDistributionPrinters = new LinkedList<> ();
@@ -210,14 +233,16 @@ public class PropertySpecification implements Cloneable, Printable {
     * Creates a new property specification for the given property path, of the
     * given specification type, and with an automatic index.
     * 
+    * @param phony
+    * whether to mark this {@code PropertySpecification} as phony
     * @param propertyPath
     * the property path of this property specification
     * @param specificationType
     * the specification type of this property specification
     */
-   public PropertySpecification (String propertyPath,
+   public PropertySpecification (boolean phony, String propertyPath,
    SpecificationType specificationType) {
-      this (propertyPath, specificationType, indexCounter++);
+      this (phony, propertyPath, specificationType, indexCounter++);
    }
 
    /**
@@ -227,6 +252,15 @@ public class PropertySpecification implements Cloneable, Printable {
     */
    public int getIndex () {
       return myIndex;
+   }
+
+   /**
+    * Returns whether this property specification is phony.
+    * 
+    * @return whether this property specification is phony
+    */
+   public boolean isPhony () {
+      return myPhony;
    }
 
    /**
@@ -419,15 +453,15 @@ public class PropertySpecification implements Cloneable, Printable {
     * @throws RuntimeException
     * if multiple redefinitions match the given task
     */
-   public boolean redefIfNecessary (List<String[]> task)
+   public boolean redefIfNecessary (List<PhonyPropValue> task)
       throws RuntimeException {
       boolean found = false;
       for (Redef redef : myRedefs) {
          CombinationChecker checker = redef.checker;
-         for (String[] propValPair : task) {
-            checker.push (propValPair[0], propValPair[1]);
+         for (PhonyPropValue ppv : task) {
+            checker.push (ppv.propPath, ppv.value);
          }
-         if (checker.check ()) {
+         if (checker.check (task)) {
             if (!found) {
                found = true;
                myRedefStack.push (redef.propSpec);
@@ -462,6 +496,9 @@ public class PropertySpecification implements Cloneable, Printable {
       if (topLevel) {
          writer.println ("defined");
          writer.addIndentation (2);
+      }
+      if (myPhony) {
+         writer.println ("@PHONY");
       }
       writer.print ("\"" + myPropertyPath);
       if (getCollection ().get (0) != null) {
@@ -520,7 +557,8 @@ public class PropertySpecification implements Cloneable, Printable {
    @Override
    public PropertySpecification clone () {
       PropertySpecification other =
-         new PropertySpecification (myPropertyPath, mySpecificationType);
+         new PropertySpecification (
+            myPhony, myPropertyPath, mySpecificationType);
       int i = 0;
       for (Object valueOrDistId : myValueSetOrDistIdList) {
          DistributionPrinter printer = null;
