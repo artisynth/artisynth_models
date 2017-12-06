@@ -10,9 +10,11 @@ endif
 syn keyword pslTodo contained TODO FIXME XXX NOTE
 syn match pslComment "#.*$" contains=pslTodo
 
-syn keyword pslStatements redef when skip end
+syn match pslJythonDelim "\$"
+
+syn keyword pslStatements redef when skip jython return_value get end
 set iskeyword+=@-@
-syn keyword pslDecorators @COMB @PROB
+syn keyword pslDecorators @COMB @PROB @PHONY
 
 syn keyword pslDist Ansari Arcsine Beta BetaBinomial BetaPrime
 syn keyword pslDist Binomial Cauchy Chi ChiSquare Exponential F
@@ -34,12 +36,13 @@ syn match pslNumber "[-+]\?\(\d\+\.\|\d*\.\?\d\+\)\([eE][-+]\?\d\+\)\?"
 
 let b:current_syntax = "psl"
 
-hi def link pslTodo       Todo
-hi def link pslComment    Comment
-hi def link pslStatements Statement
-hi def link pslDecorators PreProc
-hi def link pslDist       Type
-hi def link tildeOrEqual  SpecialChar
-hi def link pslString     Identifier
-hi def link pslValue      Special
-hi def link pslNumber     Number
+hi def link pslTodo        Todo
+hi def link pslJythonDelim Todo
+hi def link pslComment     Comment
+hi def link pslStatements  Statement
+hi def link pslDecorators  PreProc
+hi def link pslDist        Type
+hi def link tildeOrEqual   SpecialChar
+hi def link pslString      Identifier
+hi def link pslValue       Special
+hi def link pslNumber      Number

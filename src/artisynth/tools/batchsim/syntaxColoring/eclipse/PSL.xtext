@@ -13,12 +13,29 @@ terminal COMMENT:
 Statement:
 	PropSpec
 	|
-	('redef' PropSpec+ 'when' CombPropSpec+ 'end')
+	('redef' PropSpec+ 'when' (CombPropSpec | JythonBlock)+ 'end')
 	|
-	('skip' CombPropSpec+ 'end')
+	('skip' (CombPropSpec | JythonBlock)+  'end')
+;
+
+JythonBlock:
+	'jython' JythonLine+ '$'? 'end'
+;
+
+JythonLine:
+	'$' ( Anything | 'return_value' | 'get')*
+;
+
+Anything:
+    (
+    	ID | INT | STRING | '!' |'"' | '#' | '%' | '&' | '\'' | '(' | ')' | '*'
+    	| '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@'
+    	| '[' | '\\' | ']' | '^' | '_' | '`' | '{' | '|' | '}' | '~'
+    )+
 ;
 
 PropSpec:
+	'@PHONY'? // Optional decorator.
 	( // Optional decorator.
 		('@COMB' '(' INT ')') // Combinatorial.
 		|
