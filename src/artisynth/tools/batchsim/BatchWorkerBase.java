@@ -776,7 +776,7 @@ public abstract class BatchWorkerBase implements Runnable {
     * paths OR values using the {@link #myPropValFileWriter}.
     *
     * @param propOrVal
-    * write the property paths if 0; write the property values if 1
+    * write the property paths if 0; write the property values otherwise
     */
    private void writePropOrVal (int propOrVal) {
       StringBuilder builder = new StringBuilder ();
