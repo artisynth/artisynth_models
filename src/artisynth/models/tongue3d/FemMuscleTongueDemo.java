@@ -83,7 +83,10 @@ public class FemMuscleTongueDemo extends HexTongueDemo {
    }
 
    public void setupRenderProps() {
-
+      FemMuscleTongueDemo.setMuscleProps (tongue);
+   }
+   
+   public static void setupRenderProps(FemMuscleModel tongue) {
       tongue.setElementWidgetSize(0);
       tongue.setDirectionRenderLen(0.5);
       // tongue.setSurfaceRendering (SurfaceRender.Strain);
@@ -97,8 +100,12 @@ public class FemMuscleTongueDemo extends HexTongueDemo {
    }
 
    public static FemMuscleModel createFemMuscleTongue(boolean linearMaterial) {
-
       FemMuscleModel tongue = new FemMuscleModel("tongue");
+      createFemMuscleTongue (tongue, linearMaterial);
+      return tongue;
+   }
+   
+   public static void createFemMuscleTongue(FemMuscleModel tongue, boolean linearMaterial) {
 
       readFromAnsysReader(tongue, "tongue");
       addStyNodes(tongue);
@@ -124,7 +131,6 @@ public class FemMuscleTongueDemo extends HexTongueDemo {
 
       setupRenderProps(tongue);
       setNodeNames(tongue);
-      return tongue;
 
    }
 
