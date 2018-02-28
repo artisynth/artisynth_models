@@ -102,7 +102,6 @@ public class GaussianPressureFunction extends RegistrationPressureFunctionBase {
    
    /**
     * Distance within which we are assumed to be snapped to the edge
-    * @return
     */
    public double getSnapDistance() {
       return snap;

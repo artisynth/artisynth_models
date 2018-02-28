@@ -1059,8 +1059,8 @@ public class FemTools {
 	/** Adds elements based on "pill shaped" proximity region defined by <i>nodeProximity</i> to muscle fibers.
 	 * <b>Note:</b> If the muscle bundle already has elements, these are removed prior to locating new elements.
 	 * 
-	 * @param fem
-	 * @param nodeProximity
+	 * @param fem fem model
+	 * @param nodeProximity proximity near fibers
 	 */
 	public static void addElementsToMuscles(FemMuscleModel fem, double nodeProximity) {
 		for (MuscleBundle mb : fem.getMuscleBundles()) {

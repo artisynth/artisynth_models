@@ -36,10 +36,6 @@ public class JawLongPharyngealDemo extends JawLarynxDemo{
    private static double tendonRatio = 0.0;
    private static double muscleDamping = 0.0;
    
-   /**
-    * @param args
-    * @throws IOException 
-    */
    public JawLongPharyngealDemo () throws IOException {
       // TODO Auto-generated constructor stub
       super();

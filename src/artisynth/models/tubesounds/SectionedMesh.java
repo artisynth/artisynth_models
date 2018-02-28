@@ -98,9 +98,6 @@ public class SectionedMesh extends PolygonalMesh
         //System.out.println ("sections.length="+ sections.length);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public boolean isWritable() {
         return true;
     }

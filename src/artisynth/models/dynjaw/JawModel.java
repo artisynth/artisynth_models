@@ -1716,7 +1716,7 @@ public class JawModel extends MechModel implements ScalableUnits,
     * Iterate through all rigidbodies associated with the MechModel and change
     * mesh render setting for faces to reflect show parameter
     * 
-    * @param facesVisible
+    * @param facesVisible visibility flag
     */
    public void showMeshFaces(boolean facesVisible) {
       myRenderFacesP = facesVisible;

@@ -62,8 +62,6 @@ public final class TubeData
 	   public boolean isVoiced;
 	   /**
 	    * constructs a default, voiced PhonemeSpec
-	    * @param a
-	    * @param b
 	    */
 	   public PhonemeSpec(int a, int b)
 	   {

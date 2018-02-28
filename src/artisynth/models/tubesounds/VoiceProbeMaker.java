@@ -400,7 +400,6 @@ public class VoiceProbeMaker
 
    /**
     * for commandline testing
-    * @param args
     */
    public static void main(String[] args) 
    {
@@ -462,8 +461,6 @@ public class VoiceProbeMaker
 
       /**
        * default constructor. expects values to be edited later.
-       * @param start
-       * @param duration
        */
       public VoiceSegment(long start, long duration)
       {

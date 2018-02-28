@@ -108,9 +108,9 @@ public class SoftBody extends AbstractBody {
 	 * A conventional Mooney-Rivlin material and numerical method properties are specified (see {@link artisynth.models.moisik.components.FemMethods#setMaterialToHumanFlesh setMaterialToHumanFlesh} and {@link artisynth.models.moisik.components.FemMethods#setUpDefaultFemNumerics setUpDefaultFemNumerics}).
 	 * The model is then added to the current MechModel <i>mech</i>. 
 	 * 
-	 * @param mech
-	 * @param vtModel
-	 * @param sb
+	 * @param mech main mech model
+	 * @param vtModel vocal tract model
+	 * @param sb soft body
 	 */
 	public static void addToModel(MechModel mech, VocalTractType vtModel, SoftBody sb) {
 		if (sb.isUsed()) {
@@ -216,9 +216,9 @@ public class SoftBody extends AbstractBody {
 			/** Sets the FEM to use a Mooney Rivlin material [as specified in Nasari 2010 and Buchaillard 2009]. The values used provided in MKS units, but can be optionally scaled.
 			 * Incompressibility is turned ON.
 			 * 
-			 * @param fem
-			 * @param scale
-			 * @param useHardCompressibilityFlag 
+			 * @param fem fem model
+			 * @param scale to amplify stiffness parameters
+			 * @param useHardCompressibilityFlag hard incompressibility flag
 			 */
 			public static void setMaterialToHumanFlesh(FemMuscleModel fem, double scale, boolean useHardCompressibilityFlag) {
 				if (scale <= 0.0) {
@@ -907,9 +907,8 @@ public class SoftBody extends AbstractBody {
 			
 			/** Scales muscle fiber max force for the provided list of muscle bundles. If a fiber in a given bundle is lacking a material, then it will be given a 
 			 * default constant axial muscle material.  
-			 * @param bundles
-			 * @param maxForce
-			 * @param scaleByFascicle
+			 * @param bundles muscles
+			 * @param maxForce maximum force
 			 */
 			public static void setVolumeDependentMaxForce(RenderableComponentList<MuscleBundle> bundles, double maxForce, boolean scaleByFascicle) {
 
@@ -1264,9 +1263,9 @@ public class SoftBody extends AbstractBody {
 
 			/** Reads in node and element data from a .MSH file (produced by GMSH). A node line contains the node number followed by its coordinates.
 			 * An element line contains the element number followed by its type, number of tags, the tags (used in GMSH), and finally the node number list
-			 * @param name
-			 * @param fileName
-			 * @return
+			 * @param name name of model
+			 * @param fileName file to read model from
+			 * @return created model
 			 */
 			public static FemMuscleModel readFemFromMSH(String name, String fileName) {
 				FemMuscleModel fem = new FemMuscleModel(name);
