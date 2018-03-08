@@ -135,6 +135,8 @@ public class FileParser {
             }
             else if ("COMB".equals (phonyName) || "PROB".equals (phonyName)) {
                rtok.pushBack ();
+               decArgs = new ArrayList<> ();
+               decorator = readDecorator (decArgs);
             }
             else {
                throw new IOException (
@@ -426,6 +428,8 @@ public class FileParser {
             }
             else if ("COMB".equals (phonyName) || "PROB".equals (phonyName)) {
                rtok.pushBack ();
+               decArgs = new ArrayList<> ();
+               decorator = readDecorator (decArgs);
             }
             else {
                throw new IOException (
