@@ -307,15 +307,17 @@ public class BatchManager {
                // Create a new task for each value in turn.
                for (Object value : propSpec.getCollection ()) {
                   boolean skip = false;
+                  String val = (String)value;
                   String propPath = propSpec.getPropertyPath ();
+                  task.add (
+                     new PhonyPropValue (propSpec.isPhony (), propPath, val));
                   for (CombinationChecker checker : mySkipStatementCheckers) {
-                     skip |=
-                        checker.pushAndCheck (propPath, (String)value, task);
+                     skip |= checker.pushAndCheck (propPath, val, task);
+                     if (skip) {
+                        break;
+                     }
                   }
                   if (!skip) {
-                     task.add (
-                        new PhonyPropValue (
-                           propSpec.isPhony (), propPath, (String)value));
                      if (i == myPropertySpecifications.size () - 1) {
                         myTaskQueue.put (removePhonies (task));
                         myTotalNumTasks.getAndIncrement ();
@@ -323,8 +325,8 @@ public class BatchManager {
                      else {
                         combinatorialRunHelper (i + 1, task);
                      }
-                     task.remove (i);
                   }
+                  task.remove (i);
                   for (CombinationChecker checker : mySkipStatementCheckers) {
                      checker.popIfNecessary (propPath);
                   }

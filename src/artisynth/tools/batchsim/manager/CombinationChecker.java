@@ -148,11 +148,12 @@ public class CombinationChecker implements Printable {
     * @return whether a combination is matching
     */
    public boolean check (List<PhonyPropValue> task) {
-      boolean match = myJythonCodeBlocks.isEmpty ();
       for (JythonCodeBlock block : myJythonCodeBlocks) {
-         match |= block.check (task);
+         if (!block.check (task)) { // If even one jython code block doesn't
+            return false; // match, then the entire combination doesn't match.
+         }
       }
-      return match && myPropSpecs.isEmpty ();
+      return myPropSpecs.isEmpty ();
    }
 
    /**
