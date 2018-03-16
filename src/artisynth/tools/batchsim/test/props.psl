@@ -47,4 +47,4 @@ end
 "resolution" = {%10% %20% %100%}
 redef "resolution" = {%4%} when "wrapMethod" = {%ANALYTIC%} end
 
-@PROB "wrappableType" = {%GEOMETRIC% %HUMERUS%}
+@PHONY @PROB "wrappableType" = {%GEOMETRIC% %HUMERUS%}
