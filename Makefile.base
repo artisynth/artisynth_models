@@ -99,7 +99,7 @@ klean:
 	$(FIND_CMD) -L . -name "*.class" -exec rm {} \;
 
 .PHONY: build
-build:
+build: $(ROOT_DIR)/classes
 	$(FIND_CMD) -L . -name "*.java" -print | xargs -s 27000 "$(JAVAC)" $(JAVACFLAGS)
 
 .PHONY: all
@@ -211,3 +211,5 @@ LIST_PACKAGE_DIRS::$(JAVA_SUBDIRS)
 check-syntax:
 	cd $(ROOT_DIR)/src; javac ${CHK_SOURCES}
 
+$(ROOT_DIR)/classes:
+	mkdir $(ROOT_DIR)/classes
