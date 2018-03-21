@@ -244,6 +244,20 @@ public class PropertySpecification implements Cloneable, Printable {
    SpecificationType specificationType) {
       this (phony, propertyPath, specificationType, indexCounter++);
    }
+   
+   /**
+    * Returns whether this property specification is phony.
+    * 
+    * @return whether this property specification is phony
+    */
+   public boolean isPhony () {
+      if (myRedefStack.isEmpty ()) {
+         return myPhony;
+      }
+      else {
+         return myRedefStack.peek ().isPhony ();
+      }
+   }
 
    /**
     * Returns the index of this property specification.
@@ -252,15 +266,6 @@ public class PropertySpecification implements Cloneable, Printable {
     */
    public int getIndex () {
       return myIndex;
-   }
-
-   /**
-    * Returns whether this property specification is phony.
-    * 
-    * @return whether this property specification is phony
-    */
-   public boolean isPhony () {
-      return myPhony;
    }
 
    /**
@@ -315,12 +320,7 @@ public class PropertySpecification implements Cloneable, Printable {
     * the value to add
     */
    public void add (String value) {
-      if (myRedefStack.isEmpty ()) {
-         doAdd (value, null);
-      }
-      else {
-         myRedefStack.peek ().add (value);
-      }
+      doAdd (value, null);
    }
 
    /**
@@ -334,12 +334,7 @@ public class PropertySpecification implements Cloneable, Printable {
     * the {@code DistributionPrinter}
     */
    public void add (Integer distributionId, DistributionPrinter printer) {
-      if (myRedefStack.isEmpty ()) {
-         doAdd (distributionId, printer);
-      }
-      else {
-         myRedefStack.peek ().add (distributionId, printer);
-      }
+      doAdd (distributionId, printer);
    }
 
    /**
@@ -382,12 +377,7 @@ public class PropertySpecification implements Cloneable, Printable {
     * @return the size of this property specification's collection
     */
    public int size () {
-      if (myRedefStack.isEmpty ()) {
-         return myValueSetOrDistIdList.size ();
-      }
-      else {
-         return myRedefStack.peek ().size ();
-      }
+      return myValueSetOrDistIdList.size ();
    }
 
    /**
@@ -419,12 +409,7 @@ public class PropertySpecification implements Cloneable, Printable {
     * {@code PropertySpecification}
     */
    protected List<DistributionPrinter> getDistributionPrinters () {
-      if (myRedefStack.isEmpty ()) {
-         return myDistributionPrinters;
-      }
-      else {
-         return myRedefStack.peek ().getDistributionPrinters ();
-      }
+      return myDistributionPrinters;
    }
 
    /**
