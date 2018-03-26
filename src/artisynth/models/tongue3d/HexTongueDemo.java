@@ -1193,6 +1193,10 @@ public class HexTongueDemo extends RootModel {
    }
    
    public static void addMuscleExciterProbe (RootModel root, MuscleExciter ex, Order interpolationOrder, double duration) {
+      addMuscleExciterProbe (root, ex, interpolationOrder, duration, defaultExcitationProbeMagnitude);
+   }
+      
+   public static void addMuscleExciterProbe (RootModel root, MuscleExciter ex, Order interpolationOrder, double duration, double excitation) {
       if (ex==null) {
          return;
       }
@@ -1209,7 +1213,7 @@ public class HexTongueDemo extends RootModel {
          inprobe.setActive (false);
          inprobe.getNumericList ().clear ();
          inprobe.addData (
-            new double[] { 0, defaultExcitationProbeMagnitude, 0 },
+            new double[] { 0, excitation, 0 },
             duration / 2);
          inprobe.setInterpolationOrder (interpolationOrder);
 
