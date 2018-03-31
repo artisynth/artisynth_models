@@ -107,26 +107,36 @@ class DistSamplerImpl(DistributionSampler):
             raise IllegalArgumentException
         paramsCopy = []
         for i in range(0, params.size()):
-            paramsCopy.append(params.get(i))
+            paramsCopy.append(self._coerce(params.get(i)))
         try:
             trueDist = ctor(*paramsCopy)
         except:
-            raise IllegalArgumentException
-        return self._addDist(trueDist)
+            raise
+        return self._addDist(trueDist, dist.isDiscrete())
 
     def addCategoricalDistribution(self, pmf):
         return self._addDist(CategoricalDistribution(pmf))
 
-    def _addDist(self, trueDist):
+    def _coerce(self, x):
+        if int(x) == x:
+            return int(x)
+        else:
+            return x
+
+    def _addDist(self, trueDist, discrete):
         trueDist.setRandomEngine(self._RND_ENG)
-        self._id2Dist[self._count] = trueDist
+        self._id2Dist[self._count] = (trueDist, discrete)
         ret = self._count
         self._count = self._count + 1
         return ret
 
     def sample(self, distributionIdentifier):
         try:
-            return self._id2Dist[distributionIdentifier].random()
+            trueDist, discrete = self._id2Dist[distributionIdentifier]
+            if discrete:
+                return int(trueDist.random())
+            else:
+                return trueDist.random()
         except:
             raise IllegalArgumentException
 

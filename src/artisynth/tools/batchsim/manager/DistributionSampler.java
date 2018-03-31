@@ -36,11 +36,11 @@ public interface DistributionSampler {
       /** <code>Beta(double a, double b)</code> */
       Beta (2),
       /** <code>BetaBinomial(double mu, double sigma, int bd)</code> */
-      BetaBinomial (3),
+      BetaBinomial (3, true),
       /** <code>BetaPrime(double a, double b)</code> */
       BetaPrime (2),
       /** <code>Binomial(double n, double p)</code> */
-      Binomial (2),
+      Binomial (2, true),
       /** <code>Cauchy(double location, double scale)</code> */
       Cauchy (2),
       /** <code>Chi(double df)</code> */
@@ -58,13 +58,13 @@ public interface DistributionSampler {
       /** <code>GeneralizedPareto(double loc, double scale, double shape)</code> */
       GeneralizedPareto (3),
       /** <code>Geometric(double p)</code> */
-      Geometric (1),
+      Geometric (1, true),
       /** <code>GEV(double loc, double scale, double shape)</code> */
       GEV (3),
       /** <code>Gumbel(double loc, double scale)</code> */
       Gumbel (2),
       /** <code>HyperGeometric(double r, double b, double n)</code> */
-      HyperGeometric (3),
+      HyperGeometric (3, true),
       /** <code>InvGamma(double shape, double scale)</code> */
       InvGamma (2),
       /** <code>InvNormal(double mu, double sigma)</code> */
@@ -76,7 +76,7 @@ public interface DistributionSampler {
       /** <code>Laplace(double location, double scale)</code> */
       Laplace (2),
       /** <code>Logarithmic(double mu)</code> */
-      Logarithmic (1),
+      Logarithmic (1, true),
       /** <code>Logistic(double location, double scale)</code> */
       Logistic (2),
       /** <code>LogNormal(double meanlog, double sdlog)</code> */
@@ -84,7 +84,7 @@ public interface DistributionSampler {
       /** <code>Nakagami(double m, double omega)</code> */
       Nakagami (2),
       /** <code>NegBinomial(double size, double prob)</code> */
-      NegBinomial (2),
+      NegBinomial (2, true),
       /** <code>NonCentralBeta(double a, double b, double ncp)</code> */
       NonCentralBeta (3),
       /** <code>NonCentralChiSquare(double df, double ncp)</code> */
@@ -96,13 +96,13 @@ public interface DistributionSampler {
       /** <code>Normal(double mu, double sigma)</code> */
       Normal (2),
       /** <code>Poisson(double lambda)</code> */
-      Poisson (1),
+      Poisson (1, true),
       /** <code>Rayleigh(double scale)</code> */
       Rayleigh (1),
       /** <code>ReverseWeibull(double loc, double scale, double shape)</code> */
       ReverseWeibull (3),
       /** <code>SignRank(int n)</code> */
-      SignRank (1),
+      SignRank (1, true),
       /** <code>Spearman(int n)</code> */
       Spearman (1),
       /** <code>T(double df)</code> */
@@ -114,12 +114,18 @@ public interface DistributionSampler {
       /** <code>Weibull(double shape, double scale)</code> */
       Weibull (2),
       /** <code>Zipf(int N, double s)</code> */
-      Zipf (2);
+      Zipf (2, true);
 
       private int nparams;
+      private boolean discrete = false;
 
       private Distribution (int numParams) {
          nparams = numParams;
+      }
+
+      private Distribution (int numParams, boolean isDiscrete) {
+         nparams = numParams;
+         discrete = isDiscrete;
       }
 
       /**
@@ -130,6 +136,17 @@ public interface DistributionSampler {
        */
       public int numParams () {
          return nparams;
+      }
+
+      /**
+       * Returns {@code true} if this parametric probability distribution has a
+       * discrete support.
+       * 
+       * @return whether the support of this probability distribution is
+       * discrete
+       */
+      public boolean isDiscrete () {
+         return discrete;
       }
    }
 
