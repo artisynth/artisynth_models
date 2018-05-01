@@ -115,7 +115,7 @@ class DistSamplerImpl(DistributionSampler):
         return self._addDist(trueDist, dist.isDiscrete())
 
     def addCategoricalDistribution(self, pmf):
-        return self._addDist(CategoricalDistribution(pmf))
+        return self._addDist(CategoricalDistribution(pmf), True)
 
     def _coerce(self, x):
         if int(x) == x:
