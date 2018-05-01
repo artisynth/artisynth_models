@@ -140,10 +140,10 @@ public interface DistributionSampler {
 
       /**
        * Returns {@code true} if this parametric probability distribution has a
-       * discrete support.
+       * discrete (i.e. INTEGER) support.
        * 
        * @return whether the support of this probability distribution is
-       * discrete
+       * discrete/integral
        */
       public boolean isDiscrete () {
          return discrete;

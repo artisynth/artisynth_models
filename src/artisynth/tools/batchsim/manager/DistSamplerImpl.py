@@ -102,9 +102,9 @@ class DistSamplerImpl(DistributionSampler):
         try:
             numParams, ctor = distSpecs[dist.toString()]
         except:
-            raise IllegalArgumentException
+            raise
         if numParams != params.size():
-            raise IllegalArgumentException
+            raise
         paramsCopy = []
         for i in range(0, params.size()):
             paramsCopy.append(self._coerce(params.get(i)))
@@ -115,7 +115,8 @@ class DistSamplerImpl(DistributionSampler):
         return self._addDist(trueDist, dist.isDiscrete())
 
     def addCategoricalDistribution(self, pmf):
-        return self._addDist(CategoricalDistribution(pmf), True)
+        # Categorical has discrete support, but NOT necessarily integer-based.
+        return self._addDist(CategoricalDistribution(pmf), False)
 
     def _coerce(self, x):
         if int(x) == x:
@@ -134,9 +135,10 @@ class DistSamplerImpl(DistributionSampler):
         try:
             trueDist, discrete = self._id2Dist[distributionIdentifier]
             if discrete:
+                x = trueDist.random()
                 return int(trueDist.random())
             else:
                 return trueDist.random()
         except:
-            raise IllegalArgumentException
+            raise
 
