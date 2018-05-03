@@ -1,4 +1,4 @@
-package artisynth.tools;
+package artisynth.tools.data;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -32,7 +32,7 @@ public class ArtisynthModelsDataManager extends ArtisynthDataManager {
       }
    }
    
-   private void loadConfig(File configFile) {
+   public void loadConfig(File configFile) {
       JSONReader jreader = new JSONReader();
       Object json = null;
       try {
@@ -105,9 +105,10 @@ public class ArtisynthModelsDataManager extends ArtisynthDataManager {
    public static void main(String[] args) {
       
       ArtisynthModelsDataManager manager = new ArtisynthModelsDataManager();
-      File file = ArtisynthPath.getSrcRelativeFile(manager, "data/upload.txt");
+      
+      File file = ArtisynthPath.getSrcRelativeFile(manager, "upload.txt");
       try {
-         File test = manager.getPackageRelativeFile(manager, "test.txt");
+         File test = manager.getPackageRelativeFile(manager, "download.txt");
          if (test != null && test.exists()) {
             System.out.println("Download succeeded");
             test.delete();
