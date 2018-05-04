@@ -502,8 +502,8 @@ public class DynamicFemFixer extends ModelComponentBase implements HasProperties
       // e.myAvgStress.setZero();
       for (int k = 0; k < ipnts.length; k++) {
          IntegrationPoint3d pt = ipnts[k];
-         pt.computeJacobianAndGradient(e.getNodes(), idata[k].getInvJ0());
-         double detJ = pt.computeInverseJacobian();
+         //pt.computeJacobianAndGradient(e.getNodes(), idata[k].getInvJ0());
+         double detJ = pt.computeJacobianDeterminant(e.getNodes());
          if (detJ < myMinDetJ) {
             myMinDetJ = detJ;
          }
