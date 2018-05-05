@@ -20,8 +20,10 @@ CVS
 ######################
 *.class
 *.dylib
+*.jnilib
 *.dll
 *.a
+*.o
 *.la
 *.so
 *.so.*
@@ -40,6 +42,11 @@ CVS
 /tmp
 
 ######################
+# Log files
+######################
+*.log
+
+######################
 # Project files
 ######################
 .classpath
@@ -47,3 +54,8 @@ CVS
 .cproject
 .settings
 ArtiSynth.launch
+
+######################
+# MacOS files
+######################
+.DS_Store
