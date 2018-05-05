@@ -135,7 +135,6 @@ class DistSamplerImpl(DistributionSampler):
         try:
             trueDist, discrete = self._id2Dist[distributionIdentifier]
             if discrete:
-                x = trueDist.random()
                 return int(trueDist.random())
             else:
                 return trueDist.random()
