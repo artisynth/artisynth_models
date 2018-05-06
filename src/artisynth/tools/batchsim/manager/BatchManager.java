@@ -197,6 +197,7 @@ public class BatchManager {
    protected BooleanHolder myCheckPropsHolder;
    protected IntHolder myBufferCapHolder;
    protected StringHolder myDelimiterCharHolder;
+   protected BooleanHolder myRiskyDelimiterOkHolder;
    protected DoubleHolder myEpsilonHolder;
    protected IntHolder mySeedHolder;
 
@@ -415,6 +416,7 @@ public class BatchManager {
       myCheckPropsHolder = new BooleanHolder (false);
       myBufferCapHolder = new IntHolder (1 << 20);
       myDelimiterCharHolder = new StringHolder ("%");
+      myRiskyDelimiterOkHolder = new BooleanHolder (false);
       myEpsilonHolder = new DoubleHolder (0.0001);
       mySeedHolder = new IntHolder (-1);
 
@@ -453,7 +455,8 @@ public class BatchManager {
          "-r, -dryRun %v #read the input file and exit (ensures the input file "
          + "can be parsed without errors) (see -f option)", myDryRunHolder);
       myParser.addOption (
-         "-b, -bufferCap %d {[1," + (1 << 20) + "]}#<CAP>#set the maximum "
+         "-b, -bufferCap %d {[1," + Integer.MAX_VALUE
+         + "]}#<CAP>#set the maximum "
          + "capacity of the buffer used to store created but unsent simulation "
          + "tasks to CAP; CAP defaults to " + (1 << 20) + " but can be set to "
          + "a larger value if more than " + (1 << 20) + " simulations tasks "
@@ -472,6 +475,10 @@ public class BatchManager {
          "-d, -delimiter %s #<CHAR>#set the value delimiter character"
          + " of the input file to CHAR (see -f option); CHAR defaults to '%'",
          myDelimiterCharHolder);
+      myParser.addOption (
+         "-o, -riskyDelimOk %v #allow a delimiter character that is risky to "
+         + "use because it already has syntactic significance (see -d option)",
+         myRiskyDelimiterOkHolder);
       myParser.addOption (
          "-e, -epsilon %f #<EPS>#set the epsilon for comparing two doubles "
          + "for equality to EPS; EPS defaults to 0.0001", myEpsilonHolder);
@@ -556,10 +563,18 @@ public class BatchManager {
             + myDelimiterCharHolder.value + "'' was given.");
       }
       char delim = myDelimiterCharHolder.value.charAt (0);
-      if (isBlacklisted (delim)) {
-         throw new IllegalArgumentException (
-            "BatchManager: '" + delim
-            + "' is not an allowed delimiter character.");
+      BooleanHolder isRisky = new BooleanHolder ();
+      if (isBlacklisted (delim, isRisky)) {
+         if (isRisky.value) {
+            throw new IllegalArgumentException (
+               "BatchManager: `" + delim + "' is a risky delimiter character; "
+               + "rerun with the -o option to use anyway.");
+         }
+         else {
+            throw new IllegalArgumentException (
+               "BatchManager: `" + delim
+               + "' is not an allowed delimiter character.");
+         }
       }
    }
 
@@ -568,28 +583,37 @@ public class BatchManager {
     * 
     * @param c
     * the character to test
+    * @param isRisky
+    * {@code isRisky.value} will be set to {@code true} if the character is
+    * risky to use as a delimiter character because it already has syntactic
+    * significance, and false otherwise
     * @return true if the given character is not a valid delimiter character
     */
-   protected boolean isBlacklisted (char c) {
+   protected boolean isBlacklisted (char c, BooleanHolder isRisky) {
       boolean toRet;
       switch (c) {
          case '{':
          case '}':
+         case '[':
+         case ']':
+         case '#':
+         case '(':
+         case ')':
+            toRet = true;
+            isRisky.value = false;
+            break;
          case '=':
          case '~':
          case '"':
          case '\'':
-         case '[':
-         case ']':
-         case '#':
          case '@':
-         case '(':
-         case ')':
          case '$':
-            toRet = true;
+            toRet = !myRiskyDelimiterOkHolder.value;
+            isRisky.value = true;
             break;
          default:
             toRet = Character.isWhitespace (c) || Character.isDigit (c);
+            isRisky.value = false;
       }
       return toRet;
    }
