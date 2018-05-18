@@ -325,7 +325,7 @@ public abstract class BatchWorkerBase implements Runnable {
       myParser.addOption ("-h, -help %v #print this help message", helpHolder);
       myParser.addOption (
          "-n, -workerName %s #<NAME>#set BatchWorker name to NAME; NAME "
-         + "defaults to \"worker<PORT>\", where PORT is supplied by the`-p' "
+         + "defaults to \"worker<PORT>\", where PORT is supplied by the `-p' "
          + "option (or its default runtime value)", myNameHolder);
       myParser.addOption (
          "-d, -outputDirName %s #<DIRNAME>#set the BatchWorker's "
@@ -334,8 +334,8 @@ public abstract class BatchWorkerBase implements Runnable {
       myParser.addOption ( // Can't use -s as option b/c ArtiSynth grabs it.
          "-e, -rerunSims %s #<LIST>#if simulations fail, rerun them using the "
          + "time steps listed in LIST; LIST should be in the form of "
-         + "\"<double>[[,...],<double>]\" (a comma-separated list of doubles,"
-         + "all as a single string); LIST defaults to the empty list, meaning"
+         + "\"<double>[[,...],<double>]\" (a comma-separated list of doubles, "
+         + "all as a single string); LIST defaults to the empty list, meaning "
          + "simulations are not rerun", myRerunListHolder);
       myParser.addOption (
          "-l, -logFileName %s #<FILENAME>#set the BatchWorker's log file "
