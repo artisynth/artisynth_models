@@ -10,6 +10,11 @@ import artisynth.core.gui.jythonconsole.ArtisynthJythonConsole;
 import artisynth.tools.batchsim.manager.PropertySpecification.PhonyPropValue;
 import maspack.util.IndentingPrintWriter;
 
+/**
+ * See the official documentation in artisynth_models/doc/batchsim for details.
+ * 
+ * @author Francois Roewer-Despres
+ */
 public class JythonCodeBlock implements Printable {
 
    protected String myCode;

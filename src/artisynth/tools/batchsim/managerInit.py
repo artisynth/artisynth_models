@@ -3,7 +3,6 @@ This short Jython script can optionally be used to initialize a manager in the
 Batch Simulation Framework.
 
 @author: Francois Roewer-Despres
-@version: 1.0
 '''
 from artisynth.tools.batchsim.manager import BatchManager
 from jarray import array

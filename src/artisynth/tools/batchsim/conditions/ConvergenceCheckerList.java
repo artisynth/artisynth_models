@@ -8,7 +8,6 @@ import java.util.List;
  * {@link ConvergenceChecker} it holds detects some convergence.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public class ConvergenceCheckerList
 extends ConditionCheckerBase<EmptyCondition> {
@@ -18,7 +17,6 @@ extends ConditionCheckerBase<EmptyCondition> {
     * accessed via its {@link #value} field.
     *
     * @author Francois Roewer-Despres
-    * @version 1.0
     */
    public static class ObjectHolder {
 

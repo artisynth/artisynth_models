@@ -28,7 +28,8 @@ import maspack.util.ReaderTokenizer;
 /**
  * A {@code FileParser} parses the input file (property specification file) on
  * behalf of a {@link BatchManager}. This is done in accordance to the Property
- * Specification Language (PSL) of BatchSim. The two classes are intimately
+ * Specification Language (PSL) of BatchSim (see the official documentation in
+ * artisynth_models/doc/batchsim for details). The two classes are intimately
  * coupled, and are only separated to reduce clutter in the {@code BatchManager}
  * class (following proper OO theory, the code found here should reside within
  * the {@code BatchManager} itself).
@@ -115,6 +116,14 @@ public class FileParser {
       rtok.quoteChar ('$'); // For Jython code blocks.
    }
 
+   /**
+    * Performs the parsing of the input file and returns the results.
+    * 
+    * @return the parsing results
+    * @throws IOException
+    * if an I/O error occurs, or the file format is incorrect (causing a parse
+    * error)
+    */
    public ParseResults parse () throws IOException {
       while (rtok.nextToken () != ReaderTokenizer.TT_EOF) {
          boolean phony = false;
@@ -795,9 +804,9 @@ public class FileParser {
    }
 
    /**
-    * Give a {@link String} range, e.g. {@code [0-9]}, given through a
-    * {@link Matcher}, expand the range into integers (as {@link String}s), and
-    * add them to the given names list.
+    * Given a {@link String} range (e.g. {@code [0-9]}) through a
+    * {@link Matcher}, expands the range into integers (as {@link String}s), and
+    * adds them to the given names list.
     * 
     * @param rangeMat
     * the {@link Matcher}

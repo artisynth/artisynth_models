@@ -7,7 +7,7 @@ import java.util.Map;
  * Interface to a {@code Jython} class ({@code DistSamplerImpl.py}) that uses
  * {@code jdistlib} to sample probability distributions. Having the
  * implementation in {@code Jython} allows the code to be committed to the
- * {@code artisynth_projects} repository without causing compiler errors, since
+ * {@code artisynth_models} repository without causing compiler errors, since
  * the {@code jdistlib} library can't be distributed with {@code ArtiSynth} due
  * to licensing issues. To use probabilistic simulations in the
  * {@link artisynth.tools.batchsim Batch Simulation Framework}, please
@@ -16,17 +16,15 @@ import java.util.Map;
  * {@code artisynth_core/lib/}.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public interface DistributionSampler {
 
    /**
     * See the <a href="http://jdistlib.sourceforge.net/javadoc/">jdistlib
-    * JavaDocs</a> for additional details on each distribution. Note that some
+    * Javadocs</a> for additional details on each distribution. Note that some
     * distributions are not supported.
     * 
     * @author Francois Roewer-Despres
-    * @version 1.0
     */
    public enum Distribution {
       /** <code>Ansari(int m, int n)</code> */

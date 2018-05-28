@@ -10,7 +10,6 @@ import artisynth.core.workspace.RootModel;
  * met.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public class StopConditionMonitor extends ConditionMonitor {
 

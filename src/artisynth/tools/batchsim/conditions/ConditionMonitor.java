@@ -41,7 +41,6 @@ import artisynth.core.modelbase.MonitorBase;
  * Boolean {@code Conditional} expression can be created.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public class ConditionMonitor extends MonitorBase {
 

@@ -3,7 +3,6 @@ package artisynth.tools.batchsim;
 import java.util.Date;
 
 import argparser.DoubleHolder;
-import artisynth.core.workspace.RootModel;
 import artisynth.tools.batchsim.conditions.Condition;
 import artisynth.tools.batchsim.conditions.StopConditionMonitor;
 import artisynth.tools.batchsim.conditions.TimeChecker.TimeCondition;
@@ -11,17 +10,16 @@ import artisynth.tools.batchsim.conditions.TimeChecker;
 
 /**
  * A simple concrete subclass of {@link BatchWorkerBase} that can be used to
- * perform basic and straightforward simulations of any {@link RootModel}. Adds
- * one stop {@link Condition} to the {@link StopConditionMonitor} that causes
- * the simulation to stop after a specified amount of time. This time defaults
- * to {@link #DEFAULT_MAX_TIME}, but it can also be set explicitly through a new
- * command-line argument. Also, adds simple logging. Finally, recording of
- * simulation task results is done by calling
+ * perform basic and straightforward simulations of any target model. Adds one
+ * stop {@link Condition} to the {@link StopConditionMonitor} that causes the
+ * simulation to stop after a specified amount of time. This time defaults to
+ * {@link #DEFAULT_MAX_TIME}, but it can also be set explicitly through a new
+ * command-line argument. Also, adds simple logging and records property-value
+ * pairs. Finally, recording of simulation task results is done by calling
  * {@link #recordBinaryWayPoints(boolean)} with the argument <b>{@code true}
  * </b>.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public class SimpleTimedBatchWorker extends BatchWorkerBase {
 
