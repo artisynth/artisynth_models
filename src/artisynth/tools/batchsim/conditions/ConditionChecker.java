@@ -16,7 +16,6 @@ package artisynth.tools.batchsim.conditions;
  * the type of {@code Condition} that this {@code ConditionChecker} can check
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  * @see ConditionCheckerBase
  */
 public interface ConditionChecker<C extends Condition> {

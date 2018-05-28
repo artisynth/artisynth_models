@@ -11,7 +11,6 @@ package artisynth.tools.batchsim.conditions;
  * {@code Condition}.
  *
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public class NotChecker extends ConditionCheckerBase<EmptyCondition> {
 

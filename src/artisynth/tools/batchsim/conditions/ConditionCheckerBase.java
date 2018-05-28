@@ -26,7 +26,6 @@ package artisynth.tools.batchsim.conditions;
  * the type of {@code Condition} that this checker can check
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public abstract class ConditionCheckerBase<C extends Condition>
 implements ConditionChecker<C> {
@@ -51,7 +50,6 @@ implements ConditionChecker<C> {
     * </pre>
     * 
     * @author Francois Roewer-Despres
-    * @version 1.0
     */
    public static final class TrueConditionChecker
    implements ConditionChecker<TrueConditionChecker.TrueCondition> {

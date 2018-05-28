@@ -45,63 +45,12 @@ import maspack.util.ReaderTokenizer;
 
 /**
  * A {@code BatchManager} takes an input file containing
- * {@link PropertySpecification}s (see {@link artisynth.tools.batchsim batchsim}
- * for details), and creates a `task' for each possible combination of
- * property-value pairs found in the input file (for
- * {@link SpecificationType#COMBINATORIAL combinatorial specifications}), or by
- * sampling the given probability distribution for each {@code Property} (for
- * {@link SpecificationType#PROBABILISTIC probabilistic specifications}). If the
- * input file contains <b>only</b> probabilistic specifications, then the
- * {@code BatchManager} creates {@code M}
- * <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo</a>
- * simulation tasks, where {@code M} is supplied by the user. Regardless of
- * their type or origin, the {@code BatchManager} "manages" the resulting tasks
+ * {@link PropertySpecification}s, and creates simulation tasks according to the
+ * specifications. The {@code BatchManager} then "manages" the resulting tasks
  * in a "bag of tasks".
  * <p>
- * Specifically, the {@code BatchManager} is a server that listens for task
- * requests by one or more {@link BatchWorkerBase BatchWorker} clients, and
- * replies with the next available task in the bag of tasks. Once the bag is
- * empty, the "empty task" is sent on any further requests by any clients.
- * <p>
- * In addition, if a {@code BatchManager} is created within an instance of
- * ArtiSynth, it can verify that the <b>currently-loaded</b> {@link RootModel}
- * has the {@code Properties} and/or the {@link ModelComponent}s with the
- * {@code Properties} specified in the input file. It can also verify that each
- * value in the accompanying value-set is valid for that {@code Property} (for
- * combinatorial specifications), and that a typical value produced by the given
- * probability distribution is valid for that {@code Property} (for
- * probabilistic specifications). Due to the inherent randomness in sampling
- * probability distributions, the latter test works on a best-effort basis only.
- * <p>
- * Further, a {@code BatchManager} can run in "interactive mode" by initiating
- * an interactive session with the user through a {@code Jython Console}.
- * <p>
- * Note that creating a "default" {@code BatchManager} is easy: just call its
- * constructor with a <b>{@code null}</b> or <b>{@code new String[0]}</b>
- * argument in the source code (or the {@code Jython Console} in
- * {@code ArtiSynth}).
- * <p>
- * Alternatively, a {@code BatchManager} can run as an <i>stand alone Java
- * program</i>, either from within {@code Eclipse} or, preferably, from the
- * command-line. It can be invoked either with or without arguments to create a
- * custom or default {@code BatchManager} program, respectively.
- * <p>
- * The default {@code BatchManager} is sufficient for many common use cases. For
- * example, the {@link artisynth.tools.batchsim Batch Simulation Framework} is
- * designed to run in a distributed fashion: the {@code BatchManager} server and
- * the {@code BatchWorker} clients can run on different machines, communicating
- * with each other over a network. Yet, the typical use case sees the
- * {@code BatchManager} and all {@code BatchWorkers} running on the same
- * machine, and so a default {@code BatchManager} will communicate locally with
- * default {@code BatchWorkers}. In contrast, several parameters of a
- * {@code BatchManager} can be set to non-default values by passing arguments to
- * its constructor.
- * <p>
- * For a list of all possible arguments to pass to a {@code BatchManager}, run
- * it with the `{@code -help}' flag.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public class BatchManager {
 
@@ -680,13 +629,12 @@ public class BatchManager {
    /**
     * If running within an instance of {@code ArtiSynth}, and if the appropriate
     * command-line flag was set, checks each {@link PropertySpecification} in
-    * {@link #myPropertySpecifications} to ensure that the currently-loaded
-    * {@link RootModel} or one of its {@link ModelComponent}s has that
-    * specification's {@link Property}, and that each value in the accompanying
-    * value set (for combinatorial property specifications) or that a
-    * randomly-sampled distribution vector (for probabilistic property
-    * specifications) is a valid value to assign to the currently-loaded
-    * {@code RootModel}.
+    * {@link #myPropertySpecifications} to ensure that the target model or one
+    * of its {@link ModelComponent}s has that specification's {@link Property},
+    * and that each value in the accompanying value set (for combinatorial
+    * property specifications) or that a randomly-sampled distribution vector
+    * (for probabilistic property specifications) is a valid value to assign to
+    * that {@code Property}.
     * 
     * @throws IllegalStateException
     * if the flag was set, but this {@link BatchManager} is not running within
@@ -743,7 +691,7 @@ public class BatchManager {
             // (if the property has a range). The best we can do is sample the
             // distribution and try that one value. If that value passes the
             // test, we'll just have to hope that other values will too. And the
-            // BatchSim reference mentions this clearly, anyhow, so the user
+            // BatchSim documentation mentions this clearly, anyhow, so the user
             // will hopefully be aware of this.
             ReaderTokenizer rtok =
                new ReaderTokenizer (
@@ -962,8 +910,8 @@ public class BatchManager {
    }
 
    /**
-    * Prints a string representing the overall progress of BSF in running the
-    * simulations the user requested to standard output.
+    * Prints a string representing the overall progress of BatchSim in running
+    * the simulations the user requested to standard output.
     */
    public void progress () {
       long taskNo = myTaskCounter.get ();

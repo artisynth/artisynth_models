@@ -29,7 +29,6 @@ import maspack.util.IndentingPrintWriter;
  * details.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public class PropertySpecification implements Cloneable, Printable {
 
@@ -38,7 +37,6 @@ public class PropertySpecification implements Cloneable, Printable {
     * {@link #COMBINATORIAL}, or {@link #PROBABILISTIC}.
     *
     * @author Francois Roewer-Despres
-    * @version 1.0
     */
    public static enum SpecificationType {
       /**
@@ -244,7 +242,7 @@ public class PropertySpecification implements Cloneable, Printable {
    SpecificationType specificationType) {
       this (phony, propertyPath, specificationType, indexCounter++);
    }
-   
+
    /**
     * Returns whether this property specification is phony.
     * 

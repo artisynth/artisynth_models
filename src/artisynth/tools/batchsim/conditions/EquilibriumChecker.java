@@ -12,7 +12,6 @@ import maspack.properties.Property;
  * components provided to it meet a particular {@link EquilibriumCondition}.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public class EquilibriumChecker
 extends ConditionCheckerBase<EquilibriumChecker.EquilibriumCondition> {
@@ -26,7 +25,6 @@ extends ConditionCheckerBase<EquilibriumChecker.EquilibriumCondition> {
     * is not accelerating/decelerating (constant velocity).
     * 
     * @author Francois Roewer-Despres
-    * @version 1.0
     */
    public static enum EquilibriumCondition implements Condition {
       STATIC; // DYNAMIC not yet implemented.

@@ -22,7 +22,6 @@ package artisynth.tools.batchsim.conditions;
  * false.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public interface Condition {
 

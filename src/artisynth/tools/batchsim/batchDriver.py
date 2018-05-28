@@ -14,6 +14,7 @@ script:
 the worker subclass from a Python list of strings (sys.argv) to a Java String[]
 5. Instantiate the worker subclass (and passing it the String[] of arguments)
 6. Run the worker
+7. Quit ArtiSynth once there are no more simulations to run
 
 Note that steps (2) to (4) are optional: if no command-line arguments will be
 passed to the worker subclass, these lines can be ommitted, and None can be
@@ -27,7 +28,6 @@ worker subclass, they can be hard-coded into the script file. For example:
 *** copy, instead. ***
 
 @author: Francois Roewer-Despres
-@version: 1.0
 '''
 from artisynth.tools.batchsim import SimpleTimedBatchWorker # Change this.
 from jarray import array

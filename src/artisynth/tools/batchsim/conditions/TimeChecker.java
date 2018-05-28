@@ -8,7 +8,6 @@ import java.util.Objects;
  * whether its {@link TimeCondition} is met for the current time.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public class TimeChecker
 extends ConditionCheckerBase<TimeChecker.TimeCondition> {
@@ -24,7 +23,6 @@ extends ConditionCheckerBase<TimeChecker.TimeCondition> {
     * absolute difference between them is less than {@code epsilon}.
     * 
     * @author Francois Roewer-Despres
-    * @version 1.0
     */
    public static enum TimeCondition implements Condition {
       LESS_THAN_MIN,

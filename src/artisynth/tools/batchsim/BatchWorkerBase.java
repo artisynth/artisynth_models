@@ -38,7 +38,6 @@ import artisynth.core.workspace.RootModel;
 import artisynth.tools.batchsim.conditions.Condition;
 import artisynth.tools.batchsim.conditions.StopConditionMonitor;
 import artisynth.tools.batchsim.manager.BatchManager;
-import maspack.matrix.NumericalException;
 import maspack.properties.Property;
 import maspack.properties.PropertyInfo;
 import maspack.util.IndentingPrintWriter;
@@ -47,160 +46,11 @@ import maspack.util.ReaderTokenizer;
 
 /**
  * {@code BatchWorkerBase} is an abstract class that does most of the
- * heavy-lifting required of a worker subclass. Specifically, this class handles
- * the network communication of a worker client with a {@link BatchManager}
- * server. It also handles, upon receiving a simulation task from the manager,
- * the setting of the corresponding {@link Property} or of the corresponding
- * {@link ModelComponent}'s {@code Property} of the currently-loaded
- * {@link RootModel}.
- * <p>
- * 
- * <p>
- * {@code BatchWorkerBase} implements {@link Runnable}, and so a typical usage
- * pattern is:
- * 
- * <pre>
- * <b>class</b> MyConcreteBatchWorker <b>extends</b> BatchWorkerBase {
- *    // ...
- * }
- * 
- * // ...
- * 
- * String[] argsForMyWorker;
- * // ...
- * <b>new</b> MyConcreteBatchWorker (argsForMyWorker).run ();
- * </pre>
- * 
- * The abstract {@code BatchWorkerBase} class uses the
- * <a href="https://en.wikipedia.org/wiki/Template_method_pattern">template
- * method pattern</a>, which means it leaves "holes" in its methods by calling
- * abstract methods. Concrete (i.e. non-abstract) subclasses should override
- * these methods to provide additional custom behavior to the worker. These
- * methods are, in alphabetical order:
- * 
- * <pre>
- * <b>void</b> {@link #addLogEntry()};               // In run method.
- * <b>void</b> {@link #otherParserOptions()};        // In arg parsing method.
- * <b>void</b> {@link #postSim()};                   // In run method.
- * <b>void</b> {@link #preSim()};                    // In run method.
- * <b>void</b> {@link #recordSimResults()};          // In run method.
- * <b>void</b> {@link #setUpStopConditionMonitor()}; // In run method.
- * <b>void</b> {@link #startLogSession()};           // In run method.
- * </pre>
- * 
- * The {@link #run()} method is where most of these abstract methods get called.
- * Since the {@code run()} method is quite complex, a pseudo-code of the
- * implementation is provided here, so that the order in which these abstract
- * methods get called, and what happens between those method calls, is made very
- * clear. The abstract methods to override are in bold to visually distinguish
- * them from the other pseudo-code.
- * 
- * <pre>
- * run():
- *    <b>startLogSession()</b> // For subclass to override.
- *    <b>setUpStopConditionMonitor()</b> // For subclass to override.
- *    rootModel.addMonitor(stopConditionMonitor)
- *    while true:
- *       requestSimTask()
- *       if currentTask.size() == 0:
- *          break
- *       endIf
- *       success = false
- *       numSimsTilSuccessful = 0
- *       initial = stepSize = RootModel.getMaxStepSize()
- *       while !success && numSimsTilSuccessful < 2:
- *          numSimsTilSuccessful++
- *          main.reset()
- *          main.setMaxStep(stepSize)
- *          setPropVals()
- *          <b>preSim()</b> // For subclass to override.
- *          main.play()
- *          main.waitForStop()
- *          <b>postSim()</b> // For subclass to override.
- *          if stopConditionMonitor.hasAnyConditionBeenMet():
- *             success = true
- *          else:
- *             stepSize /= 10
- *          endIf
- *       endWhile
- *       // By now, tried simulation up to 2 times
- *       main.setMaxStep(initial)
- *       currentTaskSuccessful = success
- *       if !currentTaskSuccessful: // If both attempts failed
- *          stepSize *= 10          // Record the value of the last attempt
- *          numSimsTilSuccess = -1  // Mark as unsuccessful
- *       endIf
- *       <b>recordSimResults()</b> // For subclass to override.
- *       <b>addLogEntry()</b> // For subclass to override.
- *   endWhile
- *   endLogSession()
- * endMethod
- * </pre>
- * 
- * Since these methods are declared <b>{@code abstract}</b> in the abstract
- * {@code BatchWorkerBase} class, a concrete subclass must provide an
- * implementation of these methods (or else the Java compiler will complain).
- * However, most of these methods are not necessary for the proper functioning
- * of {@code BatchWorkerBase} methods, and so can be implemented with a empty
- * body. For example, {@code addLogEnty()} can be implemented like this:
- * 
- * <pre>
- * <b>class</b> MyConcreteBatchWorker <b>extends</b> BatchWorkerBase {
- *    // ...
- *    
- *    {@literal @}Override
- *    <b>public</b> <b>void</b> addLogEntry() {
- *       // Empty method.
- *    }
- *    
- *    // ...
- * }
- * </pre>
- * 
- * The <u>only</u> {@code BatchWorkerBase} abstract method that <b>must</b> have
- * a non-empty body in order for {@code BatchWorkerBase} methods to function
- * properly is {@code setUpStopConditionMonitor()}. When {@code BatchWorkerBase}
- * starts a simulation, it doesn't inherently know when the simulation should
- * stop. Therefore, it simply blocks, waiting for the simulation to stop.
- * However, two subtle issues present themselves here. First, some simulations
- * never stop, because the model being simulated lacks a mechanism (e.g. a
- * breakpoint) to stop it at a certain time. Second, if an error occurs,
- * simulations may stop before they reach their ending breakpoint. For example,
- * a {@link NullPointerException} or an inverted elements
- * {@link NumericalException} may be thrown, causing the simulation to stop
- * prematurely.
- * <p>
- * The solution to these issues comes in the form of {@link Condition
- * Conditions} and a {@link StopConditionMonitor}. Adding a temporary
- * {@code StopConditionMonitor} with one or more appropriate {@code Conditions}
- * to a {@code RootModel} during simulations ensures that all simulations will
- * eventually terminate. It also enables the {@code BatchWorkerBase} to query
- * the {@code StopConditionMonitor} in order to determine if any one particular
- * simulation ended because it reached an appropriate stop {@code Condition}, or
- * if the simulation stopped due to an error (such as an exception being
- * thrown). In the latter case, the simulation will be deemed a failure, and it
- * will automatically be retried with a smaller time step. If this second trial
- * is again deemed a failure, the {@code BatchWorkerBase} will mark that entire
- * simulation task a failure, and proceed to request a new simulation task from
- * the manager.
- * <p>
- * It is therefore crucial that concrete worker subclasses add appropriate stop
- * {@code Conditions} to the {@code BatchWorkerBase}'s
- * {@code StopConditionMonitor}, as otherwise a simulation may either never
- * stop, or else may be deemed a failure once it does stop. Refer to the
- * {@link artisynth.tools.batchsim.conditions} package for details on adding
- * {@code Conditions} to a {@code StopConditionMonitor}.
- * <p>
- * Although the {@code BatchWorkerBase} can take command-line arguments to set
- * certain instance variable values, these variables all have useful defaults
- * such that passing <b>{@code null}</b> or an empty <b>{@code String[]}</b> to
- * the {@code BatchWorkerBase} constructor should be sufficient for most use
- * cases. Running the {@code BatchWorkerBase} with the "-help" argument will
- * cause it to print a list of all accepted command-line arguments, as well as a
- * description of what each argument does.
+ * heavy-lifting required of a BatchWorker. To use BatchSim, a user must
+ * subclass this class (or use the default subclass). Refer to the official
+ * documentation in artisynth_models/doc/batchsim for details.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public abstract class BatchWorkerBase implements Runnable {
 
@@ -230,7 +80,7 @@ public abstract class BatchWorkerBase implements Runnable {
 
    /* Other instance variables. */
    protected ArgParser myParser;
-   protected RootModel myRootModel;
+   protected RootModel myRootModel; // Known as the target model in the docs.
    protected AtomicInteger myReceivedPing;
    public StopConditionMonitor myStopConditionMonitor;
    protected ArrayBlockingQueue<List<String[]>> myTaskQueue;
@@ -656,13 +506,12 @@ public abstract class BatchWorkerBase implements Runnable {
     * <p>
     * Subclasses <b>must</b> override this method to add additional custom set
     * up of its {@link StopConditionMonitor} <i>beyond simply creating the
-    * object and adding it to the currently-loaded {@link RootModel}</i> (as
-    * that is already done by this {@code BatchWorkerBase}).
+    * object and adding it to the target model</i> (as that is already done by
+    * this {@code BatchWorkerBase}).
     * <p>
     * Stop {@link Condition}s can also be dynamically added or removed to its
     * {@code StopConditionMonitor} on a per-simulation basis in the
     * {@link #preSim()} and {@link #postSim()} methods.
-    * 
     * 
     * @see #run()
     * @see artisynth.tools.batchsim.conditions
@@ -794,7 +643,7 @@ public abstract class BatchWorkerBase implements Runnable {
 
    /**
     * This method is called once for each simulation, immediately after the
-    * {@link RootModel}'s {@link Property}s are set according to the current
+    * target model's {@link Property}s are set according to the current
     * simulation task (through {@link #setPropVals()}), and immediately before
     * the simulation begins playing. If a simulation fails, this method <b>gets
     * called again</b> when the simulation is re-attempted.
@@ -804,11 +653,11 @@ public abstract class BatchWorkerBase implements Runnable {
     * after {@code setPropVals()}, it can be used by a subclass to query the
     * {@code Properties} in order to get their current values. This can be used
     * to then reset the {@code Property} values to some default value, and let
-    * an {@link InputProbe} dynamically added to the {@code RootModel} within
-    * this method handle the (smoother) transition of the {@code Property} value
-    * from its default value to the currently-set value, which is something
+    * an {@link InputProbe} dynamically added to the target model within this
+    * method handle the (smoother) transition of the {@code Property} value from
+    * its default value to the currently-set value, which is something
     * {@code BatchWorkerBase} does not do. The {@code InputProbe} can then be
-    * dynamically removed from the {@code RootModel} in the {@link #postSim()}
+    * dynamically removed from the target model in the {@link #postSim()}
     * method.
     * <p>
     * Note that the {@link #myCurrentTask} contains the property-value pairs of
@@ -830,8 +679,8 @@ public abstract class BatchWorkerBase implements Runnable {
     * <p>
     * Subclasses can <b>optionally</b> override this method to add additional
     * custom post-simulation behavior. In particular, this method can be used to
-    * remove {@link InputProbe}s dynamically added to the {@link RootModel} in
-    * the {@link #preSim()} method.
+    * remove {@link InputProbe}s or anything else that was dynamically added to
+    * the target model in the {@link #preSim()} method.
     * 
     * @see #run()
     * @see #preSim()
@@ -844,9 +693,9 @@ public abstract class BatchWorkerBase implements Runnable {
     * in binary.
     * 
     * @param addEndStateWayPoint
-    * if <b>{@code true}</b>, add a new way point to the {@link RootModel} at
-    * the current (i.e. end-of-simulation) time, which will represent the "last"
-    * or "end" state of the {@code RootModel}
+    * if <b>{@code true}</b>, add a new way point to the target model at the
+    * current (i.e. end-of-simulation) time, which will represent the "last" or
+    * "end" state of the target model
     */
    protected void recordBinaryWayPoints (boolean addEndStateWayPoint) {
       Main main = Main.getMain ();
@@ -932,7 +781,7 @@ public abstract class BatchWorkerBase implements Runnable {
     * a recording of the results of the current simulation task in any file or
     * format. Note that this method is called only once per simulation task. In
     * particular, if a simulation is retried due to failure, this method only
-    * gets called only once, after both simulation attempts have been made.
+    * gets called only once, after all simulation attempts have been made.
     * <p>
     * Subclasses can <b>optionally</b> override this method to add custom
     * recording of simulation results, and note that no results are otherwise
@@ -944,7 +793,7 @@ public abstract class BatchWorkerBase implements Runnable {
     * method <i>is their intended use</i>.
     * <p>
     * Note that this method should be used to record simulation results, not
-    * logging/meta- information, which should instead be done in
+    * logging/meta-information, which should instead be done in
     * {@link #addLogEntry()}.
     * <p>
     * A number of convenience methods for recording general simulation results
@@ -963,12 +812,12 @@ public abstract class BatchWorkerBase implements Runnable {
 
    /**
     * The very last method called at the very end of each simulation task, this
-    * method is called to allow a recording of logging/meta- information
-    * relating to the current simulation task in the log file (using
+    * method is called to allow a recording of logging/meta-information relating
+    * to the current simulation task in the log file (using
     * {@link #myLogFileWriter}). Note that this method is called only once per
     * simulation task. In particular, if a simulation is retried due to failure,
-    * this method only gets called only once, after both simulation attempts
-    * have been made.
+    * this method only gets called only once, after all simulation attempts have
+    * been made.
     * <p>
     * Subclasses can <b>optionally</b> override this method to add custom data
     * logging, and note that no logging is otherwise performed. In particular,
@@ -978,7 +827,7 @@ public abstract class BatchWorkerBase implements Runnable {
     * variables that get set to appropriate values for each new simulation task,
     * as using these variables in this method <i>is their intended use</i>.
     * <p>
-    * Note that this method should be used to record logging/meta- information,
+    * Note that this method should be used to record logging/meta-information,
     * not simulation results, which should instead be done in
     * {@link #recordSimResults()}.
     * 
@@ -1025,8 +874,8 @@ public abstract class BatchWorkerBase implements Runnable {
 
    /**
     * <b>{@code true}</b> if, and only if, the {@link #myCurrentTask} was
-    * completed successfully, either after 1 or 2 attempts, as determined by the
-    * {@link StopConditionMonitor}.
+    * completed successfully, potentially after more than one attempt, as
+    * determined by the {@link StopConditionMonitor}.
     * <p>
     * Subclasses are encouraged to access this instance variable, as long as it
     * is treated as a read-only variable.
@@ -1036,10 +885,8 @@ public abstract class BatchWorkerBase implements Runnable {
    /**
     * The last step sized used when running the {@link #myCurrentTask}. This
     * value starts (before the current simulation begins) by equaling
-    * {@link RootModel#getMaxStepSize()}, and <b>may</b> decrease 10-fold to
-    * re-run the current simulation once more with a smaller step size if the
-    * simulation did not succeed the first time. However, this value will never
-    * be smaller than {@link RootModel#getMinStepSize()}.
+    * {@link RootModel#getMaxStepSize()}, and <b>may</b> change if the current
+    * simulation fails and is rerun with a different time step.
     * <p>
     * Subclasses are encouraged to access this instance variable, as long as it
     * is treated as a read-only variable.
@@ -1056,17 +903,16 @@ public abstract class BatchWorkerBase implements Runnable {
 
    /**
     * After an initial setup, requests simulation tasks from the
-    * {@link BatchManager}, sets the {@link RootModel} {@link Property}s
-    * according to the received task, and performs the simulation. The model is
-    * made to play indefinitely, and this {@link BatchWorkerBase} waits for the
-    * simulation to stop. Subclasses should override
-    * {@link #setUpStopConditionMonitor()} such that it will cause the
-    * simulation to stop when an appropriate stop {@link Condition} is met. If
-    * the simulation fails, it is retried once, possibly at a smaller time step
-    * (if the {@code RootModel} permits this). Simulations results can then be
-    * recorded, after which another simulation task is requested from the
-    * manager, and the entire process is repeated. This method returns when the
-    * manager indicates that there are no more simulation tasks to perform.
+    * {@link BatchManager}, sets the target model {@link Property}s according to
+    * the received task, and performs the simulation. The model is made to play
+    * indefinitely, and this {@link BatchWorkerBase} waits for the simulation to
+    * stop. Subclasses should override {@link #setUpStopConditionMonitor()} such
+    * that it will cause the simulation to stop when an appropriate stop
+    * {@link Condition} is met. If the simulation fails, it can optionally be
+    * retried with smaller time steps. Simulations results can then be recorded,
+    * after which another simulation task is requested from the manager, and the
+    * entire process is repeated. This method returns when the manager indicates
+    * that there are no more simulation tasks to perform.
     * 
     * @throws IllegalStateException
     * if any error occurs

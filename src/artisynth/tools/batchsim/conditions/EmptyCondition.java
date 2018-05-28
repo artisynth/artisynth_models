@@ -6,7 +6,6 @@ package artisynth.tools.batchsim.conditions;
  * be supplied instead.
  * 
  * @author Francois Roewer-Despres
- * @version 1.0
  */
 public enum EmptyCondition implements Condition {
 }

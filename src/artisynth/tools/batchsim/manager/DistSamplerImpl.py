@@ -6,7 +6,6 @@ ship with ArtiSynth due to license incompatibilities). The website for
 jdistlib is http://jdistlib.sourceforge.net/.
 
 @author: Francois Roewer-Despres
-@version: 1.0
 """
 
 from artisynth.tools.batchsim.manager import DistributionSampler
