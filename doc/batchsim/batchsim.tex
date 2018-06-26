@@ -27,7 +27,7 @@
 
 \title{The Batch Simulation Framework}
 \author{Francois Roewer-Despres}
-\setpubdate{Last update: May 27, 2018}
+\setpubdate{Last update: June 26, 2018}
 
 \iflatexml
 \date{}
@@ -124,6 +124,28 @@ Note: simple defaults for the \BW\ and the Jython script exist (see Section \ref
 Note: for repeatable results while running probabilistic simulations, set the random number generator seed of the \BM\ (see {\tt -s} option of the \BM\ in Section \ref{running:advanced:BM}) and use the {\tt -disableHybridSolves} option to ArtiSynth when running \BWs\ (see Section \ref{running:CLI:BW}).
 \end{sideblock}
 
+\subsection{Minimal working example}
+
+A minimal working example (MWE) of the entire BatchSim pipeline can be found in {\tt \BS/example}. It can be used as a way to try things out, or to make sure BatchSim is working properly. The only part of BatchSim not tested by this MWE by default is the proper functioning of JDistlib, which requires additional steps (see Section \ref{req:general}). To test this, use the file {\tt \BS/example/props-jdistlib.psl} as the input configuration file (see {\tt -f} option of the \BM\ in Section \ref{running:advanced:BM}).
+
+This MWE was constructed as follows.
+
+\begin{enumerate}
+
+\item Decide on (or code up) a target model. In this case, \javaclass[artisynth.demos.mech]{SpringMeshDemo} was used for simplicity.
+
+\item Decide on a {\tt Property} of the target model to configure during the simulations. In this case, the mass of the {\tt Particle} named {\tt pnt7} was used.
+
+\item Write an input configurations file. In this case, two files were written. One is the ``default'' file, and is called {\tt props.psl}. The other file is used to (optionally) run probabilistic simulations, and is called {\tt props-jdistlib.psl}. To understand the contents of these files, see Section \ref{psl}.
+
+\item Write a custom \BW\ to add a simulation stop condition as well as output recording. In this case, the custom \BW\ is {\tt SpringMeshDemoBatchWorker}. To understand what it is doing, see Section \ref{custom}.
+
+\item Write a very short Jython script to drive {\tt SpringMeshDemoBatchWorker}. In this case, the Jython script is {\tt exampleBatchDriver.py}. To understand what it is doing, see Section \ref{custom:jython}.
+
+\end{enumerate}
+
+Feel free to use this MWE to test out the commands/concepts in the remaining sections.
+
 \subsection{Running BatchSim from the command line}
 \label{running:CLI}
 
@@ -206,7 +228,7 @@ There are essentially two ways of achieving this $n$-fold repetition.
 If no errors have been made, BatchSim should now be running simulations as per the specifications in the input file. In addition, the simulations will run in parallel if $n > 1$.
 
 \begin{sideblock}
-Note: performance is greatly improved by running BatchSim without the ArtiSynth GUI. Typically, BatchSim is started once with the ArtiSynth GUI and with $n = 1$ to visually verify that the simulations are running as expected (using the correct target model, with desired inputs, etc.). After just one simulation, BatchSim is killed (see Section \ref{misc:kill}) and then restarted with ArtiSynth running in ``no GUI mode'' and with $n > 1$ to increase performance.
+Note: \textbf{performance is greatly improved} by running BatchSim without the ArtiSynth GUI. Typically, BatchSim is started once with the ArtiSynth GUI and with $n = 1$ to visually verify that the simulations are running as expected (using the correct target model, with desired inputs, etc.). After just one simulation, BatchSim is killed (see Section \ref{misc:kill}) and then restarted with ArtiSynth running in ``no GUI mode'' and with $n > 1$ to increase performance.
 
 To run ArtiSynth in ``no GUI mode,'' add the {\tt -noGui} option to ArtiSynth. For example, to run a \BW\ in ``no GUI mode,'' execute the command
 \begin{verbatim}
