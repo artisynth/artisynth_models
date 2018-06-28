@@ -388,7 +388,7 @@ public class FileParser {
       rtok.nextToken ();
       while (!rtok.tokenIsWord ("end")) {
          rtok.pushBack ();
-         builder.append (rtok.scanQuotedString ('$')).append ('\n');
+         builder.append (rtok.scanQuotedString ('$').trim ()).append ('\n');
          rtok.nextToken ();
       }
       if (builder.length () == 0) {
