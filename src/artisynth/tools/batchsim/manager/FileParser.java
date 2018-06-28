@@ -395,7 +395,8 @@ public class FileParser {
          throw new IOException (
             "Jython code block on line " + rtok.lineno () + " cannot be empty");
       }
-      return new JythonCodeBlock (builder.toString (), mySettings.console);
+      return new JythonCodeBlock (
+         mySettings.manager, builder.toString (), mySettings.console);
    }
 
    /**

@@ -18,6 +18,7 @@ import maspack.util.IndentingPrintWriter;
 public class JythonCodeBlock implements Printable {
 
    protected String myCode;
+   protected BatchManager myManager;
    protected Boolean myReturnValue = null;
    protected ArtisynthJythonConsole myConsole;
    protected List<PhonyPropValue> myCurrentTask;
@@ -32,8 +33,10 @@ public class JythonCodeBlock implements Printable {
     * @param console
     * the Jython console
     */
-   public JythonCodeBlock (String code, ArtisynthJythonConsole console) {
+   public JythonCodeBlock (BatchManager manager, String code,
+   ArtisynthJythonConsole console) {
       myCode = code;
+      myManager = manager;
       myConsole = console;
    }
 
@@ -88,10 +91,16 @@ public class JythonCodeBlock implements Printable {
             return ppv.value;
          }
       }
+      for (PropertySpecification propSpec : myManager.myPropertySpecifications) {
+         if (propSpec.getPropertyPath ().equals (propPath)) {
+            throw new IllegalArgumentException (
+               "property path \"" + propPath + "\" cannot appear in the when "
+               + "block of a redef statement if it was not defined *before* all"
+               + " the property paths listed in the corresponding redef block");
+         }
+      }
       throw new IllegalArgumentException (
-         "\"" + propPath + "\" does not correspond to a known property path "
-         + "or its value is not set because the it corresponds to a property "
-         + "path that was defined before those in the corresponding redef block");
+         "property path \"" + propPath + "\" was not previously defined");
    }
 
    /**
