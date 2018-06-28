@@ -55,6 +55,7 @@ public class JythonCodeBlock implements Printable {
       myConsole.getConsole ().set ("supervisor", this);
       String script =
          "_interpreter_.set('get', supervisor.get)\n"
+         + "_interpreter_.set('get_if_valid', supervisor.getIfValid)\n"
          + "_interpreter_.set('return_value', supervisor.returnValue)\n"
          + myCode;
       InputStream input =
@@ -71,6 +72,24 @@ public class JythonCodeBlock implements Printable {
       myReturnValue = null;
       return returnValue;
    }
+   
+   /**
+    * Returns the current value of the given property path as a string, or as
+    * {@code null} if the value is not set of the property path does not
+    * correspond to a known {@link PropertySpecification}.
+    * 
+    * @param propPath
+    * the property path
+    * @return the current value of the property path, or {@code null}
+    */
+   synchronized public String get (String propPath) {
+      for (PhonyPropValue ppv : myCurrentTask) {
+         if (ppv.propPath.equals (propPath)) {
+            return ppv.value;
+         }
+      }
+      return null;
+   }
 
    /**
     * Returns the current value of the given property path as a string.
@@ -84,7 +103,7 @@ public class JythonCodeBlock implements Printable {
     * path corresponds to a {@code PropertySpecification} that was not defined
     * before those in the corresponding redef block
     */
-   synchronized public String get (String propPath)
+   synchronized public String getIfValid (String propPath)
       throws IllegalArgumentException {
       for (PhonyPropValue ppv : myCurrentTask) {
          if (ppv.propPath.equals (propPath)) {
