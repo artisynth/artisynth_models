@@ -94,9 +94,10 @@ public class JythonCodeBlock implements Printable {
       for (PropertySpecification propSpec : myManager.myPropertySpecifications) {
          if (propSpec.getPropertyPath ().equals (propPath)) {
             throw new IllegalArgumentException (
-               "property path \"" + propPath + "\" cannot appear in the when "
-               + "block of a redef statement if it was not defined *before* all"
-               + " the property paths listed in the corresponding redef block");
+               "property path \"" + propPath + "\" cannot appear in this when "
+               + "block: every property specification listed in the redef "
+               + "block must be initially defined *after* every specification "
+               + "listed in the when block.");
          }
       }
       throw new IllegalArgumentException (
