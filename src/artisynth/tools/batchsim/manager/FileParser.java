@@ -466,13 +466,19 @@ public class FileParser {
                propSpecDef.addRedef (propSpec, checker);
                for (PropertySpecification whenPropSpec : checker
                   .getPropSpecs ()) {
-                  if (whenPropSpec.getIndex () >= propSpecDef.getIndex ()) {
+                  if (whenPropSpec.getIndex () > propSpecDef.getIndex ()) {
                      throw new IOException (
                         "component \"" + propPath
                         + "\" in redef block starting on line " + lineno
                         + " was defined before component \""
                         + whenPropSpec.getPropertyPath ()
                         + "\" in the corresponding when block");
+                  }
+                  if (whenPropSpec.getIndex () == propSpecDef.getIndex ()) {
+                     throw new IOException (
+                        "component \"" + propPath
+                        + "\" in redef block starting on line " + lineno
+                        + " cannot also be in the corresponding when block");
                   }
                }
                break;

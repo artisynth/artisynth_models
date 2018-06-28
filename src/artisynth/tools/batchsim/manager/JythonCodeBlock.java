@@ -70,21 +70,28 @@ public class JythonCodeBlock implements Printable {
    }
 
    /**
-    * Returns the current value of the given property path as a string, or as
-    * {@code null} if the value is not set of the property path does not
-    * correspond to a known {@link PropertySpecification}.
+    * Returns the current value of the given property path as a string.
     * 
     * @param propPath
     * the property path
-    * @return the current value of the property path, or {@code null}
+    * @return the current value of the property path
+    * @throws IllegalArgumentException
+    * if the given path does not correspond to a known
+    * {@link PropertySpecification} or the value is not set because the given
+    * path corresponds to a {@code PropertySpecification} that was not defined
+    * before those in the corresponding redef block
     */
-   synchronized public String get (String propPath) {
+   synchronized public String get (String propPath)
+      throws IllegalArgumentException {
       for (PhonyPropValue ppv : myCurrentTask) {
          if (ppv.propPath.equals (propPath)) {
             return ppv.value;
          }
       }
-      return null;
+      throw new IllegalArgumentException (
+         "\"" + propPath + "\" does not correspond to a known property path "
+         + "or its value is not set because the it corresponds to a property "
+         + "path that was defined before those in the corresponding redef block");
    }
 
    /**
