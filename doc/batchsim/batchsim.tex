@@ -27,7 +27,7 @@
 
 \title{The Batch Simulation Framework}
 \author{Francois Roewer-Despres}
-\setpubdate{Last update: June 26, 2018}
+\setpubdate{Last update: June 29, 2018}
 
 \iflatexml
 \date{}
@@ -839,6 +839,7 @@ A {\tt skip} statement is a list of \textit{combinatorial} property specificatio
 will skip all simulations where ({\tt prop1} = {\tt 1} OR {\tt prop1} = {\tt 2}) AND ({\tt prop2} = {\tt 3} OR {\tt prop2} = {\tt 4}), but allow all others (i.e.\ the pairs ({\tt 0}, {\tt 3}), ({\tt 0}, {\tt 4}), ({\tt 0}, {\tt 5}), ({\tt 1}, {\tt 5}), and ({\tt 2}, {\tt 5}) are all allowed).
 
 \subsubsection{{\tt redef} statements}
+\label{psl:control-struct:redef}
 
 {\tt redef} statements are composed of two blocks. The syntax is the keyword {\tt redef} followed by a list of property specifications, which may be combinatorial or probabilistic, and decorated or not (called the {\tt redef} block), followed by the keyword {\tt when}, followed by a list of \textbf{undecorated, combinatorial} property specifications (called the {\tt when} block), followed by the keyword {\tt end}.
 
@@ -869,7 +870,7 @@ Aside: we can think of the contents of the input file as a directed graph where 
   end
 \end{lstlisting}
 
-Here, {\tt prop1} acts as a flag which makes some other properties, namely {\tt prop2} and {\tt prop3}, have values that are either low or high in tandem. This effectively skips simulations where one has a low value while the other has a high value, which (in this example) we would want to discard as invalid.
+Here, {\tt prop1} acts as a flag which makes some other properties, namely {\tt prop2} and {\tt prop3}, have values that are either low or high in tandem. This effectively skips simulations where one has a low value while the other has a high value, which (in this example) we would want to discard as invalid. Notice that {\tt prop1} is defined before {\tt prop2} and {\tt prop3}. This is to preserve the valid ordering of property specifications, as mentioned above.
 
 \begin{sideblock}
 Note: since the effect of {\tt skip} and {\tt redef} statements is the same (discarding unwanted simulations), these two structures are effectively equivalent. Indeed, they simply represent different ways of expressing some discard behaviour/logic, and one can always be defined in terms of the other. However, since the logic may be much more complicated to express with one compared to the other, both are made available for convenience.
@@ -885,15 +886,33 @@ Note: the computational slowdown comes from the fact that, rather than executing
 \textbf{Although the computational slowdown is noticeable, it is \textit{rarely} significant enough to cause problems.} This is because the \BM\ creates simulation tasks (to fill its bag of tasks) in a separate thread than the one listening for task requests from the \BWs. A slowdown will therefore only affect the overall speed of BatchSim if simulation runtimes are faster than task creation times. This is very unlikely, unless the target model is extremely simple and there are a lot of Jython code blocks in the input file.
 \end{sideblock}
 
-The syntax of a Jython code block is the keyword {\tt jython} followed by a list of arbitrary lines of Jython code, each of which must be prepended by a {\tt \$}, followed by the keyword {\tt end}. Within the Jython code, two special functions are exposed.
+The syntax of a Jython code block is the keyword {\tt jython} followed by a list of arbitrary lines of Jython code, each of which must be prepended by a {\tt \$}, followed by the keyword {\tt end}. Within the Jython code, three special functions are exposed.
 
 \begin{description}
 
-\item[{\tt get()} ] \mbox{}
+\item[{\tt get(string)} ] \mbox{}
 
 Takes a string representing a property path, and returns the current value of the property specification with that property path (as a string), or {\tt None} if the value is not set.
 
-\item[{\tt return\_value()} ] \mbox{}
+The value may not be set for one of three reasons.
+
+\begin{enumerate}
+
+\item The given property path string does not correspond to a previously defined property specification (e.g. because of a typo). This can happen in both {\tt skip} and {\tt when} blocks.
+
+\item The property specification was previously defined, but the value has not yet been set. This can happen in both {\tt skip} and {\tt when} blocks, and occurs because the recursive algorithms from Sections \ref{psl:comb-spec} and \ref{psl:hybrid} have to run each Jython code block at the beginning of each recursive call in order to ensure the proper functioning of {\tt skip} and {\tt redef} statement logic. In the middle of the recursion, before reaching the base case, only some of the property specifications will be assigned a value.
+
+\item The property specification was previously defined, but the valid ordering of property specifications is not being respected (see Section \ref{psl:control-struct:redef}). This can happen in only in {\tt when} blocks.
+
+\end{enumerate}
+
+\item[{\tt get\_if\_valid(string)} ] \mbox{}
+
+Like {\tt get()}, but throws an exception instead of returning {\tt None} if the value is not set. This is useful to prevent silent bugs from occurring in code if the return value is not checked for equality to {\tt None}.
+
+The reason for having both {\tt get()} and {\tt get\_if\_valid()} is because of the second reason that {\tt get()} can return {\tt None}: a user may want to check for a ``partial match'' halfway through the recursion without having an exception thrown, and so needs to use {\tt get()} and explicitly check for {\tt None}, rather than use {\tt get\_if\_valid()}. This is an advantage over using the basic {\tt redef} statement, which always disallows out-of-order property specifications logic in order to provide an ``accelerated'' (see below) special case.
+
+\item[{\tt return\_value(boolean)} ] \mbox{}
 
 Takes a boolean and returns nothing. {\tt return\_value()} is a callback that passes the given value back to the \BM. If the Jython code block should trigger a match (either in a {\tt skip} or {\tt when} block), then {\tt return\_value(True)} should be called. Otherwise, {\tt return\_value(False)} should be called.
 
@@ -941,7 +960,7 @@ In addition to the above Jython code block syntax, Jython one-liners can be spec
 \section{Customizing \BWs}
 \label{custom}
 
-Whereas the \BM's behaviour is modified using the input file, the \BWs\ are designed to be customized by sublcassing \javaclass[artisynth.tools.batchsim]{BatchWorkerBase}.
+Whereas the \BM's behaviour is modified using the input file, the \BWs\ are designed to be customized by subclassing \javaclass[artisynth.tools.batchsim]{BatchWorkerBase}.
 
 \subsection{What \BWs\ do}
 

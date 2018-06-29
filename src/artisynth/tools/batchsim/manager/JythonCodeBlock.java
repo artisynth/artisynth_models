@@ -72,7 +72,7 @@ public class JythonCodeBlock implements Printable {
       myReturnValue = null;
       return returnValue;
    }
-   
+
    /**
     * Returns the current value of the given property path as a string, or as
     * {@code null} if the value is not set of the property path does not
@@ -99,28 +99,19 @@ public class JythonCodeBlock implements Printable {
     * @return the current value of the property path
     * @throws IllegalArgumentException
     * if the given path does not correspond to a known
-    * {@link PropertySpecification} or the value is not set because the given
-    * path corresponds to a {@code PropertySpecification} that was not defined
-    * before those in the corresponding redef block
+    * {@link PropertySpecification} or the value is not set (see the official
+    * documentation's Jython Code Block section for an explanation)
     */
    synchronized public String getIfValid (String propPath)
       throws IllegalArgumentException {
-      for (PhonyPropValue ppv : myCurrentTask) {
-         if (ppv.propPath.equals (propPath)) {
-            return ppv.value;
-         }
+      String get = get (propPath);
+      if (get == null) {
+         throw new IllegalArgumentException (
+            "the value of property path \"" + propPath + "\" is not set; see "
+            + "the official documentation's Jython Code Block section for an "
+            + "explanation as to why this happened");
       }
-      for (PropertySpecification propSpec : myManager.myPropertySpecifications) {
-         if (propSpec.getPropertyPath ().equals (propPath)) {
-            throw new IllegalArgumentException (
-               "property path \"" + propPath + "\" cannot appear in this when "
-               + "block: every property specification listed in the redef "
-               + "block must be initially defined *after* every specification "
-               + "listed in the when block.");
-         }
-      }
-      throw new IllegalArgumentException (
-         "property path \"" + propPath + "\" was not previously defined");
+      return get;
    }
 
    /**
