@@ -18,6 +18,7 @@ import maspack.util.IndentingPrintWriter;
 public class JythonCodeBlock implements Printable {
 
    protected String myCode;
+   protected BatchManager myManager;
    protected Boolean myReturnValue = null;
    protected ArtisynthJythonConsole myConsole;
    protected List<PhonyPropValue> myCurrentTask;
@@ -32,8 +33,10 @@ public class JythonCodeBlock implements Printable {
     * @param console
     * the Jython console
     */
-   public JythonCodeBlock (String code, ArtisynthJythonConsole console) {
+   public JythonCodeBlock (BatchManager manager, String code,
+   ArtisynthJythonConsole console) {
       myCode = code;
+      myManager = manager;
       myConsole = console;
    }
 
@@ -52,6 +55,7 @@ public class JythonCodeBlock implements Printable {
       myConsole.getConsole ().set ("supervisor", this);
       String script =
          "_interpreter_.set('get', supervisor.get)\n"
+         + "_interpreter_.set('get_if_valid', supervisor.getIfValid)\n"
          + "_interpreter_.set('return_value', supervisor.returnValue)\n"
          + myCode;
       InputStream input =
@@ -85,6 +89,29 @@ public class JythonCodeBlock implements Printable {
          }
       }
       return null;
+   }
+
+   /**
+    * Returns the current value of the given property path as a string.
+    * 
+    * @param propPath
+    * the property path
+    * @return the current value of the property path
+    * @throws IllegalArgumentException
+    * if the given path does not correspond to a known
+    * {@link PropertySpecification} or the value is not set (see the official
+    * documentation's Jython Code Block section for an explanation)
+    */
+   synchronized public String getIfValid (String propPath)
+      throws IllegalArgumentException {
+      String get = get (propPath);
+      if (get == null) {
+         throw new IllegalArgumentException (
+            "the value of property path \"" + propPath + "\" is not set; see "
+            + "the official documentation's Jython Code Block section for an "
+            + "explanation as to why this happened");
+      }
+      return get;
    }
 
    /**

@@ -287,7 +287,7 @@ public class HexTongueDemo extends RootModel {
          loadMusclesFromFile(tongue);
          createMuscleExciters(tongue);
       } else {
-         loadComponentsFromFile(tongue, geometrypath + "tongueJapandemo.art");
+         // loadComponentsFromFile(tongue, geometrypath + "tongueJapandemo.art");
       }
 
       HexTongueDemo.setTongueProperties(tongue);
