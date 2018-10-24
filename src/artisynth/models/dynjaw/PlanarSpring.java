@@ -33,7 +33,6 @@ import artisynth.core.mechmodels.AxialSpring;
 import artisynth.core.mechmodels.PlanarComponent;
 import artisynth.core.mechmodels.PlanarPoint;
 import artisynth.core.mechmodels.Point;
-import artisynth.core.mechmodels.PointState;
 import artisynth.core.materials.*;
 import artisynth.core.modelbase.ComponentUtils;
 import artisynth.core.modelbase.CompositeComponent;
@@ -57,7 +56,6 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
    boolean myEnabledP = true;
    
    Point3d myTmpPnt = new Point3d();
-   PointState myTmpPntState = new PointState();
    
    Plane myPlane;
    
