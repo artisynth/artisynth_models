@@ -28,6 +28,7 @@ import maspack.util.IndentingPrintWriter;
 import maspack.util.NumberFormat;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.mechmodels.MeshComponent;
@@ -315,7 +316,7 @@ public class SkinMeshMulti extends MeshComponent {
    
    int getFemWeights (ArrayList<FemModel3d> fems, Vertex3d vtx, double maxDist, double reduceTol, ArrayList<Double> weights, ArrayList<FemNode3d> nodes) {
       double minDist = maxDist;
-      FemElement3d elem = null;
+      FemElement3dBase elem = null;
       //FemModel3d fem = null;
       Point3d newLoc = new Point3d();
       
@@ -328,7 +329,7 @@ public class SkinMeshMulti extends MeshComponent {
        * which this vtx lies inside).
        */
       for(FemModel3d cfem : fems) {
-         FemElement3d celem = cfem.findContainingElement (vtx.pnt);
+         FemElement3dBase celem = cfem.findContainingElement (vtx.pnt);
          
          if (celem == null) {
             // won't use newLoc since we're not projecting vertex onto FEM

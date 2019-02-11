@@ -20,6 +20,7 @@ import maspack.render.Renderer.LineStyle;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.femmodels.AnsysReader;
 import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemMarker;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemMuscleModel;
@@ -1291,7 +1292,7 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
       FemMarker marker = new FemMarker();
 
       // add the marker to the model
-      FemElement3d elem = fem.findContainingElement (pnt);
+      FemElement3dBase elem = fem.findContainingElement (pnt);
       if (elem == null) {
          Point3d newLoc = new Point3d();
          elem = fem.findNearestSurfaceElement (newLoc, pnt);

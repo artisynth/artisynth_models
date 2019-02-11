@@ -95,11 +95,19 @@ public class FemMuscleTongueDemo extends HexTongueDemo {
       RenderProps.setVisible(tongue.getElements(), true);
       RenderProps.setVisible(tongue.getNodes(), false);
       RenderProps.setLineStyle(tongue.getMuscleBundles(), LineStyle.LINE);
-      RenderProps.setLineWidth(tongue.getMuscleBundles(), 2);
+      RenderProps.setLineWidth(tongue.getMuscleBundles(), 3);
       RenderProps.setVisible(tongue.getMuscleBundles(), true);
+
+      // make muscle bundle visibility inherited
+      for (MuscleBundle b : tongue.getMuscleBundles()) {
+         RenderProps.setVisibleMode(b, PropertyMode.Inherited);
+         RenderProps.setLineColor(b, FemControlPanel.getMuscleColor(b.getNumber()));
+         b.setElementWidgetSize(0);
+      }
    }
 
    public static FemMuscleModel createFemMuscleTongue(boolean linearMaterial) {
+      System.out.println ("createFemMuscleTongue");
       FemMuscleModel tongue = new FemMuscleModel("tongue");
       createFemMuscleTongue (tongue, linearMaterial);
       return tongue;

@@ -17,7 +17,7 @@ import maspack.render.GL.GLGridResolution;
 import maspack.render.GL.GLViewer;
 import maspack.render.Dragger3d.DraggerType;
 import artisynth.core.driver.Main;
-import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.materials.BlemkerMuscle;
@@ -372,7 +372,7 @@ public class VKHUpperAirwayWA extends ModelTemplate {
        * which this vtx lies inside).
        */
       for(FemModel3d cfem : fems) {
-         FemElement3d celem = cfem.findContainingElement (vtx.pnt);
+         FemElement3dBase celem = cfem.findContainingElement (vtx.pnt);
          
          if (celem == null) {
             celem = cfem.findNearestSurfaceElement (newLoc, vtx.pnt);

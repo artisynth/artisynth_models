@@ -3,10 +3,9 @@ package artisynth.models.palateV2;
 import java.awt.Color;
 import java.util.ArrayList;
 
-import maspack.matrix.AffineTransform3d;
 import maspack.matrix.Point3d;
 import maspack.matrix.Vector3d;
-import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemMarker;
 import artisynth.core.femmodels.FemMuscleModel;
 import artisynth.core.femmodels.FemNode3d;
@@ -54,7 +53,7 @@ public class SoftPalateMuscles
 	 Point point;
 
 	 // add the marker to the model
-	 FemElement3d elem = fem.findContainingElement (pnt3d);
+	 FemElement3dBase elem = fem.findContainingElement (pnt3d);
 	 //elem = null;
 	 if ( (elem == null) && (allowExternal == false) ) 
 	 {

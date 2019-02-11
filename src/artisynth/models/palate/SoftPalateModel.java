@@ -412,7 +412,7 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
       FemMarker marker = new FemMarker();
 
       // add the marker to the model
-      FemElement3d elem = fem.findContainingElement (pnt);
+      FemElement3dBase elem = fem.findContainingElement (pnt);
       if (elem == null) {
          Point3d newLoc = new Point3d();
          elem = fem.findNearestSurfaceElement (newLoc, pnt);

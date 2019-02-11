@@ -21,7 +21,7 @@ import maspack.render.Renderer;
 import maspack.render.Renderer.LineStyle;
 import maspack.widgets.DoubleFieldSlider;
 import artisynth.core.driver.Main;
-import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemMarker;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
 import artisynth.core.femmodels.FemModel3d;
@@ -489,7 +489,7 @@ public class VKHUpperAirwaySwallowingWA extends ModelTemplate {
        * which this vtx lies inside).
        */
       for(FemModel3d cfem : fems) {
-         FemElement3d celem = cfem.findContainingElement (vtx.pnt);
+         FemElement3dBase celem = cfem.findContainingElement (vtx.pnt);
          
          if (celem == null) {
             celem = cfem.findNearestSurfaceElement (newLoc, vtx.pnt);

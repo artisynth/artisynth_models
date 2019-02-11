@@ -34,6 +34,7 @@ import artisynth.core.driver.Main;
 import artisynth.core.femmodels.AnsysReader;
 import artisynth.core.femmodels.AnsysWriter;
 import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemMarker;
 import artisynth.core.femmodels.FemModel.IncompMethod;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
@@ -579,7 +580,7 @@ public class BadinFaceDemo extends RootModel {
    }
 
    private static FemMarker createMarker(FemMuscleModel face, Point3d pos) {
-      FemElement3d elem = face.findContainingElement(pos);
+      FemElement3dBase elem = face.findContainingElement(pos);
       if (elem == null) {
          Point3d origpos = new Point3d(pos);
          elem = face.findNearestSurfaceElement(pos, origpos);
@@ -953,7 +954,7 @@ public class BadinFaceDemo extends RootModel {
                //	       RenderProps.setVisible(nodes[i], true);
                neighborElems.addAll(face.getElementNeighbors(nodes[i]));
                for (FemElement3d e : neighborElems) {
-                  if (e.hasFace(nodes[0], nodes[1], nodes[2], nodes[3])) {
+                  if (e.containsFace(nodes[0], nodes[1], nodes[2], nodes[3])) {
                      contactElems.add(e);
                      break;
                   }

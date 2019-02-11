@@ -30,7 +30,6 @@ import maspack.render.RenderProps;
 import maspack.render.Renderer;
 import maspack.render.Renderer.LineStyle;
 import maspack.render.Renderer.PointStyle;
-import maspack.util.InternalErrorException;
 import maspack.util.ReaderTokenizer;
 import maspack.util.Logger.LogLevel;
 import maspack.widgets.BooleanSelector;
@@ -38,9 +37,9 @@ import maspack.widgets.DoubleFieldSlider;
 import maspack.widgets.PropertyWidget;
 import maspack.widgets.ValueChangeEvent;
 import maspack.widgets.ValueChangeListener;
-import artisynth.core.driver.Main;
 import artisynth.core.femmodels.AnsysReader;
 import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemMarker;
 import artisynth.core.femmodels.FemModel.IncompMethod;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
@@ -2103,7 +2102,7 @@ public class ModelTemplate extends RootModel {
       FemMarker marker = new FemMarker();
 
       // add the marker to the model
-      FemElement3d elem = fem.findContainingElement(pnt);
+      FemElement3dBase elem = fem.findContainingElement(pnt);
       if (elem == null) {
          Point3d newLoc = new Point3d();
          elem = fem.findNearestSurfaceElement(newLoc, pnt);

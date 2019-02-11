@@ -17,6 +17,7 @@ import maspack.render.Renderer.PointStyle;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.femmodels.AnsysReader;
 import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemMarker;
 import artisynth.core.femmodels.FemModel;
 import artisynth.core.femmodels.FemModel3d;
@@ -214,7 +215,7 @@ public class RegisteredSoftPalate extends RootModel {
       FemMarker marker = new FemMarker();
 
       // add the marker to the model
-      FemElement3d elem = fem.findContainingElement (pnt);
+      FemElement3dBase elem = fem.findContainingElement (pnt);
       if (elem == null) {
          Point3d newLoc = new Point3d();
          elem = fem.findNearestSurfaceElement (newLoc, pnt);

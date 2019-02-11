@@ -18,6 +18,7 @@ import java.util.Map;
 
 import artisynth.core.femmodels.AnsysReader;
 import artisynth.core.femmodels.FemElement;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemElement3d;
 import artisynth.core.femmodels.FemMarker;
 import artisynth.core.femmodels.FemMeshComp;
@@ -305,7 +306,7 @@ public class SoftBody extends AbstractBody {
 					Point3d reflect = new Point3d();
 					midSagittalPlane.reflect(reflect, pos);
 
-					FemElement3d elem = fem.findContainingElement(reflect);
+					FemElement3dBase elem = fem.findContainingElement(reflect);
 					if (elem == null) {
 						Point3d origreflect = new Point3d(reflect);
 						elem = fem.findNearestSurfaceElement(reflect, origreflect);

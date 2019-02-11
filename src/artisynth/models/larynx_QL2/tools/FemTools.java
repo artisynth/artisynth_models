@@ -1856,7 +1856,8 @@ public class FemTools {
 
 			public static double reportHexQuality(HexElement hex, double optimalLength) {
 				double hexQuality = calculateHexQuality(hex, optimalLength);
-				System.out.println("Hex " + hex.getNumber() + ": quality is " + String.format("%.3f", hexQuality*100) + "% ... volume is " + String.format("%.3f", hex.computeVolumes()) + (hex.isInvertedAtRest() ? " (inverted)" : ""));
+				hex.computeVolumes();
+				System.out.println("Hex " + hex.getNumber() + ": quality is " + String.format("%.3f", hexQuality*100) + "% ... volume is " + String.format("%.3f", hex.getVolume()) + (hex.isInvertedAtRest() ? " (inverted)" : ""));
 				return hexQuality;
 			}
 		}

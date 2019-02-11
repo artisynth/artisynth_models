@@ -283,10 +283,10 @@ public class ExMeshGenerator {
          new HexElement(
             nodes.get(0), nodes.get(1), nodes.get(2), nodes.get(3),
             nodes.get(4), nodes.get(5), nodes.get(6), nodes.get(7));
-      double volume = e.computeVolumes();
+      double detJ = e.computeVolumes();
 
       // if negative volume, switch order
-      if (volume < 0) {
+      if (detJ < 0) {
          System.out
             .println("Warning: hex as defined has negative volume, mirroring nodes... ("
                + elemId + ")");
@@ -386,7 +386,7 @@ public class ExMeshGenerator {
          System.out
             .println("Warning: wedge as defined has negative volume, mirroring nodes... ("
                + elemId + ")");
-         System.out.println("Computed wedge volume: " + e.computeVolumes());
+         System.out.println("Computed wedge volume: " + e.getVolume());
 
          String nodeStr = "nodeIDs = [";
          String nodeCoords = "nodes = [\n";
