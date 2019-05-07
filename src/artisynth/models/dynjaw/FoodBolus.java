@@ -27,10 +27,10 @@ import maspack.util.*;
 import artisynth.core.mechmodels.ForceComponent;
 import artisynth.core.mechmodels.PlanarConnector;
 import artisynth.core.mechmodels.Point;
-import artisynth.core.mechmodels.HasAuxState;
 import artisynth.core.modelbase.ComponentUtils;
 import artisynth.core.modelbase.CompositeComponent;
 import artisynth.core.modelbase.CompositeComponentBase;
+import artisynth.core.modelbase.HasNumericState;
 import artisynth.core.modelbase.RenderableComponentBase;
 import artisynth.core.modelbase.ScanWriteUtils;
 import artisynth.core.modelbase.TransformGeometryContext;
@@ -38,7 +38,7 @@ import artisynth.core.modelbase.TransformableGeometry;
 import artisynth.core.util.*;
 
 public class FoodBolus extends RenderableComponentBase 
-   implements ForceComponent, ScalableUnits, TransformableGeometry, HasAuxState
+   implements ForceComponent, ScalableUnits, TransformableGeometry, HasNumericState
 {
 
    boolean useNormalToPlane = true; // if false, calculate normal b/w plane origin and colliding point
@@ -484,32 +484,15 @@ public class FoodBolus extends RenderableComponentBase
       // no dependencies
    }
 
-   public void advanceAuxState (double t0, double t1) {
+   public void advanceState (double t0, double t1) {
    }
 
-   /** 
-    * {@inheritDoc}
-    */
-   public void skipAuxState (DataBuffer data) {
-      data.dskip (1);
-      data.zskip (1);
-   }
-
-   public void getInitialAuxState (DataBuffer newData, DataBuffer oldData) {
-      if (oldData == null) {
-         getAuxState (newData);
-      }
-      else {
-         newData.putData (oldData, 1, 1);
-      }
-   }
-
-   public void getAuxState (DataBuffer data) {
+   public void getState (DataBuffer data) {
       data.dput (myLastStepTime);
       data.zput (isCrushed() ? 1 : 0);
    }
-
-   public void setAuxState (DataBuffer data) {
+   
+   public void setState (DataBuffer data) {
       myLastStepTime = data.dget();
       setCrushed (data.zget() != 0);
    }

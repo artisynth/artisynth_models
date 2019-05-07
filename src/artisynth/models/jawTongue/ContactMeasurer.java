@@ -52,12 +52,11 @@ public class ContactMeasurer extends MonitorBase {
          HashMap<Vertex3d,Vector3d> collForces =
             new HashMap<Vertex3d,Vector3d> ();
 
-         Map<Vertex3d,Vector3d> collMap = response.getContactImpulses(0);
+         Map<Vertex3d,Vector3d> collMap = response.getContactForces(0);
 
          if (collMap != null) {
             for (Vertex3d v : collMap.keySet ()) {
                Vector3d force = new Vector3d (collMap.get (v));
-               force.scale (1.0 / dt); // impulse to force
                collForces.put (v, force);
                collForce = collForce + force.norm ();
                if (force.norm () > f_localMax)
