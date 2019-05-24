@@ -111,29 +111,31 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
    public void applyForces (double t)
    {
       if (isEnabled())
-      {        
-         computeForce (myTmp);
-         myPnt0.subForce (myTmp); // spring pulls toward plane
+      {     
+         Vector3d tmp = new Vector3d();
+         computeForce (tmp);
+         myPnt0.subForce (tmp); // spring pulls toward plane
       }
    }
    
    public void computeForce (Vector3d f)
    {
+      projectPnt1ToPlane();
       super.computeForce(f);
       if (!isActive())
          f.setZero();
    }
    
-   protected void updateU ()
-   { 
-     projectPnt1ToPlane();
-     // unit vector points from projPnt to collidingPnt
-     myU.sub (myPnt0.getPosition(), myPnt1.getPosition());
-     myLength = myU.norm();
-     if (myLength != 0)
-      { myU.scale (1/myLength);
-      }
-   }
+//   protected void updateU ()
+//   { 
+//     projectPnt1ToPlane();
+//     // unit vector points from projPnt to collidingPnt
+//     myU.sub (myPnt0.getPosition(), myPnt1.getPosition());
+//     myLength = myU.norm();
+//     if (myLength != 0)
+//      { myU.scale (1/myLength);
+//      }
+//   }
    
    public void render (Renderer renderer, int flags)
    {
@@ -245,7 +247,7 @@ public class PlanarSpring extends AxialSpring implements PlanarComponent,
    
    public boolean isActive()
    {
-      return !isUnilateral() || myU.dot(myPlane.getNormal())<0.0;
+      return !isUnilateral() || mySeg.uvec.dot(myPlane.getNormal())<0.0;
    }
    
    public void setEnabled(boolean enabled)
