@@ -104,7 +104,7 @@ public class TongueBracingDemo extends BadinJawHyoidTongue {
       setBodyPosture (hyoid_jawOpenPosture, "hyoid");      
       
       ArtisynthPath.setWorkingDir(new File(ArtisynthPath.getSrcRelativePath (this, "data/bracing/rest2a")));
-      
+      resetInitialState();
 
    }
- }
+}

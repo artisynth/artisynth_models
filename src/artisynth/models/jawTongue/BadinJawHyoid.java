@@ -14,6 +14,7 @@ import maspack.geometry.OBBTree;
 import maspack.geometry.PolygonalMesh;
 import maspack.geometry.Vertex3d;
 import maspack.matrix.AxisAngle;
+import maspack.matrix.AffineTransform3d;
 import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector2d;
@@ -126,6 +127,8 @@ public class BadinJawHyoid extends JawLarynxDemo {
    }
    
    protected RigidTransform3d origJawWorld = null;
+   // set to true in order to call setRestPosture in the attach method
+   protected boolean setRestPostureInAttach = false;
    
    public static PropertyList myProps =
       new PropertyList (BadinJawHyoid.class, JawLarynxDemo.class);
@@ -580,8 +583,10 @@ public class BadinJawHyoid extends JawLarynxDemo {
       // set rest posture in attach() so that jaw pose is changes after 
       // tongue is dynamically-attached for BadinJawHyoidTongue
       /* XXX bad hack */
-      if (this.getClass().getPackage() == BadinJawHyoid.class.getPackage())
+      if (setRestPostureInAttach ||
+          this.getClass().getPackage() == BadinJawHyoid.class.getPackage()) {
 	 setRestPosture();
+      }
       
 //      setIntercuspalPosture();
       
@@ -594,7 +599,13 @@ public class BadinJawHyoid extends JawLarynxDemo {
 //      OBB jawobb = new OBB ();
 //      jawobb.set (myJawModel.rigidBodies ().get("jaw").getMesh ());
 //      driver.getViewer ().addRenderable (jawobb);
-      
+      resetInitialState();
+   }
+   
+   protected void resetInitialState() {
+      // bit of hack: called when initial state is changed in the attach()
+      // method, requiring the initial state stored in waypoint 0 to be reset
+      getWayPoint(0).setState (this);
    }
    
    public void loadProbes() {
@@ -854,33 +865,18 @@ public class BadinJawHyoid extends JawLarynxDemo {
    
    public static RigidTransform3d centerBodyAtPoint (RigidBody body, Point3d pos) {
       body.setAxisLength (5);
-      RigidTransform3d XPointToBody = new RigidTransform3d ();
-      XPointToBody.p.set (pos);
-
-      RigidTransform3d XBodyToWorld = new RigidTransform3d ();
-      body.getPose (XBodyToWorld);
-
-      RigidTransform3d XPointToWorld = new RigidTransform3d ();
-      XPointToWorld.mul (XBodyToWorld, XPointToBody);
-      body.setPose (XPointToWorld);
-
-      RigidTransform3d XMeshToPoint = new RigidTransform3d ();
-      if (body.getMesh () != null) {
-         PolygonalMesh mesh = body.getMesh ();
-         XMeshToPoint.invert (XPointToWorld);
-         mesh.transform (XMeshToPoint);
-         body.setMesh (mesh, null);
-      }
-
+      Point3d posl = new Point3d(pos);
+      Point3d posw = new Point3d(pos);
+      posw.transform (body.getPose().R);
+      body.translateCoordinateFrame (posw);
       for (FrameMarker mrk : body.getFrameMarkers ()) {
          // System.out.println("transforming " + mrk.getName ());
          Point3d loc = new Point3d ();
          mrk.getLocation (loc);
-         loc.transform (XMeshToPoint);
+         loc.sub (posl);
          mrk.setLocation (loc);
       }
-      
-      return XPointToWorld;
+      return body.getPose();
    }
    
    public void replaceSkullMeshes() {
@@ -1258,9 +1254,10 @@ public class BadinJawHyoid extends JawLarynxDemo {
             mesh = new PolygonalMesh (new File(fileName));
             mesh.scale (m2mm);
          }
-         
          if (mesh != null) {
-            body.setMesh (mesh, fileName);
+            AffineTransform3d Xscaling = new AffineTransform3d();
+            Xscaling.setScaling (m2mm, m2mm, m2mm);
+            body.setMesh (mesh, fileName, Xscaling);
             if (mesh.getTextureCoords() == null || 
                 mesh.getTextureCoords().size() == 0) {
                RenderProps.setColorMapEnabled (body, false);
@@ -1321,12 +1318,7 @@ public class BadinJawHyoid extends JawLarynxDemo {
          body.setPose (XJawToWorld);
          myJawModel.updatePosState ();
       }
-
-      // reset jaw initial state to original pose
-      Main.getMain().componentChanged (
-         new ComponentChangeEvent (Code.STRUCTURE_CHANGED));
    }
-
    
    public double[] getContourTols() {
       return tols;
