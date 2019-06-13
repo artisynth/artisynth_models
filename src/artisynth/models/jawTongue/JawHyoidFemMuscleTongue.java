@@ -49,8 +49,9 @@ public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
       setupTongueRenderProps();
       
       this.setAdaptiveStepping (false);
-      FemMuscleTongueDemo.addExcitersFromFiles (tongue, ArtisynthPath.getSrcRelativePath (FemMuscleTongueDemo.class, "exciters/"));
-      
+      if (tongue != null) {
+         FemMuscleTongueDemo.addExcitersFromFiles (tongue, ArtisynthPath.getSrcRelativePath (FemMuscleTongueDemo.class, "exciters/"));
+      }
    }
 
    public void setupTongueRenderProps() {
@@ -137,7 +138,9 @@ public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
       
       
 //    HexTongueDemo.setActivationColor (tongue);
-      HexTongueDemo.addMuscleExciterProbes (this, tongue, Order.Linear);  // default duration = 1
+      if (tongue != null) {
+         HexTongueDemo.addMuscleExciterProbes (this, tongue, Order.Linear);  // default duration = 1
+      }
       HexTongueDemo.addMuscleExciterProbe (this, myJawModel.getMuscleExciters ().get ("bi_ad"), Order.Linear, /*duration=*/1.0);
       HexTongueDemo.addMuscleExciterProbe (this, myJawModel.getMuscleExciters ().get ("bi_ip"), Order.Linear, /*duration=*/1.0);
       HexTongueDemo.addMuscleExciterProbe (this, myJawModel.getMuscleExciters ().get ("bi_close"), Order.Linear, /*duration=*/1.0);

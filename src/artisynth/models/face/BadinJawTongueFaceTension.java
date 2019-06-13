@@ -94,7 +94,7 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
 
       try {
          //         readRSTLFile(dataDir, "langer_rotMat_badin");
-         readRSTLFile(dataDir, "RSTL_rotMat_badin_old");
+         readRSTLFile(dataDir, "rstl_rotMat_badin_old");
       } catch (IOException e) {
          // TODO Auto-generated catch block
          e.printStackTrace();
@@ -114,7 +114,7 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
 
 //      myJawModel.removeRigidBody(maxilla);
       
-      replaceMesh(cranium, BadinFaceDemo.faceGeometryDir + "badinskullEditChoppedTeeth.obj");
+//      replaceMesh(cranium, BadinFaceDemo.faceGeometryDir + "badinskullEditChoppedTeeth.obj");
 //      replaceMesh(maxilla, BadinFaceDemo.faceGeometryDir + "badinmaxilla.obj");
       BadinJawFaceDemo.transformAndReplaceMesh(jaw, BadinFaceDemo.faceGeometryDir + "badinjaw.obj");
 
@@ -422,9 +422,10 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
       Scanner s = null;
       double[] rotMatComp = new double[9];
 
+      String fileName = dataDir + name + ".txt";
       try {
          s = new Scanner(
-            new BufferedReader(new FileReader(dataDir + name + ".txt")));
+            new BufferedReader(new FileReader(fileName)));
          s.useLocale(Locale.US);
 
          for (FemElement3d e : face.getElements()) {
@@ -433,8 +434,12 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
             }
             e.setFrame (new Matrix3d (rotMatComp));
          }
-      } finally {
-         s.close();
+      }
+      catch (Exception e) {
+         System.out.println ("Error reading file " + fileName + ": "+e);
+      } 
+      finally {
+         if (s != null) s.close();
       }
    }
 
