@@ -241,11 +241,11 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
       return image;
    }
    
-   public void addToExciter(MuscleExciter ex, ArrayList<MuscleElementDesc> elemsToAdd) {
-      for (MuscleElementDesc desc : elemsToAdd) {
-	 ex.addTarget(desc, 1);
-      }
-   }
+//   public void addToExciter(MuscleExciter ex, ArrayList<MuscleElementDesc> elemsToAdd) {
+//      for (MuscleElementDesc desc : elemsToAdd) {
+//	 ex.addTarget(desc, 1);
+//      }
+//   }
    
    public ArrayList<MuscleElementDesc> addoop(String name) {
       MuscleBundle oop = face.getMuscleBundles().get("OOP");

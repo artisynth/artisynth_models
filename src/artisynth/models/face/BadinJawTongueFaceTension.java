@@ -59,8 +59,8 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
    public static double muscleThickness = 6;
 
    boolean collideTongueFace = false;
-   boolean openJaw           = true;
-   boolean smile             = false;
+   boolean openJaw           = false;
+   boolean smile             = true;
    boolean scar              = false;
    public static boolean contactEnabled = false;
    public static boolean faceMusclesActivated = false;
@@ -252,7 +252,7 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
       if (smile) {
       //    String[] purseMuscles = new String[] {"OOP", "OOM", "BUC"};
 //    String[] poutMuscles = new String[] {"DAO", "DLI", "MENT"};
-        String[] smileMuscles = new String[] {"ZYG", "LAO", "RIS", "LLSAN", "OOP", "OOM", "BUC", "MENT", "DAO", "DLI"};
+        String[] smileMuscles = new String[] {"ZYG", "LAO", "RIS", "LLSAN", "OOPu", "OOPl", "OOM", "BUC", "MENT", "DAO", "DLI"};
 //    String[] openSmileMuscles = new String[] {"ZYG", "LAO", "RIS", "LLSAN", "DLI", "DAO"};
         addFaceMuscleProbes(Main.getMain().getRootModel(), face, 0.0d, timeToFinish, smileMuscles);
       }
@@ -703,58 +703,113 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
       b.computeElementDirections();
    }
 
+//   /**
+//    * Old method for creating OOP. See comments in setDefaultOOP(), below.
+//    */
+//   public void setDefaultOOPOld() {
+//      // use 7M fiber directions
+//      // add elements for 7th upper, 6th lower ring
+//
+//      MuscleBundle oop = face.getMuscleBundles().get("OOP");
+//      System.out.println ("num elems=" + oop.getElements().size());
+//      
+//      loadoop(oop, "7M");
+//      oop.clearElements();
+//
+//      MuscleExciter ex = new MuscleExciter("OOPu");
+//      face.addMuscleExciter(ex);
+//      addToExciter(ex, addoop("7Du"));
+//      addToExciter(ex, addoop("7Mu"));
+//      addToExciter(ex, addoop("7Su"));
+//
+//      ex = new MuscleExciter("OOPl");
+//      face.addMuscleExciter(ex);
+//      addToExciter(ex, addoop("6Dl"));
+//      addToExciter(ex, addoop("6Ml"));
+//      addToExciter(ex, addoop("6Sl"));
+//
+//      oop.setElementWidgetSize(1);
+//      RenderProps.setVisible(oop, true);
+//   }
+   
+   /**
+    * John Lloyd, Jul 13, 2019.
+    * 
+    * New method for default OOP. Creates two new muscle groups, OOPu
+    * and OOPl, for separate upper and lower excitation. The original 
+    * method created a single group, OOP, and controlled subelements
+    * within this using separate exciters, something which is not
+    * longer supported.
+    */
    public void setDefaultOOP() {
       // use 7M fiber directions
       // add elements for 7th upper, 6th lower ring
+      MuscleBundle oopu = new MuscleBundle ("OOPu");
+      face.addMuscleBundle (oopu);
+      MuscleExciter exu = new MuscleExciter("OOPu");
+      face.addMuscleExciter(exu);
+      exu.addTarget (oopu);
+      
+      loadoop(oopu, "7M"); // temporarily load 7M elems just to create fibers 
+      oopu.clearElements();     
+      addoop (oopu, "7Du");
+      addoop (oopu, "7Mu");
+      addoop (oopu, "7Su");
+      //RefFemMuscleFaceDemo.setFibresFromElementCentroids(face, oopu);
+      oopu.computeElementDirections();
+      
+      MuscleBundle oopl = new MuscleBundle ("OOPl");
+      face.addMuscleBundle (oopl);
+      MuscleExciter exl = new MuscleExciter("OOPl");
+      face.addMuscleExciter(exl);
+      exl.addTarget (oopl);
+      
+      loadoop(oopl, "7M"); // temporarily load 7M elems just to create fibers 
+      oopl.clearElements();          
+      addoop (oopl, "6Dl");
+      addoop (oopl, "6Ml");
+      addoop (oopl, "6Sl");
+      //RefFemMuscleFaceDemo.setFibresFromElementCentroids(face, oopl);
+      oopl.computeElementDirections();
 
-      MuscleBundle oop = face.getMuscleBundles().get("OOP");
-      loadoop("7M");
-      oop.clearElements();
-
-      MuscleExciter ex = new MuscleExciter("OOPu");
-      face.addMuscleExciter(ex);
-      addToExciter(ex, addoop("7Du"));
-      addToExciter(ex, addoop("7Mu"));
-      addToExciter(ex, addoop("7Su"));
-
-      ex = new MuscleExciter("OOPl");
-      face.addMuscleExciter(ex);
-      addToExciter(ex, addoop("6Dl"));
-      addToExciter(ex, addoop("6Ml"));
-      addToExciter(ex, addoop("6Sl"));
-
-
-      oop.setElementWidgetSize(1);
-      RenderProps.setVisible(oop, true);
-
+      oopu.setElementWidgetSize(1);
+      RenderProps.setVisible(oopu, true);
+      oopl.setElementWidgetSize(1);
+      RenderProps.setVisible(oopl, true);
    }
 
-   public void addToExciter(MuscleExciter ex, ArrayList<MuscleElementDesc> elemsToAdd) {
-      for (MuscleElementDesc desc : elemsToAdd) {
-         ex.addTarget(desc, 1);
-      }
-   }
-   public void loadoop(String name) {
-      RefFemMuscleFaceDemo.loadMuscleElements(face, face.getMuscleBundles().get("OOP"),
-         geometryDir+"oop/"+name+"_elements.txt");
+//   public void addToExciter(MuscleExciter ex, ArrayList<MuscleElementDesc> elemsToAdd) {
+//      for (MuscleElementDesc desc : elemsToAdd) {
+//         ex.addTarget(desc, 1);
+//      }
+//   }
+   
+   public void addoop(MuscleBundle mus, String name) { 
+      RefFemMuscleFaceDemo.addMuscleElements(
+         face, mus, geometryDir+"oop/"+name+"_elements.txt");
+   }   
+   
+   public void loadoop(MuscleBundle mus, String name) {
+      RefFemMuscleFaceDemo.loadMuscleElements(
+         face, mus, geometryDir+"oop/"+name+"_elements.txt");
 
-      RefFemMuscleFaceDemo.setFibresFromElementCentroids(face, face.getMuscleBundles().get("OOP"));
+      RefFemMuscleFaceDemo.setFibresFromElementCentroids(face, mus);
    }
 
-   public ArrayList<MuscleElementDesc> addoop(String name) {
-      MuscleBundle oop = face.getMuscleBundles().get("OOP");
-      ArrayList<MuscleElementDesc> muscleElems = new ArrayList<MuscleElementDesc>();
-      String filename = geometryDir+"oop/"+name+"_elements.txt";
-      for (Integer id : BadinFaceDemo.readIntList(filename)) {
-         MuscleElementDesc desc = new MuscleElementDesc();
-         FemElement3d elem = face.getElements().getByNumber(id);
-         desc.setElement(elem);
-         oop.addElement(desc);
-         muscleElems.add(desc);
-      }
-      oop.computeElementDirections();
-      return muscleElems;
-   }
+//   public ArrayList<MuscleElementDesc> addoop(String name) {
+//      MuscleBundle oop = face.getMuscleBundles().get("OOP");
+//      ArrayList<MuscleElementDesc> muscleElems = new ArrayList<MuscleElementDesc>();
+//      String filename = geometryDir+"oop/"+name+"_elements.txt";
+//      for (Integer id : BadinFaceDemo.readIntList(filename)) {
+//         MuscleElementDesc desc = new MuscleElementDesc();
+//         FemElement3d elem = face.getElements().getByNumber(id);
+//         desc.setElement(elem);
+//         oop.addElement(desc);
+//         muscleElems.add(desc);
+//      }
+//      oop.computeElementDirections();
+//      return muscleElems;
+//   }
 
    public static void setNodesDynamicByIndex (FemModel3d fem, String nodeIndicesFilename) {
       for (Integer ni : readIntList (geometryDir + nodeIndicesFilename)) {

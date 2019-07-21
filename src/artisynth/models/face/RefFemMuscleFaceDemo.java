@@ -16,6 +16,7 @@ import maspack.render.Renderer.PointStyle;
 import maspack.util.ReaderTokenizer;
 import artisynth.core.femmodels.AnsysReader;
 import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemElement3dBase;
 import artisynth.core.femmodels.FemMarker;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemMuscleModel;
@@ -109,14 +110,16 @@ public class RefFemMuscleFaceDemo extends RefFaceDemo{
    
    public static void loadMuscleElements(FemMuscleModel face, MuscleBundle bundle, String filename) {
       bundle.getElements().clear();
-
+      addMuscleElements (face, bundle, filename);
+   }
+   
+   public static void addMuscleElements(FemMuscleModel face, MuscleBundle bundle, String filename) {
       for (Integer id : BadinFaceDemo.readIntList(filename)) {
-	 MuscleElementDesc desc = new MuscleElementDesc();
-	 FemElement3d elem = face.getElements().getByNumber(id);
-	 desc.setElement(elem);
-	 bundle.addElement(desc);
+         MuscleElementDesc desc = new MuscleElementDesc();
+         FemElement3d elem = face.getElements().getByNumber(id);
+         desc.setElement(elem);
+         bundle.addElement(desc);
       }
-//      setFibresFromElementCentroids(face, bundle);
    }
    
    public void loadoop(String name) {
@@ -183,7 +186,7 @@ public class RefFemMuscleFaceDemo extends RefFaceDemo{
    }
    
    public static void setFibresFromElementCentroids(FemMuscleModel fem, MuscleBundle bundle) {
-      ArrayList<FemElement3d> elems = new ArrayList<FemElement3d>();
+      ArrayList<FemElement3dBase> elems = new ArrayList<>();
       for (MuscleElementDesc desc : bundle.getElements()) {
 	 elems.add(desc.getElement());
       }
@@ -202,11 +205,11 @@ public class RefFemMuscleFaceDemo extends RefFaceDemo{
 //      setFibresFromElementCentroids(face, bundle);
    }
    
-   public static void setFibresFromElementCentroids(FemMuscleModel fem, MuscleBundle bundle, ArrayList<FemElement3d> elems) {
+   public static void setFibresFromElementCentroids(FemMuscleModel fem, MuscleBundle bundle, ArrayList<FemElement3dBase> elems) {
       bundle.getFibres().clear();
       Point3d centroid = new Point3d();
       FemMarker first = null, prev = null;
-      for (FemElement3d elem : elems) {
+      for (FemElement3dBase elem : elems) {
 	 if (elem instanceof WedgeElement) 
 	    continue; // ignore wedges because centroids are offset
 	 IntegrationPoint3d warpingPnt = elem.getWarpingPoint();

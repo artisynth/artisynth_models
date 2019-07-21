@@ -83,7 +83,7 @@ public class QuadhexTongueDemo extends HexTongueDemo {
       getInputProbes().get(getInputProbes().size()-1).setActive(true);
 
       // delete all elements except those associated with GGP
-      ArrayList<FemElement3d> ggpElems = new ArrayList<FemElement3d>();
+      ArrayList<FemElement3dBase> ggpElems = new ArrayList<FemElement3dBase>();
       for (MuscleElementDesc d :
               tongue.getMuscleBundles().get("GGP_L").getElements()) {
          ggpElems.add (d.getElement());

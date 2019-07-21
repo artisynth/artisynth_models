@@ -70,7 +70,7 @@ public class SoftPalateBracingDemo extends TongueBracingDemo {
          RenderProps.setVisible (softPalate.getNodes(), false);
          RenderProps.setVisible (softPalate.markers (), false);
 //         RenderProps.setVisible (softPalate.getElements(), false);
-         RenderProps.setVisible (softPalate.getMaterialBundles (), false);
+         RenderProps.setVisible (softPalate.getAuxMaterialBundles (), false);
 
       }
       
