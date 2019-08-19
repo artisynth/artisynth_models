@@ -353,7 +353,7 @@ public class SkinMeshMulti extends MeshComponent {
       int numWeights = 0;
       if (elem != null) {
          VectorNd coords = new VectorNd (elem.numNodes());
-         elem.getMarkerCoordinates (coords, vtx.pnt, false); 
+         elem.getMarkerCoordinates (coords, null, vtx.pnt, false); 
          for (int k=0; k<coords.size(); k++) {
             if (Math.abs(coords.get(k)) >= reduceTol) {
                nodes.add (elem.getNodes()[k]);
