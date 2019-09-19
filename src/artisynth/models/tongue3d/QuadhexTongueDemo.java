@@ -39,7 +39,7 @@ import artisynth.core.mechmodels.MechSystemSolver.Integrator;
 import artisynth.core.probes.NumericInputProbe;
 import artisynth.core.util.ArtisynthIO;
 import artisynth.core.util.ArtisynthPath;
-import artisynth.core.util.ClassAliases;
+import maspack.util.ClassAliases;
 import artisynth.core.workspace.DriverInterface;
 
 public class QuadhexTongueDemo extends HexTongueDemo {

@@ -710,7 +710,12 @@ public abstract class BatchWorkerBase implements Runnable {
       dir.mkdirs ();
       String filename = new File (dir, myTaskCounter + ".dat").getPath ();
       probe.setAttachedFileName (filename);
-      probe.save ();
+      try {
+         probe.save ();
+      }
+      catch (IOException e) {
+         e.printStackTrace();
+      }
 
       if (!alreadyHasEndWayPoint && addEndStateWayPoint) {
          myRootModel.removeWayPoint (wp);
