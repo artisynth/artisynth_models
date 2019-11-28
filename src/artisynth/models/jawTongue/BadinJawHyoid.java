@@ -602,11 +602,11 @@ public class BadinJawHyoid extends JawLarynxDemo {
       resetInitialState();
    }
    
-   protected void resetInitialState() {
-      // bit of hack: called when initial state is changed in the attach()
-      // method, requiring the initial state stored in waypoint 0 to be reset
-      getWayPoint(0).setState (this);
-   }
+//   protected void resetInitialState() {
+//      // bit of hack: called when initial state is changed in the attach()
+//      // method, requiring the initial state stored in waypoint 0 to be reset
+//      getWayPoint(0).setState (this);
+//   }
    
    public void loadProbes() {
       
