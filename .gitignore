@@ -49,11 +49,8 @@ CVS
 ######################
 # Project files
 ######################
-.classpath
-.project
 .cproject
-.settings
-ArtiSynth.launch
+*.launch
 
 ######################
 # MacOS files
