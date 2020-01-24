@@ -65,6 +65,7 @@ import artisynth.models.tongue3d.HexTongueDemo;
 public class BadinFaceDemo extends RootModel {
 
    public static final boolean leftSideOnly = false;
+   public static final boolean drawContactNormals = false;
    public static final boolean splitMusclesBilaterally = false;
    public static final boolean linearMaterial = false;
    public static final double defaultMaxStepSizeSec = 0.005;
@@ -845,13 +846,13 @@ public class BadinFaceDemo extends RootModel {
       RenderProps.setPointRadius(face.getNodes(), 0.0005);
       RenderProps.setPointStyle(face.getNodes(), PointStyle.SPHERE);
 
-      CollisionManager collisions = mech.getCollisionManager();
-      collisions.setContactNormalLen(-0.002);
-      collisions.setDrawContactNormals(true);
-      RenderProps.setLineColor(collisions, new Color(0.2f,0.2f,0.5f));
-      RenderProps.setVisible(collisions, true);
-
-
+      if (drawContactNormals) {
+         CollisionManager collisions = mech.getCollisionManager();
+         collisions.setContactNormalLen(-0.002);
+         collisions.setDrawContactNormals(true);
+         RenderProps.setLineColor(collisions, new Color(0.2f,0.2f,0.5f));
+         RenderProps.setVisible(collisions, true);
+      }
    }
 
    public static String stripSuffix (String str) {

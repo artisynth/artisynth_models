@@ -53,6 +53,7 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
          "International Journal for Numerical Methods in Biomedical Engineering, 27:367-390, 2011.";
    }
 
+   boolean drawContacts = false;
    boolean collideTongueMaxilla = true;
    boolean collideTongueJaw = true;
    boolean addStaticBadinGeometry = false;
@@ -124,7 +125,9 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
          addContact("jaw");
       }
 
-      showCollisions(collideTongueJaw || collideTongueMaxilla);
+      if (drawContacts) {
+         showCollisions(collideTongueJaw || collideTongueMaxilla);
+      }
 
       if (fixHyoid) {
          myJawModel.rigidBodies().get("hyoid").setDynamic(false);
