@@ -255,8 +255,11 @@ public class FemMuscleTongueDemo extends HexTongueDemo {
             targ.addExcitationSource (mex, 1);
          }
          fem.addMuscleExciter(mex);
-      } catch (Exception e) {
-         e.printStackTrace();
+      }
+      catch (Exception e) {
+         System.out.println (
+            "WARNING: error reading exciter file "+file+
+            ":\n" + e.getMessage());
       }
    }
 
