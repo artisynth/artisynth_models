@@ -4,7 +4,7 @@
     stopTime=1.002
     updateInterval=0.01
     name="target positions"
-    attachedFile="ref_targetPos_input.txt"
+    attachedFile="target_positions.txt"
     interpolationOrder=Cubic
     displayRange=[ -56.930659999999996 50.73646 ]
     track=0
@@ -35,7 +35,7 @@
     stopTime=1.0
     updateInterval=0.01
     name="input excitations"
-    attachedFile="excitations_input.txt"
+    attachedFile="input_excitations.txt"
     active=false
     displayRange=[ Inf -Inf ]
     track=1
@@ -157,7 +157,7 @@
     stopTime=1.0
     updateInterval=0.01
     name="target positions"
-    attachedFile="ref_target_position.txt"
+    attachedFile="tracked_positions.txt"
     displayRange=[ -56.91003788525256 50.65014162332605 ]
     track=0
     model=models/jawmodel
@@ -181,7 +181,7 @@
     stopTime=1.0
     updateInterval=0.01
     name="model positions"
-    attachedFile="model_target_position.txt"
+    attachedFile="source_positions.txt"
     displayRange=[ -56.930659999999996 50.73646 ]
     track=1
     model=models/jawmodel
@@ -205,7 +205,7 @@
     stopTime=1.0
     updateInterval=0.01
     name="computed excitations"
-    attachedFile="excitations.txt"
+    attachedFile="computed_excitations.txt"
     displayRange=[ -0.0028081938660732817 0.03089013252680045 ]
     track=2
     model=models/jawmodel
