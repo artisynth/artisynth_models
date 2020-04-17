@@ -14,6 +14,7 @@ import maspack.widgets.DoubleFieldSlider;
 import maspack.widgets.PropertyWidget;
 import maspack.widgets.ValueChangeEvent;
 import maspack.widgets.ValueChangeListener;
+import maspack.util.PathFinder;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemElement3d;
 import artisynth.core.femmodels.FemFactory;
@@ -50,8 +51,8 @@ public class testInverseX extends RootModel {
    public testInverseX(String name) {
       super(name);
       
-      File workingDir = ArtisynthPath.getRootRelativeFile(
-	    this, "src/artisynth/models/template/data");
+      File workingDir = new File (
+         PathFinder.getSourceRelativePath(this, "data"));
       ArtisynthPath.setWorkingDir(workingDir);
       
       myMechMod = new MechModel ("mech");

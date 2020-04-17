@@ -71,7 +71,7 @@ public class StaticJawHyoidTongue extends BadinJawHyoidTongue {
 //      trackingController.addRegularizationTerms(/*l2norm*/0.1, /*damping*/0.1);
       trackingController.addL2RegularizationTerm(/*l2norm*/0.01);
       trackingController.setMaxExcitationJump (0.1);
-      trackingController.getMotionTargetTerm ().setNormalizeH (true);
+      trackingController.setNormalizeH (true);
       trackingController.createProbesAndPanel (this);
       addController(trackingController);
       

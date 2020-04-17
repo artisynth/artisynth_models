@@ -22,6 +22,7 @@ import maspack.matrix.Vector3d;
 import maspack.matrix.VectorNd;
 import maspack.properties.Property;
 import maspack.properties.PropertyMode;
+import maspack.properties.PropertyList;
 import maspack.render.LineRenderProps;
 import maspack.render.RenderProps;
 import maspack.render.Renderable;
@@ -112,7 +113,8 @@ public class HexTongueDemo extends RootModel {
    boolean showJawMaxilla = false;
    boolean useIcpMuscleDefs = true;
    boolean useIncompConstraint = false;
-   boolean doActivationStiffening = true;
+   public static boolean DEFAULT_ACTIVATION_STIFFENING = true;
+   boolean doActivationStiffening = DEFAULT_ACTIVATION_STIFFENING;
    static boolean scaleByFascicle = true;
    public static double midsagittalTol = 1e-4;
    public static double defaultExcitationProbeMagnitude = 0.3;
@@ -129,6 +131,28 @@ public class HexTongueDemo extends RootModel {
       new NodeName("base", 927) };
 
    public static final double mm2m = 1d / 1000d;
+
+   public static PropertyList myProps =
+      new PropertyList (HexTongueDemo.class, RootModel.class);
+
+   static {
+      myProps.add (
+         "activationStiffening",
+         "apply activation stiffening to the FEM", 
+         DEFAULT_ACTIVATION_STIFFENING);
+   }
+
+   public PropertyList getAllPropertyInfo() {
+      return myProps;
+   }
+
+   public boolean getActivationStiffening() {
+      return doActivationStiffening;
+   }
+
+   public void setActivationStiffening (boolean enable) {
+      doActivationStiffening = enable;
+   }
 
    /*
     * attachment and sty nodes from old HexTongueDemo.java, not used in

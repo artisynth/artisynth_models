@@ -119,7 +119,7 @@ public class VHLarynxInvDemo extends VHLarynxDemo {
       invcon.addL2RegularizationTerm(1);
       invcon.addDampingTerm(0.01);
       if(probeStart>0)
-         invcon.setEnabled (false);
+         invcon.setActive (false);
       addController(invcon);
       
       configureInputProbes(invcon);
@@ -193,8 +193,8 @@ public class VHLarynxInvDemo extends VHLarynxDemo {
       }
 
       public void apply (double t0, double t1) {
-         if(t0>=probeStart && !invcon.isEnabled ()) {
-            invcon.setEnabled (true);
+         if(t0>=probeStart && !invcon.isActive()) {
+            invcon.setActive (true);
             for (MotionTargetComponent target : invcon.getMotionTargetTerm().getTargets()) {
                if (target instanceof Point) {
                   setParticleTracing(target.getName ());

@@ -340,7 +340,7 @@ public class RenderTools {
                       //Set render properties for target points (if any exist)
                       for (Controller tc : vtBase.getControllers()) {
                              if (tc instanceof TrackingController) {
-                                    for (ModelComponent tp : ((TrackingController) tc).getMotionTerm().getTargets()) {
+                                    for (ModelComponent tp : ((TrackingController) tc).getMotionTargetTerm().getTargets()) {
                                            if (tp instanceof Point) {
                                                   RenderProps.setPointRadius((Point) tp, vtBase.characteristicPointSize);
                                            }
