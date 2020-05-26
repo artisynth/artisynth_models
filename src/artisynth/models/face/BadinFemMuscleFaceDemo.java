@@ -80,8 +80,8 @@ public class BadinFemMuscleFaceDemo extends BadinFaceDemo{
       // face.setSubSurfaceRendering(false);
       RenderProps.setVisible(face.markers(), false);
       RenderProps.setVisible(face.getMuscleBundles(), true);
-      setUpperFaceStatic();
-      buildCutPlanes();
+//      setUpperFaceStatic();
+//      buildCutPlanes();
 
       
 //    double len = 0.25; // from manual scaling of ct image to fit badinskull mesh
