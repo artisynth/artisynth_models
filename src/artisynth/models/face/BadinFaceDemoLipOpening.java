@@ -44,13 +44,17 @@ import artisynth.core.femmodels.MuscleElementDesc;
 import artisynth.core.femmodels.FemModel.SurfaceRender;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.gui.FemControlPanel;
+import artisynth.core.materials.BlemkerMuscle;
 import artisynth.core.materials.GenericMuscle;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.MeshComponent;
+import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.MuscleExciter;
 import artisynth.core.mechmodels.Point;
 import artisynth.core.mechmodels.RigidBody;
+import artisynth.core.probes.InputProbe;
 import artisynth.core.probes.NumericInputProbe;
+import artisynth.core.probes.Probe;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.util.MDLMeshIO;
 import artisynth.core.workspace.DriverInterface;
@@ -99,10 +103,44 @@ public class BadinFaceDemoLipOpening extends BadinFemMuscleFaceDemo {
        */
       loadoop("7M"); // for fibers
       face.getMuscleBundles().get("OOP").clearElements();
-      addoop("7Mu");
-      addoop("6Ml");
+//      addoop("7Mu");
+//      addoop("6Ml");
+      
+      /*
+       * thick OOP
+       */
+      
+//      addoop("4Mu");
+//      addoop("5Su");
+////      addoop("5Ml");
+//      addoop("5Mu");
+      addoop("5Du");
+      addoop("6Sl");
+      addoop("6M");
+      addoop("6Du");
+      addoop("7Sl");
+      addoop("7M");
+      addoop("7Du");
+      addoop("8Su");
+      addoop("8Mu");
+      addoop("8Du");
+      
+      /*
+       * line based opposing muscles
+       */
+//      for (MuscleBundle b : face.getMuscleBundles ()) {
+//         if (!b.getName ().equals ("OOP")) {
+//            b.clearElements ();
+//            b.setFibresActive (true);
+//         }
+//      }
       
       addLipOpeningPlane ();
+
+//      RigidBody upperteeth = mech.rigidBodies ().get ("upperteeth");
+//      RenderProps.setVisible (upperteeth, true);      
+//      MeshComponent lowerlip = face.getMeshComp ("lowerlip");
+
 
       
    }
@@ -159,8 +197,12 @@ public class BadinFaceDemoLipOpening extends BadinFemMuscleFaceDemo {
 //    RefFemMuscleFaceDemo.loadMuscleElements(face, face.getMuscleBundles().get("OOP"), 
 //	    BadinFaceDemo.faceGeometryDir+"OOP_7thRing_elements.txt");
       
+      BlemkerMuscle muscleMat = new BlemkerMuscle ();
+      muscleMat.setMaxStress (100000);
+      face.getMuscleBundles ().get ("OOP").setMuscleMaterial (muscleMat);
       
       ((GenericMuscle)face.getMuscleMaterial()).setMaxStress(100000);
+      
       face.setDirectionRenderLen(0.5);
       face.setElementWidgetSize(1);
       
@@ -175,13 +217,10 @@ public class BadinFaceDemoLipOpening extends BadinFemMuscleFaceDemo {
 
    public void setFaceRenderProps (FemModel3d face) {
       RenderProps.setVisible (face.getNodes (), false);
-      RenderProps.setVisible (face.getElements (), true);
+      RenderProps.setVisible (face.getElements (), false);
       RenderProps.setVisible (face.markers (), false);
       RenderProps.setLineWidth (face, 1);
-
-      face.setSurfaceRendering (SurfaceRender.None);
-
-//      RenderProps.setFaceColor (face, new Color (0.75f, 0.75f, 0.95f));
+      face.setSurfaceRendering (SurfaceRender.Shaded); 
       RenderProps.setFaceColor(face, Color.RED);
       
       RenderProps.setLineWidth(face.getElements(), 0);
@@ -195,6 +234,7 @@ public class BadinFaceDemoLipOpening extends BadinFemMuscleFaceDemo {
       
       for (RigidBody r : mech.rigidBodies ()) {
          RenderProps.setFaceColor (r, Color.RED);
+         RenderProps.setVisible (r, false);
       }
       
 
@@ -226,12 +266,15 @@ public class BadinFaceDemoLipOpening extends BadinFemMuscleFaceDemo {
 //      panel = FemControlPanel.createMuscleBundlesPanel(this, face);
 //      panel.setName("Face Muscles");
       
-      File workingDir = 
-         new File (ArtisynthPath.getRootRelativePath(this, "issp/u/"));
-      if (workingDir.exists ()) {
-	 ArtisynthPath.setWorkingDir (workingDir);
+      File workingDirFile = new File (
+         ArtisynthPath.getSrcRelativePath(BadinFaceDemo.class, "data/approximant/"));
+      if (workingDirFile.exists ()) {
+	 ArtisynthPath.setWorkingDir (workingDirFile);
 	 try {
-	    Main.getMain().loadProbesFile(new File(workingDir+"/0probes.art"));
+	    Main.getMain().loadProbesFile(new File(workingDirFile+"/0probes.art"));
+	    for (Probe probe : getInputProbes ()) {
+	       probe.load ();
+	    }
 	 } catch (IOException e) {
 	    e.printStackTrace();
 	 }
@@ -240,8 +283,18 @@ public class BadinFaceDemoLipOpening extends BadinFemMuscleFaceDemo {
       getMainViewer().setOrthographicView(true);
       getMainFrame ().setSize (1053, 1113); // 1000 x 1000 viewer 
       getMainViewer().setAxialView (AxisAlignedRotation.NY_Z);
+      
+      // Chenhao view
+//      setViewerEye (new Point3d(-0.56632, 0.000422501, 0.107807));
+//      setViewerCenter (new Point3d(0.134409, 0.000422502, 0.107807));
+      Main.getMain ().screenShot ("foo.png");
+      // Ian view
       setViewerEye (new Point3d(-0.521787, 0.0009809, -0.126136));
       setViewerCenter (new Point3d(0.134664, 0.0009809, 0.117214));
+      //connor view
+//      setViewerEye (new Point3d(-0.56632, 0.000422501, 0.107807));
+//      setViewerCenter (new Point3d(0.134409, 0.000422502, 0.107807));
+      getMainViewer().zoom(0.5);
    }
    
    private static Rectangle getViewerBounds(GLViewer viewer) {

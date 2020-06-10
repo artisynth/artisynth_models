@@ -923,8 +923,8 @@ public class BadinFaceDemo extends RootModel {
             // these collision surfaces do not share vertices, and do not cause perturbed pivots with Pardiso
             upperlipMesh = (PolygonalMesh)GenericMeshReader.readMesh (faceGeometryDir + "face_collisionSurf_upperLip_reduced2.ply");
             lowerlipMesh = (PolygonalMesh)GenericMeshReader.readMesh (faceGeometryDir + "face_collisionSurf_lowerLip_reduced.ply");
-            face.addMesh(lowerlipMesh);
-            face.addMesh(upperlipMesh);
+            face.addMesh("lowerlip", lowerlipMesh);
+            face.addMesh("upperlip", upperlipMesh);
          }
 
 
