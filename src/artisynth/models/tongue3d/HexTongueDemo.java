@@ -321,7 +321,7 @@ public class HexTongueDemo extends RootModel {
    }
 
    public static void setTongueProperties(FemModel3d tongue) {
-      tongue.setGravity(0, 0, -9.8);
+//      tongue.setGravity(0, 0, -9.8); // gravity should be inherited from mech model
       tongue.setDensity(1000);
       tongue.setParticleDamping(1.22);
       tongue.setStiffnessDamping(0.05);
