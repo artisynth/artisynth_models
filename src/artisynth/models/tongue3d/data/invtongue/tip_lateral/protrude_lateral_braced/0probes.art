@@ -1,0 +1,716 @@
+[
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="target positions"
+    attachedFile="protrude_lateral.txt"
+    interpolationOrder=Cubic
+    displayRange=[ -0.045770485661074604 0.12480000778737042 ]
+    track=0
+    model=models/mech
+    props=
+    [ 
+      models/mech/particles/p338_ref:targetPosition
+      models/mech/particles/p339_ref:targetPosition
+      models/mech/particles/p340_ref:targetPosition
+      models/mech/particles/p341_ref:targetPosition
+      models/mech/particles/tip_ref:targetPosition
+      models/mech/particles/p359_ref:targetPosition
+      models/mech/particles/p926_ref:targetPosition
+      models/mech/particles/p361_ref:targetPosition
+      models/mech/particles/p751_ref:targetPosition
+      models/mech/particles/p752_ref:targetPosition
+      models/mech/particles/p753_ref:targetPosition
+      models/mech/particles/p754_ref:targetPosition
+      models/mech/particles/p772_ref:targetPosition
+      models/mech/particles/p774_ref:targetPosition
+      models/mech/particles/p166_ref:targetPosition
+      models/mech/particles/p301_ref:targetPosition
+      models/mech/particles/p299_ref:targetPosition
+      models/mech/particles/p141_ref:targetPosition
+      models/mech/particles/p579_ref:targetPosition
+      models/mech/particles/p554_ref:targetPosition
+      models/mech/particles/p712_ref:targetPosition
+      models/mech/particles/p714_ref:targetPosition
+    ]
+    drivers=
+    [ 
+      "V0"
+      "V1"
+      "V2"
+      "V3"
+      "V4"
+      "V5"
+      "V6"
+      "V7"
+      "V8"
+      "V9"
+      "V10"
+      "V11"
+      "V12"
+      "V13"
+      "V14"
+      "V15"
+      "V16"
+      "V17"
+      "V18"
+      "V19"
+      "V20"
+      "V21"
+    ]
+    inputs=
+    [ 
+      V0 3
+      V1 3
+      V2 3
+      V3 3
+      V4 3
+      V5 3
+      V6 3
+      V7 3
+      V8 3
+      V9 3
+      V10 3
+      V11 3
+      V12 3
+      V13 3
+      V14 3
+      V15 3
+      V16 3
+      V17 3
+      V18 3
+      V19 3
+      V20 3
+      V21 3
+    ]
+    plotTraceInfo=[
+      [ order=0 label="particles/p338_ref:targetPosition.x" visible=true color=Red ]
+      [ order=1 label="particles/p338_ref:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=2 label="particles/p338_ref:targetPosition.z" visible=true color=Blue ]
+      [ order=3 label="particles/p339_ref:targetPosition.x" visible=true color=Cyan ]
+      [ order=4 label="particles/p339_ref:targetPosition.y" visible=true color=Magenta ]
+      [ order=5 label="particles/p339_ref:targetPosition.z" visible=true color=DarkOrange ]
+      [ order=6 label="particles/p340_ref:targetPosition.x" visible=true color=Pink ]
+      [ order=7 label="particles/p340_ref:targetPosition.y" visible=true color=BlueViolet ]
+      [ order=8 label="particles/p340_ref:targetPosition.z" visible=true color=NavajoWhite ]
+      [ order=9 label="particles/p341_ref:targetPosition.x" visible=true color=Gray ]
+      [ order=10 label="particles/p341_ref:targetPosition.y" visible=true color=DarkOliveGreen ]
+      [ order=11 label="particles/p341_ref:targetPosition.z" visible=true color=IndianRed ]
+      [ order=12 label="particles/tip_ref:targetPosition.x" visible=true color=PeachPuff ]
+      [ order=13 label="particles/tip_ref:targetPosition.y" visible=true color=Red ]
+      [ order=14 label="particles/tip_ref:targetPosition.z" visible=true color=DarkGreen ]
+      [ order=15 label="particles/p359_ref:targetPosition.x" visible=true color=Blue ]
+      [ order=16 label="particles/p359_ref:targetPosition.y" visible=true color=Cyan ]
+      [ order=17 label="particles/p359_ref:targetPosition.z" visible=true color=Magenta ]
+      [ order=18 label="particles/p926_ref:targetPosition.x" visible=true color=DarkOrange ]
+      [ order=19 label="particles/p926_ref:targetPosition.y" visible=true color=Pink ]
+      [ order=20 label="particles/p926_ref:targetPosition.z" visible=true color=BlueViolet ]
+      [ order=21 label="particles/p361_ref:targetPosition.x" visible=true color=NavajoWhite ]
+      [ order=22 label="particles/p361_ref:targetPosition.y" visible=true color=Gray ]
+      [ order=23 label="particles/p361_ref:targetPosition.z" visible=true color=DarkOliveGreen ]
+      [ order=24 label="particles/p751_ref:targetPosition.x" visible=true color=IndianRed ]
+      [ order=25 label="particles/p751_ref:targetPosition.y" visible=true color=PeachPuff ]
+      [ order=26 label="particles/p751_ref:targetPosition.z" visible=true color=Red ]
+      [ order=27 label="particles/p752_ref:targetPosition.x" visible=true color=DarkGreen ]
+      [ order=28 label="particles/p752_ref:targetPosition.y" visible=true color=Blue ]
+      [ order=29 label="particles/p752_ref:targetPosition.z" visible=true color=Cyan ]
+      [ order=30 label="particles/p753_ref:targetPosition.x" visible=true color=Magenta ]
+      [ order=31 label="particles/p753_ref:targetPosition.y" visible=true color=DarkOrange ]
+      [ order=32 label="particles/p753_ref:targetPosition.z" visible=true color=Pink ]
+      [ order=33 label="particles/p754_ref:targetPosition.x" visible=true color=BlueViolet ]
+      [ order=34 label="particles/p754_ref:targetPosition.y" visible=true color=NavajoWhite ]
+      [ order=35 label="particles/p754_ref:targetPosition.z" visible=true color=Gray ]
+      [ order=36 label="particles/p772_ref:targetPosition.x" visible=true color=DarkOliveGreen ]
+      [ order=37 label="particles/p772_ref:targetPosition.y" visible=true color=IndianRed ]
+      [ order=38 label="particles/p772_ref:targetPosition.z" visible=true color=PeachPuff ]
+      [ order=39 label="particles/p774_ref:targetPosition.x" visible=true color=Red ]
+      [ order=40 label="particles/p774_ref:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=41 label="particles/p774_ref:targetPosition.z" visible=true color=Blue ]
+      [ order=42 label="particles/p166_ref:targetPosition.x" visible=true color=Cyan ]
+      [ order=43 label="particles/p166_ref:targetPosition.y" visible=true color=Magenta ]
+      [ order=44 label="particles/p166_ref:targetPosition.z" visible=true color=DarkOrange ]
+      [ order=45 label="particles/p301_ref:targetPosition.x" visible=true color=Pink ]
+      [ order=46 label="particles/p301_ref:targetPosition.y" visible=true color=BlueViolet ]
+      [ order=47 label="particles/p301_ref:targetPosition.z" visible=true color=NavajoWhite ]
+      [ order=48 label="particles/p299_ref:targetPosition.x" visible=true color=Gray ]
+      [ order=49 label="particles/p299_ref:targetPosition.y" visible=true color=DarkOliveGreen ]
+      [ order=50 label="particles/p299_ref:targetPosition.z" visible=true color=IndianRed ]
+      [ order=51 label="particles/p141_ref:targetPosition.x" visible=true color=PeachPuff ]
+      [ order=52 label="particles/p141_ref:targetPosition.y" visible=true color=Red ]
+      [ order=53 label="particles/p141_ref:targetPosition.z" visible=true color=DarkGreen ]
+      [ order=54 label="particles/p579_ref:targetPosition.x" visible=true color=Blue ]
+      [ order=55 label="particles/p579_ref:targetPosition.y" visible=true color=Cyan ]
+      [ order=56 label="particles/p579_ref:targetPosition.z" visible=true color=Magenta ]
+      [ order=57 label="particles/p554_ref:targetPosition.x" visible=true color=DarkOrange ]
+      [ order=58 label="particles/p554_ref:targetPosition.y" visible=true color=Pink ]
+      [ order=59 label="particles/p554_ref:targetPosition.z" visible=true color=BlueViolet ]
+      [ order=60 label="particles/p712_ref:targetPosition.x" visible=true color=NavajoWhite ]
+      [ order=61 label="particles/p712_ref:targetPosition.y" visible=true color=Gray ]
+      [ order=62 label="particles/p712_ref:targetPosition.z" visible=true color=DarkOliveGreen ]
+      [ order=63 label="particles/p714_ref:targetPosition.x" visible=true color=IndianRed ]
+      [ order=64 label="particles/p714_ref:targetPosition.y" visible=true color=PeachPuff ]
+      [ order=65 label="particles/p714_ref:targetPosition.z" visible=true color=Red ]
+    ]
+  ]
+  NumericInputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="input excitations"
+    attachedFile="excitations_input.txt"
+    active=false
+    displayRange=[ Inf -Inf ]
+    track=1
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/tongue/exciters/GGP:excitation
+      models/mech/models/tongue/exciters/GGM:excitation
+      models/mech/models/tongue/exciters/GGA:excitation
+      models/mech/models/tongue/exciters/STY:excitation
+      models/mech/models/tongue/exciters/GH:excitation
+      models/mech/models/tongue/exciters/MH:excitation
+      models/mech/models/tongue/exciters/HG:excitation
+      models/mech/models/tongue/exciters/VERT:excitation
+      models/mech/models/tongue/exciters/TRANS:excitation
+      models/mech/models/tongue/exciters/IL:excitation
+      models/mech/models/tongue/exciters/SL:excitation
+    ]
+    drivers=
+    [ 
+      "V0"
+      "V1"
+      "V2"
+      "V3"
+      "V4"
+      "V5"
+      "V6"
+      "V7"
+      "V8"
+      "V9"
+      "V10"
+    ]
+    inputs=
+    [ 
+      V0 1
+      V1 1
+      V2 1
+      V3 1
+      V4 1
+      V5 1
+      V6 1
+      V7 1
+      V8 1
+      V9 1
+      V10 1
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/GGP:excitation" visible=true color=Red ]
+      [ order=1 label="exciters/GGM:excitation" visible=true color=DarkGreen ]
+      [ order=2 label="exciters/GGA:excitation" visible=true color=Blue ]
+      [ order=3 label="exciters/STY:excitation" visible=true color=Cyan ]
+      [ order=4 label="exciters/GH:excitation" visible=true color=Magenta ]
+      [ order=5 label="exciters/MH:excitation" visible=true color=DarkOrange ]
+      [ order=6 label="exciters/HG:excitation" visible=true color=Pink ]
+      [ order=7 label="exciters/VERT:excitation" visible=true color=BlueViolet ]
+      [ order=8 label="exciters/TRANS:excitation" visible=true color=NavajoWhite ]
+      [ order=9 label="exciters/IL:excitation" visible=true color=Gray ]
+      [ order=10 label="exciters/SL:excitation" visible=true color=DarkOliveGreen ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="ref_tip_position"
+    attachedFile="ref_tip_position.txt"
+    displayRange=[ -0.009991600000000002 0.10990760000000001 ]
+    track=0
+    model=null
+    props=
+    [ 
+      models/mech/particles/tip_ref:position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="particles/tip_ref:position.x" visible=true color=Red ]
+      [ order=1 label="particles/tip_ref:position.y" visible=true color=DarkGreen ]
+      [ order=2 label="particles/tip_ref:position.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="ref_tip_velocity"
+    attachedFile="ref_tip_velocity.txt"
+    displayRange=[ -0.4292921199844395 0.061768416247082916 ]
+    track=1
+    model=null
+    props=
+    [ 
+      models/mech/particles/tip_ref:velocity
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="particles/tip_ref:velocity.x" visible=true color=Red ]
+      [ order=1 label="particles/tip_ref:velocity.y" visible=true color=DarkGreen ]
+      [ order=2 label="particles/tip_ref:velocity.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="model_tip_position"
+    attachedFile="model_tip_position.txt"
+    displayRange=[ -0.010013545482635833 0.11013837718294073 ]
+    track=2
+    model=null
+    props=
+    [ 
+      models/mech/models/tongue/nodes/tip:position
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="nodes/tip:position.x" visible=true color=Red ]
+      [ order=1 label="nodes/tip:position.y" visible=true color=DarkGreen ]
+      [ order=2 label="nodes/tip:position.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="model_tip_velocity"
+    attachedFile="model_tip_velocity.txt"
+    displayRange=[ -0.02648776826522016 0.025978778506122187 ]
+    track=3
+    model=null
+    props=
+    [ 
+      models/mech/models/tongue/nodes/tip:velocity
+    ]
+    variables=
+    [ 
+      P0
+    ]
+    drivers=
+    [ 
+      "P0"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="nodes/tip:velocity.x" visible=true color=Red ]
+      [ order=1 label="nodes/tip:velocity.y" visible=true color=DarkGreen ]
+      [ order=2 label="nodes/tip:velocity.z" visible=true color=Blue ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="target positions"
+    attachedFile="ref_target_position.txt"
+    displayRange=[ -0.04577048566107461 0.12480000778737046 ]
+    track=4
+    model=models/mech
+    props=
+    [ 
+      models/mech/particles/p338_ref:targetPosition
+      models/mech/particles/p339_ref:targetPosition
+      models/mech/particles/p340_ref:targetPosition
+      models/mech/particles/p341_ref:targetPosition
+      models/mech/particles/tip_ref:targetPosition
+      models/mech/particles/p359_ref:targetPosition
+      models/mech/particles/p926_ref:targetPosition
+      models/mech/particles/p361_ref:targetPosition
+      models/mech/particles/p751_ref:targetPosition
+      models/mech/particles/p752_ref:targetPosition
+      models/mech/particles/p753_ref:targetPosition
+      models/mech/particles/p754_ref:targetPosition
+      models/mech/particles/p772_ref:targetPosition
+      models/mech/particles/p774_ref:targetPosition
+      models/mech/particles/p166_ref:targetPosition
+      models/mech/particles/p301_ref:targetPosition
+      models/mech/particles/p299_ref:targetPosition
+      models/mech/particles/p141_ref:targetPosition
+      models/mech/particles/p579_ref:targetPosition
+      models/mech/particles/p554_ref:targetPosition
+      models/mech/particles/p712_ref:targetPosition
+      models/mech/particles/p714_ref:targetPosition
+    ]
+    variables=
+    [ 
+      P0
+      P1
+      P2
+      P3
+      P4
+      P5
+      P6
+      P7
+      P8
+      P9
+      P10
+      P11
+      P12
+      P13
+      P14
+      P15
+      P16
+      P17
+      P18
+      P19
+      P20
+      P21
+    ]
+    drivers=
+    [ 
+      "P0"
+      "P1"
+      "P2"
+      "P3"
+      "P4"
+      "P5"
+      "P6"
+      "P7"
+      "P8"
+      "P9"
+      "P10"
+      "P11"
+      "P12"
+      "P13"
+      "P14"
+      "P15"
+      "P16"
+      "P17"
+      "P18"
+      "P19"
+      "P20"
+      "P21"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="particles/p338_ref:targetPosition.x" visible=true color=Red ]
+      [ order=1 label="particles/p338_ref:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=2 label="particles/p338_ref:targetPosition.z" visible=true color=Blue ]
+      [ order=3 label="particles/p339_ref:targetPosition.x" visible=true color=Cyan ]
+      [ order=4 label="particles/p339_ref:targetPosition.y" visible=true color=Magenta ]
+      [ order=5 label="particles/p339_ref:targetPosition.z" visible=true color=DarkOrange ]
+      [ order=6 label="particles/p340_ref:targetPosition.x" visible=true color=Pink ]
+      [ order=7 label="particles/p340_ref:targetPosition.y" visible=true color=BlueViolet ]
+      [ order=8 label="particles/p340_ref:targetPosition.z" visible=true color=NavajoWhite ]
+      [ order=9 label="particles/p341_ref:targetPosition.x" visible=true color=Gray ]
+      [ order=10 label="particles/p341_ref:targetPosition.y" visible=true color=DarkOliveGreen ]
+      [ order=11 label="particles/p341_ref:targetPosition.z" visible=true color=IndianRed ]
+      [ order=12 label="particles/tip_ref:targetPosition.x" visible=true color=PeachPuff ]
+      [ order=13 label="particles/tip_ref:targetPosition.y" visible=true color=Red ]
+      [ order=14 label="particles/tip_ref:targetPosition.z" visible=true color=DarkGreen ]
+      [ order=15 label="particles/p359_ref:targetPosition.x" visible=true color=Blue ]
+      [ order=16 label="particles/p359_ref:targetPosition.y" visible=true color=Cyan ]
+      [ order=17 label="particles/p359_ref:targetPosition.z" visible=true color=Magenta ]
+      [ order=18 label="particles/p926_ref:targetPosition.x" visible=true color=DarkOrange ]
+      [ order=19 label="particles/p926_ref:targetPosition.y" visible=true color=Pink ]
+      [ order=20 label="particles/p926_ref:targetPosition.z" visible=true color=BlueViolet ]
+      [ order=21 label="particles/p361_ref:targetPosition.x" visible=true color=NavajoWhite ]
+      [ order=22 label="particles/p361_ref:targetPosition.y" visible=true color=Gray ]
+      [ order=23 label="particles/p361_ref:targetPosition.z" visible=true color=DarkOliveGreen ]
+      [ order=24 label="particles/p751_ref:targetPosition.x" visible=true color=IndianRed ]
+      [ order=25 label="particles/p751_ref:targetPosition.y" visible=true color=PeachPuff ]
+      [ order=26 label="particles/p751_ref:targetPosition.z" visible=true color=Red ]
+      [ order=27 label="particles/p752_ref:targetPosition.x" visible=true color=DarkGreen ]
+      [ order=28 label="particles/p752_ref:targetPosition.y" visible=true color=Blue ]
+      [ order=29 label="particles/p752_ref:targetPosition.z" visible=true color=Cyan ]
+      [ order=30 label="particles/p753_ref:targetPosition.x" visible=true color=Magenta ]
+      [ order=31 label="particles/p753_ref:targetPosition.y" visible=true color=DarkOrange ]
+      [ order=32 label="particles/p753_ref:targetPosition.z" visible=true color=Pink ]
+      [ order=33 label="particles/p754_ref:targetPosition.x" visible=true color=BlueViolet ]
+      [ order=34 label="particles/p754_ref:targetPosition.y" visible=true color=NavajoWhite ]
+      [ order=35 label="particles/p754_ref:targetPosition.z" visible=true color=Gray ]
+      [ order=36 label="particles/p772_ref:targetPosition.x" visible=true color=DarkOliveGreen ]
+      [ order=37 label="particles/p772_ref:targetPosition.y" visible=true color=IndianRed ]
+      [ order=38 label="particles/p772_ref:targetPosition.z" visible=true color=PeachPuff ]
+      [ order=39 label="particles/p774_ref:targetPosition.x" visible=true color=Red ]
+      [ order=40 label="particles/p774_ref:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=41 label="particles/p774_ref:targetPosition.z" visible=true color=Blue ]
+      [ order=42 label="particles/p166_ref:targetPosition.x" visible=true color=Cyan ]
+      [ order=43 label="particles/p166_ref:targetPosition.y" visible=true color=Magenta ]
+      [ order=44 label="particles/p166_ref:targetPosition.z" visible=true color=DarkOrange ]
+      [ order=45 label="particles/p301_ref:targetPosition.x" visible=true color=Pink ]
+      [ order=46 label="particles/p301_ref:targetPosition.y" visible=true color=BlueViolet ]
+      [ order=47 label="particles/p301_ref:targetPosition.z" visible=true color=NavajoWhite ]
+      [ order=48 label="particles/p299_ref:targetPosition.x" visible=true color=Gray ]
+      [ order=49 label="particles/p299_ref:targetPosition.y" visible=true color=DarkOliveGreen ]
+      [ order=50 label="particles/p299_ref:targetPosition.z" visible=true color=IndianRed ]
+      [ order=51 label="particles/p141_ref:targetPosition.x" visible=true color=PeachPuff ]
+      [ order=52 label="particles/p141_ref:targetPosition.y" visible=true color=Red ]
+      [ order=53 label="particles/p141_ref:targetPosition.z" visible=true color=DarkGreen ]
+      [ order=54 label="particles/p579_ref:targetPosition.x" visible=true color=Blue ]
+      [ order=55 label="particles/p579_ref:targetPosition.y" visible=true color=Cyan ]
+      [ order=56 label="particles/p579_ref:targetPosition.z" visible=true color=Magenta ]
+      [ order=57 label="particles/p554_ref:targetPosition.x" visible=true color=DarkOrange ]
+      [ order=58 label="particles/p554_ref:targetPosition.y" visible=true color=Pink ]
+      [ order=59 label="particles/p554_ref:targetPosition.z" visible=true color=BlueViolet ]
+      [ order=60 label="particles/p712_ref:targetPosition.x" visible=true color=NavajoWhite ]
+      [ order=61 label="particles/p712_ref:targetPosition.y" visible=true color=Gray ]
+      [ order=62 label="particles/p712_ref:targetPosition.z" visible=true color=DarkOliveGreen ]
+      [ order=63 label="particles/p714_ref:targetPosition.x" visible=true color=IndianRed ]
+      [ order=64 label="particles/p714_ref:targetPosition.y" visible=true color=PeachPuff ]
+      [ order=65 label="particles/p714_ref:targetPosition.z" visible=true color=Red ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="model positions"
+    attachedFile="model_target_position.txt"
+    displayRange=[ -0.036320544365661615 0.12422313964722502 ]
+    track=5
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/tongue/nodes/338:targetPosition
+      models/mech/models/tongue/nodes/339:targetPosition
+      models/mech/models/tongue/nodes/340:targetPosition
+      models/mech/models/tongue/nodes/341:targetPosition
+      models/mech/models/tongue/nodes/tip:targetPosition
+      models/mech/models/tongue/nodes/359:targetPosition
+      models/mech/models/tongue/nodes/926:targetPosition
+      models/mech/models/tongue/nodes/361:targetPosition
+      models/mech/models/tongue/nodes/751:targetPosition
+      models/mech/models/tongue/nodes/752:targetPosition
+      models/mech/models/tongue/nodes/753:targetPosition
+      models/mech/models/tongue/nodes/754:targetPosition
+      models/mech/models/tongue/nodes/772:targetPosition
+      models/mech/models/tongue/nodes/774:targetPosition
+      models/mech/models/tongue/nodes/166:targetPosition
+      models/mech/models/tongue/nodes/301:targetPosition
+      models/mech/models/tongue/nodes/299:targetPosition
+      models/mech/models/tongue/nodes/141:targetPosition
+      models/mech/models/tongue/nodes/579:targetPosition
+      models/mech/models/tongue/nodes/554:targetPosition
+      models/mech/models/tongue/nodes/712:targetPosition
+      models/mech/models/tongue/nodes/714:targetPosition
+    ]
+    variables=
+    [ 
+      P0
+      P1
+      P2
+      P3
+      P4
+      P5
+      P6
+      P7
+      P8
+      P9
+      P10
+      P11
+      P12
+      P13
+      P14
+      P15
+      P16
+      P17
+      P18
+      P19
+      P20
+      P21
+    ]
+    drivers=
+    [ 
+      "P0"
+      "P1"
+      "P2"
+      "P3"
+      "P4"
+      "P5"
+      "P6"
+      "P7"
+      "P8"
+      "P9"
+      "P10"
+      "P11"
+      "P12"
+      "P13"
+      "P14"
+      "P15"
+      "P16"
+      "P17"
+      "P18"
+      "P19"
+      "P20"
+      "P21"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="nodes/338:targetPosition.x" visible=true color=Red ]
+      [ order=1 label="nodes/338:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=2 label="nodes/338:targetPosition.z" visible=true color=Blue ]
+      [ order=3 label="nodes/339:targetPosition.x" visible=true color=Cyan ]
+      [ order=4 label="nodes/339:targetPosition.y" visible=true color=Magenta ]
+      [ order=5 label="nodes/339:targetPosition.z" visible=true color=DarkOrange ]
+      [ order=6 label="nodes/340:targetPosition.x" visible=true color=Pink ]
+      [ order=7 label="nodes/340:targetPosition.y" visible=true color=BlueViolet ]
+      [ order=8 label="nodes/340:targetPosition.z" visible=true color=NavajoWhite ]
+      [ order=9 label="nodes/341:targetPosition.x" visible=true color=Gray ]
+      [ order=10 label="nodes/341:targetPosition.y" visible=true color=DarkOliveGreen ]
+      [ order=11 label="nodes/341:targetPosition.z" visible=true color=IndianRed ]
+      [ order=12 label="nodes/tip:targetPosition.x" visible=true color=PeachPuff ]
+      [ order=13 label="nodes/tip:targetPosition.y" visible=true color=Red ]
+      [ order=14 label="nodes/tip:targetPosition.z" visible=true color=DarkGreen ]
+      [ order=15 label="nodes/359:targetPosition.x" visible=true color=Blue ]
+      [ order=16 label="nodes/359:targetPosition.y" visible=true color=Cyan ]
+      [ order=17 label="nodes/359:targetPosition.z" visible=true color=Magenta ]
+      [ order=18 label="nodes/926:targetPosition.x" visible=true color=DarkOrange ]
+      [ order=19 label="nodes/926:targetPosition.y" visible=true color=Pink ]
+      [ order=20 label="nodes/926:targetPosition.z" visible=true color=BlueViolet ]
+      [ order=21 label="nodes/361:targetPosition.x" visible=true color=NavajoWhite ]
+      [ order=22 label="nodes/361:targetPosition.y" visible=true color=Gray ]
+      [ order=23 label="nodes/361:targetPosition.z" visible=true color=DarkOliveGreen ]
+      [ order=24 label="nodes/751:targetPosition.x" visible=true color=IndianRed ]
+      [ order=25 label="nodes/751:targetPosition.y" visible=true color=PeachPuff ]
+      [ order=26 label="nodes/751:targetPosition.z" visible=true color=Red ]
+      [ order=27 label="nodes/752:targetPosition.x" visible=true color=DarkGreen ]
+      [ order=28 label="nodes/752:targetPosition.y" visible=true color=Blue ]
+      [ order=29 label="nodes/752:targetPosition.z" visible=true color=Cyan ]
+      [ order=30 label="nodes/753:targetPosition.x" visible=true color=Magenta ]
+      [ order=31 label="nodes/753:targetPosition.y" visible=true color=DarkOrange ]
+      [ order=32 label="nodes/753:targetPosition.z" visible=true color=Pink ]
+      [ order=33 label="nodes/754:targetPosition.x" visible=true color=BlueViolet ]
+      [ order=34 label="nodes/754:targetPosition.y" visible=true color=NavajoWhite ]
+      [ order=35 label="nodes/754:targetPosition.z" visible=true color=Gray ]
+      [ order=36 label="nodes/772:targetPosition.x" visible=true color=DarkOliveGreen ]
+      [ order=37 label="nodes/772:targetPosition.y" visible=true color=IndianRed ]
+      [ order=38 label="nodes/772:targetPosition.z" visible=true color=PeachPuff ]
+      [ order=39 label="nodes/774:targetPosition.x" visible=true color=Red ]
+      [ order=40 label="nodes/774:targetPosition.y" visible=true color=DarkGreen ]
+      [ order=41 label="nodes/774:targetPosition.z" visible=true color=Blue ]
+      [ order=42 label="nodes/166:targetPosition.x" visible=true color=Cyan ]
+      [ order=43 label="nodes/166:targetPosition.y" visible=true color=Magenta ]
+      [ order=44 label="nodes/166:targetPosition.z" visible=true color=DarkOrange ]
+      [ order=45 label="nodes/301:targetPosition.x" visible=true color=Pink ]
+      [ order=46 label="nodes/301:targetPosition.y" visible=true color=BlueViolet ]
+      [ order=47 label="nodes/301:targetPosition.z" visible=true color=NavajoWhite ]
+      [ order=48 label="nodes/299:targetPosition.x" visible=true color=Gray ]
+      [ order=49 label="nodes/299:targetPosition.y" visible=true color=DarkOliveGreen ]
+      [ order=50 label="nodes/299:targetPosition.z" visible=true color=IndianRed ]
+      [ order=51 label="nodes/141:targetPosition.x" visible=true color=PeachPuff ]
+      [ order=52 label="nodes/141:targetPosition.y" visible=true color=Red ]
+      [ order=53 label="nodes/141:targetPosition.z" visible=true color=DarkGreen ]
+      [ order=54 label="nodes/579:targetPosition.x" visible=true color=Blue ]
+      [ order=55 label="nodes/579:targetPosition.y" visible=true color=Cyan ]
+      [ order=56 label="nodes/579:targetPosition.z" visible=true color=Magenta ]
+      [ order=57 label="nodes/554:targetPosition.x" visible=true color=DarkOrange ]
+      [ order=58 label="nodes/554:targetPosition.y" visible=true color=Pink ]
+      [ order=59 label="nodes/554:targetPosition.z" visible=true color=BlueViolet ]
+      [ order=60 label="nodes/712:targetPosition.x" visible=true color=NavajoWhite ]
+      [ order=61 label="nodes/712:targetPosition.y" visible=true color=Gray ]
+      [ order=62 label="nodes/712:targetPosition.z" visible=true color=DarkOliveGreen ]
+      [ order=63 label="nodes/714:targetPosition.x" visible=true color=IndianRed ]
+      [ order=64 label="nodes/714:targetPosition.y" visible=true color=PeachPuff ]
+      [ order=65 label="nodes/714:targetPosition.z" visible=true color=Red ]
+    ]
+  ]
+  NumericOutputProbe
+  [ startTime=0.0
+    stopTime=1.0
+    updateInterval=0.01
+    name="computed excitations"
+    attachedFile="excitations.txt"
+    displayRange=[ -0.10000000000000527 1.1000000000000032 ]
+    track=6
+    model=models/mech
+    props=
+    [ 
+      models/mech/models/tongue/exciters/GGP:excitation
+      models/mech/models/tongue/exciters/GGM:excitation
+      models/mech/models/tongue/exciters/GGA:excitation
+      models/mech/models/tongue/exciters/STY:excitation
+      models/mech/models/tongue/exciters/GH:excitation
+      models/mech/models/tongue/exciters/MH:excitation
+      models/mech/models/tongue/exciters/HG:excitation
+      models/mech/models/tongue/exciters/VERT:excitation
+      models/mech/models/tongue/exciters/TRANS:excitation
+      models/mech/models/tongue/exciters/IL:excitation
+      models/mech/models/tongue/exciters/SL:excitation
+    ]
+    variables=
+    [ 
+      P0
+      P1
+      P2
+      P3
+      P4
+      P5
+      P6
+      P7
+      P8
+      P9
+      P10
+    ]
+    drivers=
+    [ 
+      "P0"
+      "P1"
+      "P2"
+      "P3"
+      "P4"
+      "P5"
+      "P6"
+      "P7"
+      "P8"
+      "P9"
+      "P10"
+    ]
+    plotTraceInfo=[
+      [ order=0 label="exciters/GGP:excitation" visible=true color=Red ]
+      [ order=1 label="exciters/GGM:excitation" visible=true color=DarkGreen ]
+      [ order=2 label="exciters/GGA:excitation" visible=true color=Blue ]
+      [ order=3 label="exciters/STY:excitation" visible=true color=Cyan ]
+      [ order=4 label="exciters/GH:excitation" visible=true color=Magenta ]
+      [ order=5 label="exciters/MH:excitation" visible=true color=DarkOrange ]
+      [ order=6 label="exciters/HG:excitation" visible=true color=Pink ]
+      [ order=7 label="exciters/VERT:excitation" visible=true color=BlueViolet ]
+      [ order=8 label="exciters/TRANS:excitation" visible=true color=[ 0.000 0.600 0.600 ] ]
+      [ order=9 label="exciters/IL:excitation" visible=true color=Gray ]
+      [ order=10 label="exciters/SL:excitation" visible=true color=DarkOliveGreen ]
+    ]
+  ]
+  artisynth.core.probes.WayPointProbe
+  [ startTime=0.0
+    stopTime=Infinity
+    updateInterval=-1.0
+    name="WayPoints"
+    track=-1
+    model=null
+    wayPoints=
+    [ 
+      0.0
+      0.5
+      1.0 breakpoint
+      1.2 breakpoint
+    ]
+  ]
+]
