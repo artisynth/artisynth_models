@@ -23,7 +23,6 @@ import artisynth.core.materials.ConstantAxialMuscle;
 import artisynth.core.materials.PeckAxialMuscle;
 import artisynth.core.mechmodels.Collidable;
 import artisynth.core.mechmodels.FrameMarker;
-import artisynth.core.mechmodels.FullPlanarJoint;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.ExcitationComponent;
 import artisynth.core.mechmodels.Muscle;

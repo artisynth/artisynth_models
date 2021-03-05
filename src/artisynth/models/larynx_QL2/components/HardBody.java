@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import artisynth.core.mechmodels.FullPlanarJoint;
+import artisynth.core.mechmodels.PlanarJoint;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.Point;
@@ -41,7 +41,8 @@ public class HardBody extends AbstractBody {
               addToModel(mech, vtModel.getFullFileName(name + Files.RIGIDBODY.getSuffix()));
               switch (hbc) {
                      case FULL_PLANAR_JOINT_X:
-                            FullPlanarJoint fpj = new FullPlanarJoint(body, new Vector3d(1.0, 0.0, 0.0));
+                            PlanarJoint fpj = new PlanarJoint(
+                               body, null, Point3d.ZERO, new Vector3d(1.0, 0.0, 0.0));
                             fpj.setName(name + " mid-sagittal constraint plane");
                             fpj.setRenderProps(new RenderProps());
                             fpj.getRenderProps().setVisible(false);

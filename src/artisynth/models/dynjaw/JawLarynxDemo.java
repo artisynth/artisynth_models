@@ -3,17 +3,56 @@ package artisynth.models.dynjaw;
 import java.awt.Color;
 import java.io.IOException;
 
-import javax.swing.JFrame;
-
-import maspack.matrix.Point3d;
-import maspack.render.RenderProps;
 import artisynth.core.gui.ControlPanel;
-import artisynth.core.mechmodels.RigidBody;
+import artisynth.core.mechmodels.BodyConnector;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
+import artisynth.core.mechmodels.PlanarConnector;
+import artisynth.core.mechmodels.RigidBody;
+import artisynth.core.mechmodels.SegmentedPlanarConnector;
+import artisynth.core.modelbase.MonitorBase;
 import artisynth.core.workspace.DriverInterface;
 import artisynth.core.workspace.RootModel;
+import maspack.matrix.Point3d;
+import maspack.matrix.VectorNi;
+import maspack.render.RenderProps;
+import maspack.util.NumberFormat;
 
 public class JawLarynxDemo extends JawDemo {
+
+   /**
+    * Monitor that lets us look at how the engagement of the
+    * unilateral constraints evolves over time. Used for debugging
+    * and simulation tuning.
+    */
+   protected class EngagedMonitor extends MonitorBase {
+      VectorNi myEngaged = new VectorNi();
+
+      VectorNi computeEngaged() {
+         VectorNi engaged = new VectorNi();
+         for (BodyConnector c : myJawModel.bodyConnectors()){
+            if (c instanceof PlanarConnector) {
+               engaged.append (Math.abs(((PlanarConnector)c).getEngaged()));
+            }
+            else if (c instanceof SegmentedPlanarConnector) {
+               engaged.append (Math.abs(((SegmentedPlanarConnector)c).getEngaged()));
+            }
+         }
+         return engaged;
+      }
+
+      EngagedMonitor() {
+         myEngaged = computeEngaged();
+      }
+      
+      public void apply (double t0, double t1) {
+         VectorNi engaged = computeEngaged();
+         NumberFormat fmt = new NumberFormat("%6.4f");
+         if (!myEngaged.equals(engaged)) {
+            System.out.println (fmt.format(t1) + "  " + engaged);
+            myEngaged = engaged;
+         }
+      }
+   }
 
    public JawLarynxDemo() {
       super();
