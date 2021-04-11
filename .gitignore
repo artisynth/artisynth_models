@@ -31,7 +31,6 @@ CVS
 *.exe
 *.h.gch
 /build
-/classes
 
 ######################
 # Temp files
