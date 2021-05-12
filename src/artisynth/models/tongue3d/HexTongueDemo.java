@@ -1,16 +1,65 @@
 package artisynth.models.tongue3d;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 
+import javax.swing.JFileChooser;
 import javax.swing.JSeparator;
 
+import artisynth.core.driver.Main;
+import artisynth.core.femmodels.AnsysReader;
+import artisynth.core.femmodels.FemElement;
+import artisynth.core.femmodels.FemElement3d;
+import artisynth.core.femmodels.FemMarker;
+import artisynth.core.femmodels.FemModel.IncompMethod;
+import artisynth.core.femmodels.FemModel.SurfaceRender;
+import artisynth.core.femmodels.FemModel3d;
+import artisynth.core.femmodels.FemMuscleModel;
+import artisynth.core.femmodels.FemMuscleStiffener;
+import artisynth.core.femmodels.FemNode3d;
+import artisynth.core.femmodels.MuscleBundle;
+import artisynth.core.femmodels.MuscleElementDesc;
+import artisynth.core.femmodels.TetElement;
+import artisynth.core.gui.ControlPanel;
+import artisynth.core.gui.FemControlPanel;
+import artisynth.core.gui.editorManager.RemoveComponentsCommand;
+import artisynth.core.materials.InactiveMuscle;
+import artisynth.core.materials.LinearMaterial;
+import artisynth.core.materials.MooneyRivlinMaterial;
+import artisynth.core.mechmodels.CollisionManager;
+import artisynth.core.mechmodels.MechModel;
+import artisynth.core.mechmodels.MechSystemSolver.Integrator;
+import artisynth.core.mechmodels.Muscle;
+import artisynth.core.mechmodels.MuscleExciter;
+import artisynth.core.mechmodels.ParticlePlaneConstraint;
+import artisynth.core.mechmodels.Point;
+import artisynth.core.mechmodels.PointList;
+import artisynth.core.mechmodels.RigidBody;
+import artisynth.core.modelbase.ComponentUtils;
+import artisynth.core.modelbase.CompositeComponent;
+import artisynth.core.modelbase.ModelComponent;
+import artisynth.core.modelbase.RenderableComponentList;
+import artisynth.core.modelbase.ScanWriteUtils;
+import artisynth.core.modelbase.StepAdjustment;
+import artisynth.core.probes.NumericInputProbe;
+import artisynth.core.probes.NumericOutputProbe;
+import artisynth.core.util.ArtisynthIO;
+import artisynth.core.util.ArtisynthPath;
+import artisynth.core.util.MDLMeshIO;
+import artisynth.core.workspace.DriverInterface;
+import artisynth.core.workspace.RootModel;
+import artisynth.models.jawTongue.BadinDataDemo;
+import artisynth.models.jawTongue.BadinJawHyoid;
+import artisynth.models.jawTongue.BadinJawHyoidTongue;
 import maspack.geometry.PolygonalMesh;
 import maspack.geometry.Vertex3d;
 import maspack.interpolation.Interpolation.Order;
@@ -21,68 +70,23 @@ import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.matrix.VectorNd;
 import maspack.properties.Property;
-import maspack.properties.PropertyMode;
 import maspack.properties.PropertyList;
+import maspack.properties.PropertyMode;
 import maspack.render.LineRenderProps;
 import maspack.render.RenderProps;
-import maspack.render.Renderable;
 import maspack.render.Renderer.FaceStyle;
 import maspack.render.Renderer.LineStyle;
 import maspack.render.Renderer.PointStyle;
 import maspack.render.Renderer.Shading;
+import maspack.util.IndentingPrintWriter;
+import maspack.util.NumberFormat;
 import maspack.util.ReaderTokenizer;
+import maspack.widgets.GuiUtils;
 import maspack.widgets.LabeledComponentBase;
 import maspack.widgets.LabeledControl;
 import maspack.widgets.PropertyWidget;
 import maspack.widgets.ValueChangeEvent;
 import maspack.widgets.ValueChangeListener;
-import artisynth.core.driver.Main;
-import artisynth.core.femmodels.AnsysReader;
-import artisynth.core.femmodels.FemElement;
-import artisynth.core.femmodels.FemElement3d;
-import artisynth.core.femmodels.FemMarker;
-import artisynth.core.femmodels.FemModel3d;
-import artisynth.core.femmodels.FemMuscleModel;
-import artisynth.core.femmodels.FemMuscleStiffener;
-import artisynth.core.femmodels.FemNode3d;
-import artisynth.core.femmodels.MuscleBundle;
-import artisynth.core.femmodels.MuscleElementDesc;
-import artisynth.core.femmodels.TetElement;
-import artisynth.core.femmodels.FemModel.SurfaceRender;
-import artisynth.core.femmodels.FemModel.IncompMethod;
-import artisynth.core.gui.ControlPanel;
-import artisynth.core.gui.FemControlPanel;
-import artisynth.core.gui.editorManager.RemoveComponentsCommand;
-import artisynth.core.materials.InactiveMuscle;
-import artisynth.core.materials.LinearMaterial;
-import artisynth.core.materials.MooneyRivlinMaterial;
-import artisynth.core.mechmodels.CollisionManager;
-import artisynth.core.mechmodels.MechModel;
-import artisynth.core.mechmodels.MechModel;
-import artisynth.core.mechmodels.Muscle;
-import artisynth.core.mechmodels.MuscleExciter;
-import artisynth.core.mechmodels.ParticlePlaneConstraint;
-import artisynth.core.mechmodels.Point;
-import artisynth.core.mechmodels.RigidBody;
-import artisynth.core.mechmodels.MechSystemSolver.Integrator;
-import artisynth.core.modelbase.StepAdjustment;
-import artisynth.core.modelbase.ComponentUtils;
-import artisynth.core.modelbase.CompositeComponentBase;
-import artisynth.core.modelbase.CompositeComponent;
-import artisynth.core.modelbase.ModelComponent;
-import artisynth.core.modelbase.RenderableComponentList;
-import artisynth.core.modelbase.ScanWriteUtils;
-import artisynth.core.probes.NumericInputProbe;
-import artisynth.core.probes.NumericOutputProbe;
-import artisynth.core.probes.Probe;
-import artisynth.core.util.ArtisynthIO;
-import artisynth.core.util.ArtisynthPath;
-import artisynth.core.util.MDLMeshIO;
-import artisynth.core.workspace.DriverInterface;
-import artisynth.core.workspace.RootModel;
-import artisynth.models.jawTongue.BadinDataDemo;
-import artisynth.models.jawTongue.BadinJawHyoid;
-import artisynth.models.jawTongue.BadinJawHyoidTongue;
 
 public class HexTongueDemo extends RootModel {
 
@@ -125,6 +129,7 @@ public class HexTongueDemo extends RootModel {
    protected FemMuscleModel tongue;
    protected MechModel mech;
    protected FemMuscleStiffener stiffener = null;
+   protected JFileChooser myMuscleBundleFileChooser;
 
    public static final NodeName[] tongueNodes = new NodeName[] {
       new NodeName("tip", 919), new NodeName("top", 869),
@@ -1271,4 +1276,213 @@ public class HexTongueDemo extends RootModel {
       // RenderProps.setAlpha(tongue, 0.5);
       // tongue.setMaxColoredExcitation(0.8);
    }
+
+   // Utility methods for writing out muscle bundle information
+
+   /**
+    * Utility method that writes out information about selected muscle bundle
+    * fibers and elements. This is intended for use in regrouping bundles and
+    * elements.
+    *
+    * @param pw writer to output the information
+    * @param name optional name for the bundle
+    * @param model FEM muscle model containing fibres and elements
+    */
+   public static void writeSelectedBundleInfo (
+      PrintWriter pw, String name, FemMuscleModel model) {
+      ArrayList<Muscle> selectedFibres = new ArrayList<>();
+      ArrayList<MuscleElementDesc> selectedElems = new ArrayList<>();
+      for (MuscleBundle bundle : model.getMuscleBundles()) {
+         for (Muscle fibre : bundle.getFibres()) {
+            if (fibre.isSelected()) {
+               selectedFibres.add (fibre);
+            }
+         }
+         for (MuscleElementDesc desc : bundle.getElements()) {
+            if (desc.isSelected()) {
+               selectedElems.add (desc);
+            }
+         }
+      }
+      writeBundleInfo (
+         pw, name, selectedFibres, selectedElems, model);
+   }
+
+   /**
+    * Utility method that writes out muscle bundle information for a given FEM
+    * muscle model.
+    *
+    * @param pw writer to output the information
+    * @param model FEM muscle model containing fibres and elements
+    */
+   public static void writeAllBundleInfo (
+      PrintWriter pw, FemMuscleModel model) {
+
+      pw.println ("[ ");
+      IndentingPrintWriter.addIndentation (pw, 2);     
+      for (MuscleBundle bundle : model.getMuscleBundles()) {
+         ArrayList<Muscle> fibres = new ArrayList<>();
+         ArrayList<MuscleElementDesc> elems = new ArrayList<>();
+         fibres.addAll (bundle.getFibres());
+         elems.addAll (bundle.getElements());
+         writeBundleInfo (
+            pw, bundle.getName(), fibres, elems, model);
+      }
+      IndentingPrintWriter.addIndentation (pw, -2);     
+      pw.println ("]");
+   }
+
+   /**
+    * Utility method that writes out information about muscle bundle fibers
+    * and elements.
+    *
+    * @param pw writer to output the information
+    * @param name optional name
+    * @param fibres list of fibres
+    * @param elems list of elements
+    * @param model FEM muscle model containing fibres and elements
+    */
+   public static void writeBundleInfo (
+      PrintWriter pw, String name, 
+      List<Muscle> fibres, List<MuscleElementDesc> elems, 
+      FemMuscleModel model) {
+
+      if (name != null) {
+         pw.println ("[ name=\""+name+"\"");
+      }
+      else {
+         pw.println ("[");
+      }
+      NumberFormat fmt = new NumberFormat ("%4d");
+      IndentingPrintWriter.addIndentation (pw, 2);
+      if (fibres.size() > 0) {
+         pw.println ("fibres=[");
+         IndentingPrintWriter.addIndentation (pw, 2);     
+         PointList<FemNode3d> nodeList = model.getNodes();
+         int maxFibersPerLine = 5;
+         int cnt = 0;
+         for (Muscle fibre : fibres) {
+            Point pnt1 = fibre.getFirstPoint();
+            Point pnt2 = fibre.getSecondPoint();
+            if (pnt1 instanceof FemNode3d && pnt1.getParent() == nodeList &&
+                pnt2 instanceof FemNode3d && pnt2.getParent() == nodeList) {
+               pw.print (fmt.format(pnt1.getNumber()) + " " +
+                         fmt.format(pnt2.getNumber()) + "   ");
+               if (++cnt > maxFibersPerLine) {
+                  pw.println ("");
+                  cnt = 0;
+               }
+            }
+            else {
+               System.out.println (
+                  "WARNING: muscle fibre "+ComponentUtils.getPathName(fibre)+
+                  " attached to non-FEM node; skipping");
+            }
+         }
+         IndentingPrintWriter.addIndentation (pw, -2); 
+         if (cnt != 0) {
+            pw.println ("");
+         }
+         pw.println ("]");
+      }
+      if (elems.size() > 0) {
+         pw.println ("elements=[");
+         IndentingPrintWriter.addIndentation (pw, 2);     
+         int maxElemsPerLine = 12;
+         int cnt = 0;
+         for (MuscleElementDesc desc : elems) {
+            pw.print (fmt.format(desc.getElement().getNumber()) + " ");
+            if (++cnt == maxElemsPerLine) {
+               pw.println ("");
+               cnt = 0;
+            }
+         }
+         if (cnt != 0) {
+            pw.println ("");
+         }
+         IndentingPrintWriter.addIndentation (pw, -2); 
+         pw.println ("]");
+      }
+      IndentingPrintWriter.addIndentation (pw, -2);
+      pw.println ("]");
+   }
+
+   private String getBaseFileName (File file) {
+      String name = file.getName();
+      int lastDot = name.lastIndexOf ('.');
+      if (lastDot != -1) {
+         name = name.substring (0, lastDot);
+      }
+      return name;
+   }
+
+   /**
+    * Writes out muscle bundle information for this model to a
+    * file choosen by the user.
+    */
+   protected void writeMuscleBundleInfo (boolean selectedOnly) {
+      if (myMuscleBundleFileChooser == null) {
+         myMuscleBundleFileChooser = new JFileChooser();
+      }
+      int retVal = myMuscleBundleFileChooser.showSaveDialog (
+         getMainFrame());
+      if (retVal == JFileChooser.APPROVE_OPTION) {
+         File file = myMuscleBundleFileChooser.getSelectedFile();
+         if (!file.exists() || GuiUtils.confirmOverwrite (
+                getMainFrame(), file)) {
+            IndentingPrintWriter pw = null;
+            try {
+               pw = ArtisynthIO.newIndentingPrintWriter (file);
+               if (selectedOnly) {
+                  writeSelectedBundleInfo (
+                     pw, getBaseFileName(file), tongue);
+               }
+               else {
+                  writeAllBundleInfo (pw, tongue);
+               }
+            }
+            catch (IOException e) {
+               GuiUtils.showError (
+                  getMainFrame(), "Can't create or write "+file);
+            }
+            finally {
+               if (pw != null) {
+                  pw.close();
+               }
+            }
+         }
+      }
+   }
+
+   /**
+    * Creates commands that appear in the Application menu
+    */
+   public boolean getMenuItems(List<Object> items) {
+      items.add (
+         GuiUtils.createMenuItem (
+            this,
+            "Write muscle bundle info ...",
+            "write all muscle bundle information to a file"));
+      items.add (
+         GuiUtils.createMenuItem (
+            this,
+            "Write selected muscle bundle info ...",
+            "write selected muscle bundle information to a file"));
+      return true;
+   }   
+
+   /**
+    * Handler for application menu commands
+    */
+   public void actionPerformed(ActionEvent event) {
+      if (event.getActionCommand().equals (
+             "Write muscle bundle info ...")) {
+         writeMuscleBundleInfo (/*selectedOnly=*/false);
+      }
+      else if (event.getActionCommand().equals (
+                  "Write selected muscle bundle info ...")) {
+         writeMuscleBundleInfo (/*selectedOnly=*/true);
+      }
+   } 
+
 }
