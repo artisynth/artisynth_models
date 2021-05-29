@@ -8,9 +8,9 @@ import maspack.matrix.AxisAngle;
 import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.render.GL.GLClipPlane;
-import maspack.render.GL.GLGridResolution;
 import maspack.render.GL.GLViewer;
 import maspack.render.Dragger3d.DraggerType;
+import maspack.render.GridResolution;
 import maspack.render.RenderProps;
 import maspack.render.Renderer;
 import maspack.render.Renderer.LineStyle;
@@ -852,7 +852,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       }
       GLClipPlane clip  = v.getClipPlane (0);
       
-      clip.setResolution(new GLGridResolution(100,10));
+      clip.setResolution(new GridResolution(100,10));
       clip.setPosition(getCenter());
       clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
       clip.setOffset (gridOffset);

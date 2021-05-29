@@ -5,8 +5,8 @@ import java.io.IOException;
 
 import maspack.matrix.AxisAngle;
 import maspack.render.GL.GLClipPlane;
-import maspack.render.GL.GLGridResolution;
 import maspack.render.GL.GLViewer;
+import maspack.render.GridResolution;
 import maspack.render.Dragger3d.DraggerType;
 import artisynth.core.driver.Main;
 import artisynth.core.driver.ViewerManager;
@@ -103,7 +103,7 @@ public class VKHUpperAirwayDemo extends ModelTemplate {
       }
       GLClipPlane clip  = v.getClipPlane (0);
       
-      clip.setResolution(new GLGridResolution(100,10));
+      clip.setResolution(new GridResolution(100,10));
       clip.setPosition(getCenter());
       clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
       clip.setOffset (gridOffset);
