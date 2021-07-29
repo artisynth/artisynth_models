@@ -25,7 +25,7 @@ public class AirwaySkin extends SkinMeshBody {
       float[] rgb = new float[3];
       double a = mesh.getRenderProps ().getAlpha ();
       for (int i = 0; i < mesh.numVertices (); i++) {
-         double w = getAttachment (i).getWeight (idx);
+         double w = getVertexAttachment (i).getConnectionWeight (idx);
          myColorMap.getRGB (w, rgb);
          mesh.setColor (i, rgb[0], rgb[1], rgb[2], a);
       }
@@ -35,7 +35,7 @@ public class AirwaySkin extends SkinMeshBody {
       int n = getMesh().numVertices ();
       VectorNd w = new VectorNd (n);
       for (int i = 0; i < n; i++) {
-         w.set (i, getAttachment (i).getWeight (idx));
+         w.set (i, getVertexAttachment (i).getConnectionWeight (idx));
       }
       return w;
    }

@@ -43,7 +43,7 @@ public class SoftPalateDemo extends RootModel {
    MechModel myMechMod;
    FemMuscleModel myFemMod;
    double myDensity = 5.0;
-   double muscleMaxForce = 1000;
+   double muscleMaxForce = 100000;
    
    ArrayList<String> bundleNames = new ArrayList<String> ();
    

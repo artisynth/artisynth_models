@@ -13,8 +13,8 @@ import maspack.matrix.Point3d;
 import maspack.matrix.Vector2d;
 import maspack.matrix.Vector3d;
 import maspack.render.GL.GLClipPlane;
-import maspack.render.GL.GLGridResolution;
 import maspack.render.GL.GLViewer;
+import maspack.render.GridResolution;
 import maspack.render.Dragger3d.DraggerType;
 import artisynth.core.driver.Main;
 import artisynth.core.femmodels.FemElement3dBase;
@@ -257,7 +257,7 @@ public class VKHUpperAirwayWA extends ModelTemplate {
       }
       GLClipPlane clip  = v.getClipPlane (0);
       
-      clip.setResolution(new GLGridResolution(100,10));
+      clip.setResolution(new GridResolution(100,10));
       clip.setPosition(getCenter());
       clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
       clip.setOffset (gridOffset);

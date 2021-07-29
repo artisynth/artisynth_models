@@ -57,10 +57,10 @@ public class OpeningTest extends RootModel {
    
    private static Rectangle getViewerBounds(GLViewer viewer) {
       Rectangle area = new Rectangle();
-      area.width = viewer.getCanvas().getWidth();
-      area.height = viewer.getCanvas().getHeight();
-      area.x = viewer.getCanvas().getLocationOnScreen().x;
-      area.y = viewer.getCanvas().getLocationOnScreen().y;
+      area.width = viewer.getScreenWidth();
+      area.height = viewer.getScreenHeight();
+      area.x = viewer.getScreenX();
+      area.y = viewer.getScreenY();
       return area;
    }
 
