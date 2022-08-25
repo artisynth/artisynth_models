@@ -936,11 +936,12 @@ public abstract class BatchWorkerBase implements Runnable {
             }
 
             myNumSimsAttempted = 0;
-            boolean success = false;
             double initial = myRootModel.getMaxStepSize ();
             myRerunList.addFirst (initial);
             Iterator<Double> it = myRerunList.iterator ();
-            while (!success && it.hasNext ()) {
+            myCurrentTaskSuccessful = false;
+            boolean taskDone = false;
+            while (!taskDone && it.hasNext ()) {
                myLastStepSizeUsed = it.next ();
                if (myLastStepSizeUsed < myRootModel.getMinStepSize ()) {
                   continue;
@@ -972,14 +973,25 @@ public abstract class BatchWorkerBase implements Runnable {
                }
                while (!playWorked);
                main.waitForStop ();
-               postSim (); // For subclass to override.
-               if (myStopConditionMonitor.hasAnyConditionBeenMet ()) {
-                  success = true;
+               if (main.getSimulationException () != null){
+                  // An exception occurred. Terminate the task and reload the
+                  // RootModel in case it was corrupted by the exception.
+                  main.reloadModel ();
+                  System.out.println ("Model reloaded");
+                  myRootModel = main.getRootModel ();
+                  myRootModel.addMonitor (myStopConditionMonitor);
+                  taskDone = true;
+               }
+               else {
+                  postSim (); // For subclass to override.
+                  if (myStopConditionMonitor.hasAnyConditionBeenMet ()) {
+                     myCurrentTaskSuccessful = true;
+                     taskDone = true;
+                  }
                }
             }
             main.setMaxStep (initial);
             myRerunList.removeFirst ();
-            myCurrentTaskSuccessful = success;
             recordSimResults (); // For subclass to override.
             addLogEntry (); // For subclass to override.
          }
