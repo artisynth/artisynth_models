@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -157,6 +157,10 @@ public class HexTongueDemo extends RootModel {
 
    public void setActivationStiffening (boolean enable) {
       doActivationStiffening = enable;
+      if (!enable) {
+         stiffener = null;
+      }
+      // allocate stiffener on-demand in the advance method      
    }
 
    /*
@@ -200,8 +204,13 @@ public class HexTongueDemo extends RootModel {
    }
 
    @Override
-   public StepAdjustment advance(double t0, double t1, int flags) {
-      if (stiffener != null && doActivationStiffening) {
+   public StepAdjustment advance (double t0, double t1, int flags) {
+      if ( doActivationStiffening) {
+         if (stiffener == null) {
+            stiffener =
+               new FemMuscleStiffener (
+                  (FemMuscleModel)findComponent ("models/mech/models/tongue"));
+         }
          stiffener.updateElemStiffnesses();
       }
       return super.advance(t0, t1, flags);
@@ -215,6 +224,22 @@ public class HexTongueDemo extends RootModel {
    public void build (String[] args) throws IOException {
       super.build (args);
 
+      String exciterName = null;
+      for (int i=0; i<args.length; i++) {
+         if (args[i].equals ("-exciter")) {
+            if (++i > args.length-1) {
+               System.out.println (
+                  "WARNING: option -exciter needs another argument; ignoring");
+               break;
+            }
+            exciterName = args[i];
+         }
+         else {
+            System.out.println (
+               "WARNING: unknown option "+args[i]+"; ignoring");
+         }
+      }
+
       mech = new MechModel("mech");
       mech.setIntegrator(Integrator.ConstrainedBackwardEuler);
       mech.setMaxStepSize(0.01);
@@ -224,7 +249,7 @@ public class HexTongueDemo extends RootModel {
       // addModel(tongue);
       mech.addModel(tongue);
 
-      stiffener = new FemMuscleStiffener(tongue);
+      setActivationStiffening (true);
 
       for (FemElement elem : tongue.getElements()) {
          if (elem.getRestVolume() < 0) {
@@ -241,6 +266,19 @@ public class HexTongueDemo extends RootModel {
       setActivationColor(tongue);
 
       RenderProps.setVisible (tongue.getMuscleBundles (), true);
+      if (exciterName != null) {
+         exciterName = exciterName.toUpperCase();
+         NumericInputProbe probe =
+            (NumericInputProbe)getInputProbes().get ("ex_"+exciterName);
+         if (probe == null) {
+            System.out.println (
+               "WARNING: can't find exciter "+exciterName+"; ignoring");
+         }
+         else {
+            probe.setActive (true);
+         }
+      }
+      
       // tongue.loadFibreEx ("r/i.excitations");
       
 //      splitTongueAlongMidline();
@@ -983,8 +1021,8 @@ public class HexTongueDemo extends RootModel {
     */
    public static double getSurroundingElemsVol(MuscleBundle b,
       ArrayList<FemElement> surroundingElems, Muscle fiber) {
-      HashSet<FemElement3d> elems0 = new HashSet<FemElement3d>();
-      HashSet<FemElement3d> elems1 = new HashSet<FemElement3d>();
+      LinkedHashSet<FemElement3d> elems0 = new LinkedHashSet<FemElement3d>();
+      LinkedHashSet<FemElement3d> elems1 = new LinkedHashSet<FemElement3d>();
       double elemsVolume = 0.0;
       if (!(fiber.getFirstPoint() instanceof FemNode3d)
          || !(fiber.getSecondPoint() instanceof FemNode3d)) {
