@@ -888,6 +888,17 @@ public abstract class BatchWorkerBase implements Runnable {
    public boolean myCurrentTaskSuccessful;
 
    /**
+    * If non-{@code null}, points to an exception that was thrown by {@link
+    * #myCurrentTask}. If an exception is thrown, the root model will be
+    * reloaded (as a precaution), and {@link #myCurrentTaskSuccessful} will be
+    * set to {@code false}.
+    * <p>
+    * Subclasses are encouraged to access this instance variable, as long as it
+    * is treated as a read-only variable.
+    */
+   public Exception myCurrentTaskException;
+
+   /**
     * The last step sized used when running the {@link #myCurrentTask}. This
     * value starts (before the current simulation begins) by equaling
     * {@link RootModel#getMaxStepSize()}, and <b>may</b> change if the current
@@ -936,11 +947,14 @@ public abstract class BatchWorkerBase implements Runnable {
             }
 
             myNumSimsAttempted = 0;
-            boolean success = false;
             double initial = myRootModel.getMaxStepSize ();
             myRerunList.addFirst (initial);
             Iterator<Double> it = myRerunList.iterator ();
-            while (!success && it.hasNext ()) {
+            myCurrentTaskSuccessful = false;
+            myCurrentTaskException = null;
+            while (!myCurrentTaskSuccessful &&
+                   myCurrentTaskException == null &&
+                   it.hasNext ()) {
                myLastStepSizeUsed = it.next ();
                if (myLastStepSizeUsed < myRootModel.getMinStepSize ()) {
                   continue;
@@ -972,14 +986,24 @@ public abstract class BatchWorkerBase implements Runnable {
                }
                while (!playWorked);
                main.waitForStop ();
-               postSim (); // For subclass to override.
-               if (myStopConditionMonitor.hasAnyConditionBeenMet ()) {
-                  success = true;
+               if (main.getSimulationException () != null){
+                  // An exception occurred. Terminate the task and reload the
+                  // RootModel in case it was corrupted by the exception.
+                  myCurrentTaskException = main.getSimulationException ();
+                  main.reloadModel ();
+                  System.out.println ("Model reloaded");
+                  myRootModel = main.getRootModel ();
+                  myRootModel.addMonitor (myStopConditionMonitor);
+               }
+               else {
+                  postSim (); // For subclass to override.
+                  if (myStopConditionMonitor.hasAnyConditionBeenMet ()) {
+                     myCurrentTaskSuccessful = true;
+                  }
                }
             }
             main.setMaxStep (initial);
             myRerunList.removeFirst ();
-            myCurrentTaskSuccessful = success;
             recordSimResults (); // For subclass to override.
             addLogEntry (); // For subclass to override.
          }
