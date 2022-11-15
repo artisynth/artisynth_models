@@ -1,0 +1,17 @@
+#---------- Thu Jul 29 16:20:46 PDT 2021 ----------
+#Format: Task Counter Number,Did Simulation Succeed,Last Step Size Used,Number of Simulations Attempted
+0,false,0.01,1
+#---------- Thu Jul 29 16:48:15 PDT 2021 ----------
+#Format: Task Counter Number,Did Simulation Succeed,Last Step Size Used,Number of Simulations Attempted
+0,true,0.01,1
+#---------- Thu Jul 29 16:52:52 PDT 2021 ----------
+#Format: Task Counter Number,Did Simulation Succeed,Last Step Size Used,Number of Simulations Attempted
+2,true,0.01,1
+3,false,0.01,1
+4,false,0.01,1
+5,false,0.01,1
+6,false,0.01,1
+7,true,0.01,1
+8,false,0.01,1
+9,false,0.01,1
+10,true,0.01,1
