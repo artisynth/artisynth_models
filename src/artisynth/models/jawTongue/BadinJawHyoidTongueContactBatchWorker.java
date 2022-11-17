@@ -143,6 +143,26 @@ public class BadinJawHyoidTongueContactBatchWorker extends SimpleTimedBatchWorke
       removeAllExciterProbes();
       Main.getMain().clearWayPoints();
    }
+   
+   @Override
+   protected void setUpStopConditionMonitor () {
+      super.setUpStopConditionMonitor ();
+
+      TimeChecker tchk =
+         new TimeChecker (
+            TimeCondition.IN_RANGE_INCLUSIVE,
+            myMaxTime - mySettleTime + myRootModel.getMaxStepSize (),
+            myMaxTime);
+
+      List<ModelComponent> comps = new LinkedList<>();
+      for (ModelComponent comp: ((BadinJawHyoidTongueContact) myRootModel).getTongue().getNodes()) {
+         comps.add (comp);
+      }
+      EquilibriumChecker echk =
+         new EquilibriumChecker (EquilibriumCondition.STATIC, tchk, 1, comps);
+
+      myStopConditionMonitor.addConditionChecker (echk);
+   }
 
 }
 
