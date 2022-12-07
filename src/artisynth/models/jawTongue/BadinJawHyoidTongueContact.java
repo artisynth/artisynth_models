@@ -8,12 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import artisynth.core.femmodels.FemMuscleModel;
+import artisynth.core.mechmodels.CollisionResponse;
 import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.PointList;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.probes.NumericInputProbe;
 import artisynth.core.probes.Probe;
 import artisynth.core.util.ArtisynthPath;
+import artisynth.models.dynjaw.JawModel;
 import maspack.geometry.PolygonalMesh;
 import maspack.interpolation.Interpolation.Order;
 import maspack.render.RenderProps;
@@ -81,8 +83,18 @@ public class BadinJawHyoidTongueContact extends BadinJawHyoidTongue
    /** Small value to compare two doubles for equality. */
    protected static double EPSILON = 0.0001;
    
+   /**
+    * The distance monitor which measures (and can variously render) the
+    * distance between the tongue and the oral cavity.
+    */
+   protected DistanceMonitor myDistanceMonitor;
+   
    public BadinJawHyoidTongueContact() {
       super();
+   }
+   
+   public DistanceMonitor getDistanceMonitor () {
+      return myDistanceMonitor;
    }
    
    /**
@@ -206,8 +218,12 @@ public class BadinJawHyoidTongueContact extends BadinJawHyoidTongue
       super.build (args); // Create StaticJawHyoidTongue model.
 
       addOralCavityToModel ("geometry/oralCavityMesh.obj");
-      addOralCavityFrameMarkersToModel ();
-     
+      addOralCavityFrameMarkersToModel();
+      
+      myDistanceMonitor =
+         new DistanceMonitor (this, 754, DistanceMonitor.DEFAULT_RENDER_TYPE);
+      addMonitor (myDistanceMonitor);
+
       // addMonitor (new RunUntilSettledScaled (tongue));
    }
    
@@ -243,6 +259,7 @@ public class BadinJawHyoidTongueContact extends BadinJawHyoidTongue
       myJawModel.setCollisionBehavior (maxilla, tongue, false);
       
       myJawModel.setCollisionResponse (tongue, myOralCavity);
+      RigidBody.setVisible(myOralCavity, false);
    }
    
 
@@ -281,10 +298,10 @@ public class BadinJawHyoidTongueContact extends BadinJawHyoidTongue
       addOralCavityFrameMarkersToListOrChangeMarkerNamesForCoronalMarkers (
          "frameMarkers/ocMarkers_lat_right.txt", myLateralRightMarkers,
          "oralCavity_lr_", LATERAL_MARKERS_COLOR, false);
-
       addOralCavityFrameMarkersToListOrChangeMarkerNamesForCoronalMarkers (
          "frameMarkers/coronalMarkers.txt", null, "oralCavity_c_",
          CORONAL_MARKERS_COLOR, true);
+      
       for (FrameMarker mkr : myFrontMarkers) {
          if (mkr.getName ().contains ("oralCavity_c_")) {
             myCoronalMarkerNames.add (mkr.getName ());
@@ -424,19 +441,21 @@ public class BadinJawHyoidTongueContact extends BadinJawHyoidTongue
    }
 
    public void addExciterProbe(String exciterName, double maxExcitation) {
-    if (getInputProbes ().get (exciterName + " exciter probe") == null) {
+    if (getInputProbes().get (exciterName + " exciter probe") == null) {
     NumericInputProbe nip =
        new NumericInputProbe(this, "models/jawmodel/models/tongue/exciters/" + exciterName
-       + ":excitation", 0, 1);
+       + ":excitation", 0, 0.5);
     nip.addData (
        new double[] { 0.00, 0.0,
                       0.03, 0.0,
                       0.40, maxExcitation,
-                      1.00, maxExcitation
+                      0.50, maxExcitation
                     }, NumericInputProbe.EXPLICIT_TIME);
     nip.setName (exciterName + " exciter probe");
     nip.setInterpolationOrder (Order.CubicStep);
     addInputProbe (nip);
+    System.out.println("adding probe");
+    System.out.println(exciterName + " " + maxExcitation);
  }
 }
 
@@ -446,4 +465,26 @@ public class BadinJawHyoidTongueContact extends BadinJawHyoidTongue
          removeInputProbe(p);
       }
    }
+   
+   /**
+    * Is the tongue in contact with the oralCavity?
+    * 
+    * @return {@code true} if tongue-oralCavity contact exists, {@code false}
+    * otherwise
+    */
+   public boolean isTongueInContact () {
+      CollisionResponse resp = 
+         myJawModel.getCollisionResponse(tongue, myOralCavity);
+      return resp.inContact();
+   }
+   
+   /**
+    * Returns the jaw model, which is this root model's MechModel.
+    * 
+    * @return the jaw model, which is this root model's MechModel
+    */
+   public JawModel getJawModel () {
+      return myJawModel;
+   }
+
 }

@@ -1,0 +1,2 @@
+Error: Unable to initialize main class artisynth.tools.batchsim.manager.BatchManager
+Caused by: java.lang.NoClassDefFoundError: argparser/ArgParseException
