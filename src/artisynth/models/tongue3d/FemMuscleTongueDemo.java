@@ -1,6 +1,7 @@
 package artisynth.models.tongue3d;
 
 import java.awt.Component;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileReader;
@@ -90,8 +91,9 @@ public class FemMuscleTongueDemo extends HexTongueDemo {
       tongue.setElementWidgetSize(0);
       tongue.setDirectionRenderLen(0.5);
       // tongue.setSurfaceRendering (SurfaceRender.Strain);
+      RenderProps.setFaceColor(tongue, new Color(.8f, .5f, .5f));
       tongue.setSurfaceRendering(SurfaceRender.None);
-      // tongue.setSurfaceRendering(SurfaceRender.Shaded);
+      tongue.setSurfaceRendering(SurfaceRender.Shaded);
       RenderProps.setVisible(tongue.getElements(), true);
       RenderProps.setVisible(tongue.getNodes(), false);
       RenderProps.setLineStyle(tongue.getMuscleBundles(), LineStyle.LINE);
