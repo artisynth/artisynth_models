@@ -484,9 +484,6 @@ public class FoodBolus extends RenderableComponentBase
       // no dependencies
    }
 
-   public void advanceState (double t0, double t1) {
-   }
-
    public void getState (DataBuffer data) {
       data.dput (myLastStepTime);
       data.zput (isCrushed() ? 1 : 0);
