@@ -81,19 +81,19 @@ public class SethScapulaDemo extends RootModel {
       EllipsoidJoint joint = (EllipsoidJoint)bodies.get ("scapula").getConnectors ().get (0);
 
       // set default coorindate values to zero
-      joint.setCoordinate (EllipsoidJoint.X_IDX, 0);
-      joint.setCoordinate (EllipsoidJoint.Y_IDX, 0 );
+      joint.setCoordinate (EllipsoidJoint.LONGITUDE_IDX, 0);
+      joint.setCoordinate (EllipsoidJoint.LATITUDE_IDX, 0 );
       joint.setCoordinate (EllipsoidJoint.THETA_IDX, 0);
       joint.setCoordinate (EllipsoidJoint.PHI_IDX, 0);
-      joint.setCoordinate (EllipsoidJoint.X_IDX, 0); // TODO - why do we need to re-zero X coord?
+      joint.setCoordinate (EllipsoidJoint.LONGITUDE_IDX, 0); // TODO - why do we need to re-zero X coord?
 
 //      joint.setCoordinate (EllipsoidJoint.X_IDX, DEFAULT_SCAPULA_ABDUCTION);
 //      joint.setCoordinate (EllipsoidJoint.Y_IDX, DEFAULT_SCAPULA_ELEVATION );
 //      joint.setCoordinate (EllipsoidJoint.THETA_IDX, DEFAULT_SCAPULA_ROT);
 //      joint.setCoordinate (EllipsoidJoint.PHI_IDX, DEFAULT_SCAPULA_WINGING);
 //      
-      System.out.println("scapula_abduction = "+joint.getCoordinate (EllipsoidJoint.X_IDX));
-      System.out.println("scapula_elevation = "+joint.getCoordinate (EllipsoidJoint.Y_IDX));
+      System.out.println("scapula_abduction = "+joint.getCoordinate (EllipsoidJoint.LONGITUDE_IDX));
+      System.out.println("scapula_elevation = "+joint.getCoordinate (EllipsoidJoint.LATITUDE_IDX));
       System.out.println("scapula_rot = "+joint.getCoordinate (EllipsoidJoint.THETA_IDX));
       System.out.println("scapula_winging = "+joint.getCoordinate (EllipsoidJoint.PHI_IDX));
       
