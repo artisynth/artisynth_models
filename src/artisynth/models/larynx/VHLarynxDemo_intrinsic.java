@@ -77,7 +77,7 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       super.springListFilename = "spring.fibre";
       super.springPropertyListFilename = ""; //"springProperty.txt";
       super.collisionListFilename = "collision.txt";
-      super.workingDirname = "src/artisynth/models/larynx/data";
+      super.workingDirname = "data";
       super.probesPath = this.workingDirname;
       super.probesFilename = "probes_hyoid3.art";
       super.aboutFilename = "src/artisynth/models/larynx/about_VHLarynxDemo.txt";
@@ -95,10 +95,12 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
       super.MUSCLE_YOUNGS_MODULUS = 500;
       super.MUSCLE_MAXLAMBDA = 2.1;
       super.MUSCLE_MAXSTRESS = 4;
-      super.MUSCLE_MAX_FORCE = 20;
       super.MUSCLE_FORCE_SCALING = 1;
-      super.SPRING_MUSCLE_MAX_FORCE = 200;
+      super.MUSCLE_MAX_FORCE = 20;
+      super.MUSCLE_DAMPING = 0;
       super.SPRING_MUSCLE_FORCE_SCALING = 1;
+      super.SPRING_MUSCLE_MAX_FORCE = 200;
+      super.SPRING_MUSCLE_DAMPING = 0;
       super.SPRING_DAMPING = 0.5;
       super.SPRING_STIFFNESS = 50.0;
       super.FEM_MATERIAL = new MooneyRivlinMaterial(1.037,0,0,0.486, 0,10.370);
@@ -843,20 +845,22 @@ public class VHLarynxDemo_intrinsic extends ModelTemplate {
    public void setSagittalView(double gridOffset) {
       GLViewer v = Main.getMain().getViewer();
       
-      //vc.autoFit();
-      v.setAxialView(AxisAlignedRotation.Y_Z);
-      v.setEye(new Point3d(800, -100, -195));
+      if (v != null) {
+         //vc.autoFit();
+         v.setAxialView(AxisAlignedRotation.Y_Z);
+         v.setEye(new Point3d(800, -100, -195));
       
-      if (v.getNumClipPlanes() < 1) {
-	 v.addClipPlane();
+         if (v.getNumClipPlanes() < 1) {
+            v.addClipPlane();
+         }
+         GLClipPlane clip  = v.getClipPlane (0);
+      
+         clip.setResolution(new GridResolution(100,10));
+         clip.setPosition(getCenter());
+         clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
+         clip.setOffset (gridOffset);
+         clip.setGridVisible (true);
+         clip.setDragger (DraggerType.None);
       }
-      GLClipPlane clip  = v.getClipPlane (0);
-      
-      clip.setResolution(new GridResolution(100,10));
-      clip.setPosition(getCenter());
-      clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
-      clip.setOffset (gridOffset);
-      clip.setGridVisible (true);
-      clip.setDragger (DraggerType.None);
    }
 }

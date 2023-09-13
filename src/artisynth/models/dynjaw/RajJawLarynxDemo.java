@@ -73,11 +73,12 @@ public class RajJawLarynxDemo extends JawDemo {
       myJawModel.addFrameMarker (lStphOrigin);
       myJawModel.addFrameMarker (lStphElbow);
       myJawModel.addFrameMarker (lStphHighInsertion);
-      MultiPointMuscle lStphHighMuscle = MultiPointMuscle.createPeck ("lStph_high", maxForce, optLength, maxL, tendonRatio);
+      MultiPointMuscle lStphHighMuscle = JawModel.createPeckMultiMuscle (
+         "lStph_high", maxForce, optLength, maxL, tendonRatio);
       lStphHighMuscle.addPoint (lStphOrigin);
       lStphHighMuscle.addPoint (lStphElbow);
       lStphHighMuscle.addPoint (lStphHighInsertion);
-      AxialSpring.setDamping (lStphHighMuscle, muscleDamping);
+      setSpringDamping (lStphHighMuscle, muscleDamping);
       myJawModel.addMultiPointSpring (lStphHighMuscle);
       lStphHighMuscle.setExcitationColor (Color.RED);
       
@@ -87,11 +88,12 @@ public class RajJawLarynxDemo extends JawDemo {
       lStphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("cranium"));
       lStphLowInsertion.setLocation (new Point3d(17.4, 26.4, -13.7));
       myJawModel.addFrameMarker (lStphLowInsertion);
-      MultiPointMuscle lStphLowMuscle = MultiPointMuscle.createPeck ("lStph_low", maxForce, optLength, maxL, tendonRatio);
+      MultiPointMuscle lStphLowMuscle = JawModel.createPeckMultiMuscle (
+         "lStph_low", maxForce, optLength, maxL, tendonRatio);
       lStphLowMuscle.addPoint (lStphOrigin);
       lStphLowMuscle.addPoint (lStphElbow);
       lStphLowMuscle.addPoint (lStphLowInsertion);
-      AxialSpring.setDamping (lStphLowMuscle, muscleDamping);
+      setSpringDamping (lStphLowMuscle, muscleDamping);
       myJawModel.addMultiPointSpring (lStphLowMuscle);
       lStphLowMuscle.setExcitationColor (Color.RED);
       
@@ -114,11 +116,12 @@ public class RajJawLarynxDemo extends JawDemo {
       myJawModel.addFrameMarker (rStphOrigin);
       myJawModel.addFrameMarker (rStphElbow);
       myJawModel.addFrameMarker (rStphHighInsertion);
-      MultiPointMuscle rStphHighMuscle = MultiPointMuscle.createPeck ("rStph_high", maxForce, optLength, maxL, tendonRatio);
+      MultiPointMuscle rStphHighMuscle = JawModel.createPeckMultiMuscle (
+         "rStph_high", maxForce, optLength, maxL, tendonRatio);
       rStphHighMuscle.addPoint (rStphOrigin);
       rStphHighMuscle.addPoint (rStphElbow);
       rStphHighMuscle.addPoint (rStphHighInsertion);
-      AxialSpring.setDamping (rStphHighMuscle, muscleDamping);
+      setSpringDamping (rStphHighMuscle, muscleDamping);
       myJawModel.addMultiPointSpring (rStphHighMuscle);
       rStphHighMuscle.setExcitationColor (Color.RED);
 
@@ -128,11 +131,12 @@ public class RajJawLarynxDemo extends JawDemo {
       rStphLowInsertion.setFrame (myJawModel.rigidBodies ().get ("cranium"));
       rStphLowInsertion.setLocation (new Point3d(-17.4, 26.4, -13.7));
       myJawModel.addFrameMarker (rStphLowInsertion);
-      MultiPointMuscle rStphLowMuscle = MultiPointMuscle.createPeck ("rStph_low", maxForce, optLength, maxL, tendonRatio);
+      MultiPointMuscle rStphLowMuscle = JawModel.createPeckMultiMuscle (
+         "rStph_low", maxForce, optLength, maxL, tendonRatio);
       rStphLowMuscle.addPoint (rStphOrigin);
       rStphLowMuscle.addPoint (rStphElbow);
       rStphLowMuscle.addPoint (rStphLowInsertion);
-      AxialSpring.setDamping (rStphLowMuscle, muscleDamping);
+      setSpringDamping (rStphLowMuscle, muscleDamping);
       myJawModel.addMultiPointSpring (rStphLowMuscle);
       rStphLowMuscle.setExcitationColor (Color.RED);
       
@@ -161,8 +165,8 @@ public class RajJawLarynxDemo extends JawDemo {
       Muscle lPphHigh = new Muscle("lPph_high");
       lPphHigh.setFirstPoint (lPphOrigin);
       lPphHigh.setSecondPoint (lPphHighInsertion);
-      AxialSpring.setDamping (lPphHigh, muscleDamping);
-      lPphHigh.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+      setSpringDamping (lPphHigh, muscleDamping);
+      JawModel.setPeckMaterial (lPphHigh, maxForce, optLength, maxL, tendonRatio);
       lPphHigh.setExcitationColor (Color.RED);
       myJawModel.addAxialSpring (lPphHigh);
       
@@ -174,8 +178,8 @@ public class RajJawLarynxDemo extends JawDemo {
       Muscle lPphLow = new Muscle("lPph_low");
       lPphLow.setFirstPoint (lPphOrigin);
       lPphLow.setSecondPoint (lPphLowInsertion);
-      AxialSpring.setDamping (lPphLow, muscleDamping);
-      lPphLow.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+      setSpringDamping (lPphLow, muscleDamping);
+      JawModel.setPeckMaterial (lPphLow, maxForce, optLength, maxL, tendonRatio);
       lPphLow.setExcitationColor (Color.RED);
       myJawModel.addAxialSpring (lPphLow);
 
@@ -194,8 +198,8 @@ public class RajJawLarynxDemo extends JawDemo {
       Muscle rPphHigh = new Muscle("rPph_high");
       rPphHigh.setFirstPoint (rPphOrigin);
       rPphHigh.setSecondPoint (rPphHighInsertion);
-      AxialSpring.setDamping (rPphHigh, muscleDamping);
-      rPphHigh.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+      setSpringDamping (rPphHigh, muscleDamping);
+      JawModel.setPeckMaterial (rPphHigh, maxForce, optLength, maxL, tendonRatio);
       rPphHigh.setExcitationColor (Color.RED);
       myJawModel.addAxialSpring (rPphHigh);
 
@@ -207,8 +211,8 @@ public class RajJawLarynxDemo extends JawDemo {
       Muscle rPphLow = new Muscle("rPph_low");
       rPphLow.setFirstPoint (rPphOrigin);
       rPphLow.setSecondPoint (rPphLowInsertion);
-      AxialSpring.setDamping (rPphLow, muscleDamping);
-      rPphLow.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+      setSpringDamping (rPphLow, muscleDamping);
+      JawModel.setPeckMaterial (rPphLow, maxForce, optLength, maxL, tendonRatio);
       rPphLow.setExcitationColor (Color.RED);
       myJawModel.addAxialSpring (rPphLow);
       
@@ -231,8 +235,8 @@ public class RajJawLarynxDemo extends JawDemo {
       Muscle lSalp = new Muscle("lSalp");
       lSalp.setFirstPoint (lSalpOrigin);
       lSalp.setSecondPoint (lSalpInsertion);
-      AxialSpring.setDamping (lSalp, muscleDamping);
-      lSalp.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+      setSpringDamping (lSalp, muscleDamping);
+      JawModel.setPeckMaterial (lSalp, maxForce, optLength, maxL, tendonRatio);
       lSalp.setExcitationColor (Color.RED);
       myJawModel.addAxialSpring (lSalp);
       
@@ -248,8 +252,8 @@ public class RajJawLarynxDemo extends JawDemo {
       Muscle rSalp = new Muscle("rSalp");
       rSalp.setFirstPoint (rSalpOrigin);
       rSalp.setSecondPoint (rSalpInsertion);
-      AxialSpring.setDamping (rSalp, muscleDamping);
-      rSalp.setPeckMuscleMaterial (maxForce, optLength, maxL, tendonRatio);
+      setSpringDamping (rSalp, muscleDamping);
+      JawModel.setPeckMaterial (rSalp, maxForce, optLength, maxL, tendonRatio);
       rSalp.setExcitationColor (Color.RED);
       myJawModel.addAxialSpring (rSalp);
       

@@ -25,6 +25,7 @@ import artisynth.core.femmodels.MuscleElementDesc;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.gui.NumericProbePanel;
 import artisynth.core.materials.FemMaterial;
+import artisynth.core.materials.LinearAxialMuscle;
 import artisynth.core.materials.MooneyRivlinMaterial;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.MechSystemModel;
@@ -54,7 +55,7 @@ public class testFemMuscle extends RootModel {
       super(name);
       
       File workingDir = ArtisynthPath.getRootRelativeFile(
-	    this, "src/artisynth/models/template/data");
+	    this, "data");
       ArtisynthPath.setWorkingDir(workingDir);
       
       myMechMod = new MechModel ("mech");
@@ -114,7 +115,8 @@ public class testFemMuscle extends RootModel {
       myMechMod.attachPoint(p2, body);
       
       Muscle spring = new Muscle(p1,p2);
-      spring.setLinearMuscleMaterial(50, spring.getLength(), spring.getLength()*2, 0.5);
+      spring.setMaterial (new LinearAxialMuscle (
+         50000, spring.getLength(), spring.getLength()*2, 0.5));
       myMechMod.addAxialSpring(spring);
       
       myMechMod.setGravity(0.0, 0.0, 0.0);

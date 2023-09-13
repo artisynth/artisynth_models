@@ -27,6 +27,7 @@ import artisynth.core.materials.LinearMaterial;
 import artisynth.core.materials.FemMaterial;
 import artisynth.core.materials.MooneyRivlinMaterial;
 import artisynth.core.materials.NeoHookeanMaterial;
+import artisynth.core.materials.PaiAxialMuscle;
 import artisynth.core.mechmodels.*;
 import artisynth.core.mechmodels.MechSystemSolver.Integrator;
 import artisynth.core.modelbase.*;
@@ -341,7 +342,11 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
    public MultiPointMuscle createMultiPointMuscle(String name, Point p1, Point p2, Point p3)
    {
       MultiPointMuscle muscle = new MultiPointMuscle (name);
-      muscle = MultiPointMuscle.createPai (muscleMaxForce, 0, 1.0, 0);
+      muscle.setMaterial (
+         PaiAxialMuscle.create (
+            1000*muscleMaxForce, /*lopt=*/0, /*lmax=*/1.0, 
+            /*tratio=*/0, /*pfrac=*/0));
+      muscle.setName (name);
       muscle.addPoint (p1);
       muscle.addPoint (p2);
       muscle.addPoint (p3);

@@ -1,55 +1,47 @@
 package artisynth.models.vkhUpperAirway;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.io.File;
 import java.io.IOException;
 
-import maspack.geometry.PolygonalMesh;
-import maspack.matrix.AxisAngle;
-import maspack.matrix.RigidTransform3d;
-import maspack.matrix.Vector3d;
-import maspack.render.GL.GLClipPlane;
-import maspack.render.GL.GLViewer;
-import maspack.render.Dragger3d.DraggerType;
-import maspack.render.Renderer.LineStyle;
-import maspack.render.GridResolution;
-import maspack.render.RenderProps;
-import maspack.render.Renderer;
-import maspack.widgets.BooleanSelector;
-import maspack.widgets.DoubleFieldSlider;
-import maspack.widgets.PropertyWidget;
-import maspack.widgets.ValueChangeEvent;
-import maspack.widgets.ValueChangeListener;
 import artisynth.core.driver.Main;
-import artisynth.core.driver.ViewerManager;
-import maspack.matrix.AxisAlignedRotation;
 import artisynth.core.femmodels.FemMarker;
+import artisynth.core.femmodels.FemModel.SurfaceRender;
 import artisynth.core.femmodels.FemModel3d;
 import artisynth.core.femmodels.FemMuscleModel;
-import artisynth.core.femmodels.MuscleBundle;
 import artisynth.core.femmodels.TetGenReader;
-import artisynth.core.femmodels.FemModel.SurfaceRender;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.materials.AxialMuscleMaterial;
 import artisynth.core.materials.BlemkerMuscle;
 import artisynth.core.materials.LinearAxialMuscle;
 import artisynth.core.materials.LinearMaterial;
-import artisynth.core.materials.MooneyRivlinMaterial;
 import artisynth.core.mechmodels.Collidable;
 import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.RigidBody;
-import artisynth.core.modelbase.ComponentList;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
 import artisynth.models.template.ModelTemplate;
+import maspack.matrix.AxisAlignedRotation;
+import maspack.matrix.AxisAngle;
+import maspack.matrix.RigidTransform3d;
+import maspack.matrix.Vector3d;
+import maspack.render.Dragger3d.DraggerType;
+import maspack.render.GridResolution;
+import maspack.render.RenderProps;
+import maspack.render.Renderer;
+import maspack.render.Renderer.LineStyle;
+import maspack.render.GL.GLClipPlane;
+import maspack.render.GL.GLViewer;
+import maspack.widgets.DoubleFieldSlider;
 
 public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
 
    public VKHUpperAirwaySwallowingDemo () {
    }
 
+   private double SPRING_MAX_FORCE = 10000;
+   private double SPRING_FORCE_SCALING = 1;
+   
    public VKHUpperAirwaySwallowingDemo (String name) throws IOException {
       super (name);
       
@@ -75,7 +67,7 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       super.femBundleSpringListFilename = "femBundleSpringList_individualBundleControl.txt";
       super.autoAttachListFilename = "autoAttachList.txt";
       super.collisionListFilename = "collision.txt";
-      super.workingDirname = "src/artisynth/models/vkhUpperAirway/data";;
+      super.workingDirname = "data";//"src/artisynth/models/vkhUpperAirway/data";;
       //super.probesFilename = "swallowing_activations_individualBundleControl_Output.txt";
       super.probesFilename = "swallowing_activations_individualBundleControl_Input.txt";
       //#####################################################################
@@ -88,12 +80,13 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       //[Ward2005]
       super.MUSCLE_DENSITY = 1.112E-6; 
       //[Ogneva2010:Transversal Stiffness and Young's Modulus of Single Fibers 
-      //        from Rat Soleus Muscle Probed by Atomic Force Microscopy]
+      //        from Rat Soleus Muscle Probed by Atomic Force1 Microscopy]
       super.FEM_MATERIAL = new LinearMaterial(24.7,0.47);
       //super.FEM_MATERIAL = new MooneyRivlinMaterial(1.037,0,0,0.486,0,10.370);
-      super.MUSCLE_FORCE_SCALING = 1000;
-      super.SPRING_MUSCLE_FORCE_SCALING = 1000;
+      super.MUSCLE_MAX_FORCE_SCALING = 1000;
       super.MUSCLE_MAX_FORCE = 5;
+      super.MUSCLE_FORCE_SCALING = 1;
+      super.SPRING_MUSCLE_FORCE_SCALING = 1;
       super.MUSCLE_FIBRE_TYPE = "Peck";
       super.MUSCLE_MATERIAL = new BlemkerMuscle();
       ((BlemkerMuscle)super.MUSCLE_MATERIAL).setMaxStress (MUSCLE_MAXSTRESS);
@@ -163,7 +156,8 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
          spring.setName("Tongue_" + i);
          AxialMuscleMaterial mat = new LinearAxialMuscle();
          mat.setOptLength(spring.getLength());
-         mat.setMaxForce (10);
+         mat.setMaxForce (SPRING_MAX_FORCE);
+         mat.setForceScaling (SPRING_FORCE_SCALING);
          spring.setMaterial (mat);
          RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
          RenderProps.setLineRadius (spring, lineRadius*1);
@@ -186,7 +180,8 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       spring.setName("Tongue_inner");
       AxialMuscleMaterial mat = new LinearAxialMuscle();
       mat.setOptLength(spring.getLength());
-      mat.setMaxForce (10);
+      mat.setMaxForce (SPRING_MAX_FORCE);
+      mat.setForceScaling (SPRING_FORCE_SCALING);
       spring.setMaterial (mat);
       RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*1);
@@ -213,7 +208,8 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       spring.setName("Tongue_up");
       AxialMuscleMaterial mat = new LinearAxialMuscle();
       mat.setOptLength(spring.getLength());
-      mat.setMaxForce (10);
+      mat.setMaxForce (SPRING_MAX_FORCE);
+      mat.setForceScaling (SPRING_FORCE_SCALING);
       spring.setMaterial (mat);
       RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*2);
@@ -225,7 +221,8 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       spring.setName("Tongue_down");
       mat = new LinearAxialMuscle();
       mat.setOptLength(spring.getLength());
-      mat.setMaxForce (10);
+      mat.setMaxForce (SPRING_MAX_FORCE);
+      mat.setForceScaling (SPRING_FORCE_SCALING);
       spring.setMaterial (mat);
       RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*2);
@@ -237,7 +234,8 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       spring.setName("Tongue_back");
       mat = new LinearAxialMuscle();
       mat.setOptLength(spring.getLength());
-      mat.setMaxForce (10);
+      mat.setMaxForce (SPRING_MAX_FORCE);
+      mat.setForceScaling (SPRING_FORCE_SCALING);
       spring.setMaterial (mat);
       RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*2);
@@ -249,7 +247,8 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       spring.setName("Tongue_front");
       mat = new LinearAxialMuscle();
       mat.setOptLength(spring.getLength());
-      mat.setMaxForce (10);
+      mat.setMaxForce (SPRING_MAX_FORCE);
+      mat.setForceScaling (SPRING_FORCE_SCALING);
       spring.setMaterial (mat);
       RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*2);
@@ -264,7 +263,8 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       spring.setName("Tongue_tip_up");
       mat = new LinearAxialMuscle();
       mat.setOptLength(spring.getLength());
-      mat.setMaxForce (10);
+      mat.setMaxForce (SPRING_MAX_FORCE);
+      mat.setForceScaling (SPRING_FORCE_SCALING);
       spring.setMaterial (mat);
       RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*3);
@@ -276,7 +276,8 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       spring.setName("Tongue_tip_back");
       mat = new LinearAxialMuscle();
       mat.setOptLength(spring.getLength());
-      mat.setMaxForce (10);
+      mat.setMaxForce (SPRING_MAX_FORCE);
+      mat.setForceScaling (SPRING_FORCE_SCALING);
       spring.setMaterial (mat);
       RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*3);
@@ -291,7 +292,8 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
       spring.setName("Tongue_00");
       mat = new LinearAxialMuscle();
       mat.setOptLength(spring.getLength());
-      mat.setMaxForce (10);
+      mat.setMaxForce (SPRING_MAX_FORCE);
+      mat.setForceScaling (SPRING_FORCE_SCALING);
       spring.setMaterial (mat);
       RenderProps.setLineStyle(spring, LineStyle.SPINDLE);
       RenderProps.setLineRadius (spring, lineRadius*3);
@@ -342,20 +344,21 @@ public class VKHUpperAirwaySwallowingDemo extends ModelTemplate {
    public void setSagittalView(double gridOffset) {
       GLViewer v = Main.getMain().getViewer();
       
-      //vc.autoFit();
-      v.setAxialView(AxisAlignedRotation.Y_Z);
+      if (v != null) {
+         //vc.autoFit();
+         v.setAxialView(AxisAlignedRotation.Y_Z);
       
-      if (v.getNumClipPlanes() < 1) {
-         v.addClipPlane();
+         if (v.getNumClipPlanes() < 1) {
+            v.addClipPlane();
+         }
+         GLClipPlane clip  = v.getClipPlane (0);
+      
+         clip.setResolution(new GridResolution(100,10));
+         clip.setPosition(getCenter());
+         clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
+         clip.setOffset (gridOffset);
+         clip.setGridVisible (true);
+         clip.setDragger (DraggerType.None);
       }
-      GLClipPlane clip  = v.getClipPlane (0);
-      
-      clip.setResolution(new GridResolution(100,10));
-      clip.setPosition(getCenter());
-      clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
-      clip.setOffset (gridOffset);
-      clip.setGridVisible (true);
-      clip.setDragger (DraggerType.None);
    }
-
 }

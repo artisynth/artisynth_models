@@ -103,7 +103,6 @@ public class LarynxQL2 extends AbstractSimulation {
 
 		setMuscleForceProperties(Muscles.Laryngeal.FEM_THYROARYTENOID_MUSCULARIS, 1.0);
 		setMuscleForceProperties(Muscles.Laryngeal.FEM_THYROARYTENOID_VOCALIS, 1.0);
-
 	}
 
 

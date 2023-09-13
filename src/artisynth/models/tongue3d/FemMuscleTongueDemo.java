@@ -194,7 +194,9 @@ public class FemMuscleTongueDemo extends HexTongueDemo {
             if (m.getMaterial() instanceof AxialMuscleMaterial) {
                AxialMuscleMaterial mat =
                   (AxialMuscleMaterial)m.getMaterial().clone();
-               mat.setForceScaling(0.5);
+               //mat.setForceScaling(0.5);
+               mat.setMaxForce (0.5*mat.getMaxForce());
+               mat.setDamping (0.5*mat.getDamping());
                m.setMaterial(mat);
             }
          }

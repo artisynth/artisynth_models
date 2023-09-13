@@ -29,8 +29,11 @@ import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.PlanarConnector;
 import artisynth.core.mechmodels.PointForce;
 import artisynth.core.mechmodels.RigidBody;
+import artisynth.core.mechmodels.PointSpringBase;
 import artisynth.core.mechmodels.BodyConnector;
 import artisynth.core.modelbase.ComponentUtils;
+import artisynth.core.materials.AxialMaterial;
+import artisynth.core.materials.AxialMuscleMaterial;
 import artisynth.core.probes.NumericInputProbe;
 import artisynth.core.probes.NumericOutputProbe;
 import artisynth.core.probes.TracingProbe;
@@ -106,7 +109,7 @@ public class JawDemo extends RootModel implements ScalableUnits {
       if (workingDirname == null) return;
       // set default working directory to repository location
       File workingDir = new File (
-         ArtisynthPath.getSrcRelativePath(JawDemo.class, workingDirname));
+         ArtisynthPath.getSrcRelativePath(this, workingDirname));
       ArtisynthPath.setWorkingDir(workingDir);
       if (debug) {
 	 System.out.println("Set working directory to "
@@ -290,9 +293,20 @@ public class JawDemo extends RootModel implements ScalableUnits {
 //      }
 //   }
 
+   public void setSpringDamping (PointSpringBase s, double d) {
+      AxialMaterial mat = s.getMaterial();
+      if (mat instanceof AxialMuscleMaterial) {
+         AxialMuscleMaterial mmat = (AxialMuscleMaterial)mat;
+         mmat.setDamping (1000*d);
+      }
+      else {
+         AxialSpring.setDamping (s, d);
+      }
+   }
+
    public void setSpringDamping(double d) {
       for (AxialSpring s : myJawModel.axialSprings()) {
-	 AxialSpring.setDamping (s, d);
+         setSpringDamping (s, d);
       }
    }
 

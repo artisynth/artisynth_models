@@ -81,6 +81,7 @@ public class SoftPalateModel extends JawHyoidFemMuscleTongue
       if (!noInit) {
          createModel();
       }
+      //normalizeForceScaling();
    }
    
    public void createModel()

@@ -75,7 +75,9 @@ public class mandibleOpening_1_2016_11_26 extends ModelTemplate{
       // arbitrary super.MUSCLE_PASSIVE_FRACTION = 0.15;
       // super.COLLISION_FRICTION_COEFF = 0.0;
       super.SPRING_MUSCLE_MAX_FORCE = 50;
-      super.SPRING_MUSCLE_FORCE_SCALING = 1000;
+      super.SPRING_MUSCLE_FORCE_SCALING = 1;
+      super.MUSCLE_MAX_FORCE_SCALING = 1000;
+      super.MUSCLE_DAMPING_SCALING = 1000;
       // original super.SPRING_MUSCLE_PASSIVE_FRACTION = 0.015;
       super.SPRING_MUSCLE_PASSIVE_FRACTION = 0.015;
       // super.SPRING_MUSCLE_PASSIVE_FRACTION = 0.3;

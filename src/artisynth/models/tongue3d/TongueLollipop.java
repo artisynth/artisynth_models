@@ -12,6 +12,7 @@ import maspack.matrix.Point3d;
 import maspack.matrix.RigidTransform3d;
 import maspack.matrix.Vector3d;
 import maspack.properties.PropertyList;
+
 import maspack.render.RenderProps;
 import maspack.render.Renderable;
 import maspack.render.Renderer.Shading;
@@ -21,6 +22,7 @@ import artisynth.core.materials.LinearMaterial;
 import artisynth.core.mechmodels.CollisionManager;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.mechmodels.SolidJoint;
+import artisynth.core.modelbase.ComponentUtils;
 import artisynth.core.probes.NumericInputProbe;
 import artisynth.core.workspace.DriverInterface;
 
@@ -62,17 +64,13 @@ public class TongueLollipop extends FemMuscleTongueDemo {
       RigidBody lolliStick = mech.rigidBodies().get("lollipop_stick");
       lolliHead.setDensity(10);
       lolliStick.setDensity(10);
-      
    }
    
    protected void adjustTongueParameters() {
       tongue.setMaterial(new LinearMaterial(10000,0.45));
       ArrayList<MuscleBundle> bundles = new ArrayList<MuscleBundle>();
       bundles.addAll(tongue.getMuscleBundles());
-      for (MuscleBundle bundle : bundles) {
-         tongue.removeMuscleBundle(bundle);   
-      }
-      
+      ComponentUtils.deleteComponentsAndDependencies (bundles);
    }
    
    protected void fixLollipop() {
@@ -171,10 +169,12 @@ public class TongueLollipop extends FemMuscleTongueDemo {
    @Override
    public void attach(DriverInterface driver) {
       super.attach(driver);
-      zOrig = lolliHead.getPosition().z;
       removeAllInputProbes();
       removeAllWayPoints();
-      addLollipopProbe();
+      if (lolliHead != null) {
+         zOrig = lolliHead.getPosition().z;
+         addLollipopProbe();
+      }
    }
     
    public void setLolliDeltaZ(double z) {

@@ -42,7 +42,9 @@ import artisynth.core.mechmodels.ExcitationComponent;
 import artisynth.core.mechmodels.FrameMarker;
 import artisynth.core.mechmodels.FrameSpring;
 import artisynth.core.mechmodels.MechModel;
+import artisynth.core.mechmodels.MultiPointMuscle;
 import artisynth.core.mechmodels.Muscle;
+import artisynth.core.mechmodels.PointSpringBase;
 import artisynth.core.mechmodels.MuscleExciter;
 import artisynth.core.mechmodels.PlanarConnector;
 import artisynth.core.mechmodels.RevoluteJoint;
@@ -62,6 +64,8 @@ import artisynth.core.util.TimeBase;
 public class JawModel extends MechModel implements ScalableUnits,
       Traceable {
 
+   public static boolean removeForceScaling = true;
+   
    public boolean debug = false; // set to true for debug printlns
 
    public static final double CM_TO_MM = 10.0; // conversion factor
@@ -1051,13 +1055,33 @@ public class JawModel extends MechModel implements ScalableUnits,
       }
    }
 
-   private Muscle createPeckMuscle (
-	 String name, double maxForce, double optLen, double maxLen, double ratio) {
-      Muscle m = new Muscle(name);
-      m.setPeckMuscleMaterial(maxForce, optLen, maxLen, ratio);
-      return m;
+   public static void setPeckMaterial (
+      PointSpringBase spr, 
+      double maxForce, double optLen, double maxLen, double ratio) {
+      PeckAxialMuscle peck = 
+         new PeckAxialMuscle (
+            maxForce, optLen, maxLen, ratio, 0.015, /*damping*/0);
+      peck.setForceScaling (1);
+      peck.setMaxForce (1000*maxForce);
+      spr.setMaterial (peck);     
    }
    
+   public static Muscle createPeckMuscle (
+      String name, double maxForce, double optLen, double maxLen, double ratio) {
+      Muscle m = new Muscle(name);
+      setPeckMaterial (m, maxForce, optLen, maxLen, ratio);
+      //m.setPeckMuscleMaterial (maxForce, optLen, maxLen, ratio);
+      return m;
+   }
+
+   public static MultiPointMuscle createPeckMultiMuscle (
+      String name, double maxForce, double optLen, double maxLen, double ratio) {
+      MultiPointMuscle m = new MultiPointMuscle(name);
+      setPeckMaterial (m, maxForce, optLen, maxLen, ratio);
+      //m.setPeckMuscleMaterial (maxForce, optLen, maxLen, ratio);
+      return m;
+   }
+
    public void assembleMuscles() {
       /*
        * all muscle CSA values and 40 N/cm^2 constant taken from Peck 2000 Arch
@@ -1321,7 +1345,7 @@ public class JawModel extends MechModel implements ScalableUnits,
       }
       m.setFirstPoint(myFrameMarkers.get(name + "_origin"));
       m.setSecondPoint(myFrameMarkers.get(name + "_insertion"));
-      AxialSpring.setDamping (m, myMuscleDamping);
+      AxialSpring.setDamping (m, 1000*myMuscleDamping);
       addAxialSpring(m);
    }
 

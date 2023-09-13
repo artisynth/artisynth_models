@@ -279,22 +279,24 @@ public class BadinFaceDemoLipOpening extends BadinFemMuscleFaceDemo {
 	    e.printStackTrace();
 	 }
       }
+
+      if (getMainViewer() != null) {
+         getMainViewer().setOrthographicView(true);
+         getMainFrame ().setSize (1053, 1113); // 1000 x 1000 viewer 
+         getMainViewer().setAxialView (AxisAlignedRotation.NY_Z);
       
-      getMainViewer().setOrthographicView(true);
-      getMainFrame ().setSize (1053, 1113); // 1000 x 1000 viewer 
-      getMainViewer().setAxialView (AxisAlignedRotation.NY_Z);
-      
-      // Chenhao view
-//      setViewerEye (new Point3d(-0.56632, 0.000422501, 0.107807));
-//      setViewerCenter (new Point3d(0.134409, 0.000422502, 0.107807));
-      Main.getMain ().screenShot ("foo.png");
-      // Ian view
-      setViewerEye (new Point3d(-0.521787, 0.0009809, -0.126136));
-      setViewerCenter (new Point3d(0.134664, 0.0009809, 0.117214));
-      //connor view
-//      setViewerEye (new Point3d(-0.56632, 0.000422501, 0.107807));
-//      setViewerCenter (new Point3d(0.134409, 0.000422502, 0.107807));
-      getMainViewer().zoom(0.5);
+         // Chenhao view
+         //      setViewerEye (new Point3d(-0.56632, 0.000422501, 0.107807));
+         //      setViewerCenter (new Point3d(0.134409, 0.000422502, 0.107807));
+         Main.getMain ().screenShot ("foo.png");
+         // Ian view
+         setViewerEye (new Point3d(-0.521787, 0.0009809, -0.126136));
+         setViewerCenter (new Point3d(0.134664, 0.0009809, 0.117214));
+         //connor view
+         //      setViewerEye (new Point3d(-0.56632, 0.000422501, 0.107807));
+         //      setViewerCenter (new Point3d(0.134409, 0.000422502, 0.107807));
+         getMainViewer().zoom(0.5);
+      }
    }
    
    private static Rectangle getViewerBounds(GLViewer viewer) {
@@ -333,6 +335,11 @@ public class BadinFaceDemoLipOpening extends BadinFemMuscleFaceDemo {
     */
    public double getLipOpeningArea() {
       double openingArea = -1;
+      if (getMainViewer() == null) {
+         // punt. return a previously known value so we can at least
+         // load this model without the GUI
+         return 5.279345415122711;
+      }
       BufferedImage screenshot = null;
       ArrayList<Color> pixelColors = new ArrayList<> ();
       ArrayList<Integer> pixelCnts = new ArrayList<> ();

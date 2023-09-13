@@ -152,13 +152,16 @@ public class OpeningTest extends RootModel {
 
    
    public void attach (DriverInterface di) {
-      getMainViewer().setOrthographicView(true);
-      getMainFrame ().setSize (553, 613); // 1000 x 1000 viewer 
-      getMainViewer().setAxialView (AxisAlignedRotation.X_Y);
-//      getMainViewer().setView
-      setViewerCenter (new Point3d(0, 0, 0));
-      setViewerEye (new Point3d(0, 0, 10));
-      getMainViewer ().zoom (1);
+      GLViewer viewer = getMainViewer();
+      if (viewer != null) {
+         getMainViewer().setOrthographicView(true);
+         getMainFrame ().setSize (553, 613); // 1000 x 1000 viewer 
+         getMainViewer().setAxialView (AxisAlignedRotation.X_Y);
+         //      getMainViewer().setView
+         setViewerCenter (new Point3d(0, 0, 0));
+         setViewerEye (new Point3d(0, 0, 10));
+         getMainViewer ().zoom (1);
+      }
    }
 
    public class OpeningMeasurer extends MonitorBase {

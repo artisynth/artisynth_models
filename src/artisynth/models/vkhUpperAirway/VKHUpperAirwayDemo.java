@@ -1,21 +1,19 @@
 package artisynth.models.vkhUpperAirway;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
-import maspack.matrix.AxisAngle;
-import maspack.render.GL.GLClipPlane;
-import maspack.render.GL.GLViewer;
-import maspack.render.GridResolution;
-import maspack.render.Dragger3d.DraggerType;
 import artisynth.core.driver.Main;
-import artisynth.core.driver.ViewerManager;
-import maspack.matrix.AxisAlignedRotation;
 import artisynth.core.materials.BlemkerMuscle;
 import artisynth.core.materials.LinearMaterial;
 import artisynth.core.util.ArtisynthPath;
 import artisynth.core.workspace.DriverInterface;
 import artisynth.models.template.ModelTemplate;
+import maspack.matrix.AxisAlignedRotation;
+import maspack.matrix.AxisAngle;
+import maspack.render.Dragger3d.DraggerType;
+import maspack.render.GridResolution;
+import maspack.render.GL.GLClipPlane;
+import maspack.render.GL.GLViewer;
 
 public class VKHUpperAirwayDemo extends ModelTemplate {
 
@@ -47,7 +45,7 @@ public class VKHUpperAirwayDemo extends ModelTemplate {
       super.femBundleSpringListFilename = "femBundleSpringList.txt";
       super.autoAttachListFilename = "autoAttachList.txt";
       super.collisionListFilename = "collision.txt";
-      super.workingDirname = "src/artisynth/models/vkhUpperAirway/data";;
+      super.workingDirname = "data";//src/artisynth/models/vkhUpperAirway/data";;
       //#####################################################################
       
       // Step size
@@ -61,9 +59,10 @@ public class VKHUpperAirwayDemo extends ModelTemplate {
       //        from Rat Soleus Muscle Probed by Atomic Force Microscopy]
       super.FEM_MATERIAL = new LinearMaterial(24.7,0.47);
       //super.FEM_MATERIAL = new MooneyRivlinMaterial(1.037,0,0,0.486,0,10.370);
-      super.MUSCLE_FORCE_SCALING = 1000;
-      super.SPRING_MUSCLE_FORCE_SCALING = 1000;
+      super.MUSCLE_MAX_FORCE_SCALING = 1000;
       super.MUSCLE_MAX_FORCE = 5;
+      super.MUSCLE_FORCE_SCALING = 1;
+      super.SPRING_MUSCLE_FORCE_SCALING = 1;
       super.MUSCLE_FIBRE_TYPE = "Peck";
       super.MUSCLE_MATERIAL = new BlemkerMuscle();
       ((BlemkerMuscle)super.MUSCLE_MATERIAL).setMaxStress (MUSCLE_MAXSTRESS);
@@ -87,28 +86,31 @@ public class VKHUpperAirwayDemo extends ModelTemplate {
       
       createModel();
    }
+
    public void attach(DriverInterface driver)
    {
       super.attach(driver);
       setSagittalView(0.0);
    }
+
    public void setSagittalView(double gridOffset) {
       GLViewer v = Main.getMain().getViewer();
       
-      //vc.autoFit();
-      v.setAxialView(AxisAlignedRotation.Y_Z);
+      if (v != null) {
+         //vc.autoFit();
+         v.setAxialView(AxisAlignedRotation.Y_Z);
       
-      if (v.getNumClipPlanes() < 1) {
-         v.addClipPlane();
+         if (v.getNumClipPlanes() < 1) {
+            v.addClipPlane();
+         }
+         GLClipPlane clip  = v.getClipPlane (0);
+      
+         clip.setResolution(new GridResolution(100,10));
+         clip.setPosition(getCenter());
+         clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
+         clip.setOffset (gridOffset);
+         clip.setGridVisible (true);
+         clip.setDragger (DraggerType.None);
       }
-      GLClipPlane clip  = v.getClipPlane (0);
-      
-      clip.setResolution(new GridResolution(100,10));
-      clip.setPosition(getCenter());
-      clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
-      clip.setOffset (gridOffset);
-      clip.setGridVisible (true);
-      clip.setDragger (DraggerType.None);
    }
-
 }

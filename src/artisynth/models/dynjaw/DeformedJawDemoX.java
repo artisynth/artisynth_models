@@ -66,9 +66,11 @@ public class DeformedJawDemoX extends JawDemo {
          (FrameMarker)myJawModel.findComponent ("frameMarkers/lowerincisor");
       myPointForce = new PointForce (mkr);
       GLViewer viewer = getMainViewer();
-      viewer.setOrthographicView (true);
-      setDefaultViewOrientation (
-         AxisAlignedRotation.X_Z.getAxisAngle());
+      if (viewer != null) {
+         viewer.setOrthographicView (true);
+         setDefaultViewOrientation (
+            AxisAlignedRotation.X_Z.getAxisAngle());
+      }
       RenderProps.setVisible (myDeformer, false);
 
       myJawModel.setGravity (new Vector3d());

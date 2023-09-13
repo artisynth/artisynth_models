@@ -29,6 +29,8 @@ import artisynth.core.materials.BlemkerMuscle;
 import artisynth.core.materials.FemMaterial;
 import artisynth.core.materials.MooneyRivlinMaterial;
 import artisynth.core.materials.MuscleMaterial;
+import artisynth.core.materials.AxialMuscleMaterial;
+import artisynth.core.materials.LinearAxialMuscle;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.MechSystemModel;
 import artisynth.core.mechmodels.MultiPointMuscle;
@@ -111,7 +113,8 @@ public class FemMuscleBlock extends RootModel {
       for(int i=0;i<10;i++) {
 	 for(int j=0;j<9;j++) {
 	    fibre = new Muscle ();
-	    fibre.setConstantMuscleMaterial(1);
+            double maxF = 1000;
+            fibre.setConstantMuscleMaterial(maxF, 1);
 	    fibre.setFirstPoint(fem1.getNode(j*11+i));
 	    fibre.setSecondPoint(fem1.getNode(j*11+i+1));
 	    RenderProps.setLineStyle(fibre, LineStyle.SPINDLE);
@@ -159,11 +162,15 @@ public class FemMuscleBlock extends RootModel {
       // myMechMod.addAxialSpring(spring12);
       
       Muscle spring34 = new Muscle(p3,p4);
-      spring34.setLinearMuscleMaterial(25, spring34.getLength(), spring34.getLength()*2, 0.5);
+      double maxF = 25000;
+
+      spring34.setMaterial (new LinearAxialMuscle (
+         maxF, spring34.getLength(), spring34.getLength()*2, 0.5));
       myMechMod.addAxialSpring(spring34);
       
       Muscle spring56 = new Muscle(p5,p6);
-      spring34.setLinearMuscleMaterial(25, spring56.getLength(), spring56.getLength()*2, 0.5);
+      spring56.setMaterial (new LinearAxialMuscle (
+         maxF, spring56.getLength(), spring56.getLength()*2, 0.5));
       myMechMod.addAxialSpring(spring56);
       
       myMechMod.setGravity(0.0, 0.0, 0.0);

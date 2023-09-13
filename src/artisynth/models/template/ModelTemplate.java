@@ -142,7 +142,7 @@ public class ModelTemplate extends RootModel {
    protected String muscleSpringPropertyListFilename = "";
    protected String springListFilename = "";
    protected String springPropertyListFilename = "";
-   protected String workingDirname = "src/artisynth/models/template/data";
+   protected String workingDirname = "data";
    protected String probesFilename = "";
    protected String collisionListFilename = "";
    protected String autoAttachListFilename = "";
@@ -163,7 +163,10 @@ public class ModelTemplate extends RootModel {
    public double MUSCLE_MAXLAMBDA = 2.1;
    public double MUSCLE_MAXSTRESS = 3e5;
    public double MUSCLE_MAX_FORCE = 1;
+   // used to scale max force for when we want to set force scaling to 1:
    public double MUSCLE_MAX_FORCE_SCALING = 1;
+   // used to scale damping for when we want to set force scaling to 1:
+   public double MUSCLE_DAMPING_SCALING = 1;
    public double MUSCLE_FORCE_SCALING = 1;
    public double MUSCLE_PASSIVE_FRACTION = 0;
    public double MUSCLE_DAMPING = 0;
@@ -204,6 +207,7 @@ public class ModelTemplate extends RootModel {
 
    protected MechModel myMechMod;
    protected ArrayList<BodyInfo> bodyInfoList = new ArrayList<BodyInfo>();
+   // info for FEM muscle bundles:
    protected ArrayList<MuscleInfo> muscleList = new ArrayList<MuscleInfo>();
    protected ArrayList<MuscleExciterInfo> muscleExciterList =
       new ArrayList<MuscleExciterInfo>();
@@ -217,8 +221,10 @@ public class ModelTemplate extends RootModel {
       new ArrayList<AutoAttachInfo>();
    protected ArrayList<String> muscleSpringList = new ArrayList<String>();
    protected ArrayList<String> muscleSpringGroupList = new ArrayList<String>();
+   // info for point-to-point muscles:
    protected ArrayList<MuscleSpringInfo> muscleSpringInfoList =
       new ArrayList<MuscleSpringInfo>();
+   // info for passive point-to-point springs:
    protected ArrayList<SpringInfo> springInfoList = new ArrayList<SpringInfo>();
    protected HashMap<RigidBody,Vector3d> bodyTranslationMap =
       new HashMap<RigidBody,Vector3d>();
@@ -526,8 +532,14 @@ public class ModelTemplate extends RootModel {
       return muscleList;
    }
 
+   /**
+    * Reads properties for muscle fibres
+    */
    private void readMuscleProperty(String filename)
    {
+      if (filename.length() > 0) {
+         System.out.println ("Reading muscle bundle properties from " + filename);
+      }
       try {
          ReaderTokenizer rtok = new ReaderTokenizer(
             new InputStreamReader(
@@ -721,8 +733,15 @@ public class ModelTemplate extends RootModel {
       return muscleAttachList;
       }
 
+   /**
+    * Reads properties for point-to-point muscles
+    */
    private void readMuscleSpringProperty(String filename)
    {
+      if (filename.length() > 0) {
+         System.out.println (
+            "Reading point-to-point muscle properties from " + filename);
+      }
       try {
          ReaderTokenizer rtok = new ReaderTokenizer(
             new InputStreamReader(
@@ -769,8 +788,14 @@ public class ModelTemplate extends RootModel {
       }
    }
 
+   /*
+    * Read properties for passive point-to-point springs
+    */
    private void readSpringProperty(String filename)
    {
+      if (filename.length() > 0) {
+         System.out.println ("Reading spring properties from" + filename);
+      }
       try {
          ReaderTokenizer rtok = new ReaderTokenizer(
             new InputStreamReader(
@@ -1768,14 +1793,14 @@ public class ModelTemplate extends RootModel {
                mat.setMaxForce(MUSCLE_MAX_FORCE * MUSCLE_MAX_FORCE_SCALING);
             }
             if (!Double.isNaN(mu.muscleForceScaling)) {
-               mat.setForceScaling(mu.muscleForceScaling);
+              mat.setForceScaling(mu.muscleForceScaling);
             } else {
                mat.setForceScaling(MUSCLE_FORCE_SCALING);
             }
             if (!Double.isNaN(mu.muscleDamping)) {
-               mat.setDamping(mu.muscleDamping);
+               mat.setDamping(mu.muscleDamping * MUSCLE_DAMPING_SCALING);
             } else {
-               mat.setDamping(MUSCLE_DAMPING);
+               mat.setDamping(MUSCLE_DAMPING * MUSCLE_DAMPING_SCALING);
             }
             if (!Double.isNaN(mu.optLength)) {
                mat.setOptLength(mu.optLength);
@@ -2143,9 +2168,9 @@ public class ModelTemplate extends RootModel {
 
       // Set properties
       if (!Double.isNaN(ms.damping)) {
-         mat.setDamping(ms.damping);
+         mat.setDamping(ms.damping * MUSCLE_DAMPING_SCALING);
       } else {
-         mat.setDamping(MUSCLE_DAMPING);
+         mat.setDamping(MUSCLE_DAMPING * MUSCLE_DAMPING_SCALING);
       }
       if (!Double.isNaN(ms.maxForce)) {
          mat.setMaxForce(ms.maxForce * MUSCLE_MAX_FORCE_SCALING);
@@ -2933,9 +2958,10 @@ public class ModelTemplate extends RootModel {
 
                         // Set properties
                         if (!Double.isNaN(ms.damping)) {
-                           mat.setDamping(ms.damping);
+                           mat.setDamping(ms.damping * MUSCLE_DAMPING_SCALING);
                         } else {
-                           mat.setDamping(SPRING_MUSCLE_DAMPING);
+                           mat.setDamping(
+                              SPRING_MUSCLE_DAMPING * MUSCLE_DAMPING_SCALING);
                         }
                         if (!Double.isNaN(ms.maxForce)) {
                            mat.setMaxForce(ms.maxForce
@@ -3006,6 +3032,7 @@ public class ModelTemplate extends RootModel {
                }
             }
          }
+         
          if (groupExciters) {
             // Group left and right spring muscles
             int numExciters = myMechMod.getMuscleExciters().size();
@@ -3595,4 +3622,15 @@ public class ModelTemplate extends RootModel {
          RenderProps.setPointRadius(fm, pointRadius * 4);
       }
    }
+
+   /**
+    * Initialize some exciters to cause the model to move for testing purposes.
+    */
+   public void initializeExciters (double a) {
+      for (MuscleExciter ex : myMechMod.getMuscleExciters()) {
+         ex.setExcitation (a);
+      }
+   }
+
+
 }

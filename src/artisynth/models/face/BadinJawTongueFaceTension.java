@@ -239,7 +239,9 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
       panel.setName("Face Controls");
 
       GLViewer v = driver.getViewer();
-      v.setGridVisible (false);
+      if (v != null) {
+         v.setGridVisible (false);
+      }
 
       addWayPoints(this, timeToFinish, 0.2);
       //      this.addBreakPoint(timeToStretch / 1e9);
@@ -910,23 +912,27 @@ public class BadinJawTongueFaceTension extends JawHyoidFemMuscleTongue {
       }
    }
    public void writeTensionFieldFile(String dir, String name) throws IOException {
-
+      PrintStream ps = null;
       try {
-         String fn = dir + "/" + name;
-
-         FileOutputStream fo = new FileOutputStream(fn);
-         PrintStream      ps = new PrintStream(fo);
-
+         File parent = new File (dir);
+         if (!parent.exists()) {
+            parent.mkdirs();            
+         }
+         File file = new File (parent, name);
+         ps = new PrintStream (new FileOutputStream(file));
          for (FemNode3d n : BadinFaceDemo.getOuterNodes(face)) {
             ps.println (n.myNumber + " " + n.getStress ().m00 + " " + n.getStress ().m01 + " " + 
                n.getStress ().m02 + " " + n.getStress ().m11 + " " + 
                n.getStress ().m12 + " " + n.getStress ().m22);
          }
-
-         ps.close();
-         fo.close();
-
-      } finally {
+      }
+      catch (IOException e) {
+         throw e;
+      }
+      finally {
+         if (ps != null) {
+            ps.close();
+         }
       }
    }
 

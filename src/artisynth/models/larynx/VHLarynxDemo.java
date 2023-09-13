@@ -55,7 +55,7 @@ public class VHLarynxDemo extends ModelTemplate {
    
    public VHLarynxDemo(String name) throws IOException{
       super(name);
-      
+
       MechSystemBase.setDefaultStabilization(PosStabilization.GlobalStiffness);
       
       //#####################################################################
@@ -99,11 +99,11 @@ public class VHLarynxDemo extends ModelTemplate {
       super.springListFilename = "spring.fibre";
       super.springPropertyListFilename = ""; //"springProperty.txt";
       //super.collisionListFilename = "collision.txt";
-      
+
       // For swallowing motion
       super.probesPath = basePath + "data/ninds/";
       super.probesFilename = "probeMuscleInput.art";
-      super.workingDirname = "src/artisynth/models/larynx/data/ninds/data_108/trial12";
+      super.workingDirname = "data/ninds/data_108/trial12";
       //super.workingDirname = "src/artisynth/models/larynx/data/ninds/data_110/trial16";
       //super.workingDirname = "src/artisynth/models/larynx/data/ninds/data_111/trial09";
       
@@ -127,17 +127,18 @@ public class VHLarynxDemo extends ModelTemplate {
       super.MUSCLE_YOUNGS_MODULUS = 10;
       super.MUSCLE_MAXLAMBDA = 2.1;
       super.MUSCLE_MAXSTRESS = 300;
-      super.MUSCLE_MAX_FORCE = 2.0;
-      super.MUSCLE_FORCE_SCALING = 1000;
-      super.MUSCLE_MAX_FORCE_SCALING = 1.0;
+      super.MUSCLE_MAX_FORCE = 2.0;         
+      super.MUSCLE_FORCE_SCALING = 1;
+      super.SPRING_MUSCLE_FORCE_SCALING = 1;
+      super.MUSCLE_MAX_FORCE_SCALING = 1000;
+      super.MUSCLE_DAMPING_SCALING = 1000;
       super.MUSCLE_DAMPING = 0.005;
       super.MUSCLE_PASSIVE_FRACTION = 0.0;
       //super.MUSCLE_TENDON_RATIO = 0.03;
       super.SPRING_MUSCLE_MAX_FORCE = 10;
-      super.SPRING_MUSCLE_FORCE_SCALING = 1000;
+      super.SPRING_MUSCLE_DAMPING = 0.05;
       super.SPRING_MUSCLE_PASSIVE_FRACTION = 0.012;
       super.SPRING_MUSCLE_TENDON_RATIO = 0.5;
-      super.SPRING_MUSCLE_DAMPING = 0.05;
       super.SPRING_DAMPING = 0.5;
       super.SPRING_STIFFNESS = 50.0;
       // Book: "Skeletal muscle mechanics: from mechanisms to function", By Walter Herzog
@@ -339,6 +340,8 @@ public class VHLarynxDemo extends ModelTemplate {
       */
       
       //myMechMod.scaleDistance(1/1000d);
+      //setMuscleExciters (0.1);
+      //normalizeForceScaling();
    }
    
    public void attach(DriverInterface driver)
@@ -942,20 +945,22 @@ public class VHLarynxDemo extends ModelTemplate {
    public void setSagittalView(double gridOffset) {
       GLViewer v = Main.getMain().getViewer();
       
-      //vc.autoFit();
-      v.setAxialView(AxisAlignedRotation.Y_Z);
-      v.setEye(new Point3d(800, -100, -195));
+      if (v != null) {
+         //vc.autoFit();
+         v.setAxialView(AxisAlignedRotation.Y_Z);
+         v.setEye(new Point3d(800, -100, -195));
       
-      if (v.getNumClipPlanes() < 1) {
-	 v.addClipPlane();
+         if (v.getNumClipPlanes() < 1) {
+            v.addClipPlane();
+         }
+         GLClipPlane clip = v.getClipPlane (0);
+      
+         clip.setResolution(new GridResolution(100,10));
+         clip.setPosition(getCenter());
+         clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
+         clip.setOffset (gridOffset);
+         clip.setGridVisible (true);
+         clip.setDragger (DraggerType.None);
       }
-      GLClipPlane clip = v.getClipPlane (0);
-      
-      clip.setResolution(new GridResolution(100,10));
-      clip.setPosition(getCenter());
-      clip.setOrientation(new AxisAngle (0, 1, 0, Math.PI / 2));
-      clip.setOffset (gridOffset);
-      clip.setGridVisible (true);
-      clip.setDragger (DraggerType.None);
    }
 }

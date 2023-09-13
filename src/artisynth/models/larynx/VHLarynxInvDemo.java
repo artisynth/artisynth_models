@@ -12,6 +12,7 @@ import artisynth.core.mechmodels.MotionTargetComponent;
 import artisynth.core.mechmodels.MuscleExciter;
 import artisynth.core.mechmodels.Point;
 import artisynth.core.modelbase.MonitorBase;
+import artisynth.core.modelbase.ComponentUtils;
 import artisynth.core.probes.NumericInputProbe;
 import artisynth.core.probes.NumericOutputProbe;
 import artisynth.core.util.ArtisynthPath;
@@ -49,7 +50,7 @@ public class VHLarynxInvDemo extends VHLarynxDemo {
       super.probesFilename = "";
       //super.probesFilename = "../../probe2Markers.art";
       //super.workingDirname = "src/artisynth/models/larynx/data/ninds/data_108/trial01/";
-      super.workingDirname = "src/artisynth/models/larynx/data/ninds/data_108/trial12/";
+      super.workingDirname = "data/ninds/data_108/trial12/";
       
       //super.probesFilename = "../../probe2Markers_hyoid.art";
       //super.workingDirname = "src/artisynth/models/larynx/data/ninds/data_110/trial01";
@@ -136,7 +137,7 @@ public class VHLarynxInvDemo extends VHLarynxDemo {
       
       for (MotionTargetComponent target : track.getMotionTargetTerm().getTargets()) {
          if (target instanceof Point) {
-            props.add( ((Point)target).getProperty("targetPosition"));
+            props.add( ((Point)target).getProperty("position"));
          }
       }
       targetProbe.setModel(track.getMech());

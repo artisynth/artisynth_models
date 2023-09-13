@@ -120,8 +120,8 @@ public class JawTongueSoftPalate extends JawHyoidFemMuscleTongue {
       RenderProps.setVisible(myJawModel.axialSprings(), false);
       RenderProps.setVisible(myJawModel.multiPointSprings(), false);
       RenderProps.setVisible(myJawModel.particles(), false);
-      
    }
+
    ControlPanel myControlPanel = null;
    public void attach (DriverInterface driver) {
       super.attach (driver);

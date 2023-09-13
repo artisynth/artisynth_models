@@ -16,8 +16,8 @@ import artisynth.core.mechmodels.Point;
 
 public class SoftPalateMuscles 
 {
-   public static double muscleMaxForce = 3.0;
-   public static double forceScaling = 1000.0;	// this seems better defined in probes!
+   public static double muscleMaxForce = 3000.0;
+   public static double forceScaling = 1.0;	// this seems better defined in probes!
    public static boolean randomColors = false;
    public static boolean allowExternal = false;
    

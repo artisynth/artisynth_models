@@ -64,8 +64,12 @@ public class MeshEdit extends RootModel {
       datamesh = data.getMesh();
       databvh = datamesh.getBVTree();
       
-      RigidBody morph = addBody("morph", BadinFaceDemo.faceGeometryDir+"/badin_maxilla_teeth_extended.obj");
+      String toothMesh = "/upperteeth_scaled.obj";
+      //String toothMesh = "/badin_maxilla_teeth_extended.obj";
+      RigidBody morph = addBody(
+         "morph", BadinFaceDemo.faceGeometryDir+toothMesh);
 //      RigidBody morph = addBody("morph", BadinFaceDemo.faceGeometryDir+"/badin_jaw_teeth_condyles_extended.obj");
+      
       RenderProps.setFaceColor(morph, new Color(0.6f, 0.6f, 1f));
       mech.addRigidBody(morph);
       morphmesh = morph.getMesh();

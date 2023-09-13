@@ -16,6 +16,7 @@ import artisynth.core.mechmodels.MechSystemSolver.Integrator;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.RigidBody;
 import artisynth.core.util.ArtisynthPath;
+import artisynth.core.driver.Main;
 import artisynth.core.workspace.DriverInterface;
 import artisynth.models.tongue3d.FemMuscleTongueDemo;
 import artisynth.models.tongue3d.HexTongueDemo;
@@ -136,7 +137,6 @@ public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
             FemMuscleTongueDemo.muscleExcitationSliderMax);
       }
       
-      
 //    HexTongueDemo.setActivationColor (tongue);
       if (tongue != null) {
          HexTongueDemo.addMuscleExciterProbes (this, tongue, Order.Linear);  // default duration = 1
@@ -144,7 +144,7 @@ public class JawHyoidFemMuscleTongue extends BadinJawHyoidTongue {
       HexTongueDemo.addMuscleExciterProbe (this, myJawModel.getMuscleExciters ().get ("bi_ad"), Order.Linear, /*duration=*/1.0);
       HexTongueDemo.addMuscleExciterProbe (this, myJawModel.getMuscleExciters ().get ("bi_ip"), Order.Linear, /*duration=*/1.0);
       HexTongueDemo.addMuscleExciterProbe (this, myJawModel.getMuscleExciters ().get ("bi_close"), Order.Linear, /*duration=*/1.0);
-      
+
    }
 
 }

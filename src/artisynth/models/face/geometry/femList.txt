@@ -1,4 +1,4 @@
-tongue "tongue_mesh" ansys 1 205 92 92
+tongue "Tongue" ansys 1 205 92 92
 Palatine_aponeurosis "Palatine_aponeurosis" ansys 1 244 164 96
 Pharynx "Pharynx" ansys 1 178 34 34
 Tensor_veli_palatini_L "Tensor_veli_palatini_L" ansys 1 255 192 203

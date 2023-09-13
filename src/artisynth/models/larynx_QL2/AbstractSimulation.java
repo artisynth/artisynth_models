@@ -212,12 +212,12 @@ public abstract class AbstractSimulation extends VocalTractBase implements Drive
 				if (m.getMaterial() instanceof PeckAxialMuscle) {
 					PeckAxialMuscle pam = (PeckAxialMuscle) m.getMaterial();
 					pam.setMaxForce(maxForce);
-					pam.setForceScaling(forceScaling);
+					//pam.setForceScaling(forceScaling);
 				}
 				else if (m.getMaterial() instanceof ConstantAxialMuscle) {
 					ConstantAxialMuscle cam = (ConstantAxialMuscle) m.getMaterial();
 					cam.setMaxForce(maxForce);
-					cam.setForceScaling(forceScaling);
+					//cam.setForceScaling(forceScaling);
 				}
 				else {
 					System.err.println("Cannot scale force of muscle '" + mb.getName() + "'. Material is not of type PeckAxialMuscle or ConstantAxialMuscle.");
@@ -234,12 +234,12 @@ public abstract class AbstractSimulation extends VocalTractBase implements Drive
 					if (m.getMaterial() instanceof PeckAxialMuscle) {
 						PeckAxialMuscle pam = (PeckAxialMuscle) m.getMaterial();
 						pam.setMaxForce(maxForce);
-						pam.setForceScaling(forceScaling);
+						//pam.setForceScaling(forceScaling);
 					}
 					else if (m.getMaterial() instanceof ConstantAxialMuscle) {
 						ConstantAxialMuscle cam = (ConstantAxialMuscle) m.getMaterial();
 						cam.setMaxForce(maxForce);
-						cam.setForceScaling(forceScaling);
+						//cam.setForceScaling(forceScaling);
 					}
 					else {
 						System.err.println("Cannot scale force of muscle '" + muscle.getName() + "'. Material is not of type PeckAxialMuscle or ConstantAxialMuscle.");
@@ -251,12 +251,12 @@ public abstract class AbstractSimulation extends VocalTractBase implements Drive
 				if (m.getMaterial() instanceof PeckAxialMuscle) {
 					PeckAxialMuscle pam = (PeckAxialMuscle) m.getMaterial();
 					pam.setMaxForce(maxForce);
-					pam.setForceScaling(forceScaling);
+					//pam.setForceScaling(forceScaling);
 				}
 				else if (m.getMaterial() instanceof ConstantAxialMuscle) {
 					ConstantAxialMuscle cam = (ConstantAxialMuscle) m.getMaterial();
 					cam.setMaxForce(maxForce);
-					cam.setForceScaling(forceScaling);
+					//cam.setForceScaling(forceScaling);
 				}
 				else {
 					System.err.println("Cannot scale force of muscle '" + muscle.getName() + "'. Material is not of type PeckAxialMuscle or ConstantAxialMuscle.");

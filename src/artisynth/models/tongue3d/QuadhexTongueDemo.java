@@ -54,7 +54,8 @@ public class QuadhexTongueDemo extends HexTongueDemo {
 
    @Override
    public void build (String[] args) throws IOException {
-      super.build (args);      
+      // no super build - need to create from scratch
+      //super.build (args);      
       
       mech = new MechModel("mech");
       mech.setIntegrator (Integrator.ConstrainedBackwardEuler);
@@ -106,23 +107,23 @@ public class QuadhexTongueDemo extends HexTongueDemo {
       ggpElems.add (tongue.getElements().getByNumber (497));
       ggpElems.add (tongue.getElements().getByNumber (716));
       
-      SelectionManager selman = Main.getMain().getSelectionManager();
-      for (FemElement3d e : tongue.getElements()) {
-         if (!ggpElems.contains (e)) {
-            selman.addSelected (e);
-         }
-         // boolean liesOnY = false;
-         // for (FemNode3d n : e.getNodes()) {
-         //    Point3d pos = n.getPosition();
-         //    if (Math.abs(pos.y) < 1e-10) {
-         //       liesOnY = true;
-         //       break;
-         //    }
-         // }              
-         // if (!liesOnY) {
-         //    selman.addSelected (e);
-         // }
-      }
+      // SelectionManager selman = Main.getMain().getSelectionManager();
+      // for (FemElement3d e : tongue.getElements()) {
+      //    if (!ggpElems.contains (e)) {
+      //       selman.addSelected (e);
+      //    }
+      //    // boolean liesOnY = false;
+      //    // for (FemNode3d n : e.getNodes()) {
+      //    //    Point3d pos = n.getPosition();
+      //    //    if (Math.abs(pos.y) < 1e-10) {
+      //    //       liesOnY = true;
+      //    //       break;
+      //    //    }
+      //    // }              
+      //    // if (!liesOnY) {
+      //    //    selman.addSelected (e);
+      //    // }
+      // }
       
    }
    
@@ -275,7 +276,9 @@ public class QuadhexTongueDemo extends HexTongueDemo {
 	    if (m.getMaterial() instanceof AxialMuscleMaterial) {
 	       AxialMuscleMaterial mat = 
 	          (AxialMuscleMaterial)m.getMaterial().clone();
-	       mat.setForceScaling(0.5);
+	       //mat.setForceScaling(0.5);
+               mat.setMaxForce (0.5*mat.getMaxForce());
+               mat.setDamping (0.5*mat.getDamping());
 	       m.setMaterial (mat);	       
 	    }
 	 }

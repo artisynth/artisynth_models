@@ -91,21 +91,24 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
    public double MUSCLE_PARTICLE_DAMPING = 0.5;
    public double MUSCLE_STIFFNESS_DAMPING = 0.5;
    public double MUSCLE_YOUNGS_MODULUS = 50000;
+
+   
+   public double MUSCLE_DAMPING_SCALING = 1000;
    public double MUSCLE_DAMPING = 0;
    public double MUSCLE_MAXLAMBDA = 2.1;
    public double MUSCLE_MAXSTRESS = 3e5;
+   public double MUSCLE_MAX_FORCE_SCALING = 1000;
    public double MUSCLE_MAX_FORCE = 5;
    public double MUSCLE_PASSIVE_FRACTION = 0;
-   public double MUSCLE_FORCE_SCALING = 1000;
-   public double MUSCLE_MAX_FORCE_SCALING = 1;
+   public double MUSCLE_FORCE_SCALING = 1;
    public double MUSCLE_TENDON_RATIO = 0;
-   public double SPRING_MUSCLE_FORCE_SCALING = 1000;
-   public double SPRING_MUSCLE_DAMPING = 0;
-   public double SPRING_DAMPING = 0;
-   public double SPRING_STIFFNESS = 0;
-   public double SPRING_MUSCLE_MAX_FORCE = 1;
-   public double SPRING_MUSCLE_PASSIVE_FRACTION = 0;
-   public double SPRING_MUSCLE_TENDON_RATIO = 0;
+   // public double SPRING_MUSCLE_FORCE_SCALING = 1000;
+   // public double SPRING_MUSCLE_DAMPING = 0;
+   // public double SPRING_DAMPING = 0;
+   // public double SPRING_STIFFNESS = 0;
+   // public double SPRING_MUSCLE_MAX_FORCE = 1;
+   // public double SPRING_MUSCLE_PASSIVE_FRACTION = 0;
+   // public double SPRING_MUSCLE_TENDON_RATIO = 0;
    public double COLLISION_FRICTION_COEFF = 0.0;
 
    public String MUSCLE_FIBRE_TYPE = "Peck";
@@ -206,7 +209,6 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
          collisionInfoList = readCollisionInfoList(collisionListFilename);
          setCollision();
       }
-            
    }
 
    private void addMuscle(MuscleInfo mu) throws IOException {
@@ -1248,9 +1250,9 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
          
              // Set properties
              if(!Double.isNaN(ms.damping)) {
-                     mat.setDamping(ms.damping);
+                     mat.setDamping(ms.damping*MUSCLE_DAMPING_SCALING);
              } else {
-                     mat.setDamping(MUSCLE_DAMPING);
+                     mat.setDamping(MUSCLE_DAMPING*MUSCLE_DAMPING_SCALING);
              }
              if(!Double.isNaN(ms.maxForce)) {
                      mat.setMaxForce(ms.maxForce*MUSCLE_MAX_FORCE_SCALING);
@@ -1447,6 +1449,20 @@ public class JawFaceLarynxDemo extends BadinJawTongueFaceTension {
                + " does not exist!");
       }
       return collisionInfoList;
+   }
+
+   /**
+    * Initialize some exciters to cause the model to move for testing purposes.
+    */
+   public void initializeExciters (double a) {
+      String[] enames = new String[] {
+         "Palatoglossus",
+         "superiorPharyngealConstrictor",
+         "middlePharyngealConstrictor"
+      };
+      for (String name : enames) {
+         myJawModel.getMuscleExciters().get (name).setExcitation (a);
+      }
    }
 
 //   @Override

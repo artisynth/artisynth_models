@@ -27,7 +27,7 @@ import artisynth.core.femmodels.FemNode;
 import artisynth.core.femmodels.FemNode3d;
 import artisynth.core.gui.ControlPanel;
 import artisynth.core.gui.FemControlPanel;
-import artisynth.core.mechmodels.CollisionManager;
+import artisynth.core.mechmodels.*;
 import artisynth.core.mechmodels.MechModel;
 import artisynth.core.mechmodels.Muscle;
 import artisynth.core.mechmodels.RigidBody;
@@ -383,28 +383,11 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
       // GLViewerFrame vf = (GLViewerFrame)driver.getFrame();
       GLViewer v = driver.getViewer();
       if (v != null) {
-         v.setOrthographicView(true);
+         //v.setOrthographicView(true);
          v.setGridVisible(true);
-         // vm.setBackgroundColor (Color.WHITE);
-         // vc.setAxialView (AxisAlignedRotation.Front);
-         // vc.getGrid ().setColor (Color.BLACK);
-         // vc.getGrid ().setDivisionColor (new Color (0.6f, 0.6f, 0.6f));
-         // vc.getGrid ().setPosition (gridPos);
-         // vc.getGrid ().setLineWidth (2);
-
-         // v.setOrthogonal (6, 1, 1000);
          v.setEye(new Point3d(100, -700, 95));
          v.setCenter(new Point3d(100, 0, 95));
       }
-      // RigidTransform3d sagittalClip = new RigidTransform3d(
-      // new Vector3d(100, 0, 95),
-      // new AxisAngle(1, 0, 0, Math.PI/2));
-
-      // GLClipPlane clip = vc.getToolBar ().addClipPlane ();
-      // clip.setOffset (0.25);
-      // clip.setGridVisible (false);
-      // clip.setDragger (DraggerType.None);
-
    }
 
    public void loadProbes() {
@@ -458,6 +441,17 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
       }
       getMeshContour(tongueContour, tonguevertices, null);
       return tongueContour;
+   }
+
+   /**
+    * Initialize some exciters to cause the model to move for testing purposes.
+    */
+   public void initializeExciters (double a) {
+      FemMuscleModel tongue =
+         (FemMuscleModel)myJawModel.findComponent("models/0");
+      for (MuscleExciter ex : tongue.getMuscleExciters()) {
+         ex.setExcitation (a);
+      }
    }
 
 }
