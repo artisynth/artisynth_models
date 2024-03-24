@@ -563,16 +563,6 @@ public class RenderTools {
            private float em;
            private Font font;
 
-           public static PropertyList myProps =
-           new PropertyList (TextFeeder2.class, RenderableComponentBase.class);
-           static {
-              myProps.add ("renderProps", "render properties", null);
-           }
-
-           public PropertyList getAllPropertyInfo() {
-              return myProps;
-           }
-
            public TextFeeder2(String text, int x, int y) { this(text, Color.white, "SansSerif", Font.BOLD, 12, x, y); }
            public TextFeeder2(String text, int fontSize, int x, int y) { this(text, Color.white, "SansSerif", Font.BOLD, fontSize, x, y); }
            public TextFeeder2(String text, Color textColor, String fontType, int fontStyle, int fontSize, int x, int y) {this(text, new Font("SansSerif", fontStyle, fontSize), fontSize, textColor, x, y); }

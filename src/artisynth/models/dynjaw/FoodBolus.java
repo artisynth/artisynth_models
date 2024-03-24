@@ -68,12 +68,10 @@ public class FoodBolus extends RenderableComponentBase
 	
 
 
-   public static PropertyList myProps = new PropertyList(FoodBolus.class,
-                                                         RenderableComponentBase.class);
+   public static PropertyList myProps = 
+      new PropertyList(FoodBolus.class, RenderableComponentBase.class);
 
-   static
-    {
-      myProps.add("renderProps", "render properties", null);
+   static {
       myProps.addReadOnly("forceNorm *",
                   "norm of total force applied by bolus (N)", "%8.2f");
       myProps.addReadOnly("normal *",
