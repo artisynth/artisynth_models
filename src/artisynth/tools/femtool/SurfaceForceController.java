@@ -203,7 +203,6 @@ public class SurfaceForceController extends ControllerBase {
       
       for (PointForce force : forceList) {
          force.setForce(Vector3d.ZERO);
-         Vector3d prev = force.getForce();
          // System.out.println("force:" + prev);
       }
       
