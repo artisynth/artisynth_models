@@ -3,14 +3,6 @@ ifndef ARTISYNTH_WEB_ACCOUNT
 ARTISYNTH_WEB_ACCOUNT = $(USER)
 endif
 
-# Artisynth home directory
-ifndef ARTISYNTH_HOME
-   ARTISYNTH_HOME := $(patsubst %/,%, $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
-   ifeq ($(OS),Windows_NT)
-      ARTISYNTH_HOME := $(subst /,\,$(ARTISYNTH_HOME))
-   endif
-endif
-
 # variable related to accessing the artisynth web server, where we
 # keep online documentation, library files, etc.
 WEBSERVER = research.hct.ece.ubc.ca
@@ -68,19 +60,16 @@ ifeq ($(findstring CYGWIN,$(SYSTEM)),CYGWIN)
 else
    JAVAC = javac
 endif
-JAVACFLAGS = -J-Xms500m -J-Xmx500m -d $(ROOT_DIR)/classes -sourcepath $(ROOT_DIR)/src -source 1.8 -target 1.8 -encoding UTF-8
+JAVA_VERSION := $(shell $(JAVAC) -version 2>&1)
+JAVA_VERSION_8 = javac 1.8
+# If Java release is > 8, we can use the --release option:
+ifeq ($(findstring $(JAVA_VERSION_8),$(JAVA_VERSION)),$(JAVA_VERSION_8))
+   JAVACFLAGS = -J-Xms500m -J-Xmx500m -d $(ROOT_DIR)/classes -sourcepath $(ROOT_DIR)/src -source 1.8 -target 1.8 -encoding UTF-8
+else
+   JAVACFLAGS = -J-Xms500m -J-Xmx500m -d $(ROOT_DIR)/classes -sourcepath $(ROOT_DIR)/src --release 8 -encoding UTF-8 -Xlint:-options
+endif
 JAVAH = javah
 JAVAHFLAGS = -jni -force
-
-# Classpath
-ifndef CLASSPATH
-   ifeq ($(OS),Windows_NT)
-      CLASSPATH=$(ARTISYNTH_HOME)\classes;$(ARTISYNTH_HOME)\lib\*
-   else
-      CLASSPATH=$(ARTISYNTH_HOME)/classes:$(ARTISYNTH_HOME)/lib/*
-   endif
-   JAVACFLAGS := -classpath "$(CLASSPATH)" $(JAVACFLAGS)
-endif
 
 LD = ld
 LD_FLAGS = 
