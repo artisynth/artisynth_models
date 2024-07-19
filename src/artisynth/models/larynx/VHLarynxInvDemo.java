@@ -116,9 +116,9 @@ public class VHLarynxInvDemo extends VHLarynxDemo {
 	 
       }
       
-      //invcon.addL2RegularizationTerm(500*1000);
-      invcon.addL2RegularizationTerm(1);
-      invcon.addDampingTerm(0.01);
+      //invcon.setL2Regularization(500*1000);
+      invcon.setL2Regularization(1);
+      invcon.setExcitationDamping(0.01);
       if(probeStart>0)
          invcon.setActive (false);
       addController(invcon);
