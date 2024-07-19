@@ -237,8 +237,9 @@ public class TongueInvDemo extends HexTongueDemo {
 	 trackingController.addExciter(ex);
       }
   
-      trackingController.addRegularizationTerms(/*l2norm*/0.1, /*damping*/0.1);
-//      trackingController.addL2RegularizationTerm(1);
+      trackingController.setNormalizeH (true);
+      trackingController.addRegularizationTerms(/*l2norm*/0.01, /*damping*/0.01);
+//      trackingController.setL2Regularization(1);
 
       trackingController.createProbesAndPanel (this);
       addController(trackingController);
