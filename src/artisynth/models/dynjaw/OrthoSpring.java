@@ -108,12 +108,12 @@ public class OrthoSpring extends FrameSpring
 
       computeForces();
       
-      myFTmp.transform (myX1A, myF);
+      myFTmp.transform (myTCA, myF);
       myFTmp.transform (myFrameA.getPose().R); // put into rotated world coords
       myFrameA.addForce (myFTmp);
       myFrameAForce.set (myFTmp);
-      myF.inverseTransform (myX21.R);
-      myFTmp.transform (myX2B, myF);
+      myF.inverseTransform (myTD.R);
+      myFTmp.transform (myTDB, myF);
       myFTmp.transform (myFrameB.getPose().R); // put into rotated world coords
       myFTmp.negate();
       myFrameB.addForce (myFTmp);
@@ -121,9 +121,9 @@ public class OrthoSpring extends FrameSpring
 
 //   public void applyForces (double t, StepAdjustment stepAdjust)
 //   {
-//     myDC.mulInverseBoth (myX1A, myFrameA.getPose());
+//     myDC.mulInverseBoth (myTCA, myFrameA.getPose());
 //     myDC.mul (myFrameB.getPose());
-//     myDC.mul (myX2B);
+//     myDC.mul (myTDB);
 //
 //     myU.set (myDC.p);
 //     myDC.R.getAxisAngle (myAxisAngle);
@@ -148,14 +148,14 @@ public class OrthoSpring extends FrameSpring
 //     myF.f.scaledAdd (myDamping, myVTmp.v);
 //     myF.m.scaledAdd (myRotaryDamping, myVTmp.w);
 //
-//     myVelA.inverseTransform (myX1A);
+//     myVelA.inverseTransform (myTCA);
 //
-//     myFTmp.transform (myX1A, myF);
+//     myFTmp.transform (myTCA, myF);
 //     myFTmp.transform (myFrameA.getPose().R);
 //     myFrameA.addForce (myFTmp);
 //     myFrameAForce.set (myFTmp);
 //     myF.inverseTransform (myDC.R);
-//     myFTmp.transform (myX2B, myF);
+//     myFTmp.transform (myTDB, myF);
 //     myFTmp.transform (myFrameB.getPose().R);
 //     myFTmp.negate();
 //     myFrameB.addForce (myFTmp);
@@ -192,8 +192,8 @@ public class OrthoSpring extends FrameSpring
 
    public void prerender (RenderList list)
     {
-      myRenderXCW.mul (myFrameA.getPose (), myX1A);
-      myRenderXDW.mul (myFrameB.getPose (), myX2B);
+      myRenderXCW.mul (myFrameA.getPose (), myTCA);
+      myRenderXDW.mul (myFrameB.getPose (), myTDB);
     }
 
    public void updateBounds (Vector3d pmin, Vector3d pmax)
