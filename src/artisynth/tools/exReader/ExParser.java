@@ -178,7 +178,7 @@ public class ExParser {
             // token
             currShapeInfo.nNodes = parseIntValue(nodeLine, "#Nodes");
 
-            // nodeLine += readLine(rtok); // read the rest of the line if
+            // nodeLine += rtok.readLine(); // read the rest of the line if
             // required to
          }
          else if (word.startsWith("#Fields")) {
@@ -237,7 +237,7 @@ public class ExParser {
             toEOL(rtok);
          }
          else if (word.startsWith("#Fields")) {
-            parseFields(rtok);
+            parseNodeFields(rtok);
          }
          else if (word.startsWith("Node")) {
             parseNode(rtok);
@@ -352,7 +352,6 @@ public class ExParser {
                break;
             }
          }
-
          findOrBuildElement(
             newElemInfo, myElemFields[idx], faceInfoList, lineInfoList,
             currRegion);
@@ -708,8 +707,10 @@ public class ExParser {
             myElemFields[fieldIdx].interpType = myShape.interpType;
          }
 
-         while (rtok.nextToken() != ReaderTokenizer.TT_WORD)
-            ; // read until next word
+         while (rtok.nextToken() != ReaderTokenizer.TT_WORD) {
+            // read until next word
+         }
+         rtok.scanToken (','); // assume word followed by a ','
          myElemFields[fieldIdx].name = rtok.sval;
 
          String line = readLine(rtok);
@@ -888,7 +889,7 @@ public class ExParser {
 
    }
 
-   public void parseFields(ReaderTokenizer rtok) throws IOException {
+   public void parseNodeFields(ReaderTokenizer rtok) throws IOException {
 
       // Parse number of fields
       int nFields = parseIntValue(rtok.sval, "#Fields");
@@ -908,8 +909,10 @@ public class ExParser {
             myFields[fieldIdx] = new FieldInfo();
          }
 
-         while (rtok.nextToken() != ReaderTokenizer.TT_WORD)
-            ; // read until next word
+         while (rtok.nextToken() != ReaderTokenizer.TT_WORD) {
+            // read until next word
+         }
+         rtok.scanToken (','); // assume word followed by a ','
          myFields[fieldIdx].name = rtok.sval;
 
          String line = readLine(rtok);
@@ -947,7 +950,6 @@ public class ExParser {
             myFields[fieldIdx].nVers[j] = parseIntValue(line, "#Versions", 1);
 
          }
-         rtok.nextToken ();  // prepare for next field
       }
       rtok.nextToken(); // prep for next line
 
@@ -1129,20 +1131,11 @@ public class ExParser {
    }
 
    protected String readLine(ReaderTokenizer rtok) throws IOException {
-
-      Reader rtokReader = rtok.getReader();
-      String line = "";
-      int c;
-      while (true) {
-         c = rtokReader.read();
-
-         if (c == '\n' || c < 0) {
-            rtok.setLineno(rtok.lineno() + 1); // increase line number
-            break;
-         }
-         line += (char)c;
+      String line;
+      do {
+         line = rtok.readLine();
       }
-
+      while (line.length() == 0 && rtok.ttype != ReaderTokenizer.TT_EOF);
       return line;
    }
 

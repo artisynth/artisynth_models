@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import artisynth.tools.exReader.NodeInterpolator.InterpType;
 import maspack.matrix.Matrix3d;
@@ -477,7 +478,7 @@ public class ExElement {
       
       ArrayList<Integer> dupCount = new ArrayList<Integer>();
       int nDup = 0;
-      HashMap<Integer,Integer> dupMap = new HashMap<Integer,Integer>();
+      HashMap<Integer,Integer> dupMap = new LinkedHashMap<Integer,Integer>();
       
       nodeList.clear();
       ExNode[] nodes = getNodes();

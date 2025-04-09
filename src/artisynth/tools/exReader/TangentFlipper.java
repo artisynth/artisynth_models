@@ -57,7 +57,7 @@ public class TangentFlipper {
 //   }
 
    public TangentFlipper () {
-//      flipFlagsMap = new HashMap<ExNode,NodeFlippedFlags>();
+//      flipFlagsMap = new LinkedHashMap<ExNode,NodeFlippedFlags>();
    }
 
    public void fixTangents(ArrayList<ExElement> elems, double cosineThreshold) {

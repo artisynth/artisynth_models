@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import maspack.geometry.PolygonalMesh;
 import maspack.geometry.Vertex3d;
@@ -92,10 +93,10 @@ public class ExMeshGenerator {
          model = new FemModel3d();
       }
 
-      HashMap<ExElement,int3> splitNumberMap = new HashMap<ExElement,int3>();
-      HashMap<ExFace,FaceNodes> faceNodeMap = new HashMap<ExFace,FaceNodes>();
-      HashMap<ExLine,LineNodes> lineNodeMap = new HashMap<ExLine,LineNodes>();
-      HashMap<ExNode,FemNode3d> nodeNodeMap = new HashMap<ExNode,FemNode3d>();
+      HashMap<ExElement,int3> splitNumberMap = new LinkedHashMap<ExElement,int3>();
+      HashMap<ExFace,FaceNodes> faceNodeMap = new LinkedHashMap<ExFace,FaceNodes>();
+      HashMap<ExLine,LineNodes> lineNodeMap = new LinkedHashMap<ExLine,LineNodes>();
+      HashMap<ExNode,FemNode3d> nodeNodeMap = new LinkedHashMap<ExNode,FemNode3d>();
 
       model.setDensity(density);
 
@@ -153,9 +154,9 @@ public class ExMeshGenerator {
       model.clear();
       model.setDensity(density);
 
-      HashMap<ExNode,Integer> nodeIndexMap = new HashMap<ExNode,Integer>();
+      HashMap<ExNode,Integer> nodeIndexMap = new LinkedHashMap<ExNode,Integer>();
       HashMap<ExElement,Integer> elemIndexMap =
-         new HashMap<ExElement,Integer>();
+         new LinkedHashMap<ExElement,Integer>();
 
       int elemIdx = 0;
       int nodeIdx = 0;
@@ -1392,10 +1393,10 @@ public class ExMeshGenerator {
    public static PolygonalMesh generateSurfaceMesh(
       ArrayList<ExElement> elements, int[] split) throws Exception {
 
-      HashMap<ExElement,int3> splitNumberMap = new HashMap<ExElement,int3>();
-      HashMap<ExFace,FaceNodes> faceNodeMap = new HashMap<ExFace,FaceNodes>();
-      HashMap<ExLine,LineNodes> lineNodeMap = new HashMap<ExLine,LineNodes>();
-      HashMap<ExNode,FemNode3d> nodeNodeMap = new HashMap<ExNode,FemNode3d>();
+      HashMap<ExElement,int3> splitNumberMap = new LinkedHashMap<ExElement,int3>();
+      HashMap<ExFace,FaceNodes> faceNodeMap = new LinkedHashMap<ExFace,FaceNodes>();
+      HashMap<ExLine,LineNodes> lineNodeMap = new LinkedHashMap<ExLine,LineNodes>();
+      HashMap<ExNode,FemNode3d> nodeNodeMap = new LinkedHashMap<ExNode,FemNode3d>();
 
       FemModel3d tmpModel = new FemModel3d();
 
@@ -1431,7 +1432,7 @@ public class ExMeshGenerator {
       // generate a polygonal mesh
       PolygonalMesh mesh = new PolygonalMesh();
       HashMap<FemNode3d,Vertex3d> nodeToVertexMap =
-         new HashMap<FemNode3d,Vertex3d>();
+         new LinkedHashMap<FemNode3d,Vertex3d>();
 
       for (ExFace face : faceNodeMap.keySet()) {
          FaceNodes fn = faceNodeMap.get(face);
