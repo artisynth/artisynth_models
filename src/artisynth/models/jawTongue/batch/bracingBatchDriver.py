@@ -1,10 +1,12 @@
 '''
-@author: Connor Mayer
+# @author: Connor Mayer
 '''
-from artisynth.models.jawTongue import BadinJawHyoidTongueContactBatchWorker
+from artisynth.models.jawTongue import JawHyoidFemMuscleTongueBatchWorker
 from jarray import array
 import sys
 
+print(sys.argv)
 args = array(sys.argv, String)
-worker = BadinJawHyoidTongueContactBatchWorker(args)
+print(args)
+worker = JawHyoidFemMuscleTongueBatchWorker(args)
 worker.run()

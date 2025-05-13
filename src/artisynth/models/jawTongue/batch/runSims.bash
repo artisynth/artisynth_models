@@ -17,7 +17,7 @@ for i in {0..10} # <- Total number of workers can be set here.
 do
   LOG=worker"$i"_console.txt
   echo "----------" $DATE "----------" > $LOG
-  artisynth -noGui -model artisynth.models.jawTongue.BadinJawHyoidTongueContact -script bracingBatchDriver.py > $LOG 2>&1 &
+  artisynth -noGui -model artisynth.models.jawTongue.JawHyoidFemMuscleTongue -script bracingBatchDriver.py > $LOG 2>&1 &
 # ^^^
 # Options to artisynth. To use a BatchWorker, a model should be provided (with
 # the -model option), and a BatchDriver Jython script should be provided (with
