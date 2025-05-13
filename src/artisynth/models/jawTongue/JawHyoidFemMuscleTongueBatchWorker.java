@@ -199,7 +199,7 @@ public class JawHyoidFemMuscleTongueBatchWorker extends SimpleTimedBatchWorker {
    @Override
    protected void recordSimResults() {
       if(myCurrentTaskSuccessful){
-    	  recordPosition();
+//    	  recordPosition();
          // Record excitations
          StringBuilder builder = new StringBuilder ();
          builder.append (myTaskCounter).append (",");

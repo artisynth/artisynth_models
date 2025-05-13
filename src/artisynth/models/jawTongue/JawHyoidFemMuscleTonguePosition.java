@@ -74,7 +74,7 @@ public class JawHyoidFemMuscleTonguePosition extends JawHyoidFemMuscleTongue {
             System.out.println("pos: " + tipPos);
          }
       };
-      timer.scheduleAtFixedRate (task, 0, 1000);
+      timer.scheduleAtFixedRate (task, 0, 10000);
       
 //      NumericOutputProbe mkrProbe =
 //      new NumericOutputProbe ( //not sure how to format this
@@ -94,7 +94,7 @@ public class JawHyoidFemMuscleTonguePosition extends JawHyoidFemMuscleTongue {
 	          
 	          nip.addData (
 	             new double[] { 0.00, 0.0,
-	                            0.75, maxExcitation
+	                            0.9, maxExcitation
 	                          }, NumericInputProbe.EXPLICIT_TIME);
 	          nip.setName (exciterName + " exciter probe");
 	          nip.setInterpolationOrder (Order.CubicStep);
@@ -108,8 +108,7 @@ public class JawHyoidFemMuscleTonguePosition extends JawHyoidFemMuscleTongue {
 	          
 	          nip.addData (
 	             new double[] { 0.00, 0.0,
-	                            0.10, 0.0,
-	                            0.80, maxExcitation
+	                            0.9, maxExcitation
 	                          }, NumericInputProbe.EXPLICIT_TIME);
 	          nip.setName (exciterName + " exciter probe");
 	          nip.setInterpolationOrder (Order.CubicStep);
