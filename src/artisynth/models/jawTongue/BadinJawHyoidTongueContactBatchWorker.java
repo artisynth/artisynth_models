@@ -50,7 +50,6 @@ public class BadinJawHyoidTongueContactBatchWorker extends SimpleTimedBatchWorke
       root = (BadinJawHyoidTongueContact) Main.getMain().getRootModel();
       
       exciters = (ComponentList<MuscleExciter>) root.findComponent("models/jawmodel/models/tongue/exciters");
-      
       myContactsFileWriter = initWriter(myOutputDirName, "contacts." + myName + ".txt");
       myExcitationFileWriter = initWriter(myOutputDirName, "excitations." + myName + ".txt");
       myFailedExcitationFileWriter = initWriter(myOutputDirName, "failedexcitations." + myName + ".txt");

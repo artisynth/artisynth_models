@@ -94,7 +94,7 @@ public class JawHyoidFemMuscleTonguePosition extends JawHyoidFemMuscleTongue {
 	          
 	          nip.addData (
 	             new double[] { 0.00, 0.0,
-	                            0.10, maxExcitation
+	                            0.75, maxExcitation
 	                          }, NumericInputProbe.EXPLICIT_TIME);
 	          nip.setName (exciterName + " exciter probe");
 	          nip.setInterpolationOrder (Order.CubicStep);
@@ -191,5 +191,16 @@ public class JawHyoidFemMuscleTonguePosition extends JawHyoidFemMuscleTongue {
 	  public JawModel getJawModel () {
 	      return myJawModel;
 	   }
+	  
+	   /**
+	    * Returns the tongue.
+	    * 
+	    * @return the tongue
+	    */
+	   public FemMuscleModel getTongue () {
+	      return tongue;
+	   }
 
 }
+
+
