@@ -1,7 +1,7 @@
 # 10mm condition
 "models/jawmodel/models/tongue/exciters/GGP:excitation" 	= {%0% %0.1% %0.25%}
-#"models/jawmodel/models/tongue/exciters/GGM:excitation" 	= {%0% %0.1% %0.25%}
-#"models/jawmodel/models/tongue/exciters/GGA:excitation" 	= {%0% %0.1% %0.25%}
+"models/jawmodel/models/tongue/exciters/GGM:excitation" 	= {%0% %0.1% %0.25%}
+"models/jawmodel/models/tongue/exciters/GGA:excitation" 	= {%0% %0.1% %0.25%}
 #"models/jawmodel/models/tongue/exciters/STY:excitation" 	= {%0% %0.1% %0.25%}
 #"models/jawmodel/models/tongue/exciters/MH:excitation" 		= {%0% %0.1% %0.25%}
 #"models/jawmodel/models/tongue/exciters/HG:excitation" 		= {%0% %0.1% %0.25%}

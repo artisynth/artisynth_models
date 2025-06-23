@@ -61,7 +61,6 @@ public class JawHyoidFemMuscleTongueBatchWorker extends SimpleTimedBatchWorker {
    
    protected double mySettleTime;
    protected double myMaxTime;
-   protected String myOutputDirName = "output/";
    protected String myName = "default";
    protected JawHyoidFemMuscleTonguePosition root;
    protected FemMuscleModel face;
@@ -200,7 +199,7 @@ public class JawHyoidFemMuscleTongueBatchWorker extends SimpleTimedBatchWorker {
    @Override
    protected void recordSimResults() {
       if(myCurrentTaskSuccessful){
-    	  recordPosition();
+//    	  recordPosition();
          // Record excitations
          StringBuilder builder = new StringBuilder ();
          builder.append (myTaskCounter).append (",");
