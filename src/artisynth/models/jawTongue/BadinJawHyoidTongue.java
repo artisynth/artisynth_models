@@ -63,7 +63,7 @@ public class BadinJawHyoidTongue extends BadinJawHyoid {
    boolean useIcpMuscleDefs = true;
    boolean useIncompressibleConstraint = true;
    boolean doActivationStiffening = true;
-   
+   // Here's a comment
    public static final TongueType DEFAULT_TONGUE_TYPE = TongueType.HexLineMuscles;
    
    public enum TongueType {
